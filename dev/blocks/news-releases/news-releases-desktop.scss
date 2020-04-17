@@ -1,0 +1,126 @@
+.news-releases {
+  background-color: #fbfcff;
+}
+
+.news-releases__wrapper {
+  padding-top: 10rem;
+  padding-right: 9.375rem;
+  padding-bottom: 5rem;
+  padding-left: 9.375rem;
+}
+
+.news-releases__subtitle {
+  margin-top: .875rem;
+  color: $grey;
+  opacity: .8;
+}
+
+.news-releases__flex-container {
+  flex-wrap: wrap;
+  display: flex;
+  padding-top: 1.875rem;
+}
+
+.news-releases__card {
+  position: relative;
+  margin-top: 2.5rem;
+  margin-right: 2.4375rem;
+  padding-top: 7.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  width: 22.0625rem;
+  height: 22.0625rem;
+  border-radius: .1875rem;
+  background-color: #f8f9fe;
+
+  .bage {
+    position: absolute;
+    top: 1.5625rem;
+    left: 1.5rem;
+    transition: 300ms;
+  }
+}
+
+.news-releases__card:hover {
+  box-shadow: .625rem 1.25rem .875rem rgba(64, 69, 74, .08);
+
+  .bage {
+    top: 4.625rem;
+  }
+
+  .news-releases__card-poster {
+    height: 5.625rem;
+  }
+}
+
+.news-releases__card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.news-releases__card-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  display: flex;
+  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: .1875rem;
+  background-color: $white;
+  transition: 300ms;
+
+  .date {
+    font-family: $main-font-regular;
+    font-size: .75rem;
+    line-height: 1.3125rem;
+    line-height: 1.3125rem;
+    color: $white;
+    opacity: .5;
+  }
+
+  .name {
+    font-family: $main-font-bold;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: $white;
+  }
+}
+
+.news-releases__card-text {
+
+  span {
+    display: block;
+    font-family: $main-font-light;
+    font-size: 1rem;
+    line-height: 1.5625rem;
+    color: #091540;
+    opacity: .8;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    margin-top: .625rem;
+    width: 6.875rem;
+    font-family: $main-font-regular;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: .65rem;
+      right: 0;
+      display: block;
+      width: .625rem;
+      height: .875rem;
+      background-image: url("./images/news-releases__link-arrow.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}

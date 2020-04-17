@@ -1,0 +1,68 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .bit-stats {
+    height: 27rem;
+    background-image: url("./images/bit-stats__bg-desktop.png"),
+      linear-gradient(to bottom, #f2f4fd, #ffffff);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bit-stats__wrapper {
+    padding-top: 4.6875rem;
+    padding-right: 3.125rem;
+    padding-left: 3.125rem;
+  }
+
+  .bit-stats__headline {
+    line-height: 3.125rem;
+  }
+
+  .bit-stats__flex-container {
+    margin-top: 2.5rem;
+  }
+
+  .bit-stats__flex-block {
+
+    img {
+      width: 3.125rem;
+    }
+
+    .num {
+      margin-top: 1.5rem;
+      font-size: 2rem;
+      line-height: 2.625rem;
+    }
+
+    .desk {
+      margin-top: .5rem;
+      font-size: 1rem;
+      line-height: 1.625rem;
+    }
+  }
+
+  .bit-stats__flex-block-left {
+
+    img {
+      margin-left: 0;
+    }
+
+    .num,
+    .descr {
+      text-align: left;
+    }
+  }
+
+  .bit-stats__flex-block-right {
+
+    img {
+      margin-right: 0;
+    }
+
+    .num,
+    .descr {
+      text-align: right;
+    }
+  }
+}

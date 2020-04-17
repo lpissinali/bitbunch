@@ -1,0 +1,96 @@
+.you-will-get {
+  background: linear-gradient(to bottom, #fcfdff, #f2f4fd);
+}
+
+.you-will-get__wrapper {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  padding-left: 9.375rem;
+}
+
+.you-will-get__flex-container {
+  justify-content: space-between;
+  display: flex;
+}
+
+.you-will-get__advantages {
+  width: 27.125rem;
+}
+
+.you-will-get__adv-title {
+  margin-top: 3.75rem;
+  font-family: $main-font-extra-bold;
+  font-size: 1.625rem;
+  line-height: 1.9375rem;
+  text-transform: uppercase;
+  color: $blue;
+  opacity: .8;
+}
+
+.you-will-get__adv-text {
+  position: relative;
+  margin-top: .75rem;
+  padding-left: 2.8125rem;
+  font-family: $main-font-medium;
+  font-size: 1.0625rem;
+  line-height: 1.875rem;
+  color: $grey;
+  opacity: .8;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: .5rem;
+    left: 0;
+    display: block;
+    width: 24px;
+    height: 15px;
+    background-image: url("./images/you-will-get__adv-arrow.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.you-will-get__capabilities {
+  padding-top: .3125rem;
+  width: 45.1875rem;
+}
+
+.you-will-get__cap-block {
+  display: flex;
+  margin-top: 1.75rem;
+  padding: 1.5rem;
+  width: 24.625rem;
+  height: 6rem;
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
+
+  img {
+    display: block;
+    width: 3rem;
+    height: auto;
+  }
+
+  span {
+    display: block;
+    margin-left: 1.25rem;
+    font-family: $main-font-bold;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #091540;
+  }
+}
+
+.you-will-get__cap-block:nth-child(2n + 1) {
+  margin-left: auto;
+}
+
+.you-will-get__buttons {
+  align-items: center;
+  display: flex;
+  margin-top: 4.375rem;
+}
+
+@import "./you-will-get-tablet.scss";
+
+@import "./you-will-get-mobile.scss";

@@ -1,0 +1,49 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .we-earn__wrapper {
+    padding-top: 3rem;
+    padding-right: 3.125rem;
+    padding-bottom: 3.4375rem;
+    padding-left: 3.125rem;
+  }
+
+  .we-earn__descr-container {
+    position: relative;
+    display: block;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 4.875rem;
+  }
+
+  .we-earn__text-block {
+    width: 100%;
+
+    .title {
+      text-align: center;
+    }
+
+    .text {
+      margin-top: .5rem;
+      margin-right: auto;
+      margin-left: auto;
+      width: 25.25rem;
+      font-size: 1.75rem;
+      line-height: 2.375rem;
+      text-align: center;
+    }
+
+    .link {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .we-earn__lets-earn-button {
+    margin-top: 2.3125rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

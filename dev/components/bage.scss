@@ -1,0 +1,33 @@
+.bage {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 5rem;
+  height: 1.875rem;
+  border-radius: .1875rem;
+  font-family: $main-font-bold;
+  font-size: .75rem;
+  color: $white;
+}
+
+.bage-orange {
+  background-color: $orange;
+}
+
+.bage-blue {
+  background-color: $blue;
+}
+
+.bage-yellow {
+  background-color: $yellow;
+}
+
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .bage {
+    width: 4.0625rem;
+    height: 1.375rem;
+    font-size: .625rem;
+    line-height: .75rem;
+  }
+}

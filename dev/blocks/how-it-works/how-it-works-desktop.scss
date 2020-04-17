@@ -1,0 +1,63 @@
+.how-it-works {
+  background-color: #f2f4fd;
+  background-image: url("./images/how-it-works__bg-2-desktop.png"),
+    url("./images/how-it-works__bg-desktop.svg");
+  background-position: calc(100% + 20.375rem) calc(100% - 2rem),
+    0 calc(100% + 48.75rem);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 62.75rem auto, 100% auto;
+}
+
+.how-it-works__wrapper {
+  padding-top: 10rem;
+  padding-right: 9.375rem;
+  padding-bottom: 18.75rem;
+  padding-left: 9.375rem;
+}
+
+.how-it-works__headline {
+  line-height: 3.875rem;
+}
+
+.how-it-works__subtitle {
+  margin-top: .875rem;
+  max-width: 680px;
+}
+
+.how-it-works__flex-container {
+  flex-wrap: wrap;
+  display: flex;
+  padding-top: .375rem;
+}
+
+.how-it-works__flex-block {
+  margin-top: 4.125rem;
+  margin-right: 6.25rem;
+  width: 24.0625rem;
+
+  .title {
+    font-family: $main-font-bold;
+    font-size: 1.375rem;
+    line-height: 1.9375rem;
+    text-transform: uppercase;
+    color: $blue;
+  }
+
+  .descr {
+    margin-top: .75rem;
+    font-family: $main-font-medium;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    color: $grey;
+  }
+}
+
+.how-it-works__buttons {
+  align-items: center;
+  display: flex;
+  margin-top: 4.75rem;
+}
+
+@import "./how-it-works-tablet.scss";
+
+@import "./how-it-works-mobile.scss";

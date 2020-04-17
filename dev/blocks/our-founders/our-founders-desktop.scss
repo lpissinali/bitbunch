@@ -1,0 +1,54 @@
+.our-founders {
+  background-color: #f2f4fd;
+  background-image: url("./images/how-it-works__bg-desktop.svg");
+  background-position: 0 -48.75rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.our-founders__wrapper {
+  padding-top: 1.875rem;
+  padding-right: 8.75rem;
+  padding-bottom: 5.625rem;
+  padding-left: 8.75rem;
+}
+
+.our-founders__headline {
+  line-height: 3.875rem;
+  text-align: center;
+  color: $white;
+}
+
+.our-founders__subtitle {
+  margin-top: .875rem;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 36.25rem;
+  text-align: center;
+  color: $white;
+  opacity: .8;
+}
+
+.our-founders__video-block {
+  margin-top: 3.75rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 71.25rem;
+  height: 33.75rem;
+}
+
+.our-founders__video-poster {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/our-founders__video-poster.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@import "./our-founders-tablet.scss";
+
+@import "./our-founders-mobile.scss";

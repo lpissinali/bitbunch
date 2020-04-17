@@ -1,0 +1,52 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .how-it-works {
+    background-color: $white;
+    background-image: none;
+  }
+
+  .how-it-works__wrapper {
+    padding-top: 5.75rem;
+    padding-right: 3.125rem;
+    padding-bottom: 2.5rem;
+    padding-left: 3.125rem;
+  }
+
+  .how-it-works__headline {
+    text-align: center;
+  }
+
+  .how-it-works__subtitle {
+    margin-top: .875rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 30.625rem;
+    text-align: center;
+  }
+
+  .how-it-works__flex-container {
+    display: block;
+    width: 100%;
+  }
+
+  .how-it-works__flex-block {
+    margin-top: 3.3125rem;
+    margin-right: 0;
+    width: 100%;
+
+    .title {
+      font-size: 1.125rem;
+      line-height: 1.9375rem;
+    }
+
+    .descr {
+      margin-top: .6875rem;
+      font-size: 1rem;
+      line-height: 1.8125rem;
+    }
+  }
+
+  .how-it-works__buttons {
+    margin-top: 3rem;
+  }
+}

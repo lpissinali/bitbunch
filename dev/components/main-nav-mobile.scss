@@ -1,0 +1,56 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .main-nav__nav-menu {
+    padding-top: 2.125rem;
+  }
+
+  .main-nav__controls {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .main-nav__logo-link {
+    width: 7.5625rem;
+  }
+
+  .main-nav__close-button {
+
+    span {
+      display: none;
+    }
+
+    img {
+      width: 2.125rem;
+    }
+  }
+
+  .main-nav__menu-list {
+    padding-top: 2.5rem;
+    padding-bottom: 4.375rem;
+  }
+
+  .main-nav__menu-item {
+    margin-top: 1.875rem;
+  }
+
+  .main-nav__menu-link {
+    font-size: 1.125rem;
+    line-height: 1.4375rem;
+  }
+
+  .main-nav__menu-buttons {
+    padding-top: 0;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    border-top: 0;
+  }
+
+  .main-nav__user-sign-in-button,
+  .main-nav__user-register-button {
+    width: 7.75rem;
+    height: 2.5rem;
+    font-size: .875rem;
+    line-height: 1.125rem;
+  }
+}

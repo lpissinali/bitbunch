@@ -1,0 +1,41 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .how-it-works {
+    background-color: #f9fbff;
+  }
+
+  .how-it-works__wrapper {
+    padding-top: 3rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.6875rem;
+    padding-left: 1.5rem;
+  }
+
+  .how-it-works__headline {
+    line-height: 2rem;
+  }
+
+  .how-it-works__subtitle {
+    margin-top: .3125rem;
+    width: 100%;
+  }
+
+  .how-it-works__flex-block {
+    margin-top: 2.3125rem;
+
+    .title {
+      font-size: .875rem;
+      line-height: 1.9375rem;
+    }
+
+    .descr {
+      margin-top: .5rem;
+      font-size: .75rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .how-it-works__buttons {
+    margin-top: 2rem;
+  }
+}

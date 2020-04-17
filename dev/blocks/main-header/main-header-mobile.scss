@@ -1,0 +1,51 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .main-header__wrapper {
+    padding-top: 2.125rem;
+    padding-right: 1.5rem;
+    padding-bottom: 6rem;
+    padding-left: 1.5rem;
+  }
+
+  .main-header__flex-container {
+    padding-top: 2.25rem;
+  }
+
+  .main-header__headline {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .main-header__description-items {
+    padding-top: 11.75rem;
+  }
+
+  .main-header__description-item {
+    margin-top: .6875rem;
+    padding-left: 1.75rem;
+    width: 15rem;
+    font-size: .75rem;
+    line-height: 1.125rem;
+
+    &:before {
+      top: .25rem;
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
+  .main-header__try-demo-button {
+    margin-top: 2.1875rem;
+  }
+
+  .main-header__video-block {
+    top: 11.75rem;
+    left: calc(50% - 8.5rem);
+    width: 17rem;
+    height: 10.25rem;
+  }
+
+  .main-header__video-poster {
+    background-image: url("./images/main-header__video-poster-mobile.png");
+  }
+}

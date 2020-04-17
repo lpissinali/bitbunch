@@ -1,0 +1,33 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .main-footer__menu-container {
+    padding-top: 5.3125rem;
+    padding-right: 3.125rem;
+    padding-bottom: 7.5rem;
+    padding-left: 3.125rem;
+  }
+
+  .main-footer__support-block,
+  .main-footer__menu-block {
+    width: 9.375rem;
+  }
+
+  .main-footer__center-container {
+    padding-right: 3.125rem;
+    padding-left: 3.125rem;
+  }
+
+  .main-footer__rights-block,
+  .main-footer__social-block {
+    width: 16rem;
+  }
+
+  .main-footer__descr-container {
+
+    span {
+      width: 41.875rem;
+      font-size: .6875rem;
+      line-height: 1.1875rem;
+    }
+  }
+}

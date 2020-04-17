@@ -1,0 +1,23 @@
+
+<svg width="155px" height="156px" viewBox="0 0 155 156" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="path-1" x="474.5" y="11876" width="140" height="140" rx="5"></rect>
+        <filter x="-8.6%" y="-7.1%" width="120.0%" height="120.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.293449955   0 0 0 0 0.26586633   0 0 0 0 0.26586633  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logos" transform="translate(-469.000000, -11872.000000)">
+            <g id="Rectangle-3-Copy-65">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#235079" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="qubitica_white" transform="translate(494.500000, 11896.000000)" fill="#FFFFFF">
+                <path d="M58.7021761,86.4850967 C59.8436688,90.8200475 62.2335992,94.6484772 65.4642484,97.562667 C60.5946288,99.1448556 55.3971792,100 50,100 C22.3857625,100 0,77.6142375 0,50 C0,22.3857625 22.3857625,0 50,0 C77.6142375,0 100,22.3857625 100,50 C100,55.3971792 99.1448556,60.5946288 97.562667,65.4642484 C94.6484772,62.2335992 90.8200475,59.8436688 86.4850967,58.7021761 C87.1487174,55.9094601 87.5,52.9957533 87.5,50 C87.5,29.2893219 70.7106781,12.5 50,12.5 C29.2893219,12.5 12.5,29.2893219 12.5,50 C12.5,70.7106781 29.2893219,87.5 50,87.5 C52.9957533,87.5 55.9094601,87.1487174 58.7021761,86.4850967 Z M65.1855212,84.2980134 C73.6883954,80.5277711 80.5277711,73.6883954 84.2980134,65.1855212 C88.6661563,66.200834 92.3438936,69.0154673 94.5077785,72.8059667 C89.7284119,82.1145772 82.1145772,89.7284119 72.8059667,94.5077785 C69.0154673,92.3438936 66.200834,88.6661563 65.1855159,84.2980158 Z" id="Combined-Shape" fill-rule="nonzero"></path>
+                <circle id="Oval" cx="80.6818182" cy="80.6818182" r="15.9090909"></circle>
+            </g>
+        </g>
+    </g>
+</svg>q

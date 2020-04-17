@@ -1,0 +1,37 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .our-founders {
+    background-color: $white;
+    background-image: url("./images/our-founders__bg-tablet.png"),
+      url("./images/how-it-works__bg-2-tablet.png");
+    background-position: 100% 10.125rem, 0 2.5rem;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% auto, 100% auto;
+  }
+
+  .our-founders__wrapper {
+    padding-top: 24rem;
+    padding-right: 2.8125rem;
+    padding-bottom: 2.5rem;
+    padding-left: 2.8125rem;
+  }
+
+  .our-founders__headline {
+    line-height: 2.875rem;
+  }
+
+  .our-founders__subtitle {
+    margin-top: .875rem;
+    width: 30.625rem;
+  }
+
+  .our-founders__video-block {
+    margin-top: 3rem;
+    width: 41.75rem;
+    height: 23.625rem;
+  }
+
+  .our-founders__video-poster {
+    background-image: url("./images/our-founders__video-poster-tablet.png");
+  }
+}

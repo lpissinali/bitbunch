@@ -1,0 +1,69 @@
+@import "fonts.scss";
+
+@import "mixins.scss";
+
+@import "vars.scss";
+
+@import "./bootstrap/bootstrap.scss";
+
+@import "layout.scss";
+
+// components
+@import "./components.scss";
+
+// slider
+@import "./slick.scss";
+
+//date-picker
+@import "./bootstrap/bootstrap-datepicker.scss";
+
+//custom-select
+@import "./custom-select/jquery.custom-select.scss";
+
+// dev menu
+@import "../../blocks/dev-menu/dev-menu.scss";
+
+// home page
+
+// header
+@import "../../blocks/main-header/main-header-desktop.scss";
+
+// footer
+@import "../../blocks/main-footer/main-footer-desktop";
+
+// you-will-get
+@import "../../blocks/you-will-get/you-will-get-desktop.scss";
+
+// bit-stats
+@import "../../blocks/bit-stats/bit-stats-desktop.scss";
+
+// how-it-works
+@import "../../blocks/how-it-works/how-it-works-desktop.scss";
+
+// our-founders
+@import "../../blocks/our-founders/our-founders-desktop.scss";
+
+// our-team
+@import "../../blocks/our-team/our-team-desktop.scss";
+
+// bit-media
+@import "../../blocks/bit-media/bit-media-desktop.scss";
+
+// we-earn
+@import "../../blocks/we-earn/we-earn-desktop.scss";
+
+// register page
+
+// register
+@import "../../blocks/forms/register/register-desktop.scss";
+
+// pressroom page
+
+// header
+@import "../../blocks/pressroom-header/pressroom-header-desktop.scss";
+
+// news-releases
+@import "../../blocks/news-releases/news-releases-desktop.scss";
+
+// standarts
+@import "../../blocks/standarts/standarts-desktop.scss";

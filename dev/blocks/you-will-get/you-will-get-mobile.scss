@@ -1,0 +1,54 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .you-will-get__wrapper {
+    padding-top: 3.25rem;
+    padding-right: 1.5rem;
+    padding-bottom: 3.125rem;
+    padding-left: 1.5rem;
+  }
+
+  .you-will-get__capabilities {
+    padding-top: 1rem;
+  }
+
+  .you-will-get__cap-block {
+    position: relative;
+    margin-top: 1rem;
+    padding: 1.125rem;
+    width: 100%;
+    height: 4.5rem;
+    box-shadow: .5rem .5625rem 1.125rem rgba(80, 87, 94, .1);
+
+    img {
+      width: 2.25rem;
+    }
+
+    span {
+      margin-left: 1.125rem;
+      font-size: .75rem;
+      line-height: 1.2656rem;
+    }
+  }
+
+  .you-will-get__adv-title {
+    margin-top: 2rem;
+    font-size: .875rem;
+    line-height: 1.5rem;
+  }
+
+  .you-will-get__adv-text {
+    margin-top: .5rem;
+    padding-left: 1.5rem;
+    font-size: .75rem;
+    line-height: 1.5rem;
+
+    &:before {
+      width: .875rem;
+      height: .5625rem;
+    }
+  }
+
+  .you-will-get__buttons {
+    margin-top: 2rem;
+  }
+}

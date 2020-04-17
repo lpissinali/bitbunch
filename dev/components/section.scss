@@ -1,0 +1,12 @@
+section {
+  margin-right: auto;
+  margin-left: auto;
+  width: 90rem;
+}
+
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  section {
+    width: 100%;
+  }
+}

@@ -1,0 +1,71 @@
+.bit-stats {
+  height: 34.0625rem;
+  background-color: #f2f4fd;
+  background-image: url("./images/bit-stats__bg-desktop.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bit-stats__wrapper {
+  padding-top: 5.25rem;
+  padding-right: 9.375rem;
+  padding-left: 9.375rem;
+}
+
+.bit-stats__subtitle {
+  font-family: $main-font-medium;
+  font-size: 1.125rem;
+  line-height: 1.9375rem;
+  text-align: center;
+  color: $white;
+  opacity: .8;
+}
+
+.bit-stats__headline {
+  line-height: 4.375rem;
+  text-align: center;
+  color: $white;
+}
+
+.bit-stats__flex-container {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 4.0625rem;
+}
+
+.bit-stats__flex-block {
+  width: 13.5rem;
+
+  img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 4.25rem;
+    height: auto;
+  }
+
+  .num {
+    margin-top: 1.1875rem;
+    font-family: $main-font-regular;
+    font-size: 2.625rem;
+    text-align: center;
+    color: $white;
+    text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .05);
+  }
+
+  .descr {
+    margin-top: .3125rem;
+    font-family: $main-font-bold;
+    font-size: 1.125rem;
+    line-height: 1.9375rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    opacity: .8;
+  }
+}
+
+@import "./bit-stats-tablet.scss";
+
+@import "./bit-stats-mobile.scss";

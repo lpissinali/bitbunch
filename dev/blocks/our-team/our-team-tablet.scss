@@ -1,0 +1,78 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .our-team {
+    background-color: $white;
+  }
+
+  .our-team__wrapper {
+    padding-top: 2.5rem;
+    padding-right: 3.125rem;
+    padding-left: 3.125rem;
+  }
+
+  .our-team__headline {
+    line-height: 2.875rem;
+  }
+
+  .our-team__subtitle {
+    margin-top: .625rem;
+    line-height: 1.625rem;
+  }
+
+  .our-team__flex-container {
+    padding-top: 1.125rem;
+    max-height: 49.5rem;
+    overflow: hidden;
+  }
+
+  .our-team__member-card {
+    margin-top: 1.875rem;
+    margin-right: 1.875rem;
+    width: 12.625rem;
+
+    &:before {
+      height: 6.25rem;
+    }
+  }
+
+  .our-team__member-card:nth-child(4n) {
+    margin-right: 1.875rem;
+  }
+
+  .our-team__member-card:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  .our-team__member-info {
+    padding-top: .625rem;
+    padding-right: .9375rem;
+    padding-bottom: .8125rem;
+    padding-left: .9375rem;
+
+    .name {
+      font-size: 1.3125rem;
+      line-height: 1.9375rem;
+    }
+
+    .position {
+      margin-top: .25rem;
+      font-size: .75rem;
+      line-height: .875rem;
+    }
+  }
+
+  .our-team__member-foto {
+    width: 10.625rem;
+    height: auto;
+  }
+
+  .our-team__member-descr {
+    margin-top: .5rem;
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+  }
+
+  .our-team__more-button {
+    display: flex;
+  }
+}

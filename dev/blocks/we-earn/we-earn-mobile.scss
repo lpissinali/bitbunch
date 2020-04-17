@@ -1,0 +1,54 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .we-earn__wrapper {
+    padding-top: 2.9375rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .we-earn__headline {
+    margin-top: 1rem;
+  }
+
+  .we-earn__zero-image {
+    margin-top: 3rem;
+    margin-bottom: 1.5625rem;
+    width: 4.8125rem;
+  }
+
+  .we-earn__descr-container {
+    padding-top: 2rem;
+    padding-right: 0;
+    padding-bottom: 3.5rem;
+    padding-left: 0;
+  }
+
+  .we-earn__text-block {
+    margin-top: 0;
+
+    .title {
+      font-size: .75rem;
+      line-height: .9375rem;
+    }
+
+    .text {
+      width: 15.375rem;
+      font-family: $main-font-medium;
+      font-size: 1rem;
+      line-height: 2.25rem;
+    }
+
+    .link {
+      bottom: 1rem;
+      font-size: .8531rem;
+    }
+  }
+
+  .we-earn__lets-earn-button {
+    margin-top: 1.5rem;
+    width: 13rem;
+    height: 2.25rem;
+    font-size: .75rem;
+  }
+}
