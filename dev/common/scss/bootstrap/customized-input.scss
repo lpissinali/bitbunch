@@ -19,11 +19,11 @@
   color: #495057;
 }
 
-.valid {
+.validation-success {
   border-right: 0.3125rem solid $green-light;
 }
 
-.error {
+.validation-error {
   border-right: 0.3125rem solid $red;
 }
 
@@ -44,11 +44,20 @@
   transition: top 0.3s;
 }
 .form-group__placeholder.has-content {
-  top: 0rem;
+  top: 0.5rem;
   transition: 0.3s;
 }
 
 .form-group input:focus ~ .form-group__placeholder {
   top: 0.5rem;
   transition: 0.3s;
+}
+
+.error-icon {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
 }

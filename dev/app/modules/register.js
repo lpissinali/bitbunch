@@ -5,19 +5,47 @@
  * @description validation and form submit
  */
 (function($) {
-  $("#register").validate({
+  $("#registerForm").validate({
+    errorPlacement(error, element) {
+      if($(error).text() == '') {
+        return
+      }
+      $(element).next().next('.error-icon').removeClass('d-none');
+      $(element).next().next('.error-icon').tooltipster("content", $(error).text());
+      $(element).next().next('.error-icon').tooltipster("open");
+    },
+    success(label, element) {
+      $(element).next().next('.error-icon').addClass('d-none');
+      $(element).next().next('.error-icon').tooltipster("close");
+    },
+    rules: {
+      username: {
+        required: true
+      },
+      email: {
+        required: true
+      },
+      password: {
+        required: true
+      }
+    },
     errorClass: "validation-error",
-    errorElement: "span",
-    submitHandler(form) {}
+    submitHandler(form) { return false;}
   });
+
+  // initialize tooltipster on text input elements
+  $('#registerForm .error-icon').tooltipster({
+    trigger: 'custom',
+    onlyOne: false,
+    position: 'top',
+    theme: ['tooltipster-noir', 'tooltipster-noir-customized'],
+  });
+
   $(".form-group input").on("focusout", event => {
-    if (this.value !== "") {
-      var $placeholder = $(this).nextAll(".form-group__placeholder");
-      $placeholder.addClass("has-content");
+    if (event.currentTarget.value !== "") {
+      $(event.currentTarget).next().addClass("has-content");
     } else {
-      $(this)
-        .next()
-        .removeClass("has-content");
+      $(event.currentTarget).next().removeClass("has-content");
     }
   });
 })(jQuery);

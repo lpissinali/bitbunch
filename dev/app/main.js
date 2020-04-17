@@ -1,6 +1,7 @@
 import '../common/scss/main.scss';
 
 require('./polyfills/polyfills');
+require('./modules/validators');
 require('./modules/register');
 
 // menu

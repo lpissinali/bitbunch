@@ -3,14 +3,17 @@ section.register-section
     .register-section__description It’s 100% free. Forever.
     form#registerForm.register__form(novalidate)
         .form-group.regitster__form-username
-            input(type="text" class="form-control form-control-lg required valid" id="registerUsername" name="username" required)
-            span.form-group__placeholder Username  
+            input(type="text" class="form-control form-control-lg required" id="registerUsername" name="username" required)
+            span.form-group__placeholder Username 
+            .error-icon.d-none
         .form-group.regitster__form-email
-            input(type="text" class="form-control form-control-lg required error" id="registerEmail" name="email" required)
+            input(type="text" class="form-control form-control-lg required" id="registerEmail" name="email" required)
             span.form-group__placeholder Email
+            .error-icon.d-none
         .form-group.regitster__form-password
             input(type="text" class="form-control form-control-lg required" id="registerPassword" name="password" required)
             span.form-group__placeholder Password
+            .error-icon.d-none 
         .custom-control.custom-checkbox.regitster__form-terms
             input(type="checkbox" class="custom-control-input" id="registerTerm")
             label(class="custom-control-label" for="registerTerm").regitster__form-terms-label I read and agree to the of use
@@ -18,7 +21,7 @@ section.register-section
                 a(href="#" target="_blank").regitster__form-terms-link Terms and Condition
                 =' '
                 span.regitster__form-terms-label of use
-        button.button-orange.regitster__form-terms Register
+        button(type="submit").button-orange.regitster__form-terms Register
     .register-section__footer
         span Already have an account?
         =' '
