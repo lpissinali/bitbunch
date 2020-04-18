@@ -1,4 +1,4 @@
-.our-team-header {
+.help-center-header {
 
   &:before {
     content: "";
@@ -13,7 +13,7 @@
   }
 }
 
-.our-team-header__wrapper {
+.help-center-header__wrapper {
   margin-right: auto;
   margin-left: auto;
   padding-top: 2.5rem;
@@ -21,31 +21,31 @@
   width: 76.125rem;
 }
 
-.our-team-header__headline-block {
+.help-center-header__headline-block {
   margin-top: 10rem;
 }
 
-.our-team-header__subtitle {
+.help-center-header__subtitle {
   margin-top: .875rem;
-  max-width: 21rem;
+  max-width: 24.25rem;
 }
 
-.our-team-header__were-hiring-button {
+.help-center-header__support-button {
   margin-top: 4.625rem;
 }
 
-.our-team-header__decor {
+.help-center-header__decor {
   position: absolute;
-  top: 14.5rem;
-  right: 0;
-  width: 47.375rem;
-  height: 30.0625rem;
-  background-image: url("./images/our-team-header__decor-desktop.png");
+  top: 9.625rem;
+  right: 8.1875rem;
+  width: 33.625rem;
+  height: 22.875rem;
+  background-image: url("./images/help-center-header__decor-desktop.png");
   background-position: 0 center;
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 
-@import "./our-team-header-tablet.scss";
+@import "./help-center-header-tablet.scss";
 
-@import "./our-team-header-mobile.scss";
+@import "./help-center-header-mobile.scss";

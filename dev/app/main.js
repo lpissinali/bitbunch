@@ -1,8 +1,14 @@
 import '../common/scss/main.scss';
 
+// accordion
+import { dsAccordion } from '../components/accordion/ds-accordion';
+
 require('./polyfills/polyfills');
 require('./modules/validators');
 require('./modules/register');
+
+// аккордион faq
+dsAccordion({});
 
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {

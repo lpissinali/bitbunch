@@ -1,9 +1,9 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
-  .our-team-header {
+  .help-center-header {
   }
 
-  .our-team-header__wrapper {
+  .help-center-header__wrapper {
     padding-top: 2.125rem;
     padding-right: 1.5rem;
     padding-bottom: 2.25rem;
@@ -11,20 +11,20 @@
     width: 100%;
   }
 
-  .our-team-header__headline-block {
+  .help-center-header__headline-block {
     margin-top: 1.9375rem;
   }
 
-  .our-team-header__subtitle {
+  .help-center-header__subtitle {
     margin-top: .625rem;
-    width: 14.125rem;
+    width: 15rem;
   }
 
-  .our-team-header__were-hiring-button {
+  .help-center-header__support-button {
     margin-top: 2.25rem;
   }
 
-  .our-team-header__decor {
+  .help-center-header__decor {
     display: none;
   }
 }

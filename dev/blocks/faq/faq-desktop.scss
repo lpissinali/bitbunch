@@ -1,0 +1,156 @@
+.faq {
+  background-color: #f8f9fe;
+}
+
+.faq__wrapper {
+  padding-top: 0;
+  padding-right: 9.375rem;
+  padding-bottom: 10rem;
+  padding-left: 9.375rem;
+}
+
+.faq__flex-container {
+  justify-content: space-between;
+  display: flex;
+}
+
+.faq__headline-block {
+  padding-top: 8.75rem;
+  width: 23.875rem;
+}
+
+.faq__headline {
+  margin-top: 2rem;
+  font-family: $main-font-regular;
+  font-size: 2.25rem;
+  line-height: 3.125rem;
+  color: #091540;
+}
+
+.faq__title,
+.work-time {
+  margin-top: 3.75rem;
+  font-family: $main-font-bold;
+  font-size: 1.125rem;
+  line-height: 1.9375rem;
+  text-transform: uppercase;
+  color: $blue;
+  opacity: .8;
+}
+
+.work-time {
+  margin-top: 0;
+  font-family: $main-font-regular;
+}
+
+.faq__link {
+  display: flex;
+  margin-top: 1.1875rem;
+  padding: .5rem;
+  width: 18rem;
+  height: 4rem;
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
+  background-color: $white;
+
+  img {
+    display: block;
+    width: 3rem;
+    height: auto;
+  }
+
+  span {
+    align-items: center;
+    display: flex;
+    margin-left: 1rem;
+    font-family: $main-font-regular;
+    font-size: 1.3125rem;
+    line-height: 2.375rem;
+    color: $blue;
+  }
+}
+
+.faq__ticket-button {
+  margin-top: 1.1875rem;
+}
+
+.faq__answer-block {
+  position: relative;
+  margin-top: -4.0625rem;
+  padding-top: .125rem;
+  padding-right: 2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  width: 41rem;
+  border-radius: .1875rem;
+  box-shadow: 0 .125rem .25rem rgba(93, 88, 88, .1);
+  background-color: $white;
+
+  .faq__title {
+    margin-top: 2.3125rem;
+    margin-bottom: 1.6875rem;
+  }
+}
+
+.accordion {
+  margin-top: 1.5rem;
+  box-shadow: .125rem .25rem .375rem rgba(0, 0, 0, .05);
+  transition: box-shadow 300ms;
+}
+
+.accordion.active {
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
+
+  .accordion__arrow {
+    transform: rotateZ(-45deg);
+  }
+}
+
+.accordion__headline {
+  position: relative;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
+  padding-left: 4.375rem;
+  padding-left: 1.5rem;
+  border-radius: .1875rem;
+  background-color: $blue;
+  font-family: $main-font-medium;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  color: $white;
+  cursor: pointer;
+}
+
+.accordion__arrow {
+  position: absolute;
+  top: calc(50% - .9375rem);
+  right: 1.5rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  background-image: url("./images/accordion__arrow.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 300ms;
+}
+
+.accordion__dropdown {
+  max-height: 0;
+  background-color: #f8f9fe;
+  overflow: hidden;
+  transition: max-height 300ms;
+}
+
+.accordion__dropdown-wrapper {
+  padding-top: .75rem;
+  padding-right: 1.5rem;
+  padding-bottom: .75rem;
+  padding-left: 1.5rem;
+  border: 1px solid #cdcfd5;
+  border-radius: .1875rem;
+
+  p {
+    display: block;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+  }
+}

@@ -1,0 +1,33 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .help-center-header {
+  }
+
+  .help-center-header__wrapper {
+    padding-top: 3.125rem;
+    padding-right: 3.125rem;
+    padding-bottom: 10rem;
+    padding-left: 3.125rem;
+    width: 100%;
+  }
+
+  .help-center-header__headline-block {
+    margin-top: 12.5rem;
+  }
+
+  .help-center-header__subtitle {
+    width: 18.125rem;
+  }
+
+  .help-center-header__were-hiring-button {
+    margin-top: 3.25rem;
+  }
+
+  .help-center-header__decor {
+    top: 16rem;
+    right: 0;
+    width: 20.625rem;
+    height: 16.25rem;
+    background-image: url("./images/help-center-header__decor-tablet.png");
+  }
+}
