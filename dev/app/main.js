@@ -65,3 +65,49 @@ if (document.querySelector('.bit-media__flex-block')) {
     ],
   });
 }
+
+// our team slider
+if (document.querySelector('.big-team__founders-container')) {
+  $('.big-team__founders-container').slick({
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    infinite: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 9999,
+        settings: 'unslick',
+      },
+      {
+        breakpoint: 570,
+        settings: 'slick',
+      },
+    ],
+  });
+}
+
+// investors slider
+if (document.querySelector('.big-team__investors-container')) {
+  $('.big-team__investors-container').slick({
+    dots: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    infinite: true,
+    variableWidth: true,
+  });
+}
+
+// advisors slider
+if (document.querySelector('.big-team__advisors-container')) {
+  $('.big-team__advisors-container').slick({
+    dots: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    infinite: true,
+    variableWidth: true,
+  });
+}

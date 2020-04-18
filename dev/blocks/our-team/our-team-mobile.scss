@@ -30,39 +30,6 @@
     margin-right: 1.5rem !important;
   }
 
-  // slider dots
-  .our-team .slick-dots {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-top: .625rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 1.5rem;
-
-    button {
-      margin-right: 0;
-      margin-left: 0;
-      padding: 0;
-      width: 1.25rem;
-      height: 1px;
-      border: 0;
-      border: 0;
-      box-shadow: none;
-      background-color: $grey;
-      font-size: 0;
-      cursor: pointer;
-      opacity: 1;
-    }
-
-    .slick-active button {
-      width: 50px;
-      height: .1875rem;
-      background-color: $blue;
-      opacity: 1;
-    }
-  }
-
   .our-team__more-button {
     margin-top: 2.5rem;
     margin-right: 6.25rem;

@@ -1,4 +1,4 @@
-.pressroom-header {
+.our-team-header {
   position: relative;
   background-image: url("./images/main-header-bg-desktop.png");
   background-position: center;
@@ -18,7 +18,7 @@
   }
 }
 
-.pressroom-header__wrapper {
+.our-team-header__wrapper {
   margin-right: auto;
   margin-left: auto;
   padding-top: 2.5rem;
@@ -26,35 +26,35 @@
   width: 76.125rem;
 }
 
-.pressroom-header__headline-block {
+.our-team-header__headline-block {
   margin-top: 10rem;
 }
 
-.pressroom-header__subtitle {
+.our-team-header__subtitle {
   margin-top: .875rem;
-  max-width: 30.9375rem;
+  max-width: 21rem;
   font-family: $main-font-bold;
   font-size: 1.25rem;
   line-height: 2rem;
   color: $white;
 }
 
-.pressroom-header____contact-us-button {
+.our-team-header__were-hiring-button {
   margin-top: 4.625rem;
 }
 
-.pressroom-header__decor {
+.our-team-header__decor {
   position: absolute;
-  top: 11.5rem;
+  top: 14.5rem;
   right: 0;
-  width: 34.1875rem;
-  height: 32.5rem;
-  background-image: url("./images/pressroom-header__decor.png");
+  width: 47.375rem;
+  height: 30.0625rem;
+  background-image: url("./images/our-team-header__decor-desktop.png");
   background-position: 0 center;
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 
-@import "./pressroom-header-tablet.scss";
+@import "./our-team-header-tablet.scss";
 
-@import "./pressroom-header-mobile.scss";
+@import "./our-team-header-mobile.scss";

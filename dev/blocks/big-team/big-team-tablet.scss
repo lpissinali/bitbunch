@@ -1,0 +1,47 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .big-team__wrapper {
+    padding-top: .3125rem;
+    padding-right: 3.125rem;
+    padding-bottom: 5rem;
+    padding-left: 3.125rem;
+  }
+
+  .big-team__headline {
+    margin-top: 5.9375rem;
+  }
+
+  .big-team__subtitle {
+    margin-top: .875rem;
+  }
+
+  .big-team__founders-container {
+    justify-content: center;
+    margin-top: 1.125rem;
+  }
+
+  .big-team__investors-container,
+  .big-team__advisors-container {
+    margin-top: 3rem;
+
+    .our-team__member-card {
+      margin-right: 1.625rem;
+    }
+  }
+
+  .big-team__wrapper {
+
+    .slick-prev,
+    .slick-next {
+      top: calc(50% - 1.25rem);
+      right: -2.8125rem;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .slick-prev {
+      right: auto;
+      left: -2.8125rem;
+    }
+  }
+}

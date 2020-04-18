@@ -1,0 +1,37 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .big-team__wrapper {
+    padding-top: .625rem;
+    padding-right: 0;
+    padding-bottom: 3rem;
+    padding-left: 1.5rem;
+  }
+
+  .big-team__headline {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .big-team__subtitle {
+    margin-top: .3125rem;
+    text-align: center;
+  }
+
+  .big-team__founders-container {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  .big-team__investors-container,
+  .big-team__advisors-container {
+    margin-top: 2rem;
+  }
+
+  .big-team__wrapper {
+
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+  }
+}
