@@ -1,0 +1,54 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .news-releases__wrapper {
+    padding-top: 5.625rem;
+    padding-right: 3.125rem;
+    padding-bottom: 2.5rem;
+    padding-left: 3.125rem;
+  }
+
+  .news-releases__flex-container {
+    padding-top: 1.125rem;
+  }
+
+  .news-releases__card {
+    margin-top: 1.875rem;
+    margin-right: 1.75rem;
+    padding-top: 7rem;
+    width: 19.9375rem;
+    height: 19.9375rem;
+  }
+
+  .news-releases__card:nth-child(3n) {
+    margin-right: 1.75rem;
+  }
+
+  .news-releases__card:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .news-releases__card-text {
+
+    span {
+      font-size: .9rem;
+      line-height: 1.35rem;
+    }
+
+    a {
+      font-size: 1rem;
+      line-height: 1.5rem;
+
+      &:after {
+        top: .47rem;
+      }
+    }
+  }
+
+  .news-releases__card-poster {
+
+    .name {
+      font-size: 1.3125rem;
+      line-height: 1.5625rem;
+    }
+  }
+}

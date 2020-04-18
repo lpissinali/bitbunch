@@ -1,0 +1,30 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .standarts__wrapper {
+    padding-top: 2.5rem;
+    padding-right: 3.125rem;
+    padding-bottom: 5rem;
+    padding-left: 3.125rem;
+  }
+
+  .standarts__subtitle {
+    margin-top: .875rem;
+  }
+
+  .standarts__flex-container {
+    display: block;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .standarts__logo-block,
+  .standarts__brand-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2.1875rem;
+    padding-left: 2rem;
+    width: 100%;
+    height: auto;
+  }
+}

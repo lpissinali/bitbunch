@@ -8,15 +8,20 @@ section.standarts
 
             .standarts__logo-block
                 .title Our Logo
-                img(src="./images/standarts__logo-image.png", alt="")
+                picture
+                    source(srcset="./images/standarts__logo-image-mobile.png" media="(max-width: 570px)")
+                    source(srcset="./images/standarts__logo-image-tablet.png" media="(max-width: 1000px)")
+                    img(src="./images/standarts__logo-image-desktop.png", alt="")
                 .descr This is our logo, the one that should always be used. There are three different versions to ensure optimum legibility.
                 a(href="#")
                     img(src="./images/standarts__logo-link-icon.png", alt="")
 
             .standarts__brand-block
                 .title Brand Guidelines
-                img(src="./images/standarts__brand-image.png", alt="")
+                picture
+                    source(srcset="./images/standarts__brand-image-mobile.png" media="(max-width: 570px)")
+                    source(srcset="./images/standarts__brand-image-tablet.png" media="(max-width: 1000px)")
+                    img(src="./images/standarts__brand-image-desktop.png", alt="")
                 .descr These guidelines explain how you must use and visually present our brand assets at all times.
                 a(href="#")
                     img(src="./images/standarts__brand-link-icon.png", alt="")
-

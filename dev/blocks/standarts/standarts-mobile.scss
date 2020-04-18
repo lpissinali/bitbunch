@@ -1,0 +1,42 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .standarts__wrapper {
+    padding-top: 1.5625rem;
+    padding-right: 1.5rem;
+    padding-bottom: 3rem;
+    padding-left: 1.5rem;
+  }
+
+  .standarts__subtitle {
+    font-size: .75rem;
+    line-height: 1.375rem;
+  }
+
+  .standarts__logo-block,
+  .standarts__brand-block {
+    padding-right: 1.5rem;
+    padding-bottom: 1.75rem;
+    padding-left: 1.5rem;
+
+    .title {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+
+    img {
+      margin-top: 1.1875rem;
+    }
+
+    .descr {
+      margin-top: 1rem;
+      font-size: .75rem;
+      line-height: 1.375rem;
+    }
+
+    a {
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 1.125rem;
+    }
+  }
+}
