@@ -1,0 +1,44 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .faq__wrapper {
+    padding-right: 3.125rem;
+    padding-bottom: 5rem;
+    padding-left: 3.125rem;
+  }
+
+  .faq__flex-container {
+    flex-direction: column-reverse;
+  }
+
+  .faq__headline-block {
+    padding-top: 2.1875rem;
+    width: 100%;
+  }
+
+  .faq__headline {
+    margin-top: 2.5rem;
+  }
+
+  .faq__contact-container {
+    justify-content: space-between;
+    display: flex;
+    padding-top: 3.375rem;
+  }
+
+  .faq__contact-block {
+
+    .faq__title,
+    .work-time {
+      display: inline-block;
+      margin-top: 0;
+    }
+
+    .work-time {
+      margin-left: .875rem;
+    }
+  }
+
+  .faq__link {
+    width: 20.125rem;
+  }
+}
