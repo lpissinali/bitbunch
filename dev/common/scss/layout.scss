@@ -38,8 +38,13 @@ p {
   margin: 0;
 }
 
-a {
+a,
+a:hover {
   text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
 }
 
 @media screen and ($nout1), ($nout2), ($nout3) {

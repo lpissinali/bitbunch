@@ -1,0 +1,21 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .contact-header {
+  }
+
+  .contact-header__wrapper {
+    padding-top: 3.125rem;
+    padding-right: 3.125rem;
+    padding-bottom: 8.375rem;
+    padding-left: 3.125rem;
+    width: 100%;
+  }
+
+  .contact-header__headline-block {
+    margin-top: 4.375rem;
+  }
+
+  .contact-header__subtitle {
+    width: 20.625rem;
+  }
+}

@@ -1,0 +1,120 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .faq__wrapper {
+    padding-top: 3rem;
+    padding-right: 1.5rem;
+    padding-bottom: 3rem;
+    padding-left: 1.5rem;
+  }
+
+  .faq__flex-container {
+    display: block;
+  }
+
+  .faq__headline-block {
+    padding-top: 0;
+  }
+
+  .faq__headline {
+    margin-top: 0;
+    padding-right: .625rem;
+    padding-left: .625rem;
+    font-family: $main-font-bold;
+    font-size: 1.375rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  .faq__headline:nth-child(2) {
+    margin-top: .5625rem;
+    font-family: $main-font-medium;
+    font-size: .75rem;
+    line-height: 1.375rem;
+    color: #43425f;
+  }
+
+  .faq__contact-container {
+    display: block;
+    padding-top: 0;
+  }
+
+  .faq__link {
+    margin-top: 1rem;
+    padding: .75rem;
+    width: 17rem;
+    height: 3rem;
+
+    img {
+      width: 1.5rem;
+      height: auto;
+    }
+
+    span {
+      font-size: 1rem;
+      line-height: 1.3125rem;
+    }
+  }
+
+  .faq__title {
+    margin-top: 3.1rem;
+    font-size: 1rem;
+    line-height: 1.9375rem;
+  }
+
+  .faq__contact-block {
+    padding-top: 3.125rem;
+
+    .faq__title,
+    .work-time {
+      display: block;
+      margin-top: 0;
+      margin-left: 0;
+    }
+  }
+
+  .faq__answer-block {
+    margin-top: 0;
+    padding: 0;
+    padding-top: 1.25rem;
+    width: 100%;
+    box-shadow: none;
+    background-color: inherit;
+
+    .faq__title {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .accordion {
+    margin-top: .75rem;
+  }
+
+  .accordion__headline {
+    padding-top: .75rem;
+    padding-right: 2.1875rem;
+    padding-bottom: .75rem;
+    padding-left: .75rem;
+    font-size: .875rem;
+    line-height: 1.0625rem;
+  }
+
+  .accordion__arrow {
+    top: calc(50% - .5rem);
+    right: .75rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .accordion__dropdown-wrapper {
+    padding-top: .5rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+
+    p {
+      font-size: .75rem;
+      line-height: 1.125rem;
+    }
+  }
+}

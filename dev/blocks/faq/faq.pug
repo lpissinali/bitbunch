@@ -6,21 +6,25 @@ section.faq
             .faq__headline-block
 
                 .faq__headline Didn't find an answer to your question?
-                .faq__headline Our technical support team is always ready to help you.
+                .faq__headline Our technical support team is always ready to&nbsp;help you.
 
-                .faq__title Contact us any time at
-                a(href="#").faq__link
-                    img(src="./images/faq__link-email-icon.png", alt="")
-                    span help@bitbunch.com
+                .faq__contact-container
+
+                    .faq__contact-block
+                        .faq__title Contact us any time at
+                        a(href="mailto:help@bitbunch.com").faq__link
+                            img(src="./images/faq__link-email-icon.png", alt="")
+                            span help@bitbunch.com
                 
-                .faq__title Use our support line 
-                .work-time Mo-Fr 9-18
-                a(href="#").faq__link
-                    img(src="./images/faq__link-phone-icon.png", alt="")
-                    span + 44 7911 257986
+                    .faq__contact-block
+                        .faq__title Use our support line 
+                        .work-time Mo-Fr 9-18
+                        a(href="tel:+447911257986").faq__link
+                            img(src="./images/faq__link-phone-icon.png", alt="")
+                            span + 44 7911 257986
                 
                 .faq__title You can also
-                .button-orange.faq__ticket-button Create a new ticket
+                a(href="#").button-orange.faq__ticket-button Create a new ticket
 
             .faq__answer-block
 
