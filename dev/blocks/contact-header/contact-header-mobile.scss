@@ -1,0 +1,22 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .contact-header {
+  }
+
+  .contact-header__wrapper {
+    padding-top: 2.125rem;
+    padding-right: 1.5rem;
+    padding-bottom: 6.75rem;
+    padding-left: 1.5rem;
+    width: 100%;
+  }
+
+  .contact-header__headline-block {
+    margin-top: 3.3125rem;
+  }
+
+  .contact-header__subtitle {
+    margin-top: .625rem;
+    width: 13.75rem;
+  }
+}
