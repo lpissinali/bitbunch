@@ -35,6 +35,10 @@
   font-family: $main-font-bold;
   font-size: .9375rem;
   color: $white;
+  &:hover {
+    color: $white;
+    opacity: .75;
+  }
 }
 
 .main-nav__menu-link-flag {
@@ -60,6 +64,10 @@
   font-family: $main-font-bold;
   font-size: .9375rem;
   color: $white;
+  &:hover {
+    color: $white;
+    opacity: .75;
+  }
 }
 
 .user-panel__register-button {

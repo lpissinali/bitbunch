@@ -11,6 +11,8 @@
     background: linear-gradient(to right, #324ea3, #3d6dd0);
     overflow-y: scroll;
     transition: transform 200ms;
+    display: flex;
+    flex-direction: column;
   }
 
   .main-nav__nav-menu.active {
@@ -86,6 +88,7 @@
     padding-bottom: 3.125rem;
     padding-left: 3.125rem;
     border-top: .125rem solid rgba(255, 255, 255, .5);
+    margin-top: auto; 
   }
 
   .main-nav__user-sign-in-button,
