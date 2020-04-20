@@ -2,12 +2,13 @@
 
   .you-will-get__wrapper {
     padding-top: 5.625rem;
-    padding-right: 3.125rem;
+    padding-right: 0;
     padding-bottom: 5.3125rem;
     padding-left: 3.125rem;
   }
 
   .you-will-get__headline {
+    padding-right: 3.125rem;
     text-align: center;
   }
 
@@ -28,6 +29,7 @@
   .you-will-get__advantages {
     order: 2;
     padding-top: .3125rem;
+    padding-right: 3.125rem;
     width: 100%;
   }
 

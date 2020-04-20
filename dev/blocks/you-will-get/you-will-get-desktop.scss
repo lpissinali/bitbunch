@@ -58,14 +58,16 @@
 }
 
 .you-will-get__cap-block {
+  align-items: center;
   display: flex;
   margin-top: 1.75rem;
   padding: 1.5rem;
   width: 24.625rem;
   box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
-  align-items: center;
+  background-color: $white;
 
   img {
+    flex-shrink: 0;
     display: block;
     width: 3rem;
   }
@@ -81,7 +83,13 @@
 }
 
 .you-will-get__cap-block:nth-child(2n + 1) {
+  margin-right: 2.625rem;
   margin-left: auto;
+}
+
+.you-will-get__cap-block:first-child {
+  margin-right: 0;
+  width: 20.625rem;
 }
 
 .you-will-get__buttons {
