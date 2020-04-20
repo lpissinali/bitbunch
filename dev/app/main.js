@@ -117,3 +117,11 @@ if (document.querySelector('.big-team__advisors-container')) {
     variableWidth: true,
   });
 }
+
+$(window).on('resize orientationchange', function() {
+  $('.our-team__flex-container').slick('resize');
+  $('.bit-media__flex-block').slick('resize');
+  $('.big-team__founders-container').slick('resize');
+  $('.big-team__investors-container').slick('resize');
+  $('.big-team__advisors-container').slick('resize');
+})

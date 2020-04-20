@@ -13,6 +13,10 @@
   text-transform: uppercase;
   color: $white;
   cursor: pointer;
+  &:hover {
+    color: $white;
+    background-color: darken($orange, 5%);
+  }
 }
 
 .button-blue {
@@ -29,6 +33,10 @@
   line-height: 1rem;
   color: $white;
   cursor: pointer;
+  &:hover {
+    color: $white;
+    background-color: darken($blue, 5%);
+  }
 }
 
 .learn-more-button {
