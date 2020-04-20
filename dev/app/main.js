@@ -10,6 +10,9 @@ require('./modules/register');
 // аккордион faq
 dsAccordion({});
 
+// анимация
+require('./animation');
+
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {
   $('.main-nav__sandwich-button').click(() => {
@@ -118,10 +121,10 @@ if (document.querySelector('.big-team__advisors-container')) {
   });
 }
 
-$(window).on('resize orientationchange', function() {
+$(window).on('resize orientationchange', () => {
   $('.our-team__flex-container').slick('resize');
   $('.bit-media__flex-block').slick('resize');
   $('.big-team__founders-container').slick('resize');
   $('.big-team__investors-container').slick('resize');
   $('.big-team__advisors-container').slick('resize');
-})
+});

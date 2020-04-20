@@ -20,6 +20,11 @@
     margin-top: 3rem;
     padding-top: 2rem;
     padding-bottom: 4.875rem;
+
+    &:before {
+      width: 7.8rem;
+      background-image: url("./images/we-earn__descr-container-bg-tablet.png");
+    }
   }
 
   .we-earn__text-block {

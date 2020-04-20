@@ -14,8 +14,10 @@
   .you-will-get__cap-block {
     position: relative;
     margin-top: 1rem;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
     padding: 1.125rem;
-    width: 100%;
+    width: 100% !important;
     box-shadow: .5rem .5625rem 1.125rem rgba(80, 87, 94, .1);
 
     img {
@@ -27,10 +29,6 @@
       font-size: .75rem;
       line-height: normal;
     }
-  }
-
-  .you-will-get__cap-block:first-child {
-    width: 100%;
   }
 
   .you-will-get__adv-title {

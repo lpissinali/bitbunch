@@ -30,6 +30,11 @@
     padding-right: 0;
     padding-bottom: 3.5rem;
     padding-left: 0;
+
+    &:before {
+      width: 2.57rem;
+      background-image: url("./images/we-earn__descr-container-bg-mobile.png");
+    }
   }
 
   .we-earn__text-block {

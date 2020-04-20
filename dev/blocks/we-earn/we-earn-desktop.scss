@@ -8,7 +8,7 @@
     top: 0;
     right: 0;
     display: block;
-    width: 35.3125rem;
+    width: 35rem;
     height: 100%;
     background-image: url("./images/main-footer__decor-desktop.png");
     background-position: left bottom;
@@ -48,6 +48,7 @@
 }
 
 .we-earn__descr-container {
+  position: relative;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -58,6 +59,21 @@
   padding-left: 1.9375rem;
   border-radius: .125rem;
   background-color: $white;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 13rem;
+    height: 100%;
+    background-image: url("./images/we-earn__descr-container-background.png");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    pointer-events: none;
+  }
 }
 
 .we-earn__text-block {
@@ -93,6 +109,7 @@
 }
 
 .we-earn__lets-earn-button {
+  position: relative;
   width: 18.125rem;
 }
 
