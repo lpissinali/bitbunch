@@ -1,0 +1,23 @@
+.career-header {
+}
+
+.career-header__wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 17.375rem;
+  width: 76.125rem;
+}
+
+.career-header__headline-block {
+  margin-top: 10rem;
+}
+
+.career-header__subtitle {
+  margin-top: .875rem;
+  max-width: 27.5rem;
+}
+
+@import "./career-header-tablet.scss";
+
+@import "./career-header-mobile.scss";

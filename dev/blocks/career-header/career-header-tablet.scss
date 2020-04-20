@@ -1,0 +1,22 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .career-header {
+  }
+
+  .career-header__wrapper {
+    padding-top: 3.125rem;
+    padding-right: 3.125rem;
+    padding-bottom: 8.5625rem;
+    padding-left: 3.125rem;
+    width: 100%;
+  }
+
+  .career-header__headline-block {
+    margin-top: 4.25rem;
+  }
+
+  .career-header__subtitle {
+    margin-top: .75rem;
+    max-width: 25.125rem;
+  }
+}
