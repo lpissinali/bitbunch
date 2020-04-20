@@ -1,0 +1,29 @@
+.register-header {
+}
+
+.register-page .main-nav__nav-menu,
+.register-page .main-nav__user-panel,
+.main-nav__sandwich-button {
+  display: none;
+}
+
+.register-header__wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 13.5rem;
+  width: 76.125rem;
+}
+
+.register-header__headline-block {
+  margin-top: 10rem;
+}
+
+.register-header__subtitle {
+  margin-top: 0.875rem;
+  max-width: 24.25rem;
+}
+
+@import "./register-header-tablet.scss";
+
+@import "./register-header-mobile.scss";

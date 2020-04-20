@@ -1,4 +1,9 @@
+.form-wrapper {
+  background-color: $white;
+}
 .register-section {
+  position: relative;
+  margin-top: -8rem;
   max-width: 41rem;
   margin-left: auto;
   margin-right: auto;
@@ -32,6 +37,10 @@
 .regitster__form-terms {
   width: 100%;
   margin-bottom: 1.875rem;
+  .regitster__form-terms-link {
+    font-family: $main-font-medium;
+    font-size: 0.5rem;
+  }
 }
 
 .register-section__footer {
@@ -40,3 +49,6 @@
   font-size: 1.125rem;
   margin-bottom: 1rem;
 }
+
+@import "./register-tablet.scss";
+@import "./register-mobile.scss";
