@@ -1,5 +1,13 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
+  .we-earn {
+
+    &:after {
+      width: 9.5rem;
+      background-image: url("./images/main-footer__decor-mobile.png");
+    }
+  }
+
   .we-earn__wrapper {
     padding-top: 2.9375rem;
     padding-right: 1.5rem;

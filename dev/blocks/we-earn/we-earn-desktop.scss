@@ -1,5 +1,21 @@
 .we-earn {
+  position: relative;
   background: linear-gradient(to right, #324ea3, #3d6dd0);
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 35.3125rem;
+    height: 100%;
+    background-image: url("./images/main-footer__decor-desktop.png");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    pointer-events: none;
+  }
 }
 
 .we-earn__wrapper {
