@@ -8,16 +8,19 @@
   }
 
   .news-releases__headline {
+    width: 100%;
     text-align: center;
   }
 
   .news-releases__subtitle {
     margin-top: 5px;
+    width: 100%;
     text-align: center;
   }
 
   .news-releases__flex-container {
     padding-top: 1rem;
+    width: 100%;
   }
 
   .news-releases__card {
@@ -64,6 +67,7 @@
 
   .news-releases__card-poster {
     padding: 1rem;
+    padding-top: .25rem;
 
     .name {
       font-size: 1rem;

@@ -4,28 +4,38 @@
 
 .big-team__wrapper {
   padding-top: .3125rem;
-  padding-right: 9.375rem;
   padding-bottom: 10rem;
-  padding-left: 9.375rem;
 }
 
 .big-team__headline {
   margin-top: 9.6875rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 71.3125rem;
 }
 
 .big-team__subtitle {
   margin-top: .25rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 71.3125rem;
 }
 
 .big-team__founders-container {
   flex-wrap: wrap;
   display: flex;
   margin-top: 2.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 71.3125rem;
 }
 
 .big-team__investors-container,
 .big-team__advisors-container {
   margin-top: 4.375rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 71.3125rem;
 
   .our-team__member-card {
     margin-top: 0;

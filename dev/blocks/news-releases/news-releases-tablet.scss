@@ -2,13 +2,19 @@
 
   .news-releases__wrapper {
     padding-top: 5.625rem;
-    padding-right: 3.125rem;
     padding-bottom: 2.5rem;
-    padding-left: 3.125rem;
+  }
+
+  .news-releases__headline,
+  .news-releases__subtitle {
+    margin-right: auto;
+    margin-left: auto;
+    width: 41.8125rem;
   }
 
   .news-releases__flex-container {
     padding-top: 1.125rem;
+    width: 41.8125rem;
   }
 
   .news-releases__card {

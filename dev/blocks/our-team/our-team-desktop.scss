@@ -4,9 +4,7 @@
 
 .our-team__wrapper {
   padding-top: 5.625rem;
-  padding-right: 9.375rem;
   padding-bottom: 5rem;
-  padding-left: 9.375rem;
 }
 
 .our-team__headline {
@@ -22,7 +20,10 @@
 .our-team__flex-container {
   flex-wrap: wrap;
   display: flex;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 2.5rem;
+  width: 71.3125rem;
 }
 
 .our-team__member-card {

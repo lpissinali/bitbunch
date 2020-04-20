@@ -10,7 +10,11 @@
     padding-top: 3.125rem;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #324ea3, #3d6dd0);
+    background-image: url("./images/main-nav__nav-menu-bg.png"),
+      linear-gradient(to right, #324ea3, #3d6dd0);
+    background-position: right 1rem, 0 0;
+    background-repeat: no-repeat, repeat;
+    background-size: 20.125rem auto, cover;
     overflow-y: scroll;
     transition: transform 200ms;
   }
