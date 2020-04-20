@@ -1,0 +1,20 @@
+.protection-section {
+  padding-top: 4.375rem;
+  padding-bottom: 5rem;
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.protection-section__icon {
+  padding-bottom: 1.0625rem;
+}
+
+.protection-section__description {
+  font-family: $main-font-medium;
+  font-size: 1.125rem;
+  line-height: 1.9375rem;
+}
+
+@import "./protection-section-mobile.scss";

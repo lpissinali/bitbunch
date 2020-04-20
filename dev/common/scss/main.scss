@@ -59,11 +59,16 @@
 
 // register page
 
+// header
+@import "../../blocks/register-header/register-header-desktop.scss";
+
 // register
 @import "../../blocks/forms/register/register-desktop.scss";
 
-// pressroom page
+//protection
+@import "../../blocks/protection-section/protection-section-desktop.scss";
 
+// pressroom page
 // header
 @import "../../blocks/pressroom-header/pressroom-header-desktop.scss";
 

@@ -1,0 +1,21 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .register-header {
+  }
+
+  .register-header__wrapper {
+    padding-top: 2.125rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2.125rem;
+    padding-left: 1.5rem;
+    width: 100%;
+  }
+
+  .register-header__headline-block {
+    margin-top: 3.3125rem;
+  }
+
+  .register-header__subtitle {
+    margin-top: 0.625rem;
+    width: 13.75rem;
+  }
+}
