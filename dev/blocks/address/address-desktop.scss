@@ -1,0 +1,119 @@
+.address {
+  background-color: #f9fbfe;
+  background-image: url("./images/address__bg-desktop.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.address__wrapper {
+  padding-right: 9.375rem;
+  padding-bottom: 10rem;
+  padding-left: 9.375rem;
+}
+
+.address__form {
+  position: relative;
+  display: block;
+  margin-top: -30.75rem;
+  margin-left: 36.625rem;
+  padding-top: .5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  width: 31.25rem;
+  border-radius: .25rem;
+  background-color: #efc7c2;
+}
+
+.input-container {
+  margin-top: 1rem;
+}
+
+.input-field,
+.input-textarea {
+  padding: 1rem;
+  width: 100%;
+  height: 3.125rem;
+  border: 0;
+  background-color: $white;
+  font-size: .9375rem;
+  color: #333333;
+}
+
+.input-textarea {
+  height: 9.375rem;
+}
+
+.address__submit-button {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: $blue;
+}
+
+.address__submit-button:hover {
+  background-color: darken($blue, 10%);
+}
+
+.address__headline {
+  margin-top: 16.375rem;
+}
+
+.address__subtitle {
+  margin-top: .875rem;
+}
+
+.address__flex-container {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 4.375rem;
+}
+
+.address__map-block {
+  width: 35.625rem;
+  height: 36.875rem;
+}
+
+.address__map-poster {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/address__map-poster-desktop.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.address__address-block {
+  padding-top: .125rem;
+  width: 31.125rem;
+}
+
+.address__title {
+  margin-top: 2.1875rem;
+}
+
+.address__title:first-child {
+  margin-top: 0;
+}
+
+.address__office-address {
+  margin-top: 1rem;
+  max-width: 23rem;
+  font-family: $main-font-regular;
+  font-size: 2.25rem;
+  line-height: 3.125rem;
+  color: #091540;
+}
+
+.address__link {
+  margin-top: .8125rem;
+  max-width: 26.875rem;
+  font-family: $main-font-medium;
+  font-size: 2.25rem;
+  line-height: 3.125rem;
+  color: #091540;
+}
+
+@import "./address-tablet.scss";
+
+@import "./address-mobile.scss";

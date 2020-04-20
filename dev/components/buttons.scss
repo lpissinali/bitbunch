@@ -1,11 +1,11 @@
 .button-orange {
-  border: none;
   justify-content: center;
   align-items: center;
   display: flex;
   width: 15.625rem;
   height: 3.75rem;
-  border-radius: 0.1875rem;
+  border: 0;
+  border-radius: .1875rem;
   background-color: $orange;
   font-family: $main-font-bold;
   font-size: 1.125rem;
@@ -13,9 +13,11 @@
   text-transform: uppercase;
   color: $white;
   cursor: pointer;
+  transition: background-color 200ms;
+
   &:hover {
-    color: $white;
     background-color: darken($orange, 5%);
+    color: $white;
   }
 }
 
@@ -33,9 +35,11 @@
   line-height: 1rem;
   color: $white;
   cursor: pointer;
+  transition: background-color 200ms;
+
   &:hover {
-    color: $white;
     background-color: darken($blue, 5%);
+    color: $white;
   }
 }
 
@@ -62,11 +66,12 @@
 }
 
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
+
   .button-orange {
     width: 8.5625rem;
     height: 2.25rem;
-    border-radius: 0.125rem;
-    font-size: 0.75rem;
+    border-radius: .125rem;
+    font-size: .75rem;
   }
 
   .button-blue {
@@ -77,7 +82,7 @@
 
   .learn-more-button {
     margin-left: 1.25rem;
-    font-size: 0.75rem;
+    font-size: .75rem;
     line-height: 1.125rem;
   }
 
