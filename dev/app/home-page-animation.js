@@ -41,104 +41,106 @@ if (window.matchMedia('(max-width: 1100px)').matches) {
   AnimationScene('.you-will-get', tl_you_will_get);
 
   // home bit-stats
-  const bitStartCount1 = { val: 0 };
-  const bitStartCount2 = { val: 0 };
-  const bitStartCount3 = { val: 0 };
-  const NewVal1 = parseInt($('.bit-stats-number-1-end').text());
-  const NewVal2 = parseInt($('.bit-stats-number-2-end').text());
-  const NewVal3 = parseInt($('.bit-stats-number-3-end').text());
-  document.getElementById('bitStatsScore1').innerHTML = 0;
-  document.getElementById('bitStatsScore2').innerHTML = 0;
-  document.getElementById('bitStatsScore3').innerHTML = 0;
+  if (document.querySelector('.bit-stats')) {
+    const bitStartCount1 = { val: 0 };
+    const bitStartCount2 = { val: 0 };
+    const bitStartCount3 = { val: 0 };
+    const NewVal1 = parseInt($('.bit-stats-number-1-end').text());
+    const NewVal2 = parseInt($('.bit-stats-number-2-end').text());
+    const NewVal3 = parseInt($('.bit-stats-number-3-end').text());
+    document.getElementById('bitStatsScore1').innerHTML = 0;
+    document.getElementById('bitStatsScore2').innerHTML = 0;
+    document.getElementById('bitStatsScore3').innerHTML = 0;
 
-  const aaa = String(NewVal1);
+    const aaa = String(NewVal1);
 
-  function BitStatCount1(num) {
-    const str = String(num);
-    let str1 = '';
-    let str2 = '';
-    if (num > 999999) {
-      str1 = `${str.substring(str.length - 6, str.length - 9)},`;
+    function BitStatCount1(num) {
+      const str = String(num);
+      let str1 = '';
+      let str2 = '';
+      if (num > 999999) {
+        str1 = `${str.substring(str.length - 6, str.length - 9)},`;
+      }
+      if (num > 999) {
+        str2 = `${str.substring(str.length - 3, str.length - 6)},`;
+      }
+      const str3 = str.substring(str.length, str.length - 3);
+
+      document.getElementById('bitStatsScore1').innerHTML = `$${str1}${str2}${str3}`;
     }
-    if (num > 999) {
-      str2 = `${str.substring(str.length - 3, str.length - 6)},`;
+
+    function BitStatCount2(num) {
+      const str = String(num);
+      let str1 = '';
+      let str2 = '';
+      if (num > 999999) {
+        str1 = `${str.substring(str.length - 6, str.length - 9)},`;
+      }
+      if (num > 999) {
+        str2 = `${str.substring(str.length - 3, str.length - 6)}`;
+      }
+      const str3 = str.substring(str.length, str.length - 3);
+
+      document.getElementById('bitStatsScore2').innerHTML = `${str1} ${str2} ${str3}`;
     }
-    const str3 = str.substring(str.length, str.length - 3);
 
-    document.getElementById('bitStatsScore1').innerHTML = `$${str1}${str2}${str3}`;
-  }
+    function BitStatCount3(num) {
+      const str = String(num);
+      const str1 = '';
+      let str2 = '';
+      if (num > 99) {
+        str2 = `${str.substring(str.length - 2, str.length - 4)}.`;
+      }
+      const str3 = str.substring(str.length, str.length - 2);
 
-  function BitStatCount2(num) {
-    const str = String(num);
-    let str1 = '';
-    let str2 = '';
-    if (num > 999999) {
-      str1 = `${str.substring(str.length - 6, str.length - 9)},`;
+      document.getElementById('bitStatsScore3').innerHTML = `${str1}${str2}${str3}%`;
     }
-    if (num > 999) {
-      str2 = `${str.substring(str.length - 3, str.length - 6)}`;
-    }
-    const str3 = str.substring(str.length, str.length - 3);
 
-    document.getElementById('bitStatsScore2').innerHTML = `${str1} ${str2} ${str3}`;
-  }
-
-  function BitStatCount3(num) {
-    const str = String(num);
-    const str1 = '';
-    let str2 = '';
-    if (num > 99) {
-      str2 = `${str.substring(str.length - 2, str.length - 4)}.`;
-    }
-    const str3 = str.substring(str.length, str.length - 2);
-
-    document.getElementById('bitStatsScore3').innerHTML = `${str1}${str2}${str3}%`;
-  }
-
-  const tl_bit_stats = new TimelineMax();
-  tl_bit_stats.from('.bit-stats__subtitle', 0.6, { y: '-50%', opacity: 0 });
-  tl_bit_stats.from('.bit-stats__headline', 0.6, { y: '-50%', opacity: 0 }, 0);
-  tl_bit_stats.from('.bit-stats__animation-order-1', 1.5, { opacity: 0 }, 0);
-  tl_bit_stats.from('.bit-stats__animation-order-2', 1.5, { opacity: 0 }, 0.5);
-  tl_bit_stats.from('.bit-stats__animation-order-3', 1.5, { opacity: 0 }, 1);
-  tl_bit_stats.to(
-    bitStartCount1,
-    2.5,
-    {
-      val: NewVal1,
-      roundProps: 'val',
-      onUpdate() {
-        BitStatCount1(bitStartCount1.val);
+    const tl_bit_stats = new TimelineMax();
+    tl_bit_stats.from('.bit-stats__subtitle', 0.6, { y: '-50%', opacity: 0 });
+    tl_bit_stats.from('.bit-stats__headline', 0.6, { y: '-50%', opacity: 0 }, 0);
+    tl_bit_stats.from('.bit-stats__animation-order-1', 1.5, { opacity: 0 }, 0);
+    tl_bit_stats.from('.bit-stats__animation-order-2', 1.5, { opacity: 0 }, 0.5);
+    tl_bit_stats.from('.bit-stats__animation-order-3', 1.5, { opacity: 0 }, 1);
+    tl_bit_stats.to(
+      bitStartCount1,
+      2.5,
+      {
+        val: NewVal1,
+        roundProps: 'val',
+        onUpdate() {
+          BitStatCount1(bitStartCount1.val);
+        },
       },
-    },
-    0.5
-  );
+      0.5
+    );
 
-  tl_bit_stats.to(
-    bitStartCount2,
-    2.5,
-    {
-      val: NewVal2,
-      roundProps: 'val',
-      onUpdate() {
-        BitStatCount2(bitStartCount2.val);
+    tl_bit_stats.to(
+      bitStartCount2,
+      2.5,
+      {
+        val: NewVal2,
+        roundProps: 'val',
+        onUpdate() {
+          BitStatCount2(bitStartCount2.val);
+        },
       },
-    },
-    0.8
-  );
-  tl_bit_stats.to(
-    bitStartCount3,
-    2.5,
-    {
-      val: NewVal3,
-      roundProps: 'val',
-      onUpdate() {
-        BitStatCount3(bitStartCount3.val);
+      0.8
+    );
+    tl_bit_stats.to(
+      bitStartCount3,
+      2.5,
+      {
+        val: NewVal3,
+        roundProps: 'val',
+        onUpdate() {
+          BitStatCount3(bitStartCount3.val);
+        },
       },
-    },
-    1.2
-  );
-  AnimationScene('.bit-stats', tl_bit_stats);
+      1.2
+    );
+    AnimationScene('.bit-stats', tl_bit_stats);
+  }
 
   // home bit-stats
   const tl_how_it_works = new TimelineMax();

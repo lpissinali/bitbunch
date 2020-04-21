@@ -8,7 +8,12 @@ require('./modules/validators');
 require('./modules/register');
 
 // аккордион faq
-dsAccordion({});
+const faqAccordion = new dsAccordion({});
+
+const careerAccordion = new dsAccordion({
+  mainContainer: '.career__accordion',
+  dropdownBlock: '.career__acd-dropdown',
+});
 
 // анимация
 require('./home-page-animation');

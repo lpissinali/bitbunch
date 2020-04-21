@@ -1,0 +1,127 @@
+.career {
+  background-image: linear-gradient(154deg, #fcfdff 0%, #f2f4fd 100%);
+}
+
+.career__wrapper {
+  padding-top: 0;
+  padding-right: 9.375rem;
+  padding-bottom: 10.3125rem;
+  padding-left: 9.375rem;
+}
+
+.career__accordion-container {
+  position: relative;
+  margin-top: -5.25rem;
+}
+
+.career__accordion-title {
+  font-family: $main-font-medium;
+  font-size: .875rem;
+  letter-spacing: .0187rem;
+  color: $white;
+}
+
+.career__accordion {
+  margin-top: 1.5rem;
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
+}
+
+.career__acd-headline-block {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  padding-top: 1.0625rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  border-radius: .1875rem;
+  background-color: $white;
+  transition: background-color 300ms;
+
+  img {
+    width: 3rem;
+    height: auto;
+  }
+}
+
+.career__acd-headline {
+  margin-left: 1.25rem;
+  max-width: 37.5rem;
+}
+
+.career__acd-type {
+  line-height: 1.1;
+  transition: color 300ms;
+}
+
+.career__acd-descr {
+  font-family: $main-font-regular;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+  color: #091540;
+  transition: color 300ms;
+}
+
+.career__acd-address {
+  margin-left: auto;
+  font-family: $main-font-light;
+  font-size: 1rem;
+  color: #091540;
+  transition: color 300ms;
+}
+
+.career__acd-button {
+  margin-left: 1.4375rem;
+}
+
+.career__acd-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms;
+}
+
+.accordion__acd-wrapper {
+  padding: 1.5rem;
+}
+
+.accordion__acd-apply-button {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.career__accordion.active {
+
+  .career__acd-headline-block {
+    background-color: $blue;
+  }
+
+  .career__acd-type {
+    color: $white;
+    opacity: .8;
+  }
+
+  .career__acd-descr {
+    color: $white;
+  }
+
+  .career__acd-address {
+    color: $white;
+  }
+
+  .career__acd-button {
+    background-color: $white;
+    color: $blue;
+  }
+}
+
+.career__bottom-descr {
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 43rem;
+  font-family: $main-font-regular;
+  font-size: 1.3125rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: #43425f;
+}
