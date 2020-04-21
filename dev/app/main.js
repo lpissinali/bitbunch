@@ -11,7 +11,7 @@ require('./modules/register');
 dsAccordion({});
 
 // анимация
-require('./animation');
+require('./home-page-animation');
 
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {

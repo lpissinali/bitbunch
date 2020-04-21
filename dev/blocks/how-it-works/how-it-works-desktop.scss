@@ -1,11 +1,47 @@
 .how-it-works {
+  position: relative;
   background-color: #f2f4fd;
-  background-image: url("./images/how-it-works__bg-2-desktop.png"),
-    url("./images/how-it-works__bg-desktop.svg");
-  background-position: calc(100% + 20.375rem) calc(100% - 2rem),
-    0 calc(100% + 48.75rem);
-  background-repeat: no-repeat, no-repeat;
-  background-size: 62.75rem auto, 100% auto;
+  background-image: url("./images/how-it-works__bg-desktop.svg");
+  background-position: 0 calc(100% + 48.75rem);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow-x: hidden;
+}
+
+.how-it-works__decor-line-1,
+.how-it-works__decor-line-2,
+.how-it-works__decor-line-3,
+.how-it-works__decor-line-4 {
+  position: absolute;
+  right: 0;
+  bottom: 27.6875rem;
+  width: 18.75rem;
+  height: 5.75rem;
+  background-image: url("./images/how-it-works__decor-image-1.png");
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.how-it-works__decor-line-2 {
+  bottom: 19.1875rem;
+  width: 29.5625rem;
+  background-image: url("./images/how-it-works__decor-image-2.png");
+  background-position: 0 center;
+}
+
+.how-it-works__decor-line-3 {
+  bottom: 10.75rem;
+  width: 42.3125rem;
+  background-image: url("./images/how-it-works__decor-image-3.png");
+  background-position: 0 center;
+}
+
+.how-it-works__decor-line-4 {
+  bottom: 2.25rem;
+  width: 11.9375rem;
+  background-image: url("./images/how-it-works__decor-image-4.png");
+  background-position: 0 center;
 }
 
 .how-it-works__wrapper {

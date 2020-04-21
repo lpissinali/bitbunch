@@ -37,13 +37,13 @@
 
 .main-header__description-item {
   position: relative;
+  margin-bottom: 1.1rem;
   padding-left: 2.9375rem;
   width: 25.625rem;
   font-family: $main-font-regular;
   font-size: 1.25rem;
   line-height: 2rem;
   color: $white;
-  margin-bottom: 1.1rem;
 
   &:before {
     content: "";
@@ -79,6 +79,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  transform-origin: center center;
+  transition: 400ms;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 @import "./main-header-tablet.scss";

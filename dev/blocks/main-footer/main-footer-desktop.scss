@@ -43,15 +43,25 @@
   color: $white;
 }
 
-.main-footer__menu-link {
+.main-footer__menu-item {
   display: block;
+}
+
+.main-footer__menu-link {
+  display: inline-block;
   margin-top: .75rem;
   font-family: $main-font-bold;
   font-size: .9375rem;
   color: $white;
+  opacity: .8;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+  transform-origin: center center;
+
   &:hover {
     color: $white;
-    opacity: .75;
+    opacity: 1;
+    transform: translateX(-.3rem);
   }
 }
 

@@ -59,6 +59,8 @@
   padding-left: 1.9375rem;
   border-radius: .125rem;
   background-color: $white;
+  transform-origin: center center;
+  transition: transform 300ms;
 
   &:before {
     content: "";
@@ -73,6 +75,10 @@
     background-repeat: no-repeat;
     background-size: auto 100%;
     pointer-events: none;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
 

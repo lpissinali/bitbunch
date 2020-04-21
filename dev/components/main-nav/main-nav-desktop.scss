@@ -35,14 +35,17 @@
   font-family: $main-font-bold;
   font-size: .9375rem;
   color: $white;
+  opacity: .8;
+  transition: opacity 300ms;
+
   &:hover {
     color: $white;
-    opacity: .75;
+    opacity: 1;
   }
 }
 
 .main-nav__menu-link-flag {
-  margin-right: 10px; 
+  margin-right: 10px;
   width: 1.2rem;
 }
 
@@ -64,9 +67,12 @@
   font-family: $main-font-bold;
   font-size: .9375rem;
   color: $white;
+  opacity: .8;
+  transition: opacity 300ms;
+
   &:hover {
     color: $white;
-    opacity: .75;
+    opacity: 1;
   }
 }
 

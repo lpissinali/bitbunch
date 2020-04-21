@@ -5,6 +5,13 @@
     background-image: none;
   }
 
+  .how-it-works__decor-line-1,
+  .how-it-works__decor-line-2,
+  .how-it-works__decor-line-3,
+  .how-it-works__decor-line-4 {
+    display: none;
+  }
+
   .how-it-works__wrapper {
     padding-top: 5.75rem;
     padding-right: 3.125rem;

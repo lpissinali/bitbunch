@@ -49,6 +49,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: transform 250ms;
+    transform-origin: left center;
+  }
+
+  &:hover:before {
+    transform: scale(1.25);
   }
 }
 
@@ -65,11 +71,14 @@
   width: 24.625rem;
   box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
   background-color: $white;
+  transition: box-shadow 400ms;
 
   img {
     flex-shrink: 0;
     display: block;
     width: 3rem;
+    opacity: .75;
+    transition: 400ms;
   }
 
   span {
@@ -79,6 +88,14 @@
     font-size: 1rem;
     line-height: 1.5rem;
     color: #091540;
+  }
+
+  &:hover {
+    box-shadow: .3125rem .3125rem 2.1875rem rgba(80, 87, 94, .3);
+
+    img {
+      opacity: 1;
+    }
   }
 }
 

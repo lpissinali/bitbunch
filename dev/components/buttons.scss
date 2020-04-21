@@ -13,10 +13,10 @@
   text-transform: uppercase;
   color: $white;
   cursor: pointer;
-  transition: background-color 200ms;
+  transition: background-color 300ms;
 
   &:hover {
-    background-color: darken($orange, 5%);
+    background-color: darken($orange, 7%);
     color: $white;
   }
 }
@@ -35,10 +35,10 @@
   line-height: 1rem;
   color: $white;
   cursor: pointer;
-  transition: background-color 200ms;
+  transition: background-color 300ms;
 
   &:hover {
-    background-color: darken($blue, 5%);
+    background-color: darken($blue, 7%);
     color: $white;
   }
 }
@@ -53,13 +53,39 @@
 }
 
 .video-play-button {
-  width: 3.375rem;
-  height: 3.625rem;
+  position: relative;
+  width: 4.5rem;
+  height: 4.75rem;
   background-image: url("./images/main-header__video-play-button.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
+}
+
+.button-hover-white {
+  border: 2px solid $orange;
+  transition: 300ms;
+  transform-origin: center center;
+
+  &:hover {
+    background-color: $white;
+    color: $orange;
+    transform: scaleX(1.05);
+  }
+}
+
+.button-hover-blue {
+  border: 2px solid $orange;
+  transition: 300ms;
+  transform-origin: center center;
+
+  &:hover {
+    border: 2px solid #99a1ce;
+    background-color: #fff3ef;
+    color: $orange;
+    transform: scaleX(1.05);
+  }
 }
 
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
