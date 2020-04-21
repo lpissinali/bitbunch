@@ -1,7 +1,7 @@
 .form-wrapper {
   background-color: $white;
 }
-.register-section {
+.userdata-section {
   position: relative;
   margin-top: -8rem;
   max-width: 41rem;
@@ -14,7 +14,7 @@
   border-radius: 0.125rem;
 }
 
-.register-section__caption {
+.userdata-section__caption {
   text-align: center;
   font-family: $main-font-bold;
   font-size: 2rem;
@@ -22,7 +22,7 @@
   margin-bottom: 1.25rem;
 }
 
-.register-section__description {
+.userdata-section__description {
   text-align: center;
   font-family: $main-font-medium;
   font-size: 1.125rem;
@@ -30,27 +30,31 @@
   margin-bottom: 2rem;
 }
 
-.register__form-terms {
-  margin-top: 1.875rem;
-  margin-bottom: 1.875rem;
-  .register__form-terms-link {
-    font-family: $main-font-medium;
-    font-size: 0.5rem;
-  }  
+.userdata__form-phonecode {
+  display: inline-block;
+  width: 100%;
+  max-width: 6.3125rem;
+  margin-right: 0.75rem;
 }
 
-.register__form-register {
+.userdata__form-phonenumber {
+  display: inline-block;
+  width: 100%;
+  max-width: 29.6875rem;
+}
+
+.userdata__form-register {
   width: 100%;
   margin-bottom: 1.875rem;
-
 }
 
-.register-section__footer {
+
+.userdata-section__footer {
   text-align: center;
   font-family: $main-font-medium;
   font-size: 1.125rem;
   margin-bottom: 1rem;
 }
 
-@import "./register-tablet.scss";
-@import "./register-mobile.scss";
+@import "./userdata-tablet.scss";
+@import "./userdata-mobile.scss";

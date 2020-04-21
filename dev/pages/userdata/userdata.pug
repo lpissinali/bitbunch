@@ -1,0 +1,11 @@
+extends ../../templates/index
+
+block variables
+    - var title = ''
+    - var meta1 = ''
+    - var meta2 = ''
+    - var pageClass = 'userdata-page'
+
+block content
+    include ../../blocks/userdata-header/userdata-header
+    include ../../blocks/forms/userdata/userdata.pug

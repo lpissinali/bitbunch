@@ -1,0 +1,37 @@
+.form-wrapper
+    section.userdata-section
+        h2.userdata-section__caption You're almost there!
+        .userdata-section__description Secure profits. Fully automated.
+        form#userdataForm.userdata__form(novalidate)
+            .form-group.userdata__form-firstname
+                input(type="text" class="form-control form-control-lg required" id="userdataFirstname" name="firstname" required)
+                span.form-group__placeholder First name 
+                .error-icon.d-none
+                  span !
+            .form-group.userdata__form-lastname
+                input(type="text" class="form-control form-control-lg required" id="userdataLastname" name="lastname" required)
+                span.form-group__placeholder Last name
+                .error-icon.d-none
+                  span !
+            .form-group.userdata__form-country-selector
+              select(id="countrySelector" class="select select--default")
+                option Selecionar
+                option(value="1") Bank1
+            .form-group.userdata__form-phonecode
+                input(type="text" class="form-control form-control-lg required" id="userdataPhonecode" name="phonecode" required)
+                span.form-group__placeholder +44
+                .error-icon.d-none 
+                  span !
+            .form-group.userdata__form-phonenumber
+              input(type="text" class="form-control form-control-lg required" id="userdataPhonenumber" name="phonenumber" required)
+              span.form-group__placeholder Phone number
+              .error-icon.d-none 
+                span !
+            
+            button(type="submit").button-orange.userdata__form-register Register
+        .userdata-section__footer
+            span Already have an account?
+            =' '
+            a.userdata-section__footer-link(href="#" target="_blank") Sign In
+    
+    include ../../protection-section/protection-section.pug

@@ -1,0 +1,29 @@
+.userdata-header {
+}
+
+.userdata-page .main-nav__nav-menu,
+.userdata-page .main-nav__user-panel,
+.userdata-page .main-nav__sandwich-button {
+  display: none;
+}
+
+.userdata-header__wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 13.5rem;
+  width: 76.125rem;
+}
+
+.userdata-header__headline-block {
+  margin-top: 10rem;
+}
+
+.userdata-header__subtitle {
+  margin-top: .875rem;
+  max-width: 24.25rem;
+}
+
+@import "./userdata-header-tablet.scss";
+
+@import "./userdata-header-mobile.scss";
