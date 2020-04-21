@@ -54,6 +54,10 @@
     text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .05);
   }
 
+  .num-end {
+    display: none;
+  }
+
   .descr {
     margin-top: .3125rem;
     font-family: $main-font-bold;
