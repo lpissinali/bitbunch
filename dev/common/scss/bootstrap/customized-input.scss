@@ -60,4 +60,15 @@
   width: 2rem;
   height: 2rem;
   background-color: red;
+  border-radius: 0.1875rem;
+    span {
+      display: block;
+      position: absolute;
+      top: -0.5rem;
+      left: 0.8125rem;
+      width: 2rem;
+      height: 2rem;
+      color: $white;
+      font-size: 2rem;
+    }
 }
