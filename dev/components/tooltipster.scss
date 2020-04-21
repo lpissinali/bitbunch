@@ -1,0 +1,46 @@
+.tooltipster-base.tooltipster-sidetip.tooltipster-top {
+  width: 15rem;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-box {
+  background-color: $blue-deep;
+  border: none;
+  text-align: right;
+  .tooltipster-content {
+    padding: 0.375rem 0.375rem !important;
+  }
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow{
+  left: 12.8rem !important;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow .tooltipster-arrow-border{
+  color: $blue-deep;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow .tooltipster-arrow-background {
+  border-top-color: $blue-deep;
+}
+
+.tooltipster-content__caption {
+ font-family: $main-font-regular;
+ font-size: 0.75rem;
+ color: rgba($white, 0.5);
+}
+
+.tooltipster-content__description {
+  font-family: $main-font-regular;
+  font-size: 0.875rem;
+  color: rgba($white, 1);
+}
+
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .tooltipster-content__caption {
+    font-size: 0.625rem;
+   }
+   
+   .tooltipster-content__description {
+     font-size: 0.75rem;
+   }
+}
