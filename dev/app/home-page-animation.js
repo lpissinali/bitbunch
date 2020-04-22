@@ -38,6 +38,7 @@ $(document).ready(() => {
     const tl_main_nav_tab = new TimelineMax();
     tl_main_nav_tab.from('.main-nav__logo-link', 0.5, { y: '90%', opacity: 0 });
     tl_main_nav_tab.from('.main-nav__sandwich-button', 0.5, { y: '90%', opacity: 0 }, 0);
+    tl_main_nav_tab.from('.main-nav__user-panel', 0.5, { y: '90%', opacity: 0 }, 0);
     tl_main_nav_tab.from('.main-header__headline', 0.5, { y: '20%', opacity: 0 }, 0.5);
     tl_main_nav_tab.from('.main-header__video-block', 0.5, { y: '20%', opacity: 0 }, 0.5);
     tl_main_nav_tab.from('.main-header__description-items', 0.5, { y: '20%', opacity: 0 }, 0.5);
