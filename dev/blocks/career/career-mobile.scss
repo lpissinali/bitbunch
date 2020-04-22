@@ -1,0 +1,89 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .career__wrapper {
+    padding-right: 1.4375rem;
+    padding-bottom: 3.1875rem;
+    padding-left: 1.4375rem;
+  }
+
+  .career__accordion-container {
+    margin-top: -4.6875rem;
+  }
+
+  .career__accordion {
+  }
+
+  .career__accordion:first-child {
+    margin-top: 1rem;
+  }
+
+  .career__acd-headline-block {
+    position: relative;
+    display: block;
+    padding-top: .375rem;
+    padding-right: .375rem;
+    padding-bottom: .5625rem;
+    padding-left: 4.0625rem;
+    min-height: 4rem;
+
+    img {
+      position: absolute;
+      top: .5rem;
+      left: .5rem;
+      width: 3rem;
+    }
+  }
+
+  .career__acd-headline {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .career__acd-type {
+    font-size: .75rem;
+    line-height: .875rem;
+  }
+
+  .career__acd-descr {
+    margin-top: .125rem;
+    font-family: $main-font-bold;
+    font-size: .875rem;
+    line-height: 1.0625rem;
+  }
+
+  .career__acd-address {
+    margin-top: .25rem;
+    font-size: .75rem;
+    line-height: .875rem;
+  }
+
+  .career__acd-button {
+    display: none;
+  }
+
+  .accordion__acd-wrapper {
+    padding: 1.5rem;
+    padding: .5rem;
+
+    h3,
+    p {
+      font-size: .75rem;
+      line-height: 1.125rem;
+    }
+
+    h3 {
+      margin-top: .75rem;
+    }
+  }
+
+  .accordion__acd-apply-button {
+    margin-top: 2.1875rem;
+    width: 100%;
+  }
+
+  .career__bottom-descr {
+    margin-top: 2rem;
+    font-size: .875rem;
+    line-height: 1.5rem;
+  }
+}

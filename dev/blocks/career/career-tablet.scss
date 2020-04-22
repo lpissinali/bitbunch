@@ -1,0 +1,34 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .career__wrapper {
+    padding-right: 3.125rem;
+    padding-bottom: 5.3125rem;
+    padding-left: 3.125rem;
+  }
+
+  .career__acd-headline-block {
+    padding-top: 1.1875rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.5rem;
+
+    img {
+      width: 3rem;
+    }
+  }
+
+  .career__acd-descr {
+    font-size: 1.3125rem;
+    line-height: 1.625rem;
+  }
+
+  .career__acd-button {
+    margin-left: 1.25rem;
+    width: 7.875rem;
+  }
+
+  .career__bottom-descr {
+    margin-top: 3rem;
+    max-width: 40rem;
+  }
+}
