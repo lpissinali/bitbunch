@@ -4,8 +4,10 @@ import '../common/scss/main.scss';
 import { dsAccordion } from '../components/accordion/ds-accordion';
 
 require('./polyfills/polyfills');
+require('./libs/bootstrap-select/bootstrap-select.min.js');
 require('./modules/validators');
 require('./modules/register');
+require('./modules/userdata');
 
 // аккордион faq
 const faqAccordion = new dsAccordion({});

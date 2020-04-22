@@ -19,6 +19,10 @@
     margin-bottom: 2rem;
   }
 
+  .register__form-phonenumber {
+    max-width: 10.6875rem;
+  }
+
   .register-section__footer {
     font-size: 0.875rem;
   }
@@ -26,5 +30,31 @@
     position: relative;
     font-size: 0.875rem;
     top: -5px;
+  }
+
+  .register-section__icon {
+    width: 5rem;
+    height: auto;
+    margin-bottom: 2.8125rem;
+  }
+
+  .verify-page{
+    .register-section {
+      margin-top: 0.6rem;
+    }
+    .register-section__caption {
+      max-width: 17rem;
+      font-size: 1.3125rem;
+      margin-bottom: 1rem;
+    }
+    
+    .register-section__description {
+      max-width: 17rem;
+      font-size: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .register-section__footer-link {
+      font-size: 0.875rem;
+    }
   }
 }
