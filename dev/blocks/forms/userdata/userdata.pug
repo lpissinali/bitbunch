@@ -14,14 +14,20 @@
                 .error-icon.d-none
                   span !
             .form-group.userdata__form-country-selector
-              select(id="countrySelector" class="select select--default")
-                option Selecionar
-                option(value="1") Bank1
+              select(id="countrySelector" class="form-control form-control-lg required" name="country" required)
+                option
+                option(data-content="<span style='display:flex; justify-content: space-between;'><span>American Samoa</span><span>+14</span></span>") 1
+                option(data-content="<span style='display:flex; justify-content: space-between;'><span>Andorra</span><span>+395</span></span>") 2
+                option(data-content="<span style='display:flex; justify-content: space-between;'><span>Anguila</span><span>+24</span></span>") 3
+                option(data-content="<span style='display:flex; justify-content: space-between;'><span>Argentina</span><span>+14</span></span>") 4
+                option(data-content="<span style='display:flex; justify-content: space-between;'><span>Aruba</span><span>+432</span></span>") 5
+                option(data-content="<span style='display:flex; justify-content: space-between;'><span>Australia</span><span>+31</span></span>") 6
+                option(data-content="<span style='display:flex; justify-content: space-between;'><span>Azerbajan</span><span>+582</span></span>") 7
+              span.form-group__placeholder.bootstrap-select-placeholder Country
+              .error-icon.d-none
             .form-group.userdata__form-phonecode
                 input(type="text" class="form-control form-control-lg required" id="userdataPhonecode" name="phonecode" required)
                 span.form-group__placeholder +44
-                .error-icon.d-none 
-                  span !
             .form-group.userdata__form-phonenumber
               input(type="text" class="form-control form-control-lg required" id="userdataPhonenumber" name="phonenumber" required)
               span.form-group__placeholder Phone number

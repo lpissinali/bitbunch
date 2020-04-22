@@ -18,6 +18,12 @@
       $(element).next().next('.error-icon').removeClass('d-none');
       $(element).next().next('.error-icon').tooltipster("content", tooltipsterContent);
       $(element).next().next('.error-icon').tooltipster("open");
+      //validation for select
+      if ($(element)[0].tagName == 'SELECT') {
+        $(element).parents('.form-group').find('.error-icon').removeClass('d-none');
+        $(element).parents('.form-group').find('.error-icon').tooltipster("content", tooltipsterContent);
+        $(element).parents('.form-group').find('.error-icon').tooltipster("open");
+      }
     },
     success(label, element) {
       $(element).next().next('.error-icon').addClass('d-none');
@@ -25,7 +31,9 @@
       $(element).addClass('validation-success');
     },
     rules: {
-      
+      country: {
+        required: true
+      },
     },
     errorClass: "validation-error",
     submitHandler(form) { return false;}
@@ -71,9 +79,19 @@
   });
   //custom selects
   if ($('select').length > 0) {
-    $('select:not(.selectpicker)').each(function () {
-      $(this).customSelect({});
+    $('select').each(function () {
+      $(this).selectpicker({
+      });
     });
   }
+  $('#countrySelector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+    if (event.currentTarget.value !== "") {
+      $('.bootstrap-select-placeholder').addClass("has-content");
+    } else {
+      $('.bootstrap-select-placeholder').removeClass("has-content");
+    } 
+    $(event.currentTarget).parents('.form-group').find('.error-icon').addClass('d-none');
+    $(event.currentTarget).parents('.form-group').find('.error-icon').tooltipster("close");
+  });
 
 })(jQuery);
