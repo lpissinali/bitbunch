@@ -1,0 +1,19 @@
+.link-hover-move {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -.1875rem;
+    left: 0;
+    width: 0;
+    height: .125rem;
+    background-color: $blue;
+    transition: width 100ms;
+  }
+
+  &:hover:after {
+    width: 100%;
+    background-color: $black;
+  }
+}
