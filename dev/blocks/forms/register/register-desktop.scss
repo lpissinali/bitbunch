@@ -1,5 +1,8 @@
 .form-wrapper {
   background-color: $white;
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .register-section {
   position: relative;
@@ -30,19 +33,42 @@
   margin-bottom: 2rem;
 }
 
+.register__form-phonecode {
+  display: inline-block;
+  width: 100%;
+  max-width: 6.3125rem;
+  margin-right: 0.75rem;
+}
+
+.register__form-phonenumber {
+  display: inline-block;
+  width: 100%;
+  max-width: 29.66rem;
+}
+
 .register__form-terms {
   margin-top: 1.875rem;
   margin-bottom: 1.875rem;
   .register__form-terms-link {
     font-family: $main-font-medium;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }  
 }
 
 .register__form-register {
   width: 100%;
+  margin-top: 1.0rem;
   margin-bottom: 1.875rem;
   height: 3.125rem;
+}
+
+.register-section__icon {
+  width: 7.5625rem;
+  height: auto;
+  margin-bottom: 4.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .register-section__footer {
@@ -51,6 +77,33 @@
   font-size: 1.125rem;
   margin-bottom: 1rem;
 }
+
+.verify-page{
+  .register-section {
+    margin-top: -8rem;
+  }
+  .register-section__caption {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .register-section__description {
+   margin-bottom: 5.8125rem;
+   line-height: 1.9375rem;
+   max-width: 30rem;
+   margin-left: auto;
+   margin-right: auto;
+  }
+  .register-section__footer-link {
+    font-size: 1.125rem;
+    position: relative;
+    top: -0.125rem;
+  }
+}
+
 
 @import "./register-tablet.scss";
 @import "./register-mobile.scss";

@@ -1,19 +1,19 @@
 .form-wrapper
-    section.userdata-section
-        h2.userdata-section__caption You're almost there!
-        .userdata-section__description Secure profits. Fully automated.
-        form#userdataForm.userdata__form(novalidate)
-            .form-group.userdata__form-firstname
-                input(type="text" class="form-control form-control-lg required" id="userdataFirstname" name="firstname" required)
+    section.register-section
+        h2.register-section__caption You're almost there!
+        .register-section__description Secure profits. Fully automated.
+        form#userdataForm.register__form(novalidate)
+            .form-group.register__form-firstname
+                input(type="text" class="form-control form-control-lg required" id="registerFirstname" name="firstname" required)
                 span.form-group__placeholder First name 
                 .error-icon.d-none
                   span !
-            .form-group.userdata__form-lastname
-                input(type="text" class="form-control form-control-lg required" id="userdataLastname" name="lastname" required)
+            .form-group.register__form-lastname
+                input(type="text" class="form-control form-control-lg required" id="registerLastname" name="lastname" required)
                 span.form-group__placeholder Last name
                 .error-icon.d-none
                   span !
-            .form-group.userdata__form-country-selector
+            .form-group.register__form-country-selector
               select(id="countrySelector" class="form-control form-control-lg required" name="country" required)
                 option
                 option(data-content="<span style='display:flex; justify-content: space-between;'><span>American Samoa</span><span>+14</span></span>") 1
@@ -25,19 +25,19 @@
                 option(data-content="<span style='display:flex; justify-content: space-between;'><span>Azerbajan</span><span>+582</span></span>") 7
               span.form-group__placeholder.bootstrap-select-placeholder Country
               .error-icon.d-none
-            .form-group.userdata__form-phonecode
-                input(type="text" class="form-control form-control-lg required" id="userdataPhonecode" name="phonecode" required)
+            .form-group.register__form-phonecode
+                input(type="text" class="form-control form-control-lg required" id="registerPhonecode" name="phonecode" required)
                 span.form-group__placeholder +44
-            .form-group.userdata__form-phonenumber
-              input(type="text" class="form-control form-control-lg required" id="userdataPhonenumber" name="phonenumber" required)
+            .form-group.register__form-phonenumber
+              input(type="text" class="form-control form-control-lg required" id="registerPhonenumber" name="phonenumber" required)
               span.form-group__placeholder Phone number
               .error-icon.d-none 
                 span !
             
-            button(type="submit").button-orange.userdata__form-register Register
-        .userdata-section__footer
+            button(type="submit").button-orange.register__form-register Register
+        .register-section__footer
             span Already have an account?
             =' '
-            a.userdata-section__footer-link(href="#" target="_blank") Sign In
+            a.register-section__footer-link(href="#" target="_blank") Sign In
     
     include ../../protection-section/protection-section.pug

@@ -5,6 +5,26 @@
   }
   .register-section {
     width: 100%;
-    margin-top: -15.7rem;
+    margin-top: -17rem;
+  }
+
+  .register-section__icon {
+    margin-bottom: 2.125rem;
+  }
+
+  .verify-page{
+    .register-section {
+      margin-top: -15rem;
+    }
+    .register-section__caption {
+      margin-bottom: 1.2875rem;
+    }
+    
+    .register-section__description {
+     margin-bottom: 3.125rem;
+    }
+    .register-section__footer-link {
+      
+    }
   }
 }
