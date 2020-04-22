@@ -16,11 +16,12 @@
     background-repeat: no-repeat, repeat;
     background-size: 20.125rem auto, cover;
     overflow-y: scroll;
-    transition: transform 200ms;
+    will-change: transform;
+    transition: transform 150ms;
   }
 
   .main-nav__nav-menu.active {
-    transform: translateX(-101vw);
+    transform: translate3D(-101vw, 0, 0);
   }
 
   .main-nav__controls {
