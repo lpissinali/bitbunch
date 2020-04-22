@@ -1,0 +1,26 @@
+.login-header {
+}
+
+.login-header__wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 3.125rem;
+  width: 76.125rem;
+}
+
+.login-header__headline-block {
+  margin-top: 3.125rem;
+  padding-left: 2rem;
+}
+
+.login-header__subtitle                 {
+  margin-top: 1.25rem;
+  max-width: 24.25rem;
+  font-size: 1.25rem;
+  color: $white;
+}
+
+@import "./login-header-tablet.scss";
+
+@import "./login-header-mobile.scss";

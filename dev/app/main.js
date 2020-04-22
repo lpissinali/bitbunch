@@ -8,6 +8,8 @@ require('./libs/bootstrap-select/bootstrap-select.min.js');
 require('./modules/validators');
 require('./modules/register');
 require('./modules/userdata');
+require('./modules/login');
+require('./modules/restore');
 
 // аккордион faq
 const faqAccordion = new dsAccordion({});

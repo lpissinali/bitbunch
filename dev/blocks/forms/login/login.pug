@@ -1,0 +1,26 @@
+.form-wrapper
+    section.login-section
+        h2.login-section__caption Login to your account
+        .login-section__description Enter your details below.
+        form#loginForm.login__form(novalidate)
+            .form-group.login__form-email
+                input(type="text" class="form-control form-control-lg required" id="loginEmail" name="email" required)
+                span.form-group__placeholder Email
+                .error-icon.d-none
+                  span !
+            .form-group.login__form-password
+                input(type="text" class="form-control form-control-lg required" id="loginPassword" name="password" required)
+                span.form-group__placeholder Password
+                .error-icon.d-none 
+                  span !
+            .custom-control.custom-checkbox.login__form-terms
+                input(type="checkbox" class="custom-control-input" id="loginTerm")
+                label(class="custom-control-label" for="loginTerm").login__form-terms-label Remember me
+                a(href="#" target="_blank").login__form-forgot-link Forgot your password?
+            button(type="submit").button-orange.login__form-login Login
+        .login-section__footer
+            span Don't have an account?
+            =' '
+            a.login-section__footer-link(href="register.html" target="_blank") Sign Up
+    
+    include ../../protection-section/protection-section.pug
