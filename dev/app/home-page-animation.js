@@ -6,27 +6,83 @@ $(document).ready(() => {
     document.querySelector('.preloader').style.display = 'none';
   }, 400);
 
-  if (window.matchMedia('(max-width: 1100px)').matches) {
-    console.log('animation - off');
-  } else {
-    console.log('animation - on');
-    const controller = new ScrollMagic.Controller();
+  const controller = new ScrollMagic.Controller();
 
-    function AnimationScene(section, tween) {
-      const scene = new ScrollMagic.Scene({
-        triggerElement: section,
-        triggerHook: 0.5,
-      })
-        .reverse(false)
-        // .addIndicators({
-        //   colorTrigger: 'white',
-        //   colorStart: 'white',
-        //   colorEnd: 'white',
-        //   indent: 5,
-        // })
-        .setTween(tween)
-        .addTo(controller);
-    }
+  function AnimationScene(section, tween) {
+    const scene = new ScrollMagic.Scene({
+      triggerElement: section,
+      triggerHook: 0.5,
+    })
+      .reverse(false)
+      // .addIndicators({
+      //   colorTrigger: 'white',
+      //   colorStart: 'white',
+      //   colorEnd: 'white',
+      //   indent: 5,
+      // })
+      .setTween(tween)
+      .addTo(controller);
+  }
+
+  // mobile animation
+  // if (window.matchMedia('(max-width: 570px)').matches) {
+  //   console.log('animation - mobile');
+
+  //   // tablet animation
+  // } else
+
+  if (window.matchMedia('(max-width: 1100px)').matches) {
+    console.log('animation - tablet');
+
+    // home header
+    const tl_main_nav_tab = new TimelineMax();
+    tl_main_nav_tab.from('.main-nav__logo-link', 0.5, { y: '90%', opacity: 0 });
+    tl_main_nav_tab.from('.main-nav__sandwich-button', 0.5, { y: '90%', opacity: 0 }, 0);
+    tl_main_nav_tab.from('.main-header__headline', 0.5, { y: '20%', opacity: 0 }, 0.5);
+    tl_main_nav_tab.from('.main-header__video-block', 0.5, { y: '20%', opacity: 0 }, 0.5);
+    tl_main_nav_tab.from('.main-header__description-items', 0.5, { y: '20%', opacity: 0 }, 0.5);
+    tl_main_nav_tab.from('.main-header__try-demo-button', 0.5, { y: '80%', opacity: 0 }, 0.5);
+    tl_main_nav_tab.from('.best-exchanges', 0.5, { y: '80%', opacity: 0 }, 0.5);
+    AnimationScene('.main-header', tl_main_nav_tab);
+
+    // home you-will-get
+    const tl_you_will_get_tab = new TimelineMax();
+    tl_you_will_get_tab.from('.you-will-get__wrapper', 0.5, { y: '20%', opacity: 0 });
+    AnimationScene('.you-will-get', tl_you_will_get_tab);
+
+    // home bit-stats
+    const tl_bit_stats_tab = new TimelineMax();
+    tl_bit_stats_tab.from('.bit-stats__wrapper', 0.5, { y: '20%', opacity: 0 });
+    AnimationScene('.bit-stats', tl_bit_stats_tab);
+
+    // home how_it_works
+    const tl_how_it_works_tab = new TimelineMax();
+    tl_how_it_works_tab.from('.how-it-works__wrapper', 0.5, { y: '20%', opacity: 0 });
+    AnimationScene('.how-it-works', tl_how_it_works_tab);
+
+    // home our-founders
+    const tl_our_founders_tab = new TimelineMax();
+    tl_our_founders_tab.from('.our-founders__wrapper', 0.5, { y: '20%', opacity: 0 });
+    AnimationScene('.our-founders', tl_our_founders_tab);
+
+    // home our-team
+    const tl_our_team_tab = new TimelineMax();
+    tl_our_team_tab.from('.our-team__wrapper', 0.5, { y: '20%', opacity: 0 });
+    AnimationScene('.our-team', tl_our_team_tab);
+
+    // home bit-media
+    const tl_bit_media_tab = new TimelineMax();
+    tl_bit_media_tab.from('.bit-media__wrapper', 0.5, { y: '20%', opacity: 0 });
+    AnimationScene('.bit-media', tl_bit_media_tab);
+
+    // home we-earn
+    const tl_we_earn_tab = new TimelineMax();
+    tl_we_earn_tab.from('.we-earn__wrapper', 0.5, { y: '20%', opacity: 0 });
+    AnimationScene('.we-earn', tl_we_earn_tab);
+
+    // desktop animation
+  } else {
+    console.log('animation - desktop');
 
     // home header
     const tl_main_nav = new TimelineMax();
@@ -169,7 +225,7 @@ $(document).ready(() => {
     tl_our_founders.from('.our-founders__subtitle', 0.7, { y: '-50%', opacity: 0 }, 0);
     AnimationScene('.our-founders', tl_our_founders);
 
-    // home our-founders
+    // home our-team
     const tl_our_team = new TimelineMax();
     tl_our_team.from('.our-team__headline', 0.7, { y: '-50%', opacity: 0 });
     tl_our_team.from('.our-team__subtitle', 0.7, { y: '-50%', opacity: 0 }, 0);
