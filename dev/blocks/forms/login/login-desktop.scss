@@ -1,0 +1,64 @@
+.form-wrapper {
+  background-color: $white;
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.login-section {
+  position: relative;
+  margin-top: -3rem;
+  max-width: 41rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  padding-bottom: 1.5rem;
+  background-color: $blue-light;
+  box-shadow: 0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.05);
+  border-radius: 0.125rem;
+}
+
+.login-section__caption {
+  text-align: center;
+  font-family: $main-font-bold;
+  font-size: 2rem;
+  color: $black-light;
+  margin-bottom: 1.25rem;
+}
+
+.login-section__description {
+  text-align: center;
+  font-family: $main-font-medium;
+  font-size: 1.125rem;
+  color: $black-light;
+  margin-bottom: 2rem;
+}
+
+.login__form-terms {
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+}
+
+.login__form-forgot-link {
+  position: absolute;
+  top: 0.3rem;
+  right: 0rem;
+  font-family: $main-font-medium;
+  font-size: 0.7rem;
+} 
+
+.login__form-login {
+  width: 100%;
+  margin-top: 1.0rem;
+  margin-bottom: 1.875rem;
+  height: 3.125rem;
+}
+
+.login-section__footer {
+  text-align: center;
+  font-family: $main-font-medium;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+@import "./login-tablet.scss";
+@import "./login-mobile.scss";

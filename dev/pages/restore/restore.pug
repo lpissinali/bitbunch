@@ -1,0 +1,11 @@
+extends ../../templates/index
+
+block variables
+    - var title = ''
+    - var meta1 = ''
+    - var meta2 = ''
+    - var pageClass = 'restore-page'
+
+block content
+    include ../../blocks/login-header/restore-header
+    include ../../blocks/forms/restore/restore.pug

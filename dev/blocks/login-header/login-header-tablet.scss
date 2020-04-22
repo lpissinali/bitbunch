@@ -1,0 +1,21 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .login-header {
+  }
+
+  .login-header__wrapper {
+    padding-top: 3.125rem;
+    padding-right: 3.125rem;
+    padding-bottom: 9.875rem;
+    padding-left: 3.125rem;
+    width: 100%;
+  }
+
+  .login-header__headline-block {
+    margin-top: 4.375rem;
+    padding-left: 0rem;
+  }
+
+  .login-header__subtitle {
+    width: 20.625rem;
+  }
+}
