@@ -1,0 +1,16 @@
+.hiw-header__headline-block {
+  padding-top: 3rem;
+  max-width: 28.125rem;
+}
+
+.hiw-header__subtitle {
+  margin-top: .875rem;
+}
+
+.hiw-header__register-button {
+  margin-top: 4.875rem;
+}
+
+@import "./hiw-header-tablet.scss";
+
+@import "./hiw-header-mobile.scss";
