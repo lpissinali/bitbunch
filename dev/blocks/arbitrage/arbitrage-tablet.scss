@@ -1,0 +1,22 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .arbitrage__wrapper {
+    padding-top: 5.625rem;
+    padding-bottom: 3.125rem;
+  }
+
+  .arbitrage__headline {
+    margin-right: auto;
+    margin-left: auto;
+    width: 28rem;
+  }
+
+  .arbitrage__flex-container {
+    margin-top: 1.125rem;
+    width: 41.8125rem;
+  }
+
+  .arbitrage__flex-block {
+    width: 19.875rem;
+  }
+}

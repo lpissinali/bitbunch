@@ -1,0 +1,54 @@
+.arbitrage {
+  background-color: #fcfdff;
+}
+
+.arbitrage__wrapper {
+  padding-top: 10.625rem;
+  padding-bottom: 5rem;
+}
+
+.arbitrage__headline {
+  text-align: center;
+  color: #43425f;
+}
+
+.arbitrage__flex-container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 2.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 71.3125rem;
+}
+
+.arbitrage__flex-block {
+  margin-top: 1.875rem;
+  padding-top: 2.1875rem;
+  padding-right: 2.1875rem;
+  padding-bottom: 2.125rem;
+  padding-left: 2.1875rem;
+  width: 34.6875rem;
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
+
+  .title {
+    font-family: serif;
+    font-family: $main-font-regular;
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    text-transform: uppercase;
+    color: #324ea3;
+  }
+
+  .descr {
+    margin-top: .8125rem;
+    font-family: $main-font-regular;
+    font-size: 1rem;
+    line-height: 1.8125rem;
+    color: #616884;
+  }
+}
+
+@import "./arbitrage-tablet.scss";
+
+@import "./arbitrage-mobile.scss";
