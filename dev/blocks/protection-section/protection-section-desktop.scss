@@ -1,5 +1,5 @@
 .protection-section {
-  padding-top: 4.375rem;
+  padding-top: 4rem;
   padding-bottom: 5rem;
   max-width: 35rem;
   margin-left: auto;
@@ -17,4 +17,5 @@
   line-height: 1.9375rem;
 }
 
+@import "./protection-section-tablet.scss";
 @import "./protection-section-mobile.scss";
