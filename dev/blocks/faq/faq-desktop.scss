@@ -141,6 +141,8 @@
   padding-left: 1.5rem;
   border: 1px solid #cdcfd5;
   border-radius: .1875rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 
   p {
     display: block;
@@ -151,6 +153,14 @@
     line-height: 1.563;
     color: #091540;
     opacity: .8;
+  }
+}
+
+.accordion.active {
+
+  .accordion__headline {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 

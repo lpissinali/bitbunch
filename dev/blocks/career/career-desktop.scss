@@ -36,7 +36,7 @@
   padding-left: 1.5rem;
   border-radius: .1875rem;
   background-color: $white;
-  transition: background-color 300ms;
+  transition: background-color 200ms, border-radius 200ms;
 
   img {
     display: block;
@@ -88,6 +88,8 @@
 
 .accordion__acd-wrapper {
   padding: 1.5rem;
+  border-bottom-right-radius: .1875rem;
+  border-bottom-left-radius: .1875rem;
   background-color: $white;
 
   h3,
@@ -114,6 +116,8 @@
 .career__accordion.active {
 
   .career__acd-headline-block {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
     background-color: $blue;
   }
 
