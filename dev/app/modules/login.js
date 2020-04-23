@@ -6,13 +6,15 @@
  */
 (function($) {
   $("#loginForm").validate({
+    onfocusout: false,
+    focusCleanup: true,
     errorPlacement(error, element) {
       if($(error).text() == '') {
         return
       }
       var tooltipsterContent = `
-        <p class="tooltipster-content__caption">This field is obligatory</p>
-        <p class="tooltipster-content__description">Please fill it in to continue</p>
+        <p class="tooltipster-content__caption">Please try again</p>
+        <p class="tooltipster-content__description">Wrong email or password</p>
       `;
       $(element).removeClass('validation-success');
       $(element).next().next('.error-icon').removeClass('d-none');
