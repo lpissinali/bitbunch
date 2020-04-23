@@ -26,13 +26,13 @@
 .tooltipster-content__caption {
  font-family: $main-font-regular;
  font-size: 0.75rem;
- color: rgba($white, 0.5);
+ color: rgba($red, 1);
 }
 
 .tooltipster-content__description {
   font-family: $main-font-regular;
   font-size: 0.875rem;
-  color: rgba($white, 1);
+  color: rgba($red, 1);
 }
 
 @media screen and ($mobile1), ($mobile2), ($mobile3) {

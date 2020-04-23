@@ -12,7 +12,7 @@
       }
       var tooltipsterContent = `
         <p class="tooltipster-content__caption">Error name here</p>
-        <p class="tooltipster-content__desctiption">Validation error description here</p>
+        <p class="tooltipster-content__description">Validation error description here</p>
       `;
       $(element).removeClass('validation-success');
       $(element).next().next('.error-icon').removeClass('d-none');
