@@ -10,6 +10,7 @@ require('./modules/register');
 require('./modules/userdata');
 require('./modules/login');
 require('./modules/restore');
+require('./modules/forgot');
 
 // аккордион faq
 const faqAccordion = new dsAccordion({});
