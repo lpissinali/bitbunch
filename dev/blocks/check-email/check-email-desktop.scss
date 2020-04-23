@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.restore-section {
+.check-email-section {
   position: relative;
   margin-top: -3rem;
   max-width: 41rem;
@@ -17,34 +17,47 @@
   border-radius: 0.125rem;
 }
 
-.restore-section__caption {
+.check-email-section__caption {
   text-align: center;
   font-family: $main-font-bold;
   font-size: 2rem;
+  line-height: 1.722;
   color: $black-light;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.3125rem;
 }
 
-.restore-section__description {
+.check-email-section__description {
   text-align: center;
   font-family: $main-font-medium;
   font-size: 1.125rem;
+  line-height: 1.722;
   color: $black-light;
-  margin-bottom: 2rem;
-}
-.restore__form-restore {
-  width: 100%;
-  margin-top: 1.5rem;
-  margin-bottom: 0rem;
-  height: 3.125rem;
+  margin-bottom: 2.5rem;
 }
 
-.restore-section__footer {
+.check-email-section__buttons {
+ display: flex;
+ justify-content: space-between;
+ margin-top: 1.5rem;
+ margin-bottom: 1.5rem;
+}
+
+.button-orange.check-email__form-signin,
+.button-blue.check-email__form-signup {
+  flex-basis: 17.75rem;
+  height: 3.125rem;
+  font-family: $main-font-bold;
+  font-size: 1.125rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.check-email-section__footer {
   text-align: center;
   font-family: $main-font-medium;
-  font-size: 0rem;
+  line-height: 1.722;
   margin-bottom: 0rem;
 }
 
-@import "./restore-tablet.scss";
-@import "./restore-mobile.scss";
+@import "./check-email-tablet.scss";
+@import "./check-email-mobile.scss";
