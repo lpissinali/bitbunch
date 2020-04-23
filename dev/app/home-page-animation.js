@@ -95,11 +95,11 @@ $(document).ready(() => {
     // home you-will-get
     const tl_you_will_get = new TimelineMax();
     tl_you_will_get.from('.you-will-get__headline', 0.4, { y: '-50%', opacity: 0 });
-    tl_you_will_get.from('.you-will-get__animation-order-1', 0.4, { x: '20%', opacity: 0 });
-    tl_you_will_get.from('.you-will-get__animation-order-2', 0.4, { x: '20%', opacity: 0 });
-    tl_you_will_get.from('.you-will-get__animation-order-3', 0.4, { x: '20%', opacity: 0 });
-    tl_you_will_get.from('.you-will-get__animation-order-4', 0.4, { x: '20%', opacity: 0 });
-    tl_you_will_get.from('.you-will-get__animation-order-5', 0.4, { x: '20%', opacity: 0 });
+    tl_you_will_get.from('.you-will-get__animation-order-1', 0.3, { x: '20%', opacity: 0 });
+    tl_you_will_get.from('.you-will-get__animation-order-2', 0.3, { x: '20%', opacity: 0 });
+    tl_you_will_get.from('.you-will-get__animation-order-3', 0.3, { x: '20%', opacity: 0 });
+    tl_you_will_get.from('.you-will-get__animation-order-4', 0.3, { x: '20%', opacity: 0 });
+    tl_you_will_get.from('.you-will-get__animation-order-5', 0.3, { x: '20%', opacity: 0 });
     tl_you_will_get.from('.you-will-get__advantages', 0.7, { x: '-20%', opacity: 0 }, 0);
     tl_you_will_get.from('.you-will-get__buttons', 0.5, { y: '-50%', opacity: 0 });
     AnimationScene('.you-will-get', tl_you_will_get);
@@ -168,7 +168,7 @@ $(document).ready(() => {
       tl_bit_stats.from('.bit-stats__animation-order-3', 1.5, { opacity: 0 }, 1);
       tl_bit_stats.to(
         bitStartCount1,
-        2.5,
+        2,
         {
           val: NewVal1,
           roundProps: 'val',
@@ -181,7 +181,7 @@ $(document).ready(() => {
 
       tl_bit_stats.to(
         bitStartCount2,
-        2.5,
+        2,
         {
           val: NewVal2,
           roundProps: 'val',
@@ -193,7 +193,7 @@ $(document).ready(() => {
       );
       tl_bit_stats.to(
         bitStartCount3,
-        2.5,
+        2,
         {
           val: NewVal3,
           roundProps: 'val',
@@ -210,14 +210,14 @@ $(document).ready(() => {
     const tl_how_it_works = new TimelineMax();
     tl_how_it_works.from('.how-it-works__headline', 0.7, { x: '-30%', opacity: 0 });
     tl_how_it_works.from('.how-it-works__subtitle', 0.7, { x: '-25%', opacity: 0 }, 0);
-    tl_how_it_works.from('.how-it-works__animation-order-1', 0.9, { x: '-25%', opacity: 0 }, 0.4);
-    tl_how_it_works.from('.how-it-works__animation-order-2', 0.9, { x: '-25%', opacity: 0 }, 0.8);
-    tl_how_it_works.from('.how-it-works__animation-order-3', 0.9, { x: '-25%', opacity: 0 }, 1.2);
-    tl_how_it_works.from('.how-it-works__buttons', 0.9, { x: '-25%', opacity: 0 }, 1.6);
-    tl_how_it_works.from('.how-it-works__decor-line-1', 0.9, { x: '25%', opacity: 0 }, 1.5);
-    tl_how_it_works.from('.how-it-works__decor-line-2', 0.9, { x: '20%', opacity: 0 }, 1.8);
-    tl_how_it_works.from('.how-it-works__decor-line-3', 0.9, { x: '15%', opacity: 0 }, 2.2);
-    tl_how_it_works.from('.how-it-works__decor-line-4', 0.9, { x: '30%', opacity: 0 }, 2.6);
+    tl_how_it_works.from('.how-it-works__animation-order-1', 0.7, { x: '-25%', opacity: 0 }, 0.4);
+    tl_how_it_works.from('.how-it-works__animation-order-2', 0.7, { x: '-25%', opacity: 0 }, 0.8);
+    tl_how_it_works.from('.how-it-works__animation-order-3', 0.7, { x: '-25%', opacity: 0 }, 1.2);
+    tl_how_it_works.from('.how-it-works__buttons', 0.7, { x: '-25%', opacity: 0 }, 1.6);
+    tl_how_it_works.from('.how-it-works__decor-line-1', 0.7, { x: '25%', opacity: 0 }, 1.5);
+    tl_how_it_works.from('.how-it-works__decor-line-2', 0.7, { x: '20%', opacity: 0 }, 1.8);
+    tl_how_it_works.from('.how-it-works__decor-line-3', 0.7, { x: '15%', opacity: 0 }, 2.2);
+    tl_how_it_works.from('.how-it-works__decor-line-4', 0.7, { x: '30%', opacity: 0 }, 2.6);
     AnimationScene('.how-it-works', tl_how_it_works);
 
     // home our-founders
@@ -228,29 +228,29 @@ $(document).ready(() => {
 
     // home our-team
     const tl_our_team = new TimelineMax();
-    tl_our_team.from('.our-team__headline', 0.7, { y: '-50%', opacity: 0 });
-    tl_our_team.from('.our-team__subtitle', 0.7, { y: '-50%', opacity: 0 }, 0);
-    tl_our_team.from('.our-team__animation-order-1', 0.9, { scale: 0.8, opacity: 0 }, 1);
-    tl_our_team.from('.our-team__animation-order-2', 0.9, { scale: 0.8, opacity: 0 }, 1.2);
-    tl_our_team.from('.our-team__animation-order-3', 0.9, { scale: 0.8, opacity: 0 }, 1.4);
-    tl_our_team.from('.our-team__animation-order-4', 0.9, { scale: 0.8, opacity: 0 }, 1.6);
-    tl_our_team.from('.our-team__animation-order-5', 0.9, { scale: 0.8, opacity: 0 }, 1.8);
-    tl_our_team.from('.our-team__animation-order-6', 0.9, { scale: 0.8, opacity: 0 }, 2);
-    tl_our_team.from('.our-team__animation-order-7', 0.9, { scale: 0.8, opacity: 0 }, 2.2);
-    tl_our_team.from('.our-team__animation-order-8', 0.9, { scale: 0.8, opacity: 0 }, 2.4);
+    tl_our_team.from('.our-team__headline', 0.7, { y: '-50%', opacity: 0 }, 0.2);
+    tl_our_team.from('.our-team__subtitle', 0.7, { y: '-50%', opacity: 0 }, 0.2);
+    tl_our_team.from('.our-team__animation-order-1', 0.7, { scale: 0.8, opacity: 0 }, 1);
+    tl_our_team.from('.our-team__animation-order-2', 0.7, { scale: 0.8, opacity: 0 }, 1.15);
+    tl_our_team.from('.our-team__animation-order-3', 0.7, { scale: 0.8, opacity: 0 }, 1.3);
+    tl_our_team.from('.our-team__animation-order-4', 0.7, { scale: 0.8, opacity: 0 }, 1.45);
+    tl_our_team.from('.our-team__animation-order-5', 0.7, { scale: 0.8, opacity: 0 }, 1.6);
+    tl_our_team.from('.our-team__animation-order-6', 0.7, { scale: 0.8, opacity: 0 }, 1.75);
+    tl_our_team.from('.our-team__animation-order-7', 0.7, { scale: 0.8, opacity: 0 }, 1.9);
+    tl_our_team.from('.our-team__animation-order-8', 0.7, { scale: 0.8, opacity: 0 }, 2.05);
     AnimationScene('.our-team', tl_our_team);
 
     // home bit-media
     const tl_bit_media = new TimelineMax();
-    tl_bit_media.from('.bit-media__headline', 0.7, { y: '-50%', opacity: 0 });
-    tl_bit_media.from('.bit-media__subtitle', 0.7, { y: '-50%', opacity: 0 }, 0);
-    tl_bit_media.from('.bit-media__flex-block', 0.7, { y: '-10%', opacity: 0 });
-    tl_bit_media.from('.bit-media__more-button', 0.7, { opacity: 0 });
+    tl_bit_media.from('.bit-media__headline', 0.6, { y: '-50%', opacity: 0 });
+    tl_bit_media.from('.bit-media__subtitle', 0.6, { y: '-50%', opacity: 0 }, 0);
+    tl_bit_media.from('.bit-media__flex-block', 0.6, { y: '-10%', opacity: 0 });
+    tl_bit_media.from('.bit-media__more-button', 0.6, { opacity: 0 });
     AnimationScene('.bit-media', tl_bit_media);
 
-    // home bit-media
+    // home we_earn
     const tl_we_earn = new TimelineMax();
-    tl_we_earn.from('.we-earn__wrapper', 0.7, { y: '-10%', opacity: 0 });
+    tl_we_earn.from('.we-earn__wrapper', 0.6, { y: '-10%', opacity: 0 });
     AnimationScene('.we-earn', tl_we_earn);
   }
 });
