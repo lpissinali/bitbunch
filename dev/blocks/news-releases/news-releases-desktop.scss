@@ -121,6 +121,7 @@
     font-family: $main-font-regular;
     font-size: 1.125rem;
     line-height: 1.875rem;
+    color: #324ea3;
 
     &:before {
       content: "";
@@ -134,6 +135,10 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+    }
+
+    :hover {
+      color: #324ea3;
     }
   }
 }
