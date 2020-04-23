@@ -33,5 +33,19 @@
 
   .our-founders__video-poster {
     background-image: url("./images/our-founders__video-poster-tablet.png");
+
+    &:hover {
+      transform: scale(1);
+
+      .our-founders__video-play-circle {
+        opacity: 0;
+      }
+    }
+  }
+
+  .our-founders__video-play-circle {
+    width: 0;
+    height: 0;
+    border: 0;
   }
 }
