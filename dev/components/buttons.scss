@@ -50,6 +50,10 @@
   line-height: 1.4375rem;
   text-transform: uppercase;
   color: $blue;
+
+  &:hover {
+    color: $blue;
+  }
 }
 
 .video-play-button {
