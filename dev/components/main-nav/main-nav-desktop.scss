@@ -45,7 +45,8 @@
 }
 
 .main-nav__menu-link-flag {
-  margin-right: 10px;
+  margin-right: .625rem;
+  margin-bottom: .0625rem;
   width: 1.2rem;
 }
 
@@ -64,7 +65,7 @@
 
 .user-panel__sign-in-button {
   display: block;
-  font-family: $main-font-bold;
+  font-family: $main-font-semi-bold;
   font-size: .9375rem;
   color: $white;
   opacity: .8;
