@@ -144,8 +144,13 @@
 
   p {
     display: block;
-    margin-top: .75rem;
+    margin-top: 1rem;
     margin-bottom: .75rem;
+    font-family: $main-font-light;
+    font-size: 1rem;
+    line-height: 1.563;
+    color: #091540;
+    opacity: .8;
   }
 }
 
