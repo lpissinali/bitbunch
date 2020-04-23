@@ -54,12 +54,11 @@
 
     a {
       margin-top: .25rem;
-      width: 5.5rem;
       font-size: .875rem;
-      line-height: 1.875rem;
+      line-height: 1.5rem;
 
-      &:after {
-        top: .65rem;
+      &:before {
+        top: .4rem;
         width: .5rem;
       }
     }

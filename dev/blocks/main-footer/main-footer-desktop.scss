@@ -33,6 +33,12 @@
   font-family: $main-font-regular;
   font-size: .8125rem;
   color: #091540;
+
+  span {
+    display: inline-block;
+    font-family: $main-font-bold;
+    color: #8b0bff;
+  }
 }
 
 .main-footer__menu-title {
