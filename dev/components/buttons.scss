@@ -92,6 +92,19 @@
   }
 }
 
+.blue-button-hover-white {
+  border: 2px solid $blue;
+  transition: 300ms;
+  transform-origin: center center;
+
+  &:hover {
+    border: 2px solid $blue;
+    background-color: $white;
+    color: $blue;
+    transform: scaleX(1.05);
+  }
+}
+
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
 }
 
