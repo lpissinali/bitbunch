@@ -55,16 +55,16 @@
 
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
   .custom-control {
-    padding-right: 6rem;
+    padding-right: 5rem;
   }
   .custom-control-label {
     font-size: 0.75rem;
   }
   .custom-control-label::before {
-    top: -0.1rem;
+    top: 0.2rem;
   }
 
   .custom-control-label::after {
-    top: -0.1rem;
+    top: 0.2rem;
   }
 }
