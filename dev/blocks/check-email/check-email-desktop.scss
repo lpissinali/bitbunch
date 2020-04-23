@@ -22,7 +22,7 @@
   font-family: $main-font-bold;
   font-size: 2rem;
   color: $black-light;
-  margin-bottom: 1rem;
+  margin-bottom: 0.3125rem;
   line-height: 1.722;
 }
 
@@ -30,7 +30,7 @@
   text-align: center;
   font-family: $main-font-medium;
   font-size: 1.125rem;
-  color: $black-light;
+  color: rgba($black-light, 0.8);
   margin-bottom: 2rem;
   line-height: 1.722;
 }
@@ -57,6 +57,7 @@
   font-family: $main-font-medium;
   line-height: 1.722;
   margin-bottom: 0rem;
+  color: rgba($black-light, 0.8);
 }
 
 @import "./check-email-tablet.scss";
