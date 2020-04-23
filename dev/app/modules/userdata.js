@@ -81,6 +81,10 @@
   if ($('select').length > 0) {
     $('select').each(function () {
       $(this).selectpicker({
+        dropupAuto: false,
+        size: 5,
+        liveSearch: true,
+        title: ' '
       });
     });
   }

@@ -57,7 +57,6 @@
   z-index: 1;
   padding-top: 0;
   padding-bottom: 0;
-  top: -2.8rem !important;
   border: none;
   color: $dark-grey;
   box-shadow: none;
@@ -65,6 +64,10 @@
   font-family: $main-font-medium;
   font-size: 0.875rem;
   background-color: $white;
+}
+
+.bs-searchbox {
+  padding: 0 0;
 }
 
 .dropdown-menu.inner.show li a{
