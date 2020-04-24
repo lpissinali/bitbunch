@@ -5,11 +5,11 @@
   // $('.popup-form__input#phone').mask('00000000000', { placeholder: '7XXXXXXXXXX' });
   // $('#name').mask();
   $('#registerPhonecode').inputmask({ 
-    mask: '*{2}',
+    mask: '*{6}',
     greedy: false,
     definitions: {
       '*': {
-        validator: '[0-9]',
+        validator: '[0-9+]',
         placeholder: '',
       }
     }   
