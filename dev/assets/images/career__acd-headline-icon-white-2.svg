@@ -1,0 +1,8 @@
+<svg id="Group_2" data-name="Group 2" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <rect id="Rectangle_Copy_7" data-name="Rectangle Copy 7" width="48" height="48" rx="5" fill="#fff"/>
+  <g id="Active-call" transform="translate(8 8)">
+    <rect id="bound" width="32" height="32" fill="none"/>
+    <path id="Path_76" data-name="Path 76" d="M10.22,13.267l2.939-2.939a2.667,2.667,0,0,0,.5-3.078l-.167-.333a2.667,2.667,0,0,1,.5-3.078L17.635.2A.667.667,0,0,1,18.7.369l1.472,2.944a5.85,5.85,0,0,1-1.1,6.753l-8,8a7.236,7.236,0,0,1-7.4,1.748L.456,18.739a.667.667,0,0,1-.261-1.1L3.73,14.1a2.667,2.667,0,0,1,3.078-.5l.333.167A2.667,2.667,0,0,0,10.22,13.267Z" transform="translate(7.22 6.445)" fill="#324ea3"/>
+    <path id="Combined_Shape" data-name="Combined Shape" d="M.062,16.014h0A14.666,14.666,0,0,1,14.661,0c.455,0,.916.021,1.371.064l-.247,2.655c-.369-.034-.747-.052-1.123-.052a12,12,0,0,0-11.944,13.1l-2.654.243Zm5.312-.475h0a9.335,9.335,0,0,1,9.291-10.2c.3,0,.6.015.9.043l-.256,2.654C15.1,8.011,14.882,8,14.665,8a6.669,6.669,0,0,0-6.636,7.291l-2.654.247Z" transform="translate(3.3 2.633)" fill="#324ea3" opacity="0.5"/>
+  </g>
+</svg>

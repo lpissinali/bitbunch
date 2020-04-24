@@ -1,0 +1,16 @@
+<svg id="Group_56_Copy_4" data-name="Group 56 Copy 4" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Group_17" data-name="Group 17">
+    <g id="Group_8" data-name="Group 8">
+      <g id="Group">
+        <g id="Group_4" data-name="Group 4">
+          <rect id="Rectangle_Copy_7" data-name="Rectangle Copy 7" width="48" height="48" rx="5" fill="#fff"/>
+          <path id="Combined_Shape" data-name="Combined Shape" d="M9.333,22.667h-8A1.334,1.334,0,0,1,0,21.334v-4H2.667a1.333,1.333,0,0,0,0-2.667H0V12H2.667a1.333,1.333,0,0,0,0-2.667H0V6.666H2.667A1.333,1.333,0,0,0,2.667,4H0V1.333A1.334,1.334,0,0,1,1.333,0h8a1.335,1.335,0,0,1,1.334,1.333v20A1.335,1.335,0,0,1,9.333,22.667Z" transform="translate(12 12)" fill="#324ea3" opacity="0.5"/>
+          <path id="Rectangle_102_Copy" data-name="Rectangle 102 Copy" d="M0,2.667A2.667,2.667,0,0,1,2.667,0h4A2.667,2.667,0,0,1,9.333,2.667V16.331a2.667,2.667,0,0,1-.66,1.756L5.168,22.093a.667.667,0,0,1-1,0L.66,18.087A2.667,2.667,0,0,1,0,16.331Z" transform="translate(26.667 12)" fill="#324ea3"/>
+        </g>
+        <g id="Pen_ruller" data-name="Pen&amp;ruller" transform="translate(8 8)">
+          <rect id="bound" width="32" height="32" fill="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
