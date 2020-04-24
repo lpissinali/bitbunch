@@ -1,0 +1,50 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .upfront__wrapper {
+    padding-top: 3.125rem;
+    padding-right: 3.125rem;
+    padding-bottom: 5rem;
+    padding-left: 3.125rem;
+  }
+
+  .upfront__flex-container {
+    display: block;
+  }
+
+  .upfront__header-block {
+    width: 100%;
+  }
+
+  .upfront__headline {
+    margin-right: auto;
+    margin-left: auto;
+    width: 23.75rem;
+    text-align: center;
+  }
+
+  .upfront__subtitle {
+    margin-top: .875rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 35.625rem;
+    text-align: center;
+  }
+
+  .upfront__table-block {
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  .upfront__table-image {
+    width: 3rem;
+  }
+
+  .upfront__table-row {
+    padding: 1.125rem;
+  }
+
+  .upfront__investment-col {
+    margin-left: 1.125rem;
+    width: 18.4375rem;
+  }
+}

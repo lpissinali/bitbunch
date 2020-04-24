@@ -1,0 +1,50 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .upfront__wrapper {
+    padding-top: 1.5625rem;
+    padding-right: 1.5rem;
+    padding-bottom: 3.125rem;
+    padding-left: 1.5rem;
+  }
+
+  .upfront__headline {
+    width: 100%;
+  }
+
+  .upfront__subtitle {
+    margin-top: .5rem;
+    width: 100%;
+  }
+
+  .upfront__table-block {
+    margin-top: 2rem;
+  }
+
+  .upfront__table-row {
+    justify-content: space-between;
+    padding: 1rem;
+    padding-right: .75rem;
+  }
+
+  .upfront__table-image {
+    display: none;
+  }
+
+  .upfront__investment-col,
+  .upfront__commission-col {
+
+    .value {
+      padding-right: .3125rem;
+    }
+  }
+
+  .upfront__investment-col {
+    margin-left: 0;
+    width: 10rem;
+  }
+
+  .upfront__commission-col {
+    width: 5rem;
+    text-align: right;
+  }
+}

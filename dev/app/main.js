@@ -133,6 +133,18 @@ if (document.querySelector('.big-team__advisors-container')) {
   });
 }
 
+// profits slider
+if (document.querySelector('.profits__slider-container')) {
+  $('.profits__slider-container').slick({
+    dots: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    infinite: true,
+    variableWidth: true,
+  });
+}
+
 $(window).on('resize orientationchange', () => {
   $('.our-team__flex-container').slick('resize');
   $('.bit-media__flex-block').slick('resize');

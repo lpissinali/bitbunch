@@ -1,0 +1,78 @@
+.upfront {
+  background-color: #f7f8fe;
+}
+
+.upfront__wrapper {
+  padding-top: 5rem;
+  padding-right: 9.375rem;
+  padding-bottom: 10rem;
+  padding-left: 9.375rem;
+}
+
+.upfront__subtitle {
+  margin-top: 1.25rem;
+}
+
+.upfront__flex-container {
+  justify-content: space-between;
+  display: flex;
+}
+
+.upfront__header-block {
+  width: 28.75rem;
+}
+
+.upfront__table-block {
+  width: 34.375rem;
+  box-shadow: .125rem .125rem 1.25rem rgba(80, 87, 94, .1);
+  background-color: $white;
+}
+
+.upfront__table-row {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid #efc7c2;
+}
+
+.upfront__table-row:last-child {
+  border-bottom: 0;
+}
+
+.upfront__table-image {
+  width: 2.5rem;
+  height: auto;
+}
+
+.upfront__investment-col,
+.upfront__commission-col {
+
+  .title {
+    font-family: $main-font-medium;
+    font-size: .75rem;
+    letter-spacing: .0163rem;
+    line-height: .875rem;
+    color: #66667e;
+  }
+
+  .value {
+    margin-top: .25rem;
+    font-family: $main-font-medium;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    color: $blue;
+  }
+}
+
+.upfront__investment-col {
+  margin-left: .8125rem;
+  width: 15.625rem;
+}
+
+.upfront__commission-col {
+  margin-left: .8125rem;
+  width: 12.5rem;
+}
+
+@import "./upfront-tablet.scss";
+
+@import "./upfront-mobile.scss";
