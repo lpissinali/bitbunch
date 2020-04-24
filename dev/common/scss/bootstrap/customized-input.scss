@@ -42,6 +42,7 @@
   font-family: $main-font-light;
   font-size: 0.875rem;
   transition: top 0.3s;
+  pointer-events: none;
 }
 .form-group__placeholder.has-content {
   top: 0.5rem;
