@@ -45,6 +45,10 @@
   line-height: 2rem;
   color: $white;
 
+  .bold {
+    font-family: $main-font-bold;
+  }
+
   &:before {
     content: "";
     position: absolute;
