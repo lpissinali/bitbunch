@@ -42,6 +42,11 @@ module.exports = [
     flatten: true,
   },
   {
+    from: 'dev/**/*.json',
+    to: 'documents',
+    flatten: true,
+  },  
+  {
     from: 'dev/app/libs/**/*.js',
     to: 'js',
     flatten: true,

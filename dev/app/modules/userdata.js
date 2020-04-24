@@ -75,8 +75,47 @@
       $(event.currentTarget).next().addClass("has-content");
     } else {
       $(event.currentTarget).next().removeClass("has-content");
+      //$(event.currentTarget).next().removeClass("focused");
     }
   });
+
+  $.when(getCountryCodes('documents/CountryCodes.json'))
+  .done(function () {
+    initBootstrapSelect();
+  })
+  .fail(function (){
+    initBootstrapSelect();  
+  });
+
+})(jQuery);
+
+
+function getCountryCodes(url) {
+  const d = $.Deferred();
+  $.getJSON( url, function( data ) {
+
+    var items = [];
+    $.each( data, function( key, val ) {
+      var optionHtml =         `<option 
+        country-code="${val.code}"
+        country-dial-code="${val.dial_code}"
+        data-content="
+          <span style='display:flex; justify-content: space-between;'>
+            <span>${val.name}</span>
+            <span>${val.dial_code}</span>
+          </span>"
+        value="${val.code}"  
+        >${val.code}</option>`;
+      items.push( optionHtml );
+    });
+    $('#countrySelector').html(items.join( "" ));
+    d.resolve();
+  });
+  return d;
+}
+
+
+function initBootstrapSelect() {
   //custom selects
   $.fn.selectpicker.Constructor.DEFAULTS.dropupAuto = false;
   if ($('select').length > 0) {
@@ -92,11 +131,13 @@
   $('#countrySelector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
     if (event.currentTarget.value !== "") {
       $('.bootstrap-select-placeholder').addClass("has-content");
+      var $activeOption = $(event.currentTarget).find(`option[country-code="${event.currentTarget.value}"]`);
+      $('#registerPhonecode').val($activeOption.attr('country-dial-code'));
+      $('#registerPhonecode').next().addClass("has-content");
     } else {
       $('.bootstrap-select-placeholder').removeClass("has-content");
     } 
     $(event.currentTarget).parents('.form-group').find('.error-icon').addClass('d-none');
     $(event.currentTarget).parents('.form-group').find('.error-icon').tooltipster("close");
   });
-
-})(jQuery);
+}
