@@ -88,6 +88,10 @@
   .descr {
     color: #091540;
   }
+
+  img {
+    box-shadow: .3125rem .3125rem .4375rem rgba(0, 0, 0, .1);
+  }
 }
 
 @import "./standarts-tablet.scss";
