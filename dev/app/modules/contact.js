@@ -1,11 +1,13 @@
 /* eslint-disable func-names */
 /**
- * @module registerForm
+ * @module loginForm
  * @author donrus
  * @description validation and form submit
  */
 (function($) {
-  $("#userdataForm").validate({
+  $("#contactForm").validate({
+    onfocusout: false,
+    focusCleanup: true,
     errorPlacement(error, element) {
       if($(error).text() == '') {
         return
@@ -18,12 +20,6 @@
       $(element).next().next('.error-icon').removeClass('d-none');
       $(element).next().next('.error-icon').tooltipster("content", tooltipsterContent);
       $(element).next().next('.error-icon').tooltipster("open");
-      //validation for select
-      if ($(element)[0].tagName == 'SELECT') {
-        $(element).parents('.form-group').find('.error-icon').removeClass('d-none');
-        $(element).parents('.form-group').find('.error-icon').tooltipster("content", tooltipsterContent);
-        $(element).parents('.form-group').find('.error-icon').tooltipster("open");
-      }
     },
     success(label, element) {
       $(element).next().next('.error-icon').addClass('d-none');
@@ -31,23 +27,26 @@
       $(element).addClass('validation-success');
     },
     rules: {
-      country: {
+      email: {
         required: true
       },
+      password: {
+        required: true
+      }
     },
     errorClass: "validation-error",
     submitHandler(form) { return false;}
   });
 
   // initialize tooltipster on text input elements
-  $('#userdataForm .error-icon').tooltipster({
+  $('#contactForm .error-icon').tooltipster({
     trigger: 'custom',
     onlyOne: false,
     position: 'top',
     theme: ['tooltipster-noir', 'tooltipster-noir-customized'],
     functionPosition: function(instance, helper, position){
       if(window.innerWidth < 460) {
-        position.coord.left += 45;
+        position.coord.left += 29;
       }
       if(window.innerWidth < 770) {
         position.coord.left -= 60;
@@ -64,39 +63,16 @@
       else {
         position.coord.left -= 60;
       }
-      
       return position;
     },
     contentAsHTML: true,
   });
 
-  $(".form-group input").on("focusout", event => {
+  $(".form-group input, .form-group textarea").on("focusout", event => {
     if (event.currentTarget.value !== "") {
       $(event.currentTarget).next().addClass("has-content");
     } else {
       $(event.currentTarget).next().removeClass("has-content");
     }
   });
-  //custom selects
-  $.fn.selectpicker.Constructor.DEFAULTS.dropupAuto = false;
-  if ($('select').length > 0) {
-    $('select').each(function () {
-      $(this).selectpicker({
-        dropupAuto: false,
-        size: 5,
-        liveSearch: true,
-        title: ' '
-      });
-    });
-  }
-  $('#countrySelector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
-    if (event.currentTarget.value !== "") {
-      $('.bootstrap-select-placeholder').addClass("has-content");
-    } else {
-      $('.bootstrap-select-placeholder').removeClass("has-content");
-    } 
-    $(event.currentTarget).parents('.form-group').find('.error-icon').addClass('d-none');
-    $(event.currentTarget).parents('.form-group').find('.error-icon').tooltipster("close");
-  });
-
 })(jQuery);

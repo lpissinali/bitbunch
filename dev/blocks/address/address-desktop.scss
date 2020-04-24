@@ -17,9 +17,9 @@
   display: block;
   margin-top: -30.75rem;
   margin-left: 36.625rem;
-  padding-top: .5rem;
+  padding-top: 1.5rem;
   padding-right: 1.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   padding-left: 1.5rem;
   width: 31.25rem;
   border-radius: .25rem;
@@ -42,6 +42,7 @@
   color: #333333;
 }
 
+.contact__form-name textarea,
 .input-textarea {
   height: 9.375rem;
 }
