@@ -114,12 +114,18 @@
   display: block;
   margin-left: 1.5rem;
   height: 1.125rem;
+  opacity: .6;
+  transition: 200ms;
 
   img {
     display: block;
     width: auto;
     height: 100%;
   }
+}
+
+.main-footer__social-link:hover {
+  opacity: 1;
 }
 
 .main-footer__descr-container {
