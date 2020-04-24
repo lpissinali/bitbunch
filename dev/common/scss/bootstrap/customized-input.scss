@@ -54,6 +54,11 @@
   transition: 0.3s;
 }
 
+.form-group textarea:focus ~ .form-group__placeholder {
+  top: 0.5rem;
+  transition: 0.3s;
+}
+
 .error-icon {
   position: absolute;
   top: 0.6rem;

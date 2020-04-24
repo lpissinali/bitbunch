@@ -11,6 +11,7 @@ require('./modules/userdata');
 require('./modules/login');
 require('./modules/restore');
 require('./modules/forgot');
+require('./modules/contact');
 require('./modules/masks');
 
 // аккордион faq
