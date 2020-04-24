@@ -1,0 +1,54 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .started__wrapper {
+    padding-top: 2.5rem;
+    padding-bottom: 3.125rem;
+  }
+
+  .started__flex-container {
+    padding-top: .0625rem;
+    width: 41.875rem;
+  }
+
+  .started__card {
+    margin-top: 4.6875rem;
+    margin-right: 1.875rem;
+    padding-top: 2.9375rem;
+    width: 19.9375rem;
+    height: 21.25rem;
+  }
+
+  .started__card-num {
+    left: calc(50% - 1.5625rem);
+    width: 3.125rem;
+    height: 3.125rem;
+    height: -1.6875rem;
+  }
+
+  .started__card:nth-child(3n) {
+    margin-right: 1.875rem;
+  }
+
+  .started__card:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .started__card-title {
+    font-family: $main-font-bold;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+
+  .started__card-text {
+    margin-top: 1rem;
+    font-size: .875rem;
+    line-height: 1.5rem;
+  }
+
+  .started__reg-button {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 16.9375rem;
+  }
+}
