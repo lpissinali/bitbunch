@@ -1,0 +1,29 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .rates__wrapper {
+    padding-top: 3.125rem;
+    padding-bottom: 5.3125rem;
+  }
+
+  .rates__table {
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  .rates__table-col-currency {
+    padding-left: 1.5rem;
+
+    img {
+      margin-right: .875rem;
+    }
+  }
+
+  .rates__table-row {
+
+    .cost {
+      margin-left: 1.0625rem;
+      padding-right: .5625rem;
+      padding-left: .5625rem;
+    }
+  }
+}
