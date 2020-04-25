@@ -1,0 +1,61 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .profits__wrapper {
+    padding-top: 1.5625rem;
+    padding-bottom: 1.5625rem;
+  }
+
+  .profits__headline {
+    margin-right: auto;
+    margin-left: auto;
+    width: 15.625rem;
+  }
+
+  .profits__subtitle {
+    margin-top: .3125rem;
+    width: 17.1875rem;
+  }
+
+  .profits__slider-container {
+    margin-top: 2rem;
+    width: 100vw;
+  }
+
+  .profits__slider-title {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+
+    .num {
+      left: 1.5rem;
+      font-size: 3.125rem;
+    }
+  }
+
+  .profits__slider-subtitle {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    width: 100vw;
+  }
+
+  .profits__slider-image {
+    margin-top: 6.25rem;
+    width: 100vw;
+  }
+
+  .profits__wrapper {
+
+    .slick-prev {
+      top: 9.75rem;
+      right: auto;
+      left: 1.5rem;
+    }
+
+    .slick-next {
+      top: 9.75rem;
+      right: 1.5rem;
+      width: 14.5rem;
+    }
+  }
+}

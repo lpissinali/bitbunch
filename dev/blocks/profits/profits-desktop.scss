@@ -12,6 +12,7 @@
 }
 
 .profits__subtitle {
+  margin-top: .875rem;
   margin-right: auto;
   margin-left: auto;
   width: 33.75rem;
@@ -20,25 +21,38 @@
 
 .profits__slider-container {
   position: relative;
-  margin-top: .875rem;
-  margin-top: 4.6875rem;
+  margin-top: 3.6875rem;
   margin-right: auto;
   margin-left: auto;
   width: 71.375rem;
 }
 
 .profits__slider-title {
+  position: relative;
+  padding-top: 1.25rem;
   padding-left: 1.25rem;
   font-family: $main-font-semi-bold;
   font-size: 2rem;
   line-height: 2.125rem;
   color: $blue;
+
+  .num {
+    position: absolute;
+    top: -.5rem;
+    left: 0;
+    font-family: $main-font-bold;
+    font-size: 5rem;
+    line-height: 4.25rem;
+    text-transform: uppercase;
+    color: rgba(252, 174, 138, .3);
+    opacity: .8;
+  }
 }
 
 .profits__slider-subtitle {
   margin-top: 1.4375rem;
   padding-left: 1.25rem;
-  max-width: 39.375rem;
+  width: 39.375rem;
   font-family: $main-font-medium;
 }
 
@@ -52,7 +66,7 @@
   .slick-prev,
   .slick-next {
     position: absolute;
-    top: 0;
+    top: 1.25rem;
     right: 0;
     z-index: 1;
     width: 2.5rem;
@@ -86,3 +100,7 @@
     color: $blue;
   }
 }
+
+@import "./profits-tablet.scss";
+
+@import "./profits-mobile.scss";
