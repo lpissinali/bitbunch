@@ -1,0 +1,45 @@
+.calculation {
+  background-color: #f7f8fe;
+  background-image: url("./images/calculation__bg-desktop.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 93.125rem auto;
+}
+
+.calculation__wrapper {
+  padding-top: 8.25rem;
+  padding-bottom: 5rem;
+}
+
+.calculation__headline {
+  text-align: center;
+  color: $white;
+}
+
+.calculation__subtitle {
+  margin-top: .875rem;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 51.875rem;
+  text-align: center;
+  color: $white;
+  opacity: .8;
+}
+
+.calculation__flex-container {
+  display: flex;
+  margin-top: 4.375rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 71.25rem;
+  border-radius: .1875rem;
+  background-color: $white;
+}
+
+.calculation__range-block {
+  width: 41.75rem;
+}
+
+.calculation__result-block {
+  width: 29.5rem;
+}
