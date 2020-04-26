@@ -1,0 +1,75 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .calculation {
+    background-color: #f7f8fe;
+    background-image: url("./images/calculation__bg-mobile.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+
+  .calculation__wrapper {
+    padding-top: 5.9375rem;
+    padding-right: 0;
+    padding-bottom: 5rem;
+    padding-left: 0;
+  }
+
+  .calculation__headline,
+  .calculation__subtitle {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .calculation__subtitle {
+    margin-top: .1875rem;
+    width: 100%;
+  }
+
+  .calculation__flex-container {
+    display: block;
+    margin-top: 2.25rem;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .calculation__range-block {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1rem;
+    width: 18rem;
+    height: auto;
+    border-radius: .1875rem;
+    background-color: $white;
+  }
+
+  .calculation__button-cur {
+    width: 4.625rem;
+    height: 4.625rem;
+    font-size: .875rem;
+
+    img {
+      height: 1.25rem;
+    }
+  }
+
+  .calculation__result-block {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  .calculation__result-data {
+    height: 6.875rem;
+    background-color: transparent;
+    background-image: none;
+
+    .value {
+      font-size: 1.25rem;
+      line-height: 1.625rem;
+    }
+  }
+
+  .calculation__start-button {
+    width: 100%;
+  }
+}

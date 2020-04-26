@@ -37,9 +37,136 @@
 }
 
 .calculation__range-block {
+  padding-top: 2.5rem;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
   width: 41.75rem;
+}
+
+.calculation__title-block {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+
+  .title {
+    font-family: $main-font-medium;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    color: #535b79;
+  }
+
+  .value {
+    font-family: $main-font-bold;
+    font-size: 1.5rem;
+    line-height: 1.9375rem;
+    color: $orange;
+
+    .units {
+      font-family: $main-font-regular;
+    }
+  }
+}
+
+.calculation__value-block {
+  justify-content: space-between;
+  display: flex;
+  margin-top: .625rem;
+  font-family: $main-font-bold;
+  font-size: .875rem;
+  line-height: 1.125rem;
+  color: #091540;
+  opacity: .5;
+}
+
+.calculation__buttons-block {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 1.375rem;
+}
+
+.calculation__button-cur {
+  border: .125rem solid $blue;
+  background-color: $white;
+  color: $blue;
+
+  img {
+    margin-right: .4375rem;
+    width: auto;
+    height: 1.4375rem;
+  }
+}
+
+.calculation__button-cur.active {
+  background-color: $blue;
+  color: $white;
+}
+
+.calculation__currency-block {
+  margin-top: 3.125rem;
+}
+
+.calculation__mount-block {
+  margin-top: 3.125rem;
+}
+
+.calculation__start-button {
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 18.125rem;
 }
 
 .calculation__result-block {
   width: 29.5rem;
 }
+
+.calculation__result-data {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 9.1875rem;
+  border-bottom: .125rem solid #90a3ce;
+  background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
+
+  .title {
+    font-family: $main-font-medium;
+    font-size: 17px;
+    line-height: 22px;
+    color: $white;
+    opacity: .7;
+  }
+
+  .value {
+    margin-top: .875rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    color: $white;
+
+    .num {
+      font-family: $main-font-bold;
+    }
+  }
+}
+
+.calculation__result-data:last-child {
+  border-bottom: 0;
+}
+
+.calculation__result-data.active {
+  background: none;
+  background-color: #93addc;
+
+  .title {
+    font-family: $main-font-semi-bold;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    opacity: 1;
+  }
+}
+
+@import "./range.scss";
+
+@import "./calculation-tablet.scss";
+
+@import "./calculation-mobile.scss";

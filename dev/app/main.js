@@ -152,3 +152,18 @@ $(window).on('resize orientationchange', () => {
   $('.big-team__investors-container').slick('resize');
   $('.big-team__advisors-container').slick('resize');
 });
+
+// range
+if (document.querySelector('.calculation__currency-range')) {
+  $('.calculation__currency-range').on('change mousemove', function() {
+    $('.calculation__currency-value').html($(this).val());
+  });
+  $('.calculation__currency-value').html($('.calculation__currency-range').val());
+}
+
+if (document.querySelector('.calculation__mount-range')) {
+  $('.calculation__mount-range').on('change mousemove', function() {
+    $('.calculation__mount-value').html($(this).val());
+  });
+  $('.calculation__mount-value').html($('.calculation__mount-range').val());
+}
