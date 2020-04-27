@@ -76,14 +76,16 @@ $(document).ready(() => {
     AnimationScene('.main-header', tl_main_nav_tab);
 
     // home you-will-get
-    const tl_you_will_get_tab = new TimelineMax();
-    tl_you_will_get_tab.from('.you-will-get__headline', 0.5, { y: '100%', opacity: 0 });
+    const tl_you_will_get_cap_tab = new TimelineMax();
+    tl_you_will_get_cap_tab.from('.you-will-get__headline', 0.5, { y: '100%', opacity: 0 });
+    tl_you_will_get_cap_tab.from('.you-will-get__capabilities', 0.5, { y: '20%', opacity: 0 });
+    AnimationScene('.you-will-get', tl_you_will_get_cap_tab);
 
-    tl_you_will_get_tab.from('.you-will-get__capabilities', 0.5, { y: '20%', opacity: 0 }, 0);
-    tl_you_will_get_tab.from('.you-will-get__advantages', 0.5, { y: '20%', opacity: 0 }, 1);
-    tl_you_will_get_tab.from('.you-will-get__buttons', 0.5, { y: '100%', opacity: 0 }, 1);
-
-    AnimationScene('.you-will-get', tl_you_will_get_tab);
+    // home you-will-get adv
+    const tl_you_will_get__adv_tab = new TimelineMax();
+    tl_you_will_get__adv_tab.from('.you-will-get__advantages', 0.5, { y: '15%', opacity: 0 });
+    tl_you_will_get__adv_tab.from('.you-will-get__buttons', 0.5, { y: '100%', opacity: 0 });
+    AnimationScene('.you-will-get__advantages', tl_you_will_get__adv_tab);
 
     // home bit-stats
     if (document.querySelector('.bit-stats')) {
