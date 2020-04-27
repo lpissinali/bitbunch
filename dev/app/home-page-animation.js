@@ -191,6 +191,16 @@ $(document).ready(() => {
 
     // home bit-stats
     if (document.querySelector('.bit-stats')) {
+      const bitStartCount1 = { val: 0 };
+      const bitStartCount2 = { val: 0 };
+      const bitStartCount3 = { val: 0 };
+      const NewVal1 = parseInt($('.bit-stats-number-1-end').text());
+      const NewVal2 = parseInt($('.bit-stats-number-2-end').text());
+      const NewVal3 = parseInt($('.bit-stats-number-3-end').text());
+      document.getElementById('bitStatsScore1').innerHTML = 0;
+      document.getElementById('bitStatsScore2').innerHTML = 0;
+      document.getElementById('bitStatsScore3').innerHTML = 0;
+
       const tl_bit_stats = new TimelineMax();
       tl_bit_stats.from('.bit-stats__subtitle', 0.6, { y: '-50%', opacity: 0 });
       tl_bit_stats.from('.bit-stats__headline', 0.6, { y: '-50%', opacity: 0 }, 0);
