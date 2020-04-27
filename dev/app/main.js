@@ -23,7 +23,11 @@ const careerAccordion = new dsAccordion({
 });
 
 // анимация
-require('./home-page-animation');
+require('./page-home-anim');
+
+require('./page-pressroom-anim');
+
+require('./page-team-anim');
 
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {
