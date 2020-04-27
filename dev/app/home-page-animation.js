@@ -14,22 +14,51 @@ $(document).ready(() => {
       triggerHook: 0.55,
     })
       .reverse(false)
-      // .addIndicators({
-      //   colorTrigger: 'white',
-      //   colorStart: 'white',
-      //   colorEnd: 'white',
-      //   indent: 5,
-      // })
       .setTween(tween)
       .addTo(controller);
   }
 
-  // mobile animation
-  // if (window.matchMedia('(max-width: 570px)').matches) {
-  //   console.log('animation - mobile');
+  function BitStatCount1(num) {
+    const str = String(num);
+    let str1 = '';
+    let str2 = '';
+    if (num > 999999) {
+      str1 = `${str.substring(str.length - 6, str.length - 9)},`;
+    }
+    if (num > 999) {
+      str2 = `${str.substring(str.length - 3, str.length - 6)},`;
+    }
+    const str3 = str.substring(str.length, str.length - 3);
 
-  //   // tablet animation
-  // } else
+    document.getElementById('bitStatsScore1').innerHTML = `$${str1}${str2}${str3}`;
+  }
+
+  function BitStatCount2(num) {
+    const str = String(num);
+    let str1 = '';
+    let str2 = '';
+    if (num > 999999) {
+      str1 = `${str.substring(str.length - 6, str.length - 9)},`;
+    }
+    if (num > 999) {
+      str2 = `${str.substring(str.length - 3, str.length - 6)}`;
+    }
+    const str3 = str.substring(str.length, str.length - 3);
+
+    document.getElementById('bitStatsScore2').innerHTML = `${str1} ${str2} ${str3}`;
+  }
+
+  function BitStatCount3(num) {
+    const str = String(num);
+    const str1 = '';
+    let str2 = '';
+    if (num > 99) {
+      str2 = `${str.substring(str.length - 2, str.length - 4)}.`;
+    }
+    const str3 = str.substring(str.length, str.length - 2);
+
+    document.getElementById('bitStatsScore3').innerHTML = `${str1}${str2}${str3}%`;
+  }
 
   if (window.matchMedia('(max-width: 1100px)').matches) {
     console.log('animation - tablet');
@@ -57,9 +86,58 @@ $(document).ready(() => {
     AnimationScene('.you-will-get', tl_you_will_get_tab);
 
     // home bit-stats
-    const tl_bit_stats_tab = new TimelineMax();
-    tl_bit_stats_tab.from('.bit-stats__wrapper', 0.5, { y: '20%', opacity: 0 });
-    AnimationScene('.bit-stats', tl_bit_stats_tab);
+    if (document.querySelector('.bit-stats')) {
+      const bitStartCount1 = { val: 0 };
+      const bitStartCount2 = { val: 0 };
+      const bitStartCount3 = { val: 0 };
+      const NewVal1 = parseInt($('.bit-stats-number-1-end').text());
+      const NewVal2 = parseInt($('.bit-stats-number-2-end').text());
+      const NewVal3 = parseInt($('.bit-stats-number-3-end').text());
+      document.getElementById('bitStatsScore1').innerHTML = 0;
+      document.getElementById('bitStatsScore2').innerHTML = 0;
+      document.getElementById('bitStatsScore3').innerHTML = 0;
+
+      const tl_bit_stats_tab = new TimelineMax();
+      tl_bit_stats_tab.from('.bit-stats__wrapper', 0.5, { y: '20%', opacity: 0 });
+      tl_bit_stats_tab.to(
+        bitStartCount1,
+        2,
+        {
+          val: NewVal1,
+          roundProps: 'val',
+          onUpdate() {
+            BitStatCount1(bitStartCount1.val);
+          },
+        },
+        0.5
+      );
+
+      tl_bit_stats_tab.to(
+        bitStartCount2,
+        2,
+        {
+          val: NewVal2,
+          roundProps: 'val',
+          onUpdate() {
+            BitStatCount2(bitStartCount2.val);
+          },
+        },
+        0.8
+      );
+      tl_bit_stats_tab.to(
+        bitStartCount3,
+        2,
+        {
+          val: NewVal3,
+          roundProps: 'val',
+          onUpdate() {
+            BitStatCount3(bitStartCount3.val);
+          },
+        },
+        1.2
+      );
+      AnimationScene('.bit-stats', tl_bit_stats_tab);
+    }
 
     // home how_it_works
     const tl_how_it_works_tab = new TimelineMax();
@@ -111,60 +189,6 @@ $(document).ready(() => {
 
     // home bit-stats
     if (document.querySelector('.bit-stats')) {
-      const bitStartCount1 = { val: 0 };
-      const bitStartCount2 = { val: 0 };
-      const bitStartCount3 = { val: 0 };
-      const NewVal1 = parseInt($('.bit-stats-number-1-end').text());
-      const NewVal2 = parseInt($('.bit-stats-number-2-end').text());
-      const NewVal3 = parseInt($('.bit-stats-number-3-end').text());
-      document.getElementById('bitStatsScore1').innerHTML = 0;
-      document.getElementById('bitStatsScore2').innerHTML = 0;
-      document.getElementById('bitStatsScore3').innerHTML = 0;
-
-      const aaa = String(NewVal1);
-
-      function BitStatCount1(num) {
-        const str = String(num);
-        let str1 = '';
-        let str2 = '';
-        if (num > 999999) {
-          str1 = `${str.substring(str.length - 6, str.length - 9)},`;
-        }
-        if (num > 999) {
-          str2 = `${str.substring(str.length - 3, str.length - 6)},`;
-        }
-        const str3 = str.substring(str.length, str.length - 3);
-
-        document.getElementById('bitStatsScore1').innerHTML = `$${str1}${str2}${str3}`;
-      }
-
-      function BitStatCount2(num) {
-        const str = String(num);
-        let str1 = '';
-        let str2 = '';
-        if (num > 999999) {
-          str1 = `${str.substring(str.length - 6, str.length - 9)},`;
-        }
-        if (num > 999) {
-          str2 = `${str.substring(str.length - 3, str.length - 6)}`;
-        }
-        const str3 = str.substring(str.length, str.length - 3);
-
-        document.getElementById('bitStatsScore2').innerHTML = `${str1} ${str2} ${str3}`;
-      }
-
-      function BitStatCount3(num) {
-        const str = String(num);
-        const str1 = '';
-        let str2 = '';
-        if (num > 99) {
-          str2 = `${str.substring(str.length - 2, str.length - 4)}.`;
-        }
-        const str3 = str.substring(str.length, str.length - 2);
-
-        document.getElementById('bitStatsScore3').innerHTML = `${str1}${str2}${str3}%`;
-      }
-
       const tl_bit_stats = new TimelineMax();
       tl_bit_stats.from('.bit-stats__subtitle', 0.6, { y: '-50%', opacity: 0 });
       tl_bit_stats.from('.bit-stats__headline', 0.6, { y: '-50%', opacity: 0 }, 0);
