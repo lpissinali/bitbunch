@@ -44,8 +44,14 @@
 }
 
 .upfront__table-image {
+  flex-shrink: 0;
   width: 2.5rem;
-  height: auto;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .upfront__investment-col,
