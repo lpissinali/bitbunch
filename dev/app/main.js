@@ -24,10 +24,9 @@ const careerAccordion = new dsAccordion({
 
 // анимация
 require('./page-home-anim');
-
 require('./page-pressroom-anim');
-
 require('./page-team-anim');
+require('./page-contact-anim');
 
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {
