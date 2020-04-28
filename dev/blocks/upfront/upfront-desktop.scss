@@ -24,8 +24,13 @@
 
 .upfront__table-block {
   width: 34.375rem;
-  box-shadow: .125rem .125rem 1.25rem rgba(80, 87, 94, .1);
+  box-shadow: .3125rem .375rem .625rem rgba(80, 87, 94, .1);
   background-color: $white;
+  transition: box-shadow 300ms;
+
+  &:hover {
+    box-shadow: .3125rem .375rem 1.25rem rgba(80, 87, 94, .3);
+  }
 }
 
 .upfront__table-row {

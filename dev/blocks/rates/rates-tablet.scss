@@ -26,4 +26,11 @@
       padding-left: .5625rem;
     }
   }
+
+  .rates__table-row-hover {
+
+    &:hover {
+      transform: none;
+    }
+  }
 }

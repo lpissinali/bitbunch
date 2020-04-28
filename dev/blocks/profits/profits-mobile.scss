@@ -19,6 +19,11 @@
   .profits__slider-container {
     margin-top: 2rem;
     width: 100vw;
+
+    &:before {
+      top: 11.1rem;
+      right: .89em;
+    }
   }
 
   .profits__slider-title {
