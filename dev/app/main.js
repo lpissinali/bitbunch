@@ -160,16 +160,69 @@ $(window).on('resize orientationchange', () => {
 });
 
 // range
-if (document.querySelector('.calculation__currency-range')) {
-  $('.calculation__currency-range').on('change mousemove', function() {
-    $('.calculation__currency-value').html($(this).val());
+if (document.querySelector('.calculation__button-cur.bitcoin')) {
+  document.querySelector('.calculation__button-cur.bitcoin').addEventListener('click', () => {
+    $('.calculation__button-cur').removeClass('active');
+    $('.calculation__button-cur.bitcoin').addClass('active');
+    $('.calculation__currency-block').removeClass('active');
+    $('.calculation__currency-btc-block').addClass('active');
+    $('.calculation__result-sum').html($('.calculation__btc-range').val());
+    $('.calculation__result-units').html(' BTC');
   });
-  $('.calculation__currency-value').html($('.calculation__currency-range').val());
+}
+
+if (document.querySelector('.calculation__button-cur.dollar')) {
+  document.querySelector('.calculation__button-cur.dollar').addEventListener('click', () => {
+    $('.calculation__button-cur').removeClass('active');
+    $('.calculation__button-cur.dollar').addClass('active');
+    $('.calculation__currency-block').removeClass('active');
+    $('.calculation__currency-etc-block').addClass('active');
+    $('.calculation__result-sum').html($('.calculation__etc-range').val());
+    $('.calculation__result-units').html(' ETC');
+  });
+}
+
+if (document.querySelector('.calculation__button-cur.bitcoin')) {
+  document.querySelector('.calculation__button-cur.euro').addEventListener('click', () => {
+    $('.calculation__button-cur').removeClass('active');
+    $('.calculation__button-cur.euro').addClass('active');
+    $('.calculation__currency-block').removeClass('active');
+    $('.calculation__currency-usdt-block').addClass('active');
+    $('.calculation__result-sum').html($('.calculation__usdt-range').val());
+    $('.calculation__result-units').html(' USDT');
+  });
+}
+
+// range
+if (document.querySelector('.calculation__btc-range')) {
+  $('.calculation__btc-range').on('change mousemove', function() {
+    $('.calculation__btc-value').html($(this).val());
+    $('.calculation__result-sum').html($(this).val());
+  });
+  $('.calculation__btc-value').html($('.calculation__btc-range').val());
+}
+
+if (document.querySelector('.calculation__etc-range')) {
+  $('.calculation__etc-range').on('change mousemove', function() {
+    $('.calculation__etc-value').html($(this).val());
+    $('.calculation__result-sum').html($(this).val());
+  });
+  $('.calculation__etc-value').html($('.calculation__etc-range').val());
+}
+
+if (document.querySelector('.calculation__usdt-range')) {
+  $('.calculation__usdt-range').on('change mousemove', function() {
+    $('.calculation__usdt-value').html($(this).val());
+    $('.calculation__result-sum').html($(this).val());
+  });
+  $('.calculation__usdt-value').html($('.calculation__usdt-range').val());
 }
 
 if (document.querySelector('.calculation__mount-range')) {
   $('.calculation__mount-range').on('change mousemove', function() {
     $('.calculation__mount-value').html($(this).val());
+    $('.calculation__result-mount').html($(this).val());
   });
   $('.calculation__mount-value').html($('.calculation__mount-range').val());
+  $('.calculation__result-mount').html($('.calculation__mount-range').val());
 }

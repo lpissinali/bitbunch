@@ -13,25 +13,47 @@ section.calculation
 
                 .calculation__buttons-block
                     .button-blue.calculation__button-cur.bitcoin.active
-                        img(src="./images/calculation__button-bitkoin-icon.png", alt="") 
+                        img(src="./images/calculation__button-bitkoin-icon.png", alt="")
                         span BTC
                     .button-blue.calculation__button-cur.dollar
-                        img(src="./images/calculation__button-dollar-icon.png", alt="") 
-                        span USD
+                        img(src="./images/calculation__button-dollar-icon.png", alt="")
+                        span ETC
                     .button-blue.calculation__button-cur.euro
                         img(src="./images/calculation__button-euro-icon.png", alt="")
-                        span EUR
+                        span USDT
                 
-                .calculation__currency-block
+                .calculation__currency-block.calculation__currency-btc-block.active
                     .calculation__title-block 
                         .title Investment amount
                         .value
-                            span.num.calculation__currency-value 1
+                            span.num.calculation__currency-value.calculation__btc-value 1
                             span.units &nbsp;BTC
-                    input(type="range" min="0" max="100" value="27" id="calcCurCurrency" class="calculation__range calculation__currency-range")
+                    input(type="range" min="0" max="200" value="54" step="0.25" id="calcCurCurrency" class="calculation__range calculation__btc-range")
                     .calculation__value-block
                         .calculation__value-from 0 BTC
-                        .calculation__value-to 100 BTC
+                        .calculation__value-to 200 BTC
+                
+                .calculation__currency-block.calculation__currency-etc-block
+                    .calculation__title-block 
+                        .title Investment amount
+                        .value
+                            span.num.calculation__currency-value.calculation__etc-value 2700
+                            span.units &nbsp;ETC
+                    input(type="range" min="0" max="8000" value="2700" step="1" id="calcCurCurrency" class="calculation__range calculation__etc-range")
+                    .calculation__value-block
+                        .calculation__value-from 0 ETC
+                        .calculation__value-to 8000 ETC
+                
+                .calculation__currency-block.calculation__currency-usdt-block
+                    .calculation__title-block 
+                        .title Investment amount
+                        .value
+                            span.num.calculation__currency-value.calculation__usdt-value 1
+                            span.units &nbsp;USDT
+                    input(type="range" min="0" max="100" value="27" id="calcCurCurrency" class="calculation__range calculation__usdt-range")
+                    .calculation__value-block
+                        .calculation__value-from 0 USDT
+                        .calculation__value-to 100 USDT
 
                 .calculation__mount-block
                     .calculation__title-block 
@@ -63,11 +85,11 @@ section.calculation
                 .calculation__result-data
                     .title Investment amount
                     .value
-                        span.num 27 
-                        span.units &nbsp;BTC
+                        span.num.calculation__result-sum 27 
+                        span.units.calculation__result-units &nbsp;BTC
 
                 .calculation__result-data
                     .title Investment period
                     .value 
-                        span.num 12
+                        span.num.calculation__result-mount 12
                         span.units &nbsp;Months

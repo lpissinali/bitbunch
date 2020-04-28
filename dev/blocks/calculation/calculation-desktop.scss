@@ -102,7 +102,12 @@
 }
 
 .calculation__currency-block {
+  display: none;
   margin-top: 3.125rem;
+}
+
+.calculation__currency-block.active {
+  display: block;
 }
 
 .calculation__mount-block {
