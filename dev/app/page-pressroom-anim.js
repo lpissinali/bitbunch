@@ -13,7 +13,75 @@ $(document).ready(() => {
         .addTo(controller);
     }
 
-    if (window.matchMedia('(max-width: 1100px)').matches) {
+    if (window.matchMedia('(max-width: 570px)').matches) {
+      // pressroom header
+      if (document.querySelector('.pressroom-header')) {
+        const tl_press_header = new TimelineMax();
+        tl_press_header.from('.pressroom-header__headline-block', 0.5, { y: '70%', opacity: 0 });
+        tl_press_header.from('.pressroom-header__decor', 0.5, { y: '25%', opacity: 0 }, 0.2);
+        AnimationScene('.pressroom-header', tl_press_header);
+      }
+
+      // news-releases
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__headline', 0.5, { y: '100%', opacity: 0 });
+        tl_news_releases.from('.news-releases__subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
+        AnimationScene('.news-releases', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-1', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-2', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases__anim-order-1', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-3', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases__anim-order-2', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-4', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases__anim-order-3', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-5', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases__anim-order-4', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-6', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases__anim-order-5', tl_news_releases);
+      }
+
+      // news-releases
+      if (document.querySelector('.standarts')) {
+        const tl_standarts = new TimelineMax();
+        tl_standarts.from('.standarts__headline', 0.5, { y: '100%', opacity: 0 });
+        tl_standarts.from('.standarts__subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
+        tl_standarts.from('.standarts__logo-block', 0.5, { y: '10%', opacity: 0 }, 0.5);
+        tl_standarts.from('.standarts__brand-block', 0.5, { y: '10%', opacity: 0 }, 0.9);
+        AnimationScene('.standarts', tl_standarts);
+      }
+    } else if (window.matchMedia('(max-width: 1100px)').matches) {
       console.log('animation - tablet');
 
       // pressroom header
@@ -29,8 +97,49 @@ $(document).ready(() => {
         const tl_news_releases = new TimelineMax();
         tl_news_releases.from('.news-releases__headline', 0.5, { y: '100%', opacity: 0 });
         tl_news_releases.from('.news-releases__subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_news_releases.from('.news-releases__flex-container', 0.5, { y: '10%', opacity: 0 }, 0.5);
         AnimationScene('.news-releases', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-1', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-2', 0.5, { scale: 0.8, opacity: 0 }, 0.7);
+        AnimationScene('.news-releases', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-3', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases__anim-order-1', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-4', 0.5, { scale: 0.8, opacity: 0 }, 0.7);
+        AnimationScene('.news-releases__anim-order-1', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-5', 0.5, { scale: 0.8, opacity: 0 }, 0.5);
+        AnimationScene('.news-releases__anim-order-3', tl_news_releases);
+      }
+
+      //
+      if (document.querySelector('.news-releases')) {
+        const tl_news_releases = new TimelineMax();
+        tl_news_releases.from('.news-releases__anim-order-6', 0.5, { scale: 0.8, opacity: 0 }, 0.7);
+        AnimationScene('.news-releases__anim-order-3', tl_news_releases);
       }
 
       // news-releases
