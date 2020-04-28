@@ -116,7 +116,6 @@ function getCountryCodes(url) {
 
 function initBootstrapSelect() {
   //custom selects
-  $.fn.selectpicker.Constructor.DEFAULTS.dropupAuto = false;
   if ($('select').length > 0) {
     $('select').each(function () {
       $(this).selectpicker({

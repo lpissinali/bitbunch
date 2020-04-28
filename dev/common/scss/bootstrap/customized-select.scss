@@ -43,6 +43,17 @@
   color: $blue;
 }
 
+.bootstrap-select.show > .dropdown-toggle:after{
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.3em solid;
+  border-left: 0.3em solid transparent;
+}
+
 .dropdown .bootstrap-select {
   box-shadow: 0.625rem 0.75rem 1.5rem rgba(80, 87, 94, 0.1);
   &:focus{
