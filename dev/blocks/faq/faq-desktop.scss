@@ -96,6 +96,10 @@
 
   .accordion__arrow {
     transform: rotateZ(-45deg);
+
+    &:hover {
+      transform: scale(1.15) rotateZ(-45deg);
+    }
   }
 }
 
@@ -125,6 +129,10 @@
   background-repeat: no-repeat;
   background-size: contain;
   transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.15);
+  }
 }
 
 .accordion__dropdown {
