@@ -143,9 +143,9 @@
 }
 
 .accordion__dropdown-wrapper {
-  padding-top: .75rem;
+  padding-top: 1rem;
   padding-right: 1.5rem;
-  padding-bottom: .75rem;
+  padding-bottom: 1.1875rem;
   padding-left: 1.5rem;
   border: 1px solid #cdcfd5;
   border-radius: .1875rem;
@@ -154,13 +154,17 @@
 
   p {
     display: block;
-    margin-top: 1rem;
-    margin-bottom: .75rem;
+    margin-top: 1.625rem;
+    margin-bottom: 0;
     font-family: $main-font-light;
     font-size: 1rem;
     line-height: 1.563;
     color: #091540;
     opacity: .8;
+  }
+
+  p:first-child {
+    margin-top: 0;
   }
 }
 
