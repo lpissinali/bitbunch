@@ -127,11 +127,11 @@
   background-image: url("./images/accordion__arrow.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% auto;
   transition: transform 300ms;
 
   &:hover {
-    transform: scale(1.15);
+    transform: scale(1.16);
   }
 }
 
