@@ -100,3 +100,9 @@
     width: 100%
   }
 }
+
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .dropdown-menu.show {
+    width: 100% !important;
+  }
+}
