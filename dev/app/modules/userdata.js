@@ -102,7 +102,6 @@ function getCountryCodes(url) {
         data-content="
           <span style='display:flex; justify-content: space-between;'>
             <span>${val.name}</span>
-            <span>${val.dial_code}</span>
           </span>"
         value="${val.code}"  
         >${val.code}</option>`;
