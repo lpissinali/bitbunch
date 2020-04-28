@@ -1,7 +1,7 @@
 module.exports = function() {
   return {
     devServer: {
-      host: '127.0.0.1',
+      host: '0.0.0.0',
       port: 3001,
       stats: 'errors-only',
       overlay: true,

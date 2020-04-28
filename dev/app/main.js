@@ -27,6 +27,8 @@ require('./page-home-anim');
 require('./page-pressroom-anim');
 require('./page-team-anim');
 require('./page-contact-anim');
+require('./page-career-anim');
+require('./page-faq-anim');
 
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {
