@@ -85,6 +85,17 @@
   }
 }
 
+.rates__table-row-hover {
+  background-color: $white;
+  transition: transform 300ms;
+  transform-origin: center;
+
+  &:hover {
+    border-radius: .1875rem;
+    transform: scale(1.07);
+  }
+}
+
 .rates__table-row:last-child {
   border-bottom: 0;
 }

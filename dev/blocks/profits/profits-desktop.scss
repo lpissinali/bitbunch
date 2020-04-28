@@ -25,10 +25,24 @@
   margin-right: auto;
   margin-left: auto;
   width: 71.375rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: .625rem;
+    right: -.625rem;
+    z-index: 1;
+    display: block;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    background-color: #fdd4de;
+  }
 }
 
 .profits__slider-block {
   margin-right: .3125rem;
+  width: 71.25rem;
 }
 
 .profits__slider-title {
@@ -62,7 +76,13 @@
 
 .profits__slider-image {
   margin-top: 2.875rem;
+  margin-right: auto;
+  margin-left: auto;
   width: 71.25rem;
+
+  img {
+    width: 100%;
+  }
 }
 
 .profits__wrapper {
@@ -93,6 +113,7 @@
   }
 
   .slick-next {
+    z-index: 2;
     padding-right: 2.5rem;
     width: 10.3125rem;
     height: 2.5rem;

@@ -29,6 +29,7 @@ require('./page-team-anim');
 require('./page-contact-anim');
 require('./page-career-anim');
 require('./page-faq-anim');
+require('./page-hiw-anim');
 
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {
