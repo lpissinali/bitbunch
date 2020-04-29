@@ -94,6 +94,7 @@
   margin-top: 1.5rem;
   box-shadow: .125rem .25rem .375rem rgba(0, 0, 0, .05);
   transition: box-shadow 300ms;
+  border-radius: 0 0 .1875rem .1875rem;
 }
 
 .accordion.active {
@@ -112,11 +113,10 @@
   position: relative;
   padding-top: 1.0625rem;
   padding-bottom: 1.0625rem;
-  padding-left: 4.375rem;
   padding-left: 1.5rem;
   border-radius: .1875rem;
   background-color: $blue;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   font-size: 1.5rem;
   line-height: 1.875rem;
   color: $white;
@@ -145,18 +145,16 @@
   background-color: #f8f9fe;
   overflow: hidden;
   transition: max-height 300ms;
+  border-radius: 0 0 .1875rem .1875rem;
 }
 
 .accordion__dropdown-wrapper {
-  padding-top: 1rem;
-  padding-right: 1.5rem;
-  padding-bottom: 1.1875rem;
-  padding-left: 1.5rem;
-  border: .5px solid #cdcfd5;
+  padding: 1rem 1.5rem 1.1875rem;
+  border: 1px solid #cdcfd5;
   border-top: 0;
-  border-radius: .1875rem;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-radius: 0 0 .1875rem .1875rem;
+  border-left-width: 0.5px;
+  border-right-width: 0.5px;
 
   p {
     display: block;

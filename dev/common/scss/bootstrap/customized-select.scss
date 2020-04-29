@@ -39,19 +39,38 @@
 }
 
 .bootstrap-select > .dropdown-toggle:after{
-  margin-top: -1.0625rem;
+  margin-top: -0.725rem;
   color: $blue;
+  background-image: url('./images/select-arrow.svg');
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 0.75rem;
+  height: 0.75rem;
+  content: "";
+  border-top: 0;
+  border-right: 0 solid transparent;
+  border-bottom: 0 solid;
+  border-left: 0 solid transparent;
 }
 
 .bootstrap-select.show > .dropdown-toggle:after{
   display: inline-block;
+  margin-top: -1.1625rem;
   margin-left: 0.255em;
   vertical-align: 0.255em;
+  background-image: url('./images/select-arrow.svg');
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 0.75rem;
+  height: 0.75rem;
   content: "";
   border-top: 0;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0.3em solid;
-  border-left: 0.3em solid transparent;
+  border-right: 0 solid transparent;
+  border-bottom: 0 solid;
+  border-left: 0 solid transparent;
+  transform: rotate(-180deg);
 }
 
 .dropdown .bootstrap-select {
