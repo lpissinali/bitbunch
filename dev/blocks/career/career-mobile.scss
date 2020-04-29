@@ -10,7 +10,16 @@
     margin-top: -4.6875rem;
   }
 
+  .career__accordion-title {
+    font-size: .625rem;
+
+    span {
+      font-family: $main-font-semi-bold;
+    }
+  }
+
   .career__accordion {
+    margin-top: 1rem;
   }
 
   .career__accordion:first-child {
