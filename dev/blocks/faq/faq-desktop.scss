@@ -51,6 +51,8 @@
     display: block;
     width: 3rem;
     height: auto;
+    opacity: .75;
+    transition: 400ms;
   }
 
   span {
@@ -62,9 +64,13 @@
     line-height: 2.375rem;
     color: $blue;
   }
+}
 
-  &:hover {
-    box-shadow: .3125rem .375rem 1.5rem rgba(80, 87, 94, .4);
+.faq__link:hover {
+  box-shadow: .3125rem .375rem 1.5rem rgba(80, 87, 94, .4);
+
+  img {
+    opacity: 1;
   }
 }
 
@@ -92,9 +98,9 @@
 
 .accordion {
   margin-top: 1.5rem;
+  border-radius: 0 0 .1875rem .1875rem;
   box-shadow: .125rem .25rem .375rem rgba(0, 0, 0, .05);
   transition: box-shadow 300ms;
-  border-radius: 0 0 .1875rem .1875rem;
 }
 
 .accordion.active {
@@ -142,10 +148,10 @@
 
 .accordion__dropdown {
   max-height: 0;
+  border-radius: 0 0 .1875rem .1875rem;
   background-color: #f8f9fe;
   overflow: hidden;
   transition: max-height 300ms;
-  border-radius: 0 0 .1875rem .1875rem;
 }
 
 .accordion__dropdown-wrapper {
@@ -153,8 +159,8 @@
   border: 1px solid #cdcfd5;
   border-top: 0;
   border-radius: 0 0 .1875rem .1875rem;
-  border-left-width: 0.5px;
-  border-right-width: 0.5px;
+  border-left-width: .5px;
+  border-right-width: .5px;
 
   p {
     display: block;
