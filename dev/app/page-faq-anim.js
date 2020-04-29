@@ -80,7 +80,7 @@ $(document).ready(() => {
           '.help-center-header__decor',
           0.5,
           {
-            y: '25%',
+            scale: '',
             opacity: 0,
           },
           0.3
@@ -91,16 +91,25 @@ $(document).ready(() => {
       // faq header
       if (document.querySelector('.faq')) {
         const tl_faq_section = new TimelineMax();
-        tl_faq_section.from('.faq__answer-block', 1, { opacity: 0 });
-        tl_faq_section.from('.faq__answer-block', 2, { y: '20%' }, 0);
-
-        tl_faq_section.from('.faq__anim-order-1', 0.8, { y: '30%', opacity: 0 });
-        tl_faq_section.from('.faq__anim-order-2', 0.8, { y: '30%', opacity: 0 });
-        tl_faq_section.from('.faq__anim-order-3', 0.8, { y: '30%', opacity: 0 });
-        tl_faq_section.from('.faq__anim-order-4', 0.8, { y: '30%', opacity: 0 });
-        tl_faq_section.from('.faq__anim-order-5', 0.8, { y: '100%', opacity: 0 });
-        tl_faq_section.from('.faq__anim-order-6', 0.8, { y: '30%', opacity: 0 });
+        // tl_faq_section.from('.faq__answer-block', 1, { opacity: 0 });
+        // tl_faq_section.from('.faq__answer-block', 2, { y: '20%' }, 0);
+        // tl_faq_section.from('.faq__anim-order-1', 0.8, { y: '30%', opacity: 0 });
+        // tl_faq_section.from('.faq__anim-order-2', 0.8, { y: '30%', opacity: 0 });
+        tl_faq_section.from('.faq__anim-order-3', 0.8, { y: '30%', opacity: 0 }, 2);
+        tl_faq_section.from('.faq__anim-order-4', 0.8, { y: '30%', opacity: 0 }, 2.5);
+        tl_faq_section.from('.faq__anim-order-5', 0.8, { y: '100%', opacity: 0 }, 3);
+        tl_faq_section.from('.faq__anim-order-6', 0.8, { y: '30%', opacity: 0 }, 3.5);
         AnimationScene1('.faq', tl_faq_section);
+      }
+
+      // faq header
+      if (document.querySelector('.faq')) {
+        const tl_faq_section = new TimelineMax();
+        tl_faq_section.from('.faq__answer-block', 0.3, { opacity: 0 });
+        tl_faq_section.from('.faq__answer-block', 0.7, { y: '10%' }, 0);
+        tl_faq_section.from('.faq__anim-order-1', 0.7, { y: '30%', opacity: 0 });
+        tl_faq_section.from('.faq__anim-order-2', 0.7, { y: '30%', opacity: 0 });
+        AnimationScene('.faq', tl_faq_section);
       }
     }
   }
