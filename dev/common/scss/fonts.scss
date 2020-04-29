@@ -1,5 +1,9 @@
 @import "mixins";
 
+@include font-face("SarabunThin", "../../fonts/Sarabun-Thin", 400);
+
+@include font-face("SarabunExtraLight", "../../fonts/Sarabun-Extralight", 400);
+
 @include font-face("SarabunLight", "../../fonts/Sarabun-Light", 400);
 
 @include font-face("SarabunRegular", "../../fonts/Sarabun-Regular", 400);
