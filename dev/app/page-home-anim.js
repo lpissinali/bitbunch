@@ -60,7 +60,7 @@ $(document).ready(() => {
     document.getElementById('bitStatsScore3').innerHTML = `${str1}${str2}${str3}%`;
   }
 
-  if (window.matchMedia('(max-width: 1100px)').matches) {
+  if (window.matchMedia('(max-width: 1000px)').matches) {
     console.log('animation - tablet');
 
     // home header
@@ -185,7 +185,7 @@ $(document).ready(() => {
     tl_you_will_get.from('.you-will-get__animation-order-3', 0.3, { x: '20%', opacity: 0 });
     tl_you_will_get.from('.you-will-get__animation-order-4', 0.3, { x: '20%', opacity: 0 });
     tl_you_will_get.from('.you-will-get__animation-order-5', 0.3, { x: '20%', opacity: 0 });
-    tl_you_will_get.from('.you-will-get__advantages', 0.7, { x: '-20%', opacity: 0 }, 0);
+    tl_you_will_get.from('.you-will-get__advantages', 0.7, { x: '-20%', opacity: 0 }, 0.2);
     tl_you_will_get.from('.you-will-get__buttons', 0.5, { y: '-50%', opacity: 0 });
     AnimationScene('.you-will-get', tl_you_will_get);
 

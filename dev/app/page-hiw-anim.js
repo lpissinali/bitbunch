@@ -16,7 +16,7 @@ $(document).ready(() => {
     // if (window.matchMedia('(max-width: 570px)').matches) {
     // } else
 
-    if (window.matchMedia('(max-width: 1100px)').matches) {
+    if (window.matchMedia('(max-width: 1000px)').matches) {
       console.log('animation - tablet');
 
       // hiw-header

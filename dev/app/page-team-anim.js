@@ -47,7 +47,7 @@ $(document).ready(() => {
         tl_big_team.from('.big-team__advisors-container', 0.5, { y: '20%', opacity: 0 }, 0.5);
         AnimationScene('.big-team__advisors-headline', tl_big_team);
       }
-    } else if (window.matchMedia('(max-width: 1100px)').matches) {
+    } else if (window.matchMedia('(max-width: 1000px)').matches) {
       console.log('animation - tablet');
 
       // our-team header

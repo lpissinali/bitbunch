@@ -13,7 +13,7 @@ $(document).ready(() => {
         .addTo(controller);
     }
 
-    if (window.matchMedia('(max-width: 1100px)').matches) {
+    if (window.matchMedia('(max-width: 1000px)').matches) {
       console.log('animation - tablet');
 
       // contact header

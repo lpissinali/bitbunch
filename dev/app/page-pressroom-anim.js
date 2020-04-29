@@ -57,7 +57,7 @@ $(document).ready(() => {
       }
 
       //
-    } else if (window.matchMedia('(max-width: 1100px)').matches) {
+    } else if (window.matchMedia('(max-width: 1000px)').matches) {
       console.log('animation - tablet');
 
       // pressroom header
