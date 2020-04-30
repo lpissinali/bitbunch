@@ -15,6 +15,21 @@ html(lang="en-US")
         meta(name="description" content=meta2)
         link(rel="icon" type="image/x-icon" href="./images/favicon.ico")
         style(type="text/css").
+            .preloader {
+              position: fixed; 
+              z-index: 1000; 
+              top: 0; 
+              left: 0; 
+              width: 100vw; 
+              height: 100vh; 
+              background: linear-gradient(to right, #324ea3, #3d6dd0); 
+              transition: opacity 300ms; 
+              opacity: 1; 
+              display: flex; 
+              justify-content: center; 
+              align-items: center;
+            }
+            
             .spinner {
                 margin: 6.25rem auto;
                 width: 5rem;
@@ -57,10 +72,10 @@ html(lang="en-US")
                 }
             }
 
-    body(class=pageClass)
+    body(class=pageClass styles="overflow: hidden;")
+      include ../components/preloader/preloader
       block content
       include ../blocks/main-footer/main-footer
-      include ../components/preloader/preloader
 
       //- include ../blocks/modal-areas/modal-areas
 
