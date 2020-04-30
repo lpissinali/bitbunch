@@ -31,6 +31,7 @@ require('./page-career-anim');
 require('./page-faq-anim');
 require('./page-hiw-anim');
 require('./page-login-anim');
+require('./page-register-anim');
 
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {
