@@ -1,5 +1,6 @@
 .main-header {
   position: relative;
+  box-shadow: .25rem .3125rem .8125rem rgba(80, 87, 94, .1);
   background-image: url("./images/main-header-bg-desktop.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -29,7 +30,7 @@
   font-size: 3.125rem;
   line-height: 3.875rem;
   color: $white;
-  text-shadow: 0 .125rem .25rem rgba(27, 48, 110, 0.5);
+  text-shadow: 0 .125rem .25rem rgba(27, 48, 110, .5);
 }
 
 .main-header__description-items {
