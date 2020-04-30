@@ -48,22 +48,28 @@
   display: flex;
 
   .title {
-    font-family: $main-font-regular;
+    font-family: $main-font-medium;
     font-size: 1.25rem;
     line-height: 1.625rem;
     color: #535b79;
   }
 
   .value {
+    font-family: $main-font-bold;
     font-size: 1.5rem;
     line-height: 1.9375rem;
     color: $orange;
+
+    .units {
+      font-family: $main-font-regular;
+    }
   }
 }
 
 .calculation__value-block {
   justify-content: space-between;
   display: flex;
+  font-family: $main-font-bold;
   font-size: .875rem;
   line-height: 1.125rem;
   color: #091540;
@@ -80,7 +86,7 @@
   border: .125rem solid $blue;
   background-color: $white;
   color: $blue;
-  font-family: $main-font-light;
+  font-family: $main-font-regular;
   font-size: 1.1rem;
 
   img {
@@ -129,6 +135,7 @@
   background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
 
   .title {
+    font-family: $main-font-medium;
     font-size: 17px;
     line-height: 22px;
     color: $white;
@@ -140,6 +147,10 @@
     font-size: 1.75rem;
     line-height: 2.25rem;
     color: $white;
+
+    .num {
+      font-family: $main-font-bold;
+    }
   }
 }
 
@@ -152,6 +163,7 @@
   background-color: #93addc;
 
   .title {
+    font-family: $main-font-semi-bold;
     font-size: 1.25rem;
     line-height: 1.625rem;
     opacity: 1;
