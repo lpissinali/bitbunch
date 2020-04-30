@@ -1,5 +1,5 @@
 .profits {
-  background-color: #f7f8fe;
+  background-color: #fcfdff;
 }
 
 .profits__wrapper {
@@ -12,7 +12,6 @@
 }
 
 .profits__subtitle {
-  margin-top: .875rem;
   margin-right: auto;
   margin-left: auto;
   width: 33.75rem;
@@ -56,9 +55,9 @@
 
   .num {
     position: absolute;
-    top: -.5rem;
+    top: 3.5rem;
     left: 0;
-    font-family: $main-font-regular;
+    font-family: $main-font-light;
     font-size: 5rem;
     line-height: 4.25rem;
     text-transform: uppercase;
@@ -75,7 +74,6 @@
 }
 
 .profits__slider-image {
-  margin-top: 2.875rem;
   margin-right: auto;
   margin-left: auto;
   width: 71.25rem;
@@ -119,7 +117,7 @@
     height: 2.5rem;
     background-position: right center;
     background-size: 2.5rem auto;
-    font-family: $main-font-semi-bold;
+    font-family: $main-font-regular;
     font-size: 1.125rem;
     line-height: 1.375rem;
     color: $blue;

@@ -1,5 +1,5 @@
 .started {
-  background-color: #f7f8fe;
+  background-color: #FCFDFF;
 }
 
 .started__wrapper {
@@ -12,7 +12,6 @@
 }
 
 .started__subtitle {
-  margin-top: .875rem;
   text-align: center;
   color: #43425f;
 }
@@ -35,7 +34,7 @@
   padding-bottom: 6.5625rem;
   padding-left: 1.5rem;
   width: 22.125rem;
-  height: 23.75rem;
+  height: 19rem;
   border-radius: .125rem;
   box-shadow: .3125rem .375rem .625rem rgba(80, 87, 94, .1);
   background-color: $white;
@@ -55,21 +54,21 @@
   top: -2.0625rem;
   left: calc(50% - 1.875rem);
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   display: flex;
-  padding-bottom: .25rem;
+  padding-bottom: .6rem;
   width: 3.75rem;
   height: 3.75rem;
   border-radius: .3125rem;
   background-color: $blue;
-  font-family: $main-font-semi-bold;
+  font-family: $main-font-regular;
   font-size: 2.125rem;
   line-height: 1.9375rem;
   color: $white;
 }
 
 .started__card-title {
-  font-family: $main-font-bold;
+  font-family: $main-font-light;
   font-size: 1.375rem;
   line-height: 1.875rem;
   text-transform: uppercase;
@@ -79,7 +78,7 @@
 
 .started__card-text {
   margin-top: .8125rem;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   font-size: 1rem;
   line-height: 1.8125rem;
   color: #616884;
