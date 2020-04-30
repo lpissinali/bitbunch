@@ -1,8 +1,7 @@
 import '../common/scss/main.scss';
 
 // accordion
-import { dsAccordion } from '../components/accordion/ds-accordion';
-
+import Accordion from '../components/accordion/ds-accordion-gsap';
 require('./polyfills/polyfills');
 require('./libs/bootstrap-select/bootstrap-select.min.js');
 require('./modules/validators');
@@ -15,12 +14,12 @@ require('./modules/contact');
 require('./modules/masks');
 
 // аккордион faq
-const faqAccordion = new dsAccordion({});
+const faqAccordion = new Accordion({});
 
-const careerAccordion = new dsAccordion({
-  mainContainer: '.career__accordion',
-  dropdownBlock: '.career__acd-dropdown',
-});
+// const careerAccordion = new Accordion({
+//   mainContainer: '.career__accordion',
+//   dropdownBlock: '.career__acd-dropdown',
+// });
 
 // анимация
 require('./page-home-anim');
