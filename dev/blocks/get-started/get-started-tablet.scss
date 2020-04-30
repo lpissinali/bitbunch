@@ -1,0 +1,29 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .get-started {
+    background-image: url("./images/get-started-bg-tablet.svg");
+  }
+
+  .get-started__wrapper {
+    padding-top: 5rem;
+    height: 20.25rem;
+  }
+
+  .get-started__subtitle {
+    text-align: center;
+    color: $white;
+    opacity: .8;
+  }
+
+  .get-started__headline {
+    margin-top: .3125rem;
+    text-align: center;
+    color: $white;
+  }
+
+  .get-started__button {
+    margin-top: 2.9375rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
