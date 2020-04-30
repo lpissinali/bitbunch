@@ -49,7 +49,7 @@
   position: relative;
   padding-top: 1.25rem;
   padding-left: 1.25rem;
-  font-family: $main-font-semi-bold;
+  font-family: $main-font-light;
   font-size: 2rem;
   line-height: 2.125rem;
   color: $blue;
@@ -58,7 +58,7 @@
     position: absolute;
     top: -.5rem;
     left: 0;
-    font-family: $main-font-bold;
+    font-family: $main-font-regular;
     font-size: 5rem;
     line-height: 4.25rem;
     text-transform: uppercase;
@@ -71,7 +71,7 @@
   margin-top: 1.4375rem;
   padding-left: 1.25rem;
   width: 41.375rem;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
 }
 
 .profits__slider-image {
