@@ -21,7 +21,7 @@
     width: 100vw;
 
     &:before {
-      top: 11.1rem;
+      top: 11.875rem;
       right: .89em;
     }
   }
@@ -46,19 +46,20 @@
   }
 
   .profits__slider-image {
+    margin-top: 5rem;
     width: 100vw;
   }
 
   .profits__wrapper {
 
     .slick-prev {
-      top: 11.75rem;
+      top: 12.5rem;
       right: auto;
       left: 1.5rem;
     }
 
     .slick-next {
-      top: 11.75rem;
+      top: 12.5rem;
       right: 1.5rem;
       width: 14.5rem;
     }

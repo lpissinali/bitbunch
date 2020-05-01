@@ -2,7 +2,7 @@
 
   .rates__wrapper {
     padding-top: 3.125rem;
-    padding-bottom: 5.3125rem;
+    padding-bottom: 0;
   }
 
   .rates__table {
@@ -32,5 +32,17 @@
     &:hover {
       transform: none;
     }
+  }
+
+  .rates__table-col-profit {
+    width: 7.125rem;
+  }
+
+  .rates__table-col-buy {
+    width: 16rem;
+  }
+
+  .rates__table-col-sell {
+    width: 16rem;
   }
 }

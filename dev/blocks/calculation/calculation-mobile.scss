@@ -1,7 +1,6 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
   .calculation {
-    background-color: #f7f8fe;
     background-image: url("./images/calculation__bg-mobile.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -66,8 +65,9 @@
       font-size: 1.25rem;
       line-height: 1.625rem;
     }
-    
+
     &.active {
+
       .value {
         font-size: 1.5rem;
       }

@@ -1,0 +1,68 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .ai-trading__wrapper {
+    padding-top: 1.875rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .ai-trading__subtitle {
+    padding-top: .3125rem;
+  }
+
+  .ai-trading__title {
+    margin-top: 3.375rem;
+    font-size: .875rem;
+    line-height: 1.9375rem;
+  }
+
+  .ai-trading__description {
+    margin-top: .5rem;
+    width: 100%;
+    font-size: .75rem;
+    line-height: 1.5rem;
+  }
+
+  .ai-trading__flex-container {
+    padding-top: 2.3125rem;
+  }
+
+  .ai-trading__card {
+    margin-top: 6.1875rem;
+    padding-top: 1.125rem;
+    padding-right: .75rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.9rem;
+    background-image: url("./images/ai-trading__card-blue-bg-mobile.png");
+    background-size: 1rem auto;
+
+    &:before {
+      bottom: -4.25rem;
+      left: 7.5rem;
+    }
+
+    .title {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .text {
+
+      p {
+        font-size: .75rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    &:after {
+      bottom: -6.432rem;
+      left: 8.363rem;
+      height: 6.25rem;
+    }
+  }
+
+  .ai-trading__card-orange {
+    margin-top: 0;
+    background-image: url("./images/ai-trading__card-orange-bg-mobile.png");
+  }
+}

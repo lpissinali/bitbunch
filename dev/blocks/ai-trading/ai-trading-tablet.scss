@@ -1,0 +1,78 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .ai-trading__wrapper {
+    padding-top: 5rem;
+    padding-right: 3.125rem;
+    padding-bottom: 5.3125rem;
+    padding-left: 3.125rem;
+    width: 100%;
+  }
+
+  .ai-trading__flex-container {
+    display: block;
+  }
+
+  .ai-trading__card {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: 7.6rem;
+    width: 100%;
+
+    &:before {
+      top: auto;
+      bottom: -4.6875rem;
+      left: 19.75rem;
+      width: 1.8125rem;
+      height: 1.8125rem;
+    }
+
+    &:after {
+      top: auto;
+      bottom: -7.8rem;
+      left: 20.63rem;
+      width: 1px;
+      height: 7.6rem;
+      background-color: #324ea3;
+      background-image: none;
+      opacity: .6;
+    }
+  }
+
+  .ai-trading__headline {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .ai-trading__subtitle {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 32.125rem;
+    text-align: center;
+  }
+
+  .ai-trading__title {
+    margin-top: 3rem;
+  }
+
+  .ai-trading__description {
+    margin-top: .75rem;
+    max-width: 100%;
+  }
+
+  .ai-trading__flex-container {
+    margin-top: 0;
+    padding-top: 3.3125rem;
+  }
+
+  .ai-trading__card-orange {
+    margin-top: 0;
+  }
+
+  .ai-trading__card-3 {
+
+    &:before {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.ai-trading {
+  background-color: #fcfdff;
+}
+
+.ai-trading__wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 9.6875rem;
+  width: 71.5rem;
+}
+
+.ai-trading__headline {
+  max-width: 30.125rem;
+}
+
+.ai-trading__subtitle {
+  margin-top: .875rem;
+  max-width: 30.125rem;
+  font-family: $main-font-medium;
+}
+
+.ai-trading__title {
+  margin-top: 4.0625rem;
+  font-family: $main-font-bold;
+  font-size: 1.375rem;
+  line-height: 1.9375rem;
+  text-transform: uppercase;
+  color: $blue;
+  opacity: .8;
+}
+
+.ai-trading__description {
+  margin-top: .875rem;
+  max-width: 24.125rem;
+  font-family: $main-font-medium;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  color: #616884;
+  opacity: .8;
+}
+
+.ai-trading__flex-container {
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+  margin-top: 11.3125rem;
+}
+
+.ai-trading__card {
+  position: relative;
+  padding-top: 2.25rem;
+  padding-right: 1.5rem;
+  padding-bottom: 2.25rem;
+  padding-left: 5.5rem;
+  width: 34.4375rem;
+  border: .1875rem solid $blue;
+  border-radius: .1875rem;
+  box-shadow: .625rem .75rem .875rem rgba(80, 87, 94, .05);
+  background-image: url("./images/ai-trading__card-blue-bg-desktop.png");
+  background-position: -.0625rem -.0625rem;
+  background-repeat: no-repeat;
+  background-size: 4.0625rem auto;
+
+  .title {
+    font-family: $main-font-semi-bold;
+    font-size: 1.375rem;
+    line-height: 2.125rem;
+    color: $blue;
+  }
+
+  .text {
+    margin-top: .625rem;
+
+    p {
+      margin-top: 1.125rem;
+      font-family: $main-font-regular;
+      font-size: 1rem;
+      line-height: 1.625rem;
+      color: #091540;
+      opacity: .8;
+    }
+
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: -1.125rem;
+    left: 18.25rem;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    background-image: url("./images/ai-trading__card-blue-dot.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &:before {
+    z-index: 1;
+  }
+}
+
+.ai-trading__card-orange {
+  position: absolute;
+  top: -27.8125rem;
+  right: 0;
+  padding-bottom: .625rem;
+  min-height: 16.4375rem;
+  border: .1875rem solid $orange;
+  background-image: url("./images/ai-trading__card-orange-bg-desktop.png");
+
+  .title {
+    color: $orange;
+  }
+
+  &:before {
+    top: auto;
+    bottom: -6.75rem;
+    left: .875rem;
+    background-image: url("./images/ai-trading__card-orange-dot.svg");
+  }
+
+  &:after {
+    top: auto;
+    bottom: -4.6875rem;
+    left: 1.9375rem;
+    width: .25rem;
+    height: 4.5rem;
+    background-image: url("./images/ai-trading__card-orange-line.svg");
+    background-size: auto 100%;
+  }
+}
+
+.ai-trading__card-2 {
+  width: 35.625rem;
+
+  &:after {
+    top: -5.8125rem;
+    left: 19.375rem;
+    width: 33.0625rem;
+    height: 5.6875rem;
+    background-image: url("./images/ai-trading__card-blue-line.svg");
+    background-size: 100% auto;
+  }
+}
+
+.ai-trading__card-3 {
+
+  &:before {
+    left: 14.1875rem;
+  }
+
+  &:after {
+    display: none;
+  }
+}
+
+@import "./ai-trading-tablet.scss";
+
+@import "./ai-trading-mobile.scss";
