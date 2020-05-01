@@ -181,7 +181,7 @@ if (document.querySelector('.calculation__button-cur.dollar')) {
     $('.calculation__currency-block').removeClass('active');
     $('.calculation__currency-etc-block').addClass('active');
     $('.calculation__result-sum').html($('.calculation__etc-range').val());
-    $('.calculation__result-units').html(' ETC');
+    $('.calculation__result-units').html(' USD');
   });
 }
 
@@ -192,7 +192,7 @@ if (document.querySelector('.calculation__button-cur.bitcoin')) {
     $('.calculation__currency-block').removeClass('active');
     $('.calculation__currency-usdt-block').addClass('active');
     $('.calculation__result-sum').html($('.calculation__usdt-range').val());
-    $('.calculation__result-units').html(' USDT');
+    $('.calculation__result-units').html(' EUR');
   });
 }
 

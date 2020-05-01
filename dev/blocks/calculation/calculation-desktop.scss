@@ -1,5 +1,5 @@
 .calculation {
-  background-color: #FCFDFF;
+  background-color: #fcfdff;
   background-image: url("./images/calculation__bg-desktop.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -32,6 +32,7 @@
   margin-left: auto;
   width: 71.25rem;
   border-radius: .1875rem;
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
   background-color: $white;
 }
 
@@ -85,20 +86,27 @@
 .calculation__button-cur {
   border: .125rem solid $blue;
   background-color: $white;
-  color: $blue;
-  font-family: $main-font-regular;
+  font-family: $main-font-bold;
   font-size: 1.1rem;
+  color: $blue;
+  fill: $blue;
+  transition: 300ms;
 
-  img {
+  svg {
     margin-right: .4375rem;
     width: auto;
     height: 1.4375rem;
+  }
+
+  &:hover {
+    fill: $white;
   }
 }
 
 .calculation__button-cur.active {
   background-color: $blue;
   color: $white;
+  fill: $white;
 }
 
 .calculation__currency-block {
@@ -168,7 +176,7 @@
     line-height: 1.625rem;
     opacity: 1;
   }
-  
+
   .value {
     font-size: 2rem;
   }

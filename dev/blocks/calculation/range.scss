@@ -2,9 +2,10 @@
   margin: 0;
   margin-top: 1.25rem;
   width: 100%;
-  height: 1rem;
+  height: 2rem;
   -webkit-appearance: none;
   background-color: transparent !important;
+  overflow: hidden;
 }
 
 .calculation__range[type="range"]:focus {
@@ -13,8 +14,9 @@
 
 .calculation__range[type="range"]::-webkit-slider-runnable-track {
   border: 0;
-  border-radius: .25rem;
-  background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
+  border-radius: 0;
+  // background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
+  background-color: #efc7c2;
   cursor: pointer;
 }
 
@@ -23,9 +25,11 @@
 
 // chrome
 .calculation__range[type="range"]::-webkit-slider-thumb {
-  margin-top: -.875rem;
+  margin-top: -.8125rem;
   width: 2rem;
   height: 2rem;
+  box-shadow: -62.5rem -63.6875rem 0 62.5rem white,
+    -62.5rem 63.6875rem 0 62.5rem white, -62.5rem 0 0 62.5rem #3f72d7;
   -webkit-appearance: none;
   background-image: url("./images/range-button-icon.png");
   background-position: center;
@@ -34,11 +38,18 @@
   cursor: pointer;
 }
 
+// mozilla
 .calculation__range[type="range"]::-moz-range-track {
   border: 0;
   border-radius: .25rem;
-  background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
+  background-color: #efc7c2;
   cursor: pointer;
+}
+
+input[type="range"]::-moz-range-progress {
+  height: .375rem;
+  border-radius: .25rem;
+  background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
 }
 
 .calculation__range[type="range"]::-moz-range-thumb {
@@ -64,9 +75,11 @@
 }
 
 .calculation__range[type="range"]::-ms-fill-lower {
+  background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
 }
 
 .calculation__range[type="range"]::-ms-fill-upper {
+  background-color: #efc7c2;
 }
 
 .calculation__range[type="range"]::-ms-thumb {
@@ -80,15 +93,15 @@
 
 /* Track */
 .calculation__range[type="range"]::-webkit-slider-runnable-track {
-  height: .25rem;
+  height: .375rem;
 }
 
 .calculation__range[type="range"]::-moz-range-track {
-  height: .25rem;
+  height: .375rem;
 }
 
 .calculation__range[type="range"]::-ms-track {
-  height: .25rem;
+  height: .375rem;
 }
 
 /* Thumb */
@@ -102,3 +115,5 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+/////////////////////////////////////////////////////////////////////
