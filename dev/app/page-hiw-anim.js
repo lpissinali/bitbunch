@@ -58,6 +58,13 @@ $(document).ready(() => {
         tl_big_team.from('.profits__subtitle', 0.7, { y: '10%', opacity: 0 }, 0.3);
         tl_big_team.from('.profits__slider-container', 0.7, { y: '10%', opacity: 0 }, 0.6);
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 0.9);
+
+        // dot animation
+        tl_big_team.from('.profits__slider-dot-right', 0.4, {
+          opacity: 1,
+          repeat: 10,
+          yoyo: true,
+        });
         AnimationScene('.profits', tl_big_team);
       }
 
@@ -149,6 +156,13 @@ $(document).ready(() => {
         tl_big_team.from('.profits__subtitle', 0.7, { y: '10%', opacity: 0 }, 0.3);
         tl_big_team.from('.profits__slider-container', 0.7, { y: '10%', opacity: 0 }, 0.6);
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 0.9);
+
+        // dot animation
+        tl_big_team.from('.profits__slider-dot-right', 0.4, {
+          opacity: 1,
+          repeat: 10,
+          yoyo: true,
+        });
         AnimationScene('.profits', tl_big_team);
       }
 
@@ -219,6 +233,13 @@ $(document).ready(() => {
         tl_big_team.from('.profits__subtitle', 0.7, { y: '-100%', opacity: 0 }, 0.3);
         tl_big_team.from('.profits__slider-container', 0.7, { x: '-10%', opacity: 0 }, 0.7);
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 1);
+
+        // dot animation
+        tl_big_team.from('.profits__slider-dot-right', 0.4, {
+          opacity: 1,
+          repeat: 10,
+          yoyo: true,
+        });
         AnimationScene('.profits', tl_big_team);
       }
 

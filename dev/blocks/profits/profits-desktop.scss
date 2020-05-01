@@ -24,19 +24,29 @@
   margin-right: auto;
   margin-left: auto;
   width: 71.375rem;
+}
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: .625rem;
-    right: -.625rem;
-    z-index: 1;
-    display: block;
-    width: 3.75rem;
-    height: 3.75rem;
-    border-radius: 50%;
-    background-color: #fdd4de;
-  }
+.profits__slider-dot-left,
+.profits__slider-dot-right {
+  position: absolute;
+  top: .625rem;
+  right: -.625rem;
+  z-index: 1;
+  display: block;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background-color: #fdd4de;
+  opacity: .4;
+}
+
+.profits__slider-dot-left {
+  right: 9.865rem;
+}
+
+.profits__slider-dot-left.none,
+.profits__slider-dot-right.none {
+  display: none;
 }
 
 .profits__slider-block {
@@ -48,14 +58,14 @@
   position: relative;
   padding-top: 1.25rem;
   padding-left: 1.25rem;
-  font-family: $main-font-regular;
+  font-family: $main-font-semi-bold;
   font-size: 2rem;
   line-height: 2.125rem;
   color: $blue;
 
   .num {
     position: absolute;
-    top: 3.5rem;
+    top: -.565rem;
     left: 0;
     font-family: $main-font-semi-bold;
     font-size: 5rem;
@@ -70,7 +80,7 @@
   margin-top: 1.4375rem;
   padding-left: 1.25rem;
   width: 41.375rem;
-  font-family: $main-font-regular;
+  font-family: $main-font-medium;
 }
 
 .profits__slider-image {
@@ -117,7 +127,7 @@
     height: 2.5rem;
     background-position: right center;
     background-size: 2.5rem auto;
-    font-family: $main-font-regular;
+    font-family: $main-font-semi-bold;
     font-size: 1.125rem;
     line-height: 1.375rem;
     color: $blue;

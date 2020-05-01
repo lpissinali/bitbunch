@@ -144,14 +144,26 @@ if (document.querySelector('.big-team__advisors-container')) {
 
 // profits slider
 if (document.querySelector('.profits__slider-container')) {
-  $('.profits__slider-container').slick({
+  $('.profits__slider-wrapper').slick({
     dots: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    infinite: true,
+    infinite: false,
     variableWidth: true,
   });
+
+  $('.profits__slider-wrapper').on('afterChange', (event, slick, currentSlide, nextSlide) => {
+    if (currentSlide === 1) {
+      $('.profits__slider-dot-right').addClass('none');
+      $('.profits__slider-dot-left').removeClass('none');
+    } else if (currentSlide === 0) {
+      $('.profits__slider-dot-left').addClass('none');
+      $('.profits__slider-dot-right').removeClass('none');
+    }
+  });
+
+  $('.profits__wrapper .slick-next ').html('Next Step');
 }
 
 $(window).on('resize orientationchange', () => {
