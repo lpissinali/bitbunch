@@ -49,10 +49,7 @@
 
   .cost {
     margin-left: 1.875rem;
-    padding-top: .125rem;
-    padding-right: .9375rem;
-    padding-bottom: .125rem;
-    padding-left: .9375rem;
+    padding: .125rem .9375rem;
     border-radius: .25rem;
     font-family: $main-font-medium;
   }
@@ -64,7 +61,7 @@
 
   .grey {
     background-color: #ececec;
-    color: #b1b1b1;
+    color: #333;
   }
 
   .green {
@@ -113,6 +110,9 @@
 
 .rates__table-col-sell {
   width: 20.75rem;
+  .cost.grey {
+    opacity: .6;
+  }
 }
 
 .rates__table-col-profit {

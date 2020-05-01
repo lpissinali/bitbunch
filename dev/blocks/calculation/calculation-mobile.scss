@@ -66,6 +66,12 @@
       font-size: 1.25rem;
       line-height: 1.625rem;
     }
+    
+    &.active {
+      .value {
+        font-size: 1.5rem;
+      }
+    }
   }
 
   .calculation__start-button {
