@@ -61,6 +61,15 @@ $(document).ready(() => {
         AnimationScene('.profits', tl_big_team);
       }
 
+      // get-started
+      if (document.querySelector('.profits')) {
+        const tl_get_started = new TimelineMax();
+        tl_get_started.from('.get-started__subtitle', 0.5, { y: '120%', opacity: 0 });
+        tl_get_started.from('.get-started__headline', 0.5, { y: '100%', opacity: 0 }, 0);
+        tl_get_started.from('.get-started__button', 0.5, { opacity: 0 }, 0.5);
+        AnimationScene('.get-started', tl_get_started);
+      }
+
       // rates
       if (document.querySelector('.rates')) {
         const tl_big_team = new TimelineMax();
@@ -143,6 +152,15 @@ $(document).ready(() => {
         AnimationScene('.profits', tl_big_team);
       }
 
+      // get-started
+      if (document.querySelector('.profits')) {
+        const tl_get_started = new TimelineMax();
+        tl_get_started.from('.get-started__subtitle', 0.5, { y: '-120%', opacity: 0 });
+        tl_get_started.from('.get-started__headline', 0.5, { y: '-100%', opacity: 0 }, 0);
+        tl_get_started.from('.get-started__button', 0.4, { opacity: 0 }, 0.5);
+        AnimationScene('.get-started', tl_get_started);
+      }
+
       // rates
       if (document.querySelector('.rates')) {
         const tl_big_team = new TimelineMax();
@@ -202,6 +220,15 @@ $(document).ready(() => {
         tl_big_team.from('.profits__slider-container', 0.7, { x: '-10%', opacity: 0 }, 0.7);
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 1);
         AnimationScene('.profits', tl_big_team);
+      }
+
+      // get-started
+      if (document.querySelector('.profits')) {
+        const tl_get_started = new TimelineMax();
+        tl_get_started.from('.get-started__subtitle', 0.5, { y: '-120%', opacity: 0 });
+        tl_get_started.from('.get-started__headline', 0.5, { y: '-100%', opacity: 0 }, 0);
+        tl_get_started.from('.get-started__button', 0.7, { opacity: 0 }, 0.7);
+        AnimationScene('.get-started', tl_get_started);
       }
 
       // rates

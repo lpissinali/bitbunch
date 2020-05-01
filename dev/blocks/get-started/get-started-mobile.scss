@@ -1,2 +1,19 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .get-started {
+    background-image: url("./images/get-started-bg-mobile.svg");
+  }
+
+  .get-started__wrapper {
+    padding-top: 3rem;
+    height: 14.125rem;
+  }
+
+  .get-started__headline {
+    margin-top: .875rem;
+  }
+
+  .get-started__button {
+    margin-top: 2rem;
+  }
 }
