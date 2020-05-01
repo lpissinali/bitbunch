@@ -1,5 +1,5 @@
 .rates {
-  background-color: #FCFDFF;
+  background-color: #fcfdff;
 }
 
 .rates__wrapper {
@@ -79,10 +79,11 @@
 
 .rates__table-row-hover {
   background-color: $white;
-  transition: transform 300ms;
+  transition: all 300ms;
   transform-origin: center;
 
   &:hover {
+    border: 0;
     border-radius: .1875rem;
     transform: scale(1.07);
   }
@@ -110,6 +111,7 @@
 
 .rates__table-col-sell {
   width: 20.75rem;
+
   .cost.grey {
     opacity: .6;
   }
