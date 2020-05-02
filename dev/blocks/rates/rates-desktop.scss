@@ -83,7 +83,7 @@
   transform-origin: center;
 
   &:hover {
-    border: 0;
+    border-bottom: 1px solid $white;
     border-radius: .1875rem;
     transform: scale(1.07);
   }

@@ -86,6 +86,17 @@ $(document).ready(() => {
         AnimationScene('.rates', tl_big_team);
       }
 
+      // ai-trading
+      if (document.querySelector('.ai-trading')) {
+        const tl_ai_trading = new TimelineMax();
+        tl_ai_trading.from('.ai-trading__headline', 0.7, { y: '100%', opacity: 0 });
+        tl_ai_trading.from('.ai-trading__subtitle', 0.7, { y: '30%', opacity: 0 }, 0.3);
+        tl_ai_trading.from('.ai-trading__title', 0.7, { y: '100%', opacity: 0 }, 0.5);
+        tl_ai_trading.from('.ai-trading__description', 0.7, { y: '100%', opacity: 0 }, 0.7);
+        tl_ai_trading.from('.ai-trading__flex-container', 0.7, { y: '10%', opacity: 0 }, 0.9);
+        AnimationScene('.ai-trading', tl_ai_trading);
+      }
+
       // calculation
       if (document.querySelector('.calculation')) {
         const tl_big_team = new TimelineMax();
@@ -184,6 +195,17 @@ $(document).ready(() => {
         AnimationScene('.rates', tl_big_team);
       }
 
+      // ai-trading
+      if (document.querySelector('.ai-trading')) {
+        const tl_ai_trading = new TimelineMax();
+        tl_ai_trading.from('.ai-trading__headline', 0.7, { x: '-15%', opacity: 0 });
+        tl_ai_trading.from('.ai-trading__subtitle', 0.7, { x: '-15%', opacity: 0 }, 0.3);
+        tl_ai_trading.from('.ai-trading__title', 0.7, { x: '-16%', opacity: 0 }, 0.5);
+        tl_ai_trading.from('.ai-trading__description', 0.7, { x: '-15%', opacity: 0 }, 0.7);
+        tl_ai_trading.from('.ai-trading__flex-container', 0.7, { y: '10%', opacity: 0 }, 0.9);
+        AnimationScene('.ai-trading', tl_ai_trading);
+      }
+
       // calculation
       if (document.querySelector('.calculation')) {
         const tl_big_team = new TimelineMax();
@@ -259,6 +281,17 @@ $(document).ready(() => {
         tl_big_team.from('.rates__subtitle', 0.7, { y: '-100%', opacity: 0 }, 0.3);
         tl_big_team.from('.rates__table', 0.7, { y: '10%', opacity: 0 }, 0.7);
         AnimationScene('.rates', tl_big_team);
+      }
+
+      // ai-trading
+      if (document.querySelector('.ai-trading')) {
+        const tl_ai_trading = new TimelineMax();
+        tl_ai_trading.from('.ai-trading__headline', 0.7, { x: '-15%', opacity: 0 });
+        tl_ai_trading.from('.ai-trading__subtitle', 0.7, { x: '-15%', opacity: 0 }, 0.3);
+        tl_ai_trading.from('.ai-trading__title', 0.7, { x: '-16%', opacity: 0 }, 0.5);
+        tl_ai_trading.from('.ai-trading__description', 0.7, { x: '-15%', opacity: 0 }, 0.7);
+        tl_ai_trading.from('.ai-trading__flex-container', 0.7, { y: '10%', opacity: 0 }, 0.9);
+        AnimationScene('.ai-trading', tl_ai_trading);
       }
 
       // calculation
