@@ -1,5 +1,6 @@
 .ai-trading {
   background-color: #fcfdff;
+  overflow: hidden;
 }
 
 .ai-trading__wrapper {
@@ -112,7 +113,7 @@
   top: -27.8125rem;
   right: 0;
   padding-bottom: .625rem;
-  min-height: 16.4375rem;
+  min-height: 16.85rem;
   border: .1875rem solid $orange;
   background-image: url("./images/ai-trading__card-orange-bg-desktop.png");
 
@@ -130,11 +131,12 @@
   &:after {
     top: auto;
     bottom: -4.6875rem;
-    left: 1.9375rem;
-    width: .25rem;
+    left: 2.067rem;
+    width: 1px;
     height: 4.5rem;
-    background-image: url("./images/ai-trading__card-orange-line.svg");
+    background-color: $blue;
     background-size: auto 100%;
+    opacity: .6;
   }
 }
 
