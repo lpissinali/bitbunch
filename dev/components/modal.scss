@@ -1,0 +1,125 @@
+.modal{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 8.125rem 0 4.6875rem;
+  z-index: 11;
+  overflow: auto;
+  &__content{
+    width: 40rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
+    border-radius: 0.1875rem;
+    background-image: linear-gradient(244deg, #fcfdff 0%, #f2f4fd 100%);
+  }
+  &__header{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+    border-radius: 0.1875rem 0.1875rem 0 0;
+    background-color: #efc7c2;
+    &-icon{
+      display: block;
+      width: 3.625rem;
+      margin-right: 1rem;
+    }
+    &-text{
+      font-family: $main-font-medium;
+    }
+    &-title{
+      margin-top: -0.1875rem;
+      color: #091540;
+      font-size: 1.5rem;
+    }
+    &-description{
+      opacity: 0.8;
+      color: $black-light;
+      font-size: 1.125rem;
+      line-height: 1.875rem;
+    }
+  }
+  &__close{
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url(../images/times.svg) center / contain no-repeat;
+    z-index: 1;
+    opacity: .3;
+    cursor: pointer;
+    transition: opacity 300ms;
+    &:hover{
+      opacity: .6;
+    }
+  }
+  &__body{
+    padding: 2rem;
+    .button-orange[type=submit]{
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+  &__backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 90rem;
+    margin: 0 auto;
+    background-color: $blue;
+    opacity: 0.4;
+    z-index: 10;
+  }
+}
+
+@media screen and ($tablet1), ($tablet2), ($tablet3) {}
+
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .modal{
+    padding: 8.375rem 1.5rem 8.4375rem;
+  }
+  .modal__header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+  .modal__header-icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: -1.625rem 0 0.8125rem;
+  }
+  .modal__header-title{
+    margin-bottom: 0.4375rem;
+    font-size: 1.125rem;
+  }
+  .modal__header-description{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  .modal__body {
+    padding: 1rem;
+  }
+  .modal__close{
+    top: 0.5rem;
+    right: 0.5rem;
+    transform: translateY(0);
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  .modal__body .button-orange[type=submit]{
+    height: 40px;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,39 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .notifications{
+    position: relative;
+    padding-top: 1.4375rem;
+    padding-bottom: 0.9063rem;
+    &:before{
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      right: 1.5rem;
+      top: 0;
+      display: block;
+      height: 1px;
+      background-color: #efc7c2;
+      border-radius: 1px;
+    }
+  }
+  .notifications__content{
+    margin-bottom: 0.4063rem;
+    font-family: $main-font-light;
+    font-size: 0.75rem;
+    opacity: 0.8;
+    line-height: 1rem;
+    color: #091540;
+  }
+  .notifications__list-item{
+    padding-right: 0;
+    font-size: 0.75rem;
+  }
+  .notifications__list-item span{
+    order: 0;
+    width: calc(100% - 2.75rem);
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+  .notifications__list-item .checkbox-btn{
+    order: 1;
+  }
+}

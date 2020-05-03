@@ -1,0 +1,23 @@
+extends ../../templates/account
+
+block variables
+    - var title = ''
+    - var meta1 = ''
+    - var meta2 = ''
+    - var pageClass = ''
+
+block notification
+
+block content
+    .account-header
+      .account-header__left
+          .account-app-headline Bitbunch app
+          .account-main-headline Account
+      a(href="#").button-orange invest
+    include ../../blocks/your-account/your-account
+    include ../../blocks/notifications/notifications
+
+block modal
+    .modal
+        include ../../blocks/forms/modal/modal-change-phone
+    .modal__backdrop

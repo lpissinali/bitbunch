@@ -58,11 +58,15 @@ html(lang="en-US")
             }
 
     body(class=pageClass)
+      block notification
+      
       .account-page
         include ../components/account-nav/account-nav
         .account-content
           block content
         include ../components/preloader/preloader
+
+      block modal
 
       //- include ../blocks/modal-areas/modal-areas
 
