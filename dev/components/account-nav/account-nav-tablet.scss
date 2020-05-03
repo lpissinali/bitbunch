@@ -1,0 +1,81 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .account-nav{
+    width: 6.25rem;
+  }
+  .account-nav__logo:after{
+    height: 0.1875rem;
+  }
+  .account-nav__logo-link {
+    margin: 2rem 1.5625rem 1.875rem;
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+  .account-nav__nav-menu{
+    &.disabled{
+      opacity: 0;
+    }
+  }
+  .account-nav__menu-list{
+    margin: 0;
+  }
+  .account-nav__menu-item{
+    margin: 0;
+    padding: 0;
+  }
+  .account-nav__menu-item:before{
+    display: none;
+  }
+  .account-nav__menu-link{
+    flex-direction: column;
+    justify-content: center;
+    width: 6.25rem;
+    height: 5.75rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  .account-nav__menu-link-icon{
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  // User menu
+  .account-nav__user{
+    &.enabled{
+      .account-nav__user-header{
+        display: none;
+      }
+    }
+  }
+  .account-nav__user-header{
+    margin: 0;
+    .account-nav__user-logo,
+    .account-nav__user-descr{
+      display: none;
+    }
+    .account-nav__user-menu-link{
+      display: flex;
+    }
+  }
+  .account-nav__user-menu-list{
+    margin: 1.25rem 0;
+  }
+  .account-nav__user-menu-item{
+    margin: 0;
+    padding: 0;
+  }
+  .account-nav__user-menu-link{
+    flex-direction: column;
+    justify-content: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    font-family: $main-font-bold;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  .account-nav__user-menu-link-icon{
+    margin-right: 0;
+    margin-bottom: 0.625rem;
+  }
+}

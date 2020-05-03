@@ -241,3 +241,22 @@ if (document.querySelector('.calculation__mount-range')) {
   $('.calculation__mount-value').html($('.calculation__mount-range').val());
   $('.calculation__result-mount').html($('.calculation__mount-range').val());
 }
+
+// account user menu
+if (document.querySelector('.account-nav__user-menu-close')) {
+  $('.account-nav__user-header').click(() => {
+    $('.account-nav__nav-menu').toggleClass('disabled');
+    $('.account-nav__user').toggleClass('enabled');
+    $('.account-nav__user-menu-list').slideToggle();
+  });
+
+  $('.account-nav__user-menu-close').click(() => {
+    $('.account-nav__nav-menu').toggleClass('disabled');
+    $('.account-nav__user').toggleClass('enabled');
+    $('.account-nav__user-menu-list').slideToggle();
+  });
+  // $('.main-nav__menu-link').click(() => {
+  //   $('.main-nav__nav-menu').toggleClass('active');
+  //   $('body').toggleClass('overflow-hidden');
+  // });
+}

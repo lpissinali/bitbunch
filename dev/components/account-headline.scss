@@ -1,0 +1,68 @@
+.account-header{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 1.875rem;
+}
+.account-header__left{
+  width: 100%;
+}
+.account-app-headline {
+  font-family: $main-font-semi-bold;
+  font-size: 1.125rem;
+  line-height: 1.9375rem;
+  color: $blue;
+  text-transform: uppercase;
+  opacity: .8;
+}
+.account-main-headline{
+  margin-top: 0.125rem;
+  font-family: $main-font-bold;
+  font-size: 1.875rem;
+  color: $black-light;
+}
+.account-section-headline {
+  font-family: $main-font-medium;
+  font-size: 1.5rem;
+  color: $black-light;
+}
+.account-header .button-orange{
+  display: none;
+}
+
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .account-header{
+    padding: 0 1.5rem;
+  }
+  .account-header__left {
+    width: auto;
+    flex-grow: 1;
+  }
+  .account-app-headline{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  .account-main-headline {
+    margin-top: 0.25rem;
+    font-size: 1.5rem;
+  }
+  .account-section-headline{
+    font-size: 1.3125rem;
+  }
+  .account-header .button-orange{
+    display: flex;
+    width: 7.25rem;
+    height: 2.8125rem;
+    margin-bottom: 0.125rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .account-header{
+    display: none;
+  }
+  .account-section-headline{
+    font-size: 1rem;
+  }
+}
