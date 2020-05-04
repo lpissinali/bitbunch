@@ -41,6 +41,19 @@
     background-color: $white;
   }
 
+  .calculation__title-block {
+
+    .value {
+      font-size: 1rem;
+      line-height: 1.9375rem;
+    }
+  }
+
+  .calculation__value-block {
+    font-size: .625rem;
+    line-height: .8125rem;
+  }
+
   .calculation__button-cur {
     width: 4.625rem;
     height: 4.625rem;

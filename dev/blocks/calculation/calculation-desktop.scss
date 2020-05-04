@@ -75,6 +75,10 @@
   line-height: 1.125rem;
   color: #091540;
   opacity: .5;
+
+  span {
+    font-family: $main-font-regular;
+  }
 }
 
 .calculation__buttons-block {
@@ -144,8 +148,8 @@
 
   .title {
     font-family: $main-font-medium;
-    font-size: 17px;
-    line-height: 22px;
+    font-size: 1.0625rem;
+    line-height: 1.375rem;
     color: $white;
     opacity: .7;
   }
