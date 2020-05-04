@@ -30,6 +30,7 @@
   .rates__table-row-hover {
 
     &:hover {
+      box-shadow: none;
       transform: none;
     }
   }
