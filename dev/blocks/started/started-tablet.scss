@@ -14,8 +14,10 @@
     margin-top: 4.6875rem;
     margin-right: 1.875rem;
     padding-top: 2.9375rem;
+    padding-bottom: 1.25rem;
     width: 19.9375rem;
-    height: 18rem;
+    height: auto;
+    min-height: 14.0625rem;
   }
 
   .started__card-num {
@@ -24,6 +26,8 @@
     padding-bottom: .125rem;
     width: 3.125rem;
     height: 3.125rem;
+    font-size: 1.75rem;
+    line-height: 1.9375rem;
   }
 
   .started__card:nth-child(3n) {
