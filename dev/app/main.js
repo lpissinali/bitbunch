@@ -174,6 +174,26 @@ $(window).on('resize orientationchange', () => {
   $('.big-team__advisors-container').slick('resize');
 });
 
+
+// account user menu
+if (document.querySelector('.account-nav__user-menu-close')) {
+  $('.account-nav__user-header').click(() => {
+    $('.account-nav__nav-menu').toggleClass('disabled');
+    $('.account-nav__user').toggleClass('enabled');
+    $('.account-nav__user-menu-list').slideToggle();
+  });
+
+  $('.account-nav__user-menu-close').click(() => {
+    $('.account-nav__nav-menu').toggleClass('disabled');
+    $('.account-nav__user').toggleClass('enabled');
+    $('.account-nav__user-menu-list').slideToggle();
+  });
+  // $('.main-nav__menu-link').click(() => {
+  //   $('.main-nav__nav-menu').toggleClass('active');
+  //   $('body').toggleClass('overflow-hidden');
+  // });
+}
+
 // range
 if (document.querySelector('.calculation__button-cur.bitcoin')) {
   document.querySelector('.calculation__button-cur.bitcoin').addEventListener('click', () => {
