@@ -6,6 +6,8 @@
                 img(src="./images/main-header__logo-image.png" alt="")
     nav.account-nav__nav-menu
         .account-nav__controls
+            a(href="account.html").account-nav__logo-link
+                img(src="./images/main-header__logo-image.png" alt="")
             .account-nav__close-button
                 img(src="./images/main-nav__close-icon.png", alt="")
         ul.account-nav__menu-list
@@ -39,37 +41,42 @@
                     .account-nav__menu-link-icon
                         img(src="./images/icon_withdraw.svg", alt="")
                     span Withdraw
-    .account-nav__user
-        .account-nav__user-menu-close
-        .account-nav__user-header
-            .account-nav__user-menu-link
-                .account-nav__user-menu-link-icon
-                    img(src="./images/user.svg", alt="")
-                span Account
-            .account-nav__user-logo MT
-            .account-nav__user-descr
-                .account-nav__user-name Miguel Torres
-                .account-nav__user-email torres@hotmail.com
-        ul.account-nav__user-menu-list
-            li.account-nav__user-menu-item
-                a(href="account.html").account-nav__user-menu-link
-                    .account-nav__user-menu-link-icon
+        .account-nav__user
+            .account-nav__user-menu-close
+            .account-nav__user-controls
+                .account-nav__user-button.toggle__user-menu
+                    .account-nav__user-button-icon
                         img(src="./images/user.svg", alt="")
                     span Account
-            li.account-nav__user-menu-item
-                a(href="#").account-nav__user-menu-link
-                    .account-nav__user-menu-link-icon
-                        img(src="./images/shield-protected.svg", alt="")
-                    span Security
-            li.account-nav__user-menu-item
-                a(href="#").account-nav__user-menu-link
-                    .account-nav__user-menu-link-icon
-                        img(src="./images/verification.svg", alt="")
-                    span Verification
-            li.account-nav__user-menu-item
-                a(href="#").account-nav__user-menu-link
-                    .account-nav__user-menu-link-icon
-                        img(src="./images/logout.svg", alt="")
+                a(href="#logout").account-nav__user-button.logout-user
+                    .account-nav__user-button-icon._fill-icon
+                        img(src="./images/doors.svg", alt="")
                     span Logout
-    a(href="#").account-nav__button.button-orange invest
+            .account-nav__user-header
+                .account-nav__user-logo.toggle__user-menu MT
+                .account-nav__user-descr
+                    .account-nav__user-name Miguel Torres
+                    .account-nav__user-email torres@hotmail.com
+            ul.account-nav__user-menu-list
+                li.account-nav__user-menu-item
+                    a(href="account.html").account-nav__user-menu-link
+                        .account-nav__user-menu-link-icon
+                            img(src="./images/user.svg", alt="")
+                        span Account
+                li.account-nav__user-menu-item
+                    a(href="#").account-nav__user-menu-link
+                        .account-nav__user-menu-link-icon
+                            img(src="./images/shield-protected.svg", alt="")
+                        span Security
+                li.account-nav__user-menu-item
+                    a(href="#").account-nav__user-menu-link
+                        .account-nav__user-menu-link-icon
+                            img(src="./images/verification.svg", alt="")
+                        span Verification
+                li.account-nav__user-menu-item
+                    a(href="#").account-nav__user-menu-link
+                        .account-nav__user-menu-link-icon
+                            img(src="./images/logout.svg", alt="")
+                        span Logout
+    block header-button
     .account-nav__sandwich-button

@@ -164,18 +164,38 @@ $(window).on('resize orientationchange', () => {
 
 
 // account user menu
-if (document.querySelector('.account-nav__user-menu-close')) {
-  $('.account-nav__user-header').click(() => {
-    $('.account-nav__nav-menu').toggleClass('disabled');
+if (document.querySelector('.toggle__user-menu')) {
+  $('.toggle__user-menu').click(() => {
+    if ($(window).width() <= 1000){
+      $('.account-nav__user-controls').slideToggle();
+    }
+    $('.account-nav__menu-list').toggleClass('disabled');
     $('.account-nav__user').toggleClass('enabled');
     $('.account-nav__user-menu-list').slideToggle();
   });
 
   $('.account-nav__user-menu-close').click(() => {
-    $('.account-nav__nav-menu').toggleClass('disabled');
+    if ($(window).width() <= 1000){
+      $('.account-nav__user-controls').slideToggle();
+    }
+    $('.account-nav__menu-list').toggleClass('disabled');
     $('.account-nav__user').toggleClass('enabled');
     $('.account-nav__user-menu-list').slideToggle();
   });
+}
+
+// account user mobile menu
+if (document.querySelector('.account-nav__sandwich-button')) {
+  $('.account-nav__sandwich-button').click(() => {
+    $('.account-nav__nav-menu').toggleClass('active');
+    $('body').toggleClass('overflow-hidden');
+  });
+
+  $('.account-nav__close-button').click(() => {
+    $('.account-nav__nav-menu').toggleClass('active');
+    $('body').toggleClass('overflow-hidden');
+  });
+
   // $('.main-nav__menu-link').click(() => {
   //   $('.main-nav__nav-menu').toggleClass('active');
   //   $('body').toggleClass('overflow-hidden');
