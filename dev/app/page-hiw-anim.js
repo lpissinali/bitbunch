@@ -108,11 +108,40 @@ $(document).ready(() => {
 
       // started
       if (document.querySelector('.started')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.started__headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.started__subtitle', 0.7, { y: '100%', opacity: 0 }, 0.3);
-        tl_big_team.from('.started__flex-container', 0.7, { y: '10%', opacity: 0 }, 0.6);
-        AnimationScene('.started', tl_big_team);
+        const tl_started = new TimelineMax();
+        tl_started.from('.started__headline', 0.5, { y: '100%', opacity: 0 });
+        tl_started.from('.started__subtitle', 0.7, { y: '100%', opacity: 0 }, 0.3);
+        AnimationScene('.started', tl_started);
+
+        //
+        const tl_started_card_1 = new TimelineMax();
+        tl_started_card_1.from('.started__anim-block-1', 0.7, { y: '30%', opacity: 0 });
+        AnimationScene('.started__subtitle', tl_started_card_1);
+
+        //
+        const tl_started_card_2 = new TimelineMax();
+        tl_started_card_2.from('.started__anim-block-2', 0.7, { y: '30%', opacity: 0 });
+        AnimationScene('.started__anim-block-1', tl_started_card_2);
+
+        //
+        const tl_started_card_3 = new TimelineMax();
+        tl_started_card_3.from('.started__anim-block-3', 0.7, { y: '30%', opacity: 0 });
+        AnimationScene('.started__anim-block-2', tl_started_card_3);
+
+        //
+        const tl_started_card_4 = new TimelineMax();
+        tl_started_card_4.from('.started__anim-block-4', 0.7, { y: '30%', opacity: 0 });
+        AnimationScene('.started__anim-block-3', tl_started_card_4);
+
+        //
+        const tl_started_card_5 = new TimelineMax();
+        tl_started_card_5.from('.started__anim-block-5', 0.7, { y: '30%', opacity: 0 });
+        AnimationScene('.started__anim-block-4', tl_started_card_5);
+
+        //
+        const tl_started_card_6 = new TimelineMax();
+        tl_started_card_6.from('.started__anim-block-6', 0.7, { y: '30%', opacity: 0 });
+        AnimationScene('.started__anim-block-5', tl_started_card_6);
       }
 
       // upfront
