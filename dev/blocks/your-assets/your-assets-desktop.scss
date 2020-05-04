@@ -1,3 +1,6 @@
+.your-assets__header-button{
+  display: none;
+}
 .your-assets__headline{
   margin-bottom: 2.1875rem;
 }
@@ -20,25 +23,25 @@
 .your-assets__table-row{
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #efc7c2;
-  border-radius: 1px;
+  border-bottom: 0.0625rem solid #efc7c2;
+  border-radius: 0.0625rem;
   &:last-child{
     border-bottom: none;
   }
 }
-.table-head{
+.your-assets__table .table-head{
   margin: 0 0 1.5rem;
   font-family: $main-font-medium;
   font-size: 1rem !important;
   letter-spacing: 0.0213rem;
   color: $blue !important;
 }
-.table-data{
+.your-assets__table .table-data{
   display: flex;
   align-items: center;
   padding: 0.6875rem 0;
 }
-.table-col_assets{
+.your-assets__table .table-col_assets{
   width: 13rem;
   img{
     display: block;
@@ -52,19 +55,19 @@
     font-family: $main-font-light;
     font-size: 12px;
     color: #091540;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.0187rem;
     b{
       font-family: $main-font-bold;
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 }
-.table-col_balance{
+.your-assets__table .table-col_balance{
   width: 10.5rem;
   font-size: 0.875rem;
   color: $black-light;
 }
-.table-col_profit{
+.your-assets__table .table-col_profit{
   width: 8.875rem;
   font-family: $main-font-semi-bold;
   font-size: 0.875rem;
@@ -83,7 +86,7 @@
     color: #f54359;
   }
 }
-.table-col_reports{
+.your-assets__table .table-col_reports{
   width: 9.5rem;
   a{
     color: $blue;
@@ -95,10 +98,10 @@
     }
   }
 }
-.table-col_trading{
+.your-assets__table .table-col_trading{
   width: 7.625rem;
 }
-.table-col_invest{
+.your-assets__table .table-col_invest{
   width: 6.25rem;
   text-align: right;
 }

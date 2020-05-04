@@ -1,0 +1,30 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .trading-history {
+    margin: 1.1563rem 0;
+    padding: 0 0.625rem;
+    background: transparent;
+    box-shadow: none;
+  }
+  .trading-history__headline{
+    margin-bottom: 1rem;
+  }
+  .trading-history__content{
+    margin-bottom: 1.0625rem;
+  }
+  .trading-history__table-overflow{
+    width: calc(100% + 0.625rem * 2);
+    margin: 0 -0.625rem;
+    padding: 0 0.625rem;
+  }
+  .trading-history__table .table-head{
+    padding: 0 0.5rem 1.0625rem;
+    font-size: 0.875rem;
+  }
+  .trading-history__table .table-data{
+    padding: 0.625rem 0.5rem 0.8125rem;
+    font-size: 0.75rem;
+  }
+  .trading-history__table .table-data > span + span {
+    margin-top: 0.0625rem;
+  }
+}

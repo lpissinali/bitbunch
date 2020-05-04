@@ -5,7 +5,14 @@
   margin-bottom: 1.875rem;
 }
 .account-header__left{
-  width: 100%;
+  flex-grow: 1;
+}
+.account-header__button{
+  display: flex;
+  width: 7.9375rem;
+  height: 3.125rem;
+  margin-bottom: 0.6875rem;
+  font-size: 1rem;
 }
 .account-app-headline {
   font-family: $main-font-semi-bold;
@@ -26,17 +33,16 @@
   font-size: 1.5rem;
   color: $black-light;
 }
-.account-header .button-orange{
-  display: none;
-}
 
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
   .account-header{
     padding: 0 1.5rem;
   }
-  .account-header__left {
-    width: auto;
-    flex-grow: 1;
+  .account-header__button{
+    display: flex;
+    width: 7.25rem;
+    height: 2.8125rem;
+    margin-bottom: 0.125rem;
   }
   .account-app-headline{
     font-size: 0.75rem;
@@ -48,13 +54,6 @@
   }
   .account-section-headline{
     font-size: 1.3125rem;
-  }
-  .account-header .button-orange{
-    display: flex;
-    width: 7.25rem;
-    height: 2.8125rem;
-    margin-bottom: 0.125rem;
-    font-size: 1rem;
   }
 }
 

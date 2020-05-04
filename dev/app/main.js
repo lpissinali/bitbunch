@@ -195,11 +195,6 @@ if (document.querySelector('.account-nav__sandwich-button')) {
     $('.account-nav__nav-menu').toggleClass('active');
     $('body').toggleClass('overflow-hidden');
   });
-
-  // $('.main-nav__menu-link').click(() => {
-  //   $('.main-nav__nav-menu').toggleClass('active');
-  //   $('body').toggleClass('overflow-hidden');
-  // });
 }
 
 // range
@@ -268,4 +263,12 @@ if (document.querySelector('.calculation__mount-range')) {
   });
   $('.calculation__mount-value').html($('.calculation__mount-range').val());
   $('.calculation__result-mount').html($('.calculation__mount-range').val());
+}
+
+
+// Choosing coin play/pause button
+if (document.querySelector('.choosing-coin__controls-toggle')) {
+  $('.choosing-coin__controls-toggle').click(function(){
+    $(this).toggleClass('active');
+  })
 }

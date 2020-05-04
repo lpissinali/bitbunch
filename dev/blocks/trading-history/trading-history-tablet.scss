@@ -1,0 +1,15 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .trading-history__headline {
+    margin-bottom: 1rem;
+  }
+  .trading-history__content{
+    display: block;
+  }
+  .trading-history__table-overflow{
+    width: 100%;
+    overflow-x: auto;
+  }
+  .trading-history__table{
+    width: 100%;
+  }
+}

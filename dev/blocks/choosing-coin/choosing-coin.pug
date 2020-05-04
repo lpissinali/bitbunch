@@ -1,0 +1,18 @@
+section.account-section.choosing-coin
+    .choosing-coin__header
+        .choosing-coin__icon
+            img(src="./images/search.svg", alt="")
+        .choosing-coin__title
+            .choosing-coin-headline Choosing a coin
+            .choosing-coin-content Analyzing possibilities <span>for a new trade</span>
+        .choosing-coin__controls
+            .choosing-coin__controls-toggle
+                img(src="./images/coin__controls_play.svg", alt="").play
+                img(src="./images/coin__controls_pause.svg", alt="").pause
+            .choosing-coin__controls-settings
+                img(src="./images/coin__controls_settings.svg", alt="")
+    .choosing-coin__coins
+        picture
+            source(srcset="./images/live-trades-mobile.jpg" media="(max-width: 570px)")
+            source(srcset="./images/live-trades-tablet.jpg" media="(max-width: 1000px)")
+            img(src="./images/live-trades-desktop.jpg" alt="")

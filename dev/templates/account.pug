@@ -15,6 +15,23 @@ html(lang="en-US")
         meta(name="description" content=meta2)
         link(rel="icon" type="image/x-icon" href="./images/favicon.ico")
         style(type="text/css").
+            .preloader {
+              position: fixed; 
+              z-index: 1000; 
+              top: 0; 
+              left: 0; 
+              right: 0;
+              bottom: 0;
+              width: 100vw;
+              height: 100vh;
+              background: linear-gradient(to right, #324ea3, #3d6dd0); 
+              transition: opacity 300ms; 
+              opacity: 1; 
+              display: flex; 
+              justify-content: center; 
+              align-items: center;
+            }
+            
             .spinner {
                 margin: 6.25rem auto;
                 width: 5rem;
@@ -58,13 +75,13 @@ html(lang="en-US")
             }
 
     body(class=pageClass)
+      include ../components/preloader/preloader
       block notification
       
       .account-page
         include ../components/account-nav/account-nav
         .account-content
           block content
-        include ../components/preloader/preloader
 
       block modal
 

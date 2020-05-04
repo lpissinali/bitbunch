@@ -1,6 +1,7 @@
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
   .account-nav{
     width: 6.25rem;
+    min-height: 64rem;
   }
   .account-nav__logo:after{
     height: 0.1875rem;
@@ -42,13 +43,6 @@
   }
 
   // User menu
-  // .account-nav__user{
-  //   &.enabled{
-  //     .account-nav__user-header{
-  //       display: none;
-  //     }
-  //   }
-  // }
   .account-nav__user-controls{
     display: flex;
   }

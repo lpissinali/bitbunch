@@ -18,32 +18,32 @@
   .your-assets__table-row:first-child{
     display: none;
   }
-  .table-data{
+  .your-assets__table .table-data{
     padding: 0;
   }
-  .table-col_trading{
+  .your-assets__table .table-col_trading{
     display: none;
   }
-  .table-col_assets{
+  .your-assets__table .table-col_assets{
     width: 3.0625rem;
     margin-right: 0.75rem;
   }
-  .table-col_assets img{
+  .your-assets__table .table-col_assets img{
     margin: 0;
     border-radius: 0.25rem 0 0 0.25rem;
   }
-  .table-col_assets span{
+  .your-assets__table .table-col_assets span{
     display: none;
   }
-  .table-col_balance{
+  .your-assets__table .table-col_balance{
     width: auto;
     flex-grow: 1;
   }
-  .table-col_profit {
+  .your-assets__table .table-col_profit {
     width: auto;
     padding: 0 0.4375rem;
   }
-  .table-col_profit img{
+  .your-assets__table .table-col_profit img{
     margin-top: 0.1875rem;
   }
 }
