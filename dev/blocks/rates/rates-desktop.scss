@@ -1,0 +1,124 @@
+.rates {
+  background-color: #FCFDFF;
+}
+
+.rates__wrapper {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.rates__headline {
+  text-align: center;
+}
+
+.rates__subtitle {
+  margin-right: auto;
+  margin-left: auto;
+  width: 33.75rem;
+  text-align: center;
+}
+
+.rates__table {
+  margin-top: 4.375rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 71.25rem;
+  background-color: $white;
+}
+
+.rates__table-header {
+  height: 4.25rem;
+  font-family: $main-font-medium;
+  font-size: .875rem;
+  letter-spacing: .0187rem;
+  line-height: 1rem;
+  color: $blue;
+}
+
+.rates__table-row {
+  align-items: center;
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #efc7c2;
+
+  .title {
+    font-family: $main-font-light;
+    color: #091540;
+  }
+
+  .cost {
+    margin-left: 1.875rem;
+    padding: .125rem .9375rem;
+    border-radius: .25rem;
+    font-family: $main-font-medium;
+  }
+
+  .red {
+    background-color: #f2455c;
+    color: $white;
+  }
+
+  .grey {
+    background-color: #ececec;
+    color: #333;
+  }
+
+  .green {
+    background-color: #1cc7a1;
+    color: $white;
+  }
+
+  .percent {
+    font-family: $main-font-medium;
+    font-size: 1rem;
+    line-height: 1.3125rem;
+    color: #1cc7a1;
+  }
+}
+
+.rates__table-row-hover {
+  background-color: $white;
+  transition: transform 300ms;
+  transform-origin: center;
+
+  &:hover {
+    border-radius: .1875rem;
+    transform: scale(1.07);
+  }
+}
+
+.rates__table-row:last-child {
+  border-bottom: 0;
+}
+
+.rates__table-col-currency {
+  padding-left: 2.25rem;
+  width: 19.875rem;
+
+  img {
+    margin-right: 1.5625rem;
+    width: 3.0625rem;
+    height: auto;
+    box-shadow: 0 .25rem .375rem rgba(93, 88, 88, .1);
+  }
+}
+
+.rates__table-col-buy {
+  width: 17.375rem;
+}
+
+.rates__table-col-sell {
+  width: 20.75rem;
+  .cost.grey {
+    opacity: .6;
+  }
+}
+
+.rates__table-col-profit {
+  width: 8.125rem;
+}
+
+@import "./rates-tablet.scss";
+
+@import "./rates-mobile.scss";

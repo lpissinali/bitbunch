@@ -69,8 +69,10 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
   .best-exchanges {
+    position: static;
     flex-wrap: wrap;
     margin-top: .625rem;
+    height: auto;
   }
 
   .best-exchanges__image {

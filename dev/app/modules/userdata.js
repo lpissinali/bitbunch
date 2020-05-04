@@ -102,7 +102,6 @@ function getCountryCodes(url) {
         data-content="
           <span style='display:flex; justify-content: space-between;'>
             <span>${val.name}</span>
-            <span>${val.dial_code}</span>
           </span>"
         value="${val.code}"  
         >${val.code}</option>`;
@@ -117,7 +116,6 @@ function getCountryCodes(url) {
 
 function initBootstrapSelect() {
   //custom selects
-  $.fn.selectpicker.Constructor.DEFAULTS.dropupAuto = false;
   if ($('select').length > 0) {
     $('select').each(function () {
       $(this).selectpicker({

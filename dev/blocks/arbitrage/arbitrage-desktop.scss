@@ -1,5 +1,18 @@
 .arbitrage {
+  position: relative;
   background-color: #fcfdff;
+}
+
+.arbitrage__decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/arbitrage-bg-desktop.svg");
+  background-position: center 25rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .arbitrage__wrapper {
@@ -13,40 +26,57 @@
 }
 
 .arbitrage__flex-container {
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
   display: flex;
-  margin-top: 2.5rem;
+  margin-top: 4.375rem;
   margin-right: auto;
   margin-left: auto;
   width: 71.3125rem;
 }
 
-.arbitrage__flex-block {
-  margin-top: 1.875rem;
-  padding-top: 2.1875rem;
-  padding-right: 2.1875rem;
-  padding-bottom: 2.125rem;
-  padding-left: 2.1875rem;
-  width: 34.6875rem;
+.arbitrage__card {
+  position: relative;
+  padding-top: 2rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  width: 15.25rem;
+  height: 16.875rem;
+  border-radius: .125rem;
   box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
+  background-color: $white;
+  transition: box-shadow 300ms;
+
+  &:hover {
+    box-shadow: .3125rem .375rem 1.25rem rgba(80, 87, 94, .3);
+  }
+
+  img {
+    display: block;
+    width: 2.625rem;
+    height: auto;
+  }
 
   .title {
-    font-family: serif;
-    font-family: $main-font-regular;
-    font-size: 1.375rem;
-    line-height: 1.875rem;
-    text-transform: uppercase;
-    color: #324ea3;
+    margin-top: 1.25rem;
+    font-family: $main-font-semi-bold;
+    font-size: 1.3125rem;
+    line-height: 1.625rem;
+    color: #091540;
   }
 
-  .descr {
-    margin-top: .8125rem;
-    font-family: $main-font-regular;
-    font-size: 1rem;
-    line-height: 1.8125rem;
+  .description {
+    margin-top: .875rem;
+    font-size: .875rem;
+    line-height: 1.625rem;
     color: #616884;
+    opacity: .8;
   }
+}
+
+.arbitrage__card-1,
+.arbitrage__card-3 {
+  margin-top: 8.4375rem;
 }
 
 @import "./arbitrage-tablet.scss";

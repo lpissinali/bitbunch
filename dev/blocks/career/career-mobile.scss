@@ -10,7 +10,16 @@
     margin-top: -4.6875rem;
   }
 
+  .career__accordion-title {
+    font-size: .625rem;
+
+    span {
+      font-family: $main-font-semi-bold;
+    }
+  }
+
   .career__accordion {
+    margin-top: 1rem;
   }
 
   .career__accordion:first-child {
@@ -62,8 +71,7 @@
   }
 
   .accordion__acd-wrapper {
-    padding: 1.5rem;
-    padding: .5rem;
+    padding: 0 .5rem .5rem;
 
     h3,
     p {
@@ -85,5 +93,9 @@
     margin-top: 2rem;
     font-size: .875rem;
     line-height: 1.5rem;
+
+    a {
+      font-family: $main-font-semi-bold;
+    }
   }
 }

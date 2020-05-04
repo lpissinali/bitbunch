@@ -21,6 +21,9 @@
 
   .register__form-phonecode{
     max-width: 4.75rem;
+    input {
+      padding-right: 0.5rem;
+    }
   }
 
   .register__form-phonenumber {

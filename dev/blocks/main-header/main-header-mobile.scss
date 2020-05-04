@@ -3,7 +3,7 @@
   .main-header__wrapper {
     padding-top: 2.125rem;
     padding-right: 1.5rem;
-    padding-bottom: 6rem;
+    padding-bottom: 1rem;
     padding-left: 1.5rem;
   }
 
@@ -21,7 +21,8 @@
   }
 
   .main-header__description-item {
-    margin-top: .6875rem;
+    margin-top: .5rem;
+    margin-bottom: 0;
     padding-left: 1.75rem;
     width: 15rem;
     font-size: .75rem;
@@ -35,7 +36,7 @@
   }
 
   .main-header__try-demo-button {
-    margin-top: 1.1875rem;
+    margin-top: 2rem;
   }
 
   .main-header__video-block {

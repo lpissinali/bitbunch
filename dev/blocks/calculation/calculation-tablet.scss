@@ -1,0 +1,44 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .calculation__wrapper {
+    padding-top: 7.25rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .calculation__flex-container {
+    margin-top: 3rem;
+    width: 41.875rem;
+  }
+
+  .calculation__range-block {
+    padding-top: 1.25rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    width: 22.5rem;
+  }
+
+  .calculation__button-cur {
+    flex-direction: column;
+    width: 5.5rem;
+    height: 4.625rem;
+
+    img {
+      margin: 0;
+    }
+
+    span {
+      margin-top: .5rem;
+    }
+  }
+
+  .calculation__result-block {
+    width: 19.375rem;
+  }
+
+  .calculation__title-block {
+    .title {
+      font-size: .875rem;
+      line-height: 1.5rem;
+    }
+  }
+}

@@ -1,5 +1,9 @@
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
 
+  .profits__wrapper {
+    padding-top: 3.125rem;
+  }
+
   .profits__slider-container {
     margin-top: 1.875rem;
   }
@@ -14,7 +18,7 @@
     line-height: 1.625rem;
 
     .num {
-      top: -.75rem;
+      top: 3.75rem;
       font-size: 4.375rem;
     }
   }
@@ -26,7 +30,6 @@
   }
 
   .profits__slider-image {
-    margin-top: 3rem;
     width: 41.75rem;
   }
 }

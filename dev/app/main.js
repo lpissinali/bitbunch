@@ -1,6 +1,7 @@
 import '../common/scss/main.scss';
 
 // accordion
+import Accordion from '../components/accordion/ds-accordion-gsap';
 import { dsAccordion } from '../components/accordion/ds-accordion';
 
 require('./polyfills/polyfills');
@@ -15,7 +16,7 @@ require('./modules/contact');
 require('./modules/masks');
 
 // аккордион faq
-const faqAccordion = new dsAccordion({});
+const faqAccordion = new Accordion({});
 
 const careerAccordion = new dsAccordion({
   mainContainer: '.career__accordion',
@@ -23,7 +24,15 @@ const careerAccordion = new dsAccordion({
 });
 
 // анимация
-require('./home-page-animation');
+require('./page-home-anim');
+require('./page-pressroom-anim');
+require('./page-team-anim');
+require('./page-contact-anim');
+require('./page-career-anim');
+require('./page-faq-anim');
+require('./page-hiw-anim');
+require('./page-login-anim');
+require('./page-register-anim');
 
 // menu
 if (document.querySelector('.main-nav__sandwich-button')) {
@@ -171,4 +180,72 @@ if (document.querySelector('.account-nav__user-menu-close')) {
   //   $('.main-nav__nav-menu').toggleClass('active');
   //   $('body').toggleClass('overflow-hidden');
   // });
+}
+
+// range
+if (document.querySelector('.calculation__button-cur.bitcoin')) {
+  document.querySelector('.calculation__button-cur.bitcoin').addEventListener('click', () => {
+    $('.calculation__button-cur').removeClass('active');
+    $('.calculation__button-cur.bitcoin').addClass('active');
+    $('.calculation__currency-block').removeClass('active');
+    $('.calculation__currency-btc-block').addClass('active');
+    $('.calculation__result-sum').html($('.calculation__btc-range').val());
+    $('.calculation__result-units').html(' BTC');
+  });
+}
+
+if (document.querySelector('.calculation__button-cur.dollar')) {
+  document.querySelector('.calculation__button-cur.dollar').addEventListener('click', () => {
+    $('.calculation__button-cur').removeClass('active');
+    $('.calculation__button-cur.dollar').addClass('active');
+    $('.calculation__currency-block').removeClass('active');
+    $('.calculation__currency-etc-block').addClass('active');
+    $('.calculation__result-sum').html($('.calculation__etc-range').val());
+    $('.calculation__result-units').html(' ETC');
+  });
+}
+
+if (document.querySelector('.calculation__button-cur.bitcoin')) {
+  document.querySelector('.calculation__button-cur.euro').addEventListener('click', () => {
+    $('.calculation__button-cur').removeClass('active');
+    $('.calculation__button-cur.euro').addClass('active');
+    $('.calculation__currency-block').removeClass('active');
+    $('.calculation__currency-usdt-block').addClass('active');
+    $('.calculation__result-sum').html($('.calculation__usdt-range').val());
+    $('.calculation__result-units').html(' USDT');
+  });
+}
+
+// range
+if (document.querySelector('.calculation__btc-range')) {
+  $('.calculation__btc-range').on('change mousemove', function() {
+    $('.calculation__btc-value').html($(this).val());
+    $('.calculation__result-sum').html($(this).val());
+  });
+  $('.calculation__btc-value').html($('.calculation__btc-range').val());
+}
+
+if (document.querySelector('.calculation__etc-range')) {
+  $('.calculation__etc-range').on('change mousemove', function() {
+    $('.calculation__etc-value').html($(this).val());
+    $('.calculation__result-sum').html($(this).val());
+  });
+  $('.calculation__etc-value').html($('.calculation__etc-range').val());
+}
+
+if (document.querySelector('.calculation__usdt-range')) {
+  $('.calculation__usdt-range').on('change mousemove', function() {
+    $('.calculation__usdt-value').html($(this).val());
+    $('.calculation__result-sum').html($(this).val());
+  });
+  $('.calculation__usdt-value').html($('.calculation__usdt-range').val());
+}
+
+if (document.querySelector('.calculation__mount-range')) {
+  $('.calculation__mount-range').on('change mousemove', function() {
+    $('.calculation__mount-value').html($(this).val());
+    $('.calculation__result-mount').html($(this).val());
+  });
+  $('.calculation__mount-value').html($('.calculation__mount-range').val());
+  $('.calculation__result-mount').html($('.calculation__mount-range').val());
 }

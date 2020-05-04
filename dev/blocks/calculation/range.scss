@@ -1,0 +1,104 @@
+.calculation__range[type="range"] {
+  margin: 0;
+  margin-top: 1.25rem;
+  width: 100%;
+  height: 1rem;
+  -webkit-appearance: none;
+  background-color: transparent !important;
+}
+
+.calculation__range[type="range"]:focus {
+  outline: none !important;
+}
+
+.calculation__range[type="range"]::-webkit-slider-runnable-track {
+  border: 0;
+  border-radius: .25rem;
+  background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
+  cursor: pointer;
+}
+
+.calculation__range[type="range"]:focus::-webkit-slider-runnable-track {
+}
+
+// chrome
+.calculation__range[type="range"]::-webkit-slider-thumb {
+  margin-top: -.875rem;
+  width: 2rem;
+  height: 2rem;
+  -webkit-appearance: none;
+  background-image: url("./images/range-button-icon.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.calculation__range[type="range"]::-moz-range-track {
+  border: 0;
+  border-radius: .25rem;
+  background-image: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
+  cursor: pointer;
+}
+
+.calculation__range[type="range"]::-moz-range-thumb {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  background-color: transparent !important;
+  background-image: url("./images/range-button-icon.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.calculation__range[type="range"]::-ms-track {
+  width: 100%;
+  border-color: transparent;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+}
+
+.calculation__range[type="range"]::-ms-fill-lower {
+}
+
+.calculation__range[type="range"]::-ms-fill-upper {
+}
+
+.calculation__range[type="range"]::-ms-thumb {
+}
+
+.calculation__range[type="range"]:focus::-ms-fill-lower {
+}
+
+.calculation__range[type="range"]:focus::-ms-fill-upper {
+}
+
+/* Track */
+.calculation__range[type="range"]::-webkit-slider-runnable-track {
+  height: .25rem;
+}
+
+.calculation__range[type="range"]::-moz-range-track {
+  height: .25rem;
+}
+
+.calculation__range[type="range"]::-ms-track {
+  height: .25rem;
+}
+
+/* Thumb */
+.calculation__range[type="range"]::-webkit-slider-thumb,
+.calculation__range[type="range"]::-moz-range-thumb,
+.calculation__range[type="range"]::-ms-thumb {
+  width: 2rem;
+  height: 2rem;
+  background-image: url("./images/range-button-icon.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

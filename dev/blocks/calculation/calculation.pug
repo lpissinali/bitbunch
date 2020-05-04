@@ -1,0 +1,95 @@
+section.calculation
+    .calculation__wrapper
+
+        .section-headline.calculation__headline How Much Can I Earn With BitBunch?
+        .section__subtitle.calculation__subtitle Market conditions will determine how much you make. Use the calculator below to get a sense of your potential profits based on past data in our systems.
+
+        .calculation__flex-container
+
+            .calculation__range-block
+
+                .calculation__title-block
+                    .title Currency
+
+                .calculation__buttons-block
+                    .button-blue.calculation__button-cur.bitcoin.active
+                        img(src="./images/calculation__button-bitkoin-icon.png", alt="")
+                        span BTC
+                    .button-blue.calculation__button-cur.dollar
+                        img(src="./images/calculation__button-dollar-icon.png", alt="")
+                        span USD
+                    .button-blue.calculation__button-cur.euro
+                        img(src="./images/calculation__button-euro-icon.png", alt="")
+                        span EUR
+                
+                .calculation__currency-block.calculation__currency-btc-block.active
+                    .calculation__title-block 
+                        .title Investment amount
+                        .value
+                            span.num.calculation__currency-value.calculation__btc-value 1
+                            span.units &nbsp;BTC
+                    input(type="range" min="0" max="200" value="54" step="0.25" id="calcCurCurrency" class="calculation__range calculation__btc-range")
+                    .calculation__value-block
+                        .calculation__value-from 0 BTC
+                        .calculation__value-to 200 BTC
+                
+                .calculation__currency-block.calculation__currency-etc-block
+                    .calculation__title-block 
+                        .title Investment amount
+                        .value
+                            span.num.calculation__currency-value.calculation__etc-value 2700
+                            span.units &nbsp;USD
+                    input(type="range" min="0" max="8000" value="2700" step="1" id="calcCurCurrency" class="calculation__range calculation__etc-range")
+                    .calculation__value-block
+                        .calculation__value-from 0 USD
+                        .calculation__value-to 8000 USD
+                
+                .calculation__currency-block.calculation__currency-usdt-block
+                    .calculation__title-block 
+                        .title Investment amount
+                        .value
+                            span.num.calculation__currency-value.calculation__usdt-value 1
+                            span.units &nbsp;EUR
+                    input(type="range" min="0" max="100" value="27" id="calcCurCurrency" class="calculation__range calculation__usdt-range")
+                    .calculation__value-block
+                        .calculation__value-from 0 EUR
+                        .calculation__value-to 100 EUR
+
+                .calculation__mount-block
+                    .calculation__title-block 
+                        .title Investment period
+                        .value
+                            span.num.calculation__mount-value 1
+                            span.units &nbsp;Months
+                    input(type="range" min="1" max="24" value="12" id="calcCurMount" class="calculation__range calculation__mount-range")
+                    .calculation__value-block
+                        .from 1 Month
+                        .to 24 Months
+
+                .button-orange.calculation__start-button.button-hover-white Start Investing Today
+            
+            .calculation__result-block
+
+                .calculation__result-data.active
+                    .title Your Profit
+                    .value
+                        span.num 12
+                        span.units &nbsp;BTC
+
+                .calculation__result-data
+                    .title Your Commission
+                    .value
+                        span.num 2.50
+                        span.units &nbsp;%
+
+                .calculation__result-data
+                    .title Investment amount
+                    .value
+                        span.num.calculation__result-sum 27 
+                        span.units.calculation__result-units &nbsp;BTC
+
+                .calculation__result-data
+                    .title Investment period
+                    .value 
+                        span.num.calculation__result-mount 12
+                        span.units &nbsp;Months

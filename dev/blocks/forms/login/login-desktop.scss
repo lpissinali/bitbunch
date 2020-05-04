@@ -42,10 +42,11 @@
 
 .login__form-forgot-link {
   position: absolute;
-  top: 0.3rem;
+  top: 0rem;
   right: 0rem;
   font-family: $main-font-bold;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
+  color: $blue;
 } 
 
 .login__form-login {

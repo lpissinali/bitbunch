@@ -38,6 +38,10 @@
     padding-top: 0;
   }
 
+  .faq__ticket-button, .help-center-header__support-button {
+    width: 100%;
+  }
+
   .faq__link {
     margin-top: 1rem;
     padding: .75rem;
@@ -86,11 +90,13 @@
 
   .accordion {
     margin-top: .75rem;
+    box-shadow: none;
+    transition: none;
   }
 
   .accordion__headline {
     padding-top: .75rem;
-    padding-right: 2.1875rem;
+    padding-right: .75rem;
     padding-bottom: .75rem;
     padding-left: .75rem;
     font-size: .875rem;
@@ -105,12 +111,13 @@
   }
 
   .accordion__dropdown-wrapper {
-    padding-top: .5rem;
+    padding-top: 1rem;
     padding-right: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2.125rem;
     padding-left: 1rem;
 
     p {
+      margin-top: 1.375rem;
       font-size: .75rem;
       line-height: 1.125rem;
     }

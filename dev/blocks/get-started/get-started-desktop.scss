@@ -1,0 +1,33 @@
+.get-started {
+  background-image: url("./images/get-started-bg-desktop.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.get-started__wrapper {
+  padding-top: 5rem;
+  height: 24.375rem;
+}
+
+.get-started__subtitle {
+  text-align: center;
+  color: $white;
+  opacity: .8;
+}
+
+.get-started__headline {
+  margin-top: .3125rem;
+  text-align: center;
+  color: $white;
+}
+
+.get-started__button {
+  margin-top: 2.9375rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@import "./get-started-tablet.scss";
+
+@import "./get-started-mobile.scss";
