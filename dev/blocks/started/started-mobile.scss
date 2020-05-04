@@ -23,6 +23,10 @@
   }
 
   .started__card-num {
+    top: -1.25rem;
+    left: calc(50% - 1.25rem);
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.375rem;
     line-height: 1.9375rem;
   }
