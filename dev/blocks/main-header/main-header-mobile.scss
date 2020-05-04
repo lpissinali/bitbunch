@@ -1,5 +1,9 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
+  .main-header {
+    box-shadow: .25rem .3125rem .5rem rgba(80, 87, 94, .1);
+  }
+
   .main-header__wrapper {
     padding-top: 2.125rem;
     padding-right: 1.5rem;
