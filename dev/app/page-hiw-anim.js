@@ -60,8 +60,8 @@ $(document).ready(() => {
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 0.9);
 
         // dot animation
-        tl_big_team.from('.profits__slider-dot-right', 0.4, {
-          opacity: 1,
+        tl_big_team.from('.profits__slider-dot-right', 0.3, {
+          opacity: 0,
           repeat: 10,
           yoyo: true,
         });
@@ -198,8 +198,8 @@ $(document).ready(() => {
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 0.9);
 
         // dot animation
-        tl_big_team.from('.profits__slider-dot-right', 0.4, {
-          opacity: 1,
+        tl_big_team.from('.profits__slider-dot-right', 0.3, {
+          opacity: 0,
           repeat: 10,
           yoyo: true,
         });
@@ -282,12 +282,16 @@ $(document).ready(() => {
         const tl_big_team = new TimelineMax();
         tl_big_team.from('.profits__headline', 0.5, { y: '-100%', opacity: 0 });
         tl_big_team.from('.profits__subtitle', 0.7, { y: '-100%', opacity: 0 }, 0.3);
-        tl_big_team.from('.profits__slider-container', 0.7, { x: '-10%', opacity: 0 }, 0.7);
+        tl_big_team.from('.profits__animation-order-1', 0.7, { x: '-100', opacity: 0 }, 0.7);
+        tl_big_team.from('.profits__animation-order-2', 0.7, { x: '-100', opacity: 0 }, 0.7);
+        tl_big_team.from('.profits__wrapper .slick-next ', 0.7, { x: '100', opacity: 0 }, 0.7);
+        tl_big_team.from('.profits__wrapper .slick-prev', 0.7, { x: '100', opacity: 0 }, 0.7);
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 1);
 
         // dot animation
-        tl_big_team.from('.profits__slider-dot-right', 0.4, {
-          opacity: 1,
+        tl_big_team.from('.profits__slider-dot-right', 0.3, {
+          opacity: 0,
+          scale: 0.95,
           repeat: 10,
           yoyo: true,
         });
