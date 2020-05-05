@@ -1,49 +1,57 @@
-.notifications{
+.notifications {
   padding-bottom: 1.5313rem;
-  background-image: url(../images/bg-bell@2x.png);
-  background-size: 13.75rem 13.75rem;
+  background-image: url("./images/bg-bell@2x.png");
+  background-position: right .5625rem bottom .375rem;
   background-repeat: no-repeat;
-  background-position: right 0.5625rem bottom 0.375rem;
+  background-size: 13.75rem 13.75rem;
 }
-.notifications__headline{
-  margin-bottom: 0.875rem;
+
+.notifications__headline {
+  margin-bottom: .875rem;
 }
-.notifications__content{
-  max-width: 29.375rem;
+
+.notifications__content {
   margin-bottom: 1.6563rem;
+  max-width: 29.375rem;
   font-family: $main-font-medium;
-  letter-spacing: 0.0213rem;
+  letter-spacing: .0213rem;
   line-height: 1.625rem;
   color: $black-light;
 }
-.notifications__list{
-  display: flex;
+
+.notifications__list {
   flex-wrap: wrap;
-}
-.notifications__list-column{
   display: flex;
+}
+
+.notifications__list-column {
   flex-direction: column;
+  display: flex;
   width: 21.25rem;
 }
-.notifications__list-item{
-  display: flex;
+
+.notifications__list-item {
   align-items: flex-start;
-  width: 100%;
-  margin: 0.4063rem 0;
+  display: flex;
+  margin: .4063rem 0;
   padding-right: 1rem;
+  width: 100%;
 }
-.notifications__list-item span{
+
+.notifications__list-item span {
   order: 1;
-  width: calc(100% - 4.0625rem);
-  margin-top: 0.1563rem;
+  margin-top: .1563rem;
   padding-left: 1rem;
+  width: calc(100% - 4.0625rem);
   font-family: $main-font-medium;
-  letter-spacing: 0.0213rem;
+  letter-spacing: .0213rem;
   color: $black-light;
 }
-.notifications__list-item .checkbox-btn{
+
+.notifications__list-item .checkbox-btn {
   order: 0;
 }
+
 @import "./notifications-tablet.scss";
 
 @import "./notifications-mobile.scss";
