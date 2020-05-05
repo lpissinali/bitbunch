@@ -54,11 +54,11 @@ section.calculation
                         .value
                             span.num.calculation__currency-value.calculation__usdt-value 1
                             span.units &nbsp;USDT
-                    input(type="range" min="0" max="100" value="27" id="calcCurCurrency" class="calculation__range calculation__usdt-range")
+                    input(type="range" min="0" max="1500000" value="570000" id="calcCurCurrency" class="calculation__range calculation__usdt-range")
                     .calculation__value-block
                         .calculation__value-from 0 
                             span USDT
-                        .calculation__value-to 100 
+                        .calculation__value-to 1500000 
                             span USDT
 
                 .calculation__mount-block
@@ -82,7 +82,7 @@ section.calculation
                     .title Your Profit
                     .value
                         span.num 12
-                        span.units &nbsp;BTC
+                        span.units.calculation__result-your-profile-units &nbsp;BTC
 
                 .calculation__result-data
                     .title Your Commission
