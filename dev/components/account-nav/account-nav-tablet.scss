@@ -1,6 +1,7 @@
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
   .account-nav{
     width: 6.25rem;
+    min-height: 64rem;
   }
   .account-nav__logo:after{
     height: 0.1875rem;
@@ -11,12 +12,13 @@
     height: 3.125rem;
   }
   .account-nav__nav-menu{
-    &.disabled{
-      opacity: 0;
-    }
+    padding-bottom: 8.875rem;
   }
   .account-nav__menu-list{
     margin: 0;
+    &.disabled{
+      opacity: 0;
+    }
   }
   .account-nav__menu-item{
     margin: 0;
@@ -41,22 +43,11 @@
   }
 
   // User menu
-  .account-nav__user{
-    &.enabled{
-      .account-nav__user-header{
-        display: none;
-      }
-    }
+  .account-nav__user-controls{
+    display: flex;
   }
   .account-nav__user-header{
-    margin: 0;
-    .account-nav__user-logo,
-    .account-nav__user-descr{
-      display: none;
-    }
-    .account-nav__user-menu-link{
-      display: flex;
-    }
+    display: none;
   }
   .account-nav__user-menu-list{
     margin: 1.25rem 0;

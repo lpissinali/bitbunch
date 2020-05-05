@@ -1,0 +1,121 @@
+.trading-history{
+  margin: 2.75rem 0;
+}
+.trading-history__headline{
+  margin-bottom: 2.1875rem;
+}
+.trading-history__content{
+  display: none;
+  margin-bottom: 1.0625rem;
+  font-family: $main-font-light;
+  font-size: 0.75rem;
+  line-height: 1.5625rem;
+  color: #091540;
+  opacity: 0.8;
+}
+.trading-history__table-overflow{
+  &:not(.mCS_no_scrollbar){
+    .mCSB_container{
+      margin-top: 1.875rem;
+      margin-bottom: 0;
+    }
+    .mCSB_scrollTools_horizontal{
+      top: 0;
+      bottom: auto;
+      height: 0.9375rem;
+    }
+    .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+      height: 0.1875rem;
+      background: $blue;
+    }
+    .mCS-dark.mCSB_scrollTools .mCSB_draggerRail{
+      height: 0.0625rem;
+      background-color: $blue;
+      opacity: .2;
+    }
+  }
+}
+.trading-history__table{
+  width: 100%;
+}
+.trading-history__table-row{
+  border-bottom: 0.0625rem solid #efc7c2;
+  border-radius: 0.0625rem;
+  &:last-child{
+    border-bottom: none;
+  }
+}
+.trading-history__table .table-head{
+  padding: 0 0.5rem 1.5rem;
+  font-family: $main-font-medium;
+  font-size: 1rem;
+  letter-spacing: 0.0213rem;
+  color: $blue;
+  white-space: nowrap;
+  vertical-align: top;
+  &:first-child{
+    padding-left: 0;
+  }
+  &:last-child{
+    padding-right: 0;
+  }
+}
+.trading-history__table .table-data{
+  padding: 0.875rem 0.5rem 1.0625rem;
+  font-size: 0.875rem;
+  color: $black-light;
+  white-space: nowrap;
+  &:first-child{
+    padding-left: 0;
+  }
+  &:last-child{
+    padding-right: 0;
+  }
+  &.table-col_time,
+  &.table-col_price{
+    letter-spacing: 0.0187rem;
+  }
+  &.table-col_profit{
+    font-family: $main-font-light;
+    b{
+      font-family: $main-font-bold;
+    }
+    span{
+      display: inline-block;
+    }
+    .color_success{
+      color: $green-light;
+    }
+    .color_danger{
+      color: #f54359;
+    }
+  }
+  > span{
+    display: block;
+    + span{
+      margin-top: 0.1875rem;
+    }
+  }
+}
+.trading-history__table .table-col_currencies{
+  min-width: 7.375rem;
+}
+.trading-history__table .table-col_exchanges{
+  min-width: 6.75rem;
+}
+.trading-history__table .table-col_amount{
+  min-width: 10.125rem;
+}
+.trading-history__table .table-col_time{
+  min-width: 10.25rem;
+}
+.trading-history__table .table-col_price{
+  min-width: 10.125rem;
+}
+.trading-history__table .table-col_profit{
+  min-width: 11.125rem;
+}
+
+@import "./trading-history-tablet.scss";
+
+@import "./trading-history-mobile.scss";
