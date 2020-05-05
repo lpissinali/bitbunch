@@ -1,5 +1,7 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
   .register-header {
+    position: relative;
+    z-index: 1;
   }
 
   .register-header__wrapper {
