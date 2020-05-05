@@ -1,0 +1,20 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .your-assets__header-button{
+    display: flex;
+  }
+  .your-assets__headline {
+    margin-bottom: 1.875rem;
+  }
+  .your-assets__table .table-col_reports {
+    display: none;
+  }
+  .your-assets__table .table-col_invest {
+    display: none;
+  }
+  .your-assets__table .table-col_profit {
+    width: 11.25rem;
+  }
+  .your-assets__table .table-col_trading{
+    width: 4.0625rem;
+  }
+}

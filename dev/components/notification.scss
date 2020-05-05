@@ -1,0 +1,43 @@
+.notification{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.5rem 1rem 0.6875rem;
+  background: $blue;
+  box-shadow: 0 0.375rem 1.5rem rgba(80, 87, 94, 0.2);
+  font-family: $main-font-bold;
+  font-size: 1rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.0213rem;
+  color: $white;
+  text-align: center;
+  z-index: 1050;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 300ms ease, opacity 300ms ease;
+  &.active{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &__success{
+    background-image: linear-gradient(270deg, #1cc7a1 0%, #1cc7a1 100%);
+  }
+  &__danger{
+    background-image: linear-gradient(270deg, #f2455c 0%, #f2455c 100%);
+  }
+}
+
+@media screen and ($tablet1), ($tablet2), ($tablet3) {}
+
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .notification{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}

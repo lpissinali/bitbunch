@@ -1,0 +1,20 @@
+extends ../../templates/account
+
+block variables
+    - var title = ''
+    - var meta1 = ''
+    - var meta2 = ''
+    - var pageClass = ''
+
+block header-button
+    a(href="#").account-nav__button.button-orange invest
+
+block content
+    .account-header
+      .account-header__left
+          .account-app-headline Bitbunch app
+          .account-main-headline Live Trades
+      a(href="#").account-header__button.button-orange.choosing-coin invest
+
+    include ../../blocks/choosing-coin/choosing-coin
+    include ../../blocks/trading-history/trading-history

@@ -1,0 +1,49 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .your-assets__headline{
+    margin-bottom: 1rem;
+  }
+  .your-assets__content{
+    display: block;
+  }
+  .your-assets__table{
+    width: 100%;
+  }
+  .your-assets__table-row {
+    margin-bottom: 1rem;
+    background-color: $white;
+    border-radius: 0.25rem;
+    border: none;
+    box-shadow: 0 0.25rem 0.375rem rgba(93, 88, 88, 0.1);
+  }
+  .your-assets__table-row:first-child{
+    display: none;
+  }
+  .your-assets__table .table-data{
+    padding: 0;
+  }
+  .your-assets__table .table-col_trading{
+    display: none;
+  }
+  .your-assets__table .table-col_assets{
+    width: 3.0625rem;
+    margin-right: 0.75rem;
+  }
+  .your-assets__table .table-col_assets img{
+    margin: 0;
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+  .your-assets__table .table-col_assets span{
+    display: none;
+  }
+  .your-assets__table .table-col_balance{
+    width: auto;
+    flex-grow: 1;
+  }
+  .your-assets__table .table-col_profit {
+    width: auto;
+    padding: 0 0.4375rem;
+  }
+  .your-assets__table .table-col_profit img{
+    margin-top: 0.1875rem;
+  }
+}
