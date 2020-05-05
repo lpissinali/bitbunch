@@ -105,6 +105,85 @@
   }
 }
 
+.checkbox-btn{
+  display: none;
+  + label{
+    position: relative;
+    width: 4.0625rem;
+    height: 1.875rem;
+    margin: 0;
+    border: 0.125rem solid #efc7c2;
+    border-radius: 0.9375rem;
+    background-color: #efc7c2;
+    cursor: pointer;
+    overflow: hidden;
+    .checkbox-btn__on,
+    .checkbox-btn__off{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      padding: 0.5rem;
+      font-family: $main-font-bold;
+      font-size: 0.75rem;
+      line-height: 0.875rem;
+      color: $white;
+      transition: all 300ms;
+    }
+    .checkbox-btn__on{
+      right: 100%;
+    }
+    .checkbox-btn__off{
+      left: 0;
+      text-align: right;
+    }
+    .checkbox-btn__point{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.625rem;
+      height: 1.625rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      background: $blue;
+      transition: all 330ms;
+      &:after{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        content: '';
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+        border-radius: inherit;
+        background: $white;
+        transition: inherit;
+      }
+    }
+  }
+  &:checked{
+    + label{
+      background-color: $blue;
+      border-color: $blue;
+      .checkbox-btn__on{
+        right: 0;
+      }
+      .checkbox-btn__off{
+        left: 100%;
+      }
+      .checkbox-btn__point{
+        left: calc(100% - 1.625rem);
+        background: $white;
+        &:after{
+          background: $blue;
+        }
+      }
+    }
+  }
+}
+
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
 }
 
@@ -132,5 +211,30 @@
   .video-play-button {
     width: 2rem;
     height: 2.25rem;
+  }
+
+  .checkbox-btn{
+    + label{
+      width: 2.75rem;
+      height: 1.25rem;
+      border-width: 0.0625rem;
+      .checkbox-btn__on,
+      .checkbox-btn__off{
+        padding: 0.25rem;
+        font-size: 0.625rem;
+        line-height: 0.75rem;
+      }
+      .checkbox-btn__point{
+        width: 1.125rem;
+        height: 1.125rem;
+        &:after{
+          width: 0.625rem;
+          height: 0.625rem;
+        }
+      }
+    }
+    &:checked + label .checkbox-btn__point {
+      left: calc(100% - 1.125rem);
+    }
   }
 }

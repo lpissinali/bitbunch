@@ -10,6 +10,8 @@
 
 @import "../../app/libs/tooltipster/css/tooltipster.bundle.css";
 
+@import "../../app/libs/mCustomScrollbar/jquery.mCustomScrollbar.min.css";
+
 // components
 @import "./components.scss";
 
@@ -160,3 +162,29 @@
 
 // upfront
 @import "../../blocks/upfront/upfront-desktop.scss";
+
+// assets page
+
+// your assets
+@import "../../blocks/your-assets/your-assets-desktop.scss";
+
+// account page
+
+// your account
+@import "../../blocks/your-account/your-account-desktop.scss";
+
+// notifications
+@import "../../blocks/notifications/notifications-desktop.scss";
+
+// live trades page
+
+// choosing coin
+@import "../../blocks/choosing-coin/choosing-coin-desktop.scss";
+
+// trading history
+@import "../../blocks/trading-history/trading-history-desktop.scss";
+
+// settings page
+
+// trading currencies
+@import "../../blocks/trading-currencies/trading-currencies-desktop.scss";

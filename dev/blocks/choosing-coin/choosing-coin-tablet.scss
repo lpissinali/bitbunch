@@ -1,0 +1,28 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .choosing-coin__icon{
+    width: 3rem;
+    height: 3rem;
+    img{
+      width: 1.4375rem;
+    }
+  }
+  .choosing-coin__title{
+    max-width: calc(100% - 3rem - 6rem);
+    margin-top: 0.125rem;
+    padding: 0 1rem;
+  }
+  .choosing-coin-content{
+    margin-top: 0.0625rem;
+    font-size: 1rem;
+  }
+  .choosing-coin__controls{
+    width: 6rem;
+  }
+  .choosing-coin__controls > *{
+    width: 3rem;
+    height: 3rem;
+    img{
+      height: 1.25rem;
+    }
+  }
+}
