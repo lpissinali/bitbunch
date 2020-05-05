@@ -44,8 +44,11 @@
   border-bottom: 1px solid #efc7c2;
 
   .title {
-    font-family: $main-font-light;
+    font-family: $main-font-semi-bold;
     color: #091540;
+    .lite {
+      font-family: $main-font-light;
+    }
   }
 
   .cost {

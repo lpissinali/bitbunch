@@ -110,10 +110,13 @@
 .address__link {
   margin-top: .8125rem;
   max-width: 26.875rem;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   font-size: 2.25rem;
   line-height: 3.125rem;
   color: #091540;
+  span {
+    font-family: $main-font-medium;
+  }
 }
 
 @import "./address-tablet.scss";
