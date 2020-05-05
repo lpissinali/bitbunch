@@ -282,11 +282,25 @@ if (document.querySelector('.calculation__mount-range')) {
 if (document.querySelector('.choosing-coin__controls-toggle')) {
   $('.choosing-coin__controls-toggle').click(function(){
     $(this).toggleClass('active');
-  })
+  });
 }
 
 // Trading history table scrollbar
-$(".trading-history__table-overflow").mCustomScrollbar({
-  axis:"x",
-  theme:"dark"
-});
+if (document.querySelector('.trading-history__table-overflow')) {
+  $(".trading-history__table-overflow").mCustomScrollbar({
+    axis:"x",
+    theme:"dark"
+  });
+}
+
+// Modal notification
+if (document.querySelector('.modal__notification')) {
+  $('.modal__notification [type=submit]').click(function(e){
+    e.preventDefault(); // Отмена отправки для показа анимации
+    $('.notification').addClass('active');
+  });
+
+  $('.modal__notification .modal__close').click(function(){
+    $('.notification').removeClass('active');
+  })
+}

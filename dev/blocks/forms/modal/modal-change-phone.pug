@@ -1,25 +1,24 @@
-.modal__content
-    .modal__header
-        .modal__close
-        img(src="./images/shield.svg", alt="").modal__header-icon
-        .modal__header-text
-            .modal__header-title Change phone number
-            .modal__header-description Confirm your new number
-    .modal__body
-        form#changePhoneForm.changePhone__form(novalidate)
-            .form-group
-                input(type="tel" class="form-control form-control-lg required" id="changePhoneCurrent" name="phone-current" required value="+44 1289 38912 7312")
-                span.form-group__placeholder.has-content Your current phone number
-                .error-icon.d-none
-                  span !
-            .form-group
-                input(type="email" class="form-control form-control-lg required" id="changePhoneNew" name="phone-new" required value="+44 924 1894 8912")
-                span.form-group__placeholder.has-content Your new phone number
-                .error-icon.d-none
-                  span !
-            .form-group
-                input(type="password" class="form-control form-control-lg required" id="changePhonePassword" name="password" required)
-                span.form-group__placeholder Enter your authenticator code
-                .error-icon.d-none 
-                  span !
-            button(type="submit").button-orange.button-hover-white Submit
+.modal__header
+    .modal__close(data-dismiss="modal" aria-label="Close")
+    img(src="./images/shield.svg", alt="").modal__header-icon
+    .modal__header-text
+        .modal__header-title Change phone number
+        .modal__header-description Confirm your new number
+.modal__body
+    form#changePhoneForm.changePhone__form(novalidate)
+        .form-group
+            input(type="tel" class="form-control form-control-lg required" id="changePhoneCurrent" name="phone-current" required value="+44 1289 38912 7312")
+            span.form-group__placeholder.has-content Your current phone number
+            .error-icon.d-none
+              span !
+        .form-group
+            input(type="email" class="form-control form-control-lg required" id="changePhoneNew" name="phone-new" required value="+44 924 1894 8912")
+            span.form-group__placeholder.has-content Your new phone number
+            .error-icon.d-none
+              span !
+        .form-group
+            input(type="password" class="form-control form-control-lg required" id="changePhonePassword" name="password" required)
+            span.form-group__placeholder Enter your authenticator code
+            .error-icon.d-none 
+              span !
+        button(type="submit").button-orange.button-hover-white Submit
