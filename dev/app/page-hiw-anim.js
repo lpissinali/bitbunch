@@ -62,11 +62,7 @@ $(document).ready(() => {
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 0.9);
 
         // dot animation
-        tl_big_team.from('.profits__slider-dot-right', 0.3, {
-          opacity: 0,
-          repeat: 10,
-          yoyo: true,
-        });
+        tl_big_team.from('.profits__slider-dot-right', 0.3, { opacity: 0 });
         AnimationScene('.profits', tl_big_team);
       }
 
@@ -200,11 +196,7 @@ $(document).ready(() => {
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 0.9);
 
         // dot animation
-        tl_big_team.from('.profits__slider-dot-right', 0.3, {
-          opacity: 0,
-          repeat: 10,
-          yoyo: true,
-        });
+        tl_big_team.from('.profits__slider-dot-right', 0.3, { opacity: 0 });
         AnimationScene('.profits', tl_big_team);
       }
 
@@ -291,12 +283,7 @@ $(document).ready(() => {
         tl_big_team.from('.profits__slider-image', 0.7, { y: '10%', opacity: 0 }, 1);
 
         // dot animation
-        tl_big_team.from('.profits__slider-dot-right', 0.3, {
-          opacity: 0,
-          scale: 0.95,
-          repeat: 10,
-          yoyo: true,
-        });
+        tl_big_team.from('.profits__slider-dot-right', 0.3, { opacity: 0 });
         AnimationScene('.profits', tl_big_team);
       }
 

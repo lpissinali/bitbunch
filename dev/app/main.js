@@ -149,7 +149,7 @@ if (document.querySelector('.profits__slider-container')) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    infinite: false,
+    infinite: true,
     variableWidth: true,
   });
 
@@ -183,6 +183,7 @@ if (document.querySelector('.calculation__button-cur.bitcoin')) {
     $('.calculation__currency-btc-block').addClass('active');
     $('.calculation__result-sum').html($('.calculation__btc-range').val());
     $('.calculation__result-units').html(' BTC');
+    $('.calculation__result-your-profile-units').html(' BTC');
   });
 }
 
@@ -193,7 +194,8 @@ if (document.querySelector('.calculation__button-cur.dollar')) {
     $('.calculation__currency-block').removeClass('active');
     $('.calculation__currency-etc-block').addClass('active');
     $('.calculation__result-sum').html($('.calculation__etc-range').val());
-    $('.calculation__result-units').html(' USD');
+    $('.calculation__result-units').html(' ETH');
+    $('.calculation__result-your-profile-units').html(' ETH');
   });
 }
 
@@ -204,7 +206,8 @@ if (document.querySelector('.calculation__button-cur.bitcoin')) {
     $('.calculation__currency-block').removeClass('active');
     $('.calculation__currency-usdt-block').addClass('active');
     $('.calculation__result-sum').html($('.calculation__usdt-range').val());
-    $('.calculation__result-units').html(' EUR');
+    $('.calculation__result-units').html(' USDT');
+    $('.calculation__result-your-profile-units').html(' USDT');
   });
 }
 
