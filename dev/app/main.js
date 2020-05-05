@@ -292,3 +292,30 @@ if (document.querySelector('.modal__notification')) {
     $('.notification').removeClass('active');
   })
 }
+
+// Trading history table scrollbar
+if (document.querySelector('.trading-currencies__list')) {
+  $(".trading-currencies__list").mCustomScrollbar({
+    axis:"y",
+    theme:"minimal-dark"
+  });
+}
+
+// Trading history table scrollbar
+if (document.querySelector('.daily-trades__range-input')) {
+  $(".daily-trades__range-input").each(function(){
+    const valueMin = $(this).attr('min')
+    const valueMax = $(this).attr('max')
+    const valueStep = $(this).attr('step')
+    $(".daily-trades__range-input").ionRangeSlider({
+      skin: "big",
+      type: "single",
+      min: valueMin,
+      max: valueMax,
+      step: valueStep,
+      hide_min_max: true,
+      hide_from_to: false
+    });
+  })
+  
+}

@@ -12,6 +12,8 @@
 
 @import "../../app/libs/mCustomScrollbar/jquery.mCustomScrollbar.min.css";
 
+@import "../../app/libs/ion.rangeSlider/ion.rangeSlider.min.css";
+
 // components
 @import "./components.scss";
 
@@ -185,3 +187,6 @@
 
 // trading currencies
 @import "../../blocks/trading-currencies/trading-currencies-desktop.scss";
+
+// daily trades
+@import "../../blocks/daily-trades/daily-trades-desktop.scss";
