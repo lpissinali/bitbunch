@@ -149,7 +149,7 @@ if (document.querySelector('.profits__slider-container')) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    infinite: false,
+    infinite: true,
     variableWidth: true,
   });
 
