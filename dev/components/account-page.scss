@@ -1,19 +1,23 @@
 .account-page {
   display: flex;
   align-items: flex-start;
-  max-width: 90rem;
-  min-height: 50rem;
+  min-height: 100vh;
   margin-right: auto;
   margin-left: auto;
   background-image: linear-gradient(33deg, #fcfdff 0%, #f2f4fd 100%);
 }
 
 .account-content{
-  width: 58.75rem;
+  width: 100%;
+  max-width: 58.75rem;
   margin: 0 3.125rem;
   padding: 1.75rem 0 0;
 }
-
+.account-content_center{
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 1.75rem 3.125rem 0;
+}
 .account-section{
   padding: 1.6875rem 1.5rem 1.1875rem;
   box-shadow: 0.125rem 0.125rem 1.5rem rgba(80, 87, 94, 0.1);
@@ -30,6 +34,11 @@
     margin: 0;
     padding: 1.875rem 0 0;
   }
+  .account-content_center{
+    max-width: none;
+    margin: 0 auto;
+    padding: 1.875rem 0 0;
+  }
   .account-section {
     padding: 1.75rem 1.5rem 1.1875rem;
   }
@@ -38,11 +47,13 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
   .account-page {
     flex-direction: column;
-    min-height: auto;
     background-image: linear-gradient(154deg, #fcfdff 0%, #f2f4fd 100%);
   }
   .account-content{
     width: 100%;
+    padding: 0;
+  }
+  .account-content_center{
     padding: 0;
   }
   .account-section {

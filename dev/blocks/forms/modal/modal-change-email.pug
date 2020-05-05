@@ -1,25 +1,24 @@
-.modal__content
-    .modal__header
-        .modal__close
-        img(src="./images/shield.svg", alt="").modal__header-icon
-        .modal__header-text
-            .modal__header-title Change email
-            .modal__header-description Confirm your new adress
-    .modal__body
-        form#changeEmailForm.changeEmail__form(novalidate)
-            .form-group
-                input(type="email" class="form-control form-control-lg required" id="changeEmailCurrent" name="email-current" required value="miguel.torres@gmail.com")
-                span.form-group__placeholder.has-content Your current email adress
-                .error-icon.d-none
-                  span !
-            .form-group
-                input(type="email" class="form-control form-control-lg required" id="changeEmailNew" name="email-new" required value="miguel.torres@yahoo.com")
-                span.form-group__placeholder.has-content Your new email adress
-                .error-icon.d-none
-                  span !
-            .form-group
-                input(type="password" class="form-control form-control-lg required" id="changeEmailPassword" name="password" required)
-                span.form-group__placeholder Enter your password
-                .error-icon.d-none 
-                  span !
-            button(type="submit").button-orange.button-hover-white Submit
+.modal__header
+    .modal__close(data-dismiss="modal" aria-label="Close")
+    img(src="./images/shield.svg", alt="").modal__header-icon
+    .modal__header-text
+        .modal__header-title Change email
+        .modal__header-description Confirm your new adress
+.modal__body
+    form#changeEmailForm.changeEmail__form(novalidate)
+        .form-group
+            input(type="email" class="form-control form-control-lg required" id="changeEmailCurrent" name="email-current" required value="miguel.torres@gmail.com")
+            span.form-group__placeholder.has-content Your current email adress
+            .error-icon.d-none
+              span !
+        .form-group
+            input(type="email" class="form-control form-control-lg required" id="changeEmailNew" name="email-new" required value="miguel.torres@yahoo.com")
+            span.form-group__placeholder.has-content Your new email adress
+            .error-icon.d-none
+              span !
+        .form-group
+            input(type="password" class="form-control form-control-lg required" id="changeEmailPassword" name="password" required)
+            span.form-group__placeholder Enter your password
+            .error-icon.d-none 
+              span !
+        button(type="submit").button-orange.button-hover-white Submit

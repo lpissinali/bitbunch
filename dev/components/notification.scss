@@ -1,10 +1,10 @@
 .notification{
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
   width: 100%;
-  max-width: 90rem;
   margin-right: auto;
   margin-left: auto;
   padding: 0.5rem 1rem 0.6875rem;
@@ -16,7 +16,15 @@
   letter-spacing: 0.0213rem;
   color: $white;
   text-align: center;
-  z-index: 15;
+  z-index: 1050;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 300ms ease, opacity 300ms ease;
+  &.active{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
   &__success{
     background-image: linear-gradient(270deg, #1cc7a1 0%, #1cc7a1 100%);
   }
