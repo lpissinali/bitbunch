@@ -73,6 +73,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.4.4",
+    "animejs": "^3.2.0",
     "axios": "^0.18.1",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",

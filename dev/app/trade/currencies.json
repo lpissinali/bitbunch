@@ -1,0 +1,242 @@
+[
+  {
+    "name": "US Dollar",
+    "code": "USD"
+  },
+  {
+    "name": "Bitcoin",
+    "code": "BTC"
+  },
+  {
+    "name": "Ethereum",
+    "code": "ETH"
+  },
+  {
+    "name": "Ripple",
+    "code": "XRP"
+  },
+  {
+    "name": "Bitcoin Cash",
+    "code": "BCH"
+  },
+  {
+    "name": "Litecoin",
+    "code": "LTC"
+  },
+  {
+    "name": "EOS",
+    "code": "EOS"
+  },
+  {
+    "name": "Binance Coin",
+    "code": "BNB"
+  },
+  {
+    "name": "Bitcoin SV",
+    "code": "BSV"
+  },
+  {
+    "name": "Tether",
+    "code": "USDT"
+  },
+  {
+    "name": "TRON",
+    "code": "TRX"
+  },
+  {
+    "name": "Cardano",
+    "code": "ADA"
+  },
+  {
+    "name": "Stellar",
+    "code": "XLM"
+  },
+  {
+    "name": "Monero",
+    "code": "XMR"
+  },
+  {
+    "name": "Dash",
+    "code": "DASH"
+  },
+  {
+    "name": "NEO",
+    "code": "NEO"
+  },
+  {
+    "name": "Cosmos",
+    "code": "ATOM"
+  },
+  {
+    "name": "IOTA",
+    "code": "MIOTA"
+  },
+  {
+    "name": "Ethereum Classic",
+    "code": "ETC"
+  },
+  {
+    "name": "Ontology",
+    "code": "ONT"
+  },
+  {
+    "name": "Chainlink",
+    "code": "LINK"
+  },
+  {
+    "name": "NEM",
+    "code": "NEM"
+  },
+  {
+    "name": "Maker",
+    "code": "MKR"
+  },
+  {
+    "name": "Tezos",
+    "code": "XTZ"
+  },
+  {
+    "name": "Zcash",
+    "code": "ZEC"
+  },
+  {
+    "name": "Bitcoin Gold",
+    "code": "BTG"
+  },
+  {
+    "name": "Crypto.com Chain",
+    "code": "CRO"
+  },
+  {
+    "name": "VeChain",
+    "code": "VET"
+  },
+  {
+    "name": "Qtum",
+    "code": "QTUM"
+  },
+  {
+    "name": "Dogecoin",
+    "code": "DOGE"
+  },
+  {
+    "name": "USD Coin",
+    "code": "USDC"
+  },
+  {
+    "name": "OmiseGO",
+    "code": "OMG"
+  },
+  {
+    "name": "Decred",
+    "code": "DCR"
+  },
+  {
+    "name": "Bittorrent",
+    "code": "BTT"
+  },
+  {
+    "name": "Holo",
+    "code": "HOT"
+  },
+  {
+    "name": "Bitcoint Diamond",
+    "code": "BCD"
+  },
+  {
+    "name": "Lisk",
+    "code": "LSK"
+  },
+  {
+    "name": "Ravencoin",
+    "code": "RVN"
+  },
+  {
+    "name": "Waves",
+    "code": "WAVES"
+  },
+  {
+    "name": "Pundi X",
+    "code": "NPSX"
+  },
+  {
+    "name": "TrueUSD",
+    "code": "TUSD"
+  },
+  {
+    "name": "HyperCash",
+    "code": "HC"
+  },
+  {
+    "name": "0x",
+    "code": "ZRX"
+  },
+  {
+    "name": "Bytecoin",
+    "code": "BCN"
+  },
+  {
+    "name": "Nano",
+    "code": "NANO"
+  },
+  {
+    "name": "Augur",
+    "code": "REP"
+  },
+  {
+    "name": "Bitshares",
+    "code": "BTS"
+  },
+  {
+    "name": "Bytom",
+    "code": "BTM"
+  },
+  {
+    "name": "Huobi Token",
+    "code": "HT"
+  },
+  {
+    "name": "Dent",
+    "code": "DENT"
+  },
+  {
+    "name": "HedgeTrade",
+    "code": "HEDG"
+  },
+  {
+    "name": "MonaCoin",
+    "code": "MONA"
+  },
+  {
+    "name": "Aurora",
+    "code": "AOA"
+  },
+  {
+    "name": "Ziliqa",
+    "code": "ZIL"
+  },
+  {
+    "name": "Qubitica",
+    "code": "QBIT"
+  },
+  {
+    "name": "IOST",
+    "code": "IOST"
+  },
+  {
+    "name": "DigiByte",
+    "code": "DGB"
+  },
+  {
+    "name": "ICON",
+    "code": "ICX"
+  },
+  {
+    "name": "Komodo",
+    "code": "KMD"
+  },
+  {
+    "name": "UNUS SED LEO",
+    "code": "LEO"
+  }
+]
