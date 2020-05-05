@@ -1,4 +1,6 @@
 /* eslint-disable no-inner-declarations */
+import './trade/hiwTrade';
+
 $(document).ready(() => {
   if (document.querySelector('.hiw-header')) {
     const controller = new ScrollMagic.Controller();

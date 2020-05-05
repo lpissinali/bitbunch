@@ -1,0 +1,88 @@
+#trade-exchange
+    svg#trade-display.trade-display(width="100%" height="100%")
+        defs
+            g.exchange-box
+                rect(width="44" height="44" rx="2")
+                image(x="10" y="10" width="24" height="24")
+            g.currency-box
+                rect(width="66" height="66" rx="2")
+                rect.icon-box(x="8" y="8" width="50" height="50" rx="2")
+                image(x="19" y="19" width="28" height="28")
+                circle(cx="0" cy="33" r="8")
+                circle.connect-point(cx="0" cy="33" r="3")
+                circle(cx="66" cy="33" r="8")
+                circle.connect-point(cx="66" cy="33" r="3")
+        g.buyExchanges-box
+            rect.exchanges-background
+            path.select-column(d="M34,209h13c1.7,0,3,1.3,3,3v68c0,1.7-1.3,3-3,3H34L0,492V0L34,209z")
+            g.scrolling-area
+        g.currencies-box
+            g.scrolling-area
+        g.sellExchanges-box
+            rect.exchanges-background
+            path.select-column(d="M16,209H3c-1.7,0-3,1.3-3,3v68c0,1.7,1.3,3,3,3h13l34,209V0L16,209z")
+            g.scrolling-area
+    .particles
+        .particles1
+        .particles2
+    .select-rect1
+        .icon-container
+        img
+        span.text
+    .select-rect2
+        span.text
+        .icon-container
+        img
+    .selected-trade.rounded.d-flex.flex-column
+        .connector1
+        .connector2
+        .short-details.w-100.mb-2.d-flex.flex-row.position-relative
+        .icon-container.mr-2
+            img
+        .info
+            .title
+            strong.name Ripple
+            |  (
+            span.currency XRP
+            | )
+            .profit
+            strong.value 0.07
+            span.currency BTC
+            .instant-trade.d-none Instant trade
+        .w-100.overflow-hidden.text-center.position-relative
+        .buy-info.mb-2.font-weight-bold.text-light
+            .content
+            | Bought 2,179 XRP for
+            br
+            | $ 1000 at 12:43
+        .sell-info.font-weight-bold.text-light
+            .content
+            | Sold 2,179 XRP for
+            br
+            | $ 1000 at 12:43
+        .success-section.w-100.flex-column.d-flex.align-items-center.text-light
+            .success-info.p-3.w-100.rounded
+            h4.font-size-lg-18.title.font-size-14.mb-2.text-center
+                | Congratulation to
+                br
+                | successful trade!
+            h4.font-size-lg-18.font-size-14.font-weight-light.text-center Your profit
+            .text-center
+                span.value.font-size-26.font-weight-bold.text-warning 0.00004
+                span.currency.font-size-20.font-weight-normal BTC
+            .d-flex.w-100.mt-2
+            button#close-instant-trade.btn.btn-warning.py-2.px-3.ml-2.w-100.text-light.font-size-12 Close
+            button.btn.btn-light.py-2.px-3.mr-2.w-100.ml-3.text-primary.font-size-12 Details
+    svg#connectors-display.connectors-display(width="100%" height="100%")
+        g.select-marker1
+            circle.border(r="20")
+            circle.indicator(r="12")
+            circle.connector(r="4")
+        g.select-marker2
+            circle.border(r="20")
+            circle.indicator(r="12")
+            circle.connector(r="4")
+        g
+            line.line1(x1="0" y1="0" x2="0" y2="0" stroke="black")
+            line.line2(x1="0" y1="0" x2="0" y2="0" stroke="black")
+
