@@ -9,12 +9,20 @@
     margin-bottom: 1rem;
   }
   .trading-history__content{
-    margin-bottom: 1.0625rem;
+    margin-bottom: 0.625rem;
   }
   .trading-history__table-overflow{
     width: calc(100% + 0.625rem * 2);
     margin: 0 -0.625rem;
-    padding: 0 0.625rem;
+    &:not(.mCS_no_scrollbar){
+      .mCSB_scrollTools_horizontal{
+        left: 0.625rem;
+        right: 0.625rem;
+      }
+    }
+  }
+  .trading-history__table{
+    margin: 0 0.625rem;
   }
   .trading-history__table .table-head{
     padding: 0 0.5rem 1.0625rem;

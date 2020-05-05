@@ -6,12 +6,34 @@
 }
 .trading-history__content{
   display: none;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.0625rem;
   font-family: $main-font-light;
   font-size: 0.75rem;
   line-height: 1.5625rem;
   color: #091540;
   opacity: 0.8;
+}
+.trading-history__table-overflow{
+  &:not(.mCS_no_scrollbar){
+    .mCSB_container{
+      margin-top: 1.875rem;
+      margin-bottom: 0;
+    }
+    .mCSB_scrollTools_horizontal{
+      top: 0;
+      bottom: auto;
+      height: 0.9375rem;
+    }
+    .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+      height: 0.1875rem;
+      background: $blue;
+    }
+    .mCS-dark.mCSB_scrollTools .mCSB_draggerRail{
+      height: 0.0625rem;
+      background-color: $blue;
+      opacity: .2;
+    }
+  }
 }
 .trading-history__table{
   width: 100%;

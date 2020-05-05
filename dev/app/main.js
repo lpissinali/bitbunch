@@ -272,3 +272,9 @@ if (document.querySelector('.choosing-coin__controls-toggle')) {
     $(this).toggleClass('active');
   })
 }
+
+// Trading history table scrollbar
+$(".trading-history__table-overflow").mCustomScrollbar({
+  axis:"x",
+  theme:"dark"
+});

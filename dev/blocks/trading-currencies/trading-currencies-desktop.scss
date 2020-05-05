@@ -1,0 +1,20 @@
+.trading-currencies{
+  height: 486px;
+  background-image: url(images/bg-money@2x.png);
+  background-size: 16.8125rem 18.25rem;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.trading-currencies__headline{
+  margin-top: 0.25rem;
+  margin-bottom: 0.875rem;
+}
+.trading-currencies__list{
+  height: 292px;
+  border-radius: 3px;
+  background-color: #d6dced;
+}
+
+@import "./trading-currencies-tablet.scss";
+
+@import "./trading-currencies-mobile.scss";
