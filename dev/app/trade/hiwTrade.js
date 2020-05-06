@@ -14,9 +14,6 @@ import { currencies, exchanges, randomSellExchange } from './model';
 
 const $profitsSlider = $('.profits__slider-wrapper');
 
-console.log(currencies);
-console.log(exchanges);
-
 function createFakeTrade() {
   const startTime = new Date().getTime();
   const endTime = startTime + 60 * 1000;

@@ -56,6 +56,8 @@ export function instantTradeAnimation() {
   return scrollIntoView()
     .then(selectCurrency)
     .then(showInstantTrade)
+    .then(showInstantTradeSellProgress)
+    .then(showInstantTradeSuccess)
     .then(() => {
       return listenForClose(closeButton, WAIT_TIME_FOR_CLOSE);
     })

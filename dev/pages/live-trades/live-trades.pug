@@ -17,4 +17,8 @@ block content
       a(href="#").account-header__button.button-orange.choosing-coin invest
 
     include ../../blocks/choosing-coin/choosing-coin
+    include ../../blocks/live-trades/trade
     include ../../blocks/trading-history/trading-history
+
+block append scripts
+    script(src="js/dashboardTrade.js")

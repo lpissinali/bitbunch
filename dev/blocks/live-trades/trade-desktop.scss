@@ -1,0 +1,1001 @@
+#trading {
+
+  .col-sm {
+
+    ul {
+
+      li {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        a {
+          width: 63px;
+          min-width: 63px;
+          height: 53px;
+          min-height: 53px;
+        }
+      }
+    }
+
+    .border-rose-thick {
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      border: 8px solid $rose !important;
+      background-color: white;
+
+      &::before {
+        @include media-breakpoint-up(sm) {
+          left: -16px;
+          align-self: center;
+        }
+
+        @include media-breakpoint-only(xs) {
+          top: -16px;
+          justify-self: center;
+        }
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border: 4px solid $rose !important;
+        border-radius: 200px;
+        background-image: linear-gradient(270deg, #3f72d7 0%, $primary 100%);
+      }
+
+      &::after {
+        @include media-breakpoint-up(sm) {
+          right: -16px;
+          align-self: center;
+        }
+
+        @include media-breakpoint-only(xs) {
+          bottom: -16px;
+          justify-self: center;
+        }
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border: 4px solid $rose !important;
+        border-radius: 200px;
+        background-image: linear-gradient(270deg, #3f72d7 0%, $primary 100%);
+      }
+    }
+  }
+
+  .col-sm-2 {
+    @include media-breakpoint-up(lg) {
+      max-width: 120px !important;
+    }
+
+    @include media-breakpoint-up(sm) {
+      max-width: 90px !important;
+    }
+
+    ul {
+
+      li {
+        @include media-breakpoint-only(xs) {
+          margin-right: .5rem;
+          margin-left: .5rem;
+        }
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        a {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          margin-top: .5rem;
+          margin-bottom: .5rem;
+          padding-top: .75rem;
+          padding-right: .5rem;
+          padding-bottom: .75rem;
+          padding-left: .5rem;
+          width: 44px;
+          min-width: 44px;
+          height: 44px;
+          min-height: 44px;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  .col-sm-2:last-child {
+
+    .right-section-bullet {
+      @include media-breakpoint-up(sm) {
+        left: -16px;
+      }
+
+      @include media-breakpoint-only(xs) {
+        top: -16px;
+      }
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      display: flex;
+      width: 30px;
+      min-width: 0;
+      height: 30px;
+      min-height: 0;
+      border-radius: 200px;
+      background-color: $light-gray;
+      justify-self: center;
+
+      &::before {
+        content: "";
+        z-index: 15;
+        width: 18px !important;
+        height: 18px !important;
+        border: 5px solid $rose;
+        border-radius: 200px;
+        background-image: linear-gradient(270deg, #3f72d7 0%, $primary 100%);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 1%;
+        bottom: -56px;
+        z-index: 20;
+        display: none;
+        width: 285px;
+        height: 2px !important;
+        background-image: linear-gradient(270deg, #3f72d7 0, #324ea3 100%);
+        transform: rotate(-29deg);
+      }
+    }
+  }
+
+  .col-sm-2:first-child {
+
+    .left-section-bullet {
+      @include media-breakpoint-up(sm) {
+        right: -16px;
+      }
+
+      @include media-breakpoint-only(xs) {
+        bottom: -16px;
+      }
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      display: flex;
+      width: 30px;
+      min-width: 0;
+      height: 30px;
+      min-height: 0;
+      border-radius: 200px;
+      background-color: $light-gray;
+      justify-self: center;
+
+      &::after {
+        content: "";
+        z-index: 15;
+        width: 18px !important;
+        height: 18px !important;
+        border: 5px solid $rose;
+        border-radius: 200px;
+        background-image: linear-gradient(270deg, #3f72d7 0%, $primary 100%);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -56px;
+        left: 1%;
+        z-index: 20;
+        display: none;
+        width: 285px;
+        height: 2px !important;
+        background-image: linear-gradient(270deg, #3f72d7 0, #324ea3 100%);
+        transform: rotate(-29deg);
+      }
+    }
+  }
+
+  .v-1 {
+
+    .left-section-bullet,
+    .right-section-bullet {
+      display: none !important;
+    }
+
+    .col-sm-2:first-child {
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -50px;
+        bottom: 0;
+        z-index: 1;
+        width: 65px;
+        height: 250px;
+        background-color: $light-gray;
+        transform: skew(-5deg);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -50px;
+        z-index: 1;
+        width: 65px;
+        height: 250px;
+        background-color: $light-gray;
+        transform: skew(5deg);
+      }
+
+      .middle-square-parent {
+        z-index: 2;
+        min-width: 133px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 100%;
+          width: 15px;
+          height: 64px;
+          background-color: $light-gray;
+        }
+
+        .middle-square {
+
+          &::after {
+            content: "";
+            z-index: 15;
+            margin-left: 9px;
+            width: 18px !important;
+            height: 18px !important;
+            border: 5px solid $rose;
+            border-radius: 200px;
+            background-image: linear-gradient(
+              270deg,
+              #3f72d7 0%,
+              $primary 100%
+            );
+          }
+        }
+      }
+    }
+
+    .col-sm-2:last-child {
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -50px;
+        z-index: 1;
+        width: 65px;
+        height: 250px;
+        background-color: $light-gray;
+        transform: skew(5deg);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50px;
+        z-index: 1;
+        width: 65px;
+        height: 250px;
+        background-color: $light-gray;
+        transform: skew(-5deg);
+      }
+
+      .middle-square-parent {
+        z-index: 2;
+        margin-left: -73px;
+        min-width: 133px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 100%;
+          width: 15px;
+          height: 64px;
+          background-color: $light-gray;
+        }
+      }
+
+      .middle-square {
+
+        &::before {
+          content: "";
+          z-index: 15;
+          margin-right: 9px;
+          width: 18px !important;
+          height: 18px !important;
+          border: 5px solid $rose;
+          border-radius: 200px;
+          background-image: linear-gradient(270deg, #3f72d7 0%, $primary 100%);
+        }
+      }
+    }
+  }
+
+  #bullet-section {
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -8px;
+      z-index: 10000;
+      width: 15px;
+      height: 15px;
+      border: 5px;
+      border: 5px solid #d6dced;
+      border-radius: 200px;
+      background-color: $primary;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      z-index: 10000;
+      width: 15px;
+      height: 15px;
+      border: 5px;
+      border: 5px solid #d6dced;
+      border-radius: 200px;
+      background-color: $primary;
+      transform: translateY(-50%);
+    }
+  }
+
+  @media (min-width: 576px) {
+
+    .container {
+      max-width: 600px;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .container {
+      max-width: 830px;
+    }
+  }
+}
+
+#trade-exchange {
+  position: relative;
+  height: 490px;
+  background: white;
+  background-image: url("./images/bg-dots.jpg");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  overflow: hidden;
+
+  &.horizontal {
+    background-image: url("./images/bg-dots-horizontal.jpg");
+    background-position: right;
+    background-repeat: repeat-y;
+  }
+
+  .trade-display {
+    position: absolute;
+  }
+
+  .particles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    .particles1 {
+      position: absolute;
+      top: -48px;
+      left: 50%;
+      margin-left: -170px;
+      width: 111px;
+      height: 96px;
+      background-image: url("./images/particles1@2x.png");
+      background-size: 100% 100%;
+      opacity: 0;
+      will-change: opacity, transform;
+      transform: translateY(-50%);
+    }
+
+    .particles2 {
+      position: absolute;
+      top: -48px;
+      left: 50%;
+      margin-left: 60px;
+      width: 111px;
+      height: 96px;
+      background-image: url("./images/particles2@2x.png");
+      background-size: 100% 100%;
+      opacity: 0;
+      will-change: opacity, transform;
+      transform: translateY(-50%);
+    }
+  }
+
+  .connectors-display {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .scrolling-area {
+    will-change: transform;
+  }
+
+  .exchanges-background {
+    fill: #d6dced;
+  }
+
+  .line1 {
+    stroke: #0095fa;
+    stroke-width: 2;
+  }
+
+  .line2 {
+    stroke: #0095fa;
+    stroke-width: 2;
+  }
+
+  .select-marker1,
+  .select-marker2 {
+
+    .border {
+      fill: #d6dced;
+      will-change: transform;
+    }
+
+    .indicator {
+      fill: #efc7c2;
+      will-change: transform;
+    }
+
+    .connector {
+      fill: #0095fa;
+      will-change: transform;
+    }
+  }
+
+  .exchange-box {
+    fill: #ffffff;
+  }
+
+  .currency-box {
+    fill: #efc7c2;
+
+    .icon-box {
+      fill: #ffffff;
+    }
+  }
+
+  .select-column {
+    fill: #d6dced;
+    visibility: hidden;
+  }
+
+  .connect-point {
+    fill: #0095fa;
+  }
+
+  .select-rect1,
+  .select-rect2 {
+    position: absolute;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0px;
+    width: 54px;
+    height: 54px;
+    border-radius: 2px;
+    background: white;
+    font-size: 19px;
+    text-transform: capitalize;
+    color: #091540;
+    visibility: hidden;
+    will-change: transform, width;
+
+    .text {
+      margin-right: 12px;
+      margin-left: 12px;
+    }
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .icon-container {
+      flex-shrink: 0;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      width: 54px;
+      height: 54px;
+    }
+
+    &.horizontal {
+      height: 44px;
+      font-size: 13px;
+
+      .icon-container {
+        height: 44px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .select-rect1 {
+
+    .icon-container {
+      border-radius: 2px 0 0 2px;
+      background-image: linear-gradient(180deg, #0095fa 0%, #005cf4 100%);
+    }
+  }
+
+  .select-rect2 {
+    justify-content: flex-end;
+
+    .icon-container {
+      border-radius: 0 2px 2px 0;
+      background-image: linear-gradient(180deg, #1ed3ff 0%, #0da8ff 100%);
+    }
+  }
+
+  .selected-trade {
+    position: absolute;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    padding: 8px;
+    width: 66px;
+    width: 260px;
+    height: 66px;
+    height: 275px;
+    background: #d6dced;
+    visibility: hidden;
+    white-space: nowrap;
+
+    .short-details {
+
+      .title {
+        font-size: 18px;
+        color: #324ea3;
+      }
+
+      .value {
+        font-weight: 600;
+        color: #324ea3;
+      }
+
+      .currency {
+        text-transform: uppercase;
+      }
+
+      &.vertical-expanded {
+        position: relative;
+        text-align: center;
+
+        .icon-container {
+          position: absolute;
+          top: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .info {
+          margin-top: 40px;
+          width: 100%;
+
+          .instant-trade {
+            display: initial;
+          }
+        }
+      }
+    }
+
+    .success-section {
+      position: absolute;
+      top: 0;
+    }
+
+    .success-info {
+      background: #324ea3;
+    }
+
+    .buy-info {
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding: 5px 10px;
+      height: 98px;
+      border-radius: 2px;
+      background: #324ea3;
+      white-space: normal;
+
+      h4 {
+        font-size: 18px;
+      }
+    }
+
+    .sell-info {
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding: 20px;
+      border-radius: 2px;
+      background: #324ea3;
+
+      .sell-progress {
+        position: absolute;
+        top: 0;
+        left: -12px;
+        width: 110%;
+        height: 100%;
+        background: #ffffff;
+        opacity: .1;
+        transform: skewX(-15deg);
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+    }
+
+    .icon-container {
+      flex-shrink: 0;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      width: 50px;
+      height: 50px;
+      border-radius: 2px;
+      background: #1f42ff;
+
+      img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .connector1,
+    .connector2 {
+      position: absolute;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      background: #d6dced;
+      transform: translateY(-50%);
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background: #0095fa;
+      }
+    }
+
+    .connector1 {
+      left: -12px;
+    }
+
+    .connector2 {
+      right: -12px;
+    }
+
+    &.horizontal {
+
+      .connector1 {
+        top: 0;
+        left: unset;
+      }
+
+      .connector2 {
+        top: unset;
+        right: unset;
+        bottom: -24px;
+      }
+
+      .sell-info {
+        padding: 5px 10px;
+        height: 78px;
+
+        h4 {
+          font-size: 16px;
+        }
+      }
+
+      .buy-info {
+        padding: 5px 10px;
+        height: 78px;
+
+        h4 {
+          font-size: 16px;
+        }
+      }
+
+      .success-info {
+
+        .title {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.active-trades-container {
+
+  .active-trades {
+
+    .active-trade {
+      position: relative;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-bottom: 5px;
+      padding-right: 2px;
+      padding-bottom: 3px;
+      padding-left: 2px;
+      overflow: hidden;
+
+      .btn {
+        width: 92px;
+      }
+    }
+
+    .particles {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      .particles1 {
+        position: absolute;
+        left: 50%;
+        margin-left: -170px;
+        width: 111px;
+        height: 96px;
+        background-image: url("./images/particles1-white@2x.png");
+        background-size: 100% 100%;
+        opacity: 0;
+        will-change: opacity, transform;
+        transform: translateY(-50%);
+      }
+
+      .particles2 {
+        position: absolute;
+        left: 50%;
+        margin-left: 60px;
+        width: 111px;
+        height: 96px;
+        background-image: url("./images/particles2-white@2x.png");
+        background-size: 100% 100%;
+        opacity: 0;
+        will-change: opacity, transform;
+        transform: translateY(-50%);
+      }
+    }
+
+    .trade-info-column {
+      flex-direction: row;
+    }
+
+    .currency-column {
+      position: relative;
+      z-index: 1;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 50px;
+
+      .currency-name {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        transform: rotate(-90deg) translateX(50%);
+      }
+
+      .icon-container {
+        width: 27px;
+        height: 27px;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .buy-section,
+    .sell-section {
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 250px;
+
+      .icon-container {
+        box-shadow: 0 2px 4px 0 rgba(37, 35, 35, .1);
+      }
+    }
+
+    .buy-section {
+
+      .exchange-info {
+
+        .icon-container {
+          margin-right: .5rem;
+        }
+      }
+    }
+
+    .sell-section {
+      text-align: right;
+
+      .exchange-info {
+        flex-direction: row-reverse;
+
+        .icon-container {
+          margin-left: .5rem;
+        }
+      }
+
+      .sell-info {
+        margin-left: 1.3rem;
+      }
+    }
+
+    .process-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #324ea3;
+      transform: skew(-15deg);
+    }
+
+    .progress-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      opacity: .1;
+      transform: skew(-15deg) translateX(-100%);
+    }
+
+    .background {
+      position: absolute;
+      top: 0px;
+      right: 3px;
+      bottom: 3px;
+      left: 3px;
+      border-radius: 2px;
+      border-radius: 2px;
+      box-shadow: 0 2px 3px 0 rgba(93, 88, 88, .2);
+      background: #f8f9fe;
+    }
+
+    .process-section {
+      z-index: 10;
+      margin-right: -24px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .currency-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .icon-container {
+      width: 40px;
+      height: 40px;
+    }
+
+    .exchange-info {
+      flex-direction: row;
+      padding: .5rem;
+      background-color: rgba($rose, .3);
+    }
+
+    .buy-exchange-icon,
+    .sell-exchange-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &.horizontal {
+
+    .active-trade {
+      flex-direction: column;
+
+      .currency-column {
+        flex-direction: row;
+        justify-content: flex-start;
+        max-width: unset;
+
+        .currency-name {
+          position: initial;
+          margin-bottom: 0;
+          margin-left: .5rem;
+          transform: none;
+        }
+      }
+
+      .exchange-info {
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 1rem;
+        padding: 0;
+        background-color: transparent;
+
+        .icon-container {
+          margin-right: 0;
+          margin-bottom: .5rem;
+          margin-left: 0;
+        }
+      }
+
+      .process-section {
+        margin-right: 0;
+        height: 172px;
+
+        .process-background {
+          transform: none;
+        }
+
+        .progress-background {
+          transform: translateX(-100%);
+        }
+      }
+
+      .buy-section,
+      .sell-section {
+        flex-direction: row;
+        align-items: center;
+        padding-top: 15px;
+        text-align: left;
+      }
+
+      .sell-section {
+
+        .sell-info {
+          margin-left: 0rem;
+        }
+      }
+
+      .sell-section {
+        padding-left: 0;
+      }
+
+      .buy-rate,
+      .sell-rate {
+        display: none;
+      }
+
+      .trade-info-column {
+        flex-direction: column;
+      }
+    }
+  }
+}
