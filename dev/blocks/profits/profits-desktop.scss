@@ -141,6 +141,14 @@
     &:hover:after {
       opacity: 1;
     }
+
+    &:disabled {
+      opacity: .4;
+
+      &:after {
+        opacity: 0;
+      }
+    }
   }
 
   .slick-prev {
@@ -164,6 +172,11 @@
     line-height: 1.375rem;
     color: $blue;
   }
+}
+
+.profits__slider-animation {
+  border-top: 10px solid $rose;
+  border-bottom: 10px solid $rose;
 }
 
 @import "./profits-tablet.scss";

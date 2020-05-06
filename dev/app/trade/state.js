@@ -38,6 +38,7 @@ export const state = {
         sellExchange: 4,
         currency: 3,
     },
+    animLoopPaused: false, 
     lineProgress: 0,
     seekProgress: 0,
     selectProgress: 0,
