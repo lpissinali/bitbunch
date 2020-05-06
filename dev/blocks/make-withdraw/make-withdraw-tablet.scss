@@ -1,0 +1,20 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .make-withdraw {
+    position: relative;
+    padding: 1.875rem 1.5rem 1.5rem;
+  }
+  .make-withdraw__bg{
+    background-image: none;
+  }
+  .make-withdraw__headline{
+    line-height: 1.5625rem;
+  }
+  .make-withdraw__info{
+    margin-top: 1rem;
+    line-height: 1.1875rem;
+  }
+  .withdrawal__form {
+    max-width: 35.625rem;
+    margin: 1.5rem 0 0;
+  }
+}

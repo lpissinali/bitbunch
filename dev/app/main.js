@@ -14,6 +14,7 @@ require('./modules/restore');
 require('./modules/forgot');
 require('./modules/contact');
 require('./modules/masks');
+require('./modules/withdrawalForm');
 
 // аккордион faq
 const faqAccordion = new Accordion({});
@@ -317,5 +318,215 @@ if (document.querySelector('.daily-trades__range-input')) {
       hide_from_to: false
     });
   })
+}
+
+// Custom select (orange)
+function customSelect(){
+  $(".choose-select").each(function() {
+      if ($(this).hasClass('init')) return false;
+      var classes = $(this).attr("class"),
+          id      = $(this).attr("id"),
+          name    = $(this).attr("name");
+
+      var template =  '<div class="' + classes + '">';
+      template += '<span class="choose-select__trigger">' + $(this).attr("placeholder") + '</span>';
+      template += '<div class="choose-select__options">';
+      $(this).find("option").each(function() {
+
+        var optTitle = $(this).text(),
+            optAbbr = $(this).val(),
+            optBalance = $(this).data('balance'),
+            optProfit = $(this).data('profit'),
+            optProfitStyle = $(this).data('profit-style'),
+            optLogoColor = $(this).data('logo-color'),
+            optLogoWhite = $(this).data('logo-white');
+
+        var optProfitCaret = '';
+        if(optProfitStyle === 'success'){
+          optProfitCaret = './images/caret-up.svg'
+        }
+        if(optProfitStyle === 'danger'){
+          optProfitCaret = './images/caret-down.svg'
+        }
+          
+        template += '<div class="choose-select__option ' + $(this).attr("class") + '" data-value="' + optAbbr + '"  data-title="' + optTitle + '" data-logo-white="' + optLogoWhite + '">'
+        template +=   '<div class="table-data table-col_assets"><img src="' + optLogoColor + '" alt=""><span><b>' + optTitle + '</b> (' + optAbbr + ')</span></div>'
+        template +=   '<div class="table-data table-col_balance"><span>' + optBalance + ' ' + optAbbr + '</span></div>'
+        template +=   '<div class="table-data table-col_profit"><img src="' + optProfitCaret + '" alt=""><span class="color_' + optProfitStyle + '">' + optProfit + '</span></div>'
+        template += '</div>'
+
+      });
+      template += '</div></div>';
+
+      $(this).wrap('<div class="choose-select__wrapper"></div>');
+      $(this).hide().addClass('init');
+      $(this).after(template);
+  });
+
+  $(".choose-select__trigger").on("click", function() {
+      $('html').one('click',function() {
+          $(".choose-select").removeClass("opened");
+      });
+      $(this).parents(".choose-select").toggleClass("opened");
+      event.stopPropagation();
+  });
+
+  $(".choose-select__option").on("click", function() {
+      $(this).parents(".choose-select__wrapper").find("select").val($(this).data("value")).trigger('change');
+      $(this).parents(".choose-select__options").find(".choose-select__option").removeClass("selection");
+      $(this).addClass("selection");
+      $(this).parents(".choose-select").removeClass("opened");
+      var template =  '<img src="' + $(this).data('logo-white') + '" alt="">' + $(this).data('title');
+      $(this).parents(".choose-select").find(".choose-select__trigger").html(template);
+  });
+
+  $(".choose-select").change(function(){
+    setTimeout(() => {$(".choose-blur").addClass('_unblur')}, 300)
+    console.log(this.value)
+  })
+}
+if (document.querySelector('.choose-select')) {
+  customSelect();
+}
+
+// Chart
+if (document.querySelector('.chart__canvas')) {
+  var chart    = document.getElementById('chart').getContext('2d'),
+    gradient = chart.createLinearGradient(0, 0, 0, 190);
   
+    chart.height = 190;
+
+  gradient.addColorStop(0, 'rgba(50, 78, 163, 0.8)');
+  gradient.addColorStop(0.7, 'rgba(50, 78, 163, 0)');
+
+
+  var data  = {
+      labels: [ 'January', 'February', 'March', 'April', 'May', 'June' ],
+      datasets: [{
+        label: 'Data',
+        backgroundColor: gradient,
+        pointBorderColor: '#324ea3',
+        pointBackgroundColor: '#ffffff',
+        pointHoverBackgroundColor: '#ffffff',
+        pointHoverBorderColor: '#fa8f68',
+        pointBorderWidth: 2,
+        pointHoverRadius: 4,
+        pointHoverBorderWidth: 2,
+        pointRadius: 4,
+        borderWidth: 3,
+        borderColor: '#324ea3',
+        zeroLineWidth: 5,
+        zeroLineColor: '#324ea3',
+        data: [1, 3, 2, 1, 4, 2]
+      }]
+  };
+
+
+  var options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+      easing: 'easeInOutQuad',
+      duration: 520
+    },
+    scales: {
+      xAxes: [{
+        gridLines: {
+          color: 'rgba(200, 200, 200, 1)',
+          lineWidth: 1
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          color: 'rgba(200, 200, 200, 0.5)',
+          lineWidth: 1
+        }
+      }]
+    },
+    elements: {
+      line: {
+        tension: 0.3
+      }
+    },
+    legend: {
+      display: false
+    },
+    point: {
+      backgroundColor: 'white'
+    },
+    tooltips: {
+      titleFontFamily: 'Open Sans',
+      backgroundColor: 'rgba(0,0,0,0.3)',
+      titleFontColor: 'red',
+      caretSize: 5,
+      cornerRadius: 2,
+      xPadding: 10,
+      yPadding: 10
+    }
+  };
+
+
+  var chartInstance = new Chart(chart, {
+      type: 'line',
+      data: data,
+      options: options
+  });
+}
+$('.chart__control-button').click(function(){
+  $('.chart__control-button.active').removeClass('active')
+  $(this).addClass('active')
+})
+
+// Copy wallet number
+if (document.querySelector('.button-copy')) {
+  $('.button-copy').click(() => {
+    // Копирование
+    var copyNumber = document.getElementById("walletNumber");
+    copyNumber.select();
+    copyNumber.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+
+    // Уведомление
+    $('.notification').addClass('active');
+    setTimeout(function(){
+      $('.notification').removeClass('active');
+    },1500)
+  })
+}
+
+// Center ellipsis text
+function truncate( str, max, sep ) {
+
+  max = max || 10;
+
+  var len = str.length;
+  if(len > max){
+
+      sep = sep || "...";
+
+      var seplen = sep.length;
+
+      if(seplen > max) {
+          return str.substr(len - max);
+      }
+
+      var n = -0.5 * (max - len - seplen);
+
+      var center = len/2;
+
+      var front = str.substr(0, center - n);
+      var back = str.substr(len - center + n);
+
+      return front + sep + back;
+
+  }
+
+  return str;
+}
+
+if (document.querySelector('.ellipsis')) {
+  $('span.ellipsis').each(function(){
+    var textEllipsis = $(this).text();
+    $(this).text(truncate(textEllipsis, 22, "........"))
+  })
 }

@@ -1,0 +1,20 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .transaction{
+    padding-bottom: 1.125rem;
+  }
+  .transaction__headline {
+    margin-bottom: 1.875rem;
+  }
+  .transaction__table .table-col_date{
+    display: none;
+  }
+  .transaction__table .table-col_currency{
+    width: 11.625rem;
+  }
+  .transaction__table .table-col_amount{
+    width: 8.875rem;
+  }
+  .transaction__table .table-col_adress{
+    width: 18.375rem;
+  }
+}
