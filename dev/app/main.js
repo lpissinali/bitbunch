@@ -174,6 +174,42 @@ $(window).on('resize orientationchange', () => {
   $('.big-team__advisors-container').slick('resize');
 });
 
+
+// account user menu
+if (document.querySelector('.toggle__user-menu')) {
+  $('.toggle__user-menu').click(() => {
+    if ($(window).width() <= 1000){
+      $('.account-nav__user-controls').slideToggle();
+    }
+    $('.account-nav__menu-list').toggleClass('disabled');
+    $('.account-nav__user').toggleClass('enabled');
+    $('.account-nav__user-menu-list').slideToggle();
+  });
+
+  $('.account-nav__user-menu-close').click(() => {
+    if ($(window).width() <= 1000){
+      $('.account-nav__user-controls').slideToggle();
+    }
+    $('.account-nav__menu-list').toggleClass('disabled');
+    $('.account-nav__user').toggleClass('enabled');
+    $('.account-nav__user-menu-list').slideToggle();
+  });
+}
+
+// account user mobile menu
+if (document.querySelector('.account-nav__sandwich-button')) {
+  $('.account-nav__sandwich-button').click(() => {
+    $('.account-nav__nav-menu').toggleClass('active');
+    $('body').toggleClass('overflow-hidden');
+  });
+
+  $('.account-nav__close-button').click(() => {
+    $('.account-nav__nav-menu').toggleClass('active');
+    $('body').toggleClass('overflow-hidden');
+  });
+}
+
+
 // range
 if (document.querySelector('.calculation__button-cur.bitcoin')) {
   document.querySelector('.calculation__button-cur.bitcoin').addEventListener('click', () => {
@@ -243,4 +279,31 @@ if (document.querySelector('.calculation__mount-range')) {
   });
   $('.calculation__mount-value').html($('.calculation__mount-range').val());
   $('.calculation__result-mount').html($('.calculation__mount-range').val());
+}
+
+// Choosing coin play/pause button
+if (document.querySelector('.choosing-coin__controls-toggle')) {
+  $('.choosing-coin__controls-toggle').click(function(){
+    $(this).toggleClass('active');
+  });
+}
+
+// Trading history table scrollbar
+if (document.querySelector('.trading-history__table-overflow')) {
+  $(".trading-history__table-overflow").mCustomScrollbar({
+    axis:"x",
+    theme:"dark"
+  });
+}
+
+// Modal notification
+if (document.querySelector('.modal__notification')) {
+  $('.modal__notification [type=submit]').click(function(e){
+    e.preventDefault(); // Отмена отправки для показа анимации
+    $('.notification').addClass('active');
+  });
+
+  $('.modal__notification .modal__close').click(function(){
+    $('.notification').removeClass('active');
+  })
 }

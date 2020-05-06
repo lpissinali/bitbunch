@@ -1,0 +1,24 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .notifications{
+    padding-bottom: 2.2188rem;
+    background-image: none;
+  }
+  .notifications__headline{
+    margin-bottom: 0.9375rem;
+  }
+  .notifications__content{
+    margin-bottom: 1.1563rem;
+    font-size: 0.875rem;
+    letter-spacing: 0;
+  }
+  .notifications__list-column{
+    width: 19.0625rem;
+  }
+  .notifications__list-item{
+    font-size: 0.875rem;
+  }
+  .notifications__list-item span{
+    margin-top: 0.3125rem;
+    padding-left: 0.75rem;
+  }
+}

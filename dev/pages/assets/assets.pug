@@ -1,0 +1,18 @@
+extends ../../templates/account
+
+block variables
+    - var title = ''
+    - var meta1 = ''
+    - var meta2 = ''
+    - var pageClass = ''
+
+block header-button
+    a(href="#").account-nav__button.button-orange invest
+
+block content
+    .account-header
+      .account-header__left
+          .account-app-headline Bitbunch app
+          .account-main-headline Assets
+      a(href="#").account-header__button.button-orange.your-assets__header-button invest
+    include ../../blocks/your-assets/your-assets

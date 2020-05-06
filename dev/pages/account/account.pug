@@ -1,0 +1,32 @@
+extends ../../templates/account
+
+block variables
+    - var title = ''
+    - var meta1 = ''
+    - var meta2 = ''
+    - var pageClass = ''
+
+block notification
+    // .notification.notification__danger Wrong password. Please try again.
+    // .notification.notification__danger Wrong code. Please try again.
+    // .notification.notification__success Your email got changed successfully.
+    .notification.notification__success(tabindex="-1" role="dialog") Your phone number got changed successfully.
+
+block content
+    .account-header
+      .account-header__left
+          .account-app-headline Bitbunch app
+          .account-main-headline Account
+    include ../../blocks/your-account/your-account
+    include ../../blocks/notifications/notifications
+
+block modal
+    #modal-change-email.modal.fade.modal__notification(tabindex="-1" role="dialog")
+        .modal-dialog.modal__dialog(role="document")
+            .modal-content.modal__content
+                include ../../blocks/forms/modal/modal-change-email
+    #modal-change-phone.modal.fade.modal__notification(tabindex="-1" role="dialog")
+        .modal-dialog.modal__dialog(role="document")
+            .modal-content.modal__content
+                include ../../blocks/forms/modal/modal-change-phone
+    .modal__backdrop
