@@ -12,6 +12,10 @@
 
 @import "../../app/libs/mCustomScrollbar/jquery.mCustomScrollbar.min.css";
 
+@import "../../app/libs/ion.rangeSlider/ion.rangeSlider.min.css";
+
+@import "../../app/libs/chart.js/Chart.min.css";
+
 // components
 @import "./components.scss";
 
@@ -191,3 +195,27 @@
 
 // trading currencies
 @import "../../blocks/trading-currencies/trading-currencies-desktop.scss";
+
+// daily trades
+@import "../../blocks/daily-trades/daily-trades-desktop.scss";
+
+// reports page
+
+// trading statistics
+@import "../../blocks/trading-statistics/trading-statistics-desktop.scss";
+
+// invest page
+
+// fund wallet
+@import "../../blocks/fund-wallet/fund-wallet-desktop.scss";
+
+// transaction
+@import "../../blocks/transaction/transaction-desktop.scss";
+
+// withdraw page
+
+// make withdraw
+@import "../../blocks/make-withdraw/make-withdraw-desktop.scss";
+
+// withdrawals
+@import "../../blocks/withdrawals/withdrawals-desktop.scss";

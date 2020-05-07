@@ -1,0 +1,97 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .withdrawals{
+    margin-top: 2.125rem;
+    padding: 0 1.5rem;
+  }
+  .withdrawals__headline{
+    margin-bottom: 1rem;
+    line-height: 1.3125rem;
+  }
+  .withdrawals__table-row{
+    display: grid;
+    grid-template-columns: 3.8125rem 2.6875rem 10.5rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "currency adress adress" "currency date amount";
+    margin-bottom: 1rem;
+    border: none;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &-head{
+      display: none;
+    }
+  }
+  .withdrawals__table_action .withdrawals__table-row{
+    display: grid;
+    grid-template-columns: 3.8125rem 2.6875rem 6.875rem auto;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "currency adress adress adress" "currency date amount action";
+    &.withdrawals__table-row-head{
+      display: none;
+    }
+  }
+  .withdrawals__table .table-data{
+    padding: 0;
+  }
+  .withdrawals__table .table-col_currency{
+    grid-area: currency;
+    width: auto;
+  }
+  .withdrawals__table .table-col_currency span{
+    display: none;
+  }
+  .withdrawals__table .table-col_date{
+    grid-area: date;
+    align-self: start;
+    display: block;
+    width: auto;
+    font-family: $main-font-medium;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    span{
+      &:first-child{
+        display: none;
+      }
+    }
+  }
+  .withdrawals__table .table-col_amount{
+    grid-area: amount;
+    align-self: start;
+    width: auto;
+    font-family: $main-font-medium;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+  .withdrawals__table .table-col_adress{
+    grid-area: adress;
+    align-self: end;
+    width: auto;
+    font-size: 0.625rem;
+    line-height: 1.425rem;
+    opacity: .8;
+    span{
+      &.ellipsis{
+        display: none;
+        + span {
+          display: block;
+        }
+      }
+    }
+  }
+  .withdrawals__table .table-col_button{
+    grid-area: action;
+    align-self: start;
+    width: auto;
+    .button-red{
+      width: auto;
+      height: auto;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+}

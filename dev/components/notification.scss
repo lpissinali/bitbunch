@@ -19,7 +19,7 @@
   z-index: 1050;
   visibility: hidden;
   opacity: 0;
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition: 300ms ease;
   &.active{
     visibility: visible;
     opacity: 1;

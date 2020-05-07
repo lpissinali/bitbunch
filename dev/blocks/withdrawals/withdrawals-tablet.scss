@@ -1,0 +1,34 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .withdrawals{
+    padding-bottom: 1.125rem;
+  }
+  .withdrawals__headline {
+    margin-bottom: 1.875rem;
+  }
+  .withdrawals__table .table-col_date{
+    display: none;
+  }
+  .withdrawals__table .table-col_currency{
+    width: 11.625rem;
+  }
+  .withdrawals__table .table-col_amount{
+    width: 8.875rem;
+  }
+  .withdrawals__table .table-col_adress{
+    width: 18.375rem;
+    span{
+      &.ellipsis{
+        display: block;
+        + span {
+          display: none;
+        }
+      }
+    }
+  }
+  .withdrawals__table_action .table-col_adress{
+    width: 12.125rem;
+  }
+  .withdrawals__table .table-col_button{
+    width: 6.25rem;
+  }
+}

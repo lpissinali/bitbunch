@@ -1,0 +1,104 @@
+.fund-wallet{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+.fund-wallet__bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: url(./images/bg-bitcoin-wallet@2x.png);
+  background-size: 14.375rem 14rem;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  z-index: 0;
+}
+.fund-wallet__block-left{
+  position: relative;
+  width: 38.625rem;
+  padding: 1.8125rem 1.5rem 2rem;
+  box-shadow: 0.125rem 0.125rem 1.5rem rgba(80, 87, 94, 0.1);
+  border-radius: 0.125rem;
+  background-color: $white;
+}
+.fund-wallet__block-right{
+  width: 18.125rem;
+  margin-left: 2rem;
+  padding-bottom: 2rem;
+  padding: 1.8125rem 1.5rem 2rem;
+  box-shadow: 0.125rem 0.125rem 1.5rem rgba(80, 87, 94, 0.1);
+  border-radius: 0.125rem;
+  background-color: $white;
+}
+.fund-wallet__headline{
+  position: relative;
+  line-height: 2rem;
+}
+.fund-wallet__info{
+  position: relative;
+  margin-top: 0.9375rem;
+  font-family: $main-font-bold;
+  color: $blue;
+  letter-spacing: 0.0213rem;
+  line-height: 1.3125rem;
+}
+.fund-wallet__content{
+  position: relative;
+  max-width: 31.25rem;
+  margin-top: 1.875rem;
+  opacity: 0.8;
+  font-family: $main-font-light;
+  color: #091540;
+  line-height: 1.5625rem;
+}
+.fund-wallet__number{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 1.875rem;
+  input{
+    width: 25.875rem;
+    height: 3.125rem;
+    padding: 1rem;
+    background: $white;
+    border: 0.0625rem solid $blue;
+    border-radius: 0.125rem 0 0 0.125rem;
+    box-shadow: 0.625rem 0.75rem 1.5rem rgba(80, 87, 94, 0.1);
+    font-family: $main-font-light;
+    font-size: 0.875rem;
+    color: $dark-grey;
+    letter-spacing: -0.0094rem;
+  }
+  button{
+    width: 9.375rem;
+    height: 3.125rem;
+    margin-left: -0.625rem;
+    letter-spacing: 0.0269rem;
+  }
+}
+
+.fund-wallet-qr{
+  &__headline{
+    text-align: center;
+  }
+  &__code{
+    width: 10.25rem;
+    margin: 2rem auto 0;
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+  &__content{
+    display: none;
+  }
+}
+
+@import "./fund-wallet-tablet.scss";
+
+@import "./fund-wallet-mobile.scss";

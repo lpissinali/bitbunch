@@ -1,0 +1,64 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .transaction{
+    margin-top: 2.125rem;
+    padding: 0 1.5rem;
+  }
+  .transaction__headline{
+    margin-bottom: 1rem;
+    line-height: 1.3125rem;
+  }
+  .transaction__table-row{
+    display: grid;
+    grid-template-columns: 3.8125rem 2.6875rem 10.5rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "currency adress adress" "currency date amount";
+    margin-bottom: 1rem;
+    border: none;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &-head{
+      display: none;
+    }
+  }
+  .transaction__table .table-data{
+    padding: 0;
+  }
+  .transaction__table .table-col_currency{
+    grid-area: currency;
+    width: auto;
+  }
+  .transaction__table .table-col_currency span{
+    display: none;
+  }
+  .transaction__table .table-col_date{
+    grid-area: date;
+    align-self: start;
+    display: block;
+    width: auto;
+    font-family: $main-font-medium;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    span{
+      &:first-child{
+        display: none;
+      }
+    }
+  }
+  .transaction__table .table-col_amount{
+    grid-area: amount;
+    align-self: start;
+    width: auto;
+    font-family: $main-font-medium;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+  .transaction__table .table-col_adress{
+    grid-area: adress;
+    align-self: end;
+    width: auto;
+    font-size: 0.625rem;
+    line-height: 1.425rem;
+    opacity: .8;
+  }
+}
