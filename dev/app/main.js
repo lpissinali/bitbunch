@@ -276,6 +276,24 @@ if (document.querySelector('.calculation__mount-range')) {
   $('.calculation__result-mount').html($('.calculation__mount-range').val());
 }
 
+// custom range
+if (document.querySelector('.calculation__range')) {
+  $('.calculation__range').each(function(i, range) {
+    const valueMin = $(this).attr('min');
+    const valueMax = $(this).attr('max');
+    const valueStep = $(this).attr('step');
+    $(range).ionRangeSlider({
+      skin: 'big',
+      type: 'single',
+      min: valueMin,
+      max: valueMax,
+      step: valueStep,
+      hide_min_max: true,
+      hide_from_to: false,
+    });
+  });
+}
+
 // Choosing coin play/pause button
 if (document.querySelector('.choosing-coin__controls-toggle')) {
   $('.choosing-coin__controls-toggle').click(function() {
