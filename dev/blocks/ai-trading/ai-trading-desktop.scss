@@ -51,7 +51,7 @@
   justify-content: space-between;
   align-items: flex-start;
   display: flex;
-  margin-top: 20.5rem;
+  margin-top: 17.8125rem;
 }
 
 .ai-trading__card {
@@ -116,10 +116,10 @@
 
 .ai-trading__card-orange {
   position: absolute;
-  top: -27.8125rem;
+  top: -25.0625rem;
   right: 0;
-  padding-bottom: .625rem;
-  min-height: 16.85rem;
+  // padding-bottom: .625rem;
+  // min-height: 16.85rem;
   border: .1875rem solid $orange;
   background-image: url("./images/ai-trading__card-orange-bg-desktop.png");
 
