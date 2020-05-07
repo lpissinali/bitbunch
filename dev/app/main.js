@@ -155,12 +155,8 @@ if (document.querySelector('.profits__slider-container')) {
   });
 
   $('.profits__slider-wrapper').on('afterChange', (event, slick, currentSlide, nextSlide) => {
-    if (currentSlide === 1) {
+    if ((currentSlide = !0)) {
       $('.profits__slider-dot-right').addClass('none');
-      $('.profits__slider-dot-left').removeClass('none');
-    } else if (currentSlide === 0) {
-      $('.profits__slider-dot-left').addClass('none');
-      $('.profits__slider-dot-right').removeClass('none');
     }
   });
 
@@ -175,11 +171,10 @@ $(window).on('resize orientationchange', () => {
   $('.big-team__advisors-container').slick('resize');
 });
 
-
 // account user menu
 if (document.querySelector('.toggle__user-menu')) {
   $('.toggle__user-menu').click(() => {
-    if ($(window).width() <= 1000){
+    if ($(window).width() <= 1000) {
       $('.account-nav__user-controls').slideToggle();
     }
     $('.account-nav__menu-list').toggleClass('disabled');
@@ -188,7 +183,7 @@ if (document.querySelector('.toggle__user-menu')) {
   });
 
   $('.account-nav__user-menu-close').click(() => {
-    if ($(window).width() <= 1000){
+    if ($(window).width() <= 1000) {
       $('.account-nav__user-controls').slideToggle();
     }
     $('.account-nav__menu-list').toggleClass('disabled');
@@ -209,7 +204,6 @@ if (document.querySelector('.account-nav__sandwich-button')) {
     $('body').toggleClass('overflow-hidden');
   });
 }
-
 
 // range
 if (document.querySelector('.calculation__button-cur.bitcoin')) {
@@ -284,121 +278,141 @@ if (document.querySelector('.calculation__mount-range')) {
 
 // Choosing coin play/pause button
 if (document.querySelector('.choosing-coin__controls-toggle')) {
-  $('.choosing-coin__controls-toggle').click(function(){
+  $('.choosing-coin__controls-toggle').click(function() {
     $(this).toggleClass('active');
   });
 }
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-history__table-overflow')) {
-  $(".trading-history__table-overflow").mCustomScrollbar({
-    axis:"x",
-    theme:"dark"
+  $('.trading-history__table-overflow').mCustomScrollbar({
+    axis: 'x',
+    theme: 'dark',
   });
 }
 
 // Modal notification
 if (document.querySelector('.modal__notification')) {
-  $('.modal__notification [type=submit]').click(function(e){
+  $('.modal__notification [type=submit]').click(e => {
     e.preventDefault(); // Отмена отправки для показа анимации
     $('.notification').addClass('active');
   });
 
-  $('.modal__notification .modal__close').click(function(){
+  $('.modal__notification .modal__close').click(() => {
     $('.notification').removeClass('active');
-  })
+  });
 }
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-currencies__list')) {
-  $(".trading-currencies__list").mCustomScrollbar({
-    axis:"y",
-    theme:"minimal-dark"
+  $('.trading-currencies__list').mCustomScrollbar({
+    axis: 'y',
+    theme: 'minimal-dark',
   });
 }
 
 // Trading history table scrollbar
 if (document.querySelector('.daily-trades__range-input')) {
-  $(".daily-trades__range-input").each(function(){
-    const valueMin = $(this).attr('min')
-    const valueMax = $(this).attr('max')
-    const valueStep = $(this).attr('step')
-    $(".daily-trades__range-input").ionRangeSlider({
-      skin: "big",
-      type: "single",
+  $('.daily-trades__range-input').each(function() {
+    const valueMin = $(this).attr('min');
+    const valueMax = $(this).attr('max');
+    const valueStep = $(this).attr('step');
+    $('.daily-trades__range-input').ionRangeSlider({
+      skin: 'big',
+      type: 'single',
       min: valueMin,
       max: valueMax,
       step: valueStep,
       hide_min_max: true,
-      hide_from_to: false
+      hide_from_to: false,
     });
-  })
+  });
 }
 
 // Custom select (orange)
-function customSelect(){
-  $(".choose-select").each(function() {
-      if ($(this).hasClass('init')) return false;
-      var classes = $(this).attr("class"),
-          id      = $(this).attr("id"),
-          name    = $(this).attr("name");
+function customSelect() {
+  $('.choose-select').each(function() {
+    if ($(this).hasClass('init')) return false;
+    const classes = $(this).attr('class');
+    const id = $(this).attr('id');
+    const name = $(this).attr('name');
 
-      var template =  '<div class="' + classes + '">';
-      template += '<span class="choose-select__trigger">' + $(this).attr("placeholder") + '</span>';
-      template += '<div class="choose-select__options">';
-      $(this).find("option").each(function() {
+    let template = `<div class="${classes}">`;
+    template += `<span class="choose-select__trigger">${$(this).attr('placeholder')}</span>`;
+    template += '<div class="choose-select__options">';
+    $(this)
+      .find('option')
+      .each(function() {
+        const optTitle = $(this).text();
+        const optAbbr = $(this).val();
+        const optBalance = $(this).data('balance');
+        const optProfit = $(this).data('profit');
+        const optProfitStyle = $(this).data('profit-style');
+        const optLogoColor = $(this).data('logo-color');
+        const optLogoWhite = $(this).data('logo-white');
 
-        var optTitle = $(this).text(),
-            optAbbr = $(this).val(),
-            optBalance = $(this).data('balance'),
-            optProfit = $(this).data('profit'),
-            optProfitStyle = $(this).data('profit-style'),
-            optLogoColor = $(this).data('logo-color'),
-            optLogoWhite = $(this).data('logo-white');
-
-        var optProfitCaret = '';
-        if(optProfitStyle === 'success'){
-          optProfitCaret = './images/caret-up.svg'
+        let optProfitCaret = '';
+        if (optProfitStyle === 'success') {
+          optProfitCaret = './images/caret-up.svg';
         }
-        if(optProfitStyle === 'danger'){
-          optProfitCaret = './images/caret-down.svg'
+        if (optProfitStyle === 'danger') {
+          optProfitCaret = './images/caret-down.svg';
         }
-          
-        template += '<div class="choose-select__option ' + $(this).attr("class") + '" data-value="' + optAbbr + '"  data-title="' + optTitle + '" data-logo-white="' + optLogoWhite + '">'
-        template +=   '<div class="table-data table-col_assets"><img src="' + optLogoColor + '" alt=""><span><b>' + optTitle + '</b> (' + optAbbr + ')</span></div>'
-        template +=   '<div class="table-data table-col_balance"><span>' + optBalance + ' ' + optAbbr + '</span></div>'
-        template +=   '<div class="table-data table-col_profit"><img src="' + optProfitCaret + '" alt=""><span class="color_' + optProfitStyle + '">' + optProfit + '</span></div>'
-        template += '</div>'
 
+        template += `<div class="choose-select__option ${$(this).attr(
+          'class'
+        )}" data-value="${optAbbr}"  data-title="${optTitle}" data-logo-white="${optLogoWhite}">`;
+        template += `<div class="table-data table-col_assets"><img src="${optLogoColor}" alt=""><span><b>${optTitle}</b> (${optAbbr})</span></div>`;
+        template += `<div class="table-data table-col_balance"><span>${optBalance} ${optAbbr}</span></div>`;
+        template += `<div class="table-data table-col_profit"><img src="${optProfitCaret}" alt=""><span class="color_${optProfitStyle}">${optProfit}</span></div>`;
+        template += '</div>';
       });
-      template += '</div></div>';
+    template += '</div></div>';
 
-      $(this).wrap('<div class="choose-select__wrapper"></div>');
-      $(this).hide().addClass('init');
-      $(this).after(template);
+    $(this).wrap('<div class="choose-select__wrapper"></div>');
+    $(this)
+      .hide()
+      .addClass('init');
+    $(this).after(template);
   });
 
-  $(".choose-select__trigger").on("click", function() {
-      $('html').one('click',function() {
-          $(".choose-select").removeClass("opened");
-      });
-      $(this).parents(".choose-select").toggleClass("opened");
-      event.stopPropagation();
+  $('.choose-select__trigger').on('click', function() {
+    $('html').one('click', () => {
+      $('.choose-select').removeClass('opened');
+    });
+    $(this)
+      .parents('.choose-select')
+      .toggleClass('opened');
+    event.stopPropagation();
   });
 
-  $(".choose-select__option").on("click", function() {
-      $(this).parents(".choose-select__wrapper").find("select").val($(this).data("value")).trigger('change');
-      $(this).parents(".choose-select__options").find(".choose-select__option").removeClass("selection");
-      $(this).addClass("selection");
-      $(this).parents(".choose-select").removeClass("opened");
-      var template =  '<img src="' + $(this).data('logo-white') + '" alt="">' + $(this).data('title');
-      $(this).parents(".choose-select").find(".choose-select__trigger").html(template);
+  $('.choose-select__option').on('click', function() {
+    $(this)
+      .parents('.choose-select__wrapper')
+      .find('select')
+      .val($(this).data('value'))
+      .trigger('change');
+    $(this)
+      .parents('.choose-select__options')
+      .find('.choose-select__option')
+      .removeClass('selection');
+    $(this).addClass('selection');
+    $(this)
+      .parents('.choose-select')
+      .removeClass('opened');
+    const template = `<img src="${$(this).data('logo-white')}" alt="">${$(this).data('title')}`;
+    $(this)
+      .parents('.choose-select')
+      .find('.choose-select__trigger')
+      .html(template);
   });
 
-  $(".choose-select").change(function(){
-    setTimeout(() => {$(".choose-blur").addClass('_unblur')}, 300)
-    console.log(this.value)
-  })
+  $('.choose-select').change(function() {
+    setTimeout(() => {
+      $('.choose-blur').addClass('_unblur');
+    }, 300);
+    console.log(this.value);
+  });
 }
 if (document.querySelector('.choose-select')) {
   customSelect();
@@ -406,18 +420,18 @@ if (document.querySelector('.choose-select')) {
 
 // Chart
 if (document.querySelector('.chart__canvas')) {
-  var chart    = document.getElementById('chart').getContext('2d'),
-    gradient = chart.createLinearGradient(0, 0, 0, 190);
-  
-    chart.height = 190;
+  const chart = document.getElementById('chart').getContext('2d');
+  const gradient = chart.createLinearGradient(0, 0, 0, 190);
+
+  chart.height = 190;
 
   gradient.addColorStop(0, 'rgba(50, 78, 163, 0.8)');
   gradient.addColorStop(0.7, 'rgba(50, 78, 163, 0)');
 
-
-  var data  = {
-      labels: [ 'January', 'February', 'March', 'April', 'May', 'June' ],
-      datasets: [{
+  const data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    datasets: [
+      {
         label: 'Data',
         backgroundColor: gradient,
         pointBorderColor: '#324ea3',
@@ -432,42 +446,46 @@ if (document.querySelector('.chart__canvas')) {
         borderColor: '#324ea3',
         zeroLineWidth: 5,
         zeroLineColor: '#324ea3',
-        data: [1, 3, 2, 1, 4, 2]
-      }]
+        data: [1, 3, 2, 1, 4, 2],
+      },
+    ],
   };
 
-
-  var options = {
+  const options = {
     responsive: true,
     maintainAspectRatio: false,
     animation: {
       easing: 'easeInOutQuad',
-      duration: 520
+      duration: 520,
     },
     scales: {
-      xAxes: [{
-        gridLines: {
-          color: 'rgba(200, 200, 200, 1)',
-          lineWidth: 1
-        }
-      }],
-      yAxes: [{
-        gridLines: {
-          color: 'rgba(200, 200, 200, 0.5)',
-          lineWidth: 1
-        }
-      }]
+      xAxes: [
+        {
+          gridLines: {
+            color: 'rgba(200, 200, 200, 1)',
+            lineWidth: 1,
+          },
+        },
+      ],
+      yAxes: [
+        {
+          gridLines: {
+            color: 'rgba(200, 200, 200, 0.5)',
+            lineWidth: 1,
+          },
+        },
+      ],
     },
     elements: {
       line: {
-        tension: 0.3
-      }
+        tension: 0.3,
+      },
     },
     legend: {
-      display: false
+      display: false,
     },
     point: {
-      backgroundColor: 'white'
+      backgroundColor: 'white',
     },
     tooltips: {
       titleFontFamily: 'Open Sans',
@@ -476,72 +494,68 @@ if (document.querySelector('.chart__canvas')) {
       caretSize: 5,
       cornerRadius: 2,
       xPadding: 10,
-      yPadding: 10
-    }
+      yPadding: 10,
+    },
   };
 
-
-  var chartInstance = new Chart(chart, {
-      type: 'line',
-      data: data,
-      options: options
+  const chartInstance = new Chart(chart, {
+    type: 'line',
+    data,
+    options,
   });
 }
-$('.chart__control-button').click(function(){
-  $('.chart__control-button.active').removeClass('active')
-  $(this).addClass('active')
-})
+$('.chart__control-button').click(function() {
+  $('.chart__control-button.active').removeClass('active');
+  $(this).addClass('active');
+});
 
 // Copy wallet number
 if (document.querySelector('.button-copy')) {
   $('.button-copy').click(() => {
     // Копирование
-    var copyNumber = document.getElementById("walletNumber");
+    const copyNumber = document.getElementById('walletNumber');
     copyNumber.select();
     copyNumber.setSelectionRange(0, 99999);
-    document.execCommand("copy");
+    document.execCommand('copy');
 
     // Уведомление
     $('.notification').addClass('active');
-    setTimeout(function(){
+    setTimeout(() => {
       $('.notification').removeClass('active');
-    },1500)
-  })
+    }, 1500);
+  });
 }
 
 // Center ellipsis text
-function truncate( str, max, sep ) {
-
+function truncate(str, max, sep) {
   max = max || 10;
 
-  var len = str.length;
-  if(len > max){
+  const len = str.length;
+  if (len > max) {
+    sep = sep || '...';
 
-      sep = sep || "...";
+    const seplen = sep.length;
 
-      var seplen = sep.length;
+    if (seplen > max) {
+      return str.substr(len - max);
+    }
 
-      if(seplen > max) {
-          return str.substr(len - max);
-      }
+    const n = -0.5 * (max - len - seplen);
 
-      var n = -0.5 * (max - len - seplen);
+    const center = len / 2;
 
-      var center = len/2;
+    const front = str.substr(0, center - n);
+    const back = str.substr(len - center + n);
 
-      var front = str.substr(0, center - n);
-      var back = str.substr(len - center + n);
-
-      return front + sep + back;
-
+    return front + sep + back;
   }
 
   return str;
 }
 
 if (document.querySelector('.ellipsis')) {
-  $('span.ellipsis').each(function(){
-    var textEllipsis = $(this).text();
-    $(this).text(truncate(textEllipsis, 22, "........"))
-  })
+  $('span.ellipsis').each(function() {
+    const textEllipsis = $(this).text();
+    $(this).text(truncate(textEllipsis, 22, '........'));
+  });
 }

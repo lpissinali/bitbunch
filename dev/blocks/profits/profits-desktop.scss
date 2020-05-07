@@ -38,9 +38,9 @@
   height: 3.75rem;
   border-radius: 50%;
   background-color: #fdd4de;
-  opacity: .4;
+  opacity: .7;
+  animation: pulse .8s linear infinite, redlight 7s linear;
   transform-origin: center;
-  animation: pulse .8s linear infinite;
 }
 
 .profits__slider-dot-left {
@@ -210,5 +210,27 @@
 
   100% {
     transform: scale(1);
+  }
+}
+
+@-webkit-keyframes redlight {
+
+  0% {
+    background-color: #ff2400;
+  }
+
+  100% {
+    background-color: #fdd4de;
+  }
+}
+
+@keyframes redlight {
+
+  0% {
+    background-color: #e32f12;
+  }
+
+  100% {
+    background-color: #fdd4de;
   }
 }
