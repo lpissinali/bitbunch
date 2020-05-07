@@ -6,26 +6,12 @@ block variables
     - var meta2 = ''
     - var pageClass = ''
 
-block notification
-    // .notification.notification__dunger(tabindex="-1" role="dialog") Wrong authenticator code. Please try again.
-    .notification.notification__success(tabindex="-1" role="dialog") Your withdrawal got requested successfully.
-
 block content
     .account-header
       .account-header__left
           .account-app-headline Bitbunch app
           .account-main-headline Verification
-    select(id="choose-asset" name="choose-asset" placeholder="CHOOSE YOUR ASSET" value="").choose-select
-        option(value="BTC" data-balance="13.048128" data-profit="0.212%" data-profit-style="success" data-logo-color="./images/bitcoin.svg" data-logo-white="./images/choose-bitcoin.svg") Bitcoin
-        option(value="LTC" data-balance="159.402942" data-profit="13.039%" data-profit-style="success" data-logo-color="./images/litecoin.svg" data-logo-white="./images/choose-litecoin.svg") Litecoin
-        option(value="ETH" data-balance="2 391.49503" data-profit="0.129%" data-profit-style="danger" data-logo-color="./images/ethereum.svg" data-logo-white="./images/choose-etherium.svg") Ethereum
 
-    include ../../blocks/make-withdraw/make-withdraw
+    include ../../blocks/verification-level/verification-level-1
 
-    include ../../blocks/withdrawals/withdrawals
-
-block modal
-    #modal-change-withdrawal.modal.fade.modal__notification(tabindex="-1" role="dialog")
-        .modal-dialog.modal__dialog(role="document")
-            .modal-content.modal__content
-                include ../../blocks/forms/modal/modal-withdrawal
+    include ../../blocks/verification-level/verification-level-2

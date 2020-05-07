@@ -1,0 +1,28 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .verification-level {
+    position: relative;
+    padding-bottom: 1.75rem;
+    &:after{
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      right: 1.5rem;
+      bottom: 0.25rem;
+      display: block;
+      height: 0.0625rem;
+      background-color: #efc7c2;
+    }
+  }
+  .verification-level__header{
+    margin-bottom: 1.4375rem;
+  }
+  .verification-level__header-status span{
+    display: none;
+  }
+  .verification-level__header-status-icon{
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-top: -0.4375rem;
+    margin-left: 0;
+  }
+}

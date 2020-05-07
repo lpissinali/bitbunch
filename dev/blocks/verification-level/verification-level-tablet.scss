@@ -1,0 +1,27 @@
+
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .verification-level {
+    padding-bottom: 2rem;
+  }
+  .verification-level__headline{
+    margin-top: 0;
+  }
+  .verification-level__header-status{
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1.3125rem;
+    letter-spacing: 0;
+    span{
+      margin-top: 0.3125rem;
+    }
+  }
+  .verification-level__header-status-icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1.5rem;
+    img{
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+}

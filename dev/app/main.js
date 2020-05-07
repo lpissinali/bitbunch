@@ -577,3 +577,17 @@ if (document.querySelector('.ellipsis')) {
     $(this).text(truncate(textEllipsis, 22, "........"))
   })
 }
+
+
+// Security password
+if (document.querySelector('button[data-toggle=edit-form]')) {
+  $('button[data-toggle=edit-form]').click(function(){
+    if($('.security-password__form input').is('[readonly]')){
+      $('.security-password__form input').removeAttr('readonly')
+      $('#securityPasswordCurrent').focus()
+    }
+    else{
+      $('.security-password__form input').attr('readonly','')
+    }
+  })
+}

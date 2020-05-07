@@ -7,7 +7,15 @@
   color: $dark-grey;
   box-shadow: 0.625rem 0.75rem 1.5rem rgba(80, 87, 94, 0.1);
 }
-.form-control:focus {
+.form-control[readonly]{
+  background-color: #f7f8fb;
+  color: rgba(51, 51, 51, 0.4);
+}
+.form-control[readonly]:focus {
+  outline: 0;
+  box-shadow: 0.625rem 0.75rem 1.5rem rgba(80, 87, 94, 0.1);
+}
+.form-control:not([readonly]):focus {
   outline: 0;
   box-shadow: 0.125rem 0.25rem 0.375rem rgba(80, 87, 94, 0.05);
 }
@@ -49,14 +57,34 @@
   transition: 0.3s;
 }
 
-.form-group input:focus ~ .form-group__placeholder {
+.form-group input:not([readonly]):focus ~ .form-group__placeholder {
   top: 0.5rem;
   transition: 0.3s;
 }
 
-.form-group textarea:focus ~ .form-group__placeholder {
+.form-group textarea:not([readonly]):focus ~ .form-group__placeholder {
   top: 0.5rem;
   transition: 0.3s;
+}
+
+.form-group__button{
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  transform: translateY(-50%);
+  font-family: $main-font-medium;
+  font-size: 0.875rem;
+  color: $blue;
+  cursor: pointer;
+  &:hover{
+    opacity: .8;
+    color: $blue;
+  }
 }
 
 .error-icon {
@@ -77,4 +105,14 @@
       color: $white;
       font-size: 2rem;
     }
+}
+
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .form-group__placeholder{
+    font-size: 0.75rem;
+  }
+  .form-group__button{
+    right: 0.75rem;
+    font-size: 0.75rem;
+  }
 }
