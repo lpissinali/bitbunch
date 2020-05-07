@@ -1,3 +1,91 @@
+.calculation__input-range {
+
+  .irs-single {
+    display: none;
+  }
+
+  .irs--big .irs-handle {
+    top: -.6875rem;
+    width: 1.875rem;
+    height: 1.875rem;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: none;
+    background: none;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: inherit;
+      background: url(./images/range.svg) center / contain no-repeat;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// .irs--big {
+//   height: auto;
+// }
+// .irs--big .irs-line {
+//   top: 0;
+//   height: 0.5rem;
+//   background-color: #efc7c2;
+//   background: #efc7c2;
+//   border: none;
+//   border-radius: 0.25rem;
+//   opacity: 0.5;
+// }
+// .irs--big .irs-bar {
+//   top: 0.0625rem;
+//   height: 0.375rem;
+//   background-color: $blue;
+//   border: none;
+//   background: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
+//   box-shadow: none;
+//   border-radius: 0.25rem;
+// }
+
+// .irs--big .irs-handle.state_hover, .irs--big .irs-handle:hover {
+//   background-color: $yellow;
+//   background: url(./images/range.svg) center / contain no-repeat;
+// }
+// .irs--big .irs-from, .irs--big .irs-to, .irs--big .irs-single {
+//   top: -3rem;
+//   color: $white;
+//   text-shadow: none;
+//   padding: 0.125rem 0.3125rem 0.0625rem;
+//   background-color: $blue;
+//   background: linear-gradient(270deg, #3f72d7 0%, #324ea3 100%);
+//   border-radius: 0.1875rem;
+// }
+
+// @media screen and ($mobile1), ($mobile2), ($mobile3) {
+//   .irs--big .irs-line{
+//     height: 0.375rem;
+//   }
+//   .irs--big .irs-bar{
+//     height: 0.25rem;
+//   }
+//   .irs--big .irs-handle{
+//     top: -0.3125rem;
+//     width: 1rem;
+//     height: 1rem;
+//   }
+//   .irs--big .irs-handle:after{
+//     width: 1.875rem;
+//     height: 1.875rem;
+//   }
+//   .irs--big .irs-from, .irs--big .irs-to, .irs--big .irs-single {
+//     top: -2rem;
+//   }
+// }
+
 .calculation__range[type="range"] {
   margin: 0;
   margin-top: 1.25rem;
