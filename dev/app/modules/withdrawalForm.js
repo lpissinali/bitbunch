@@ -8,7 +8,7 @@
       }
       var tooltipsterContent = `
         <p class="tooltipster-content__caption">Please try again</p>
-        <p class="tooltipster-content__description">Wrong amount or wallet adress</p>
+        <p class="tooltipster-content__description">Wrong amount or wallet address</p>
       `;
       $(element).removeClass('validation-success');
       $(element).next().next('.error-icon').removeClass('d-none');
