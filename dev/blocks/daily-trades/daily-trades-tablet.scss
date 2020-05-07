@@ -1,0 +1,23 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .daily-trades{
+    padding-bottom: 1.5625rem;
+    background: none;
+  }
+  .daily-trades__headline {
+    margin-top: 0;
+  }
+  .daily-trades__content{
+    font-size: 0.875rem;
+  }
+  .daily-trades__range{
+    max-width: none;
+  }
+  .daily-trades__range{
+    &:focus,
+    &:hover{
+      .irs-single{
+        opacity: 1;
+      }
+    }
+  }
+}

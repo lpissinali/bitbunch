@@ -21,6 +21,30 @@
   }
 }
 
+.button-red {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 6.25rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 0.125rem;
+  background-color: $red;
+  box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
+  font-family: $main-font-bold;
+  font-size: 0.875rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $white;
+  cursor: pointer;
+  transition: background-color 300ms;
+
+  &:hover {
+    background-color: darken($red, 7%);
+    color: $white;
+  }
+}
+
 .button-blue {
   justify-content: center;
   align-items: center;

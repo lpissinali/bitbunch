@@ -1,0 +1,123 @@
+.trading-statistics{
+  padding-bottom: 2.0625rem;
+}
+.trading-statistics__header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.trading-statistics__headline{
+  margin-top: 0.25rem;
+}
+.trading-statistics__header-time{
+  display: inline-flex;
+  align-items: flex-start;
+  margin-top: 0.0625rem;
+  font-family: $main-font-medium;
+  font-size: 1.25rem;
+  line-height: 2.375rem;
+  letter-spacing: 0.03rem;
+  color: $blue;
+}
+.trading-statistics__header-time-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-top: -0.25rem;
+  margin-left: 1rem;
+  background: $blue;
+  box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
+  border-radius: 0.125rem;
+  img{
+    display: block;
+  }
+}
+.statistics{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 0;
+  background-color: #f8f9fe;
+}
+.statistics__item{
+  padding: 0 1.5rem;
+  &:last-child{
+    text-align: right;
+  }
+  &_deposit{
+    width: 17.125rem;
+  }
+  &_profit{
+    width: 16.875rem;
+  }
+  &_margin{
+    width: 13.5rem;
+  }
+  &_number{
+    width: 11.25rem;
+  }
+}
+.statistics__item-value{
+  font-family: $main-font-light;
+  font-size: 1.75rem;
+  color: $orange;
+  letter-spacing: 0.0375rem;
+  b{
+    font-family: $main-font-bold;
+  }
+}
+.statistics__item-label{
+  margin-top: 0.25rem;
+  font-family: $main-font-medium;
+  color: $black-light;
+  letter-spacing: 0.0213rem;
+}
+
+.chart{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem 0 0;
+  &__canvas{
+    position: relative;
+    width: calc(100% - 9.9375rem - 2.5rem);
+    height: 11.875rem;
+  }
+  &__control{
+    width: 9.9375rem;
+    margin-left: 2.5rem;
+    &-button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0.125rem;
+      border: 0.125rem solid $blue;
+      box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
+      background-color: $blue;
+      font-family: $main-font-bold;
+      font-size: 0.875rem;
+      color: $white;
+      cursor: pointer;
+      transition: 300ms ease;
+      &:hover{
+        box-shadow: none;
+      }
+      &.active{
+        background-color: $white;
+        box-shadow: none;
+        color: $blue;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@import "./trading-statistics-tablet.scss";
+
+@import "./trading-statistics-mobile.scss";

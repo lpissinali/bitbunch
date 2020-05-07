@@ -1,0 +1,18 @@
+section.account-section.make-withdraw
+    .choose-blur
+        .make-withdraw__bg
+        .account-section-headline.make-withdraw__headline Make a withdrawal
+        .make-withdraw__info Make sure to enter your correct wallet adress.
+        form#withdrawalForm.withdrawal__form(novalidate)
+            .form-group.withdrawal__form-amount
+                input(type="text" class="form-control form-control-lg required" id="withdrawalAmount" name="amount" required)
+                span.form-group__placeholder Amount
+                span.form-group__info available: 2.491482 BTC 
+                .error-icon.d-none
+                  span !
+            .form-group.withdrawal__form-wallet-adress
+                input(type="text" class="form-control form-control-lg required" value="3GuDhCfKt8brw3cJHPnmFTwnTiCKw5mh7t" id="withdrawalWallet" name="wallet" required)
+                span.form-group__placeholder.has-content Wallet adress
+                .error-icon.d-none 
+                  span !
+            button(type="button" data-toggle="modal" data-target="#modal-change-withdrawal").button-orange.withdrawal__form-button Withdrawal

@@ -1,0 +1,28 @@
+section.account-section.trading-statistics
+    .trading-statistics__header
+        .account-section-headline.trading-statistics__headline Trading statistics
+        .trading-statistics__header-time
+            span All time
+            .trading-statistics__header-time-icon
+                img(src="./images/calendar.svg", alt="")
+    .choose-blur
+        .statistics
+            .statistics__item.statistics__item_deposit
+                .statistics__item-value <b>2.301280</b> BTC
+                .statistics__item-label Total Deposit
+            .statistics__item.statistics__item_profit
+                .statistics__item-value <b>0.239059</b> BTC
+                .statistics__item-label Profit/Loss
+            .statistics__item.statistics__item_margin
+                .statistics__item-value <b>+ 13.236</b> %
+                .statistics__item-label Margin
+            .statistics__item.statistics__item_number
+                .statistics__item-value <b>73</b>
+                .statistics__item-label Number of Trades
+        .chart
+            .chart__canvas
+                canvas(id="chart")
+            .chart__control
+                .chart__control-button.active Balance
+                .chart__control-button Profit/loss
+                .chart__control-button Trades

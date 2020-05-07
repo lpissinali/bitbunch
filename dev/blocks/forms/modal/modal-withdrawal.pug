@@ -1,0 +1,24 @@
+.modal__header
+    .modal__close(data-dismiss="modal" aria-label="Close")
+    img(src="./images/shield.svg", alt="").modal__header-icon
+    .modal__header-text
+        .modal__header-title Authenticate withdrawal
+        .modal__header-description Carefully check the adress before submitting
+.modal__body
+    form#withdrawalAuthForm.withdrawalAuth__form(novalidate)
+        .form-group
+            input(type="text" class="form-control form-control-lg required" id="withdrawalAuthAmount" name="amount" required value="0.320582 BTC")
+            span.form-group__placeholder.has-content Amount
+            .error-icon.d-none
+              span !
+        .form-group
+            input(type="text" class="form-control form-control-lg required" id="withdrawalAuthWallet" name="wallet" required value="3GuDhCfKt8brw3cJHPnmFTwnTiCKw5mh7t")
+            span.form-group__placeholder.has-content Wallet adress
+            .error-icon.d-none
+              span !
+        .form-group
+            input(type="text" class="form-control form-control-lg required" id="withdrawalAuthCode" name="code" required)
+            span.form-group__placeholder Enter your authenticator code
+            .error-icon.d-none 
+              span !
+        button(type="submit").button-orange.button-hover-white Submit
