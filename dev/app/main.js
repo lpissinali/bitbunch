@@ -16,6 +16,8 @@ require('./modules/contact');
 require('./modules/masks');
 require('./modules/withdrawalForm');
 require('./modules/withdrawalAuthForm');
+require('./modules/changePhone');
+require('./modules/changeEmail');
 
 // аккордион faq
 const faqAccordion = new Accordion({});
