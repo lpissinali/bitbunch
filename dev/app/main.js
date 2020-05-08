@@ -310,6 +310,9 @@ if (document.querySelector('.trading-history__table-overflow')) {
 }
 
 // Modal notification
+window.onload = function() {
+  $('.notification').addClass('init')
+}
 if (document.querySelector('.modal__notification')) {
   $('.modal__notification [type=submit]').click(e => {
     e.preventDefault(); // Отмена отправки для показа анимации
