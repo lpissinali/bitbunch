@@ -1,27 +1,49 @@
 
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
   .verification-level {
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    &_1,
+    &_2{
+      background-image: none;
+    }
+    &_2{
+      .verification-level__confirm {
+        display: flex;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+  .verification-level__header{
+    margin-bottom: 0;
   }
   .verification-level__headline{
     margin-top: 0;
   }
   .verification-level__header-status{
-    margin-top: 0;
-    font-size: 1rem;
-    line-height: 1.3125rem;
-    letter-spacing: 0;
-    span{
-      margin-top: 0.3125rem;
-    }
+    margin-top: -0.4375rem;
+    margin-right: 3.25rem;
   }
   .verification-level__header-status-icon{
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-left: 1.5rem;
-    img{
-      width: 1.125rem;
-      height: 1.125rem;
-    }
+    margin-left: 0;
+  }
+  .verification-level__header-status span{
+    display: none;
+  }
+  .verification-level__content{
+    margin-bottom: 1.625rem;
+    font-size: 0.875rem;
+    line-height: 1.625rem;
+    letter-spacing: 0;
+  }
+  .verification-level__confirm{
+    margin-top: 0.5rem;
+  }
+  .verification-level__uploads-content {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0;
+  }
+  .verification-level__uploads-area img{
+    width: 3.625rem;
   }
 }

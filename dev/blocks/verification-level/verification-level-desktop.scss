@@ -12,6 +12,9 @@
     background-size: 16.125rem 24.3125rem;
     background-repeat: no-repeat;
     background-position: right bottom;
+    .verification-level__confirm{
+      display: none;
+    }
   }
   &__confirm{
     width: 17.3125rem;
@@ -180,8 +183,12 @@
   width: calc(100% - 11.375rem);
   padding-top: 0.4375rem;
   padding-left: 1rem;
+  .verification-level__uploads-title{
+    display: block;
+  }
 }
 .verification-level__uploads-title{
+  display: none;
   margin-bottom: 0.875rem;
   font-family: $main-font-semi-bold;
   color: $black-light;
@@ -192,4 +199,12 @@
   color: $black-light;
   line-height: 1.1875rem;
   letter-spacing: 0.0213rem;
+  // &._desktop{}
+  &._mobile{
+    display: none;
+  }
 }
+
+@import "./verification-level-tablet.scss";
+
+@import "./verification-level-mobile.scss";
