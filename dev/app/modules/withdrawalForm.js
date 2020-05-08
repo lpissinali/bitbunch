@@ -60,6 +60,12 @@
     contentAsHTML: true,
   });
 
+  $("#withdrawalForm input").each(function() {
+    if ($(this)[0].value !== "") {
+      $(this).addClass('validation-success');
+    }
+  });
+
   $(".form-group input").on("focusout", event => {
     if (event.currentTarget.value !== "") {
       $(event.currentTarget).next().addClass("has-content");
