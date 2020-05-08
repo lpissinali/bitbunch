@@ -18,6 +18,8 @@ require('./modules/withdrawalForm');
 require('./modules/withdrawalAuthForm');
 require('./modules/changePhone');
 require('./modules/changeEmail');
+require('./modules/2FAVerify');
+require('./modules/googleAuth');
 
 // аккордион faq
 const faqAccordion = new Accordion({});
