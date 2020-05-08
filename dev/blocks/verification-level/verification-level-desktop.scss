@@ -73,7 +73,7 @@
   color: $black-light;
 }
 .verification-level__form{
-  max-width: 570px;
+  max-width: 35.625rem;
   &-firstname{
     max-width: 17.3125rem;
     margin-right: 0.75rem;
@@ -97,6 +97,7 @@
     }
   }
   &-country{
+    max-width: 35.625rem;
     .form-group__placeholder,
     .error-icon {
       z-index: 3;
@@ -139,10 +140,15 @@
     height: 100%;
     box-shadow: none !important;
   }
-  .bootstrap-select .dropdown-menu{
-    border: 0.0625rem solid rgba(50, 78, 163, 0.2);
-    border-top: none;
+  .bootstrap-select .dropdown-menu:not(.inner){
+    left: -0.0625rem !important;
+    right: -0.0625rem !important;
+    width: calc(100% + 0.125rem);
+    z-index: 5;
     box-shadow: 0.125rem 0.25rem 0.375rem rgba(80, 87, 94, 0.05);
+    .inner.dropdown-menu{
+      border: 0.0625rem solid rgba(50, 78, 163, 0.2);
+    }
   }
   .bs-searchbox{
     display: none;

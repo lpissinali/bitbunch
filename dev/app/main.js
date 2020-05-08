@@ -390,11 +390,6 @@ if (document.querySelector('.choose-select')) {
 }
 
 // Chart
-
-var chartDataBalance = ['2.845499','0.273148','1.290303','2.600669','0.130170','2.360288','0.661394','1.626080','1.402495','1.027675','2.760880','2.416924','1.699511','1.534568'];
-var chartDataProfit = ['0.403575','0.676903','1.947145','2.362449','1.959851','1.998611','0.293544','0.548354','2.688966','1.196862','0.442413','2.018210','0.072402','2.642027'];
-var chartDataTrades = ['0.986343','0.920165','2.147197','0.593364','1.740149','2.957922','1.839275','0.532356','0.074203','2.724074','1.296785','0.496039','1.247762','2.033436'];
-
 if (document.querySelector('.chart__canvas')) {
   var chart    = document.getElementById('chart').getContext('2d'),
     gradient = chart.createLinearGradient(0, 0, 0, 190);
@@ -505,24 +500,67 @@ if (document.querySelector('.chart__canvas')) {
       callbacks: {
         label: function(tooltipItem, data) {
           var label = data.datasets[tooltipItem.datasetIndex].label || '';
-          label += tooltipItem.yLabel + ' BTC';
+          label += tooltipItem.yLabel;
           return label;
         }
       }
     }
   };
 
-
   var chartInstance = new Chart(chart, {
       type: 'line',
       data: data,
       options: options
   });
+
+  var chartJson;
+  getChartDatas('documents/chartDatas.json')
+  
+  function getChartDatas(url) {
+    $.getJSON( url, function( data ) {
+      chartJson = data;
+    });
+  }
+  
+  $('.chart__control-button').click(function(){
+    $('.chart__control-button.active').removeClass('active')
+    $(this).addClass('active')
+    if($(this).data('chart') === 'balance'){
+      // console.log(chartJson[0].currency)
+      chartInstance.data.datasets[0].data = chartJson[0].dataset[0].datas;
+      chartInstance.data.labels = chartJson[0].dataset[0].labels;
+
+      chartInstance.options.tooltips.callbacks.label = function(tooltipItem, data) {
+        var label = data.datasets[tooltipItem.datasetIndex].label || '';
+        label += tooltipItem.yLabel + ' ' + chartJson[0].currency;
+        return label;
+      }
+    }
+    if($(this).data('chart') === 'profit'){
+      // console.log(chartJson[1].currency)
+      chartInstance.data.datasets[0].data = chartJson[1].dataset[0].datas;
+      chartInstance.data.labels = chartJson[1].dataset[0].labels;
+
+      chartInstance.options.tooltips.callbacks.label = function(tooltipItem, data) {
+        var label = data.datasets[tooltipItem.datasetIndex].label || '';
+        label += tooltipItem.yLabel + ' ' + chartJson[1].currency;
+        return label;
+      }
+    }
+    if($(this).data('chart') === 'trades'){
+      // console.log(chartJson[2].currency)
+      chartInstance.data.datasets[0].data = chartJson[2].dataset[0].datas;
+      chartInstance.data.labels = chartJson[2].dataset[0].labels;
+
+      chartInstance.options.tooltips.callbacks.label = function(tooltipItem, data) {
+        var label = data.datasets[tooltipItem.datasetIndex].label || '';
+        label += tooltipItem.yLabel + ' ' + chartJson[2].currency;
+        return label;
+      }
+    }
+    chartInstance.update();
+  })
 }
-$('.chart__control-button').click(function(){
-  $('.chart__control-button.active').removeClass('active')
-  $(this).addClass('active')
-})
 
 // Copy wallet number
 if (document.querySelector('.button-copy')) {
@@ -570,7 +608,6 @@ function truncate( str, max, sep ) {
 
   return str;
 }
-
 if (document.querySelector('.ellipsis')) {
   $('span.ellipsis').each(function(){
     var textEllipsis = $(this).text();

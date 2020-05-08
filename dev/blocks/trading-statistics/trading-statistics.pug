@@ -23,6 +23,6 @@ section.account-section.trading-statistics
             .chart__canvas
                 canvas(id="chart" width="708")
             .chart__control
-                .chart__control-button.active Balance
-                .chart__control-button Profit/loss
-                .chart__control-button Trades
+                .chart__control-button(data-chart="balance").active Balance
+                .chart__control-button(data-chart="profit") Profit/loss
+                .chart__control-button(data-chart="trades") Trades

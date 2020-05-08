@@ -32,8 +32,25 @@
     line-height: 1rem;
     opacity: 0.8;
   }
-  .verification-level__form .verification-level__form-number{
-    display: none;
+  .verification-level__form{
+    &-firstname{
+      margin-right: 0;
+    }
+    &-sex{
+      margin-right: 0;
+    }
+    &-city{
+      margin-right: 0;
+    }
+    &-street{
+      margin-right: 0;
+    }
+    &-number{
+      display: none !important;
+    }
+    &-occupation{
+      margin-right: 0;
+    }
   }
   .verification-level__confirm {
     width: 100%;
