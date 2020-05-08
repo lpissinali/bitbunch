@@ -56,7 +56,7 @@
 .main-footer__menu-link {
   display: inline-block;
   margin-top: .75rem;
-  font-family: $main-font-bold;
+  font-family: $main-font-semi-bold;
   font-size: .9375rem;
   color: $white;
   opacity: .8;
@@ -87,7 +87,7 @@
 }
 
 .main-footer__rights-block {
-  font-family: $main-font-bold;
+  font-family: $main-font-semi-bold;
   font-size: .8125rem;
   line-height: 1.25rem;
   color: $white;
@@ -139,7 +139,7 @@
   span {
     display: block;
     width: 50rem;
-    font-family: $main-font-bold;
+    font-family: $main-font-semi-bold;
     font-size: .8125rem;
     line-height: 1.25rem;
     text-align: center;

@@ -1,5 +1,6 @@
 .profits {
-  background-color: #fcfdff;
+  background-image: linear-gradient(to bottom, #fbfcff, #f8f9fe);
+  overflow: hidden;
 }
 
 .profits__wrapper {
@@ -37,7 +38,9 @@
   height: 3.75rem;
   border-radius: 50%;
   background-color: #fdd4de;
-  opacity: .4;
+  opacity: .7;
+  animation: pulse .8s linear infinite, redlight 7s linear;
+  transform-origin: center;
 }
 
 .profits__slider-dot-left {
@@ -80,10 +83,15 @@
   margin-top: 1.4375rem;
   padding-left: 1.25rem;
   width: 41.375rem;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
+
+  p.m-top {
+    margin-top: 1.5625rem;
+  }
 }
 
 .profits__slider-image {
+  margin-top: 2.5rem;
   margin-right: auto;
   margin-left: auto;
   width: 71.25rem;
@@ -113,11 +121,43 @@
     font-size: 0;
     cursor: pointer;
     opacity: 1;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-image: url("./images/profits-prev-next-icon-blue.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0;
+      transition: 300ms;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:disabled {
+      opacity: .4 !important;
+
+      &:after {
+        opacity: 0;
+      }
+    }
   }
 
   .slick-prev {
     right: 10.5rem;
     transform: scaleX(-1);
+
+    &:after {
+      left: 0;
+    }
   }
 
   .slick-next {
@@ -134,6 +174,63 @@
   }
 }
 
+.profits__slider-animation {
+  border-top: 10px solid $rose;
+  border-bottom: 10px solid $rose;
+}
+
 @import "./profits-tablet.scss";
 
 @import "./profits-mobile.scss";
+
+@-webkit-keyframes pulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.07);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.07);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes redlight {
+
+  0% {
+    background-color: #ff2400;
+  }
+
+  100% {
+    background-color: #fdd4de;
+  }
+}
+
+@keyframes redlight {
+
+  0% {
+    background-color: #e32f12;
+  }
+
+  100% {
+    background-color: #fdd4de;
+  }
+}

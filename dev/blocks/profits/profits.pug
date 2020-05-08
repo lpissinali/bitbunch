@@ -5,16 +5,16 @@ section.profits
         .section__subtitle.profits__subtitle To better understand what BitBunch does, let’s take at a real trade that happened on 18.05.2020 at 14:59 EST.
 
         .profits__slider-container
-
-            .profits__slider-dot-left.none
-            .profits__slider-dot-right
+            .profits__slider-dots
+                .profits__slider-dot-left.none
+                .profits__slider-dot-right
 
             .profits__slider-wrapper
 
                 .profits__slider-block
-                    .profits__slider-title Analyse all currencies and exchanges
+                    .profits__slider-title.profits__animation-order-1 Analyse all currencies and exchanges
                         .num 1.
-                    .section__subtitle.profits__slider-subtitle The Bitbunch Trading Engine constantly monitors over 80 cryptocurrencies on 24 exchanges to find promising arbitrage opportunities. 
+                    .section__subtitle.profits__slider-subtitle.profits__animation-order-2 The Bitbunch Trading Engine constantly monitors over 80 cryptocurrencies on 24 exchanges to find promising arbitrage opportunities. 
                 
                 .profits__slider-block
                     .profits__slider-title Spot a different price for LTC/BTC
@@ -35,9 +35,7 @@ section.profits
                         .num 4.
                     .section__subtitle.profits__slider-subtitle 
                         p When both trades are closed, we send the 166.66 LTC from Binance to Bitfinex. So Bitfinex has the same amount of Litecoin as before.
-                        p Then we send the 1.0332 BTC from Bitfinex to Binance, so we now have 0.0332 BTC more than before.
+                        p.m-top Then we send the 1.0332 BTC from Bitfinex to Binance, so we now have 0.0332 BTC more than before.
 
-        .profits__slider-image
-            picture
-                source(srcset="./images/profits__slider-block-1-mobile.png" media="(max-width: 570px)")
-                img(src="./images/profits__slider-block-1-desktop.png" alt="")
+        .profits__slider-animation
+            include ../trade-animation/trade-animation

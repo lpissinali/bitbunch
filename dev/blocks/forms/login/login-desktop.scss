@@ -28,7 +28,7 @@
 
 .login-section__description {
   text-align: center;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   font-size: 1.125rem;
   color: rgba($black-light, 0.8);
   margin-bottom: 2rem;
@@ -58,10 +58,13 @@
 
 .login-section__footer {
   text-align: center;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   font-size: 1.125rem;
   margin-bottom: 1rem;
   color: rgba($black-light, 0.8);
+  .login-section__footer-link {
+    font-family: $main-font-semi-bold;
+  }
 }
 
 @import "./login-tablet.scss";

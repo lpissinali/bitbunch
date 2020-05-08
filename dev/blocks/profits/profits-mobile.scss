@@ -23,7 +23,7 @@
 
   .profits__slider-dot-left,
   .profits__slider-dot-right {
-    top: 11.875rem;
+    top: 12.875rem;
     right: .89em;
   }
 
@@ -48,6 +48,10 @@
     padding-left: 1.5rem;
     width: 100vw;
     min-height: 8rem;
+
+    p.m-top {
+      margin-top: 1rem;
+    }
   }
 
   .profits__slider-image {
@@ -58,15 +62,19 @@
   .profits__wrapper {
 
     .slick-prev {
-      top: 12.5rem;
+      top: 13.5rem;
       right: auto;
       left: 1.5rem;
     }
 
     .slick-next {
-      top: 12.5rem;
+      top: 13.5rem;
       right: 1.5rem;
       width: 14.5rem;
     }
+  }
+
+  .profits__slider-animation {
+    margin-top: 4.8125rem;
   }
 }

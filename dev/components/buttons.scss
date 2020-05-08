@@ -109,7 +109,7 @@
   transform-origin: center center;
 
   &:hover {
-    border: 2px solid #99a1ce;
+    border: 2px solid #fff3ef;
     background-color: #fff3ef;
     color: $orange;
     transform: scaleX(1.05);
@@ -217,7 +217,7 @@
     width: 8.5625rem;
     height: 2.25rem;
     border-radius: .125rem;
-    font-size: .9rem;
+    font-size: 12px;
   }
 
   .button-blue {

@@ -1,11 +1,16 @@
 .ai-trading {
-  background-color: #fcfdff;
+  background-color: #f5f7fe;
+  background-image: url("./images/ai-trading-bg.png");
+  background-position: 4% 69%;
+  background-repeat: no-repeat;
+  background-size: 123.5rem auto;
   overflow: hidden;
 }
 
 .ai-trading__wrapper {
   margin-right: auto;
   margin-left: auto;
+  padding-top: 11.25rem;
   padding-bottom: 9.6875rem;
   width: 71.5rem;
 }
@@ -15,7 +20,7 @@
 }
 
 .ai-trading__subtitle {
-  margin-top: .875rem;
+  margin-top: 3.625rem;
   max-width: 30.125rem;
   font-family: $main-font-medium;
 }
@@ -46,7 +51,7 @@
   justify-content: space-between;
   align-items: flex-start;
   display: flex;
-  margin-top: 11.3125rem;
+  margin-top: 14.25rem;
 }
 
 .ai-trading__card {
@@ -59,6 +64,7 @@
   border: .1875rem solid $blue;
   border-radius: .1875rem;
   box-shadow: .625rem .75rem .875rem rgba(80, 87, 94, .05);
+  background-color: $white;
   background-image: url("./images/ai-trading__card-blue-bg-desktop.png");
   background-position: -.0625rem -.0625rem;
   background-repeat: no-repeat;
@@ -110,10 +116,10 @@
 
 .ai-trading__card-orange {
   position: absolute;
-  top: -27.8125rem;
+  top: -25.0625rem;
   right: 0;
-  padding-bottom: .625rem;
-  min-height: 16.85rem;
+  // padding-bottom: .625rem;
+  // min-height: 16.85rem;
   border: .1875rem solid $orange;
   background-image: url("./images/ai-trading__card-orange-bg-desktop.png");
 

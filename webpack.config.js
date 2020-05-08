@@ -39,7 +39,7 @@ function generateHtmlPlugins(templateDir) {
     const html = new HtmlWebpackPlugin({
       filename: `${name}.html`,
       template: path.resolve(__dirname, `${templateDir}/${name}/${name}.${extension}`),
-      inject: true,
+      inject: false,
     });
     return html;
   });
@@ -51,6 +51,8 @@ const commonDev = merge([
   {
     entry: {
       main: `${PATHS.source}/app/main.js`,
+      hiwTrade: `${PATHS.source}/app/trade/hiwTrade.js`,
+      dashboardTrade: `${PATHS.source}/app/trade/index.js`,
     },
     output: {
       path: PATHS.build,
@@ -84,6 +86,8 @@ const commonProd = merge([
   {
     entry: {
       main: `${PATHS.source}/app/main.js`,
+      hiwTrade: `${PATHS.source}/app/trade/hiwTrade.js`,
+      dashboardTrade: `${PATHS.source}/app/trade/index.js`,
     },
     output: {
       path: PATHS.build,

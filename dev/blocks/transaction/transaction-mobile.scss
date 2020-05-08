@@ -11,7 +11,7 @@
     display: grid;
     grid-template-columns: 3.8125rem 2.6875rem 10.5rem;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "currency adress adress" "currency date amount";
+    grid-template-areas: "currency address adress" "currency date amount";
     margin-bottom: 1rem;
     border: none;
     &:last-child{
@@ -53,8 +53,8 @@
     font-size: 0.75rem;
     line-height: 1.125rem;
   }
-  .transaction__table .table-col_adress{
-    grid-area: adress;
+  .transaction__table .table-col_address{
+    grid-area: address;
     align-self: end;
     width: auto;
     font-size: 0.625rem;
