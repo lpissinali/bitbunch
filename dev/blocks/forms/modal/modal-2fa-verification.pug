@@ -1,0 +1,21 @@
+.modal__header
+    .modal__close(data-dismiss="modal" aria-label="Close")
+    img(src="./images/shield.svg", alt="").modal__header-icon
+    .modal__header-text
+        .modal__header-title Enable 2FA verification
+        .modal__header-description We sent an SMS to your phone number
+.modal__body
+    form#verification2faForm.verification2fa__form(novalidate)
+        .form-group
+            input(type="text" class="form-control form-control-lg required" id="verification2faPhone" name="phone" required value="+44 1289 38912 7312")
+            span.form-group__placeholder.has-content Your  phone number
+            .error-icon.d-none
+              span !
+        .form-group
+            input(type="text" class="form-control form-control-lg required" id="verification2faCode" name="code" required)
+            span.form-group__placeholder Enter your 2FA code
+            button(type="button").form-group__button Re-send
+            .error-icon.d-none
+              span !
+        
+        button(type="submit").button-orange.button-hover-white Submit

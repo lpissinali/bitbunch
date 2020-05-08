@@ -1,0 +1,18 @@
+section.account-section.security-authentication
+    .account-section-headline.security-authentication__headline 2FA authentication
+    .security-authentication__content You can enable 2 factor authentication anytime to improve your account privacy and securtiy.
+    .security-authentication__list
+        .security-authentication__list-item(data-toggle="modal" data-target="#modal-2fa-verification")
+            span Enable 2FA SMS
+            input(id="security-authentication_1" type="checkbox").checkbox-btn
+            label(for="security-authentication_1")
+                .checkbox-btn__on ON
+                .checkbox-btn__point
+                .checkbox-btn__off OFF
+        .security-authentication__list-item(data-toggle="modal" data-target="#modal-google-authenticator")
+            span Enable Google authenticator
+            input(id="security-authentication_2" type="checkbox" checked).checkbox-btn
+            label(for="security-authentication_2")
+                .checkbox-btn__on ON
+                .checkbox-btn__point
+                .checkbox-btn__off OFF

@@ -82,12 +82,12 @@
   padding: 1.5rem 0 0;
   &__canvas{
     position: relative;
-    width: calc(100% - 9.9375rem - 2.5rem);
-    height: 11.875rem;
+    width: calc(100% - 9.9375rem - 1.5625rem);
+    height: 12.1875rem;
   }
   &__control{
     width: 9.9375rem;
-    margin-left: 2.5rem;
+    margin-left: 1.5625rem;
     &-button{
       display: flex;
       align-items: center;

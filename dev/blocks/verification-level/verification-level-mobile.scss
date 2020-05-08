@@ -1,0 +1,80 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .verification-level {
+    padding-bottom: 0;
+    &_2 {
+      margin-top: 0.1875rem;
+      .verification-level__confirm {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+  .verification-level__header{
+    margin-bottom: 0.4063rem;
+  }
+  .verification-level__header-status {
+    margin-top: -0.4063rem;
+    margin-right: 0;
+  }
+  .verification-level__header-status span{
+    display: none;
+  }
+  .verification-level__header-status-icon{
+    width: 2.25rem;
+    height: 2.25rem;
+    img{
+      height: 1.125rem;
+    }
+  }
+  .verification-level__content {
+    margin-bottom: 0.8125rem;
+    font-family: $main-font-light;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    opacity: 0.8;
+  }
+  .verification-level__form .verification-level__form-number{
+    display: none;
+  }
+  .verification-level__confirm {
+    width: 100%;
+    margin-top: 0;
+    font-size: 0.75rem;
+  }
+  .verification-level__uploads{
+    margin-top: -0.125rem;
+  }
+  .verification-level__uploads-item{
+    flex-direction: column;
+    margin-bottom: 1.6875rem;
+  }
+  .verification-level__uploads-area{
+    width: 17rem;
+    height: 14.0625rem;
+    margin-bottom: 0.875rem;
+    background: $blue;
+  }
+  .verification-level__uploads-inform {
+    width: 100%;
+    padding-top: 0;
+    padding-left: 0;
+    .verification-level__uploads-title{
+      display: none;
+    }
+  }
+  .verification-level__uploads-title{
+    display: block;
+    font-family: $main-font-medium;
+    font-size: 0.875rem;
+  }
+  .verification-level__uploads-content {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    opacity: 0.8;
+    &._desktop{
+      display: none;
+    }
+    &._mobile{
+      display: block;
+    }
+  }
+}

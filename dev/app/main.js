@@ -437,143 +437,204 @@ if (document.querySelector('.choose-select')) {
 }
 
 // Chart
-if (document.querySelector('.chart__canvas')) {
-  const chart = document.getElementById('chart').getContext('2d');
-  const gradient = chart.createLinearGradient(0, 0, 0, 190);
 
-  chart.height = 190;
+var chartDataBalance = ['2.845499','0.273148','1.290303','2.600669','0.130170','2.360288','0.661394','1.626080','1.402495','1.027675','2.760880','2.416924','1.699511','1.534568'];
+var chartDataProfit = ['0.403575','0.676903','1.947145','2.362449','1.959851','1.998611','0.293544','0.548354','2.688966','1.196862','0.442413','2.018210','0.072402','2.642027'];
+var chartDataTrades = ['0.986343','0.920165','2.147197','0.593364','1.740149','2.957922','1.839275','0.532356','0.074203','2.724074','1.296785','0.496039','1.247762','2.033436'];
+
+if (document.querySelector('.chart__canvas')) {
+  var chart    = document.getElementById('chart').getContext('2d'),
+    gradient = chart.createLinearGradient(0, 0, 0, 190);
+  
+    chart.height = 195;
 
   gradient.addColorStop(0, 'rgba(50, 78, 163, 0.8)');
   gradient.addColorStop(0.7, 'rgba(50, 78, 163, 0)');
 
-  const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-    datasets: [
-      {
-        label: 'Data',
+  var gradientStroke = chart.createLinearGradient(500, 0, 100, 0);
+  gradientStroke.addColorStop(0, '#5e83ce');
+  gradientStroke.addColorStop(1, '#3350a4');
+
+  var data  = {
+      labels: [ '01.10', '01.11', '01.12', '01.01', '01.02', '01.03', '01.04', '01.05', '01.06', '01.07', '01.08', '01.09', '01.10', '01.11'],
+      datasets: [{
         backgroundColor: gradient,
-        pointBorderColor: '#324ea3',
+
+        pointRadius: 4,
+        pointHoverRadius: 4,
+
         pointBackgroundColor: '#ffffff',
         pointHoverBackgroundColor: '#ffffff',
+
+        pointBorderWidth: 3,
+        pointHoverBorderWidth: 3,
+
+        pointBorderColor: '#324ea3',
         pointHoverBorderColor: '#fa8f68',
-        pointBorderWidth: 2,
-        pointHoverRadius: 4,
-        pointHoverBorderWidth: 2,
-        pointRadius: 4,
+
         borderWidth: 3,
-        borderColor: '#324ea3',
+        borderColor: gradientStroke,
         zeroLineWidth: 5,
         zeroLineColor: '#324ea3',
-        data: [1, 3, 2, 1, 4, 2],
-      },
-    ],
+        data: ['2.845499','0.273148','1.290303','2.600669','0.130170','2.360288','0.661394','1.626080','1.402495','1.027675','2.760880','2.416924','1.699511','1.534568']
+      }]
   };
 
-  const options = {
+
+  var options = {
     responsive: true,
     maintainAspectRatio: false,
     animation: {
       easing: 'easeInOutQuad',
-      duration: 520,
+      duration: 520
     },
     scales: {
-      xAxes: [
-        {
-          gridLines: {
-            color: 'rgba(200, 200, 200, 1)',
-            lineWidth: 1,
-          },
+      xAxes: [{
+        gridLines: {
+          tickMarkLength: 0,
+          color: 'rgba(50, 78, 163, 0.1)',
+          lineWidth: 1,
+          zeroLineColor: '#324ea3',
+          zeroLineWidth: 2
         },
-      ],
-      yAxes: [
-        {
-          gridLines: {
-            color: 'rgba(200, 200, 200, 0.5)',
-            lineWidth: 1,
-          },
+        ticks: {
+          padding: 8,
+          fontFamily: "'SarabunRegular', arial, sans-serif",
+          fontSize: 10,
+          fontColor: "rgba(67, 66, 95, 0.5)",
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          tickMarkLength: 0,
+          color: 'rgba(50, 78, 163, 0.1)',
+          lineWidth: 1,
+          zeroLineColor: '#324ea3',
+          zeroLineWidth: 2
         },
-      ],
+        ticks: {
+          padding: 10,
+          fontFamily: "'SarabunRegular', arial, sans-serif",
+          fontSize: 10,
+          fontColor: "rgba(67, 66, 95, 0.5)",
+        }
+      }]
     },
     elements: {
       line: {
-        tension: 0.3,
-      },
+        tension: 0.7
+      }
     },
     legend: {
-      display: false,
+      display: false
     },
     point: {
-      backgroundColor: 'white',
+      backgroundColor: 'red'
     },
     tooltips: {
-      titleFontFamily: 'Open Sans',
-      backgroundColor: 'rgba(0,0,0,0.3)',
-      titleFontColor: 'red',
+      position: 'average',
+      titleFontFamily: "'SarabunRegular', arial, sans-serif",
+      titleFontSize: 10,
+      titleFontStyle: 'normal',
+      titleFontColor: 'rgba(255,255,255,0.8)',
+      titleAlign: 'center',
+      titleMarginBottom: 2,
+      bodyFontFamily: "'SarabunSemiBold', arial, sans-serif",
+      bodyFontStyle: '600',
+      bodyAlign: 'center',
+      backgroundColor: 'rgb(50, 78, 163)',
       caretSize: 5,
-      cornerRadius: 2,
+      caretPadding: 8,
+      cornerRadius: 5,
       xPadding: 10,
-      yPadding: 10,
-    },
+      yPadding: 5,
+      displayColors: false,
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var label = data.datasets[tooltipItem.datasetIndex].label || '';
+          label += tooltipItem.yLabel + ' BTC';
+          return label;
+        }
+      }
+    }
   };
 
-  const chartInstance = new Chart(chart, {
-    type: 'line',
-    data,
-    options,
+
+  var chartInstance = new Chart(chart, {
+      type: 'line',
+      data: data,
+      options: options
   });
 }
-$('.chart__control-button').click(function() {
-  $('.chart__control-button.active').removeClass('active');
-  $(this).addClass('active');
-});
+$('.chart__control-button').click(function(){
+  $('.chart__control-button.active').removeClass('active')
+  $(this).addClass('active')
+})
 
 // Copy wallet number
 if (document.querySelector('.button-copy')) {
   $('.button-copy').click(() => {
     // Копирование
-    const copyNumber = document.getElementById('walletNumber');
+    var copyNumber = document.getElementById("walletNumber");
     copyNumber.select();
     copyNumber.setSelectionRange(0, 99999);
-    document.execCommand('copy');
+    document.execCommand("copy");
 
     // Уведомление
     $('.notification').addClass('active');
-    setTimeout(() => {
+    setTimeout(function(){
       $('.notification').removeClass('active');
-    }, 1500);
-  });
+    },1500)
+  })
 }
 
 // Center ellipsis text
-function truncate(str, max, sep) {
+function truncate( str, max, sep ) {
+
   max = max || 10;
 
-  const len = str.length;
-  if (len > max) {
-    sep = sep || '...';
+  var len = str.length;
+  if(len > max){
 
-    const seplen = sep.length;
+      sep = sep || "...";
 
-    if (seplen > max) {
-      return str.substr(len - max);
-    }
+      var seplen = sep.length;
 
-    const n = -0.5 * (max - len - seplen);
+      if(seplen > max) {
+          return str.substr(len - max);
+      }
 
-    const center = len / 2;
+      var n = -0.5 * (max - len - seplen);
 
-    const front = str.substr(0, center - n);
-    const back = str.substr(len - center + n);
+      var center = len/2;
 
-    return front + sep + back;
+      var front = str.substr(0, center - n);
+      var back = str.substr(len - center + n);
+
+      return front + sep + back;
+
   }
 
   return str;
 }
 
 if (document.querySelector('.ellipsis')) {
-  $('span.ellipsis').each(function() {
-    const textEllipsis = $(this).text();
-    $(this).text(truncate(textEllipsis, 22, '........'));
-  });
+  $('span.ellipsis').each(function(){
+    var textEllipsis = $(this).text();
+    $(this).text(truncate(textEllipsis, 22, "........"))
+  })
+}
+
+
+// Security password
+if (document.querySelector('button[data-toggle=edit-form]')) {
+  $('button[data-toggle=edit-form]').click(function(){
+    if($('.security-password__form input').is('[readonly]')){
+      $('.security-password__form input').removeAttr('readonly')
+      $('#securityPasswordCurrent').focus()
+    }
+    else{
+      $('.security-password__form input').attr('readonly','')
+    }
+  })
 }

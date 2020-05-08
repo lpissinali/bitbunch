@@ -1,1 +1,74 @@
-@media screen and ($mobile1), ($mobile2), ($mobile3) {}
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .trading-statistics {
+    position: relative;
+    padding-bottom: 1.75rem;
+    &:after{
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      right: 1.5rem;
+      bottom: 0.25rem;
+      display: block;
+      height: 0.0625rem;
+      background-color: #efc7c2;
+    }
+    + .trading-history{
+      padding: 0 1.5rem;
+      .trading-history__table-overflow {
+        width: calc(100% + 1.5rem * 2);
+        margin: 0 -1.5rem;
+      }
+      .trading-history__table {
+        margin: 0 1.5rem;
+      }
+    }
+  }
+  .trading-statistics__header{
+    margin-bottom: 1.4375rem;
+  }
+  .trading-statistics__header-time span{
+    display: none;
+  }
+  .trading-statistics__header-time-icon{
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-top: -0.4375rem;
+    margin-left: 0;
+  }
+  .statistics{
+    padding: 0;
+  }
+  .statistics__item{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100% !important;
+    margin-bottom: 0.9375rem;
+  }
+  .statistics__item-label{
+    order: 1;
+    margin-top: 0;
+  }
+  .statistics__item-value {
+    order: 2;
+    margin-top: 0.125rem;
+    font-family: $main-font-bold;
+    font-size: 0.875rem;
+    letter-spacing: 0;
+  }
+  .chart__canvas {
+    width: auto;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    height: 10.625rem;
+    overflow: auto;
+  }
+  .chart__control{
+    flex-direction: column;
+    margin: 1.5625rem 0 0;
+  }
+  .chart__control-button{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

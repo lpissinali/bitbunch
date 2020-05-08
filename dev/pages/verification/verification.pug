@@ -1,0 +1,17 @@
+extends ../../templates/account
+
+block variables
+    - var title = ''
+    - var meta1 = ''
+    - var meta2 = ''
+    - var pageClass = ''
+
+block content
+    .account-header
+      .account-header__left
+          .account-app-headline Bitbunch app
+          .account-main-headline Verification
+
+    include ../../blocks/verification-level/verification-level-1
+
+    include ../../blocks/verification-level/verification-level-2

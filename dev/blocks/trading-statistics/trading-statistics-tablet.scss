@@ -1,1 +1,70 @@
-@media screen and ($tablet1), ($tablet2), ($tablet3) {}
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .trading-statistics {
+    padding-bottom: 2rem;
+  }
+  .trading-statistics__headline{
+    margin-top: 0;
+  }
+  .trading-statistics__header-time{
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1.3125rem;
+    letter-spacing: 0;
+    span{
+      margin-top: 0.3125rem;
+    }
+  }
+  .trading-statistics__header-time-icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1.5rem;
+    img{
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+  .statistics {
+    padding: 1rem 0 1.0625rem;
+  }
+  .statistics__item{
+    &_deposit{
+      width: 13rem;
+    }
+    &_profit{
+      width: 12.625rem;
+    }
+    &_margin{
+      width: 10.375rem;
+    }
+    &_number{
+      width: 5.75rem;
+      span{
+        display: none;
+      }
+    }
+  }
+  .statistics__item-value {
+    font-size: 1.3125rem;
+    letter-spacing: 0.0281rem;
+  }
+  .statistics__item-label {
+    margin-top: 0.375rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.0187rem;
+  }
+  .chart__canvas{
+    width: 100%;
+    height: 11.25rem;
+  }
+  .chart__control{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2.1875rem 0 0;
+  }
+  .chart__control-button{
+    width: 11.875rem;
+    margin: 0;
+  }
+}

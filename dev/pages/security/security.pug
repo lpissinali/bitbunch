@@ -1,0 +1,34 @@
+extends ../../templates/account
+
+block variables
+    - var title = ''
+    - var meta1 = ''
+    - var meta2 = ''
+    - var pageClass = ''
+
+block notification
+    // .notification.notification__dunger(tabindex="-1" role="dialog") Wrong password. Please try again.
+    // .notification.notification__dunger(tabindex="-1" role="dialog") Wrong code. Please try again.
+    .notification.notification__success(tabindex="-1" role="dialog") Your 2FA authenticatin got enabled successfully.
+    // .notification.notification__success(tabindex="-1" role="dialog") Your password got changed successfully.
+
+block content
+    .account-header
+      .account-header__left
+          .account-app-headline Bitbunch app
+          .account-main-headline Security
+
+    include ../../blocks/security-password/security-password
+
+    include ../../blocks/security-authentication/security-authentication
+
+block modal
+    #modal-2fa-verification.modal.fade.modal__notification(tabindex="-1" role="dialog")
+        .modal-dialog.modal__dialog(role="document")
+            .modal-content.modal__content
+                include ../../blocks/forms/modal/modal-2fa-verification
+
+    #modal-google-authenticator.modal.fade.modal__notification(tabindex="-1" role="dialog")
+        .modal-dialog.modal__dialog(role="document")
+            .modal-content.modal__content
+                include ../../blocks/forms/modal/modal-google-authenticator

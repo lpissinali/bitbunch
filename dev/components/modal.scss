@@ -42,8 +42,8 @@
   right: 2rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   background: url(../images/times.svg) center / 100% no-repeat;
   z-index: 1;
   opacity: .3;
@@ -63,6 +63,29 @@
 .modal-backdrop{
   background-color: $blue;
   opacity: 0.4;
+}
+
+
+// modal-google-authenticator
+.googleAuthenticator__form .form-group__qr-code{
+  display: flex;
+  align-items: center;
+}
+.googleAuthenticator__form .form-group{
+  width: calc(100% - 10.25rem - 3.125rem);
+  margin-bottom: 0;
+}
+.googleAuthenticator__form .form-group__qr-code .form-control__qr-code{
+  width: 10.25rem;
+  height: 10.25rem;
+  margin-left: 3.125rem;
+  img{
+    display: block;
+    width: 100%;
+  }
+}
+.googleAuthenticator__form .button-orange[type=submit]{
+  margin-top: 1.625rem;
 }
 
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
@@ -105,8 +128,25 @@
     height: 0.875rem;
   }
   .modal__body .button-orange[type=submit]{
-    height: 40px;
+    height: 2.5rem;
     margin-top: 1rem;
     font-size: 0.875rem;
+  }
+
+  // modal-google-authenticator
+  .googleAuthenticator__form .form-group__qr-code{
+    flex-direction: column;
+  }
+  .googleAuthenticator__form .form-group{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .googleAuthenticator__form .form-group__qr-code .form-control__qr-code{
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-left: 0;
+  }
+  .googleAuthenticator__form .button-orange[type=submit]{
+    margin-top: 1rem;
   }
 }
