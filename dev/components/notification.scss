@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   transform: translateY(-100%);
+  display: none;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -20,6 +21,9 @@
   visibility: hidden;
   opacity: 0;
   transition: 300ms ease;
+  &.init{
+    display: block;
+  }
   &.active{
     visibility: visible;
     opacity: 1;

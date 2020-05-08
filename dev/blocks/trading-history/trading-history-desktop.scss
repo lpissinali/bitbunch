@@ -98,22 +98,22 @@
   }
 }
 .trading-history__table .table-col_currencies{
-  min-width: 7.375rem;
+  width: 7.375rem;
 }
 .trading-history__table .table-col_exchanges{
-  min-width: 6.75rem;
+  width: 6.75rem;
 }
 .trading-history__table .table-col_amount{
-  min-width: 10.125rem;
+  width: 10.125rem;
 }
 .trading-history__table .table-col_time{
-  min-width: 10.25rem;
+  width: 10.25rem;
 }
 .trading-history__table .table-col_price{
-  min-width: 10.125rem;
+  width: 10.125rem;
 }
 .trading-history__table .table-col_profit{
-  min-width: 11.125rem;
+  width: 11.125rem;
 }
 
 @import "./trading-history-tablet.scss";
