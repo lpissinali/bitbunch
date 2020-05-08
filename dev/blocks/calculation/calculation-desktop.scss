@@ -1,5 +1,5 @@
 .calculation {
-  background-color: #FCFDFF;
+  background-color: #f5f7fe;
   background-image: url("./images/calculation__bg-desktop.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -17,6 +17,7 @@
 }
 
 .calculation__subtitle {
+  margin-top: .875rem;
   margin-right: auto;
   margin-left: auto;
   max-width: 51.875rem;
@@ -32,6 +33,7 @@
   margin-left: auto;
   width: 71.25rem;
   border-radius: .1875rem;
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
   background-color: $white;
 }
 
@@ -66,6 +68,11 @@
   }
 }
 
+.calculation__input-range {
+  padding-top: 1.4375rem;
+  padding-bottom: 1.4375rem;
+}
+
 .calculation__value-block {
   justify-content: space-between;
   display: flex;
@@ -74,6 +81,10 @@
   line-height: 1.125rem;
   color: #091540;
   opacity: .5;
+
+  span {
+    font-family: $main-font-regular;
+  }
 }
 
 .calculation__buttons-block {
@@ -85,20 +96,27 @@
 .calculation__button-cur {
   border: .125rem solid $blue;
   background-color: $white;
-  color: $blue;
-  font-family: $main-font-regular;
+  font-family: $main-font-bold;
   font-size: 1.1rem;
+  color: #43425f;
+  fill: $blue;
+  transition: 300ms;
 
-  img {
+  svg {
     margin-right: .4375rem;
     width: auto;
     height: 1.4375rem;
+  }
+
+  &:hover {
+    fill: $white;
   }
 }
 
 .calculation__button-cur.active {
   background-color: $blue;
   color: $white;
+  fill: $white;
 }
 
 .calculation__currency-block {
@@ -136,10 +154,10 @@
 
   .title {
     font-family: $main-font-medium;
-    font-size: 17px;
-    line-height: 22px;
+    font-size: 1.0625rem;
+    line-height: 1.375rem;
     color: $white;
-    opacity: .7;
+    opacity: .6;
   }
 
   .value {
@@ -164,11 +182,10 @@
 
   .title {
     font-family: $main-font-semi-bold;
-    font-size: 1.25rem;
     line-height: 1.625rem;
     opacity: 1;
   }
-  
+
   .value {
     font-size: 2rem;
   }

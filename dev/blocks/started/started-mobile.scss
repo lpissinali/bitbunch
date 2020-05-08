@@ -16,25 +16,32 @@
     margin-right: 0 !important;
     padding-top: 2.8125rem;
     padding-right: 1rem;
-    padding-bottom: 4.25rem;
+    padding-bottom: 1.875rem;
     padding-left: 1rem;
     width: 100%;
     height: auto;
+    min-height: 12.875rem;
   }
 
   .started__card-num {
+    top: -1.25rem;
+    left: calc(50% - 1.25rem);
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.375rem;
     line-height: 1.9375rem;
   }
 
   .started__card-title {
     font-size: .875rem;
+    text-align: center;
   }
 
   .started__card-text {
     margin-top: .5rem;
     font-size: .75rem;
-    line-height: 1.5rem;
+    line-height: 1.4375rem;
+    text-align: center;
   }
 
   .started__reg-button {

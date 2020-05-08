@@ -22,7 +22,7 @@
 .make-withdraw__info{
   position: relative;
   margin-top: 0.9375rem;
-  font-family: $main-font-bold;
+  font-family: $main-font-semi-bold;
   color: $blue;
   letter-spacing: 0.0213rem;
   line-height: 1.3125rem;
@@ -51,7 +51,7 @@
     }
   }
   // &-amount{}
-  // &-wallet-adress{}
+  // &-wallet-address{}
   &-button{
     width: 100%;
   }

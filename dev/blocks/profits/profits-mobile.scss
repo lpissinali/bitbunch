@@ -19,11 +19,16 @@
   .profits__slider-container {
     margin-top: 2rem;
     width: 100vw;
+  }
 
-    &:before {
-      top: 11.1rem;
-      right: .89em;
-    }
+  .profits__slider-dot-left,
+  .profits__slider-dot-right {
+    top: 12.875rem;
+    right: .89em;
+  }
+
+  .profits__slider-dot-left {
+    right: 15.35rem;
   }
 
   .profits__slider-title {
@@ -43,24 +48,33 @@
     padding-left: 1.5rem;
     width: 100vw;
     min-height: 8rem;
+
+    p.m-top {
+      margin-top: 1rem;
+    }
   }
 
   .profits__slider-image {
+    margin-top: 5rem;
     width: 100vw;
   }
 
   .profits__wrapper {
 
     .slick-prev {
-      top: 11.75rem;
+      top: 13.5rem;
       right: auto;
       left: 1.5rem;
     }
 
     .slick-next {
-      top: 11.75rem;
+      top: 13.5rem;
       right: 1.5rem;
       width: 14.5rem;
     }
+  }
+
+  .profits__slider-animation {
+    margin-top: 4.8125rem;
   }
 }

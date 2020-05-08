@@ -145,7 +145,7 @@ if (document.querySelector('.big-team__advisors-container')) {
 
 // profits slider
 if (document.querySelector('.profits__slider-container')) {
-  $('.profits__slider-container').slick({
+  $('.profits__slider-wrapper').slick({
     dots: false,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -153,6 +153,14 @@ if (document.querySelector('.profits__slider-container')) {
     infinite: true,
     variableWidth: true,
   });
+
+  $('.profits__slider-wrapper').on('afterChange', (event, slick, currentSlide, nextSlide) => {
+    if ((currentSlide = !0)) {
+      $('.profits__slider-dot-right').addClass('none');
+    }
+  });
+
+  $('.profits__wrapper .slick-next ').html('Next Step');
 }
 
 $(window).on('resize orientationchange', () => {
@@ -163,11 +171,10 @@ $(window).on('resize orientationchange', () => {
   $('.big-team__advisors-container').slick('resize');
 });
 
-
 // account user menu
 if (document.querySelector('.toggle__user-menu')) {
   $('.toggle__user-menu').click(() => {
-    if ($(window).width() <= 1000){
+    if ($(window).width() <= 1000) {
       $('.account-nav__user-controls').slideToggle();
     }
     $('.account-nav__menu-list').toggleClass('disabled');
@@ -176,7 +183,7 @@ if (document.querySelector('.toggle__user-menu')) {
   });
 
   $('.account-nav__user-menu-close').click(() => {
-    if ($(window).width() <= 1000){
+    if ($(window).width() <= 1000) {
       $('.account-nav__user-controls').slideToggle();
     }
     $('.account-nav__menu-list').toggleClass('disabled');
@@ -207,6 +214,7 @@ if (document.querySelector('.calculation__button-cur.bitcoin')) {
     $('.calculation__currency-btc-block').addClass('active');
     $('.calculation__result-sum').html($('.calculation__btc-range').val());
     $('.calculation__result-units').html(' BTC');
+    $('.calculation__result-your-profile-units').html(' BTC');
   });
 }
 
@@ -217,7 +225,8 @@ if (document.querySelector('.calculation__button-cur.dollar')) {
     $('.calculation__currency-block').removeClass('active');
     $('.calculation__currency-etc-block').addClass('active');
     $('.calculation__result-sum').html($('.calculation__etc-range').val());
-    $('.calculation__result-units').html(' ETC');
+    $('.calculation__result-units').html(' ETH');
+    $('.calculation__result-your-profile-units').html(' ETH');
   });
 }
 
@@ -229,6 +238,7 @@ if (document.querySelector('.calculation__button-cur.bitcoin')) {
     $('.calculation__currency-usdt-block').addClass('active');
     $('.calculation__result-sum').html($('.calculation__usdt-range').val());
     $('.calculation__result-units').html(' USDT');
+    $('.calculation__result-your-profile-units').html(' USDT');
   });
 }
 
@@ -266,124 +276,161 @@ if (document.querySelector('.calculation__mount-range')) {
   $('.calculation__result-mount').html($('.calculation__mount-range').val());
 }
 
+// custom range
+if (document.querySelector('.calculation__range')) {
+  $('.calculation__range').each(function(i, range) {
+    const valueMin = $(this).attr('min');
+    const valueMax = $(this).attr('max');
+    const valueStep = $(this).attr('step');
+    $(range).ionRangeSlider({
+      skin: 'big',
+      type: 'single',
+      min: valueMin,
+      max: valueMax,
+      step: valueStep,
+      hide_min_max: true,
+      hide_from_to: false,
+    });
+  });
+}
 
 // Choosing coin play/pause button
 if (document.querySelector('.choosing-coin__controls-toggle')) {
-  $('.choosing-coin__controls-toggle').click(function(){
+  $('.choosing-coin__controls-toggle').click(function() {
     $(this).toggleClass('active');
   });
 }
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-history__table-overflow')) {
-  $(".trading-history__table-overflow").mCustomScrollbar({
-    axis:"x",
-    theme:"dark"
+  $('.trading-history__table-overflow').mCustomScrollbar({
+    axis: 'x',
+    theme: 'dark',
   });
 }
 
 // Modal notification
 if (document.querySelector('.modal__notification')) {
-  $('.modal__notification [type=submit]').click(function(e){
+  $('.modal__notification [type=submit]').click(e => {
     e.preventDefault(); // Отмена отправки для показа анимации
     $('.notification').addClass('active');
   });
 
-  $('.modal__notification .modal__close').click(function(){
+  $('.modal__notification .modal__close').click(() => {
     $('.notification').removeClass('active');
-  })
+  });
 }
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-currencies__list')) {
-  $(".trading-currencies__list").mCustomScrollbar({
-    axis:"y",
-    theme:"minimal-dark"
+  $('.trading-currencies__list').mCustomScrollbar({
+    axis: 'y',
+    theme: 'minimal-dark',
   });
 }
 
 // Trading history table scrollbar
 if (document.querySelector('.daily-trades__range-input')) {
-  $(".daily-trades__range-input").each(function(){
-    const valueMin = $(this).attr('min')
-    const valueMax = $(this).attr('max')
-    const valueStep = $(this).attr('step')
-    $(".daily-trades__range-input").ionRangeSlider({
-      skin: "big",
-      type: "single",
+  $('.daily-trades__range-input').each(function() {
+    const valueMin = $(this).attr('min');
+    const valueMax = $(this).attr('max');
+    const valueStep = $(this).attr('step');
+    $('.daily-trades__range-input').ionRangeSlider({
+      skin: 'big',
+      type: 'single',
       min: valueMin,
       max: valueMax,
       step: valueStep,
       hide_min_max: true,
-      hide_from_to: false
+      hide_from_to: false,
     });
-  })
+  });
 }
 
 // Custom select (orange)
-function customSelect(){
-  $(".choose-select").each(function() {
-      if ($(this).hasClass('init')) return false;
-      var classes = $(this).attr("class"),
-          id      = $(this).attr("id"),
-          name    = $(this).attr("name");
+function customSelect() {
+  $('.choose-select').each(function() {
+    if ($(this).hasClass('init')) return false;
+    const classes = $(this).attr('class');
+    const id = $(this).attr('id');
+    const name = $(this).attr('name');
 
-      var template =  '<div class="' + classes + '">';
-      template += '<span class="choose-select__trigger">' + $(this).attr("placeholder") + '</span>';
-      template += '<div class="choose-select__options">';
-      $(this).find("option").each(function() {
+    let template = `<div class="${classes}">`;
+    template += `<span class="choose-select__trigger">${$(this).attr('placeholder')}</span>`;
+    template += '<div class="choose-select__options">';
+    $(this)
+      .find('option')
+      .each(function() {
+        const optTitle = $(this).text();
+        const optAbbr = $(this).val();
+        const optBalance = $(this).data('balance');
+        const optProfit = $(this).data('profit');
+        const optProfitStyle = $(this).data('profit-style');
+        const optLogoColor = $(this).data('logo-color');
+        const optLogoWhite = $(this).data('logo-white');
 
-        var optTitle = $(this).text(),
-            optAbbr = $(this).val(),
-            optBalance = $(this).data('balance'),
-            optProfit = $(this).data('profit'),
-            optProfitStyle = $(this).data('profit-style'),
-            optLogoColor = $(this).data('logo-color'),
-            optLogoWhite = $(this).data('logo-white');
-
-        var optProfitCaret = '';
-        if(optProfitStyle === 'success'){
-          optProfitCaret = './images/caret-up.svg'
+        let optProfitCaret = '';
+        if (optProfitStyle === 'success') {
+          optProfitCaret = './images/caret-up.svg';
         }
-        if(optProfitStyle === 'danger'){
-          optProfitCaret = './images/caret-down.svg'
+        if (optProfitStyle === 'danger') {
+          optProfitCaret = './images/caret-down.svg';
         }
-          
-        template += '<div class="choose-select__option ' + $(this).attr("class") + '" data-value="' + optAbbr + '"  data-title="' + optTitle + '" data-logo-white="' + optLogoWhite + '">'
-        template +=   '<div class="table-data table-col_assets"><img src="' + optLogoColor + '" alt=""><span><b>' + optTitle + '</b> (' + optAbbr + ')</span></div>'
-        template +=   '<div class="table-data table-col_balance"><span>' + optBalance + ' ' + optAbbr + '</span></div>'
-        template +=   '<div class="table-data table-col_profit"><img src="' + optProfitCaret + '" alt=""><span class="color_' + optProfitStyle + '">' + optProfit + '</span></div>'
-        template += '</div>'
 
+        template += `<div class="choose-select__option ${$(this).attr(
+          'class'
+        )}" data-value="${optAbbr}"  data-title="${optTitle}" data-logo-white="${optLogoWhite}">`;
+        template += `<div class="table-data table-col_assets"><img src="${optLogoColor}" alt=""><span><b>${optTitle}</b> (${optAbbr})</span></div>`;
+        template += `<div class="table-data table-col_balance"><span>${optBalance} ${optAbbr}</span></div>`;
+        template += `<div class="table-data table-col_profit"><img src="${optProfitCaret}" alt=""><span class="color_${optProfitStyle}">${optProfit}</span></div>`;
+        template += '</div>';
       });
-      template += '</div></div>';
+    template += '</div></div>';
 
-      $(this).wrap('<div class="choose-select__wrapper"></div>');
-      $(this).hide().addClass('init');
-      $(this).after(template);
+    $(this).wrap('<div class="choose-select__wrapper"></div>');
+    $(this)
+      .hide()
+      .addClass('init');
+    $(this).after(template);
   });
 
-  $(".choose-select__trigger").on("click", function() {
-      $('html').one('click',function() {
-          $(".choose-select").removeClass("opened");
-      });
-      $(this).parents(".choose-select").toggleClass("opened");
-      event.stopPropagation();
+  $('.choose-select__trigger').on('click', function() {
+    $('html').one('click', () => {
+      $('.choose-select').removeClass('opened');
+    });
+    $(this)
+      .parents('.choose-select')
+      .toggleClass('opened');
+    event.stopPropagation();
   });
 
-  $(".choose-select__option").on("click", function() {
-      $(this).parents(".choose-select__wrapper").find("select").val($(this).data("value")).trigger('change');
-      $(this).parents(".choose-select__options").find(".choose-select__option").removeClass("selection");
-      $(this).addClass("selection");
-      $(this).parents(".choose-select").removeClass("opened");
-      var template =  '<img src="' + $(this).data('logo-white') + '" alt="">' + $(this).data('title');
-      $(this).parents(".choose-select").find(".choose-select__trigger").html(template);
+  $('.choose-select__option').on('click', function() {
+    $(this)
+      .parents('.choose-select__wrapper')
+      .find('select')
+      .val($(this).data('value'))
+      .trigger('change');
+    $(this)
+      .parents('.choose-select__options')
+      .find('.choose-select__option')
+      .removeClass('selection');
+    $(this).addClass('selection');
+    $(this)
+      .parents('.choose-select')
+      .removeClass('opened');
+    const template = `<img src="${$(this).data('logo-white')}" alt="">${$(this).data('title')}`;
+    $(this)
+      .parents('.choose-select')
+      .find('.choose-select__trigger')
+      .html(template);
   });
 
-  $(".choose-select").change(function(){
-    setTimeout(() => {$(".choose-blur").addClass('_unblur')}, 300)
-    console.log(this.value)
-  })
+  $('.choose-select').change(function() {
+    setTimeout(() => {
+      $('.choose-blur').addClass('_unblur');
+    }, 300);
+    console.log(this.value);
+  });
 }
 if (document.querySelector('.choose-select')) {
   customSelect();

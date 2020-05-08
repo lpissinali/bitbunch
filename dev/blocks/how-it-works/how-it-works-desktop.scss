@@ -73,7 +73,7 @@
 
   .title {
     font-family: $main-font-bold;
-    font-size: 1.625rem;
+    font-size: 1.25rem;
     line-height: 1.9375rem;
     text-transform: uppercase;
     color: $blue;
@@ -82,10 +82,11 @@
 
   .descr {
     margin-top: .75rem;
-    font-family: $main-font-medium;
-    font-size: 1rem;
+    font-family: $main-font-regular;
+    font-size: 1.0625rem;
     line-height: 1.875rem;
     color: $grey;
+    opacity: .8;
   }
 }
 

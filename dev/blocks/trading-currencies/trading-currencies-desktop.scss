@@ -19,7 +19,7 @@
   margin-bottom: 0.875rem;
 }
 .trading-currencies__content{
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   letter-spacing: 0.0213rem;
   line-height: 1.625rem;
   color: $black-light;
@@ -28,13 +28,13 @@
   display: inline-flex;
   align-items: center;
   margin-top: -0.125rem;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   font-size: 1.3125rem;
   line-height: 2.375rem;
   color: $blue;
 }
 .trading-currencies__header-filter span{
-  font-family: $main-font-semi-bold;
+  font-family: $main-font-medium;
   color: #ED7043;
 }
 .trading-currencies__header-filter-icon{

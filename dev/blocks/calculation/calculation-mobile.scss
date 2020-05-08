@@ -1,7 +1,6 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
   .calculation {
-    background-color: #f7f8fe;
     background-image: url("./images/calculation__bg-mobile.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -22,6 +21,7 @@
   }
 
   .calculation__subtitle {
+    margin-top: .5rem;
     width: 100%;
   }
 
@@ -29,6 +29,7 @@
     display: block;
     margin-top: 2.25rem;
     width: 100%;
+    box-shadow: none;
     background-color: transparent;
   }
 
@@ -39,7 +40,21 @@
     width: 18rem;
     height: auto;
     border-radius: .1875rem;
+    box-shadow: .5rem -.5rem 1.125rem rgba(80, 87, 94, .1);
     background-color: $white;
+  }
+
+  .calculation__title-block {
+
+    .value {
+      font-size: 1rem;
+      line-height: 1.9375rem;
+    }
+  }
+
+  .calculation__value-block {
+    font-size: .625rem;
+    line-height: .8125rem;
   }
 
   .calculation__button-cur {
@@ -66,8 +81,9 @@
       font-size: 1.25rem;
       line-height: 1.625rem;
     }
-    
+
     &.active {
+
       .value {
         font-size: 1.5rem;
       }

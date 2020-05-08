@@ -75,8 +75,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   display: flex;
-  padding: 1.5rem;
-  padding-top: .5rem;
+  padding: .5rem 1.5rem 1.5rem;
   width: 100%;
   height: 100%;
   border-radius: .1875rem;
@@ -87,16 +86,15 @@
   transition: 300ms;
 
   .date {
-    font-family: $main-font-regular;
+    font-family: $main-font-semi-bold;
     font-size: .75rem;
-    line-height: 1.3125rem;
     line-height: 1.3125rem;
     color: $white;
     opacity: .5;
   }
 
   .name {
-    font-family: $main-font-bold;
+    font-family: $main-font-semi-bold;
     font-size: 1.5rem;
     line-height: 1.75rem;
     color: $white;
@@ -118,7 +116,7 @@
     position: relative;
     display: inline-block;
     margin-top: .625rem;
-    font-family: $main-font-regular;
+    font-family: $main-font-semi-bold;
     font-size: 1.125rem;
     line-height: 1.875rem;
     color: #324ea3;

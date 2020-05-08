@@ -28,7 +28,7 @@
 
 .register-section__description {
   text-align: center;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   font-size: 1.125rem;
   color: rgba($black-light, 0.8);
   margin-bottom: 2rem;
@@ -76,10 +76,13 @@
 
 .register-section__footer {
   text-align: center;
-  font-family: $main-font-medium;
+  font-family: $main-font-regular;
   font-size: 1.125rem;
   margin-bottom: 1rem;
   color: rgba($black-light, 0.8);
+  .register-section__footer-link {
+    font-family: $main-font-semi-bold;
+  }
 }
 
 .verify-page{
@@ -96,7 +99,6 @@
   
   .register-section__description {
    margin-bottom: 5.5625rem;
-   line-height: 1.9375rem;
    max-width: 30rem;
    margin-left: auto;
    margin-right: auto;
