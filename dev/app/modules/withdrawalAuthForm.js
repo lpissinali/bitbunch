@@ -1,5 +1,5 @@
 (function($) {
-  $("#withdrawalForm").validate({
+  $("#withdrawalAuthForm").validate({
     focusCleanup: true,
     errorPlacement(error, element) {
       if($(error).text() == '') {
@@ -24,14 +24,19 @@
     },
     errorClass: "validation-error",
     submitHandler(form) { 
-      $('#withdrawalAuthAmount').val($(form).find('#withdrawalAmount').val());
-      $('#withdrawalAuthWallet').val($(form).find('#withdrawalWallet').val());
-      $('#modal-change-withdrawal').modal('show');
+      $('#modal-change-withdrawal').modal('hide');
+      setTimeout(()=>{
+        $('.notification').addClass('active');
+      }, 300);
+      
+      setTimeout(()=>{
+        $('.notification').removeClass('active');
+      }, 3000);
     }
   });
 
   // initialize tooltipster on text input elements
-  $('#withdrawalForm .error-icon').tooltipster({
+  $('#withdrawalAuthForm .error-icon').tooltipster({
     trigger: 'custom',
     onlyOne: false,
     position: 'top',

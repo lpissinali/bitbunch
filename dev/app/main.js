@@ -15,6 +15,7 @@ require('./modules/forgot');
 require('./modules/contact');
 require('./modules/masks');
 require('./modules/withdrawalForm');
+require('./modules/withdrawalAuthForm');
 
 // аккордион faq
 const faqAccordion = new Accordion({});
@@ -309,17 +310,17 @@ if (document.querySelector('.trading-history__table-overflow')) {
   });
 }
 
-// Modal notification
-if (document.querySelector('.modal__notification')) {
-  $('.modal__notification [type=submit]').click(e => {
-    e.preventDefault(); // Отмена отправки для показа анимации
-    $('.notification').addClass('active');
-  });
+// // Modal notification
+// if (document.querySelector('.modal__notification')) {
+//   $('.modal__notification [type=submit]').click(e => {
+//     e.preventDefault(); // Отмена отправки для показа анимации
+//     $('.notification').addClass('active');
+//   });
 
-  $('.modal__notification .modal__close').click(() => {
-    $('.notification').removeClass('active');
-  });
-}
+//   $('.modal__notification .modal__close').click(() => {
+//     $('.notification').removeClass('active');
+//   });
+// }
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-currencies__list')) {
