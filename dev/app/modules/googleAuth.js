@@ -1,5 +1,5 @@
 (function($) {
-  $("#withdrawalForm").validate({
+  $("#googleAuthenticatorForm").validate({
     focusCleanup: true,
     errorPlacement(error, element) {
       if($(error).text() == '') {
@@ -24,14 +24,20 @@
     },
     errorClass: "validation-error",
     submitHandler(form) { 
-      $('#withdrawalAuthAmount').val($(form).find('#withdrawalAmount').val());
-      $('#withdrawalAuthWallet').val($(form).find('#withdrawalWallet').val());
-      $('#modal-change-withdrawal').modal('show');
+      $('#modal-google-authenticator').modal('hide');
+      setTimeout(()=>{
+        $('.notification').addClass('active');
+      }, 300);
+      
+      setTimeout(()=>{
+        $('.notification').removeClass('active');
+      }, 3000);
+      form.reset();
     }
   });
 
   // initialize tooltipster on text input elements
-  $('#withdrawalForm .error-icon').tooltipster({
+  $('#googleAuthenticatorForm .error-icon').tooltipster({
     trigger: 'custom',
     onlyOne: false,
     position: 'top',
@@ -60,13 +66,13 @@
     contentAsHTML: true,
   });
 
-  $("#withdrawalForm input").each(function() {
+  $("#googleAuthenticatorForm input").each(function() {
     if ($(this)[0].value !== "") {
       $(this).addClass('validation-success');
     }
   });
 
-  $(".form-group input").on("focusout", event => {
+  $("#googleAuthenticatorForm input").on("focusout", event => {
     if (event.currentTarget.value !== "") {
       $(event.currentTarget).next().addClass("has-content");
     } else {
