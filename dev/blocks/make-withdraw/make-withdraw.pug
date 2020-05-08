@@ -7,12 +7,12 @@ section.account-section.make-withdraw
             .form-group.withdrawal__form-amount
                 input(type="text" class="form-control form-control-lg required" id="withdrawalAmount" name="amount" required)
                 span.form-group__placeholder Amount
-                span.form-group__info available: 2.491482 BTC 
                 .error-icon.d-none
                   span !
+                span.form-group__info available: 2.491482 BTC 
             .form-group.withdrawal__form-wallet-adress
                 input(type="text" class="form-control form-control-lg required" value="3GuDhCfKt8brw3cJHPnmFTwnTiCKw5mh7t" id="withdrawalWallet" name="wallet" required)
                 span.form-group__placeholder.has-content Wallet address
                 .error-icon.d-none 
                   span !
-            button(type="button" data-toggle="modal" data-target="#modal-change-withdrawal").button-orange.withdrawal__form-button Withdrawal
+            button(type="submit").button-orange.withdrawal__form-button Withdrawal
