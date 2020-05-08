@@ -123,10 +123,12 @@
       color: $black-light;
     }
     .table-col_profit{
+      justify-content: flex-end;
       width: 8.875rem;
       font-family: $main-font-semi-bold;
       font-size: 0.875rem;
       line-height: 1.125rem;
+      text-align: right;
       img{
         display: block;
         width: 0.5625rem;
@@ -237,6 +239,7 @@
     }
     .table-col_profit{
       grid-area: profit;
+      justify-content: flex-start;
     }
   }
 }
