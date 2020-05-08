@@ -1,0 +1,45 @@
+.security-authentication{
+  margin-top: 2rem;
+  background-image: url(images/bg-shield2@2x.png);
+  background-size: 14.6875rem 12.1875rem;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.security-authentication__headline{
+  margin-top: 0.125rem;
+  margin-bottom: 0.875rem;
+}
+.security-authentication__content{
+  max-width: 31.25rem;
+  margin-bottom: 2.0625rem;
+  font-family: $main-font-medium;
+  letter-spacing: 0.0213rem;
+  line-height: 1.625rem;
+  color: $black-light;
+}
+.security-authentication__list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.security-authentication__list-item{
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 0 0.8125rem;
+}
+.security-authentication__list-item span{
+  order: 1;
+  width: calc(100% - 4.0625rem);
+  margin-top: 0.1563rem;
+  padding-left: 1rem;
+  font-family: $main-font-medium;
+  letter-spacing: 0.0213rem;
+  color: $black-light;
+}
+.security-authentication__list-item .checkbox-btn{
+  order: 0;
+}
+
+@import "./security-authentication-tablet.scss";
+
+@import "./security-authentication-mobile.scss";

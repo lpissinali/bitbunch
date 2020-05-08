@@ -1,0 +1,17 @@
+.modal__header
+    .modal__close(data-dismiss="modal" aria-label="Close")
+    img(src="./images/shield.svg", alt="").modal__header-icon
+    .modal__header-text
+        .modal__header-title Enable Google authenticator
+        .modal__header-description Scan the QR code with your phone
+.modal__body
+    form#googleAuthenticatorForm.googleAuthenticator__form(novalidate)
+        .form-group__qr-code
+            .form-group
+                input(type="text" class="form-control form-control-lg required" id="googleAuthenticatorCode" name="code" required)
+                span.form-group__placeholder Enter your authenticator code
+                .error-icon.d-none
+                  span !
+            .form-control__qr-code
+                img(src="./images/QR@2x.jpg" alt="")
+        button(type="submit").button-orange.button-hover-white Submit
