@@ -95,7 +95,7 @@
 .account-nav__menu-link{
   display: flex;
   align-items: center;
-  font-family: $main-font-semi-bold;
+  font-family: $main-font-medium;
   font-size: 1rem;
   color: $white;
   transition: opacity 300ms;
@@ -230,7 +230,7 @@
 }
 .account-nav__user-email{
   margin-top: 0.1875rem;
-  font-family: $main-font-semi-bold;
+  font-family: $main-font-medium;
   font-size: 0.75rem;
   color: $white;
   opacity: .8;
