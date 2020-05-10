@@ -172,12 +172,12 @@
 .account-nav__user-controls{
   display: none;
   justify-content: center;
-  padding: 1.75rem;
 }
 .account-nav__user-button{
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 1.75rem;
   font-family: "SarabunBold", arial, sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -205,7 +205,7 @@
 }
 .account-nav__user-header{
   display: flex;
-  margin: 2.5rem;
+  padding: 2.5rem;
 }
 .account-nav__user-logo{
   display: flex;
