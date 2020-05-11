@@ -7,17 +7,17 @@
 .modal__body
     form#changeEmailForm.changeEmail__form(novalidate)
         .form-group
-            input(type="email" class="form-control form-control-lg required" id="changeEmailCurrent" name="email-current" required value="miguel.torres@gmail.com")
+            input(type="email" class="form-control form-control-lg required" id="changeEmailCurrent" name="email-current" required disabled value="miguel.torres@gmail.com")
             span.form-group__placeholder.has-content Your current email address
             .error-icon.d-none
               span !
         .form-group
-            input(type="email" class="form-control form-control-lg required" id="changeEmailNew" name="email-new" required value="miguel.torres@yahoo.com")
+            input(type="email" class="form-control form-control-lg required" id="changeEmailNew" name="email-new" required disabled)
             span.form-group__placeholder.has-content Your new email address
             .error-icon.d-none
               span !
         .form-group
-            input(type="password" class="form-control form-control-lg required" id="changeEmailPassword" name="password" required)
+            input(type="text" class="form-control form-control-lg required" id="changeEmailPassword" name="password" required)
             span.form-group__placeholder Enter your password
             .error-icon.d-none 
               span !

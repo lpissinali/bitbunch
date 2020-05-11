@@ -4,10 +4,14 @@ section.account-section.your-account
         .form-group.account__form-email
             input(type="text" class="form-control form-control-lg required" id="accountEmail" name="email" required readonly)
             span.form-group__placeholder Email address
+            .error-icon.d-none
+              span !
             button.form-group__button(data-toggle="edit-email") Edit
-            button.form-group__button.d-none(data-toggle="modal" data-target="#modal-change-email") Save
+            button.form-group__button.d-none(data-toggle="modal") Save
         .form-group.account__form-phone
             input(type="tel" class="form-control form-control-lg required" id="accountPhone" name="phone" required readonly)
             span.form-group__placeholder Phone number
+            .error-icon.d-none
+              span !
             button.form-group__button(data-toggle="edit-phone") Edit
-            button.form-group__button.d-none(data-toggle="modal" data-target="#modal-change-phone") Save
+            button.form-group__button.d-none(data-toggle="modal") Save
