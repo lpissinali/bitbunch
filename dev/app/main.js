@@ -447,7 +447,7 @@ function customSelect() {
     $(this)
       .parents('.choose-select')
       .removeClass('opened');
-    const template = `<img src="${$(this).data('logo-white')}" alt="">${$(this).data('title')}`;
+    const template = `<div class="choose-select__trigger-icon"><img src="${$(this).data('logo-white')}" alt=""></div>${$(this).data('title')}`;
     $(this)
       .parents('.choose-select')
       .find('.choose-select__trigger')
