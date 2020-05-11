@@ -37,6 +37,10 @@
     }   
   });
 
+  $('#verificationDate').inputmask("datetime", {
+    showMaskOnHover: false,
+  });
+
   // $('.popup-form__input#email').inputmask({
   //   mask: '*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]',
   //   greedy: false,
