@@ -97,7 +97,7 @@
     margin-left: auto;
     width: 2.25rem;
     height: 2.25rem;
-    background-image: url("./images/main-nav-sandwich.png");
+    background-image: url("./images/main-nav-sandwich.svg");
     background-position: 0;
     background-repeat: no-repeat;
     background-size: contain;
@@ -118,6 +118,11 @@
 
   .main-nav__logo-link {
     width: 7.5625rem;
+  }
+
+  .main-nav__sandwich-button {
+    width: 2.125rem;
+    height: 2.125rem;
   }
 
   .user-panel__register-button {

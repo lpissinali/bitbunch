@@ -1,0 +1,18 @@
+<svg id="7975cc95-1d57-4b19-8cb9-c3e11f204163" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+  <title>Group_3</title>
+  <g>
+    <g>
+      <g>
+        <path d="M4,4A2,2,0,0,1,6,2H36a2,2,0,0,1,2,2V34a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2Z" transform="translate(-4 -2)" style="fill: none"/>
+        <path d="M4,4A2,2,0,0,1,6,2H36a2,2,0,0,1,2,2V34a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2Z" transform="translate(-4 -2)" style="fill-opacity: 0.10000000149011612"/>
+      </g>
+      <path d="M4,4A2,2,0,0,1,6,2H36a2,2,0,0,1,2,2V34a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2Z" transform="translate(-4 -2)" style="fill: #fff"/>
+    </g>
+    <g>
+      <path d="M31.67,11.67a2,2,0,0,0-2-2H12.34a2,2,0,0,0,0,4H29.67A2,2,0,0,0,31.67,11.67Z" transform="translate(-4 -2)" style="fill: #324ea3"/>
+      <g style="opacity: 0.30000001192092896">
+        <path d="M29.67,23H22.34a2,2,0,0,0,0,4h7.33a2,2,0,0,0,0-4Zm0-6.67H17.34a2,2,0,0,0,0,4H29.67a2,2,0,0,0,0-4Z" transform="translate(-4 -2)" style="fill: #324ea3"/>
+      </g>
+    </g>
+  </g>
+</svg>
