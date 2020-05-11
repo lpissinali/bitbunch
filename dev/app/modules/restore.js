@@ -10,10 +10,18 @@
       if($(error).text() == '') {
         return
       }
-      var tooltipsterContent = `
-        <p class="tooltipster-content__caption">This field is obligatory</p>
-        <p class="tooltipster-content__description">Please fill it in to continue</p>
+      if (element.attr('id') === 'restoreNewPassword' || element.attr('id') === 'restoreRepeatPassword'){
+        var tooltipsterContent = `
+        <p class="tooltipster-content__caption">Error</p>
+        <p class="tooltipster-content__description">Please use at least 8 digits, <br> a number and a symbol</p>
       `;
+      }
+      else {
+        var tooltipsterContent = `
+          <p class="tooltipster-content__caption">This field is obligatory</p>
+          <p class="tooltipster-content__description">Please fill it in to continue</p>
+        `;        
+      }
       $(element).removeClass('validation-success');
       $(element).next().next('.error-icon').removeClass('d-none');
       $(element).next().next('.error-icon').tooltipster("content", tooltipsterContent);
@@ -25,11 +33,18 @@
       $(element).addClass('validation-success');
     },
     rules: {
-      email: {
-        required: true
+      newPassword: {
+        required: true,
+        minlength: 8,
+        maxlength: 40,
+        passwordStrength: true
+
       },
-      password: {
-        required: true
+      repeatPassword: {
+        required: true,
+        minlength: 8,
+        maxlength: 40,
+        passwordStrength: true
       }
     },
     errorClass: "validation-error",

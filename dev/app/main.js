@@ -23,6 +23,7 @@ require('./modules/googleAuth');
 require('./modules/verification');
 
 require('./modules/accountForm');
+require('./modules/security');
 
 // аккордион faq
 const faqAccordion = new Accordion({});
