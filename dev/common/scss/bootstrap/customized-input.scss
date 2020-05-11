@@ -48,7 +48,7 @@
   opacity: 0.4;
   color: $dark-grey;
   font-family: $main-font-light;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   transition: top 0.3s;
   pointer-events: none;
 }
@@ -73,7 +73,8 @@
   padding-right: 2rem;
   padding-top: 1.5rem;
   padding-bottom: 0.5rem;
-  color: rgba($dark-grey, 0.4);
+  // color: rgba($dark-grey, 0.4);
+  color: #adadad;
   box-shadow: 0.625rem 0.75rem 1.5rem rgba(80, 87, 94, 0.1);
   opacity: 0.6;
 }
