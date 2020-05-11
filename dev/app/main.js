@@ -468,6 +468,14 @@ if (document.querySelector('.statistics')) {
     $('.statistics__item-value .unit').text(this.value)
   });
 }
+// Пополнение кошелька
+if (document.querySelector('.fund-wallet')) {
+  $('.choose-select').change(function() {
+    $('.fund-wallet__asset').text($(this).find('option:selected').text())
+    $('#walletNumber').val($(this).find('option:selected').data('wallet'))
+    $('.fund-wallet-qr__code img').attr('src', $(this).find('option:selected').data('qr'))
+  });
+}
 
 // Chart
 if (document.querySelector('.chart__canvas')) {
