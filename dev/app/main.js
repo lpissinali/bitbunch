@@ -201,8 +201,6 @@ if (document.querySelector('.toggle__user-menu')) {
 
   $(document).click(function (e){
     var clickTarget = $(".account-nav__nav-menu");
-    console.log(e.target)
-    console.log(clickTarget.find('.account-nav__menu-list.disabled').length)
 		if (clickTarget.is(e.target) && clickTarget.find('.account-nav__menu-list.disabled').length === 1) {
       toggleAccountNav()
 		}
@@ -458,11 +456,17 @@ function customSelect() {
     setTimeout(() => {
       $('.choose-blur').addClass('_unblur');
     }, 300);
-    console.log(this.value);
   });
 }
 if (document.querySelector('.choose-select')) {
   customSelect();
+}
+
+// Смена валюты
+if (document.querySelector('.statistics')) {
+  $('.choose-select').change(function() {
+    $('.statistics__item-value .unit').text(this.value)
+  });
 }
 
 // Chart
