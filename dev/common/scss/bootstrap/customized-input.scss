@@ -48,23 +48,26 @@
   opacity: 0.4;
   color: $dark-grey;
   font-family: $main-font-light;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   transition: top 0.3s;
   pointer-events: none;
 }
 .form-group__placeholder.has-content {
   top: 0.5rem;
   transition: 0.3s;
+  font-size: 0.75rem;
 }
 
 .form-group input:not([readonly]):focus ~ .form-group__placeholder {
   top: 0.5rem;
   transition: 0.3s;
+  font-size: 0.75rem;
 }
 
 .form-group textarea:not([readonly]):focus ~ .form-group__placeholder {
   top: 0.5rem;
   transition: 0.3s;
+  font-size: 0.75rem;
 }
 
 .form-group input:disabled {
