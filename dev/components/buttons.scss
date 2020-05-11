@@ -7,7 +7,7 @@
   border: 0;
   border-radius: .1875rem;
   background-color: $orange;
-  font-family: $main-font-bold;
+  font-family: $main-font-semi-bold;
   font-size: 1.125rem;
   line-height: 1;
   text-transform: uppercase;
@@ -31,7 +31,7 @@
   border-radius: 0.125rem;
   background-color: $red;
   box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
-  font-family: $main-font-bold;
+  font-family: $main-font-semi-bold;
   font-size: 0.875rem;
   line-height: 1;
   text-transform: uppercase;
@@ -129,9 +129,10 @@
   }
 }
 
-.checkbox-btn{
+.checkbox-btn {
   display: none;
-  + label{
+
+  + label {
     position: relative;
     width: 4.0625rem;
     height: 1.875rem;
@@ -141,27 +142,31 @@
     background-color: #efc7c2;
     cursor: pointer;
     overflow: hidden;
+
     .checkbox-btn__on,
-    .checkbox-btn__off{
+    .checkbox-btn__off {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 100%;
       padding: 0.5rem;
-      font-family: $main-font-bold;
+      width: 100%;
+      font-family: $main-font-semi-bold;
       font-size: 0.75rem;
       line-height: 0.875rem;
       color: $white;
       transition: all 300ms;
     }
-    .checkbox-btn__on{
+
+    .checkbox-btn__on {
       right: 100%;
     }
-    .checkbox-btn__off{
+
+    .checkbox-btn__off {
       left: 0;
       text-align: right;
     }
-    .checkbox-btn__point{
+
+    .checkbox-btn__point {
       position: absolute;
       left: 0;
       top: 0;
@@ -171,11 +176,12 @@
       border-radius: 50%;
       background: $blue;
       transition: all 330ms;
-      &:after{
+
+      &:after {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         content: '';
         display: block;
         width: 1rem;
@@ -187,20 +193,25 @@
       }
     }
   }
-  &:checked{
-    + label{
+
+  &:checked {
+    + label {
       background-color: $blue;
       border-color: $blue;
-      .checkbox-btn__on{
+
+      .checkbox-btn__on {
         right: 0;
       }
-      .checkbox-btn__off{
+
+      .checkbox-btn__off {
         left: 100%;
       }
-      .checkbox-btn__point{
+
+      .checkbox-btn__point {
         left: calc(100% - 1.625rem);
         background: $white;
-        &:after{
+
+        &:after {
           background: $blue;
         }
       }
@@ -237,26 +248,30 @@
     height: 2.25rem;
   }
 
-  .checkbox-btn{
-    + label{
+  .checkbox-btn {
+    + label {
       width: 2.75rem;
       height: 1.25rem;
       border-width: 0.0625rem;
+
       .checkbox-btn__on,
-      .checkbox-btn__off{
+      .checkbox-btn__off {
         padding: 0.25rem;
         font-size: 0.625rem;
         line-height: 0.75rem;
       }
-      .checkbox-btn__point{
+
+      .checkbox-btn__point {
         width: 1.125rem;
         height: 1.125rem;
-        &:after{
+
+        &:after {
           width: 0.625rem;
           height: 0.625rem;
         }
       }
     }
+
     &:checked + label .checkbox-btn__point {
       left: calc(100% - 1.125rem);
     }
