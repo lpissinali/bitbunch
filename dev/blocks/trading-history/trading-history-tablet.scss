@@ -1,15 +1,19 @@
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
   .trading-history__headline {
-    margin-bottom: 1rem;
-  }
-  .trading-history__content{
-    display: block;
+    margin-bottom: 1.5625rem;
   }
   .trading-history__table-overflow{
     width: 100%;
     overflow-x: auto;
   }
+  .horiz__scroller {
+    overflow-x: scroll !important;
+  }
+  .horiz__track {
+    opacity: 1;
+  }
   .trading-history__table{
-    width: 100%;
+    width: auto;
+    margin-top: 1.4375rem;
   }
 }

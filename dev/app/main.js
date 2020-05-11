@@ -320,18 +320,15 @@ if (document.querySelector('.choosing-coin__controls-toggle')) {
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-history__table-overflow')) {
-  console.log('alert')
-  window.onload = function(){
-    baron({
-        root: '.baron__root',
-        scroller: '.baron__scroller',
-        bar: '.baron__bar',
-        scrollingCls: '_scrolling',
-        draggingCls: '_dragging',
-        direction: 'h',
-        impact: 'scroller'
-    });
-  };
+  baron({
+      root: '.horiz__clipper',
+      scroller: '.horiz__scroller',
+      bar: '.horiz__bar',
+      scrollingCls: '_scrolling',
+      draggingCls: '_dragging',
+      direction: 'h',
+      impact: 'scroller'
+  });
 }
 
 // // Modal notification
@@ -351,15 +348,14 @@ window.onload = function() {
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-currencies__list')) {
-  window.onload = function(){
-    baron({
-        root: '.baron__root',
-        scroller: '.baron__scroller',
-        bar: '.baron__bar',
-        scrollingCls: '_scrolling',
-        draggingCls: '_dragging'
-    });
-  };
+  baron({
+      root: '.baron__root',
+      scroller: '.baron__scroller',
+      bar: '.baron__bar',
+      scrollingCls: '_scrolling',
+      draggingCls: '_dragging',
+      direction: 'v'
+  });
 }
 
 // Trading history table scrollbar
