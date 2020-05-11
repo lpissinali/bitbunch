@@ -139,36 +139,9 @@
   background-repeat: no-repeat;
   background-image: url(./images/point.png);
   background-position: 0 0;
-
-  &:before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 1.3125rem;
-    height: 1.3125rem;
-    box-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.2);
-    border-radius: inherit;
-    background-color: $white;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 13px;
-    height: 13px;
-    box-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.2);
-    border-radius: inherit;
-    background-color: $blue;
-    opacity: 0;
-    transition: opacity 300ms;
-  }
 }
 
 .currencies__item input[type=checkbox]:checked {
-  + .currencies__item-point:after {
-    opacity: 1;
-  }
   + .currencies__item-point{
     background-position: -1.6875rem 0;
   }
