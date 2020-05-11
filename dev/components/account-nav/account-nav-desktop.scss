@@ -158,7 +158,7 @@
 
   &.enabled {
     &:before {
-      top: 0.8438rem;
+      top: 0.875rem;
     }
 
     .account-nav__user-menu-close {
@@ -180,7 +180,7 @@
   background-image: url(../images/Angle-double-down.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1.375rem;
+  background-size: 1.5rem;
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
