@@ -28,7 +28,8 @@
   width: 6.25rem;
   height: 2.5rem;
   border: 0;
-  border-radius: 0.125rem;
+  border: 2px solid $red;
+  border-radius: 0.1875rem;
   background-color: $red;
   box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
   font-family: $main-font-bold;
@@ -37,11 +38,12 @@
   text-transform: uppercase;
   color: $white;
   cursor: pointer;
-  transition: background-color 300ms;
-
+  transition: 300ms;
+  transform-origin: center center;
   &:hover {
-    background-color: darken($red, 7%);
-    color: $white;
+    background-color:$white;
+    color: $red;
+    transform: scaleX(1.05);
   }
 }
 
