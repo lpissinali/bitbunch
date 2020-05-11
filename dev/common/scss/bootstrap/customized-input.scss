@@ -96,9 +96,9 @@
   font-size: 0.875rem;
   color: $blue;
   cursor: pointer;
-  &:hover{
-    opacity: .8;
-    color: $blue;
+  
+  &.link-hover-move {
+    position: absolute;
   }
 }
 
