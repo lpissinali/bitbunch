@@ -7,7 +7,7 @@
   border: 0;
   border-radius: .1875rem;
   background-color: $orange;
-  font-family: $main-font-bold;
+  font-family: $main-font-semi-bold;
   font-size: 1.125rem;
   line-height: 1;
   text-transform: uppercase;
@@ -220,7 +220,7 @@
     width: 8.5625rem;
     height: 2.25rem;
     border-radius: .125rem;
-    font-size: 12px;
+    font-size: .75rem;
   }
 
   .button-blue {
@@ -240,26 +240,31 @@
     height: 2.25rem;
   }
 
-  .checkbox-btn{
-    + label{
+  .checkbox-btn {
+
+    + label {
       width: 2.75rem;
       height: 1.25rem;
-      border-width: 0.0625rem;
+      border-width: .0625rem;
+
       .checkbox-btn__on,
-      .checkbox-btn__off{
-        padding: 0.25rem;
-        font-size: 0.625rem;
-        line-height: 0.75rem;
+      .checkbox-btn__off {
+        padding: .25rem;
+        font-size: .625rem;
+        line-height: .75rem;
       }
-      .checkbox-btn__point{
+
+      .checkbox-btn__point {
         width: 1.125rem;
         height: 1.125rem;
-        &:after{
-          width: 0.625rem;
-          height: 0.625rem;
+
+        &:after {
+          width: .625rem;
+          height: .625rem;
         }
       }
     }
+
     &:checked + label .checkbox-btn__point {
       left: calc(100% - 1.125rem);
     }

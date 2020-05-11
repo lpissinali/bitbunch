@@ -1,16 +1,19 @@
-.trading-statistics{
+.trading-statistics {
   padding-bottom: 2.0625rem;
 }
-.trading-statistics__header{
+
+.trading-statistics__header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 1.5rem;
 }
-.trading-statistics__headline{
+
+.trading-statistics__headline {
   margin-top: 0.25rem;
 }
-.trading-statistics__header-time{
+
+.trading-statistics__header-time {
   display: inline-flex;
   align-items: flex-start;
   margin-top: 0.0625rem;
@@ -20,7 +23,8 @@
   letter-spacing: 0.03rem;
   color: $blue;
 }
-.trading-statistics__header-time-icon{
+
+.trading-statistics__header-time-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,64 +35,78 @@
   background: $blue;
   box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
   border-radius: 0.125rem;
-  img{
+
+  img {
     display: block;
   }
 }
-.statistics{
+
+.statistics {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -1.5rem;
   padding: 0.75rem 0;
   background-color: #f8f9fe;
 }
-.statistics__item{
+
+.statistics__item {
   padding: 0 1.5rem;
-  &:last-child{
+
+  &:last-child {
     text-align: right;
   }
-  &_deposit{
+
+  &_deposit {
     width: 17.125rem;
   }
-  &_profit{
+
+  &_profit {
     width: 16.875rem;
   }
-  &_margin{
+
+  &_margin {
     width: 13.5rem;
   }
-  &_number{
+
+  &_number {
     width: 11.25rem;
   }
 }
-.statistics__item-value{
+
+.statistics__item-value {
   font-family: $main-font-light;
   font-size: 1.75rem;
   color: $orange;
   letter-spacing: 0.0375rem;
-  b{
+
+  b {
     font-family: $main-font-semi-bold;
   }
 }
-.statistics__item-label{
+
+.statistics__item-label {
   margin-top: 0.25rem;
   font-family: $main-font-medium;
   color: $black-light;
   letter-spacing: 0.0213rem;
 }
 
-.chart{
+.chart {
   display: flex;
   flex-wrap: wrap;
   padding: 1.5rem 0 0;
-  &__canvas{
+
+  &__canvas {
     position: relative;
     width: calc(100% - 9.9375rem - 1.5625rem);
     height: 12.1875rem;
   }
-  &__control{
+
+  &__control {
     width: 9.9375rem;
     margin-left: 1.5625rem;
-    &-button{
+
+    &-button {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -98,20 +116,23 @@
       border: 0.125rem solid $blue;
       box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
       background-color: $blue;
-      font-family: $main-font-bold;
+      font-family: $main-font-semi-bold;
       font-size: 0.875rem;
       color: $white;
       cursor: pointer;
       transition: 300ms ease;
-      &:hover{
+
+      &:hover {
         box-shadow: none;
       }
-      &.active{
+
+      &.active {
         background-color: $white;
         box-shadow: none;
         color: $blue;
       }
-      &:last-child{
+
+      &:last-child {
         margin-bottom: 0;
       }
     }

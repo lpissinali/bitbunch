@@ -1,5 +1,9 @@
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
 
+  .hiw-header {
+    background-image: url("./images/hiw-header-bg-tablet.png");
+  }
+
   .hiw-header__wrapper {
     padding-bottom: 4.25rem;
     border-bottom: 0;

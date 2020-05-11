@@ -5,27 +5,25 @@
  * @description validation and form submit
  */
 (function($) {
-  $("#registerForm").validate({
+  $("#verificationForm").validate({
     errorPlacement(error, element) {
       if($(error).text() == '') {
         return
       }
-      if (element.attr('id') === 'registerPassword'){
-        var tooltipsterContent = `
-        <p class="tooltipster-content__caption">Error</p>
-        <p class="tooltipster-content__description">Please use at least 8 digits, <br> a number and a symbol</p>
+      var tooltipsterContent = `
+        <p class="tooltipster-content__caption">This field is obligatory</p>
+        <p class="tooltipster-content__description">Please fill it in to continue</p>
       `;
-      }
-      else {
-        var tooltipsterContent = `
-          <p class="tooltipster-content__caption">This field is obligatory</p>
-          <p class="tooltipster-content__description">Please fill it in to continue</p>
-        `;        
-      }
       $(element).removeClass('validation-success');
       $(element).next().next('.error-icon').removeClass('d-none');
       $(element).next().next('.error-icon').tooltipster("content", tooltipsterContent);
       $(element).next().next('.error-icon').tooltipster("open");
+      //validation for select
+      if ($(element)[0].tagName == 'SELECT') {
+        $(element).parents('.form-group').find('.error-icon').removeClass('d-none');
+        $(element).parents('.form-group').find('.error-icon').tooltipster("content", tooltipsterContent);
+        $(element).parents('.form-group').find('.error-icon').tooltipster("open");
+      }
     },
     success(label, element) {
       $(element).next().next('.error-icon').addClass('d-none');
@@ -33,25 +31,14 @@
       $(element).addClass('validation-success');
     },
     rules: {
-      username: {
-        required: true
-      },
-      email: {
-        required: true
-      },
-      password: {
-        required: true,
-        minlength: 8,
-        maxlength: 40,
-        passwordStrength: true
-      }
+      
     },
     errorClass: "validation-error",
     submitHandler(form) { return false;}
   });
 
   // initialize tooltipster on text input elements
-  $('#registerForm .error-icon').tooltipster({
+  $('#verificationForm .error-icon').tooltipster({
     trigger: 'custom',
     onlyOne: false,
     position: 'top',
@@ -81,11 +68,22 @@
     contentAsHTML: true,
   });
 
-  $(".form-group input").on("focusout", event => {
+  $("#verificationForm input").on("focusout", event => {
     if (event.currentTarget.value !== "") {
       $(event.currentTarget).next().addClass("has-content");
     } else {
       $(event.currentTarget).next().removeClass("has-content");
     }
   });
+
 })(jQuery);
+
+$('#verificationSex, #verificationCountry, #verificationOccupation, #verificationSource').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+  if (event.currentTarget.value !== "") {
+    $(this).parents('.form-group').find('.bootstrap-select-placeholder').addClass("has-content");
+  } else {
+    $(this).parents('.form-group').find('.bootstrap-select-placeholder').removeClass("has-content");
+  } 
+  $(event.currentTarget).parents('.form-group').find('.error-icon').addClass('d-none');
+  $(event.currentTarget).parents('.form-group').find('.error-icon').tooltipster("close");
+});

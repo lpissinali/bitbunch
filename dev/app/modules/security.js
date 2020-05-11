@@ -1,27 +1,19 @@
 /* eslint-disable func-names */
 /**
- * @module registerForm
+ * @module restoreForm
  * @author donrus
  * @description validation and form submit
  */
 (function($) {
-  $("#registerForm").validate({
+  $("#securityPasswordForm").validate({
     errorPlacement(error, element) {
       if($(error).text() == '') {
         return
       }
-      if (element.attr('id') === 'registerPassword'){
-        var tooltipsterContent = `
-        <p class="tooltipster-content__caption">Error</p>
-        <p class="tooltipster-content__description">Please use at least 8 digits, <br> a number and a symbol</p>
+      var tooltipsterContent = `
+      <p class="tooltipster-content__caption">Error</p>
+      <p class="tooltipster-content__description">Please use at least 8 digits, <br> a number and a symbol</p>
       `;
-      }
-      else {
-        var tooltipsterContent = `
-          <p class="tooltipster-content__caption">This field is obligatory</p>
-          <p class="tooltipster-content__description">Please fill it in to continue</p>
-        `;        
-      }
       $(element).removeClass('validation-success');
       $(element).next().next('.error-icon').removeClass('d-none');
       $(element).next().next('.error-icon').tooltipster("content", tooltipsterContent);
@@ -30,16 +22,21 @@
     success(label, element) {
       $(element).next().next('.error-icon').addClass('d-none');
       $(element).next().next('.error-icon').tooltipster("close");
-      $(element).addClass('validation-success');
     },
     rules: {
-      username: {
-        required: true
+      'password-current': {
+        required: true,
+        minlength: 8,
+        maxlength: 40,
+        passwordStrength: true
       },
-      email: {
-        required: true
+      'password-new': {
+        required: true,
+        minlength: 8,
+        maxlength: 40,
+        passwordStrength: true
       },
-      password: {
+      'password-confirm': {
         required: true,
         minlength: 8,
         maxlength: 40,
@@ -47,11 +44,20 @@
       }
     },
     errorClass: "validation-error",
-    submitHandler(form) { return false;}
+    submitHandler(form) { 
+      setTimeout(()=>{
+        $('.notification').html('Your password got changed successfully.');
+        $('.notification').addClass('active');
+      }, 300);
+      
+      setTimeout(()=>{
+        $('.notification').removeClass('active');
+      }, 3000);
+    }
   });
 
   // initialize tooltipster on text input elements
-  $('#registerForm .error-icon').tooltipster({
+  $('#securityPasswordForm .error-icon').tooltipster({
     trigger: 'custom',
     onlyOne: false,
     position: 'top',

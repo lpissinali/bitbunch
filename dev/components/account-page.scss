@@ -11,7 +11,7 @@
   background-image: linear-gradient(33deg, #fcfdff 0%, #f2f4fd 100%);
 }
 
-.account-content{
+.account-content {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -20,13 +20,16 @@
   max-width: 58.75rem;
   margin: 0 3.125rem;
   padding: 1.75rem 0;
+  font-family: $main-font-light;
 }
-.account-content_center{
+
+.account-content_center {
   max-width: 65rem;
   margin: 0 auto;
   padding: 1.75rem 3.125rem;
 }
-.account-section{
+
+.account-section {
   width: 100%;
   margin: 0;
   padding: 1.6875rem 1.5rem 1.1875rem;
@@ -39,12 +42,12 @@
   .account-page {
     width: 100%;
   }
-  .account-content{
+  .account-content {
     width: calc(100% - 6.25rem);
     margin: 0;
     padding: 1.875rem 0;
   }
-  .account-content_center{
+  .account-content_center {
     max-width: none;
     margin: 0 auto;
     padding: 1.875rem 0;
@@ -59,11 +62,11 @@
     flex-direction: column;
     background-image: linear-gradient(154deg, #fcfdff 0%, #f2f4fd 100%);
   }
-  .account-content{
+  .account-content {
     width: 100%;
     padding: 0 0 1.5rem;
   }
-  .account-content_center{
+  .account-content_center {
     padding: 0 0 1.5rem;
   }
   .account-section {

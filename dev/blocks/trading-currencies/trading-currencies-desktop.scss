@@ -1,30 +1,35 @@
-.trading-currencies{
+.trading-currencies {
   padding-bottom: 2rem;
   background-image: url(images/bg-money@2x.png);
   background-size: 16.8125rem 18.25rem;
   background-repeat: no-repeat;
   background-position: right bottom;
 }
-.trading-currencies__header{
+
+.trading-currencies__header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
-.trading-currencies__header-left{
+
+.trading-currencies__header-left {
   max-width: 40.625rem;
   padding-right: 1rem;
 }
-.trading-currencies__headline{
+
+.trading-currencies__headline {
   margin-top: 0.25rem;
   margin-bottom: 0.875rem;
 }
-.trading-currencies__content{
+
+.trading-currencies__content {
   font-family: $main-font-regular;
   letter-spacing: 0.0213rem;
   line-height: 1.625rem;
   color: $black-light;
 }
-.trading-currencies__header-filter{
+
+.trading-currencies__header-filter {
   display: inline-flex;
   align-items: center;
   margin-top: -0.125rem;
@@ -33,21 +38,25 @@
   line-height: 2.375rem;
   color: $blue;
 }
-.trading-currencies__header-filter span{
+
+.trading-currencies__header-filter span {
   font-family: $main-font-medium;
   color: #ED7043;
 }
-.trading-currencies__header-filter-icon{
+
+.trading-currencies__header-filter-icon {
   width: 3rem;
   margin-left: 1rem;
   box-shadow: 0 0.25rem 0.375rem rgba(93, 88, 88, 0.1);
   border-radius: 0.3125rem;
-  img{
+
+  img {
     display: block;
     width: 100%;
   }
 }
-.trading-currencies__list{
+
+.trading-currencies__list {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -73,7 +82,8 @@
     opacity: 1;
   }
 }
-.currencies__item{
+
+.currencies__item {
   display: flex;
   align-items: center;
   width: calc(33.33333% - 1rem);
@@ -84,10 +94,12 @@
   border-radius: 0.25rem;
   cursor: pointer;
 }
-.currencies__item input[type=checkbox]{
+
+.currencies__item input[type=checkbox] {
   display: none;
 }
-.currencies__item-icon{
+
+.currencies__item-icon {
   width: 3.0625rem;
   height: 3.0625rem;
   box-shadow: 0 0.25rem 0.375rem rgba(93, 88, 88, 0.1);
@@ -97,7 +109,8 @@
   background-position: center;
   background-size: 102%;
 }
-.currencies__item-name{
+
+.currencies__item-name {
   flex-grow: 1;
   width: calc(100% - 3.0625rem - 1.5625rem);
   padding: 0 0.75rem;
@@ -105,14 +118,19 @@
   font-size: 0.75rem;
   color: #091540;
   letter-spacing: 0.0187rem;
-  b{
+
+  b {
     display: block;
-    font-family: $main-font-bold;
+    font-family: $main-font-semi-bold;
     font-size: 0.875rem;
   }
 }
-.currencies__item-point{
+
+.currencies__item-point {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0.0625rem;
   width: 1.6875rem;
   height: 1.75rem;
@@ -121,8 +139,36 @@
   background-repeat: no-repeat;
   background-image: url(./images/point.png);
   background-position: 0 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 1.3125rem;
+    height: 1.3125rem;
+    box-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.2);
+    border-radius: inherit;
+    background-color: $white;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 13px;
+    height: 13px;
+    box-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.2);
+    border-radius: inherit;
+    background-color: $blue;
+    opacity: 0;
+    transition: opacity 300ms;
+  }
 }
-.currencies__item input[type=checkbox]:checked{
+
+.currencies__item input[type=checkbox]:checked {
+  + .currencies__item-point:after {
+    opacity: 1;
+  }
   + .currencies__item-point{
     background-position: -1.6875rem 0;
   }

@@ -26,6 +26,21 @@
     }   
   });
 
+  $('#withdrawalAmount').inputmask({ 
+    mask: '*{1,20}[.*{1,6}]',
+    greedy: false,
+    definitions: {
+      '*': {
+        validator: '[0-9]',
+        placeholder: '',
+      }
+    }   
+  });
+
+  $('#verificationDate').inputmask("datetime", {
+    showMaskOnHover: false,
+  });
+
   // $('.popup-form__input#email').inputmask({
   //   mask: '*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]',
   //   greedy: false,

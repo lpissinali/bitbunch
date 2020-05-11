@@ -26,6 +26,7 @@
     submitHandler(form) { 
       $('#modal-change-email').modal('hide');
       setTimeout(()=>{
+        $('.notification').html('Your email got changed successfully.');
         $('.notification').addClass('active');
       }, 300);
       

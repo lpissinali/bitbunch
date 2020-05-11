@@ -7,4 +7,17 @@
     },
     'incorrect email'
   );
+  $.validator.addMethod(
+    'passwordStrength',
+    function(value, element) {
+      return /^[A-Za-z0-9`'"~!@#$%^&*(){}-]*$/.test(value) // consists of only these
+                &&
+                /[A-Za-z]/.test(value) // has a uppercase letter
+                &&
+                /[`'"~!@#$%^&*(){}-]/.test(value) // has a spec char
+                &&
+                /\d/.test(value); // has a digit
+    },
+    'Please use at least 8 digits, a number and a symbol'
+  );
 }(jQuery));
