@@ -1,3 +1,7 @@
+::-webkit-scrollbar { /* for Mac OS X Baron.js support */
+  width: 0;
+}
+
 .account-page {
   display: flex;
   align-items: flex-start;
