@@ -12,12 +12,12 @@
   .daily-trades__range{
     max-width: none;
   }
-  .daily-trades__range{
-    &:focus,
-    &:hover{
-      .irs-single{
-        opacity: 1;
-      }
-    }
-  }
+  // .daily-trades__range{
+  //   &:focus,
+  //   &:hover{
+  //     .irs-single{
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 }

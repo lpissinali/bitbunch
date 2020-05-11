@@ -74,15 +74,6 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-
-    &.your-assets__table {
-      // .table-col_assets {}
-      // .table-col_balance {}
-      .table-col_profit {
-        max-width: 5rem;
-        font-family: $main-font-bold;
-      }
-    }
   }
 
   &__option {
@@ -166,6 +157,16 @@
   }
 
   &.opened {
+    .choose-select__trigger{
+      &:after{
+        transform: rotate(45deg);
+      }
+      &:hover{
+        &:after{
+          transform: rotate(45deg) scale(1.2);
+        }
+      }
+    }
     .choose-select__options {
       opacity: 1;
       visibility: visible;
