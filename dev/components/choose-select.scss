@@ -88,14 +88,22 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    margin: 0 -0.75rem;
+    padding: 0 0.75rem;
+    background: $white;
     border-bottom: 0.0625rem solid #efc7c2;
     font-size: 0.875rem;
     line-height: 1.125rem;
     color: $black-light;
     cursor: pointer;
     transition: all 300ms ease-in-out;
+    
+    &:hover {
+      z-index: 1;
+      border-bottom-color: $white;
+      box-shadow: 0 0 0.625rem rgba(93, 88, 88, 0.1);
+      transform: scale(1.025);
+    }
 
     &:last-child {
       border-bottom: none;
@@ -257,6 +265,7 @@
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "assets balance" "assets profit";
     margin: 0 0 1rem;
+    padding: 0;
     border: none;
 
     &:last-child {
