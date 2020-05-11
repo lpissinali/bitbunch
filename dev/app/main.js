@@ -716,3 +716,12 @@ if (document.querySelector('button[data-toggle=edit-form]')) {
     }
   })
 }
+
+
+// Button remove .table-row
+if (document.querySelector('.button-remove')) {
+  $('.button-remove').click(function(e){
+    e.preventDefault()
+    $(this).parents('.table-row').remove()
+  })
+}
