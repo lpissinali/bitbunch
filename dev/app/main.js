@@ -178,22 +178,30 @@ $(window).on('resize orientationchange', () => {
 
 // account user menu
 if (document.querySelector('.toggle__user-menu')) {
-  $('.toggle__user-menu').click(() => {
+  function toggleAccountNav() {
     if ($(window).width() <= 1000) {
       $('.account-nav__user-controls').slideToggle();
     }
     $('.account-nav__menu-list').toggleClass('disabled');
     $('.account-nav__user').toggleClass('enabled');
     $('.account-nav__user-menu-list').slideToggle();
+  }
+
+  $('.toggle__user-menu').click(() => {
+    toggleAccountNav();
   });
 
   $('.account-nav__user-menu-close').click(() => {
-    if ($(window).width() <= 1000) {
-      $('.account-nav__user-controls').slideToggle();
-    }
-    $('.account-nav__menu-list').toggleClass('disabled');
-    $('.account-nav__user').toggleClass('enabled');
-    $('.account-nav__user-menu-list').slideToggle();
+    toggleAccountNav()
+  });
+
+  $(document).click(function (e){
+    var clickTarget = $(".account-nav__nav-menu");
+    console.log(e.target)
+    console.log(clickTarget.find('.account-nav__menu-list.disabled').length)
+		if (clickTarget.is(e.target) && clickTarget.find('.account-nav__menu-list.disabled').length === 1) {
+      toggleAccountNav()
+		}
   });
 }
 
