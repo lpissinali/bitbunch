@@ -20,6 +20,9 @@ require('./modules/changePhone');
 require('./modules/changeEmail');
 require('./modules/2FAVerify');
 require('./modules/googleAuth');
+require('./modules/verification');
+
+require('./modules/settings');
 
 // аккордион faq
 const faqAccordion = new Accordion({});

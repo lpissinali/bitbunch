@@ -8,12 +8,12 @@ section.account-section.verification-level.verification-level_1
     .verification-level__content After this verification you will be able to trade between your smart wallets 
     form#verificationForm.verification-level__form(novalidate)
         .form-group.verification-level__form-firstname
-            input(type="text" class="form-control form-control-lg required" id="verificationFirstName" name="firstname" required value="Miguel")
+            input(type="text" class="form-control form-control-lg required" id="verificationFirstName" name="firstname" required)
             span.form-group__placeholder.has-content First name
             .error-icon.d-none
               span !
         .form-group.verification-level__form-lastname
-            input(type="text" class="form-control form-control-lg required" id="verificationLastName" name="lastname" required value="Torres")
+            input(type="text" class="form-control form-control-lg required" id="verificationLastName" name="lastname" required)
             span.form-group__placeholder.has-content Last name
             .error-icon.d-none
               span !
@@ -25,9 +25,7 @@ section.account-section.verification-level.verification-level_1
             .error-icon.d-none 
               span !
         .form-group.verification-level__form-date
-            select(class="form-control form-control-lg required selectpicker" id="verificationDate" name="date" required)
-                option(value="01.01.1990") 01.01.1990
-                option(value="02.01.1990") 02.01.1990
+            input(type="text" class="form-control form-control-lg required" id="verificationDate" name="date" required)
             span.form-group__placeholder.bootstrap-select-placeholder Date of birth
             .error-icon.d-none 
               span !
@@ -55,7 +53,7 @@ section.account-section.verification-level.verification-level_1
             .error-icon.d-none
               span !
         .form-group.verification-level__form-number
-            input(type="text" class="form-control form-control-lg" id="verificationNumber" name="number")
+            input(type="text" class="form-control form-control-lg" id="verificationNumber" name="number" required)
             span.form-group__placeholder Number
         .form-group.verification-level__form-occupation
             select(class="form-control form-control-lg required selectpicker" id="verificationOccupation" name="occupation" required)

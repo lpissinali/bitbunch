@@ -67,6 +67,10 @@
   transition: 0.3s;
 }
 
+.form-group input:disabled {
+  
+}
+
 .form-group__button{
   position: absolute;
   right: 1rem;
