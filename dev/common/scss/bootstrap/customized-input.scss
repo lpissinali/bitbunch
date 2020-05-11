@@ -78,6 +78,10 @@
   opacity: 0.6;
 }
 
+.form-group input[readonly] {
+  cursor: default;
+}
+
 .form-group__button{
   position: absolute;
   right: 1rem;

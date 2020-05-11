@@ -22,7 +22,7 @@ require('./modules/2FAVerify');
 require('./modules/googleAuth');
 require('./modules/verification');
 
-require('./modules/settings');
+require('./modules/accountForm');
 
 // аккордион faq
 const faqAccordion = new Accordion({});

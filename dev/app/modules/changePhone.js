@@ -26,6 +26,7 @@
     submitHandler(form) { 
       $('#modal-change-phone').modal('hide');
       setTimeout(()=>{
+        $('.notification').html('Your phone number got changed successfully.');
         $('.notification').addClass('active');
       }, 300);
       
