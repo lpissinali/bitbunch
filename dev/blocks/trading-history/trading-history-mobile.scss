@@ -1,7 +1,8 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
   .trading-history {
     margin: 1.1563rem 0 0;
-    padding: 0 0.625rem;
+    // padding: 0 0.625rem;
+    padding: 0 1.5rem;
     background: transparent;
     box-shadow: none;
   }
@@ -12,17 +13,25 @@
     margin-bottom: 0.625rem;
   }
   .trading-history__table-overflow{
-    width: calc(100% + 0.625rem * 2);
-    margin: 0 -0.625rem;
+    // width: calc(100% + 0.625rem * 2);
+    // margin: 0 -0.625rem;
+    width: calc(100% + 1.5rem * 2);
+    margin: 0 -1.5rem;
     &:not(.mCS_no_scrollbar){
+      .mCSB_container{
+        padding: 0 1.5rem;
+      }
       .mCSB_scrollTools_horizontal{
-        left: 0.625rem;
-        right: 0.625rem;
+        // left: 0.625rem;
+        // right: 0.625rem;
+        left: 1.5rem;
+        right: 1.5rem;
       }
     }
   }
   .trading-history__table{
-    margin: 0 0.625rem;
+    // margin: 0 0.625rem;
+    margin: 0;
   }
   .trading-history__table .table-head{
     padding: 0 0.5rem 1.0625rem;

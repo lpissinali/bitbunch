@@ -12,23 +12,23 @@
       height: 0.0625rem;
       background-color: #efc7c2;
     }
-    + .trading-history{
-      padding: 0 1.5rem;
-      .trading-history__table-overflow {
-        width: calc(100% + 1.5rem * 2);
-        margin: 0 -1.5rem;
-      }
-      .trading-history__table {
-        margin: 0;
-      }
-      .trading-history__table-overflow:not(.mCS_no_scrollbar) .mCSB_container{
-        padding: 0 1.5rem;
-      }
-      .trading-history__table-overflow:not(.mCS_no_scrollbar) .mCSB_scrollTools_horizontal {
-        left: 1.5rem;
-        right: 1.5rem;
-      }
-    }
+    // + .trading-history{
+    //   padding: 0 1.5rem;
+    //   .trading-history__table-overflow {
+    //     width: calc(100% + 1.5rem * 2);
+    //     margin: 0 -1.5rem;
+    //   }
+    //   .trading-history__table {
+    //     margin: 0;
+    //   }
+    //   .trading-history__table-overflow:not(.mCS_no_scrollbar) .mCSB_container{
+    //     padding: 0 1.5rem;
+    //   }
+    //   .trading-history__table-overflow:not(.mCS_no_scrollbar) .mCSB_scrollTools_horizontal {
+    //     left: 1.5rem;
+    //     right: 1.5rem;
+    //   }
+    // }
   }
   .trading-statistics__header{
     margin-bottom: 1.4375rem;
