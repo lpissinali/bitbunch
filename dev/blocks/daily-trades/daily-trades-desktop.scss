@@ -1,4 +1,4 @@
-.daily-trades{
+.daily-trades {
   margin-top: 2rem;
   padding-bottom: 2rem;
   background-image: url(images/bg-cpu@2x.png);
@@ -6,44 +6,52 @@
   background-repeat: no-repeat;
   background-position: right bottom;
 }
-.daily-trades__headline{
+
+.daily-trades__headline {
   margin-top: 0.25rem;
   margin-bottom: 0.9375rem;
 }
-.daily-trades__content{
+
+.daily-trades__content {
   max-width: 40.625rem;
-  font-family: $main-font-regular;
   line-height: 1.5rem;
   color: $black-light;
 }
-.daily-trades__range{
-  width: 100%;
-  max-width: 37.9375rem;
+
+.daily-trades__range {
   margin-top: 2rem;
   padding-top: 1.3125rem;
-  .irs-single{
+  width: 100%;
+  max-width: 37.9375rem;
+
+  .irs-single {
     opacity: 0;
   }
-  &:active{
-    .irs-single{
+
+  &:active {
+    .irs-single {
       opacity: 1;
     }
   }
 }
-.daily-trades__range-values{
+
+.daily-trades__range-values {
   display: flex;
   justify-content: space-between;
   margin-top: 1.6875rem;
 }
-.daily-trades__range-value{
+
+.daily-trades__range-value {
   width: 1.875rem;
   font-size: 0.875rem;
   color: $black-light;
   text-align: center;
-  &:first-child{
+
+  &:first-child {
     text-align: left;
   }
-  &:last-child{
+
+  &:last-child {
     text-align: right;
   }
 }
