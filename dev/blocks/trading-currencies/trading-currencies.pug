@@ -8,68 +8,73 @@ section.account-section.trading-currencies
             .trading-currencies__header-filter-icon
                 img(src="./images/filter.svg", alt="")
     .trading-currencies__list
-        .trading-currencies__list-column
-            label(for="currencies__item_1").currencies__item
-                img(src="./images/btc-bitcoin.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Bitcoin</b> BTC
-                input(type="checkbox" id="currencies__item_1" checked)
-                .currencies__item-point
-            label(for="currencies__item_2").currencies__item
-                img(src="./images/tether.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Tether</b> USDT
-                input(type="checkbox" id="currencies__item_2")
-                .currencies__item-point
-            label(for="currencies__item_3").currencies__item
-                img(src="./images/eth-etherium.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Etherium</b> ETH
-                input(type="checkbox" id="currencies__item_3" checked)
-                .currencies__item-point
-            label(for="currencies__item_4").currencies__item
-                img(src="./images/strat-stratis.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Stratis</b> STRAT
-                input(type="checkbox" id="currencies__item_4" checked)
-                .currencies__item-point
-        
-        .trading-currencies__list-column    
-            label(for="currencies__item_5").currencies__item
-                img(src="./images/bch-bitcoin-cash.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Bitcoin Cash</b> BCH
-                input(type="checkbox" id="currencies__item_5" checked)
-                .currencies__item-point
-            label(for="currencies__item_6").currencies__item
-                img(src="./images/ztc-zcash.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Zcash</b> ZTC
-                input(type="checkbox" id="currencies__item_6" checked)
-                .currencies__item-point
-            label(for="currencies__item_7").currencies__item
-                img(src="./images/tether.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Tether</b> USDT
-                input(type="checkbox" id="currencies__item_7")
-                .currencies__item-point
-            label(for="currencies__item_8").currencies__item
-                img(src="./images/dcr-decred.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Decred</b> DCR
-                input(type="checkbox" id="currencies__item_8")
-                .currencies__item-point
-        
-        .trading-currencies__list-column
-            label(for="currencies__item_9").currencies__item
-                img(src="./images/btc-bitcoin.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Bitcoin</b> BTC
-                input(type="checkbox" id="currencies__item_9" checked)
-                .currencies__item-point
-            label(for="currencies__item_10").currencies__item
-                img(src="./images/tether.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Tether</b> USDT
-                input(type="checkbox" id="currencies__item_10")
-                .currencies__item-point
-            label(for="currencies__item_11").currencies__item
-                img(src="./images/eth-etherium.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Etherium</b> ETH
-                input(type="checkbox" id="currencies__item_11" checked)
-                .currencies__item-point
-            label(for="currencies__item_12").currencies__item
-                img(src="./images/strat-stratis.svg", alt="").currencies__item-icon
-                .currencies__item-name <b>Stratis</b> STRAT
-                input(type="checkbox" id="currencies__item_12" checked)
-                .currencies__item-point
+        .baron.baron__root.baron__clipper._simple
+            .baron__scroller
+                .trading-currencies__list-column
+                    label(for="currencies__item_1").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/btc-bitcoin.svg);")
+                        .currencies__item-name <b>Bitcoin</b> BTC
+                        input(type="checkbox" id="currencies__item_1" checked)
+                        .currencies__item-point
+                    label(for="currencies__item_2").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/tether.svg);")
+                        .currencies__item-name <b>Tether</b> USDT
+                        input(type="checkbox" id="currencies__item_2")
+                        .currencies__item-point
+                    label(for="currencies__item_3").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/eth-etherium.svg);")
+                        .currencies__item-name <b>Etherium</b> ETH
+                        input(type="checkbox" id="currencies__item_3" checked)
+                        .currencies__item-point
+                    label(for="currencies__item_4").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/strat-stratis.svg);")
+                        .currencies__item-name <b>Stratis</b> STRAT
+                        input(type="checkbox" id="currencies__item_4" checked)
+                        .currencies__item-point
+                
+                .trading-currencies__list-column    
+                    label(for="currencies__item_5").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/bch-bitcoin-cash.svg);")
+                        .currencies__item-name <b>Bitcoin Cash</b> BCH
+                        input(type="checkbox" id="currencies__item_5" checked)
+                        .currencies__item-point
+                    label(for="currencies__item_6").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/ztc-zcash.svg);")
+                        .currencies__item-name <b>Zcash</b> ZTC
+                        input(type="checkbox" id="currencies__item_6" checked)
+                        .currencies__item-point
+                    label(for="currencies__item_7").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/tether.svg);")
+                        .currencies__item-name <b>Tether</b> USDT
+                        input(type="checkbox" id="currencies__item_7")
+                        .currencies__item-point
+                    label(for="currencies__item_8").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/dcr-decred.svg);")
+                        .currencies__item-name <b>Decred</b> DCR
+                        input(type="checkbox" id="currencies__item_8")
+                        .currencies__item-point
+                
+                .trading-currencies__list-column
+                    label(for="currencies__item_9").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/btc-bitcoin.svg);")
+                        .currencies__item-name <b>Bitcoin</b> BTC
+                        input(type="checkbox" id="currencies__item_9" checked)
+                        .currencies__item-point
+                    label(for="currencies__item_10").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/tether.svg);")
+                        .currencies__item-name <b>Tether</b> USDT
+                        input(type="checkbox" id="currencies__item_10")
+                        .currencies__item-point
+                    label(for="currencies__item_11").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/eth-etherium.svg);")
+                        .currencies__item-name <b>Etherium</b> ETH
+                        input(type="checkbox" id="currencies__item_11" checked)
+                        .currencies__item-point
+                    label(for="currencies__item_12").currencies__item
+                        .currencies__item-icon(style="background-image: url(./images/strat-stratis.svg);")
+                        .currencies__item-name <b>Stratis</b> STRAT
+                        input(type="checkbox" id="currencies__item_12" checked)
+                        .currencies__item-point
+            .baron__track
+                .baron__free
+                    .baron__bar

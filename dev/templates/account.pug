@@ -80,7 +80,8 @@ html(lang="en-US")
       
       .account-page
         include ../components/account-nav/account-nav
-        .account-content.account-content_center
+        //- .account-content.account-content_center
+        .account-content
           block content
 
       block modal
@@ -106,7 +107,7 @@ html(lang="en-US")
         script(src="js/ScrollMagic.min.js")
         script(src="js/animation.gsap.min.js")
 
-        script(src="js/jquery.mCustomScrollbar.js")
+        script(src="js/baron.min.js")
         script(src="js/ion.rangeSlider.min.js")
         script(src="js/Chart.min.js")
         script(src="js/main.js")
