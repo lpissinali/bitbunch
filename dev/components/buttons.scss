@@ -146,23 +146,27 @@
     .checkbox-btn__on,
     .checkbox-btn__off{
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      padding: 0.5rem;
+      height: 100%;
+      padding: 0;
+      padding-bottom: 0.0625rem;
       font-family: $main-font-bold;
       font-size: 0.75rem;
-      line-height: 0.875rem;
+      line-height: 0;
       color: $white;
       opacity: .8;
       transition: all 300ms;
     }
     .checkbox-btn__on{
       right: 100%;
+      padding-right: 1.625rem;
     }
     .checkbox-btn__off{
       left: 0;
-      text-align: right;
+      padding-left: 1.625rem;
     }
     .checkbox-btn__point{
       position: absolute;
@@ -249,9 +253,14 @@
 
       .checkbox-btn__on,
       .checkbox-btn__off {
-        padding: 0.1875rem 0.25rem;
+        padding-bottom: 0.0813rem;
         font-size: .625rem;
-        line-height: .75rem;
+      }
+      .checkbox-btn__on{
+        padding-right: 1.125rem;
+      }
+      .checkbox-btn__off{
+        padding-left: 1.125rem;
       }
 
       .checkbox-btn__point {
