@@ -47,18 +47,20 @@
   }
   
   .your-assets__table .table-col_balance {
-    width: auto;
-    flex-grow: 1;
-    width: 7.5rem;
+    width: 7.6rem;
   }
   
   .your-assets__table .table-col_profit {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
     width: auto;
     padding: 0 0.4375rem;
   }
   
   .your-assets__table .table-col_profit img {
     margin-top: 0.1875rem;
+    margin-right: 0.25rem;
   }
 
   .your-assets__table .table-col_reports {
