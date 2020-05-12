@@ -22,10 +22,13 @@
 .main-footer__menu-container {
   justify-content: space-between;
   display: flex;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 5.3125rem;
   padding-right: 9.375rem;
   padding-bottom: 10.625rem;
   padding-left: 9.375rem;
+  max-width: 90rem;
   border-bottom: .125rem solid rgba(255, 255, 255, .5);
 }
 
@@ -92,10 +95,13 @@
   justify-content: space-between;
   align-items: center;
   display: flex;
+  margin-right: auto;
+  margin-left: auto;
   padding-right: 9.375rem;
   padding-left: 9.375rem;
+  max-width: 90rem;
   height: 6.875rem;
-  nav-right: auto;
+  // nav-right: auto;
 }
 
 .main-footer__rights-block,
