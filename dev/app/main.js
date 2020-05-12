@@ -725,3 +725,29 @@ if (document.querySelector('.button-remove')) {
     $(this).parents('.table-row').remove()
   })
 }
+
+// Security authentication modal headline change
+if (document.querySelector('#modal-2fa-verification')) {
+  $('#security-authentication_1').change(function(){
+    if ( $(this).is(':checked') ) {
+      // console.log($(this).prop('checked'))
+      $('#modal-2fa-verification .security-status').text('Enable')
+    } else {
+      // console.log($(this).prop('checked'))
+      $('#modal-2fa-verification .security-status').text('Disable')
+    }
+    $('#modal-2fa-verification').modal('show')
+  })
+}
+if (document.querySelector('#modal-google-authenticator')) {
+  $('#security-authentication_2').change(function(){
+    if ( $(this).is(':checked') ) {
+      // console.log($(this).prop('checked'))
+      $('#modal-google-authenticator .security-status').text('Enable')
+    } else {
+      // console.log($(this).prop('checked'))
+      $('#modal-google-authenticator .security-status').text('Disable')
+    }
+    $('#modal-google-authenticator').modal('show')
+  })
+}
