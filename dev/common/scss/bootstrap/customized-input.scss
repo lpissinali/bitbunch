@@ -105,6 +105,9 @@
     color: $blue;
     text-decoration: underline;
   }
+  &.link-hover-move {
+    position: absolute;
+  }
 }
 
 .error-icon {
