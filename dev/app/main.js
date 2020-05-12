@@ -181,28 +181,27 @@ $(window).on('resize orientationchange', () => {
 });
 
 // account user menu
-if (document.querySelector('.toggle__user-menu')) {
-  function toggleAccountNav() {
-    if ($(window).width() <= 1000) {
-      $('.account-nav__user-controls').slideToggle();
-    }
-    $('.account-nav__menu-list').toggleClass('disabled');
-    $('.account-nav__user').toggleClass('enabled');
-    $('.account-nav__user-menu-list').slideToggle();
+function toggleAccountNav(dur) {
+  if ($(window).width() <= 1000) {
+    $('.account-nav__user-controls').slideToggle(dur);
   }
-
+  $('.account-nav__menu-list').toggleClass('disabled');
+  $('.account-nav__user').toggleClass('enabled');
+  $('.account-nav__user-menu-list').slideToggle(dur);
+}
+if (document.querySelector('.toggle__user-menu')) {
   $('.toggle__user-menu').click(() => {
-    toggleAccountNav();
+    toggleAccountNav('fast');
   });
 
   $('.account-nav__user-menu-close').click(() => {
-    toggleAccountNav()
+    toggleAccountNav('fast')
   });
 
   $(document).click(function (e){
     var clickTarget = $(".account-nav__nav-menu");
 		if (clickTarget.is(e.target) && clickTarget.find('.account-nav__menu-list.disabled').length === 1) {
-      toggleAccountNav()
+      toggleAccountNav('fast')
 		}
   });
 }
@@ -217,6 +216,21 @@ if (document.querySelector('.account-nav__sandwich-button')) {
   $('.account-nav__close-button').click(() => {
     $('.account-nav__nav-menu').toggleClass('active');
     $('body').toggleClass('overflow-hidden');
+  });
+}
+
+// активный пункт меню
+if (document.querySelector('.account-nav__nav-menu')) {
+  $('.account-nav__nav-menu ul li a').each(function () {
+      var location = window.location.href;
+      var link = this.href;
+      if(location == link) {
+        $('.account-nav__nav-menu ul li').removeClass('active')
+        $(this).parent().addClass('active')
+      }
+      if($(this).parent().is('.account-nav__user-menu-item.active')){
+        toggleAccountNav(0)
+      }
   });
 }
 
@@ -384,7 +398,7 @@ function customSelect() {
 
     let template = `<div class="${classes}">`;
     template += `<span class="choose-select__trigger">${$(this).attr('placeholder')}</span>`;
-    template += '<div class="choose-select__options">';
+    template += '<div class="choose-select__options"><div class="choose-select__options-wrapper">';
     $(this)
       .find('option')
       .each(function() {
@@ -412,7 +426,7 @@ function customSelect() {
         template += `<div class="table-data table-col_profit"><img src="${optProfitCaret}" alt=""><span class="color_${optProfitStyle}">${optProfit}</span></div>`;
         template += '</div>';
       });
-    template += '</div></div>';
+    template += '</div></div></div>';
 
     $(this).wrap('<div class="choose-select__wrapper"></div>');
     $(this)
@@ -422,12 +436,16 @@ function customSelect() {
   });
 
   $('.choose-select__trigger').on('click', function() {
+    var optionsHeight = 0;
     $('html').one('click', () => {
-      $('.choose-select').removeClass('opened');
+      $('.choose-select__trigger').removeClass('opened');
+      TweenLite.to($('.choose-select__options'), 0.5, {height: 0})
     });
-    $(this)
-      .parents('.choose-select')
-      .toggleClass('opened');
+    if(!$('.choose-select__trigger').is('.opened')){
+      optionsHeight = $('.choose-select__options-wrapper').outerHeight()
+    }
+    TweenLite.to($('.choose-select__options'), 0.5, {height: optionsHeight})
+    $(this).toggleClass('opened');
     event.stopPropagation();
   });
 
@@ -724,4 +742,53 @@ if (document.querySelector('.button-remove')) {
     e.preventDefault()
     $(this).parents('.table-row').remove()
   })
+}
+
+// Security authentication modal headline change
+if (document.querySelector('#modal-2fa-verification')) {
+  $('#security-authentication_1').change(function(){
+    if ( $(this).is(':checked') ) {
+      $('#modal-2fa-verification .security-status').text('Enable')
+    } else {
+      $('#modal-2fa-verification .security-status').text('Disable')
+    }
+    $('#modal-2fa-verification').modal('show')
+  })
+}
+if (document.querySelector('#modal-google-authenticator')) {
+  $('#security-authentication_2').change(function(){
+    if ( $(this).is(':checked') ) {
+      $('#modal-google-authenticator .security-status').text('Enable')
+    } else {
+      $('#modal-google-authenticator .security-status').text('Disable')
+    }
+    $('#modal-google-authenticator').modal('show')
+  })
+}
+
+// Trading currencies check. Page Settings
+if (document.querySelector('.trading-currencies__header-filter')) {
+  var currenciesCheckBlock = $('.currencies-check'),
+      currenciesAllBlock = $('.currencies-all'),
+      countCheck = 0,
+      countAll = 0;
+  $('input[name=currencies]').each(function(){
+    countAll++
+    if ( $(this).is(':checked') ) {
+      countCheck++
+    }
+    currenciesChange(countCheck, countAll)
+  })
+  $('input[name=currencies]').change(function(){
+    if ( $(this).is(':checked') ) {
+      countCheck++
+    } else {
+      countCheck--
+    }
+    currenciesChange(countCheck)
+  })
+  function currenciesChange(check, all) {
+    currenciesCheckBlock.text(check)
+    currenciesAllBlock.text(all)
+  }
 }
