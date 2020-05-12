@@ -1,40 +1,61 @@
 section.account-section.verification-level.verification-level_2
-    .verification-level__header
-        .account-section-headline.verification-level__headline Verification Level 2
-        .verification-level__header-status.success
-            span Verified
-            .verification-level__header-status-icon
-                img(src="./images/verification_success.svg", alt="")
-    .verification-level__content After this verification you will be able to trade execute withdrawals
-    .verification-level__uploads
-        .verification-level__uploads-item
-            .verification-level__uploads-title ID Verification
-            .verification-level__uploads-area
-                img(src="./images/verification_upload.svg", alt="")
-            .verification-level__uploads-inform
-                .verification-level__uploads-title ID Verification
-                .verification-level__uploads-content._desktop
-                    p Upload an image of your passport or your ID card. 
-                    p &nbsp;
-                    p Your name and birthday must be clearly visible and match our records.
-                    p &nbsp;
-                    p Accepted documents: Passport, ID card
-                .verification-level__uploads-content._mobile
-                    p Your name and birthday must be clearly visible and match our records. Accepted documents: Passport, ID card                
-
-        .verification-level__uploads-item
-            .verification-level__uploads-title Adress Verification
-            .verification-level__uploads-area
-                img(src="./images/verification_upload.svg", alt="")
-            .verification-level__uploads-inform
-                .verification-level__uploads-title Adress Verification
-                .verification-level__uploads-content._desktop
-                    p Upload your proof of adress.
-                    p &nbsp;
-                    p Your name and adress must be clearly visible and match our records.
-                    p &nbsp;
-                    p Accepted documents: Utiltiy bill, bank statement
-                .verification-level__uploads-content._mobile
-                    p Your name and adress must be clearly visible and match our records. Accepted documents: Utiltiy bill, bank statement
-
-    button(type="submit").button-orange.button-hover-white.verification-level__confirm CONFIRM
+    .verification-level__step.active(data-verifi-step="1")
+        .verification-level__header
+            .account-section-headline.verification-level__headline Start your Identity Verification today!
+            .verification-level__header-status.warning
+                span Not Verified
+                .verification-level__header-status-icon
+                    img(src="./images/verification_warning.svg", alt="")
+        .verification-level__info Enjoy full benefits of our platform! Be able to use all of our features. Start benefiting from our product!
+        button(type="button").button-orange.button-hover-white.verification-level__confirm.next-step START YOUR VERIFICATION!
+    
+    .verification-level__step(data-verifi-step="2")
+        .verification-level__header
+            .account-section-headline.verification-level__headline Verification Process
+        form#verificationUploads__form.verification-level__uploads
+            .verification-level__uploads-item
+                input(type="file" id="verificationUploads__step-1" name="upload-step-1")
+                .verification-level__uploads-title <b>1. Step:</b> Upload a selfie with your ID.
+                label(for="verificationUploads__step-1").verification-level__uploads-area
+                    img(src="./images/verification_upload-1.svg", alt="")
+                label(for="verificationUploads__step-1").verification-level__uploads-button.link-hover-move Upload
+            .verification-level__uploads-item
+                input(type="file" id="verificationUploads__step-2" name="upload-step-2")
+                .verification-level__uploads-title <b>2. Step:</b> Upload your passport or ID.
+                label(for="verificationUploads__step-2").verification-level__uploads-area
+                    img(src="./images/verification_upload-2.svg", alt="")
+                label(for="verificationUploads__step-2").verification-level__uploads-button.link-hover-move Upload
+            .verification-level__uploads-item
+                input(type="file" id="verificationUploads__step-3" name="upload-step-3")
+                .verification-level__uploads-title <b>3. Step:</b> Upload your proof of address.
+                label(for="verificationUploads__step-3").verification-level__uploads-area
+                    img(src="./images/verification_upload-3.svg", alt="")
+                label(for="verificationUploads__step-3").verification-level__uploads-button.link-hover-move Upload
+        button(type="submit" form="verificationUploads__form").button-orange.button-hover-white.verification-level__confirm.next-step FINISH VERIFICATION
+    
+    .verification-level__step(data-verifi-step="3")
+        .verification-level__header
+            .account-section-headline.verification-level__headline Thank you for finishing the verification!
+            .verification-level__header-status
+                span Pending
+                .verification-level__header-status-icon.next-step
+                    img(src="./images/verification_pending.svg", alt="")
+        .verification-level__info Thank you for finishing the verification! Our experts will check your documents carefully! This can take up to 48 hours.
+    
+    .verification-level__step(data-verifi-step="4")
+        .verification-level__header
+            .account-section-headline.verification-level__headline Your documents will be reviewed shortly.
+            .verification-level__header-status
+                span Pending
+                .verification-level__header-status-icon.next-step
+                    img(src="./images/verification_pending.svg", alt="")
+        .verification-level__info Thank you for your patience! Our experts work hard to check your documents as soon as possible.
+    
+    .verification-level__step(data-verifi-step="5")
+        .verification-level__header
+            .account-section-headline.verification-level__headline Congratulations! You got Verified! 
+            .verification-level__header-status.success
+                span Verified
+                .verification-level__header-status-icon
+                    img(src="./images/verification_success.svg", alt="")
+        .verification-level__info Congrats, our experts checked your documents and everything is fine! You can start enjoying now all of our platform features.
