@@ -26,6 +26,28 @@
     }   
   });
 
+  $('#verification2faPhone').inputmask({ 
+    mask: '*{15}',
+    greedy: false,
+    definitions: {
+      '*': {
+        validator: '[+0-9-]',
+        placeholder: '',
+      }
+    }   
+  });
+
+  $('#accountPhone').inputmask({ 
+    mask: '*{15}',
+    greedy: false,
+    definitions: {
+      '*': {
+        validator: '[+0-9-]',
+        placeholder: '',
+      }
+    }   
+  });
+  
   $('#withdrawalAmount').inputmask({ 
     mask: '*{1,20}[.*{1,6}]',
     greedy: false,
