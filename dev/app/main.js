@@ -730,10 +730,8 @@ if (document.querySelector('.button-remove')) {
 if (document.querySelector('#modal-2fa-verification')) {
   $('#security-authentication_1').change(function(){
     if ( $(this).is(':checked') ) {
-      // console.log($(this).prop('checked'))
       $('#modal-2fa-verification .security-status').text('Enable')
     } else {
-      // console.log($(this).prop('checked'))
       $('#modal-2fa-verification .security-status').text('Disable')
     }
     $('#modal-2fa-verification').modal('show')
@@ -742,12 +740,37 @@ if (document.querySelector('#modal-2fa-verification')) {
 if (document.querySelector('#modal-google-authenticator')) {
   $('#security-authentication_2').change(function(){
     if ( $(this).is(':checked') ) {
-      // console.log($(this).prop('checked'))
       $('#modal-google-authenticator .security-status').text('Enable')
     } else {
-      // console.log($(this).prop('checked'))
       $('#modal-google-authenticator .security-status').text('Disable')
     }
     $('#modal-google-authenticator').modal('show')
   })
+}
+
+// Trading currencies check. Page Settings
+if (document.querySelector('.trading-currencies__header-filter')) {
+  var currenciesCheckBlock = $('.currencies-check'),
+      currenciesAllBlock = $('.currencies-all'),
+      countCheck = 0,
+      countAll = 0;
+  $('input[name=currencies]').each(function(){
+    countAll++
+    if ( $(this).is(':checked') ) {
+      countCheck++
+    }
+    currenciesChange(countCheck, countAll)
+  })
+  $('input[name=currencies]').change(function(){
+    if ( $(this).is(':checked') ) {
+      countCheck++
+    } else {
+      countCheck--
+    }
+    currenciesChange(countCheck)
+  })
+  function currenciesChange(check, all) {
+    currenciesCheckBlock.text(check)
+    currenciesAllBlock.text(all)
+  }
 }
