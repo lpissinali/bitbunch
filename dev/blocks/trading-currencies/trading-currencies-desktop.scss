@@ -67,36 +67,26 @@
   border-radius: 0.1875rem;
   background-color: #d6dced;
   overflow: auto;
-
-  .mCustomScrollBox {
-    width: 100%;
+  .baron._macosx{
+    .baron__scroller{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .baron__bar{
+      width: 3px;
+      background: $blue;
+    }
   }
-
-  .mCSB_container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+  .baron._macosx .baron__bar:hover, .baron._scrolling .baron__bar {
+    opacity: 1;
   }
-
-  .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    background: rgba(50, 78, 163, 0.2);
-  }
-
-  .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
-    background: $blue;
-  }
-}
-
-.trading-currencies__list-column {
-  display: flex;
-  flex-direction: column;
-  width: 33.3333%;
 }
 
 .currencies__item {
   display: flex;
   align-items: center;
-  width: calc(100% - 1rem);
+  width: calc(33.33333% - 1rem);
   margin: 0.5rem;
   padding-right: 0.75rem;
   background: $white;
@@ -149,36 +139,9 @@
   background-repeat: no-repeat;
   background-image: url(./images/point.png);
   background-position: 0 0;
-
-  &:before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 1.3125rem;
-    height: 1.3125rem;
-    box-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.2);
-    border-radius: inherit;
-    background-color: $white;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 13px;
-    height: 13px;
-    box-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.2);
-    border-radius: inherit;
-    background-color: $blue;
-    opacity: 0;
-    transition: opacity 300ms;
-  }
 }
 
 .currencies__item input[type=checkbox]:checked {
-  + .currencies__item-point:after {
-    opacity: 1;
-  }
   + .currencies__item-point{
     background-position: -1.6875rem 0;
   }

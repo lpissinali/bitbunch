@@ -27,12 +27,12 @@
   .irs-single {
     opacity: 0;
   }
-
-  &:active {
-    .irs-single {
-      opacity: 1;
-    }
-  }
+  
+  // &:active {
+  //   .irs-single {
+  //     opacity: 1;
+  //   }
+  // }
 }
 
 .daily-trades__range-values {

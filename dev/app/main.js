@@ -201,8 +201,6 @@ if (document.querySelector('.toggle__user-menu')) {
 
   $(document).click(function (e){
     var clickTarget = $(".account-nav__nav-menu");
-    console.log(e.target)
-    console.log(clickTarget.find('.account-nav__menu-list.disabled').length)
 		if (clickTarget.is(e.target) && clickTarget.find('.account-nav__menu-list.disabled').length === 1) {
       toggleAccountNav()
 		}
@@ -320,19 +318,15 @@ if (document.querySelector('.choosing-coin__controls-toggle')) {
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-history__table-overflow')) {
-  // $('.trading-history__table-overflow').mCustomScrollbar({
-  //   axis: 'x',
-  //   theme: 'dark',
-  // });
-  window.onload = function(){
-    baron({
-        root: '.baron__root',
-        scroller: '.baron__scroller',
-        bar: '.baron__bar',
-        scrollingCls: '_scrolling',
-        draggingCls: '_dragging'
-    });
-  };
+  baron({
+      root: '.horiz__clipper',
+      scroller: '.horiz__scroller',
+      bar: '.horiz__bar',
+      scrollingCls: '_scrolling',
+      draggingCls: '_dragging',
+      direction: 'h',
+      impact: 'scroller'
+  });
 }
 
 // // Modal notification
@@ -352,19 +346,14 @@ window.onload = function() {
 
 // Trading history table scrollbar
 if (document.querySelector('.trading-currencies__list')) {
-  window.onload = function(){
-    baron({
-        root: '.baron__root',
-        scroller: '.baron__scroller',
-        bar: '.baron__bar',
-        scrollingCls: '_scrolling',
-        draggingCls: '_dragging'
-    });
-  };
-  // $('.trading-currencies__list').mCustomScrollbar({
-  //   axis: 'y',
-  //   theme: 'minimal-dark',
-  // });
+  baron({
+      root: '.baron__root',
+      scroller: '.baron__scroller',
+      bar: '.baron__bar',
+      scrollingCls: '_scrolling',
+      draggingCls: '_dragging',
+      direction: 'v'
+  });
 }
 
 // Trading history table scrollbar
@@ -456,7 +445,7 @@ function customSelect() {
     $(this)
       .parents('.choose-select')
       .removeClass('opened');
-    const template = `<img src="${$(this).data('logo-white')}" alt="">${$(this).data('title')}`;
+    const template = `<div class="choose-select__trigger-icon"><img src="${$(this).data('logo-white')}" alt=""></div>${$(this).data('title')}`;
     $(this)
       .parents('.choose-select')
       .find('.choose-select__trigger')
@@ -467,11 +456,25 @@ function customSelect() {
     setTimeout(() => {
       $('.choose-blur').addClass('_unblur');
     }, 300);
-    console.log(this.value);
   });
 }
 if (document.querySelector('.choose-select')) {
   customSelect();
+}
+
+// Смена валюты
+if (document.querySelector('.statistics')) {
+  $('.choose-select').change(function() {
+    $('.statistics__item-value .unit').text(this.value)
+  });
+}
+// Пополнение кошелька
+if (document.querySelector('.fund-wallet')) {
+  $('.choose-select').change(function() {
+    $('.fund-wallet__asset').text($(this).find('option:selected').text())
+    $('#walletNumber').val($(this).find('option:selected').data('wallet'))
+    $('.fund-wallet-qr__code img').attr('src', $(this).find('option:selected').data('qr'))
+  });
 }
 
 // Chart
@@ -711,5 +714,14 @@ if (document.querySelector('button[data-toggle=edit-form]')) {
     else{
       $('.security-password__form input').attr('readonly','')
     }
+  })
+}
+
+
+// Button remove .table-row
+if (document.querySelector('.button-remove')) {
+  $('.button-remove').click(function(e){
+    e.preventDefault()
+    $(this).parents('.table-row').remove()
   })
 }
