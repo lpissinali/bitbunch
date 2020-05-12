@@ -398,7 +398,7 @@ function customSelect() {
 
     let template = `<div class="${classes}">`;
     template += `<span class="choose-select__trigger">${$(this).attr('placeholder')}</span>`;
-    template += '<div class="choose-select__options">';
+    template += '<div class="choose-select__options"><div class="choose-select__options-wrapper">';
     $(this)
       .find('option')
       .each(function() {
@@ -426,7 +426,7 @@ function customSelect() {
         template += `<div class="table-data table-col_profit"><img src="${optProfitCaret}" alt=""><span class="color_${optProfitStyle}">${optProfit}</span></div>`;
         template += '</div>';
       });
-    template += '</div></div>';
+    template += '</div></div></div>';
 
     $(this).wrap('<div class="choose-select__wrapper"></div>');
     $(this)
@@ -436,12 +436,16 @@ function customSelect() {
   });
 
   $('.choose-select__trigger').on('click', function() {
+    var optionsHeight = 0;
     $('html').one('click', () => {
-      $('.choose-select').removeClass('opened');
+      $('.choose-select__trigger').removeClass('opened');
+      TweenLite.to($('.choose-select__options'), 0.5, {height: 0})
     });
-    $(this)
-      .parents('.choose-select')
-      .toggleClass('opened');
+    if(!$('.choose-select__trigger').is('.opened')){
+      optionsHeight = $('.choose-select__options-wrapper').outerHeight()
+    }
+    TweenLite.to($('.choose-select__options'), 0.5, {height: optionsHeight})
+    $(this).toggleClass('opened');
     event.stopPropagation();
   });
 
