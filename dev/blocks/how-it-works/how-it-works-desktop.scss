@@ -2,9 +2,9 @@
   position: relative;
   background-color: #f2f4fd;
   background-image: url("./images/how-it-works__bg-desktop.svg");
-  background-position: 0 calc(100% + 48.75rem);
+  background-position: 100% calc(100% + 48.75rem);
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 90rem auto;
   overflow: hidden;
 }
 
@@ -52,10 +52,13 @@
 }
 
 .how-it-works__wrapper {
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 10rem;
   padding-right: 9.375rem;
   padding-bottom: 18.75rem;
   padding-left: 9.375rem;
+  max-width: 90rem;
 }
 
 .how-it-works__headline {

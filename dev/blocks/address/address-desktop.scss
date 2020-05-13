@@ -7,9 +7,12 @@
 }
 
 .address__wrapper {
+  margin-right: auto;
+  margin-left: auto;
   padding-right: 9.375rem;
   padding-bottom: 10rem;
   padding-left: 9.375rem;
+  max-width: 90rem;
 }
 
 .address__form {
@@ -114,6 +117,7 @@
   font-size: 2.25rem;
   line-height: 3.125rem;
   color: #091540;
+
   span {
     font-family: $main-font-medium;
   }

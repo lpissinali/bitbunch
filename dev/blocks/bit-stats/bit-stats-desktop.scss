@@ -4,13 +4,16 @@
   background-image: url("./images/bit-stats__bg-desktop.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .bit-stats__wrapper {
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 5.25rem;
   padding-right: 9.375rem;
   padding-left: 9.375rem;
+  max-width: 90rem;
 }
 
 .bit-stats__subtitle {
