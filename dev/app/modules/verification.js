@@ -10,10 +10,18 @@
       if($(error).text() == '') {
         return
       }
-      var tooltipsterContent = `
-        <p class="tooltipster-content__caption">This field is obligatory</p>
-        <p class="tooltipster-content__description">Please fill it in to continue</p>
+      if (element.attr('id') === 'verificationDate'){
+        var tooltipsterContent = `
+        <p class="tooltipster-content__caption">Error</p>
+        <p class="tooltipster-content__description">${$(error).html()}</p>
       `;
+      }
+      else {
+        var tooltipsterContent = `
+          <p class="tooltipster-content__caption">This field is obligatory</p>
+          <p class="tooltipster-content__description">Please fill it in to continue</p>
+        `;        
+      }
       $(element).removeClass('validation-success');
       $(element).next().next('.error-icon').removeClass('d-none');
       $(element).next().next('.error-icon').tooltipster("content", tooltipsterContent);
@@ -31,7 +39,10 @@
       $(element).addClass('validation-success');
     },
     rules: {
-      
+      date: {
+        required: true,
+        ageEighteen: true,
+      }
     },
     errorClass: "validation-error",
     submitHandler(form) { return false;}
