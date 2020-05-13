@@ -1,31 +1,36 @@
-.verification-level{
+.verification-level {
   padding-bottom: 2rem;
-  &_1{
+
+  &_1 {
     background-image: url(images/verification-level_1@2x.png);
     background-size: 19.25rem 21rem;
     background-repeat: no-repeat;
     background-position: right bottom;
   }
-  &_2{
+
+  &_2 {
     margin-top: 2rem;
     background-image: url(images/verification-level_1@2x.png);
     background-size: 19.25rem 21rem;
     background-repeat: no-repeat;
     background-position: right top 5rem;
   }
-  &__confirm{
+
+  &__confirm {
     width: 17.3125rem;
     margin-top: 1rem;
   }
 }
-.verification-level__header{
+
+.verification-level__header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 0.1875rem;
 }
+
 // .verification-level__headline{}
-.verification-level__header-status{
+.verification-level__header-status {
   display: inline-flex;
   align-items: center;
   margin-top: -0.3125rem;
@@ -33,21 +38,26 @@
   font-size: 1.3125rem;
   line-height: 2.375rem;
   color: $blue;
-  &.success{
+
+  &.success {
     color: #24BC9B;
-    .verification-level__header-status-icon{
+
+    .verification-level__header-status-icon {
       background: #24BC9B;
     }
   }
-  &.warning{
+
+  &.warning {
     font-family: $main-font-semi-bold;
     color: #ED7043;
-    .verification-level__header-status-icon{
+
+    .verification-level__header-status-icon {
       background: #ED7043;
     }
   }
 }
-.verification-level__header-status-icon{
+
+.verification-level__header-status-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,157 +66,191 @@
   margin-left: 1.3125rem;
   background: $blue;
   border-radius: 5px;
-  img{
+
+  img {
     display: block;
   }
 }
-.verification-level__content{
+
+.verification-level__content {
   max-width: 40.625rem;
   margin-bottom: 2.0625rem;
-  font-family: $main-font-medium; 
+  font-family: $main-font-semi-bold;
   letter-spacing: 0.0213rem;
   line-height: 1.625rem;
   color: $black-light;
 }
-.verification-level__info{
+
+.verification-level__info {
   max-width: 28.75rem;
-  font-family: $main-font-medium; 
+  font-family: $main-font-semi-bold;
   letter-spacing: 0.0213rem;
   line-height: 1.625rem;
   color: $black-light;
 }
-.verification-level__form{
+
+.verification-level__form {
   max-width: 35.625rem;
-  &-firstname{
+
+  &-firstname {
     max-width: 17.3125rem;
     margin-right: 0.75rem;
   }
-  &-lastname{
+
+  &-lastname {
     max-width: 17.3125rem;
   }
-  &-sex{
+
+  &-sex {
     top: -0.625rem;
     margin-bottom: -0.625rem;
     max-width: 17.3125rem;
     margin-right: 0.75rem;
+
     .form-group__placeholder,
     .error-icon {
       z-index: 3;
     }
   }
-  &-date{
+
+  &-date {
     max-width: 17.3125rem;
+
     .form-group__placeholder,
     .error-icon {
       z-index: 3;
     }
   }
-  &-country{
+
+  &-country {
     max-width: 35.625rem;
+
     .form-group__placeholder,
     .error-icon {
       z-index: 3;
     }
   }
-  &-city{
+
+  &-city {
     max-width: 17.3125rem;
     margin-right: 0.75rem;
   }
-  &-zip{
+
+  &-zip {
     max-width: 17.3125rem;
   }
-  &-street{
+
+  &-street {
     max-width: 26.625rem;
     margin-right: 0.75rem;
   }
-  &-number{
+
+  &-number {
     max-width: 8rem;
   }
-  &-occupation{
+
+  &-occupation {
     max-width: 17.3125rem;
     margin-right: 0.75rem;
+
     .form-group__placeholder,
     .error-icon {
       z-index: 3;
     }
   }
-  &-source{
+
+  &-source {
     max-width: 17.3125rem;
+
     .form-group__placeholder,
     .error-icon {
       z-index: 3;
     }
   }
 }
-.verification-level__form .form-group{
+
+.verification-level__form .form-group {
   display: inline-block;
   width: 100%;
-  .btn.dropdown-toggle.btn-light{
+
+  .btn.dropdown-toggle.btn-light {
     height: 100%;
     box-shadow: none !important;
   }
-  .bootstrap-select .dropdown-menu:not(.inner){
+
+  .bootstrap-select .dropdown-menu:not(.inner) {
     left: -0.0625rem !important;
     right: -0.0625rem !important;
     width: calc(100% + 0.125rem) !important;
     z-index: 5;
     box-shadow: 0.125rem 0.25rem 0.375rem rgba(80, 87, 94, 0.05);
-    .inner.dropdown-menu{
+
+    .inner.dropdown-menu {
       border: 0.0625rem solid rgba(50, 78, 163, 0.2);
       border-top: none;
     }
   }
-  .bs-searchbox{
+
+  .bs-searchbox {
     display: none;
   }
 }
-.verification-level__form .form-control{
+
+.verification-level__form .form-control {
   box-shadow: 0.125rem 0.25rem 0.375rem rgba(80, 87, 94, 0.05);
   border-radius: 0.125rem;
   border: 0.0625rem solid rgba(50, 78, 163, 0.2);
 }
 
-.verification-level__step{
+.verification-level__step {
   display: none;
-  &.active{
+
+  &.active {
     display: block;
   }
-  .verification-level__content{
+
+  .verification-level__content {
     max-width: 28.75rem;
   }
-  .verification-level__confirm{
+
+  .verification-level__confirm {
     width: 20.9375rem;
     margin-top: 2.125rem;
   }
 }
 
 
-.verification-level__uploads{
+.verification-level__uploads {
   display: flex;
   flex-wrap: wrap;
 }
-.verification-level__uploads-item{
+
+.verification-level__uploads-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 11.375rem;
   margin: 2rem 2rem 0.75rem 0;
-  input[type=file]{
+
+  input[type=file] {
     display: none;
   }
 }
-.verification-level__uploads-title{
+
+.verification-level__uploads-title {
   width: 100%;
   margin-bottom: 0.5rem;
   font-family: $main-font-medium;
   color: $black-light;
   line-height: 1.625rem;
   letter-spacing: 0.0213rem;
-  b{
+
+  b {
     font-family: $main-font-bold;
   }
 }
-.verification-level__uploads-area{
+
+.verification-level__uploads-area {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,12 +260,14 @@
   border-radius: 0.125rem;
   background: rgba(50, 78, 163, 0.6);
   cursor: pointer;
-  img{
+
+  img {
     display: block;
     width: 3.75rem;
   }
 }
-.verification-level__uploads-button{
+
+.verification-level__uploads-button {
   margin: 1rem 0 0;
   font-family: $main-font-medium;
   font-size: 0.875rem;
