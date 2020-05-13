@@ -31,46 +31,59 @@ html(lang="en-US")
               justify-content: center; 
               align-items: center;
             }
-            
-            .spinner {
-                margin: 6.25rem auto;
-                width: 5rem;
-                height: 5rem;
-                background-color: #ffffff;
-                -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-                animation: sk-rotateplane 1.2s infinite ease-in-out;
+            .lds-ellipsis {
+                display: inline-block;
+                position: relative;
+                width: 80px;
+                height: 80px;
             }
-
-            @-webkit-keyframes sk-rotateplane {
-
+            .lds-ellipsis div {
+                position: absolute;
+                top: 33px;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: #fff;
+                animation-timing-function: cubic-bezier(0, 1, 1, 0);
+            }
+            .lds-ellipsis div:nth-child(1) {
+                left: 8px;
+                animation: lds-ellipsis1 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(2) {
+                left: 8px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(3) {
+                left: 32px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(4) {
+                left: 56px;
+                animation: lds-ellipsis3 0.6s infinite;
+            }
+            @keyframes lds-ellipsis1 {
                 0% {
-                    -webkit-transform: perspective(120px);
+                    transform: scale(0);
                 }
-
-                50% {
-                    -webkit-transform: perspective(120px) rotateY(180deg);
-                }
-
                 100% {
-                    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+                    transform: scale(1);
+                }
+                }
+                @keyframes lds-ellipsis3 {
+                0% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(0);
                 }
             }
-
-            @keyframes sk-rotateplane {
-
+                @keyframes lds-ellipsis2 {
                 0% {
-                    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-                    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                    transform: translate(0, 0);
                 }
-
-                50% {
-                    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-                    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-                }
-
                 100% {
-                    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                    transform: translate(24px, 0);
                 }
             }
 
