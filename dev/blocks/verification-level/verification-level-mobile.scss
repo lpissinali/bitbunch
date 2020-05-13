@@ -3,9 +3,6 @@
     padding-bottom: 0;
     &_2 {
       margin-top: 0.1875rem;
-      .verification-level__confirm {
-        margin-top: 0.75rem;
-      }
     }
   }
   .verification-level__header{
@@ -59,41 +56,50 @@
     margin-top: 0;
     font-size: 0.75rem;
   }
+
+  .verification-level__info{
+    font-family: $main-font-light;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0;
+    color: #091540;
+    opacity: 0.8;
+  }
+  .verification-level__step .verification-level__confirm{
+    width: 100%;
+    margin-top: 1rem;
+  }
   .verification-level__uploads{
     margin-top: -0.125rem;
   }
-  .verification-level__uploads-item{
-    flex-direction: column;
-    margin-bottom: 1.6875rem;
+  .verification-level__uploads-item {
+    position: relative;
+    width: 100%;
+    margin: 0.5rem 0 0.5rem;
+  }
+  .verification-level__uploads-title {
+    margin-bottom: 0.75rem;
+    font-family: $main-font-light;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0;
+    color: #091540;
+    opacity: 0.8;
+    b{
+      font-family: $main-font-medium;
+    }
   }
   .verification-level__uploads-area{
     width: 17rem;
     height: 14.0625rem;
-    margin-bottom: 0.875rem;
     background: $blue;
   }
-  .verification-level__uploads-inform {
-    width: 100%;
-    padding-top: 0;
-    padding-left: 0;
-    .verification-level__uploads-title{
-      display: none;
-    }
-  }
-  .verification-level__uploads-title{
-    display: block;
-    font-family: $main-font-medium;
-    font-size: 0.875rem;
-  }
-  .verification-level__uploads-content {
+  .verification-level__uploads-button {
+    position: absolute;
+    bottom: 1.875rem;
+    margin: 0;
     font-size: 0.75rem;
     line-height: 1rem;
-    opacity: 0.8;
-    &._desktop{
-      display: none;
-    }
-    &._mobile{
-      display: block;
-    }
+    color: $white;
   }
 }

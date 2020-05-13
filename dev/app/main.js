@@ -21,9 +21,9 @@ require('./modules/changeEmail');
 require('./modules/2FAVerify');
 require('./modules/googleAuth');
 require('./modules/verification');
-
 require('./modules/accountForm');
 require('./modules/security');
+require('./modules/commonForm');
 
 // аккордион faq
 const faqAccordion = new Accordion({});
@@ -792,3 +792,30 @@ if (document.querySelector('.trading-currencies__header-filter')) {
     currenciesAllBlock.text(all)
   }
 }
+
+
+// Verification steps
+// - upload photos
+$('#verificationUploads__form input[type="file"]').on('change', function () {
+  var file = this.files,
+      uploadedIconBlock = '.verification-level__uploads-area img',
+      uploadedIconPath = './images/verification_uploaded.svg';
+
+  if ( !file[0].type.match(/image\/(jpeg|jpg|png|gif)/) ) {
+    $(this).val('');
+    return false;
+  }
+
+  $(this).parent().find(uploadedIconBlock).attr('src',uploadedIconPath);
+});
+
+// - next step
+// class ".next-step" added to buttons and headline icons to view all steps
+$('.next-step').click(function(e){
+  e.preventDefault();
+  var step = $(this).parents('.verification-level__step').data('verifi-step');
+  console.log(step)
+  step++;
+  $('.verification-level__step.active').removeClass('active');
+  $('.verification-level__step[data-verifi-step='+ step +']').addClass('active');
+})

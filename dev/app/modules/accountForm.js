@@ -54,7 +54,9 @@
   if (document.querySelector('.account__form-email button[data-toggle=modal')) {
 
     $('.account__form-email button[data-toggle=modal').click(function(event){
-      if($('.account__form-email input')[0].value !== ''){
+      $('.account__form-phone input').next().next('.error-icon').addClass('d-none');
+      $('.account__form-phone input').next().next('.error-icon').tooltipster("close");
+      if($('.account__form-email input')[0].value !== '') {
         $('.account__form-email input').next().next('.error-icon').addClass('d-none');
         $('.account__form-email input').next().next('.error-icon').tooltipster("close");
         $('#changeEmailForm #changeEmailNew').val($('.account__form-email input')[0].value);
@@ -74,8 +76,9 @@
   }
 
   if (document.querySelector('.account__form-phone button[data-toggle=modal')) {
-
     $('.account__form-phone button[data-toggle=modal').click(function(event){
+      $('.account__form-email input').next().next('.error-icon').addClass('d-none');
+      $('.account__form-email input').next().next('.error-icon').tooltipster("close");
       if($('.account__form-phone input')[0].value !== ''){
         $('.account__form-phone input').next().next('.error-icon').addClass('d-none');
         $('.account__form-phone input').next().next('.error-icon').tooltipster("close");
@@ -102,6 +105,5 @@
   $('#modal-change-phone').on('hide.bs.modal', function (e) {
     $('#changePhoneForm #changePhonePassword').next().next('.error-icon').tooltipster("close");
   })
-
 
 })(jQuery);

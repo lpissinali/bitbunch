@@ -8,13 +8,10 @@
   }
   &_2{
     margin-top: 2rem;
-    background-image: url(images/verification-level_2@2x.png);
-    background-size: 16.125rem 24.3125rem;
+    background-image: url(images/verification-level_1@2x.png);
+    background-size: 19.25rem 21rem;
     background-repeat: no-repeat;
-    background-position: right bottom;
-    .verification-level__confirm{
-      display: none;
-    }
+    background-position: right top 5rem;
   }
   &__confirm{
     width: 17.3125rem;
@@ -61,13 +58,19 @@
   border-radius: 5px;
   img{
     display: block;
-    height: 1.875rem;
   }
 }
 .verification-level__content{
   max-width: 40.625rem;
   margin-bottom: 2.0625rem;
-  font-family: $main-font-semi-bold; 
+  font-family: $main-font-medium; 
+  letter-spacing: 0.0213rem;
+  line-height: 1.625rem;
+  color: $black-light;
+}
+.verification-level__info{
+  max-width: 28.75rem;
+  font-family: $main-font-medium; 
   letter-spacing: 0.0213rem;
   line-height: 1.625rem;
   color: $black-light;
@@ -163,16 +166,44 @@
   border: 0.0625rem solid rgba(50, 78, 163, 0.2);
 }
 
+.verification-level__step{
+  display: none;
+  &.active{
+    display: block;
+  }
+  .verification-level__content{
+    max-width: 28.75rem;
+  }
+  .verification-level__confirm{
+    width: 20.9375rem;
+    margin-top: 2.125rem;
+  }
+}
+
 
 .verification-level__uploads{
-  max-width: 32rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 .verification-level__uploads-item{
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-  &:last-child{
-    margin-bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  width: 11.375rem;
+  margin: 2rem 2rem 0.75rem 0;
+  input[type=file]{
+    display: none;
+  }
+}
+.verification-level__uploads-title{
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-family: $main-font-medium;
+  color: $black-light;
+  line-height: 1.625rem;
+  letter-spacing: 0.0213rem;
+  b{
+    font-family: $main-font-bold;
   }
 }
 .verification-level__uploads-area{
@@ -181,37 +212,22 @@
   justify-content: center;
   width: 11.375rem;
   height: 11.3125rem;
+  margin: 0;
   border-radius: 0.125rem;
   background: rgba(50, 78, 163, 0.6);
+  cursor: pointer;
   img{
     display: block;
     width: 3.75rem;
   }
 }
-.verification-level__uploads-inform{
-  width: calc(100% - 11.375rem);
-  padding-top: 0.4375rem;
-  padding-left: 1rem;
-  .verification-level__uploads-title{
-    display: block;
-  }
-}
-.verification-level__uploads-title{
-  display: none;
-  margin-bottom: 0.875rem;
-  font-family: $main-font-semi-bold;
-  color: $black-light;
-  letter-spacing: 0.0213rem;
-}
-.verification-level__uploads-content{
+.verification-level__uploads-button{
+  margin: 1rem 0 0;
   font-family: $main-font-medium;
-  color: $black-light;
-  line-height: 1.1875rem;
-  letter-spacing: 0.0213rem;
-  // &._desktop{}
-  &._mobile{
-    display: none;
-  }
+  font-size: 0.875rem;
+  color: $blue;
+  text-align: center;
+  cursor: pointer;
 }
 
 @import "./verification-level-tablet.scss";
