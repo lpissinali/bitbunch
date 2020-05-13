@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="289.584" height="100.559" viewBox="0 0 289.584 100.559">
+  <defs>
+    <filter id="Rectangle" x="0" y="0" width="289.584" height="100.559" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#5d5858" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-2" x="139.553" y="63.734" width="52.564" height="25.244" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur-2"/>
+      <feFlood flood-color="#5d5858" flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_3" x="8.861" y="25.105" width="32.628" height="32.628" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur-3"/>
+      <feFlood flood-color="#5d5858" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_20_Copy_10" data-name="Group 20 Copy 10" transform="translate(4.5 2.5)">
+    <g id="Group_19" data-name="Group 19">
+      <g transform="matrix(1, 0, 0, 1, -4.5, -2.5)" filter="url(#Rectangle)">
+        <rect id="Rectangle-3" data-name="Rectangle" width="280.584" height="91.559" rx="2.215" transform="translate(4.5 2.5)" fill="#f8f9fe"/>
+      </g>
+      <g id="Group_18" data-name="Group 18" transform="translate(149.152 14.768)">
+        <circle id="Oval_Copy_5" data-name="Oval Copy 5" cx="11.814" cy="11.814" r="11.814" transform="translate(0 0)" fill="#324ea3" opacity="0.2"/>
+        <circle id="Oval" cx="8.179" cy="8.179" r="8.179" transform="translate(3.635 3.635)" fill="#324ea3"/>
+        <path id="Path_10" data-name="Path 10" d="M0,6.763A.991.991,0,0,0,1.518,7.6l4.23-2.657a.991.991,0,0,0,0-1.676L1.521.589A.991.991,0,0,0,0,1.426Z" transform="translate(9.258 7.725)" fill="#fff"/>
+      </g>
+      <path id="Rectangle_Copy_9" data-name="Rectangle Copy 9" d="M2.215,0H41.349a0,0,0,0,1,0,0V91.559a0,0,0,0,1,0,0H2.215A2.215,2.215,0,0,1,0,89.344V2.215A2.215,2.215,0,0,1,2.215,0Z" fill="#9b9ba5"/>
+    </g>
+    <path id="Rectangle-4" data-name="Rectangle" d="M0,0H239.234a0,0,0,0,1,0,0V36.181a2.215,2.215,0,0,1-2.215,2.215H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(41.349 53.163)" fill="#cdcfd5" opacity="0.3"/>
+    <g transform="matrix(1, 0, 0, 1, -4.5, -2.5)" filter="url(#Rectangle-2)">
+      <rect id="Rectangle-5" data-name="Rectangle" width="43.564" height="16.244" rx="2.215" transform="translate(144.05 66.23)" fill="#fff"/>
+    </g>
+    <g id="Group_20" data-name="Group 20" transform="translate(8.861 25.105)">
+      <g id="Group_2" data-name="Group 2">
+        <g transform="matrix(1, 0, 0, 1, -13.36, -27.6)" filter="url(#Rectangle_3)">
+          <rect id="Rectangle_3-2" data-name="Rectangle 3" width="23.628" height="23.628" rx="6.645" transform="translate(13.36 27.6)" fill="#fff"/>
+        </g>
+        <path id="Shape" d="M1.2,10.35,0,10.862.581,8.315,1.8,7.78,3.555,0H7.883L6.6,5.719l1.19-.527L7.218,7.73l-1.2.527L5.3,11.472h6.516l-.737,3.3H.213Z" transform="translate(5.907 4.43)" fill="#9b9ba5"/>
+      </g>
+      <text id="LTC" transform="translate(12.183 40.535)" fill="#fff" font-size="10.337" font-family="SegoeUI, Segoe UI" letter-spacing="0.021em" opacity="0.8"><tspan x="-7.969" y="0">LTC</tspan></text>
+    </g>
+    <text id="Kraken" transform="translate(53.163 24.615)" fill="#091540" font-size="13.291" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Kraken</tspan></text>
+    <text id="Bitstamp" transform="translate(268.13 24.615)" fill="#091540" font-size="13.291" font-family="SegoeUI, Segoe UI"><tspan x="-51.508" y="0">Bitstamp</tspan></text>
+    <text id="_0.00853748_BTC" data-name="0.00853748 BTC" transform="translate(53.163 41.012)" fill="#091540" font-size="8.861" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">0.00</tspan><tspan y="0" fill="#1cc7a1">853748</tspan><tspan y="0" xml:space="preserve"> BTC</tspan></text>
+    <text id="_7m_12s" data-name="7m 12s" transform="translate(53.163 78.211)" fill="#091540" font-size="11.814" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">7m 12s</tspan></text>
+    <text id="_2.9_" data-name="~2.9%" transform="translate(144.722 78.211)" fill="#091540" font-size="11.814" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">~</tspan><tspan y="0" fill="#1cc7a1">2.9</tspan><tspan y="0">%</tspan></text>
+    <text id="_58_" data-name="58%" transform="translate(268.003 78.211)" fill="#091540" font-size="11.814" font-family="SegoeUI, Segoe UI"><tspan x="-22.405" y="0">58%</tspan></text>
+    <text id="_0.00886142_BTC" data-name="0.00886142 BTC" transform="translate(268.362 41.012)" fill="#091540" font-size="8.861" font-family="SegoeUI, Segoe UI"><tspan x="-61.734" y="0">0.00</tspan><tspan y="0" fill="#1cc7a1">886142</tspan><tspan y="0" xml:space="preserve"> BTC</tspan></text>
+  </g>
+</svg>
