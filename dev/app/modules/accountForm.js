@@ -1,3 +1,5 @@
+import { upInputLabel } from './commonForm';
+
 (function($) {
   // initialize tooltipster on text input elements
   $('.your-account__form .error-icon').tooltipster({
@@ -52,7 +54,6 @@
   }
 
   if (document.querySelector('.account__form-email button[data-toggle=modal')) {
-
     $('.account__form-email button[data-toggle=modal').click(function(event){
       $('.account__form-phone input').next().next('.error-icon').addClass('d-none');
       $('.account__form-phone input').next().next('.error-icon').tooltipster("close");
@@ -61,6 +62,7 @@
         $('.account__form-email input').next().next('.error-icon').tooltipster("close");
         $('#changeEmailForm #changeEmailNew').val($('.account__form-email input')[0].value);
         $('#modal-change-email').modal('show');
+        upInputLabel();
       }
       else {
         let tooltipsterContent = `
@@ -84,6 +86,7 @@
         $('.account__form-phone input').next().next('.error-icon').tooltipster("close");
         $('#changePhoneForm #changePhoneNew').val($('.account__form-phone input')[0].value);
         $('#modal-change-phone').modal('show');
+        upInputLabel();
       }
       else {
         let tooltipsterContent = `
