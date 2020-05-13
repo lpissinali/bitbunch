@@ -12,7 +12,7 @@
       }
       var tooltipsterContent = `
       <p class="tooltipster-content__caption">Error</p>
-      <p class="tooltipster-content__description">Please use at least 8 digits, <br> a number and a symbol</p>
+      <p class="tooltipster-content__description">${$(error).html()}</p>
       `;
       $(element).removeClass('validation-success');
       $(element).next().next('.error-icon').removeClass('d-none');
@@ -37,10 +37,10 @@
         passwordStrength: true
       },
       'password-confirm': {
-        required: true,
         minlength: 8,
         maxlength: 40,
-        passwordStrength: true
+        passwordStrength: true,
+        equalTo: "#securityPasswordNew"
       }
     },
     errorClass: "validation-error",

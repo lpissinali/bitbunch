@@ -11,15 +11,15 @@ var moment = require('moment'); // require
   $.validator.addMethod(
     'passwordStrength',
     function(value, element) {
-      return /^[A-Za-z0-9`'"~!@#$%^&*(){}-]*$/.test(value) // consists of only these
+      return /^[A-Za-z0-9.,:;|/+=`'"~!@#$%^&*(){}-]*$/.test(value) // consists of only these
                 &&
-                /[A-Za-z]/.test(value) // has a uppercase letter
+                /[A-Za-z]/.test(value) // has a letter
                 &&
-                /[`'"~!@#$%^&*(){}-]/.test(value) // has a spec char
+                /[.,:;|/+=`'"~!@#$%^&*(){}-]/.test(value) // has a spec char
                 &&
                 /\d/.test(value); // has a digit
     },
-    'Please use at least 8 digits, a number and a symbol'
+    'Please use at least 8 digits, <br> a number and a symbol'
   );
   $.validator.addMethod(
     'ageEighteen',
