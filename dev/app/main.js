@@ -397,7 +397,7 @@ function customSelect() {
     const name = $(this).attr('name');
 
     let template = `<div class="${classes}">`;
-    template += `<span class="choose-select__trigger">${$(this).attr('placeholder')}</span>`;
+    template += `<div class="choose-select__trigger"><div class="choose-select__trigger-icon"></div><div class="choose-select__trigger-name">${$(this).attr('placeholder')}</div></div>`;
     template += '<div class="choose-select__options"><div class="choose-select__options-wrapper">';
     $(this)
       .find('option')
@@ -437,14 +437,30 @@ function customSelect() {
 
   $('.choose-select__trigger').on('click', function() {
     var optionsHeight = 0;
+
+    function optionsOpen(){
+      optionsHeight = $('.choose-select__options-wrapper').outerHeight()
+      TweenLite.to($('.choose-select__options'), 0.5, {height: optionsHeight, onComplete: optionsOverflow})
+    }
+    function optionsClose(){
+      $('.choose-select__options').removeClass('opened');
+      TweenLite.to($('.choose-select__options'), 0.5, {height: 0})
+    }
+    function optionsOverflow(){
+      $('.choose-select__options').addClass('opened');
+    }
+
     $('html').one('click', () => {
       $('.choose-select__trigger').removeClass('opened');
-      TweenLite.to($('.choose-select__options'), 0.5, {height: 0})
+      optionsClose()
     });
     if(!$('.choose-select__trigger').is('.opened')){
-      optionsHeight = $('.choose-select__options-wrapper').outerHeight()
+      optionsOpen()
     }
-    TweenLite.to($('.choose-select__options'), 0.5, {height: optionsHeight})
+    else{
+      optionsClose()
+    }
+    
     $(this).toggleClass('opened');
     event.stopPropagation();
   });
@@ -460,14 +476,22 @@ function customSelect() {
       .find('.choose-select__option')
       .removeClass('selection');
     $(this).addClass('selection');
-    $(this)
-      .parents('.choose-select')
-      .removeClass('opened');
-    const template = `<div class="choose-select__trigger-icon"><img src="${$(this).data('logo-white')}" alt=""></div>${$(this).data('title')}`;
-    $(this)
-      .parents('.choose-select')
-      .find('.choose-select__trigger')
-      .html(template);
+    
+    var optionIcon = $(this).parents('.choose-select__wrapper').find('.choose-select__trigger-icon'),
+        optionName = $(this).parents('.choose-select__wrapper').find('.choose-select__trigger-name')
+    
+    function changeOptionData(icon,name){
+      optionIcon.html('<img src="'+icon+'" alt="">')
+      optionName.text(name)
+    }
+    
+    var optionSelectAnimation = new TimelineMax();
+        optionSelectAnimation
+            .to([optionIcon,optionName], .3, {alpha: 0})
+            .set(optionIcon,{x: -32})
+            .set(optionName,{x: 32})
+            .to(optionIcon, .5, {x: 0, alpha: 1, onStart: changeOptionData, onStartParams:[$(this).data('logo-white'),$(this).data('title')]})
+            .to(optionName, .5, {x: 0, alpha: 1}, '-=0.5');
   });
 
   $('.choose-select').change(function() {
@@ -492,6 +516,24 @@ if (document.querySelector('.fund-wallet')) {
     $('.fund-wallet__asset').text($(this).find('option:selected').text())
     $('#walletNumber').val($(this).find('option:selected').data('wallet'))
     $('.fund-wallet-qr__code img').attr('src', $(this).find('option:selected').data('qr'))
+
+    var blurElement = {alpha:0,a:6};
+    TweenMax.to(blurElement, .5, {alpha:1,a:0, onUpdate:applyBlur});
+    function applyBlur(){
+        TweenMax.set(['.fund-wallet__bg'], {alpha: blurElement.alpha, webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)"});
+    };
+    $('.fund-wallet__bg').css('background-image', 'url(' + $(this).find('option:selected').data('background') + ')');
+  });
+}
+// Вывод средств
+if (document.querySelector('.make-withdraw')) {
+  $('.choose-select').change(function() {
+    var blurElement = {alpha:0,a:6};
+    TweenMax.to(blurElement, .5, {alpha:1,a:0, onUpdate:applyBlur});
+    function applyBlur(){
+        TweenMax.set(['.make-withdraw__bg'], {alpha: blurElement.alpha, webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)"});
+    };
+    $('.make-withdraw__bg').css('background-image', 'url(' + $(this).find('option:selected').data('background') + ')');
   });
 }
 

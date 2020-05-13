@@ -143,6 +143,7 @@
     background-color: #efc7c2;
     cursor: pointer;
     overflow: hidden;
+    user-select: none;
     .checkbox-btn__on,
     .checkbox-btn__off{
       position: absolute;
