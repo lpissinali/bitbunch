@@ -87,6 +87,14 @@
     }
   });
 
+  $.when(getCountryCodes('documents/CountryCodes.json'))
+  .done(function () {
+    initBootstrapSelect();
+  })
+  .fail(function (){
+    initBootstrapSelect();  
+  });
+
 })(jQuery);
 
 $('#verificationSex, #verificationCountry, #verificationOccupation, #verificationSource').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
@@ -98,3 +106,34 @@ $('#verificationSex, #verificationCountry, #verificationOccupation, #verificatio
   $(event.currentTarget).parents('.form-group').find('.error-icon').addClass('d-none');
   $(event.currentTarget).parents('.form-group').find('.error-icon').tooltipster("close");
 });
+
+function getCountryCodes(url) {
+  const d = $.Deferred();
+  $.getJSON( url, function( data ) {
+
+    var items = [];
+    $.each( data, function( key, val ) {
+      var optionHtml =         `<option 
+        value="${val.code}"  
+        >${val.name}</option>`;
+      items.push( optionHtml );
+    });
+    $('#verificationCountry').html(items.join( "" ));
+    d.resolve();
+  });
+  return d;
+}
+
+
+function initBootstrapSelect() {
+  if ($('#verificationCountry').length > 0) {
+    $('#verificationCountry').each(function () {
+      $(this).selectpicker({
+        dropupAuto: false,
+        size: 5,
+        liveSearch: true,
+        title: ' '
+      });
+    });
+  }
+}
