@@ -106,5 +106,4 @@
     $('#changePhoneForm #changePhonePassword').next().next('.error-icon').tooltipster("close");
   })
 
-
 })(jQuery);
