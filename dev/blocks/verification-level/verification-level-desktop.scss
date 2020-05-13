@@ -190,9 +190,17 @@
       border-top: none;
     }
   }
+  .bs-searchbox .form-control {
+    box-shadow: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+  }
 
-  .bs-searchbox {
-    display: none;
+  &:not(.verification-level__form-country){
+    .bs-searchbox {
+      display: none;
+    }
   }
 }
 
