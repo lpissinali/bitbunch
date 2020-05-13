@@ -1,5 +1,22 @@
 .main-footer {
+  position: relative;
+  padding-top: 8.125rem;
   background: linear-gradient(to right, #324ea3, #3d6dd0);
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 35rem;
+    height: 100%;
+    background-image: url("./images/main-footer__decor-desktop.png");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 105% auto;
+    pointer-events: none;
+  }
 }
 
 .main-footer__menu-container {
