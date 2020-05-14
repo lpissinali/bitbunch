@@ -72,4 +72,11 @@
       $(event.currentTarget).next().removeClass("has-content");
     }
   });
+
+  $('#modal-change-withdrawal').on('hide.bs.modal', function (e) {
+    $('#withdrawalAuthForm #withdrawalAuthCode').removeClass('validation-error');
+    $('#withdrawalAuthForm #withdrawalAuthCode').next().next('.error-icon').addClass('d-none');
+    $('#withdrawalAuthForm #withdrawalAuthCode').next().next('.error-icon').tooltipster("close");
+  });
+  
 })(jQuery);
