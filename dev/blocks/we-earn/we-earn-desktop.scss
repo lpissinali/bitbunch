@@ -19,10 +19,13 @@
 }
 
 .we-earn__wrapper {
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 4.8125rem;
   padding-right: 9.375rem;
   padding-bottom: 5.9375rem;
   padding-left: 9.375rem;
+  max-width: 90rem;
 }
 
 .we-earn__subtitle,
@@ -59,14 +62,15 @@
   padding-left: 1.9375rem;
   border-radius: .125rem;
   background-color: $white;
-  transform-origin: center center;
+  overflow: hidden;
   transition: transform 300ms;
+  transform-origin: center center;
 
   &:before {
     content: "";
     position: absolute;
     top: 0;
-    right: 0;
+    left: calc(50% + (50vw - 22.6rem));
     display: block;
     width: 13rem;
     height: 100%;

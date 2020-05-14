@@ -22,7 +22,9 @@
     padding-bottom: 4.875rem;
 
     &:before {
-      width: 7.8rem;
+      right: 0;
+      left: auto;
+      width: 7.7rem;
       background-image: url("./images/we-earn__descr-container-bg-tablet.png");
     }
   }
