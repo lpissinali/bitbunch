@@ -21,6 +21,31 @@
   }
 }
 
+.button-yellow{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 6rem;
+  height: 1.875rem;
+  border: 0.125rem solid #ffa72e;
+  border-radius: .1875rem;
+  background-color: #ffa72e;
+  font-family: $main-font-semi-bold;
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+  text-transform: uppercase;
+  color: $white;
+  cursor: pointer;
+  transition: 300ms;
+  transform-origin: center center;
+
+  &:hover {
+    background-color: $white;
+    color: #ffa72e;
+    transform: scaleX(1.05);
+  }
+}
+
 .button-red {
   justify-content: center;
   align-items: center;
