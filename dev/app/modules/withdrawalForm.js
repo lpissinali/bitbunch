@@ -1,3 +1,4 @@
+import { upInputLabel } from './commonForm';
 (function($) {
   $("#withdrawalForm").validate({
     focusCleanup: true,
@@ -27,6 +28,7 @@
       $('#withdrawalAuthAmount').val($(form).find('#withdrawalAmount').val());
       $('#withdrawalAuthWallet').val($(form).find('#withdrawalWallet').val());
       $('#modal-change-withdrawal').modal('show');
+      upInputLabel();
     }
   });
 
