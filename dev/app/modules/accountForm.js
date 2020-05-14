@@ -102,10 +102,14 @@ import { upInputLabel } from './commonForm';
   }
 
   $('#modal-change-email').on('hide.bs.modal', function (e) {
+    $('#changeEmailForm #changeEmailPassword').removeClass('validation-error');
+    $('#changeEmailForm #changeEmailPassword').next().next('.error-icon').addClass('d-none');
     $('#changeEmailForm #changeEmailPassword').next().next('.error-icon').tooltipster("close");
   });
 
   $('#modal-change-phone').on('hide.bs.modal', function (e) {
+    $('#changePhoneForm #changePhonePassword').removeClass('validation-error');
+    $('#changePhoneForm #changePhonePassword').next().next('.error-icon').addClass('d-none');
     $('#changePhoneForm #changePhonePassword').next().next('.error-icon').tooltipster("close");
   })
 
