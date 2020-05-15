@@ -18,9 +18,6 @@
     box-shadow: 0.25rem 0.3125rem 0.8125rem rgba(80, 87, 94, 0.1);
     background-color: #efc7c2;
   }
-  .account-nav__logo{
-    flex-grow: 1;
-  }
   .account-nav__logo:after{
     display: none;
   }
@@ -68,6 +65,17 @@
   }
   .account-nav__button{
     display: flex;
+    &.button-yellow{
+      align-self: center;
+      width: 4.8125rem;
+      height: 1.5rem;
+      margin-left: 1rem;
+      font-size: 0.625rem;
+      line-height: 0.875rem;
+      + .account-nav__sandwich-button{
+        margin-left: auto;
+      }
+    }
   }
   .account-nav__sandwich-button{
     display: block;

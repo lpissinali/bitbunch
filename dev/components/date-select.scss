@@ -1,0 +1,198 @@
+.date-select{
+  position: relative;
+  line-height: 1.3;
+  pointer-events: none;
+  &.active{
+    pointer-events: all;
+  }
+  &__toggle{
+    cursor: pointer;
+  }
+  &__overflow{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    overflow: hidden;
+    width: 20.75rem;
+    height: 0;
+    margin-top: 0.375rem;
+    background: $white;
+    box-shadow: 0.125rem 0.125rem 1.5rem rgba(80, 87, 94, 0.1);
+    border-radius: 0.1875rem;
+    z-index: 1;
+  }
+  &__container{
+    display: flex;
+    flex-direction: column;
+    .form-group{
+      margin: 0;
+    }
+    .form-group__placeholder{
+      line-height: 1.3;
+    }
+  }
+  &__input{
+    box-shadow: 0.125rem 0.25rem 0.375rem rgba(80, 87, 94, 0.05);
+    border-radius: 0.1875rem;
+    border: 0.0625rem solid rgba(50, 78, 163, 0.2);
+  }
+  .date-select__header{
+    padding: 1rem 1.5rem;
+    background: $blue;
+    .button-clear{
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: .3;
+      cursor: pointer;
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+  .date-select__body{
+    padding: 1.5rem;
+    border-bottom: 0.0625rem solid rgba(50, 78, 163, 0.2);
+  }
+  .date-select__footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem 1.5rem;
+    .button-apply{
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      width: 6rem;
+      height: 2.5rem;
+      border-radius: .125rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
+      background-color: $blue;
+      font-family: $main-font-bold;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      color: $white;
+      cursor: pointer;
+      transition: background-color 300ms;
+      &:hover{
+        background-color: #2a4188;
+      }
+    }
+    .button-cansel{
+      margin-right: 2rem;
+      font-family: $main-font-medium;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      color: $blue;
+      transition: opacity 300ms;
+      cursor: pointer;
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+  .datepicker-inline{
+    width: 100%;
+    .datepicker{
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      font-family: $main-font-regular;
+      font-size: 16px;
+      color: $black-light;
+    }
+    .datepicker--nav {
+      border-bottom: none;
+      min-height: auto;
+      margin-bottom: 1.5rem;
+      padding: 0;
+    }
+
+    .datepicker--nav-action {
+      width: auto;
+      border-radius: 0;
+      background: transparent;
+      svg{
+        width: 0.5rem;
+        height: 0.875rem;
+        path{
+          fill: $blue;
+          stroke: none;
+        }
+      }
+    }
+    .datepicker--nav-title{
+      background: transparent;
+      font-family: $main-font-semi-bold;
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      color: #091540;
+      i{
+        color: inherit;
+      }
+    }
+    .datepicker--content{
+      padding: 0;
+    }
+    .datepicker--days-names{
+      margin: 0 0 0.9375rem;
+    }
+    .datepicker--day-name{
+      opacity: 0.8;
+      color: $black-light;
+      font-family: $main-font-medium;
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+    .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade-{
+      opacity: 0.2;
+      color: $black-light;
+    }
+    .datepicker--cell.-focus- {
+      background: rgba(50, 78, 163, 0.5);
+    }
+    .datepicker--cell.-selected-, .datepicker--cell.-selected-.-current-{
+      background: $blue;
+    }
+    .datepicker--cell.-current-{
+      color: rgba(50, 78, 163, 0.5);
+      &.-selected-{
+        color: $white;
+      }
+    }
+    .datepicker--cell.-in-range- {
+      background: rgba(50, 78, 163, 0.1);
+      color: $blue;
+    }
+  }
+}
+@media screen and ($tablet1), ($tablet2), ($tablet3) {}
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+  .date-select__overflow{
+    right: -1.5rem;
+    width: 20rem;
+  }
+  .date-select .date-select__footer .button-cansel,
+  .date-select .date-select__footer .button-apply{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 7.8125rem;
+    height: 2.5rem;
+    border: 0.125rem solid #324ea3;
+    border-radius: .125rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
+    background-color: #324ea3;
+    font-family: "SarabunBold", arial, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 300ms;
+  }
+  .date-select .date-select__footer .button-cansel{
+    background: $white;
+    color: $blue;
+  }
+}

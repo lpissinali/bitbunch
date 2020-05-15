@@ -498,6 +498,7 @@ function customSelect() {
   $('.choose-select').change(function() {
     setTimeout(() => {
       $('.choose-blur').addClass('_unblur');
+      $('.date-select').addClass('active')
     }, 300);
   });
 }
@@ -536,6 +537,69 @@ if (document.querySelector('.make-withdraw')) {
     };
     $('.make-withdraw__bg').css('background-image', 'url(' + $(this).find('option:selected').data('background') + ')');
   });
+}
+
+// Datapicker
+if (document.querySelector('.trading-statistics__header-time')) {
+  $.fn.datepicker.language['en'] = {
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    today: 'Today',
+    clear: 'Clear',
+    dateFormat: 'mm/dd/yyyy',
+    timeFormat: 'hh:ii aa',
+    firstDay: 1
+  };
+  var dateSelect = $('#date-select').datepicker({
+    language: 'en',
+    inline: true,
+    range: true,
+    multipleDatesSeparator: ' - ',
+    prevHtml: '<svg width="8" height="14" viewBox="0 0 8 14"><path d="M7.6376,2.24716c0.50468,-0.53624 0.47911,-1.38007 -0.05712,-1.88476c-0.53623,-0.50468 -1.38006,-0.47911 -1.88475,0.05712l-5.33333,5.66666c-0.4832,0.5134 -0.4832,1.31424 0,1.82764l5.33333,5.66666c0.50469,0.53623 1.34852,0.5618 1.88475,0.05712c0.53623,-0.50469 0.5618,-1.34852 0.05712,-1.88476l-4.47327,-4.75284v0z" fill="#324ea3" fill-opacity="1"></path></svg>',
+    nextHtml: '<svg width="8" height="14" viewBox="0 0 8 14"><path d="M0.3624,2.24716c-0.50468,-0.53624 -0.47911,-1.38007 0.05712,-1.88476c0.53623,-0.50468 1.38006,-0.47911 1.88475,0.05712l5.33333,5.66666c0.4832,0.5134 0.4832,1.31424 0,1.82764l-5.33333,5.66666c-0.50469,0.53623 -1.34852,0.5618 -1.88475,0.05712c-0.53623,-0.50469 -0.5618,-1.34852 -0.05712,-1.88476l4.47327,-4.75284v0z" fill="#324ea3" fill-opacity="1"></path></svg>',
+    onSelect(formattedDate, date, inst){
+      console.log(formattedDate);
+    }
+  }).data('datepicker');
+  $('.date-select .button-clear').on('click',function(){
+    dateSelect.clear()
+  })
+
+  var dateSelectHeight = 0;
+  function dateSelectOpen(){
+    dateSelectHeight = $('.date-select__container').outerHeight()
+    TweenLite.to($('.date-select__overflow'), 0.5, {height: dateSelectHeight, onComplete: dateSelectOverflow})
+  }
+  function dateSelectClose(){
+    $('.date-select__overflow').removeClass('opened');
+    TweenLite.to($('.date-select__overflow'), 0.5, {height: 0})
+  }
+  function dateSelectOverflow(){
+    $('.date-select__overflow').addClass('opened');
+  }
+
+  $('.date-select .date-select__toggle').click(function(){
+    $('.date-select__body').append($('.datepicker-inline'))
+    if(!$('.date-select__overflow').is('.opened')){
+      dateSelectOpen()
+    }
+    else{
+      dateSelectClose()
+    }
+  })
+  $('.date-select .button-cansel').click(function(){
+    dateSelect.clear()
+    dateSelectClose()
+  })
+
+  $('.date-select .button-apply').click(function(){
+    // chartInstance.update();
+    console.log($('#date-select').val())
+    dateSelectClose()
+  })
 }
 
 // Chart
