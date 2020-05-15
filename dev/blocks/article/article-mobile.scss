@@ -1,0 +1,58 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .article {
+    background-image: linear-gradient(154deg, #fcfdff 0%, #f2f4fd 100%);
+  }
+
+  .article__top-image {
+    position: relative;
+    margin-top: -15.75rem;
+    height: 213px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: auto;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .article__p-block,
+  .article__actual-block,
+  .article__p-block,
+  .article__flex-block,
+  .article__list {
+    max-width: 272px;
+  }
+
+  .article__p-block,
+  .article__p-text {
+
+    .title {
+    }
+
+    p {
+      font-family: $main-font-light;
+      font-size: 14px;
+      line-height: 24px;
+
+      .head-letter {
+        font-size: 36px;
+      }
+    }
+  }
+
+  .article__actual-block {
+    height: 89px;
+    background-image: url("./images/article__actual-bg-mobile.svg");
+
+    span {
+      max-width: 240px;
+      font-family: $main-font-light;
+      font-size: 16px;
+    }
+  }
+}
