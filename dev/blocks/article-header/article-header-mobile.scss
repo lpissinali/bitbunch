@@ -1,0 +1,50 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .article-header {
+    box-shadow: none;
+    background-color: #fafbff;
+  }
+
+  .article-header {
+
+    .main-nav {
+      max-width: 274px;
+      height: 66px;
+    }
+
+    .main-nav__logo-link {
+      margin-top: 3px;
+      width: 123px;
+    }
+  }
+
+  .article-header__wrapper {
+    padding-top: 64px;
+    padding-bottom: 17.688rem;
+  }
+
+  .article-header__headline {
+    margin-top: 16px;
+    max-width: 270px;
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .article-header__info-block {
+    margin-top: 28px;
+  }
+
+  .article-header__date,
+  .article-header__author {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .article-header__date {
+    margin-right: 17px;
+  }
+
+  .article-header__social-block {
+    margin-top: 25px;
+  }
+}
