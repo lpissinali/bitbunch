@@ -7,12 +7,15 @@ block variables
     - var pageClass = ''
 
 block header-button
+    a(href="#").account-nav__button.button-yellow Demo
 
 block content
     .account-header
       .account-header__left
           .account-app-headline Bitbunch app
           .account-main-headline Reports
+      a(href="#").account-header__button.button-yellow Demo
+
     select(id="choose-asset" name="choose-asset" placeholder="CHOOSE YOUR ASSET" value="").choose-select
         option(value="BTC" data-balance="13.048128" data-profit="0.212%" data-profit-style="success" data-logo-color="./images/bitcoin.svg" data-logo-white="./images/choose-bitcoin.svg") Bitcoin
         option(value="ETH" data-balance="159.402942" data-profit="13.039%" data-profit-style="success" data-logo-color="./images/ethereum.svg" data-logo-white="./images/choose-ethereum.svg") Ethereum

@@ -9,11 +9,16 @@
   flex-grow: 1;
 }
 .account-header__button{
-  display: flex;
-  width: 7.9375rem;
-  height: 3.125rem;
-  margin-bottom: 0.6875rem;
-  font-size: 1rem;
+  &:not(.button-yellow){
+    display: flex;
+    width: 7.9375rem;
+    height: 3.125rem;
+    margin-bottom: 0.6875rem;
+    font-size: 1rem;
+  }
+  &.button-yellow{
+    align-self: center;
+  }
 }
 .account-app-headline {
   font-family: $main-font-semi-bold;
