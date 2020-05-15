@@ -1,7 +1,7 @@
-.pressroom-header {
+.blog-header {
 }
 
-.pressroom-header__wrapper {
+.blog-header__wrapper {
   margin-right: auto;
   margin-left: auto;
   padding-top: 2.5rem;
@@ -9,31 +9,31 @@
   width: 76.125rem;
 }
 
-.pressroom-header__headline-block {
+.blog-header__headline-block {
   margin-top: 10rem;
 }
 
-.pressroom-header__subtitle {
+.blog-header__subtitle {
   margin-top: .875rem;
   max-width: 30.9375rem;
 }
 
-.pressroom-header____contact-us-button {
+.blog-header____contact-us-button {
   margin-top: 4.625rem;
 }
 
-.pressroom-header__decor {
+.blog-header__decor {
   position: absolute;
   top: 11.5rem;
   right: 0;
   width: 34.1875rem;
   height: 32.5rem;
-  background-image: url("./images/pressroom-header__decor.png");
+  background-image: url("./images/blog-header__decor.png");
   background-position: 0 center;
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 
-@import "./pressroom-header-tablet.scss";
+@import "./blog-header-tablet.scss";
 
-@import "./pressroom-header-mobile.scss";
+@import "./blog-header-mobile.scss";

@@ -36,7 +36,7 @@ const careerAccordion = new dsAccordion({
 
 // анимация
 require('./page-home-anim');
-require('./page-pressroom-anim');
+require('./page-blog-anim');
 require('./page-team-anim');
 require('./page-contact-anim');
 require('./page-career-anim');
@@ -590,7 +590,7 @@ if (document.querySelector('.trading-statistics__header-time')) {
       dateSelectClose()
     }
   })
-  $('.date-select .button-cansel').click(function(){
+  $('.date-select .button-cancel').click(function(){
     dateSelect.clear()
     dateSelectClose()
   })
