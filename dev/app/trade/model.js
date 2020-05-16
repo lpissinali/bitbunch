@@ -41,14 +41,14 @@ export const currencyCodeToName = currenciesData.reduce((acc, x) => {
 }, {});
 
 export function getCurrencyIcon(currency, useWhite) {
-  const folder = useWhite === true ? 'white' : 'default';
-  return `/images/${currency}@2x.png`;
+  const suffix = useWhite === true ? '-white' : '';
+  return `/images/${currency}${suffix}@2x.png`;
 }
 
 export function getExchangeIcon(exchange, useWhite) {
-  const folder = useWhite === true ? 'white' : 'default';
+  const suffix = useWhite === true ? '-white' : '';
   const lowercase = exchange.toLowerCase();
-  return `/images/${lowercase}@2x.png`;
+  return `/images/${lowercase}${suffix}@2x.png`;
 }
 
 export function randomSellExchange(trade) {
