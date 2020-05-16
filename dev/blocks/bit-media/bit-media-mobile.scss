@@ -51,7 +51,7 @@
 
     .title {
       margin-top: .375rem;
-      font-size: 10px;
+      font-size: .625rem;
       line-height: .75rem;
     }
 
@@ -88,9 +88,9 @@
       .news {
         display: block;
         padding-top: .3125rem;
+        font-family: $main-font-regular;
         font-size: .625rem;
         line-height: .875rem;
-        font-family: $main-font-regular;
       }
 
       .date {
@@ -126,7 +126,7 @@
     }
 
     .slick-active button {
-      width: 50px;
+      width: 3.125rem;
       height: .1875rem;
       background-color: $blue;
       opacity: 1;

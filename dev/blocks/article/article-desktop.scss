@@ -53,6 +53,11 @@
       color: $blue;
       opacity: 1;
     }
+
+    b {
+      font-family: $main-font-semi-bold;
+      font-weight: normal;
+    }
   }
 
   .title + p {
