@@ -210,8 +210,11 @@ function animLoop() {
 createElements();
 handleResize();
 
-animLoop();
-
-createFakeTrade();
+setTimeout(() => {
+  animLoop();
+}, 3000);
+setTimeout(() => {
+  createFakeTrade();
+}, 5000);
 
 window.addEventListener('resize', handleResize);
