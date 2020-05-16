@@ -125,6 +125,7 @@
     width: 54px;
     height: 54px;
     border-radius: 2px;
+    box-shadow: 12px 15px 29px rgba(#50575e, .1);
     background: white;
     font-family: $main-font-regular;
     text-transform: capitalize;
@@ -236,7 +237,6 @@
 
       .instant-trade {
         letter-spacing: .39px;
-        line-height: 28px;
         color: #091540;
       }
 
@@ -261,10 +261,10 @@
     .success-section {
       position: absolute;
       top: 0;
-    }
 
-    .success-info {
-      background: #324ea3;
+      .success-info {
+        background: #324ea3;
+      }
 
       h4 {
         font-family: $main-font-bold;
@@ -281,7 +281,18 @@
 
       .value {
         font-family: $main-font-bold;
-        font-size: 28px;
+        font-size: 42px;
+      }
+
+      .btn {
+        padding: 4px 5px 6px;
+        box-shadow: 0 2px 4px rgba(#000000, .1);
+        line-height: 20px;
+      }
+
+      #close-instant-trade {
+        border-color: $orange;
+        background-color: $orange;
       }
     }
 

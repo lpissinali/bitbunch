@@ -42,6 +42,7 @@ const shortTradeContainer = tradeRect.querySelector('.short-details');
 const shortTradeIcon = tradeRect.querySelector('.short-details .icon-container');
 const shortTradeDetails = tradeRect.querySelector('.short-details .info');
 const tradeSuccessSection = tradeRect.querySelector('.success-section');
+const tradeSuccessSectionParent = tradeSuccessSection.closest('.overflow-hidden');
 
 const buyInfoSection = tradeRect.querySelector('.buy-info');
 const buyInfoSectionContent = buyInfoSection.querySelector('.content');
@@ -351,12 +352,14 @@ export function updateShortDetails() {
   if (state.stage.isVertical) {
     const xIcon = state.showMoreProgress * (shortTradeContainer.offsetWidth / 2) - 25;
     const xInfo = (shortTradeContainer.offsetWidth - shortTradeDetails.offsetWidth) / 2;
+    const yInfo = state.showMoreProgress * 60;
     anime.set(shortTradeIcon, {
       translateX: xIcon > 0 ? xIcon : 0,
     });
+
     anime.set(shortTradeDetails, {
       translateX: xInfo,
-      translateY: 60,
+      translateY: yInfo,
     });
   }
 }
@@ -448,22 +451,28 @@ export function initShowMore() {
   updateInstantTradeSuccess();
   updateInstantTradeSellProgress();
 }
+
 export function updateInstantTradeSuccess() {
   const offset = SELECTED_CURRENCY_HEIGHT;
+  const currentHeight = tradeRect.offsetHeight;
+  const height = currentHeight + state.successProgress * (SELECTED_CURRENCY_HEIGHT_SUCCESS - currentHeight);
+  const targetOffset = getTargetOffset(state.selection.currency, state.columns.currencies);
+  const y = targetOffset - height * 0.5;
 
-  //   const { size } = state.columns.currencies;
-  //   const height = size + state.successProgress * (SELECTED_CURRENCY_HEIGHT_SUCCESS - size);
-  //   const targetOffset = getTargetOffset(state.selection.currency, state.columns.currencies);
-  //   const y = targetOffset - height * 0.5;
-
-  //   anime.set(tradeRect, {
-  //     translateY: y,
-  //     height,
-  //   });
+  anime.set(tradeRect, {
+    translateY: y,
+    height,
+  });
 
   anime.set(tradeSuccessSection, {
     translateY: offset * (1 - state.successProgress),
   });
+
+  if (state.successProgress === 1) {
+    tradeSuccessSectionParent.classList.toggle('h-100', true);
+  } else {
+    tradeSuccessSectionParent.classList.toggle('h-100', false);
+  }
 }
 
 export function updateInstantTradeSellProgress() {
@@ -473,6 +482,7 @@ export function updateInstantTradeSellProgress() {
   anime.set(buyInfoSection, {
     translateX: offset * progress,
   });
+
   anime.set(sellInfoSection, {
     translateX: -offset * progress,
   });
@@ -481,8 +491,8 @@ export function updateInstantTradeSellProgress() {
 export function hideShowMore() {
   const profitNode = shortTradeDetails.querySelector('.profit');
   const instantNode = shortTradeDetails.querySelector('.instant-trade');
-  profitNode.classList.toggle('d-none', true);
-  instantNode.classList.toggle('d-none', false);
+  profitNode.classList.toggle('d-none', false);
+  instantNode.classList.toggle('d-none', true);
 }
 
 export function updateParticles() {

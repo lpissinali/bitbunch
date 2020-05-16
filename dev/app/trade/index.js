@@ -172,9 +172,7 @@ function animLoop() {
     const trade = state.trade.trades.shift();
     state.trade.current = trade;
     if (trade.isInstant) {
-      instantTradeAnimation()
-        .then(showInstantTradeSuccess)
-        .then(animLoop);
+      instantTradeAnimation().then(animLoop);
     } else {
       // Select random sell exchange just to show initial animation
       if (trade.sellExchange === -1) {
@@ -213,8 +211,13 @@ handleResize();
 setTimeout(() => {
   animLoop();
 }, 3000);
+
 setTimeout(() => {
   createFakeTrade();
 }, 5000);
+
+setTimeout(() => {
+  createFakeTrade();
+}, 15000);
 
 window.addEventListener('resize', handleResize);

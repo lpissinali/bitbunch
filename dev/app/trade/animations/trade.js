@@ -359,14 +359,12 @@ export function closeInstantTrade() {
       showMoreProgress: 0,
       successProgress: 0,
       easing: 'linear',
-      complete() {
-        hideShowMore();
-      },
       update(anim) {
         if (!anim.completed) {
           updateInstantTradeSuccess();
           updateTradeRect();
-          updateLines();
+          updateCurrenciesOpacity();
+          updateShortDetails();
         }
       },
     },
@@ -384,12 +382,12 @@ export function closeInstantTrade() {
       complete() {
         hideTradeRect();
         hideSelectRects();
+        hideShowMore();
       },
       update(anim) {
         if (!anim.completed) {
           updateExchangeMarkers();
           updateSelectColumns();
-          updateTradeRect();
           updateLines();
           updateSelectRects();
         }
