@@ -4,6 +4,8 @@ import {
   updateBuyExchanges,
   updateSellExchanges,
   updateCurrencies,
+  updateCurrenciesOpacity,
+  updateShortDetails,
   updateExchangeMarkers,
   updateLines,
   updateSelectColumns,
@@ -336,6 +338,8 @@ export function showInstantTrade() {
         if (!anim.completed) {
           updateTradeRect();
           updateLines();
+          updateCurrenciesOpacity();
+          updateShortDetails();
         }
       },
     },

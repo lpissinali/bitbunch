@@ -22,7 +22,7 @@ function createFakeTrade() {
     id: startTime,
     buyExchange: 2,
     sellExchange: 26,
-    currency: 5,
+    currency: 3,
     wallet: state.wallet,
     profit: 0.0332,
     amount: 1,
@@ -83,10 +83,10 @@ function performStep(step) {
 
   if (step === 3) {
     toggleSliderControls('off');
-
-    showInstantTradeSuccess().then(() => {
-      toggleSliderControls('on');
-    });
+    selectCurrency(true);
+    // .then(showInstantTrade)
+    // .then(showInstantTradeSellProgress)
+    // .then(showInstantTradeSuccess);
   }
 }
 
@@ -112,11 +112,21 @@ function resetSteps() {
 createElements();
 handleResize();
 
-animLoop();
+// animLoop();
 
 createFakeTrade();
 
 window.addEventListener('resize', handleResize);
+
+state.animLoopPaused = true;
+
+setTimeout(() => {
+  scrollIntoView()
+    .then(selectCurrency)
+    .then(showInstantTrade)
+    .then(showInstantTradeSellProgress)
+    .then(showInstantTradeSuccess);
+}, 1);
 
 if ($profitsSlider.length) {
   $profitsSlider.on('beforeChange', (event, slick, currentSlide, nextSlide) => {
