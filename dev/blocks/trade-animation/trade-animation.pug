@@ -1,17 +1,32 @@
 #trade-exchange
     svg#trade-display.trade-display(width="100%" height="100%")
         defs
+           
+            filter#exchange-shadow(x='-1' y='-1' width="44" height="44")
+                feDropShadow(dx='5' dy='6' stddeviation='6' flood-color="#50575E" flood-opacity="0.2")
+            filter#currency-shadow(x='0' y='0' width="66" height="66")
+                feOffset(dx='0' dy='0')
+                feGaussianBlur(stdDeviation='2' result='offset-blur')
+                feComposite(operator='out' in='SourceGraphic' in2='offset-blur' result='inverse')
+                feFlood(flood-color='black' flood-opacity='0.4' result='color')
+                feComposite(operator='in' in='color' in2='inverse' result='shadow')
+                feComposite(operator='over' in='shadow' in2='SourceGraphic')
+            filter#currency-connect-shadow(x='-1' y='-1' width="3" height="3")
+                feDropShadow(dx='0' dy='1' stddeviation='2' flood-color="black" flood-opacity="0.4")
+            lineargradient#currency-connect-fill(x1='0%' y1='0%' x2='0%' y2='100%')
+                stop(offset='0%' style='stop-color:#0095FA; stop-opacity:1')
+                stop(offset='100%' style='stop-color:#005CF4; stop-opacity:1')
             g.exchange-box
-                rect(width="44" height="44" rx="2")
+                rect(width="44" height="44" rx="2" fill="#fff" style='filter:url(#exchange-shadow)')
                 image(x="10" y="10" width="24" height="24")
             g.currency-box
-                rect(width="66" height="66" rx="2")
+                rect(width="66" height="66" rx="2" style='filter:url(#currency-shadow)')
                 rect.icon-box(x="8" y="8" width="50" height="50" rx="2")
                 image(x="19" y="19" width="28" height="28")
                 circle(cx="0" cy="33" r="8")
-                circle.connect-point(cx="0" cy="33" r="3")
+                circle.connect-point(cx="0" cy="33" r="3" style='filter:url(#currency-connect-shadow); fill:url(#currency-connect-fill);')
                 circle(cx="66" cy="33" r="8")
-                circle.connect-point(cx="66" cy="33" r="3")
+                circle.connect-point(cx="66" cy="33" r="3" style='filter:url(#currency-connect-shadow); fill:url(#currency-connect-fill);')
         g.buyExchanges-box
             rect.exchanges-background
             path.select-column(d="M34,209h13c1.7,0,3,1.3,3,3v68c0,1.7-1.3,3-3,3H34L0,492V0L34,209z")
@@ -78,14 +93,20 @@
                 //-     button#close-instant-trade.btn.btn-warning.py-2.px-3.ml-2.w-100.text-light.font-size-12 Close
                 //-     button.btn.btn-light.py-2.px-3.mr-2.w-100.ml-3.text-primary.font-size-12 Details
     svg#connectors-display.connectors-display(width="100%" height="100%")
+        defs
+            filter#exchange-connect-shadow(x='-1' y='-1' width="4" height="4")
+                feDropShadow(dx='0' dy='1' stddeviation='2' flood-color="black" flood-opacity="0.4")
+            lineargradient#exchange-connect-fill(x1='0%' y1='0%' x2='0%' y2='100%')
+                stop(offset='0%' style='stop-color:#0095FA; stop-opacity:1')
+                stop(offset='100%' style='stop-color:#005CF4; stop-opacity:1')
         g.select-marker1
             circle.border(r="20")
             circle.indicator(r="12")
-            circle.connector(r="4")
+            circle.connector(r="4" style='filter:url(#exchange-connect-shadow); fill: url(#exchange-connect-fill);')
         g.select-marker2
             circle.border(r="20")
             circle.indicator(r="12")
-            circle.connector(r="4")
+            circle.connector(r="4" style='filter:url(#exchange-connect-shadow); fill: url(#exchange-connect-fill);')
         g
             line.line1(x1="0" y1="0" x2="0" y2="0" stroke="black")
             line.line2(x1="0" y1="0" x2="0" y2="0" stroke="black")
