@@ -77,6 +77,7 @@
 
   .select-marker1,
   .select-marker2 {
+    will-change: transform;
 
     .border {
       fill: #d6dced;
@@ -96,10 +97,12 @@
 
   .exchange-box {
     fill: #ffffff;
+    will-change: transform;
   }
 
   .currency-box {
     fill: #efc7c2;
+    will-change: transform;
 
     .icon-box {
       fill: #ffffff;
