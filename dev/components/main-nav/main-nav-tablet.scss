@@ -112,6 +112,11 @@
   .main-nav__user-sign-in-button {
     background-color: $white;
     color: #324ea3;
+
+    &:hover {
+      background-color: #d3dcf0;
+      color: #324ea3;
+    }
   }
 
   .user-panel__register-button {
