@@ -453,25 +453,39 @@ export function initShowMore() {
 }
 
 export function updateInstantTradeSuccess() {
-  const offset = SELECTED_CURRENCY_HEIGHT;
-  const currentHeight = tradeRect.offsetHeight;
-  const height = currentHeight + state.successProgress * (SELECTED_CURRENCY_HEIGHT_SUCCESS - currentHeight);
-  const targetOffset = getTargetOffset(state.selection.currency, state.columns.currencies);
-  const y = targetOffset - height * 0.5;
+  if (state.stage.isVertical) {
+    const offset = SELECTED_CURRENCY_HEIGHT;
+    const currentHeight = tradeRect.offsetHeight;
+    const height = currentHeight + state.successProgress * (SELECTED_CURRENCY_HEIGHT_SUCCESS - currentHeight);
+    const targetOffset = getTargetOffset(state.selection.currency, state.columns.currencies);
+    const y = targetOffset - height * 0.5;
 
-  anime.set(tradeRect, {
-    translateY: y,
-    height,
-  });
+    anime.set(tradeRect, {
+      translateY: y,
+      height,
+    });
 
-  anime.set(tradeSuccessSection, {
-    translateY: offset * (1 - state.successProgress),
-  });
+    anime.set(tradeSuccessSection, {
+      translateY: offset * (1 - state.successProgress),
+    });
 
-  if (state.successProgress === 1) {
-    tradeSuccessSectionParent.classList.toggle('h-100', true);
+    if (state.successProgress === 1) {
+      tradeSuccessSectionParent.classList.toggle('h-100', true);
+    } else {
+      tradeSuccessSectionParent.classList.toggle('h-100', false);
+    }
   } else {
-    tradeSuccessSectionParent.classList.toggle('h-100', false);
+    const offset = HORIZONTAL_SELECTED_CURRENCY_HEIGHT;
+
+    anime.set(tradeSuccessSection, {
+      translateY: offset * (1 - state.successProgress),
+    });
+
+    if (state.successProgress === 1) {
+      tradeSuccessSectionParent.classList.toggle('h-100', true);
+    } else {
+      tradeSuccessSectionParent.classList.toggle('h-100', false);
+    }
   }
 }
 
