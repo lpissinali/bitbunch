@@ -20,8 +20,9 @@ import {
   updateInstantTradeSuccess,
   hideShowMore,
   updateParticles,
-  updateInstantTradeInfo,
+  updateInstantTradeInfoProgress,
   updateInstantTradeSellProgress,
+  hideSellProgress,
 } from '../update';
 import { clipOffset, scrollColumn, listenForClose } from './helpers';
 import { SELECTED_EXCHANGE_WIDTH } from '../layout';
@@ -262,20 +263,20 @@ export function showInstantTradeSellProgress(ignorePause = false) {
   const SHOW_INFO_DURATION = 800;
   const SHOW_SELL_PROGRESS_DURATION = 800;
   const PAUSE_BUY_SELL_INFO = 2500;
-
-  state.showSellProgress = 0;
-
   let timelineOffset = 0;
+
+  state.showInfoProgress = 0;
+  state.showSellProgress = 0;
 
   timeline.add(
     {
       duration: SHOW_INFO_DURATION,
       easing: 'linear',
       targets: state,
-      showSellProgress: 0.5,
+      showInfoProgress: 0.5,
       update(anim) {
         if (!anim.completed) {
-          updateInstantTradeInfo();
+          updateInstantTradeInfoProgress();
         }
       },
     },
@@ -319,10 +320,10 @@ export function showInstantTradeSuccess() {
     duration: HIDE_INFO_DURATION,
     easing: 'linear',
     targets: state,
-    showSellProgress: 1,
+    showInfoProgress: 1,
     update(anim) {
       if (!anim.completed) {
-        updateInstantTradeInfo();
+        updateInstantTradeInfoProgress();
       }
     },
   });
@@ -404,6 +405,7 @@ export function closeInstantTrade() {
         hideTradeRect();
         hideSelectRects();
         hideShowMore();
+        hideSellProgress();
       },
       update(anim) {
         if (!anim.completed) {

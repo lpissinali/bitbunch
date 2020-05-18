@@ -101,7 +101,7 @@ function resetSteps() {
     state.selectProgress = 0;
     state.expandProgress = 0;
     state.showMoreProgress = 0;
-    state.showSellProgress = 0;
+    state.showInfoProgress = 0;
     state.successProgress = 0;
     state.particlesProgress = 0;
 
