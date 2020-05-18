@@ -2,6 +2,13 @@
   .make-withdraw{
     padding-bottom: 0.125rem;
   }
+  .make-withdraw__info{
+    font-family: $main-font-light;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    opacity: 0.8;
+    color: #091540;
+  }
   .withdrawal__form .form-group__placeholder{
     font-size: 0.75rem;
   }

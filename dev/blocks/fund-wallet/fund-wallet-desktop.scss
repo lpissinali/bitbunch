@@ -41,7 +41,7 @@
 .fund-wallet__info{
   position: relative;
   margin-top: 0.9375rem;
-  font-family: $main-font-semi-bold;
+  font-family: $main-font-bold;
   color: $blue;
   letter-spacing: 0.0213rem;
   line-height: 1.3125rem;
@@ -72,6 +72,11 @@
     font-size: 0.875rem;
     color: $dark-grey;
     letter-spacing: -0.0094rem;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
   button{
     justify-content: center;

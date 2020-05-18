@@ -440,13 +440,15 @@ function customSelect() {
 
     function optionsOpen(){
       optionsHeight = $('.choose-select__options-wrapper').outerHeight()
-      TweenLite.to($('.choose-select__options'), 0.5, {height: optionsHeight, onComplete: optionsOverflow})
+      TweenLite.to($('.choose-select__options'), 0.3, {height: optionsHeight, onComplete: optionsOverflow})
     }
     function optionsClose(){
+      $('.choose-select__trigger').removeClass('opened')
       $('.choose-select__options').removeClass('opened');
-      TweenLite.to($('.choose-select__options'), 0.5, {height: 0})
+      TweenLite.to($('.choose-select__options'), 0.3, {height: 0})
     }
     function optionsOverflow(){
+      $('.choose-select__trigger').addClass('opened');
       $('.choose-select__options').addClass('opened');
     }
 
@@ -461,7 +463,7 @@ function customSelect() {
       optionsClose()
     }
     
-    $(this).toggleClass('opened');
+    // $(this).toggleClass('opened');
     event.stopPropagation();
   });
 
@@ -481,7 +483,7 @@ function customSelect() {
         optionName = $(this).parents('.choose-select__wrapper').find('.choose-select__trigger-name')
     
     function changeOptionData(icon,name){
-      optionIcon.html('<img src="'+icon+'" alt="">')
+      optionIcon.html('<img src="'+icon+'" alt="">').addClass('notempty')
       optionName.text(name)
     }
     
@@ -540,6 +542,29 @@ if (document.querySelector('.make-withdraw')) {
 
 // Datapicker
 if (document.querySelector('.trading-statistics__header-time')) {
+  $('#date-select').on('focus', function(){
+    $(this).val('');
+  }).on('keyup', function(){
+    var $this = $(this);
+    var mydate = $this.val();
+    mydate = mydate.replace(/\D|\s/, '');  
+    mydate = mydate.replace(/^(00)(.*)?/, '01$2');
+    mydate = mydate.replace(/^([0-9]{2})(00)(.*)?/, '$101');
+    mydate = mydate.replace(/^([3-9])([2-9])(.*)?/, '2$2');
+    mydate = mydate.replace(/^(3[01])(02)(.*)?/, '29$2');
+    mydate = mydate.replace(/^([0-9]{2})([2-9]|1[3-9])(.*)?/, '$112');
+    mydate = mydate.replace(/^([0-9]{2})([0-9]{2})([0-9].*?)/, '$1/$2/$3');
+    mydate = mydate.replace(/^([0-9]{2})([0-9])/, '$1/$2');    
+    //ano bissexto
+    var day = mydate.substr(0,2) || '01';
+    var month = mydate.substr(3,2) || '01';
+    var year = mydate.substr(6,4);
+    if(year.length == 4 && day == '29' && month == '02' && (year % 4 != 0 || (year.substr(2,2) == '00' && year % 400 != 0))) {
+      mydate = mydate.replace(/^29/,'28');
+    }
+    mydate = mydate.substr(0,10);
+    $this.val(mydate);
+  })
   $.fn.datepicker.language['en'] = {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -556,6 +581,7 @@ if (document.querySelector('.trading-statistics__header-time')) {
     language: 'en',
     inline: true,
     range: true,
+    toggleSelected: false,
     multipleDatesSeparator: ' - ',
     prevHtml: '<svg width="8" height="14" viewBox="0 0 8 14"><path d="M7.6376,2.24716c0.50468,-0.53624 0.47911,-1.38007 -0.05712,-1.88476c-0.53623,-0.50468 -1.38006,-0.47911 -1.88475,0.05712l-5.33333,5.66666c-0.4832,0.5134 -0.4832,1.31424 0,1.82764l5.33333,5.66666c0.50469,0.53623 1.34852,0.5618 1.88475,0.05712c0.53623,-0.50469 0.5618,-1.34852 0.05712,-1.88476l-4.47327,-4.75284v0z" fill="#324ea3" fill-opacity="1"></path></svg>',
     nextHtml: '<svg width="8" height="14" viewBox="0 0 8 14"><path d="M0.3624,2.24716c-0.50468,-0.53624 -0.47911,-1.38007 0.05712,-1.88476c0.53623,-0.50468 1.38006,-0.47911 1.88475,0.05712l5.33333,5.66666c0.4832,0.5134 0.4832,1.31424 0,1.82764l-5.33333,5.66666c-0.50469,0.53623 -1.34852,0.5618 -1.88475,0.05712c-0.53623,-0.50469 -0.5618,-1.34852 -0.05712,-1.88476l4.47327,-4.75284v0z" fill="#324ea3" fill-opacity="1"></path></svg>',
@@ -782,6 +808,7 @@ if (document.querySelector('.button-copy')) {
     copyNumber.select();
     copyNumber.setSelectionRange(0, 99999);
     document.execCommand("copy");
+    copyNumber.setSelectionRange(0, 0);
 
     // Уведомление
     $('.notification').addClass('active');
