@@ -1,38 +1,53 @@
 .form-control {
-  border: none;
-  padding-left: 1rem;
-  padding-right: 2rem;
   padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  border: none;
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
   color: $dark-grey;
-  box-shadow: 0.625rem 0.75rem 1.5rem rgba(80, 87, 94, 0.1);
 }
-.form-control[readonly]{
+
+.form-control[readonly] {
   background-color: #f7f8fb;
-  color: rgba(51, 51, 51, 0.4);
+  color: rgba(51, 51, 51, .4);
 }
+
 .form-control[readonly]:focus {
   outline: 0;
-  box-shadow: 0.625rem 0.75rem 1.5rem rgba(80, 87, 94, 0.1);
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
 }
+
+.form-control:focus {
+  border-right: none;
+}
+
+.validation-error.form-control:focus {
+  border: .0625rem solid $red;
+}
+
+.validation-success.form-control:focus {
+  border-right: .3125rem solid $green-light;
+}
+
 .form-control:not([readonly]):focus {
   outline: 0;
-  box-shadow: 0.125rem 0.25rem 0.375rem rgba(80, 87, 94, 0.05);
+  box-shadow: .125rem .25rem .375rem rgba(80, 87, 94, .05);
 }
 
 .form-control-lg {
   height: 3.125rem;
-  font-size: 0.875rem;
-  border-radius: 0.125rem;
+  border-radius: .125rem;
+  font-size: .875rem;
   color: #495057;
 }
 
 .validation-success {
-  border-right: 0.3125rem solid $green-light;
+  border-right: .3125rem solid $green-light;
 }
 
 .validation-error {
-  border-right: 0.3125rem solid $red;
+  border: .0625rem solid $red;
 }
 
 //styles for animating placeholder
@@ -45,66 +60,69 @@
   position: absolute;
   top: 1.0625rem;
   left: 1rem;
-  opacity: 0.4;
-  color: $dark-grey;
   font-family: $main-font-light;
-  font-size: 0.875rem;
-  transition: top 0.3s;
+  font-size: .875rem;
+  color: $dark-grey;
+  opacity: .4;
+  transition: top .3s;
   pointer-events: none;
 }
+
 .form-group__placeholder.has-content {
-  top: 0.5rem;
-  transition: 0.3s;
-  font-size: 0.75rem;
+  top: .5rem;
+  font-size: .75rem;
+  transition: .3s;
 }
 
-.form-group input:not([readonly]):focus ~ .form-group__placeholder {
-  top: 0.5rem;
-  transition: 0.3s;
-  font-size: 0.75rem;
+.form-group input:not([readonly]):focus~.form-group__placeholder {
+  top: .5rem;
+  font-size: .75rem;
+  transition: .3s;
 }
 
-.form-group textarea:not([readonly]):focus ~ .form-group__placeholder {
-  top: 0.5rem;
-  transition: 0.3s;
-  font-size: 0.75rem;
+.form-group textarea:not([readonly]):focus~.form-group__placeholder {
+  top: .5rem;
+  font-size: .75rem;
+  transition: .3s;
 }
 
 .form-group input:disabled {
-  border: none;
-  padding-left: 1rem;
-  padding-right: 2rem;
   padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  border: none;
+  box-shadow: .625rem .75rem 1.5rem rgba(80, 87, 94, .1);
   // color: rgba($dark-grey, 0.4);
   color: #adadad;
-  box-shadow: 0.625rem 0.75rem 1.5rem rgba(80, 87, 94, 0.1);
-  opacity: 0.6;
+  opacity: .6;
 }
 
 .form-group input[readonly] {
-  cursor: default;
   color: #adadad;
+  cursor: default;
 }
 
-.form-group__button{
+.form-group__button {
   position: absolute;
-  right: 1rem;
   top: 50%;
+  right: 1rem;
   padding: 0;
-  background: transparent;
   border: none;
   box-shadow: none;
-  outline: none;
-  transform: translateY(-50%);
+  background: transparent;
   font-family: $main-font-medium;
-  font-size: 0.875rem;
+  font-size: .875rem;
   color: $blue;
   cursor: pointer;
-  &:hover{
-    opacity: .8;
+  transform: translateY(-50%);
+  outline: none;
+
+  &:hover {
     color: $blue;
+    opacity: .8;
   }
+
   &.link-hover-move {
     position: absolute;
   }
@@ -112,30 +130,35 @@
 
 .error-icon {
   position: absolute;
-  top: 0.6rem;
+  top: .6rem;
   right: 1rem;
   width: 2rem;
   height: 2rem;
+  border-radius: .1875rem;
   background-color: $red;
-  border-radius: 0.1875rem;
-    span {
-      display: block;
-      position: absolute;
-      top: -0.5rem;
-      left: 0.8125rem;
-      width: 2rem;
-      height: 2rem;
-      color: $white;
-      font-size: 2rem;
-    }
+
+  span {
+    position: absolute;
+    top: -.5rem;
+    left: .8125rem;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    color: $white;
+  }
 }
 
-@media screen and ($mobile1), ($mobile2), ($mobile3) {
-  .form-group__placeholder{
-    font-size: 0.75rem;
+@media screen and ($mobile1),
+($mobile2),
+($mobile3) {
+
+  .form-group__placeholder {
+    font-size: .75rem;
   }
-  .form-group__button{
-    right: 0.75rem;
-    font-size: 0.75rem;
+
+  .form-group__button {
+    right: .75rem;
+    font-size: .75rem;
   }
 }

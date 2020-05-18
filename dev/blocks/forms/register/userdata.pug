@@ -8,16 +8,20 @@
                 span.form-group__placeholder First name 
                 .error-icon.d-none
                   span !
+                .tooltip-anchor
             .form-group.register__form-lastname
                 input(type="text" class="form-control form-control-lg required" id="registerLastname" name="lastname" required)
                 span.form-group__placeholder Last name
                 .error-icon.d-none
                   span !
+                .tooltip-anchor
             .form-group.register__form-country-selector
               select(id="countrySelector" class="form-control form-control-lg required selectpicker" name="country" required)
 
               span.form-group__placeholder.bootstrap-select-placeholder Country
               .error-icon.d-none
+                span !
+              .tooltip-anchor
             .form-group.register__form-phonecode
                 input(type="text" class="form-control form-control-lg required" id="registerPhonecode" name="phonecode" required)
                 span.form-group__placeholder +44
@@ -26,7 +30,7 @@
               span.form-group__placeholder Phone number
               .error-icon.d-none 
                 span !
-            
+              .tooltip-anchor
             button(type="submit").button-orange.button-hover-white.register__form-register Register
         .register-section__footer
             span Already have an account?

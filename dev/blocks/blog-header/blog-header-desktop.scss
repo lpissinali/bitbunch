@@ -34,6 +34,15 @@
   background-size: auto 100%;
 }
 
+@media screen and (min-width: 1440px) {
+
+  .blog-header__decor {
+    right: auto;
+    left: calc(50% + 8rem);
+    width: 36.85rem;
+  }
+}
+
 @import "./blog-header-tablet.scss";
 
 @import "./blog-header-mobile.scss";
