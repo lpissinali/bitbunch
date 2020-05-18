@@ -304,4 +304,9 @@
       left: calc(100% - 1.125rem);
     }
   }
+
+  .button-red{
+    font-family: $main-font-regular;
+    text-transform: capitalize;
+  }
 }

@@ -76,9 +76,13 @@
         margin-left: auto;
       }
     }
+    + .account-nav__sandwich-button{
+      margin-left: 0;
+    }
   }
   .account-nav__sandwich-button{
     display: block;
+    margin-left: auto;
   }
   .account-nav__user{
     &:before{
