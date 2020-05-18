@@ -20,7 +20,9 @@ import {
   updateInstantTradeSuccess,
   hideShowMore,
   updateParticles,
+  updateInstantTradeInfoProgress,
   updateInstantTradeSellProgress,
+  hideSellProgress,
 } from '../update';
 import { clipOffset, scrollColumn, listenForClose } from './helpers';
 import { SELECTED_EXCHANGE_WIDTH } from '../layout';
@@ -259,8 +261,11 @@ export function selectCurrency(ignorePause = false) {
 export function showInstantTradeSellProgress(ignorePause = false) {
   const timeline = new anime.timeline();
   const SHOW_INFO_DURATION = 800;
+  const SHOW_SELL_PROGRESS_DURATION = 800;
   const PAUSE_BUY_SELL_INFO = 2500;
+  let timelineOffset = 0;
 
+  state.showInfoProgress = 0;
   state.showSellProgress = 0;
 
   timeline.add(
@@ -268,14 +273,31 @@ export function showInstantTradeSellProgress(ignorePause = false) {
       duration: SHOW_INFO_DURATION,
       easing: 'linear',
       targets: state,
-      showSellProgress: 0.5,
+      showInfoProgress: 0.5,
+      update(anim) {
+        if (!anim.completed) {
+          updateInstantTradeInfoProgress();
+        }
+      },
+    },
+    timelineOffset
+  );
+
+  timelineOffset += SHOW_INFO_DURATION + 200;
+
+  timeline.add(
+    {
+      duration: SHOW_SELL_PROGRESS_DURATION,
+      easing: 'easeOutExpo',
+      targets: state,
+      showSellProgress: 1,
       update(anim) {
         if (!anim.completed) {
           updateInstantTradeSellProgress();
         }
       },
     },
-    0
+    timelineOffset
   );
 
   if (!ignorePause) {
@@ -298,10 +320,10 @@ export function showInstantTradeSuccess() {
     duration: HIDE_INFO_DURATION,
     easing: 'linear',
     targets: state,
-    showSellProgress: 1,
+    showInfoProgress: 1,
     update(anim) {
       if (!anim.completed) {
-        updateInstantTradeSellProgress();
+        updateInstantTradeInfoProgress();
       }
     },
   });
@@ -383,6 +405,7 @@ export function closeInstantTrade() {
         hideTradeRect();
         hideSelectRects();
         hideShowMore();
+        hideSellProgress();
       },
       update(anim) {
         if (!anim.completed) {

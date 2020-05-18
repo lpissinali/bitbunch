@@ -42,13 +42,13 @@ export const currencyCodeToName = currenciesData.reduce((acc, x) => {
 
 export function getCurrencyIcon(currency, useWhite) {
   const suffix = useWhite === true ? '-white' : '';
-  return `/images/${currency}${suffix}@2x.png`;
+  return `./images/${currency}${suffix}@2x.png`;
 }
 
 export function getExchangeIcon(exchange, useWhite) {
   const suffix = useWhite === true ? '-white' : '';
   const lowercase = exchange.toLowerCase();
-  return `/images/${lowercase}${suffix}@2x.png`;
+  return `./images/${lowercase}${suffix}@2x.png`;
 }
 
 export function randomSellExchange(trade) {
