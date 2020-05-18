@@ -124,8 +124,8 @@ setTimeout(() => {
   scrollIntoView()
     .then(selectCurrency)
     .then(showInstantTrade)
-    .then(showInstantTradeSellProgress)
-    .then(showInstantTradeSuccess);
+    .then(showInstantTradeSellProgress);
+  // .then(showInstantTradeSuccess);
 }, 1);
 
 if ($profitsSlider.length) {
