@@ -47,6 +47,7 @@ const tradeSuccessSectionParent = tradeSuccessSection.closest('.overflow-hidden'
 const buyInfoSection = tradeRect.querySelector('.buy-info');
 const buyInfoSectionContent = buyInfoSection.querySelector('.content');
 const sellInfoSection = tradeRect.querySelector('.sell-info');
+const sellInfoProgress = sellInfoSection.querySelector('.sell-progress');
 const sellInfoSectionContent = sellInfoSection.querySelector('.content');
 
 const verticalInfoSection = tradeRect.querySelector('.vertical-details');
@@ -449,7 +450,7 @@ export function initShowMore() {
   sellInfoSectionContent.innerHTML = `Sold <b>${soldInTargetCurrency} ${currencyCode}</b> for<br> <b>${soldInWalletCurrency} ${walletCurrency}</b> ${time}`;
 
   updateInstantTradeSuccess();
-  updateInstantTradeSellProgress();
+  updateInstantTradeInfoProgress();
 }
 
 export function updateInstantTradeSuccess() {
@@ -489,9 +490,9 @@ export function updateInstantTradeSuccess() {
   }
 }
 
-export function updateInstantTradeSellProgress() {
+export function updateInstantTradeInfoProgress() {
   const offset = SELECTED_CURRENCY_WIDTH;
-  const progress = -2 * (0.5 - state.showSellProgress);
+  const progress = -2 * (0.5 - state.showInfoProgress);
 
   anime.set(buyInfoSection, {
     translateX: offset * progress,
@@ -502,11 +503,24 @@ export function updateInstantTradeSellProgress() {
   });
 }
 
+export function updateInstantTradeSellProgress() {
+  const progress = state.showSellProgress * sellInfoSection.offsetWidth;
+
+  anime.set(sellInfoProgress, {
+    translateX: progress,
+    scale: '1.2, 1',
+  });
+}
+
 export function hideShowMore() {
   const profitNode = shortTradeDetails.querySelector('.profit');
   const instantNode = shortTradeDetails.querySelector('.instant-trade');
   profitNode.classList.toggle('d-none', false);
   instantNode.classList.toggle('d-none', true);
+}
+
+export function hideSellProgress() {
+  sellInfoProgress.style.transform = ""
 }
 
 export function updateParticles() {

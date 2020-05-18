@@ -44,6 +44,7 @@ export const state = {
   selectProgress: 0,
   expandProgress: 0,
   showMoreProgress: 0,
+  showInfoProgress: 0,
   showSellProgress: 0,
   successProgress: 0,
   particlesProgress: 0,
