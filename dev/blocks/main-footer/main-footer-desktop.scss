@@ -11,10 +11,10 @@
     display: block;
     width: 35rem;
     height: 100%;
-    background-image: url("./images/main-footer__decor-desktop.png");
+    background-image: url("./images/main-footer__decor-desktop.svg");
     background-position: left bottom;
     background-repeat: no-repeat;
-    background-size: 105% auto;
+    background-size: auto 100%;
     pointer-events: none;
   }
 }
@@ -173,6 +173,19 @@
     text-align: center;
     color: $white;
     opacity: .5;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+
+  .main-footer {
+
+    &:after {
+      left: 0;
+      width: 100%;
+      background-image: url("./images/main-footer__decor-desktop.svg");
+      background-position: calc(50% + 65.5rem) bottom;
+    }
   }
 }
 
