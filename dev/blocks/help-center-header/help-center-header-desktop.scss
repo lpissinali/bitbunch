@@ -34,13 +34,12 @@
   background-size: auto 100%;
 }
 
-
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1670px) {
 
   .help-center-header__decor {
     right: auto;
-    left: calc(50% + 12rem);
-}
+    left: calc(50% + 10rem);
+  }
 }
 
 @import "./help-center-header-tablet.scss";
