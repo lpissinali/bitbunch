@@ -115,8 +115,9 @@
   opacity: 0;
   transition: 400ms;
 
-  span {
+  a {
     position: relative;
+    z-index: -1;
     font-family: $main-font-bold;
     font-size: 1rem;
     color: $white;
@@ -145,7 +146,9 @@
   .bit-media__img-shadow {
     opacity: 1;
 
-    span {
+    a {
+      z-index: 1;
+      animation: zIndex 500ms linear;
       transform: translateX(0);
     }
   }
@@ -182,6 +185,36 @@
   margin-top: 3rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+@-webkit-keyframes zIndex {
+
+  0% {
+    pointer-events: none;
+  }
+
+  99% {
+    pointer-events: none;
+  }
+
+  100% {
+    pointer-events: auto;
+  }
+}
+
+@keyframes zIndex {
+
+  0% {
+    pointer-events: none;
+  }
+
+  99% {
+    pointer-events: none;
+  }
+
+  100% {
+    pointer-events: auto;
+  }
 }
 
 @import "./bit-media-tablet.scss";
