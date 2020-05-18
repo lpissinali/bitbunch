@@ -112,7 +112,8 @@
       justify-content: center;
       height: 2.5rem;
       margin-bottom: 1.5rem;
-      border-radius: 0.125rem;
+      border: 2px solid $blue;
+      border-radius: 0.1875rem;
       border: 0.125rem solid $blue;
       box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
       background-color: $blue;
@@ -120,10 +121,14 @@
       font-size: 0.875rem;
       color: $white;
       cursor: pointer;
-      transition: 300ms ease;
+      transition: 300ms;
+      transform-origin: center center;
 
-      &:hover {
-        box-shadow: none;
+      &:not(.active):hover {
+        border: 2px solid $blue;
+        background-color: $white;
+        color: $blue;
+        transform: scaleX(1.05);
       }
 
       &.active {
