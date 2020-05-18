@@ -3,7 +3,6 @@ import '../common/scss/main.scss';
 // accordion
 import Accordion from '../components/accordion/ds-accordion-gsap';
 import { dsAccordion } from '../components/accordion/ds-accordion';
-import { upInputLabel } from './modules/commonForm';
 
 require('./polyfills/polyfills');
 require('./libs/bootstrap-select/bootstrap-select.min.js');
@@ -836,9 +835,6 @@ if (document.querySelector('button[data-toggle=edit-form]')) {
       $('.security-password__form input').removeAttr('readonly')
       $('#securityPasswordCurrent').focus()
     }
-    else{
-      $('.security-password__form input').attr('readonly','')
-    }
   })
 }
 
@@ -860,7 +856,6 @@ if (document.querySelector('#modal-2fa-verification')) {
       $('#modal-2fa-verification .security-status').text('Disable')
     }
     $('#modal-2fa-verification').modal('show');
-    upInputLabel();
   })
 }
 if (document.querySelector('#modal-google-authenticator')) {
@@ -871,7 +866,6 @@ if (document.querySelector('#modal-google-authenticator')) {
       $('#modal-google-authenticator .security-status').text('Disable')
     }
     $('#modal-google-authenticator').modal('show');
-    upInputLabel();
   })
 }
 

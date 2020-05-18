@@ -1,52 +1,85 @@
-.tooltipster-base.tooltipster-sidetip.tooltipster-top {
-  width: 12rem;
+.tooltip-anchor {
+  position: absolute;
+  bottom: .85rem;
+  left: 0rem;
+  width: 1rem;
+  height: 1rem;
 }
 
-.tooltipster-sidetip.tooltipster-top .tooltipster-box {
-  background-color: $blue-deep;
+.tooltipster-base.tooltipster-sidetip {
+  z-index: 100 !important;
+}
+
+.tooltipster-base.tooltipster-sidetip.tooltipster-bottom {
+  // max-width: 12rem;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-box {
   border: none;
-  text-align: right;
+  background-color: $blue-deep;
+
+  //text-align: right;
   .tooltipster-content {
-    padding: 0.375rem 0.375rem !important;
+    padding: .175rem .375rem !important;
   }
 }
 
-.tooltipster-sidetip.tooltipster-top .tooltipster-arrow{
-  left: 9.8rem !important;
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow {
+  top: .1875rem !important;
+  left: calc(0% + 2rem) !important;
 }
 
-.tooltipster-sidetip.tooltipster-top .tooltipster-arrow .tooltipster-arrow-border{
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow .tooltipster-arrow-border {
   color: $blue-deep;
 }
 
-.tooltipster-sidetip.tooltipster-top .tooltipster-arrow .tooltipster-arrow-background {
-  border-top-color: $blue-deep;
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow .tooltipster-arrow-background {
+  border-bottom-color: $blue-deep;
 }
 
-.tooltipster-content__caption {
- font-family: $main-font-regular;
- font-size: 0.75rem;
- color: rgba($red, 1);
-}
-
-.tooltipster-content__description {
+.tooltipster-content {
   font-family: $main-font-regular;
-  font-size: 0.875rem;
+  font-size: .75rem;
   color: rgba($red, 1);
 }
 
-@media screen and ($mobile1), ($mobile2), ($mobile3) {
-  .tooltipster-base.tooltipster-sidetip.tooltipster-top {
-    width: 10rem;
+// .tooltipster-content__caption {
+//   font-family: $main-font-regular;
+//   font-size: .55rem;
+//   color: rgba($red, 1);
+// }
+
+// .tooltipster-content__description {
+//   font-family: $main-font-regular;
+//   font-size: .55rem;
+//   color: rgba($red, 1);
+// }
+
+@media screen and ($mobile1),
+($mobile2),
+($mobile3) {
+
+  .tooltip-anchor {
+    bottom: .65rem;
   }
-  .tooltipster-sidetip.tooltipster-top .tooltipster-arrow{
-    left: 7.8rem !important;
+
+  .tooltipster-base.tooltipster-sidetip.tooltipster-bottom {
+    max-width: 12rem;
   }
-  .tooltipster-content__caption {
-    font-size: 0.625rem;
-   }
-   
-   .tooltipster-content__description {
-     font-size: 0.75rem;
-   }
+
+  .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow {
+    left: calc(0% + 1rem) !important;
+  }
+
+  .tooltipster-content {
+    font-size: .625rem;
+  }
+
+  // .tooltipster-content__caption {
+  //   font-size: .625rem;
+  // }
+
+  // .tooltipster-content__description {
+  //   font-size: .75rem;
+  // }
 }
