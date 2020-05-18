@@ -6,6 +6,7 @@ module.exports = function() {
       port: 3001,
       stats: 'errors-only',
       overlay: true,
+      disableHostCheck: true,
     },
   };
 };
