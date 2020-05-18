@@ -76,7 +76,7 @@
 .verification-level__content {
   max-width: 40.625rem;
   margin-bottom: 2.0625rem;
-  font-family: $main-font-semi-bold;
+  font-family: $main-font-light;
   letter-spacing: 0.0213rem;
   line-height: 1.625rem;
   color: $black-light;
@@ -84,7 +84,7 @@
 
 .verification-level__info {
   max-width: 28.75rem;
-  font-family: $main-font-semi-bold;
+  font-family: $main-font-light;
   letter-spacing: 0.0213rem;
   line-height: 1.625rem;
   color: $black-light;
@@ -193,6 +193,7 @@
       border-top: none;
     }
   }
+
   .bs-searchbox .form-control {
     box-shadow: none;
     border-radius: 0;
@@ -200,7 +201,7 @@
     border-bottom: none;
   }
 
-  &:not(.verification-level__form-country){
+  &:not(.verification-level__form-country) {
     .bs-searchbox {
       display: none;
     }
@@ -211,6 +212,14 @@
   box-shadow: 0.125rem 0.25rem 0.375rem rgba(80, 87, 94, 0.05);
   border-radius: 0.125rem;
   border: 1px solid rgba(50, 78, 163, 0.2);
+}
+
+.verification-level__form .form-control.validation-error {
+  border: .0625rem solid $red;
+}
+
+.verification-level__form .form-control.validation-success {
+  border-right: .3125rem solid $green-light;
 }
 
 .verification-level__step {

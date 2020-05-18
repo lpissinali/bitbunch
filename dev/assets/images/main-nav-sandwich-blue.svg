@@ -1,0 +1,12 @@
+<svg id="df31e23b-a80d-4b2e-be27-f674dda26dff" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+  <title>Group_3</title>
+  <g>
+    <path d="M0,2A2,2,0,0,1,2,0H32a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2Z" style="fill: #324ea3"/>
+    <g>
+      <path d="M27.67,9.67a2,2,0,0,0-2-2H8.34a2,2,0,0,0,0,4H25.67A2,2,0,0,0,27.67,9.67Z" style="fill: #fff"/>
+      <g style="opacity: 0.30000001192092896">
+        <path d="M25.67,21H18.34a2,2,0,0,0,0,4h7.33a2,2,0,0,0,0-4Zm0-6.67H13.34a2,2,0,0,0,0,4H25.67a2,2,0,1,0,0-4Z" style="fill: #fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

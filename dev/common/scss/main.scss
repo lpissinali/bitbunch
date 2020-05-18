@@ -102,15 +102,15 @@
 // check email page
 @import "../../blocks/check-email/check-email-desktop.scss";
 
-// pressroom page
+// blog page
 // header
-@import "../../blocks/pressroom-header/pressroom-header-desktop.scss";
+@import "../../blocks/blog-header/blog-header-desktop.scss";
 
 // news-releases
 @import "../../blocks/news-releases/news-releases-desktop.scss";
 
 // standarts
-@import "../../blocks/standarts/standarts-desktop.scss";
+// @import "../../blocks/standarts/standarts-desktop.scss";
 
 // team page
 
@@ -175,6 +175,12 @@
 
 // upfront
 @import "../../blocks/upfront/upfront-desktop.scss";
+
+// aticle page
+
+@import "../../blocks/article-header/article-header-desktop.scss";
+
+@import "../../blocks/article/article-desktop.scss";
 
 // assets page
 

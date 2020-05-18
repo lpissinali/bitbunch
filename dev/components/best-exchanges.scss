@@ -34,6 +34,15 @@
   height: 1.6875rem;
 }
 
+@media screen and (min-width: 1921px) {
+
+  .best-exchanges {
+    right: auto;
+    left: calc(50% - 30rem);
+    background-size: 66.5rem 4.8125rem, auto 100%;
+  }
+}
+
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
 
   .best-exchanges {

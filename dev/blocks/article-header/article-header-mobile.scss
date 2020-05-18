@@ -1,0 +1,52 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .article-header {
+    box-shadow: none;
+    background-color: #fafbff;
+
+    .main-nav {
+      max-width: 17.125rem;
+      height: 4.125rem;
+    }
+
+    .main-nav__logo-link {
+      margin-top: .1875rem;
+      width: 7.6875rem;
+    }
+
+    .main-nav__menu-link {
+      font-size: 1.125rem;
+      line-height: 1.4375rem;
+    }
+  }
+
+  .article-header__wrapper {
+    padding-top: 4rem;
+    padding-bottom: 19.5rem;
+  }
+
+  .article-header__headline {
+    margin-top: 1rem;
+    max-width: 16.875rem;
+    font-size: 1.375rem;
+    line-height: 2rem;
+  }
+
+  .article-header__info-block {
+    margin-top: 1.5rem;
+  }
+
+  .article-header__date,
+  .article-header__author {
+    font-size: .875rem;
+    line-height: 1.5rem;
+  }
+
+  .article-header__date {
+    margin-right: 1.0625rem;
+  }
+
+  .article-header__social-block {
+    margin-top: 1.5625rem;
+  }
+}

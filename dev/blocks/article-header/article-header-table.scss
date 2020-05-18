@@ -1,0 +1,57 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .article-header {
+
+    .main-nav {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 41.8125rem;
+      height: 6.25rem;
+    }
+
+    .main-nav__logo-link {
+      width: 10.125rem;
+    }
+
+    .main-nav__menu-link {
+      font-family: $main-font-medium;
+      font-size: 2.25rem;
+      color: $white;
+    }
+
+    .main-nav__sandwich-button {
+      box-shadow: .125rem .25rem .5rem rgba(0, 0, 0, .1);
+      background-image: url("./images/main-nav-sandwich-blue.svg");
+    }
+
+    .user-panel__register-button {
+      display: none;
+    }
+  }
+
+  .article-header__wrapper {
+    padding-top: 5rem;
+    padding-bottom: 9.6875rem;
+  }
+
+  .article-header__headline {
+    margin-top: 1.5rem;
+    max-width: 32.75rem;
+    font-size: 2.25rem;
+    line-height: 2.875rem;
+  }
+
+  .article-header__info-block {
+    margin-top: 1.625rem;
+  }
+
+  .article-header__date,
+  .article-header__author {
+    font-size: 1.125rem;
+    line-height: 1.9375rem;
+  }
+
+  .article-header__social-block {
+    margin-top: 1.5rem;
+  }
+}

@@ -1,19 +1,19 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
   .news-releases__wrapper {
-    padding-top: 3.625rem;
     padding-right: 1.5rem;
-    padding-bottom: 1.5625rem;
+    padding-bottom: 3rem;
     padding-left: 1.5rem;
   }
 
   .news-releases__headline {
+    margin-top: 3.75rem;
     width: 100%;
     text-align: center;
   }
 
   .news-releases__subtitle {
-    margin-top: 5px;
+    margin-top: .3125rem;
     width: 100%;
     text-align: center;
   }

@@ -38,6 +38,7 @@
 .we-earn__headline {
   text-align: center;
   color: $white;
+  text-shadow: 0 .0625rem .1875rem rgba(27, 48, 110, .5);
 }
 
 .we-earn__zero-image {
@@ -70,7 +71,7 @@
     content: "";
     position: absolute;
     top: 0;
-    left: calc(50% + (50vw - 22.6rem));
+    left: calc(50% + (50vw - 22.3rem));
     display: block;
     width: 13rem;
     height: 100%;
