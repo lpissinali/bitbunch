@@ -321,6 +321,26 @@
       }
     }
 
+    .sell-info {
+      overflow: hidden;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -20%;
+        left: -15%;
+        width: 50%;
+        height: 127%;
+        background: rgba(#fff, .1);
+        transform: rotate(12deg);
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
     .icon-container {
       flex-shrink: 0;
       justify-content: center;
