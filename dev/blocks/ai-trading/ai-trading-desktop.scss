@@ -170,6 +170,14 @@
   }
 }
 
+@media screen and (min-width: 1800px) {
+
+  .ai-trading {
+    background-position: -1px 74%;
+    background-size: 123.5rem auto;
+  }
+}
+
 @import "./ai-trading-tablet.scss";
 
 @import "./ai-trading-mobile.scss";
