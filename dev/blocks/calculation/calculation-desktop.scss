@@ -192,6 +192,13 @@
   }
 }
 
+@media screen and (min-width: 1950px) {
+
+  .calculation {
+    background-image: url("./images/calculation__bg-desktop-big.svg");
+  }
+}
+
 @import "./range.scss";
 
 @import "./calculation-tablet.scss";
