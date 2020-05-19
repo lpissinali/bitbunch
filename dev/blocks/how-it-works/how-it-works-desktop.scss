@@ -109,7 +109,9 @@
 @media screen and (min-width: 1441px) {
 
   .how-it-works {
-    background-position: 50% calc(100% + 48.75rem);
+    background-image: url("./images/how-it-works__bg-desktop-big.svg");
+    background-position: calc(50% + 40.25rem) calc(100% + 48.75rem);
+    background-size: 178.9375rem auto;
   }
 
   .how-it-works__decor-line-1 {
