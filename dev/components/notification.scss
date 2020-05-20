@@ -1,4 +1,4 @@
-.notification{
+.notification {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,30 +17,38 @@
   letter-spacing: 0.0213rem;
   color: $white;
   text-align: center;
-  z-index: 1050;
+  z-index: 9999;
   visibility: hidden;
   opacity: 0;
   transition: 300ms ease;
-  &.init{
+
+  &.init {
     display: block;
   }
-  &.active{
+
+  &.active {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
   }
-  &__success{
+
+  &__success {
     background-image: linear-gradient(270deg, #1cc7a1 0%, #1cc7a1 100%);
   }
-  &__danger{
+
+  &__danger {
     background-image: linear-gradient(270deg, #f2455c 0%, #f2455c 100%);
   }
 }
 
-@media screen and ($tablet1), ($tablet2), ($tablet3) {}
+@media screen and ($tablet1),
+($tablet2),
+($tablet3) {}
 
-@media screen and ($mobile1), ($mobile2), ($mobile3) {
-  .notification{
+@media screen and ($mobile1),
+($mobile2),
+($mobile3) {
+  .notification {
     font-size: 0.75rem;
     line-height: 1rem;
   }

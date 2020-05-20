@@ -11,23 +11,47 @@ $blue-light: #f2f4fd;
 $blue-deep: #180743;
 $green-light: #1cc7a1;
 $red: #f2455c;
+$red-error: #ed1f1f;
 $pink-light: #050504;
 $rose: #efc7c2;
 $light-gray: #d6dced;
+$grey-error: #353f63;
 
 // fonts
-$main-font-thin: "SarabunThin", arial, sans-serif;
-$main-font-extra-light: "SarabunExtraLight", arial, sans-serif;
-$main-font-light: "SarabunLight", arial, sans-serif;
-$main-font-regular: "SarabunRegular", arial, sans-serif;
-$main-font-medium: "SarabunMedium", arial, sans-serif;
-$main-font-bold: "SarabunBold", arial, sans-serif;
-$main-font-semi-bold: "SarabunSemiBold", arial, sans-serif;
-$main-font-extra-bold: "SarabunExtraBold", arial, sans-serif;
+$main-font-thin: "SarabunThin",
+arial,
+sans-serif;
+$main-font-extra-light: "SarabunExtraLight",
+arial,
+sans-serif;
+$main-font-light: "SarabunLight",
+arial,
+sans-serif;
+$main-font-regular: "SarabunRegular",
+arial,
+sans-serif;
+$main-font-medium: "SarabunMedium",
+arial,
+sans-serif;
+$main-font-bold: "SarabunBold",
+arial,
+sans-serif;
+$main-font-semi-bold: "SarabunSemiBold",
+arial,
+sans-serif;
+$main-font-extra-bold: "SarabunExtraBold",
+arial,
+sans-serif;
 
-$main-font-black: "latoBlack", arial, sans-serif;
-$second-font-bold: "HindSlBold", arial, sans-serif;
-$second-font-semi-bold: "HindSlSemiBold", arial, sans-serif;
+$main-font-black: "latoBlack",
+arial,
+sans-serif;
+$second-font-bold: "HindSlBold",
+arial,
+sans-serif;
+$second-font-semi-bold: "HindSlSemiBold",
+arial,
+sans-serif;
 
 // less then 1440px
 $nout1: "max-width: 1440px";
