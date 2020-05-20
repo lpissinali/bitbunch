@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2765.24 1453">
+  <defs>
+    <linearGradient id="d64f29f1-1cf2-467b-a350-9491e098814c" data-name="Безымянный градиент" x1="-107.53" y1="1126" x2="-108.46" y2="1126" gradientTransform="matrix(0, -1573.01, -1484, 0, 1672359.24, -169151.18)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3f72d7"/>
+      <stop offset="1" stop-color="#324ea3"/>
+    </linearGradient>
+  </defs>
+  <title>Ресурс 3</title>
+  <g id="28c0feb7-1f5e-4488-a101-78a65f6036d2" data-name="Слой 2">
+    <g id="c735c0a7-bc29-4a4a-a6d2-fed026e1a394" data-name="Слой 1">
+      <path d="M1397.34,1.16,2765.24,0V1453H1401.14L0,984.84Z" style="fill: url(#d64f29f1-1cf2-467b-a350-9491e098814c)"/>
+    </g>
+  </g>
+</svg>

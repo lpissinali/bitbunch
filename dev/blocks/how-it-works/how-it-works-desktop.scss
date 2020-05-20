@@ -106,6 +106,38 @@
   margin-top: 4.75rem;
 }
 
+@media screen and (min-width: 1441px) {
+
+  .how-it-works {
+    background-image: url("./images/how-it-works__bg-desktop-big.svg");
+    background-position: calc(50% + 40.25rem) calc(100% + 48.75rem);
+    background-size: 178.9375rem auto;
+  }
+
+  .how-it-works__decor-line-1 {
+    right: auto;
+    left: calc(50% + 25rem);
+  }
+
+  .how-it-works__decor-line-2 {
+    right: auto;
+    left: calc(50% + 13.97rem);
+    width: 40rem;
+  }
+
+  .how-it-works__decor-line-3 {
+    right: auto;
+    left: calc(50% + 1.75rem);
+    width: 60rem;
+  }
+
+  .how-it-works__decor-line-4 {
+    right: auto;
+    left: calc(50% + 30.97rem);
+    width: 20rem;
+  }
+}
+
 @import "./how-it-works-tablet.scss";
 
 @import "./how-it-works-mobile.scss";

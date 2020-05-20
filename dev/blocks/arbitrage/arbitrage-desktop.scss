@@ -79,6 +79,13 @@
   margin-top: 8.4375rem;
 }
 
+@media screen and (min-width: 1441px) {
+
+  .arbitrage__decor {
+    background-size: 90rem auto;
+  }
+}
+
 @import "./arbitrage-tablet.scss";
 
 @import "./arbitrage-mobile.scss";

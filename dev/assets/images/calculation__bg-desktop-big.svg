@@ -1,0 +1,10 @@
+<svg id="d3b2d6fb-b380-4b8e-9816-5ce2b1d28c00" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1531 513.87">
+  <defs>
+    <linearGradient id="aeff7c72-cd79-4960-bb44-6920780df98a" data-name="Безымянный градиент" x1="1102" y1="420.5" x2="588.13" y2="420.5" gradientTransform="matrix(0, -1, -1, 0, 1186, 1102)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3f72d7"/>
+      <stop offset="1" stop-color="#324ea3"/>
+    </linearGradient>
+  </defs>
+  <title>calculation__bg-desktop-big</title>
+  <path d="M0,54.84,1485.28,0,1531,513.87,0,249.42Z" style="fill: url(#aeff7c72-cd79-4960-bb44-6920780df98a)"/>
+</svg>

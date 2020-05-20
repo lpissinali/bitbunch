@@ -12,28 +12,27 @@
   padding-top: 1.5rem;
   padding-bottom: .5rem;
   height: 3.125rem;
-  height: 3.125rem;
   border: none;
-  border-radius: 0rem;
+  border-radius: 0;
   box-shadow: none;
-  background-color: $white;
+  background-color: transparent;
   font-family: $main-font-medium;
   font-size: .875rem;
   color: $dark-grey;
 
   &:hover {
     border: none;
-    background-color: $white;
+    background-color: transparent;
     outline: none;
   }
 
   &:active {
-    background-color: $white;
+    background-color: transparent;
   }
 
   &:focus {
     border: none;
-    background-color: $white;
+    background-color: transparent;
     outline: none !important;
   }
 }
@@ -112,14 +111,13 @@
 .dropdown-menu.inner.show li a {
   padding-right: 1rem;
   padding-left: 1rem;
-  height: 3.125rem;
   height: 2.125rem;
   border: none;
-  border-radius: 0rem;
+  border-radius: 0;
   box-shadow: none;
   background-color: $white;
   font-family: $main-font-medium;
-  font-size: .875rem;
+  font-size: .775rem;
   color: $dark-grey;
 
   &:hover {
