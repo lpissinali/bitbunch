@@ -431,13 +431,15 @@ export function initShowMore() {
   const trade = state.trade.current;
   const walletCurrency = state.wallet.toUpperCase();
   const currencyCode = currencies[trade.currency];
+  const buyExchangeName = exchanges[trade.buyExchange];
+  const sellExchangeName = exchanges[trade.sellExchange];
 
   const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice, currencyCode);
   const boughtInWalletCurrency = formatCurrency(trade.amount, walletCurrency);
 
   let time = formatTime(state.trade.current.startTime);
-  time = `at <b style="white-space: nowrap;"> ${time}</b>`;
-  buyInfoSectionContent.innerHTML = `Bought <b>${boughtInTargetCurrency} ${currencyCode}</b> for<br> <b>${boughtInWalletCurrency} ${walletCurrency}</b> ${time}`;
+  time = `at <span style="white-space: nowrap;"> ${time}</span>`;
+  buyInfoSectionContent.innerHTML = `Buy <strong>${currencyCode}</strong> at <strong>${boughtInWalletCurrency} ${walletCurrency}</strong><br> on ${buyExchangeName} <strong>${time}</strong>`;
 
   const soldInTargetCurrency = boughtInTargetCurrency;
   const soldInWalletCurrency = formatCurrency(
@@ -446,8 +448,8 @@ export function initShowMore() {
   );
 
   time = formatTime(state.trade.current.endTime);
-  time = `at <b style="white-space: nowrap;">${time}</b>`;
-  sellInfoSectionContent.innerHTML = `Sold <b>${soldInTargetCurrency} ${currencyCode}</b> for<br> <b>${soldInWalletCurrency} ${walletCurrency}</b> ${time}`;
+  time = `at <span style="white-space: nowrap;">${time}</span>`;
+  sellInfoSectionContent.innerHTML = `Sell <strong>${currencyCode}</strong> at <strong>${soldInWalletCurrency} ${walletCurrency}</strong><br> on ${sellExchangeName} <strong>${time}</strong>`;
 
   updateInstantTradeSuccess();
   updateInstantTradeInfoProgress();

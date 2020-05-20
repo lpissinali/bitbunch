@@ -66,12 +66,12 @@
   }
 
   .line1 {
-    stroke: #0095fa;
+    stroke: #707070;
     stroke-width: 2;
   }
 
   .line2 {
-    stroke: #0095fa;
+    stroke: #707070;
     stroke-width: 2;
   }
 
@@ -175,7 +175,6 @@
   }
 
   .select-rect1 {
-
     .icon-container {
       border-radius: 2px 0 0 2px;
       background-image: linear-gradient(180deg, #0095fa 0%, #005cf4 100%);
@@ -196,7 +195,6 @@
     align-items: center;
     box-sizing: border-box;
     display: flex;
-    padding: 8px;
     width: 260px;
     height: 275px;
     box-shadow: 0 1px 3px rgba(#000000, .1) inset;
@@ -207,10 +205,10 @@
     white-space: nowrap;
 
     .short-details {
-
+      margin: 8px;
       .icon-container {
         position: absolute;
-        left: 0;
+        left: 10px;
         box-shadow: 0 4px 6px rgba(#5d5858, .2);
       }
 
@@ -221,10 +219,6 @@
 
       .title {
         color: #324ea3;
-
-        .name {
-          font-family: $main-font-bold;
-        }
       }
 
       .profit {
@@ -232,7 +226,6 @@
       }
 
       .value {
-        font-weight: 600;
         color: #324ea3;
       }
 
@@ -265,6 +258,7 @@
 
     .success-section {
       position: absolute;
+      padding: 10px;
       top: 0;
 
       .success-info {
@@ -272,7 +266,7 @@
       }
 
       h4 {
-        font-family: $main-font-bold;
+        font-family: $main-font-semi-bold;
         font-size: 18px;
         letter-spacing: .39px;
         line-height: 28px;
@@ -287,18 +281,35 @@
       .value {
         font-family: $main-font-bold;
         font-size: 42px;
+        color: #FA8F68;
       }
-
-      .btn {
-        padding: 4px 5px 6px;
-        box-shadow: 0 2px 4px rgba(#000000, .1);
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      #close-instant-trade {
-        border-color: $orange;
-        background-color: $orange;
+      
+      .btns {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        button {
+          padding: 0;
+          width: 100%;
+          height: 30px;
+          border-radius: 2px;
+          box-shadow: 0 2px 4px 0 rgba(93, 88, 88, 0.1);
+          font-size: 12px;
+          line-height: 22px;
+          text-transform: none;
+          &.button-orange {
+            margin-right: 5px;
+          }
+          &.button-white {
+            margin-left: 5px;
+            border: solid 2px #fff;
+            background: #fff;
+            color: #324EA3;
+            &:hover {
+              border-color: #324EA3;
+            }
+          }
+        }
       }
     }
 
@@ -308,6 +319,7 @@
       align-items: center;
       display: flex;
       padding: 5px 10px;
+      margin: 10px;
       height: 88px;
       border-radius: 2px;
       background: #324ea3;
