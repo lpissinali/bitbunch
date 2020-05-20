@@ -23,7 +23,7 @@
 }
 
 .validation-error.form-control:focus {
-  border: .0625rem solid $red;
+  border: .0625rem solid $red-error;
 }
 
 .validation-success.form-control:focus {
@@ -47,7 +47,7 @@
 }
 
 .validation-error {
-  border: .0625rem solid $red;
+  border: 0.0625rem solid $red-error;
 }
 
 //styles for animating placeholder
@@ -130,21 +130,22 @@
 
 .error-icon {
   position: absolute;
-  top: .6rem;
+  top: 0.875rem;
   right: 1rem;
-  width: 2rem;
-  height: 2rem;
+  width: 1.375rem;
+  height: 1.375rem;
   border-radius: .1875rem;
-  background-color: $red;
+  background-color: $red-error;
 
   span {
     position: absolute;
-    top: -.5rem;
-    left: .8125rem;
+    top: -0.0625rem;
+    left: 0.5938rem;
     display: block;
-    width: 2rem;
-    height: 2rem;
-    font-size: 2rem;
+    font-family: $main-font-bold;
+    font-size: 1.0625rem;
+    width: 1.375rem;
+    height: 1.375rem;
     color: $white;
   }
 }
