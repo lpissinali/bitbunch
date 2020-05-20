@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2765.24 1453">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2765.24 2106.92">
   <defs>
-    <linearGradient id="d64f29f1-1cf2-467b-a350-9491e098814c" data-name="Безымянный градиент" x1="-107.53" y1="1126" x2="-108.46" y2="1126" gradientTransform="matrix(0, -1573.01, -1484, 0, 1672359.24, -169151.18)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="5cb03c71-b719-4782-aa97-7cb8ec23b848" data-name="Безымянный градиент" x1="-107.25" y1="1570.06" x2="-108.59" y2="1570.06" gradientTransform="matrix(0, -1573.01, -1484, 0, 2331348.88, -168707.11)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#3f72d7"/>
       <stop offset="1" stop-color="#324ea3"/>
     </linearGradient>
   </defs>
-  <title>Ресурс 3</title>
-  <g id="28c0feb7-1f5e-4488-a101-78a65f6036d2" data-name="Слой 2">
-    <g id="c735c0a7-bc29-4a4a-a6d2-fed026e1a394" data-name="Слой 1">
-      <path d="M1397.34,1.16,2765.24,0V1453H1401.14L0,984.84Z" style="fill: url(#d64f29f1-1cf2-467b-a350-9491e098814c)"/>
+  <title>Ресурс 4</title>
+  <g id="1ed970cb-697b-431f-96f9-d98d4a347c17" data-name="Слой 2">
+    <g id="2b114b16-6d19-4472-a310-d2972df3c126" data-name="Слой 1">
+      <path d="M2029.78,0h735.46V2106.92h-736L0,1428.91Z" style="fill: url(#5cb03c71-b719-4782-aa97-7cb8ec23b848)"/>
     </g>
   </g>
 </svg>
