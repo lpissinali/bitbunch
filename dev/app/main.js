@@ -436,6 +436,7 @@ function customSelect() {
   });
 
   $('.choose-select__trigger').on('click', function() {
+    $(this).addClass('active');
     var optionsHeight = 0;
 
     function optionsOpen(){
@@ -443,7 +444,7 @@ function customSelect() {
       TweenLite.to($('.choose-select__options'), 0.3, {height: optionsHeight, onComplete: optionsOverflow})
     }
     function optionsClose(){
-      $('.choose-select__trigger').removeClass('opened')
+      $('.choose-select__trigger').removeClass('active').removeClass('opened')
       $('.choose-select__options').removeClass('opened');
       TweenLite.to($('.choose-select__options'), 0.3, {height: 0})
     }
@@ -453,7 +454,7 @@ function customSelect() {
     }
 
     $('html').one('click', () => {
-      $('.choose-select__trigger').removeClass('opened');
+      $('.choose-select__trigger').removeClass('active').removeClass('opened');
       optionsClose()
     });
     if(!$('.choose-select__trigger').is('.opened')){
@@ -463,7 +464,6 @@ function customSelect() {
       optionsClose()
     }
     
-    // $(this).toggleClass('opened');
     event.stopPropagation();
   });
 
@@ -518,25 +518,37 @@ if (document.querySelector('.fund-wallet')) {
   $('.choose-select').change(function() {
     $('.fund-wallet__asset').text($(this).find('option:selected').text())
     $('#walletNumber').val($(this).find('option:selected').data('wallet'))
-    $('.fund-wallet-qr__code img').attr('src', $(this).find('option:selected').data('qr'))
 
-    var blurElement = {alpha:0,a:6};
-    TweenMax.to(blurElement, .5, {alpha:1,a:0, onUpdate:applyBlur});
-    function applyBlur(){
-        TweenMax.set(['.fund-wallet__bg'], {alpha: blurElement.alpha, webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)"});
-    };
-    $('.fund-wallet__bg').css('background-image', 'url(' + $(this).find('option:selected').data('background') + ')');
+    var blockBg = $('.fund-wallet__bg'),
+        blockQr = $('.fund-wallet-qr__code img'),
+        newBg =  $(this).find('option:selected').data('background'),
+        newQr = $(this).find('option:selected').data('qr');
+
+    var changeImageAnimation = new TimelineMax();
+      changeImageAnimation
+            .to([blockBg, blockQr], .3, {alpha: 0, onComplete: image, onCompleteParams:[newBg, newQr]})
+            .to([blockBg, blockQr], .5, {alpha: 1});
+
+    function image(bg, qr){
+      blockBg.css('background-image', 'url(' + bg + ')');
+      blockQr.attr('src', qr)
+    }
   });
 }
 // Вывод средств
 if (document.querySelector('.make-withdraw')) {
   $('.choose-select').change(function() {
-    var blurElement = {alpha:0,a:6};
-    TweenMax.to(blurElement, .5, {alpha:1,a:0, onUpdate:applyBlur});
-    function applyBlur(){
-        TweenMax.set(['.make-withdraw__bg'], {alpha: blurElement.alpha, webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)"});
-    };
-    $('.make-withdraw__bg').css('background-image', 'url(' + $(this).find('option:selected').data('background') + ')');
+    var blockBg = $('.make-withdraw__bg'),
+        newBg =  $(this).find('option:selected').data('background');
+
+    var changeImageAnimation = new TimelineMax();
+      changeImageAnimation
+            .to([blockBg], .3, {alpha: 0, onComplete: image, onCompleteParams:[newBg]})
+            .to([blockBg], .5, {alpha: 1});
+
+    function image(bg, qr){
+      blockBg.css('background-image', 'url(' + bg + ')');
+    }
   });
 }
 
