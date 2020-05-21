@@ -110,27 +110,10 @@
     transition: 300ms;
   }
 
-  .main-nav__user-register-button {
-
-    &:hover {
-      border: .125rem solid #fff3ef;
-      background-color: #fff3ef;
-      color: #fa8f68;
-      transform: scale(1.1);
-    }
-  }
-
   .main-nav__user-sign-in-button {
     border: .125rem solid $white;
     background-color: $white;
     color: #324ea3;
-
-    &:hover {
-      border: 2px solid #d3dcf0;
-      background-color: #d3dcf0;
-      color: #324ea3;
-      transform: scale(1.1);
-    }
   }
 
   .user-panel__register-button {

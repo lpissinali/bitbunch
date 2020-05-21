@@ -156,6 +156,15 @@
   }
 }
 
+.white-button-hover-blue {
+  
+  &:hover {
+    border: 2px solid $blue;
+    background-color: $blue;
+    color: $white;
+  }
+}
+
 .checkbox-btn{
   display: none;
   + label{
