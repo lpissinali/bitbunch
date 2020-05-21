@@ -51,7 +51,7 @@
       }
     }
     
-    &.opened{
+    &.active{
       &:after{
         transform: rotate(45deg);
       }

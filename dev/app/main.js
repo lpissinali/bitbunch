@@ -446,39 +446,38 @@ function customSelect() {
     $(this).after(template);
   });
 
-  $('.choose-select__trigger').on('click', () => {
-    let optionsHeight = 0;
+  $('.choose-select__trigger').on('click', function() {
+    $(this).addClass('active');
+    var optionsHeight = 0;
 
-    function optionsOpen() {
-      optionsHeight = $('.choose-select__options-wrapper').outerHeight();
-      TweenLite.to($('.choose-select__options'), 0.3, {
-        height: optionsHeight,
-        onComplete: optionsOverflow,
-      });
+    function optionsOpen(){
+      optionsHeight = $('.choose-select__options-wrapper').outerHeight()
+      TweenLite.to($('.choose-select__options'), 0.3, {height: optionsHeight, onComplete: optionsOverflow})
     }
-    function optionsClose() {
-      $('.choose-select__trigger').removeClass('opened');
+    function optionsClose(){
+      $('.choose-select__trigger').removeClass('active').removeClass('opened')
       $('.choose-select__options').removeClass('opened');
-      TweenLite.to($('.choose-select__options'), 0.3, { height: 0 });
+      TweenLite.to($('.choose-select__options'), 0.3, {height: 0})
     }
-    function optionsOverflow() {
+    function optionsOverflow(){
       $('.choose-select__trigger').addClass('opened');
       $('.choose-select__options').addClass('opened');
     }
 
     $('html').one('click', () => {
-      $('.choose-select__trigger').removeClass('opened');
-      optionsClose();
+      $('.choose-select__trigger').removeClass('active').removeClass('opened');
+      optionsClose()
     });
-    if (!$('.choose-select__trigger').is('.opened')) {
-      optionsOpen();
-    } else {
-      optionsClose();
+    if(!$('.choose-select__trigger').is('.opened')){
+      optionsOpen()
     }
-
-    // $(this).toggleClass('opened');
+    else{
+      optionsClose()
+    }
+    
     event.stopPropagation();
   });
+
 
   $('.choose-select__option').on('click', function() {
     $(this)
@@ -538,58 +537,39 @@ if (document.querySelector('.statistics')) {
 // Пополнение кошелька
 if (document.querySelector('.fund-wallet')) {
   $('.choose-select').change(function() {
-    $('.fund-wallet__asset').text(
-      $(this)
-        .find('option:selected')
-        .text()
-    );
-    $('#walletNumber').val(
-      $(this)
-        .find('option:selected')
-        .data('wallet')
-    );
-    $('.fund-wallet-qr__code img').attr(
-      'src',
-      $(this)
-        .find('option:selected')
-        .data('qr')
-    );
+    $('.fund-wallet__asset').text($(this).find('option:selected').text())
+    $('#walletNumber').val($(this).find('option:selected').data('wallet'))
 
-    const blurElement = { alpha: 0, a: 6 };
-    TweenMax.to(blurElement, 0.5, { alpha: 1, a: 0, onUpdate: applyBlur });
-    function applyBlur() {
-      TweenMax.set(['.fund-wallet__bg'], {
-        alpha: blurElement.alpha,
-        webkitFilter: `blur(${blurElement.a}px)`,
-        filter: `blur(${blurElement.a}px)`,
-      });
+    var blockBg = $('.fund-wallet__bg'),
+        blockQr = $('.fund-wallet-qr__code img'),
+        newBg =  $(this).find('option:selected').data('background'),
+        newQr = $(this).find('option:selected').data('qr');
+
+    var changeImageAnimation = new TimelineMax();
+      changeImageAnimation
+            .to([blockBg, blockQr], .3, {alpha: 0, onComplete: image, onCompleteParams:[newBg, newQr]})
+            .to([blockBg, blockQr], .5, {alpha: 1});
+
+    function image(bg, qr){
+      blockBg.css('background-image', 'url(' + bg + ')');
+      blockQr.attr('src', qr)
     }
-    $('.fund-wallet__bg').css(
-      'background-image',
-      `url(${$(this)
-        .find('option:selected')
-        .data('background')})`
-    );
   });
 }
 // Вывод средств
 if (document.querySelector('.make-withdraw')) {
   $('.choose-select').change(function() {
-    const blurElement = { alpha: 0, a: 6 };
-    TweenMax.to(blurElement, 0.5, { alpha: 1, a: 0, onUpdate: applyBlur });
-    function applyBlur() {
-      TweenMax.set(['.make-withdraw__bg'], {
-        alpha: blurElement.alpha,
-        webkitFilter: `blur(${blurElement.a}px)`,
-        filter: `blur(${blurElement.a}px)`,
-      });
+    var blockBg = $('.make-withdraw__bg'),
+        newBg =  $(this).find('option:selected').data('background');
+
+    var changeImageAnimation = new TimelineMax();
+      changeImageAnimation
+            .to([blockBg], .3, {alpha: 0, onComplete: image, onCompleteParams:[newBg]})
+            .to([blockBg], .5, {alpha: 1});
+
+    function image(bg, qr){
+      blockBg.css('background-image', 'url(' + bg + ')');
     }
-    $('.make-withdraw__bg').css(
-      'background-image',
-      `url(${$(this)
-        .find('option:selected')
-        .data('background')})`
-    );
   });
 }
 
