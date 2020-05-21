@@ -1,7 +1,4 @@
-export const DEFAULT_TOOLTIP_CONTENT = `
-<p class="tooltipster-content__caption">This field is obligatory</p>
-<p class="tooltipster-content__description">Please fill it in to continue</p>
-`;
+export const DEFAULT_TOOLTIP_CONTENT = `This field is obligatory. Please fill it in to continue`;
 
 export const VALIDATION_SUCCESS_CLASS = 'validation-success';
 export const VALIDATION_ERROR_CLASS = 'validation-error';
@@ -11,14 +8,16 @@ export const HIDE_ELEMENT_CLASS = 'd-none';
 
 export const initTooltip = () => {
   $(`.${TOOLTIPSTER_ANCOR_CLASS}`).each(function() {
+    const tooltipsterAncor = this;
     $(this).tooltipster({
       trigger: 'custom',
       onlyOne: false,
       position: 'bottom',
       theme: ['tooltipster-n oir', 'tooltipster-noir-customized'],
       functionPosition(instance, helper, position) {
+        const { left, x: anchorX } = tooltipsterAncor.getBoundingClientRect();
         if (position.coord.left === 0) {
-          position.coord.left += 32;
+          position.coord.left += anchorX + 10;
         } else {
           position.coord.left += position.size.width / 2;
         }
@@ -124,14 +123,20 @@ export const customSelectValidationSuccess = element => {
 
 $('select').on('changed.bs.select', (event, clickedIndex, isSelected, previousValue) => {
   if (event.currentTarget.value !== '') {
-    $('.bootstrap-select-placeholder').addClass('has-content');
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.bootstrap-select-placeholder')
+      .addClass('has-content');
     $(event.currentTarget)
       .parents('.form-group')
       .find('.btn.dropdown-toggle')
       .removeClass(VALIDATION_ERROR_CLASS)
       .addClass(VALIDATION_SUCCESS_CLASS);
   } else {
-    $('.bootstrap-select-placeholder').removeClass('has-content');
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.bootstrap-select-placeholder')
+      .removeClass('has-content');
     $(event.currentTarget)
       .parents('.form-group')
       .find('.btn.dropdown-toggle')
