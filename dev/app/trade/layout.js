@@ -1,4 +1,4 @@
-export const BREAK_POINT = 767;
+export const BREAK_POINT = 650;
 export const VERTICAL_HEIGHT = 490;
 export const HORIZONTAL_HEIGHT = 520;
 export const VERTICAL_EXCHANGES_WIDTH = 168;
