@@ -195,14 +195,17 @@ if (document.querySelector('.toggle__user-menu')) {
   });
 
   $('.account-nav__user-menu-close').click(() => {
-    toggleAccountNav('fast')
+    toggleAccountNav('fast');
   });
 
-  $(document).click(function (e){
-    var clickTarget = $(".account-nav__nav-menu");
-		if (clickTarget.is(e.target) && clickTarget.find('.account-nav__menu-list.disabled').length === 1) {
-      toggleAccountNav('fast')
-		}
+  $(document).click(e => {
+    const clickTarget = $('.account-nav__nav-menu');
+    if (
+      clickTarget.is(e.target)
+      && clickTarget.find('.account-nav__menu-list.disabled').length === 1
+    ) {
+      toggleAccountNav('fast');
+    }
   });
 }
 
@@ -221,16 +224,22 @@ if (document.querySelector('.account-nav__sandwich-button')) {
 
 // активный пункт меню
 if (document.querySelector('.account-nav__nav-menu')) {
-  $('.account-nav__nav-menu ul li a').each(function () {
-      var location = window.location.href;
-      var link = this.href;
-      if(location == link) {
-        $('.account-nav__nav-menu ul li').removeClass('active')
-        $(this).parent().addClass('active')
-      }
-      if($(this).parent().is('.account-nav__user-menu-item.active')){
-        toggleAccountNav(0)
-      }
+  $('.account-nav__nav-menu ul li a').each(function() {
+    const location = window.location.href;
+    const link = this.href;
+    if (location == link) {
+      $('.account-nav__nav-menu ul li').removeClass('active');
+      $(this)
+        .parent()
+        .addClass('active');
+    }
+    if (
+      $(this)
+        .parent()
+        .is('.account-nav__user-menu-item.active')
+    ) {
+      toggleAccountNav(0);
+    }
   });
 }
 
@@ -333,20 +342,20 @@ if (document.querySelector('.choosing-coin__controls-toggle')) {
 // Trading history table scrollbar
 if (document.querySelector('.trading-history__table-overflow')) {
   baron({
-      root: '.horiz__clipper',
-      scroller: '.horiz__scroller',
-      bar: '.horiz__bar',
-      scrollingCls: '_scrolling',
-      draggingCls: '_dragging',
-      direction: 'h',
-      impact: 'scroller'
+    root: '.horiz__clipper',
+    scroller: '.horiz__scroller',
+    bar: '.horiz__bar',
+    scrollingCls: '_scrolling',
+    draggingCls: '_dragging',
+    direction: 'h',
+    impact: 'scroller',
   });
 }
 
 // // Modal notification
 window.onload = function() {
-  $('.notification').addClass('init')
-}
+  $('.notification').addClass('init');
+};
 // if (document.querySelector('.modal__notification')) {
 //   $('.modal__notification [type=submit]').click(e => {
 //     e.preventDefault(); // Отмена отправки для показа анимации
@@ -361,12 +370,12 @@ window.onload = function() {
 // Trading history table scrollbar
 if (document.querySelector('.trading-currencies__list')) {
   baron({
-      root: '.baron__root',
-      scroller: '.baron__scroller',
-      bar: '.baron__bar',
-      scrollingCls: '_scrolling',
-      draggingCls: '_dragging',
-      direction: 'v'
+    root: '.baron__root',
+    scroller: '.baron__scroller',
+    bar: '.baron__bar',
+    scrollingCls: '_scrolling',
+    draggingCls: '_dragging',
+    direction: 'v',
   });
 }
 
@@ -397,7 +406,9 @@ function customSelect() {
     const name = $(this).attr('name');
 
     let template = `<div class="${classes}">`;
-    template += `<div class="choose-select__trigger"><div class="choose-select__trigger-icon"></div><div class="choose-select__trigger-name">${$(this).attr('placeholder')}</div></div>`;
+    template += `<div class="choose-select__trigger"><div class="choose-select__trigger-icon"></div><div class="choose-select__trigger-name">${$(
+      this
+    ).attr('placeholder')}</div></div>`;
     template += '<div class="choose-select__options"><div class="choose-select__options-wrapper">';
     $(this)
       .find('option')
@@ -467,6 +478,7 @@ function customSelect() {
     event.stopPropagation();
   });
 
+
   $('.choose-select__option').on('click', function() {
     $(this)
       .parents('.choose-select__wrapper')
@@ -478,28 +490,37 @@ function customSelect() {
       .find('.choose-select__option')
       .removeClass('selection');
     $(this).addClass('selection');
-    
-    var optionIcon = $(this).parents('.choose-select__wrapper').find('.choose-select__trigger-icon'),
-        optionName = $(this).parents('.choose-select__wrapper').find('.choose-select__trigger-name')
-    
-    function changeOptionData(icon,name){
-      optionIcon.html('<img src="'+icon+'" alt="">').addClass('notempty')
-      optionName.text(name)
+
+    const optionIcon = $(this)
+      .parents('.choose-select__wrapper')
+      .find('.choose-select__trigger-icon');
+    const optionName = $(this)
+      .parents('.choose-select__wrapper')
+      .find('.choose-select__trigger-name');
+
+    function changeOptionData(icon, name) {
+      optionIcon.html(`<img src="${icon}" alt="">`).addClass('notempty');
+      optionName.text(name);
     }
-    
-    var optionSelectAnimation = new TimelineMax();
-        optionSelectAnimation
-            .to([optionIcon,optionName], .3, {alpha: 0})
-            .set(optionIcon,{x: -32})
-            .set(optionName,{x: 32})
-            .to(optionIcon, .5, {x: 0, alpha: 1, onStart: changeOptionData, onStartParams:[$(this).data('logo-white'),$(this).data('title')]})
-            .to(optionName, .5, {x: 0, alpha: 1}, '-=0.5');
+
+    const optionSelectAnimation = new TimelineMax();
+    optionSelectAnimation
+      .to([optionIcon, optionName], 0.3, { alpha: 0 })
+      .set(optionIcon, { x: -32 })
+      .set(optionName, { x: 32 })
+      .to(optionIcon, 0.5, {
+        x: 0,
+        alpha: 1,
+        onStart: changeOptionData,
+        onStartParams: [$(this).data('logo-white'), $(this).data('title')],
+      })
+      .to(optionName, 0.5, { x: 0, alpha: 1 }, '-=0.5');
   });
 
-  $('.choose-select').change(function() {
+  $('.choose-select').change(() => {
     setTimeout(() => {
       $('.choose-blur').addClass('_unblur');
-      $('.date-select').addClass('active')
+      $('.date-select').addClass('active');
     }, 300);
   });
 }
@@ -510,7 +531,7 @@ if (document.querySelector('.choose-select')) {
 // Смена валюты
 if (document.querySelector('.statistics')) {
   $('.choose-select').change(function() {
-    $('.statistics__item-value .unit').text(this.value)
+    $('.statistics__item-value .unit').text(this.value);
   });
 }
 // Пополнение кошелька
@@ -554,108 +575,163 @@ if (document.querySelector('.make-withdraw')) {
 
 // Datapicker
 if (document.querySelector('.trading-statistics__header-time')) {
-  $('#date-select').on('focus', function(){
-    $(this).val('');
-  }).on('keyup', function(){
-    var $this = $(this);
-    var mydate = $this.val();
-    mydate = mydate.replace(/\D|\s/, '');  
-    mydate = mydate.replace(/^(00)(.*)?/, '01$2');
-    mydate = mydate.replace(/^([0-9]{2})(00)(.*)?/, '$101');
-    mydate = mydate.replace(/^([3-9])([2-9])(.*)?/, '2$2');
-    mydate = mydate.replace(/^(3[01])(02)(.*)?/, '29$2');
-    mydate = mydate.replace(/^([0-9]{2})([2-9]|1[3-9])(.*)?/, '$112');
-    mydate = mydate.replace(/^([0-9]{2})([0-9]{2})([0-9].*?)/, '$1/$2/$3');
-    mydate = mydate.replace(/^([0-9]{2})([0-9])/, '$1/$2');    
-    //ano bissexto
-    var day = mydate.substr(0,2) || '01';
-    var month = mydate.substr(3,2) || '01';
-    var year = mydate.substr(6,4);
-    if(year.length == 4 && day == '29' && month == '02' && (year % 4 != 0 || (year.substr(2,2) == '00' && year % 400 != 0))) {
-      mydate = mydate.replace(/^29/,'28');
-    }
-    mydate = mydate.substr(0,10);
-    $this.val(mydate);
-  })
-  $.fn.datepicker.language['en'] = {
+  $('#date-select')
+    .on('focus', function() {
+      $(this).val('');
+    })
+    .on('keyup', function() {
+      const $this = $(this);
+      let mydate = $this.val();
+      mydate = mydate.replace(/\D|\s/, '');
+      mydate = mydate.replace(/^(00)(.*)?/, '01$2');
+      mydate = mydate.replace(/^([0-9]{2})(00)(.*)?/, '$101');
+      mydate = mydate.replace(/^([3-9])([2-9])(.*)?/, '2$2');
+      mydate = mydate.replace(/^(3[01])(02)(.*)?/, '29$2');
+      mydate = mydate.replace(/^([0-9]{2})([2-9]|1[3-9])(.*)?/, '$112');
+      mydate = mydate.replace(/^([0-9]{2})([0-9]{2})([0-9].*?)/, '$1/$2/$3');
+      mydate = mydate.replace(/^([0-9]{2})([0-9])/, '$1/$2');
+      // ano bissexto
+      const day = mydate.substr(0, 2) || '01';
+      const month = mydate.substr(3, 2) || '01';
+      const year = mydate.substr(6, 4);
+      if (
+        year.length == 4
+        && day == '29'
+        && month == '02'
+        && (year % 4 != 0 || (year.substr(2, 2) == '00' && year % 400 != 0))
+      ) {
+        mydate = mydate.replace(/^29/, '28');
+      }
+      mydate = mydate.substr(0, 10);
+      $this.val(mydate);
+    });
+  $.fn.datepicker.language.en = {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-    months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
-    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    months: [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ],
+    monthsShort: [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ],
     today: 'Today',
     clear: 'Clear',
     dateFormat: 'mm/dd/yyyy',
     timeFormat: 'hh:ii aa',
-    firstDay: 1
+    firstDay: 1,
   };
-  var dateSelect = $('#date-select').datepicker({
-    language: 'en',
-    inline: true,
-    range: true,
-    toggleSelected: false,
-    multipleDatesSeparator: ' - ',
-    prevHtml: '<svg width="8" height="14" viewBox="0 0 8 14"><path d="M7.6376,2.24716c0.50468,-0.53624 0.47911,-1.38007 -0.05712,-1.88476c-0.53623,-0.50468 -1.38006,-0.47911 -1.88475,0.05712l-5.33333,5.66666c-0.4832,0.5134 -0.4832,1.31424 0,1.82764l5.33333,5.66666c0.50469,0.53623 1.34852,0.5618 1.88475,0.05712c0.53623,-0.50469 0.5618,-1.34852 0.05712,-1.88476l-4.47327,-4.75284v0z" fill="#324ea3" fill-opacity="1"></path></svg>',
-    nextHtml: '<svg width="8" height="14" viewBox="0 0 8 14"><path d="M0.3624,2.24716c-0.50468,-0.53624 -0.47911,-1.38007 0.05712,-1.88476c0.53623,-0.50468 1.38006,-0.47911 1.88475,0.05712l5.33333,5.66666c0.4832,0.5134 0.4832,1.31424 0,1.82764l-5.33333,5.66666c-0.50469,0.53623 -1.34852,0.5618 -1.88475,0.05712c-0.53623,-0.50469 -0.5618,-1.34852 -0.05712,-1.88476l4.47327,-4.75284v0z" fill="#324ea3" fill-opacity="1"></path></svg>',
-    onSelect(formattedDate, date, inst){
-      console.log(formattedDate);
-    }
-  }).data('datepicker');
-  $('.date-select .button-clear').on('click',function(){
-    dateSelect.clear()
-  })
+  const dateSelect = $('#date-select')
+    .datepicker({
+      language: 'en',
+      inline: true,
+      range: true,
+      toggleSelected: false,
+      multipleDatesSeparator: ' - ',
+      prevHtml:
+        '<svg width="8" height="14" viewBox="0 0 8 14"><path d="M7.6376,2.24716c0.50468,-0.53624 0.47911,-1.38007 -0.05712,-1.88476c-0.53623,-0.50468 -1.38006,-0.47911 -1.88475,0.05712l-5.33333,5.66666c-0.4832,0.5134 -0.4832,1.31424 0,1.82764l5.33333,5.66666c0.50469,0.53623 1.34852,0.5618 1.88475,0.05712c0.53623,-0.50469 0.5618,-1.34852 0.05712,-1.88476l-4.47327,-4.75284v0z" fill="#324ea3" fill-opacity="1"></path></svg>',
+      nextHtml:
+        '<svg width="8" height="14" viewBox="0 0 8 14"><path d="M0.3624,2.24716c-0.50468,-0.53624 -0.47911,-1.38007 0.05712,-1.88476c0.53623,-0.50468 1.38006,-0.47911 1.88475,0.05712l5.33333,5.66666c0.4832,0.5134 0.4832,1.31424 0,1.82764l-5.33333,5.66666c-0.50469,0.53623 -1.34852,0.5618 -1.88475,0.05712c-0.53623,-0.50469 -0.5618,-1.34852 -0.05712,-1.88476l4.47327,-4.75284v0z" fill="#324ea3" fill-opacity="1"></path></svg>',
+      onSelect(formattedDate, date, inst) {
+        console.log(formattedDate);
+      },
+    })
+    .data('datepicker');
+  $('.date-select .button-clear').on('click', () => {
+    dateSelect.clear();
+  });
 
-  var dateSelectHeight = 0;
-  function dateSelectOpen(){
-    dateSelectHeight = $('.date-select__container').outerHeight()
-    TweenLite.to($('.date-select__overflow'), 0.5, {height: dateSelectHeight, onComplete: dateSelectOverflow})
+  let dateSelectHeight = 0;
+  function dateSelectOpen() {
+    dateSelectHeight = $('.date-select__container').outerHeight();
+    TweenLite.to($('.date-select__overflow'), 0.5, {
+      height: dateSelectHeight,
+      onComplete: dateSelectOverflow,
+    });
   }
-  function dateSelectClose(){
+  function dateSelectClose() {
     $('.date-select__overflow').removeClass('opened');
-    TweenLite.to($('.date-select__overflow'), 0.5, {height: 0})
+    TweenLite.to($('.date-select__overflow'), 0.5, { height: 0 });
   }
-  function dateSelectOverflow(){
+  function dateSelectOverflow() {
     $('.date-select__overflow').addClass('opened');
   }
 
-  $('.date-select .date-select__toggle').click(function(){
-    $('.date-select__body').append($('.datepicker-inline'))
-    if(!$('.date-select__overflow').is('.opened')){
-      dateSelectOpen()
+  $('.date-select .date-select__toggle').click(() => {
+    $('.date-select__body').append($('.datepicker-inline'));
+    if (!$('.date-select__overflow').is('.opened')) {
+      dateSelectOpen();
+    } else {
+      dateSelectClose();
     }
-    else{
-      dateSelectClose()
-    }
-  })
-  $('.date-select .button-cancel').click(function(){
-    dateSelect.clear()
-    dateSelectClose()
-  })
+  });
+  $('.date-select .button-cancel').click(() => {
+    dateSelect.clear();
+    dateSelectClose();
+  });
 
-  $('.date-select .button-apply').click(function(){
+  $('.date-select .button-apply').click(() => {
     // chartInstance.update();
-    console.log($('#date-select').val())
-    dateSelectClose()
-  })
+    console.log($('#date-select').val());
+    dateSelectClose();
+  });
 }
 
 // Chart
 if (document.querySelector('.chart__canvas')) {
-  var chart    = document.getElementById('chart').getContext('2d'),
-    gradient = chart.createLinearGradient(0, 0, 0, 190);
-  
-    chart.height = 195;
+  const chart = document.getElementById('chart').getContext('2d');
+  const gradient = chart.createLinearGradient(0, 0, 0, 190);
+
+  chart.height = 195;
 
   gradient.addColorStop(0, 'rgba(50, 78, 163, 0.8)');
   gradient.addColorStop(0.7, 'rgba(50, 78, 163, 0)');
 
-  var gradientStroke = chart.createLinearGradient(500, 0, 100, 0);
+  const gradientStroke = chart.createLinearGradient(500, 0, 100, 0);
   gradientStroke.addColorStop(0, '#5e83ce');
   gradientStroke.addColorStop(1, '#3350a4');
 
-  var data  = {
-      labels: [ '01.10', '01.11', '01.12', '01.01', '01.02', '01.03', '01.04', '01.05', '01.06', '01.07', '01.08', '01.09', '01.10', '01.11'],
-      datasets: [{
+  const data = {
+    labels: [
+      '01.10',
+      '01.11',
+      '01.12',
+      '01.01',
+      '01.02',
+      '01.03',
+      '01.04',
+      '01.05',
+      '01.06',
+      '01.07',
+      '01.08',
+      '01.09',
+      '01.10',
+      '01.11',
+    ],
+    datasets: [
+      {
         backgroundColor: gradient,
 
         pointRadius: 4,
@@ -674,70 +750,89 @@ if (document.querySelector('.chart__canvas')) {
         borderColor: gradientStroke,
         zeroLineWidth: 5,
         zeroLineColor: '#324ea3',
-        data: ['2.845499','0.273148','1.290303','2.600669','0.130170','2.360288','0.661394','1.626080','1.402495','1.027675','2.760880','2.416924','1.699511','1.534568']
-      }]
+        data: [
+          '2.845499',
+          '0.273148',
+          '1.290303',
+          '2.600669',
+          '0.130170',
+          '2.360288',
+          '0.661394',
+          '1.626080',
+          '1.402495',
+          '1.027675',
+          '2.760880',
+          '2.416924',
+          '1.699511',
+          '1.534568',
+        ],
+      },
+    ],
   };
 
-
-  var options = {
+  const options = {
     responsive: true,
     maintainAspectRatio: false,
     animation: {
       easing: 'easeInOutQuad',
-      duration: 520
+      duration: 520,
     },
     scales: {
-      xAxes: [{
-        gridLines: {
-          tickMarkLength: 0,
-          color: 'rgba(50, 78, 163, 0.1)',
-          lineWidth: 1,
-          zeroLineColor: '#324ea3',
-          zeroLineWidth: 2
+      xAxes: [
+        {
+          gridLines: {
+            tickMarkLength: 0,
+            color: 'rgba(50, 78, 163, 0.1)',
+            lineWidth: 1,
+            zeroLineColor: '#324ea3',
+            zeroLineWidth: 2,
+          },
+          ticks: {
+            padding: 8,
+            fontFamily: '\'SarabunRegular\', arial, sans-serif',
+            fontSize: 10,
+            fontColor: 'rgba(67, 66, 95, 0.5)',
+          },
         },
-        ticks: {
-          padding: 8,
-          fontFamily: "'SarabunRegular', arial, sans-serif",
-          fontSize: 10,
-          fontColor: "rgba(67, 66, 95, 0.5)",
-        }
-      }],
-      yAxes: [{
-        gridLines: {
-          tickMarkLength: 0,
-          color: 'rgba(50, 78, 163, 0.1)',
-          lineWidth: 1,
-          zeroLineColor: '#324ea3',
-          zeroLineWidth: 2
+      ],
+      yAxes: [
+        {
+          gridLines: {
+            tickMarkLength: 0,
+            color: 'rgba(50, 78, 163, 0.1)',
+            lineWidth: 1,
+            zeroLineColor: '#324ea3',
+            zeroLineWidth: 2,
+          },
+          ticks: {
+            padding: 10,
+            fontFamily: '\'SarabunRegular\', arial, sans-serif',
+            fontSize: 10,
+            fontColor: 'rgba(67, 66, 95, 0.5)',
+          },
         },
-        ticks: {
-          padding: 10,
-          fontFamily: "'SarabunRegular', arial, sans-serif",
-          fontSize: 10,
-          fontColor: "rgba(67, 66, 95, 0.5)",
-        }
-      }]
+      ],
     },
     elements: {
       line: {
-        tension: 0.7
-      }
+        tension: 0.7,
+      },
     },
     legend: {
-      display: false
+      display: false,
     },
     point: {
-      backgroundColor: 'red'
+      backgroundColor: 'red',
     },
     tooltips: {
       position: 'average',
-      titleFontFamily: "'SarabunRegular', arial, sans-serif",
+      titleFontFamily: '\'SarabunRegular\', arial, sans-serif',
       titleFontSize: 10,
       titleFontStyle: 'normal',
       titleFontColor: 'rgba(255,255,255,0.8)',
       titleAlign: 'center',
       titleMarginBottom: 2,
-      bodyFontFamily: "'SarabunSemiBold', arial, sans-serif",
+      bodyFontFamily: '\'SarabunSemiBold\', arial, sans-serif',
       bodyFontStyle: '600',
       bodyAlign: 'center',
       backgroundColor: 'rgb(50, 78, 163)',
@@ -748,216 +843,237 @@ if (document.querySelector('.chart__canvas')) {
       yPadding: 5,
       displayColors: false,
       callbacks: {
-        label: function(tooltipItem, data) {
-          var label = data.datasets[tooltipItem.datasetIndex].label || '';
+        label(tooltipItem, data) {
+          let label = data.datasets[tooltipItem.datasetIndex].label || '';
           label += tooltipItem.yLabel;
           return label;
-        }
-      }
-    }
+        },
+      },
+    },
   };
 
-  var chartInstance = new Chart(chart, {
-      type: 'line',
-      data: data,
-      options: options
+  const chartInstance = new Chart(chart, {
+    type: 'line',
+    data,
+    options,
   });
 
-  var chartJson;
-  getChartDatas('documents/chartDatas.json')
-  
+  let chartJson;
+  getChartDatas('documents/chartDatas.json');
+
   function getChartDatas(url) {
-    $.getJSON( url, function( data ) {
+    $.getJSON(url, data => {
       chartJson = data;
     });
   }
-  
-  $('.chart__control-button').click(function(){
-    $('.chart__control-button.active').removeClass('active')
-    $(this).addClass('active')
-    if($(this).data('chart') === 'balance'){
+
+  $('.chart__control-button').click(function() {
+    $('.chart__control-button.active').removeClass('active');
+    $(this).addClass('active');
+    if ($(this).data('chart') === 'balance') {
       // console.log(chartJson[0].currency)
       chartInstance.data.datasets[0].data = chartJson[0].dataset[0].datas;
       chartInstance.data.labels = chartJson[0].dataset[0].labels;
 
       chartInstance.options.tooltips.callbacks.label = function(tooltipItem, data) {
-        var label = data.datasets[tooltipItem.datasetIndex].label || '';
-        label += tooltipItem.yLabel + ' ' + chartJson[0].currency;
+        let label = data.datasets[tooltipItem.datasetIndex].label || '';
+        label += `${tooltipItem.yLabel} ${chartJson[0].currency}`;
         return label;
-      }
+      };
     }
-    if($(this).data('chart') === 'profit'){
+    if ($(this).data('chart') === 'profit') {
       // console.log(chartJson[1].currency)
       chartInstance.data.datasets[0].data = chartJson[1].dataset[0].datas;
       chartInstance.data.labels = chartJson[1].dataset[0].labels;
 
       chartInstance.options.tooltips.callbacks.label = function(tooltipItem, data) {
-        var label = data.datasets[tooltipItem.datasetIndex].label || '';
-        label += tooltipItem.yLabel + ' ' + chartJson[1].currency;
+        let label = data.datasets[tooltipItem.datasetIndex].label || '';
+        label += `${tooltipItem.yLabel} ${chartJson[1].currency}`;
         return label;
-      }
+      };
     }
-    if($(this).data('chart') === 'trades'){
+    if ($(this).data('chart') === 'trades') {
       // console.log(chartJson[2].currency)
       chartInstance.data.datasets[0].data = chartJson[2].dataset[0].datas;
       chartInstance.data.labels = chartJson[2].dataset[0].labels;
 
       chartInstance.options.tooltips.callbacks.label = function(tooltipItem, data) {
-        var label = data.datasets[tooltipItem.datasetIndex].label || '';
-        label += tooltipItem.yLabel + ' ' + chartJson[2].currency;
+        let label = data.datasets[tooltipItem.datasetIndex].label || '';
+        label += `${tooltipItem.yLabel} ${chartJson[2].currency}`;
         return label;
-      }
+      };
     }
     chartInstance.update();
-  })
+  });
 }
 
 // Copy wallet number
 if (document.querySelector('.button-copy')) {
   $('.button-copy').click(() => {
     // Копирование
-    var copyNumber = document.getElementById("walletNumber");
+    const copyNumber = document.getElementById('walletNumber');
     copyNumber.select();
     copyNumber.setSelectionRange(0, 99999);
-    document.execCommand("copy");
+    document.execCommand('copy');
     copyNumber.setSelectionRange(0, 0);
 
     // Уведомление
     $('.notification').addClass('active');
-    setTimeout(function(){
+    setTimeout(() => {
       $('.notification').removeClass('active');
-    },1500)
-  })
+    }, 1500);
+  });
 }
 
 // Center ellipsis text
-function truncate( str, max, sep ) {
-
+function truncate(str, max, sep) {
   max = max || 10;
 
-  var len = str.length;
-  if(len > max){
+  const len = str.length;
+  if (len > max) {
+    sep = sep || '...';
 
-      sep = sep || "...";
+    const seplen = sep.length;
 
-      var seplen = sep.length;
+    if (seplen > max) {
+      return str.substr(len - max);
+    }
 
-      if(seplen > max) {
-          return str.substr(len - max);
-      }
+    const n = -0.5 * (max - len - seplen);
 
-      var n = -0.5 * (max - len - seplen);
+    const center = len / 2;
 
-      var center = len/2;
+    const front = str.substr(0, center - n);
+    const back = str.substr(len - center + n);
 
-      var front = str.substr(0, center - n);
-      var back = str.substr(len - center + n);
-
-      return front + sep + back;
-
+    return front + sep + back;
   }
 
   return str;
 }
 if (document.querySelector('.ellipsis')) {
-  $('span.ellipsis').each(function(){
-    var textEllipsis = $(this).text();
-    $(this).text(truncate(textEllipsis, 22, "........"))
-  })
+  $('span.ellipsis').each(function() {
+    const textEllipsis = $(this).text();
+    $(this).text(truncate(textEllipsis, 22, '........'));
+  });
 }
-
 
 // Security password
 if (document.querySelector('button[data-toggle=edit-form]')) {
-  $('button[data-toggle=edit-form]').click(function(){
-    if($('.security-password__form input').is('[readonly]')){
-      $('.security-password__form input').removeAttr('readonly')
-      $('#securityPasswordCurrent').focus()
+  $('button[data-toggle=edit-form]').click(() => {
+    if ($('.security-password__form input').is('[readonly]')) {
+      $('.security-password__form input').removeAttr('readonly');
+      $('#securityPasswordCurrent').focus();
     }
-  })
+  });
 }
-
 
 // Button remove .table-row
 if (document.querySelector('.button-remove')) {
-  $('.button-remove').click(function(e){
-    e.preventDefault()
-    $(this).parents('.table-row').remove()
-  })
+  $('.button-remove').click(function(e) {
+    e.preventDefault();
+    $(this)
+      .parents('.table-row')
+      .remove();
+  });
 }
 
 // Security authentication modal headline change
 if (document.querySelector('#modal-2fa-verification')) {
-  $('#security-authentication_1').change(function(){
-    if ( $(this).is(':checked') ) {
-      $('#modal-2fa-verification .security-status').text('Enable')
+  $('#security-authentication_1').change(function() {
+    if ($(this).is(':checked')) {
+      $('#modal-2fa-verification .security-status').text('Enable');
     } else {
-      $('#modal-2fa-verification .security-status').text('Disable')
+      $('#modal-2fa-verification .security-status').text('Disable');
     }
     $('#modal-2fa-verification').modal('show');
-  })
+  });
 }
 if (document.querySelector('#modal-google-authenticator')) {
-  $('#security-authentication_2').change(function(){
-    if ( $(this).is(':checked') ) {
-      $('#modal-google-authenticator .security-status').text('Enable')
+  $('#security-authentication_2').change(function() {
+    if ($(this).is(':checked')) {
+      $('#modal-google-authenticator .security-status').text('Enable');
     } else {
-      $('#modal-google-authenticator .security-status').text('Disable')
+      $('#modal-google-authenticator .security-status').text('Disable');
     }
     $('#modal-google-authenticator').modal('show');
-  })
+  });
 }
 
 // Trading currencies check. Page Settings
 if (document.querySelector('.trading-currencies__header-filter')) {
-  var currenciesCheckBlock = $('.currencies-check'),
-      currenciesAllBlock = $('.currencies-all'),
-      countCheck = 0,
-      countAll = 0;
-  $('input[name=currencies]').each(function(){
-    countAll++
-    if ( $(this).is(':checked') ) {
-      countCheck++
+  const currenciesCheckBlock = $('.currencies-check');
+  const currenciesAllBlock = $('.currencies-all');
+  let countCheck = 0;
+  let countAll = 0;
+  $('input[name=currencies]').each(function() {
+    countAll++;
+    if ($(this).is(':checked')) {
+      countCheck++;
     }
-    currenciesChange(countCheck, countAll)
-  })
-  $('input[name=currencies]').change(function(){
-    if ( $(this).is(':checked') ) {
-      countCheck++
+    currenciesChange(countCheck, countAll);
+  });
+  $('input[name=currencies]').change(function() {
+    if ($(this).is(':checked')) {
+      countCheck++;
     } else {
-      countCheck--
+      countCheck--;
     }
-    currenciesChange(countCheck)
-  })
+    currenciesChange(countCheck);
+  });
   function currenciesChange(check, all) {
-    currenciesCheckBlock.text(check)
-    currenciesAllBlock.text(all)
+    currenciesCheckBlock.text(check);
+    currenciesAllBlock.text(all);
   }
 }
 
-
 // Verification steps
 // - upload photos
-$('#verificationUploads__form input[type="file"]').on('change', function () {
-  var file = this.files,
-      uploadedIconBlock = '.verification-level__uploads-area img',
-      uploadedIconPath = './images/verification_uploaded.svg';
+$('#verificationUploads__form input[type="file"]').on('change', function() {
+  const file = this.files;
+  const uploadedIconBlock = '.verification-level__uploads-area img';
+  const uploadedIconPath = './images/verification_uploaded.svg';
 
-  if ( !file[0].type.match(/image\/(jpeg|jpg|png|gif)/) ) {
+  if (!file[0].type.match(/image\/(jpeg|jpg|png|gif)/)) {
     $(this).val('');
     return false;
   }
 
-  $(this).parent().find(uploadedIconBlock).attr('src',uploadedIconPath);
+  $(this)
+    .parent()
+    .find(uploadedIconBlock)
+    .attr('src', uploadedIconPath);
 });
 
 // - next step
 // class ".next-step" added to buttons and headline icons to view all steps
-$('.next-step').click(function(e){
+$('.next-step').click(function(e) {
   e.preventDefault();
-  var step = $(this).parents('.verification-level__step').data('verifi-step');
-  console.log(step)
+  let step = $(this)
+    .parents('.verification-level__step')
+    .data('verifi-step');
+  console.log(step);
   step++;
   $('.verification-level__step.active').removeClass('active');
-  $('.verification-level__step[data-verifi-step='+ step +']').addClass('active');
-})
+  $(`.verification-level__step[data-verifi-step=${step}]`).addClass('active');
+});
+
+// cookies bar
+function showHideCookiesBar() {}
+
+if (document.querySelector('.cookies-bar')) {
+  if (!sessionStorage.getItem('cookiesBar')) {
+    let cookieBarEnabled = true;
+    $(window).scroll(() => {
+      if ($(window).scrollTop() > 100 && cookieBarEnabled === true) {
+        $('.cookies-bar').show(300);
+      }
+    });
+
+    $('.cookies-bar__close-button').click(() => {
+      $('.cookies-bar').hide(300);
+      cookieBarEnabled = false;
+      sessionStorage.setItem('cookiesBar', 'closed');
+    });
+  }
+}

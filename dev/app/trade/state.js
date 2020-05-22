@@ -49,6 +49,7 @@ export const state = {
   successProgress: 0,
   particlesProgress: 0,
   wallet: 'btc',
+  percentage: '%',
   stage: {
     width: 0,
     height: 0,

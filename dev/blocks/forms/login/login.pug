@@ -6,19 +6,18 @@
             .form-group.login__form-email
                 input(type="text" class="form-control form-control-lg required" id="loginEmail" name="email" required)
                 span.form-group__placeholder Email
-                .error-icon.d-none
-                  span !
                 .tooltip-anchor
             .form-group.login__form-password
                 input(type="password" class="form-control form-control-lg" id="loginPassword" name="password")
                 span.form-group__placeholder Password
-                .error-icon.d-none 
-                  span !
                 .tooltip-anchor
             .custom-control.custom-checkbox.login__form-terms
                 input(type="checkbox" class="custom-control-input" id="loginTerm")
                 label(class="custom-control-label" for="loginTerm").login__form-terms-label Remember me
                 a(href="forgot.html").login__form-forgot-link.link-hover-move Forgot your password?
+            .form-group.login__form-recapcha
+                div(class="g-recaptcha" data-sitekey="6LencawUAAAAAHxPPI0c69PwDpxbuVFrcK9eFtsY")
+                .tooltip-anchor            
             button(type="submit").button-orange.button-hover-white.login__form-login Login
         .login-section__footer
             span Don't have an account?

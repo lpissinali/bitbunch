@@ -59,18 +59,18 @@
                     |  (
                     span.currency XRP
                     | )
-                .profit Appr. profit
+                .profit Apr. profit
                     |
                     |
-                    strong.value 0.07 
+                    span.value 0.07 
                     |
                     |
-                    span.currency BTC
+                    span.currency %
                 .instant-trade.d-none Instant trade
         .w-100.overflow-hidden.text-center.position-relative
-            .buy-sell-info.buy-info.mb-2.text-light
+            .buy-sell-info.buy-info.text-light
                 .content
-                    | Bought 2,179 XRP for
+                    | Buy 2,179 XRP for
                     br
                     | $ 1000 at 12:43   
             .buy-sell-info.sell-info.text-light
@@ -87,13 +87,13 @@
                         | successful trade!
                     h5.mb-2 Your profit
                     .profit
+                        span.currency %
+                        |
+                        |
                         span.value.text-warning 0.00004
-                        |
-                        |
-                        span.currency BTC
-                .d-flex.w-100.mt-2
-                    button#close-instant-trade.btn.w-100.text-light Close
-                    button.btn.btn-light.w-100.ml-3.text-primary Details
+                .btns
+                    button#close-instant-trade.button-orange.button-hover-white Close
+                    button.button-white.button-hover-blue Details
     svg#connectors-display.connectors-display(width="100%" height="100%")
         defs
             filter#exchange-connect-shadow(x='-1' y='-1' width="4" height="4")

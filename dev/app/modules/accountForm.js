@@ -1,6 +1,7 @@
 import {
   DEFAULT_TOOLTIP_CONTENT,
   VALIDATION_SUCCESS_CLASS,
+  VALIDATION_ERROR_CLASS,
   HIDE_ELEMENT_CLASS,
   showTooltip,
   closeTooltip,
@@ -20,6 +21,7 @@ const editButtonHandler = (elementClass, attribute) => {
 const saveButtonHandler = (elementClass, modalFormSelector, modalFormElementSelector) => {
   $(`.${elementClass} button[data-toggle=modal`).click(event => {
     if ($(`.${elementClass} input`)[0].value !== '') {
+      $(`.${elementClass} input`).removeClass(VALIDATION_ERROR_CLASS);
       $(`.${elementClass} input`).addClass(VALIDATION_SUCCESS_CLASS);
       closeTooltip($(`.${elementClass} input`)[0]);
       $(modalFormElementSelector)
@@ -28,6 +30,7 @@ const saveButtonHandler = (elementClass, modalFormSelector, modalFormElementSele
       $(modalFormSelector).modal('show');
     } else {
       $(`.${elementClass} input`).removeClass(VALIDATION_SUCCESS_CLASS);
+      $(`.${elementClass} input`).addClass(VALIDATION_ERROR_CLASS);
       const tooltipsterContent = DEFAULT_TOOLTIP_CONTENT;
       showTooltip($(`.${elementClass} input`)[0], tooltipsterContent);
     }

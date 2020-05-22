@@ -148,6 +148,16 @@
   margin-left: auto;
 }
 
+@media screen and (min-width: 1441px) {
+
+  .our-team {
+    background-image: url("./images/how-it-works__bg-desktop-big.svg");
+    background-position: calc(50% + 39.25rem) -125.43rem;
+    background-repeat: no-repeat;
+    background-size: 178.9375rem auto;
+  }
+}
+
 @import "./our-team-tablet.scss";
 
 @import "./our-team-mobile.scss";
