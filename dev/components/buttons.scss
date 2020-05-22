@@ -52,6 +52,7 @@
   display: flex;
   width: 6.25rem;
   height: 2.5rem;
+  border: 0;
   border: 2px solid $red;
   border-radius: 0.1875rem;
   background-color: $red;
@@ -71,6 +72,8 @@
     transform: scaleX(1.05);
   }
 }
+
+
 
 .button-blue {
   justify-content: center;
@@ -139,7 +142,7 @@
     border: 2px solid #fff3ef;
     background-color: #fff3ef;
     color: $orange;
-    transform: scaleX(1.05) !important;
+    transform: scaleX(1.05);
   }
 }
 
@@ -159,7 +162,7 @@
 .white-button-hover-blue {
 
   &:hover {
-    border: 2px solid $white;
+    border: 2px solid $blue;
     background-color: $blue;
     color: $white;
   }
@@ -168,7 +171,7 @@
 .checkbox-btn {
   display: none;
 
-  + label {
+  +label {
     position: relative;
     width: 4.0625rem;
     height: 1.875rem;
@@ -237,7 +240,7 @@
   }
 
   &:checked {
-    + label {
+    +label {
       background-color: $blue;
       border-color: $blue;
 
@@ -261,66 +264,36 @@
   }
 }
 
-@media screen and ($tablet1), ($tablet2), ($tablet3) {
-  .button-hover-white {
-    &:hover {
-      background-color: $orange;
-      color: $white;
-      transform: none;
-    }
+@media screen and ($tablet1),
+($tablet2),
+($tablet3) {
+  .button-orange.nohover {
+    background-color: $orange !important;
+    color: $white !important;
+    transform: scaleX(1) !important;
+  }
 
-    &:active {
-      background-color: $white;
-      color: $orange;
-      transform: scaleX(1.05);
-    }
+  .button-yellow.nohover {
+    background-color: #ffa72e !important;
+    color: $white !important;
+    transform: scaleX(1) !important;
   }
-  
-  .button-hover-blue {
-    &:hover {
-      border: 2px solid $orange;
-      background-color: $orange;
-      color: #fff;
-      transform: none!important;
-    }
-    &:active {
-      border: 2px solid #fff3ef;
-      background-color: #fff3ef;
-      color: $orange;
-      transform: scaleX(1.05) !important;
-    }
+
+  .button-red.nohover {
+    background-color: $red !important;
+    color: $white !important;
+    transform: scaleX(1) !important;
   }
-  
-  .blue-button-hover-white {
-    &:hover {
-      border: 2px solid $white;
-      background-color: $blue;
-      color: $white;
-      transform: none;
-    }
-    &:active {
-      border: 2px solid $blue;
-      background-color: $white;
-      color: $blue;
-      transform: scaleX(1.05);
-    }
-  }
-  
-  .white-button-hover-blue {
-    &:hover {
-      border: 2px solid $white;
-      background-color: $white;
-      color: $blue;
-    }
-    &:active {
-      border: 2px solid $white;
-      background-color: $blue;
-      color: $white;
-    }
+
+  .button-blue.nohover {
+    background-color: $blue !important;
+    color: $white !important;
   }
 }
 
-@media screen and ($mobile1), ($mobile2), ($mobile3) {
+@media screen and ($mobile1),
+($mobile2),
+($mobile3) {
 
   .button-orange {
     width: 8.5625rem;
@@ -348,7 +321,7 @@
 
   .checkbox-btn {
 
-    + label {
+    +label {
       width: 2.75rem;
       height: 1.25rem;
       border-width: .0625rem;
@@ -378,7 +351,7 @@
       }
     }
 
-    &:checked + label .checkbox-btn__point {
+    &:checked+label .checkbox-btn__point {
       left: calc(100% - 1.125rem);
     }
   }
