@@ -8,7 +8,7 @@ $(document).ready(() => {
         triggerElement: section,
         triggerHook: 0.55,
       })
-        .reverse(false)
+        .reverse(true)
         .setTween(tween)
         .addTo(controller);
     }
@@ -99,8 +99,9 @@ $(document).ready(() => {
       // our-team header
       if (document.querySelector('.our-team-header')) {
         const tl_our_team_header = new TimelineMax();
-        tl_our_team_header.from('.our-team-header__headline-block', 0.5, { y: '40%', opacity: 0 });
-        tl_our_team_header.from('.our-team-header__decor', 0.5, { y: '20%', opacity: 0 }, 0.2);
+        tl_our_team_header.from('.our-team-header__headline-block', 0.5, { y: '40%', opacity: 0 }, 0.2);
+        tl_our_team_header.from('.our-team-header__video-poster', 0.5, { scale: '.8', opacity: 0 }, 0.2);
+        tl_our_team_header.from('.our-team-header__video-bg', 0.5, { scale: '.8', opacity: 0 }, 0.5);
         AnimationScene('.our-team-header', tl_our_team_header);
       }
 
