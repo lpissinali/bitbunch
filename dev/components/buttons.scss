@@ -21,7 +21,7 @@
   }
 }
 
-.button-yellow{
+.button-yellow {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -65,12 +65,15 @@
   cursor: pointer;
   transition: 300ms;
   transform-origin: center center;
+
   &:hover {
-    background-color:$white;
+    background-color: $white;
     color: $red;
     transform: scaleX(1.05);
   }
 }
+
+
 
 .button-blue {
   justify-content: center;
@@ -157,7 +160,7 @@
 }
 
 .white-button-hover-blue {
-  
+
   &:hover {
     border: 2px solid $blue;
     background-color: $blue;
@@ -165,9 +168,10 @@
   }
 }
 
-.checkbox-btn{
+.checkbox-btn {
   display: none;
-  + label{
+
+  +label {
     position: relative;
     width: 4.0625rem;
     height: 1.875rem;
@@ -178,8 +182,9 @@
     cursor: pointer;
     overflow: hidden;
     user-select: none;
+
     .checkbox-btn__on,
-    .checkbox-btn__off{
+    .checkbox-btn__off {
       position: absolute;
       display: flex;
       align-items: center;
@@ -195,15 +200,18 @@
       opacity: .8;
       transition: all 300ms;
     }
-    .checkbox-btn__on{
+
+    .checkbox-btn__on {
       right: 100%;
       padding-right: 1.625rem;
     }
-    .checkbox-btn__off{
+
+    .checkbox-btn__off {
       left: 0;
       padding-left: 1.625rem;
     }
-    .checkbox-btn__point{
+
+    .checkbox-btn__point {
       position: absolute;
       left: 0;
       top: 0;
@@ -213,11 +221,12 @@
       border-radius: 50%;
       background: $blue;
       transition: all 330ms;
-      &:after{
+
+      &:after {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         content: '';
         display: block;
         width: 1rem;
@@ -229,20 +238,25 @@
       }
     }
   }
-  &:checked{
-    + label{
+
+  &:checked {
+    +label {
       background-color: $blue;
       border-color: $blue;
-      .checkbox-btn__on{
+
+      .checkbox-btn__on {
         right: 0;
       }
-      .checkbox-btn__off{
+
+      .checkbox-btn__off {
         left: 100%;
       }
-      .checkbox-btn__point{
+
+      .checkbox-btn__point {
         left: calc(100% - 1.625rem);
         background: $white;
-        &:after{
+
+        &:after {
           background: $blue;
         }
       }
@@ -250,10 +264,36 @@
   }
 }
 
-@media screen and ($tablet1), ($tablet2), ($tablet3) {
+@media screen and ($tablet1),
+($tablet2),
+($tablet3) {
+  .button-orange.nohover {
+    background-color: $orange !important;
+    color: $white !important;
+    transform: scaleX(1) !important;
+  }
+
+  .button-yellow.nohover {
+    background-color: #ffa72e !important;
+    color: $white !important;
+    transform: scaleX(1) !important;
+  }
+
+  .button-red.nohover {
+    background-color: $red !important;
+    color: $white !important;
+    transform: scaleX(1) !important;
+  }
+
+  .button-blue.nohover {
+    background-color: $blue !important;
+    color: $white !important;
+  }
 }
 
-@media screen and ($mobile1), ($mobile2), ($mobile3) {
+@media screen and ($mobile1),
+($mobile2),
+($mobile3) {
 
   .button-orange {
     width: 8.5625rem;
@@ -281,7 +321,7 @@
 
   .checkbox-btn {
 
-    + label {
+    +label {
       width: 2.75rem;
       height: 1.25rem;
       border-width: .0625rem;
@@ -291,10 +331,12 @@
         padding-bottom: 0.0813rem;
         font-size: .625rem;
       }
-      .checkbox-btn__on{
+
+      .checkbox-btn__on {
         padding-right: 1.125rem;
       }
-      .checkbox-btn__off{
+
+      .checkbox-btn__off {
         padding-left: 1.125rem;
       }
 
@@ -309,12 +351,12 @@
       }
     }
 
-    &:checked + label .checkbox-btn__point {
+    &:checked+label .checkbox-btn__point {
       left: calc(100% - 1.125rem);
     }
   }
 
-  .button-red{
+  .button-red {
     font-family: $main-font-regular;
     text-transform: capitalize;
   }
