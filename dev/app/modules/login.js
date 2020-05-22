@@ -26,6 +26,10 @@ $('#loginForm').validate({
   errorClass: VALIDATION_ERROR_CLASS,
   validClass: VALIDATION_SUCCESS_CLASS,
   submitHandler(form) {
-    return false;
+    // if (!this.submitData['g-recaptcha-response']) {
+    //   this.showFormMessage('Подтвердите, что вы не робот!');
+    //   return;
+    // }
+    // return false;
   },
 });
