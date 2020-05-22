@@ -9,3 +9,33 @@
 .document-header__headline-block {
   margin-top: 4.3125rem;
 }
+
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .document-header {
+    background-image: url("./images/document-header-bg-tablet.png");
+  }
+
+  .document-header__wrapper {
+    padding-bottom: 9.375rem;
+  }
+
+  .document-header__headline-block {
+    margin-top: 6.625rem;
+  }
+}
+
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .document-header {
+    background-image: url("./images/document-header-bg-mobile.png");
+  }
+
+  .document-header__wrapper {
+    padding-bottom: 3.625rem;
+  }
+
+  .document-header__headline-block {
+    margin-top: 3.3125rem;
+  }
+}
