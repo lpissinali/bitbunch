@@ -1,0 +1,51 @@
+@media screen and ($mobile1), ($mobile2), ($mobile3) {
+
+  .document__wrapper {
+    padding-top: 3rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2.1875rem;
+    padding-left: 1.5rem;
+  }
+
+  .document__text-container {
+
+    .grey,
+    .text,
+    .yellow {
+      margin-top: 1.5rem;
+      font-family: $main-font-light;
+      font-size: .875rem;
+      line-height: 1.5rem;
+    }
+
+    .title {
+      margin-top: 3.125rem;
+      font-size: 1.3125rem;
+      line-height: 1.6875rem;
+    }
+
+    .stitle {
+      margin-top: 2rem;
+      font-size: 1rem;
+      line-height: 1.1875rem;
+    }
+
+    .yellow {
+      margin-top: 1rem;
+
+      &:before {
+        margin-right: 1.0625rem;
+        width: .1875rem;
+        height: .1875rem;
+      }
+    }
+
+    .title + .stitle {
+      margin-top: .8125rem;
+    }
+
+    .stitle + .text {
+      margin-top: .875rem;
+    }
+  }
+}

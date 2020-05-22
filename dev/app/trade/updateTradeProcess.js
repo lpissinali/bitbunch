@@ -80,7 +80,7 @@ export function initBuyInfo(tradeState) {
 
     const buyInfoNode = activeTrade.querySelector('.buy-info');
     const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice, currencyCode);
-    const boughtInWalletCurrency = formatCurrency(trade.amount , walletCurrencyCode);
+    const boughtInWalletCurrency = formatCurrency(trade.amount, walletCurrencyCode);
     let boughtTime = formatTime(trade.startTime);
     boughtTime = `<span style="white-space: nowrap;">at <strong>${boughtTime}</strong></span>`;
     buyInfoNode.innerHTML = `Bought <strong>${boughtInTargetCurrency}</strong> ${currencyCode}

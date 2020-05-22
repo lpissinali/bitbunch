@@ -19,6 +19,13 @@
     margin-bottom: 2rem;
   }
 
+  .register__form-terms {
+    .register__form-terms-link {
+      font-size: 0.75rem;
+      padding-top: 4px;
+    }
+  }
+
   .register__form-phonecode{
     max-width: 4.75rem;
     input {
