@@ -21,7 +21,7 @@
   }
 }
 
-.button-yellow{
+.button-yellow {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -52,7 +52,6 @@
   display: flex;
   width: 6.25rem;
   height: 2.5rem;
-  border: 0;
   border: 2px solid $red;
   border-radius: 0.1875rem;
   background-color: $red;
@@ -65,8 +64,9 @@
   cursor: pointer;
   transition: 300ms;
   transform-origin: center center;
+
   &:hover {
-    background-color:$white;
+    background-color: $white;
     color: $red;
     transform: scaleX(1.05);
   }
@@ -139,7 +139,7 @@
     border: 2px solid #fff3ef;
     background-color: #fff3ef;
     color: $orange;
-    transform: scaleX(1.05);
+    transform: scaleX(1.05) !important;
   }
 }
 
@@ -157,17 +157,18 @@
 }
 
 .white-button-hover-blue {
-  
+
   &:hover {
-    border: 2px solid $blue;
+    border: 2px solid $white;
     background-color: $blue;
     color: $white;
   }
 }
 
-.checkbox-btn{
+.checkbox-btn {
   display: none;
-  + label{
+
+  + label {
     position: relative;
     width: 4.0625rem;
     height: 1.875rem;
@@ -178,8 +179,9 @@
     cursor: pointer;
     overflow: hidden;
     user-select: none;
+
     .checkbox-btn__on,
-    .checkbox-btn__off{
+    .checkbox-btn__off {
       position: absolute;
       display: flex;
       align-items: center;
@@ -195,15 +197,18 @@
       opacity: .8;
       transition: all 300ms;
     }
-    .checkbox-btn__on{
+
+    .checkbox-btn__on {
       right: 100%;
       padding-right: 1.625rem;
     }
-    .checkbox-btn__off{
+
+    .checkbox-btn__off {
       left: 0;
       padding-left: 1.625rem;
     }
-    .checkbox-btn__point{
+
+    .checkbox-btn__point {
       position: absolute;
       left: 0;
       top: 0;
@@ -213,11 +218,12 @@
       border-radius: 50%;
       background: $blue;
       transition: all 330ms;
-      &:after{
+
+      &:after {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         content: '';
         display: block;
         width: 1rem;
@@ -229,20 +235,25 @@
       }
     }
   }
-  &:checked{
-    + label{
+
+  &:checked {
+    + label {
       background-color: $blue;
       border-color: $blue;
-      .checkbox-btn__on{
+
+      .checkbox-btn__on {
         right: 0;
       }
-      .checkbox-btn__off{
+
+      .checkbox-btn__off {
         left: 100%;
       }
-      .checkbox-btn__point{
+
+      .checkbox-btn__point {
         left: calc(100% - 1.625rem);
         background: $white;
-        &:after{
+
+        &:after {
           background: $blue;
         }
       }
@@ -251,6 +262,62 @@
 }
 
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
+  .button-hover-white {
+    &:hover {
+      background-color: $orange;
+      color: $white;
+      transform: none;
+    }
+
+    &:active {
+      background-color: $white;
+      color: $orange;
+      transform: scaleX(1.05);
+    }
+  }
+  
+  .button-hover-blue {
+    &:hover {
+      border: 2px solid $orange;
+      background-color: $orange;
+      color: #fff;
+      transform: none!important;
+    }
+    &:active {
+      border: 2px solid #fff3ef;
+      background-color: #fff3ef;
+      color: $orange;
+      transform: scaleX(1.05) !important;
+    }
+  }
+  
+  .blue-button-hover-white {
+    &:hover {
+      border: 2px solid $white;
+      background-color: $blue;
+      color: $white;
+      transform: none;
+    }
+    &:active {
+      border: 2px solid $blue;
+      background-color: $white;
+      color: $blue;
+      transform: scaleX(1.05);
+    }
+  }
+  
+  .white-button-hover-blue {
+    &:hover {
+      border: 2px solid $white;
+      background-color: $white;
+      color: $blue;
+    }
+    &:active {
+      border: 2px solid $white;
+      background-color: $blue;
+      color: $white;
+    }
+  }
 }
 
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
@@ -291,10 +358,12 @@
         padding-bottom: 0.0813rem;
         font-size: .625rem;
       }
-      .checkbox-btn__on{
+
+      .checkbox-btn__on {
         padding-right: 1.125rem;
       }
-      .checkbox-btn__off{
+
+      .checkbox-btn__off {
         padding-left: 1.125rem;
       }
 
@@ -314,7 +383,7 @@
     }
   }
 
-  .button-red{
+  .button-red {
     font-family: $main-font-regular;
     text-transform: capitalize;
   }
