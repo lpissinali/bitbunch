@@ -1,16 +1,20 @@
-// .modal{}
-.modal__dialog{
+.modal {
+}
+
+.modal__dialog {
   max-width: 40rem;
   margin: 8.125rem auto;
 }
-.modal__content{
+
+.modal__content {
   width: 100%;
   box-shadow: 0 0.125rem 0.25rem rgba(93, 88, 88, 0.1);
   border: none;
   border-radius: 0.1875rem;
   background-image: linear-gradient(244deg, #fcfdff 0%, #f2f4fd 100%);
 }
-.modal__header{
+
+.modal__header {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -18,26 +22,31 @@
   border-radius: 0.1875rem 0.1875rem 0 0;
   background-color: #efc7c2;
 }
-.modal__header-icon{
+
+.modal__header-icon {
   display: block;
   width: 3.625rem;
   margin-right: 1rem;
 }
-.modal__header-text{
+
+.modal__header-text {
   font-family: $main-font-regular;
 }
-.modal__header-title{
+
+.modal__header-title {
   margin-top: -0.1875rem;
   color: #091540;
   font-size: 1.5rem;
 }
-.modal__header-description{
+
+.modal__header-description {
   opacity: 0.8;
   color: $black-light;
   font-size: 1.125rem;
   line-height: 1.875rem;
 }
-.modal__close{
+
+.modal__close {
   position: absolute;
   right: 2rem;
   top: 50%;
@@ -49,53 +58,61 @@
   opacity: .3;
   cursor: pointer;
   transition: opacity 300ms;
-  &:hover{
+
+  &:hover {
     opacity: .6;
   }
 }
-.modal__body{
+
+.modal__body {
   padding: 2rem;
-  .button-orange[type=submit]{
+
+  .button-orange[type=submit] {
     width: 100%;
     margin-top: 2rem;
   }
 }
-.modal-backdrop{
+
+.modal-backdrop {
   background-color: $blue;
   opacity: 0.4;
 }
 
 
 // modal-google-authenticator
-.googleAuthenticator__form .form-group__qr-code{
+.googleAuthenticator__form .form-group__qr-code {
   display: flex;
   align-items: center;
 }
-.googleAuthenticator__form .form-group{
+
+.googleAuthenticator__form .form-group {
   width: calc(100% - 10.25rem - 3.125rem);
   margin-bottom: 0;
 }
-.googleAuthenticator__form .form-group__qr-code .form-control__qr-code{
+
+.googleAuthenticator__form .form-group__qr-code .form-control__qr-code {
   width: 10.25rem;
   height: 10.25rem;
   margin-left: 3.125rem;
-  img{
+
+  img {
     display: block;
     width: 100%;
   }
 }
-.googleAuthenticator__form .button-orange[type=submit]{
+
+.googleAuthenticator__form .button-orange[type=submit] {
   margin-top: 1.625rem;
 }
 
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
-  .modal__dialog{
+  .modal__dialog {
     padding: 0 1.5rem;
   }
 }
 
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
-  .modal__dialog{
+  .modal__dialog {
     margin: 8.375rem auto;
   }
   .modal__header {
@@ -104,49 +121,49 @@
     padding: 1rem;
     text-align: center;
   }
-  .modal__header-icon{
+  .modal__header-icon {
     width: 2.5rem;
     height: 2.5rem;
     margin: -1.625rem 0 0.8125rem;
   }
-  .modal__header-title{
+  .modal__header-title {
     margin-bottom: 0.4375rem;
     font-size: 1.125rem;
   }
-  .modal__header-description{
+  .modal__header-description {
     font-size: 0.75rem;
     line-height: 1rem;
   }
   .modal__body {
     padding: 1rem;
   }
-  .modal__close{
+  .modal__close {
     top: 0.5rem;
     right: 0.5rem;
     transform: translateY(0);
     width: 0.875rem;
     height: 0.875rem;
   }
-  .modal__body .button-orange[type=submit]{
+  .modal__body .button-orange[type=submit] {
     height: 2.5rem;
     margin-top: 1rem;
     font-size: 0.875rem;
   }
 
   // modal-google-authenticator
-  .googleAuthenticator__form .form-group__qr-code{
+  .googleAuthenticator__form .form-group__qr-code {
     flex-direction: column;
   }
-  .googleAuthenticator__form .form-group{
+  .googleAuthenticator__form .form-group {
     width: 100%;
     margin-bottom: 1rem;
   }
-  .googleAuthenticator__form .form-group__qr-code .form-control__qr-code{
+  .googleAuthenticator__form .form-group__qr-code .form-control__qr-code {
     width: 6.25rem;
     height: 6.25rem;
     margin-left: 0;
   }
-  .googleAuthenticator__form .button-orange[type=submit]{
+  .googleAuthenticator__form .button-orange[type=submit] {
     margin-top: 1rem;
   }
 }
