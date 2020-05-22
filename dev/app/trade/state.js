@@ -38,7 +38,7 @@ export const state = {
     sellExchange: 25,
     currency: 3,
   },
-  animLoopPaused: true,
+  animLoopPaused: false,
   lineProgress: 0,
   seekProgress: 0,
   selectProgress: 0,
@@ -49,6 +49,7 @@ export const state = {
   successProgress: 0,
   particlesProgress: 0,
   wallet: 'btc',
+  percentage: '%',
   stage: {
     width: 0,
     height: 0,

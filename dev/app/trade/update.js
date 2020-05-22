@@ -339,7 +339,7 @@ export function initTradeRect() {
   imageNode.setAttribute('src', getCurrencyIcon(currencyCode, true));
   codeNode.textContent = currencyCode;
   nameNode.textContent = currencyCodeToName[currencyCode];
-  currencyNode.textContent = state.wallet;
+  currencyNode.textContent = state.percentage;
   valueNode.textContent = formatCurrency(state.trade.current.profit);
 }
 
@@ -425,7 +425,8 @@ export function initShowMore() {
   const valueNode = tradeSuccessSection.querySelector('.value');
   const currencyNode = tradeSuccessSection.querySelector('.currency');
 
-  currencyNode.textContent = state.wallet.toUpperCase();
+  // currencyNode.textContent = state.wallet.toUpperCase();
+  currencyNode.textContent = state.percentage;
   valueNode.textContent = formatCurrency(state.trade.current.profit);
 
   const trade = state.trade.current;

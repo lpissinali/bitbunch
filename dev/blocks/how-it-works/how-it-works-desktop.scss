@@ -14,7 +14,7 @@
 .how-it-works__decor-line-4 {
   position: absolute;
   right: 0;
-  bottom: 27.6875rem;
+  bottom: 26.6875rem;
   width: 19rem;
   height: 6.3125rem;
   background-image: url("./images/how-it-works__decor-image-1.svg");
@@ -28,7 +28,7 @@
 }
 
 .how-it-works__decor-line-2 {
-  bottom: 19.1875rem;
+  bottom: 18.1875rem;
   width: 31rem;
   background-image: url("./images/how-it-works__decor-image-2.svg"),
     url("./images/how-it-works__decor-image-3.svg");
@@ -36,7 +36,7 @@
 }
 
 .how-it-works__decor-line-3 {
-  bottom: 10.75rem;
+  bottom: 9.75rem;
   width: 43.3125rem;
   background-image: url("./images/how-it-works__decor-image-4.svg"),
     url("./images/how-it-works__decor-image-5.svg"),
@@ -45,7 +45,7 @@
 }
 
 .how-it-works__decor-line-4 {
-  bottom: 2.25rem;
+  bottom: 1.25rem;
   width: 14rem;
   background-image: url("./images/how-it-works__decor-image-7.svg");
   background-position: 0 center;
@@ -110,30 +110,30 @@
 
   .how-it-works {
     background-image: url("./images/how-it-works__bg-desktop-big.svg");
-    background-position: calc(50% + 39.25rem) calc(100% + 63.065rem);
+    background-position: calc(50% + 39.25rem) calc(100% + 64.5rem);
     background-size: 178.9375rem auto;
   }
 
   .how-it-works__decor-line-1 {
     right: auto;
-    left: calc(50% + 25rem);
+    left: calc(50% + 26.5rem);
   }
 
   .how-it-works__decor-line-2 {
     right: auto;
-    left: calc(50% + 13.97rem);
+    left: calc(50% + 14.97rem);
     width: 40rem;
   }
 
   .how-it-works__decor-line-3 {
     right: auto;
-    left: calc(50% + 1.75rem);
+    left: calc(50% + 2.75rem);
     width: 60rem;
   }
 
   .how-it-works__decor-line-4 {
     right: auto;
-    left: calc(50% + 30.97rem);
+    left: calc(50% + 31.97rem);
     width: 20rem;
   }
 }

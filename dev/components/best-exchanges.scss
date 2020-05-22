@@ -5,18 +5,19 @@
   align-items: center;
   display: flex;
   margin-left: auto;
+  padding-right: 2.75rem;
   padding-left: 2.75rem;
   width: 68rem;
   height: 6rem;
   background-image: url("./images/best-exchanges-bg-desktop-white.png"),
-    url("./images/best-exchanges-bg-desktop.png");
+  url("./images/best-exchanges-bg-desktop.png");
   background-position: .875rem 50%, 0 0;
   background-repeat: no-repeat, no-repeat;
   background-size: auto 4.8125rem, auto 100%;
-  picture {
-    &:last-child {
-      display: none;
-    }
+
+  picture, img {
+    max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -24,19 +25,12 @@
   justify-content: flex-end;
   align-items: center;
   margin-right: 3rem;
-  width: 10.625rem;
-  font-family: Helvetica;
+  width: 12.625rem;
   font-family: $main-font-regular;
   font-size: .875rem;
   line-height: 1.375rem;
   text-align: right;
   color: #43425f;
-}
-
-.best-exchanges__image {
-  display: block;
-  margin-right: 3rem;
-  height: 1.3875rem;
 }
 
 @media screen and (min-width: 1921px) {
@@ -56,20 +50,10 @@
     justify-content: space-between;
     margin-top: 3.5rem;
     padding-left: 0;
+    padding-right: 0;
     width: 100%;
     height: 1.3125rem;
     background-image: none;
-    picture {
-      &:last-child {
-        display: inline-block;
-      }
-    }
-  }
-
-  .best-exchanges__image {
-    margin-right: 0;
-    height: 1rem;
-    opacity: .75;
   }
 
   .best-exchanges__title {
@@ -92,11 +76,13 @@
     flex-wrap: wrap;
     margin-top: .625rem;
     height: auto;
+    img {
+      height: 3.5rem;
+    }
   }
 
   .best-exchanges__image {
     margin-top: 1.25rem;
-    height: 1.125rem;
   }
 
   .best-exchanges__title {
