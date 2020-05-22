@@ -172,17 +172,17 @@ jQuery.extend(jQuery.validator.messages, {
 
 initTooltip();
 
-$('body').bind('touchstart', function (e) {
-  if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
-    $(e.target).removeClass('nohover');
-  }
-});
+// $('body').bind('touchstart', function (e) {
+//   if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
+//     $(e.target).removeClass('nohover');
+//   }
+// });
 
-$('body').bind('touchend', function (e) {
-  if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
-    setTimeout(function(){
-      $(e.target).addClass('nohover');
-    }, 300);
+// $('body').bind('touchend', function (e) {
+//   if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
+//     setTimeout(function(){
+//       $(e.target).addClass('nohover');
+//     }, 300);
     
-  }
-});
+//   }
+// });
