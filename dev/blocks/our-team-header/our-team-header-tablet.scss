@@ -11,22 +11,54 @@
     width: 100%;
   }
 
+  .our-team-header__content {
+    flex-direction: column-reverse;
+    margin-top: rem(70px);
+  }
+
   .our-team-header__headline-block {
-    margin-top: 10.75rem;
+
+    .our-team-header__headline {
+      display: none;
+    }
+  }
+
+  .our-team-header__video-block {
+
+    .our-team-header__headline {
+      display: block;
+    }
+  }
+
+  .our-team-header__headline {
+    width: 100%;
   }
 
   .our-team-header__subtitle {
-    width: 14.5rem;
+    margin-top: rem(24.5px);
+    width: rem(462px);
+    font-weight: 600;
   }
 
   .our-team-header__were-hiring-button {
     margin-top: 3.25rem;
   }
 
-  .our-team-header__decor {
-    top: 14.375rem;
-    width: 26.4375rem;
-    height: 30.1875rem;
-    background-image: url("./images/our-team-header__decor-tablet.png");
+  .our-team-header__video-block {
+    width: rem(668px);
+  }
+
+  .our-team-header__video-bg {
+    width: 47rem;
+    height: 34.75rem;
+    background-image: url(images/our-team-header__video-bg-tablet.png);
+    transform: translate(-6%, -17%);
+  }
+
+  .our-team-header__video-poster {
+    margin-top: rem(24.5px);
+    width: rem(668px);
+    height: rem(375px);
+    background-image: url("./images/our-team-header__video-poster-tablet.jpg");
   }
 }
