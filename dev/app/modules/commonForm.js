@@ -145,6 +145,30 @@ $('select').on('changed.bs.select', (event, clickedIndex, isSelected, previousVa
   closeTooltip(event.currentTarget);
 });
 
+$('select').on('change', (event) => {
+  if (event.currentTarget.value !== '') {
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.bootstrap-select-placeholder')
+      .addClass('has-content');
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.btn.dropdown-toggle')
+      .removeClass(VALIDATION_ERROR_CLASS)
+      .addClass(VALIDATION_SUCCESS_CLASS);
+  } else {
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.bootstrap-select-placeholder')
+      .removeClass('has-content');
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.btn.dropdown-toggle')
+      .removeClass(VALIDATION_SUCCESS_CLASS);
+  }
+  closeTooltip(event.currentTarget);
+});
+
 $('select').on('show.bs.select', (event, clickedIndex, isSelected, previousValue) => {
   closeTooltip(event.currentTarget);
 });
