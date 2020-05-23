@@ -3,7 +3,6 @@
 
 .modal__dialog {
   max-width: 40rem;
-  margin: 8.125rem auto;
 }
 
 .modal__content {
@@ -112,9 +111,6 @@
 }
 
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
-  .modal__dialog {
-    margin: 8.375rem auto;
-  }
   .modal__header {
     flex-direction: column;
     align-items: center;
