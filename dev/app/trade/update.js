@@ -351,7 +351,7 @@ export function hideTradeRect() {
 
 export function updateShortDetails() {
   if (state.stage.isVertical) {
-    const xIcon = state.showMoreProgress * (shortTradeContainer.offsetWidth / 2) - 25;
+    const xIcon = state.showMoreProgress * ((shortTradeContainer.offsetWidth / 2) - 25);
     const xInfo = (shortTradeContainer.offsetWidth - shortTradeDetails.offsetWidth) / 2;
     const yInfo = state.showMoreProgress * 60;
     anime.set(shortTradeIcon, {
