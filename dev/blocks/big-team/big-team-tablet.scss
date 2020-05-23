@@ -2,9 +2,7 @@
 
   .big-team__wrapper {
     padding-top: .3125rem;
-    padding-right: 3.125rem;
     padding-bottom: 5rem;
-    padding-left: 3.125rem;
   }
 
   .big-team__headline {
@@ -54,6 +52,104 @@
     .slick-prev {
       right: auto;
       left: -2.8125rem;
+    }
+  }
+
+  // our team success
+  .our-team__success {
+    padding-top: rem(80px);
+    padding-bottom: rem(133px);
+
+    width: 41.8125rem;
+
+    &-container {
+      flex-direction: column;
+    }
+
+    &-content h3 {
+      margin-right: auto;
+      margin-left: auto;
+      width: rem(480px);
+      font-size: rem(36px);
+      line-height: rem(46px);
+      text-align: center;
+    }
+
+    &-content p {
+      width: rem(570px);
+      font-size: rem(16px);
+      line-height: rem(26px);
+      text-align: center;
+    }
+
+    &-media {
+      margin-top: rem(65px);
+    }
+
+    &-media .our-team__success-anim-order-1 {
+      left: rem(-60px);
+      width: rem(94px);
+      height: rem(94px);
+    }
+
+    &-media .our-team__success-anim-order-2 {
+      transform: scale(1.6);
+    }
+
+    &-media .our-team__success-anim-order-3 {
+      transform: scale(1.6);
+    }
+
+    &-media .our-team__success-anim-order-4 {
+      transform: scale(1.9);
+    }
+
+    &-media .our-team__success-anim-order-5 {
+      right: rem(-47px);
+      bottom: rem(-67px);
+      width: rem(134px);
+      height: rem(134px);
+    }
+
+    &-media img {
+      width: rem(534px);
+      height: rem(321px);
+    }
+  }
+
+  // Our Team Founders
+
+  .our-team__founders {
+    padding-top: rem(80px);
+    padding-bottom: rem(95px);
+    background-image: url(./images/our-team__founders-bg-tablet.jpg);
+
+    &-content h3 {
+      width: rem(350px);
+      font-size: rem(36px);
+      line-height: rem(46px);
+    }
+
+    &-content p {
+      margin-bottom: rem(61px);
+      width: rem(504px);
+      font-size: rem(16px);
+      line-height: rem(26px);
+    }
+
+    &-media {
+      width: rem(641px);
+      height: rem(361px);
+    }
+
+    &-media:hover::before {
+      left: rem(-20px);
+      transform: scale(1.1);
+    }
+
+    &-media:hover::after {
+      right: rem(-20px);
+      transform: scale(1.1);
     }
   }
 }

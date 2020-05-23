@@ -4,7 +4,7 @@
     padding-top: .625rem;
     padding-right: 0;
     padding-bottom: 3rem;
-    padding-left: 1.5rem;
+    padding-left: 0;
   }
 
   .big-team__headline {
@@ -36,6 +36,124 @@
     .slick-prev,
     .slick-next {
       display: none !important;
+    }
+  }
+
+  // our team success
+  .our-team__success {
+    padding-top: rem(50px);
+    padding-bottom: rem(75px);
+    width: calc(100% - 30px);
+
+    &-content h3 {
+      margin-bottom: rem(5px);
+      width: rem(217px);
+      font-size: rem(22px);
+      line-height: rem(32px);
+    }
+
+    &-content p {
+      width: rem(272px);
+      font-size: rem(12px);
+      line-height: rem(22px);
+    }
+
+    &-media {
+      margin-top: rem(45px);
+    }
+
+    &-media div {
+      background-size: cover;
+    }
+
+    &-media .our-team__success-anim-order-1 {
+      left: rem(-30px);
+      width: rem(38px);
+      height: rem(38px);
+    }
+
+    &-media .our-team__success-anim-order-2 {
+      top: rem(-5px);
+      left: rem(-5px);
+      width: rem(31px);
+      height: rem(31px);
+    }
+
+    &-media .our-team__success-anim-order-3 {
+      top: rem(15px);
+      right: rem(-15px);
+      width: rem(26px);
+      height: rem(30px);
+      transform: scale(1.8);
+    }
+
+    &-media .our-team__success-anim-order-4 {
+      right: rem(-10px);
+      bottom: rem(-20px);
+      width: rem(32px);
+      height: rem(32px);
+      transform: scale(2);
+    }
+
+    &-media .our-team__success-anim-order-5 {
+      right: rem(-20px);
+      bottom: rem(-30px);
+      width: rem(55px);
+      height: rem(55px);
+      transform: scale(1.2);
+    }
+
+    &-media img {
+      width: rem(232px);
+      height: rem(134px);
+    }
+  }
+
+  // Our Team Founders
+  .our-team__founders {
+    padding-top: rem(50px);
+    padding-bottom: rem(55px);
+    background-image: url(./images/our-team__founders-bg-mobile.jpg);
+
+    &-content h3 {
+      margin-bottom: rem(5px);
+      width: rem(188px);
+      font-size: rem(22px);
+      line-height: rem(32px);
+    }
+
+    &-content p {
+      margin-bottom: rem(39px);
+      width: rem(250px);
+      font-size: rem(12px);
+      line-height: rem(22px);
+    }
+
+    &-media {
+      width: rem(261px);
+      height: rem(148px);
+    }
+
+    &-media::before {
+      top: rem(-5px);
+      left: rem(-5px);
+      width: rem(45px);
+      height: rem(45px);
+    }
+
+    &-media::after {
+      right: rem(-6px);
+      bottom: rem(-6px);
+      width: rem(68px);
+      height: rem(68px);
+    }
+
+    &-media:hover::before {
+      left: rem(-7px);
+    }
+
+    &-media:hover::after {
+      right: rem(-7px);
     }
   }
 }
