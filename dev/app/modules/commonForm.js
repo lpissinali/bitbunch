@@ -172,6 +172,13 @@ jQuery.extend(jQuery.validator.messages, {
 
 initTooltip();
 
+
+// document.body.addEventListener('touchend', function() {
+//   if (document.getElementById('verificationCountry'))
+//     document.getElementById('verificationCountry').blur(); 
+// });
+
+
 // $('body').bind('touchstart', function (e) {
 //   if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
 //     $(e.target).removeClass('nohover');
