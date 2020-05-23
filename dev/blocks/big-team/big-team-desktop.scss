@@ -45,6 +45,23 @@
   }
 }
 
+.big-team__founders-headline {
+  margin-right: auto;
+  margin-bottom: 14px;
+  margin-left: auto;
+  width: rem(497px);
+  text-align: center;
+}
+
+.big-team__founders-subtitle {
+  margin-right: auto;
+  margin-left: auto;
+  width: rem(374px);
+  text-align: center;
+  color: #43425f;
+  opacity: .8;
+}
+
 .big-team__wrapper {
 
   .slick-prev,
@@ -79,7 +96,7 @@
   }
 }
 
-// Our TEam Success
+// Our Team Success
 .our-team__success {
   margin-right: auto;
   margin-left: auto;
@@ -337,7 +354,7 @@
   }
 
   &-block--content {
-    width: 100%;
+    width: rem(445px);
   }
 
   &-block--content span {
@@ -402,13 +419,104 @@
     display: block;
   }
 
-  &-block--media {
+  &-block--media,
+  &-block--media img {
     width: rem(393px);
     height: rem(724px);
   }
+}
 
-  &-block--media img {
-    width: 100%;
+// Our Team support
+.our-team__support {
+  margin: 0 auto;
+  padding-top: rem(97px);
+  padding-bottom: rem(77px);
+  width: 100%;
+  max-width: rem(1140px);
+
+  &-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  &-content h3 {
+    margin-bottom: rem(14px);
+    width: rem(482px);
+    font-family: "HindSlSemiBold", arial, sans-serif;
+    font-size: rem(46px);
+    line-height: rem(62px);
+    color: #43425f;
+  }
+
+  &-content p {
+    width: rem(433px);
+    font-family: "SarabunRegular", arial, sans-serif;
+    font-size: rem(18px);
+    line-height: rem(31px);
+    color: #43425f;
+    opacity: .8;
+  }
+
+  &-media {
+    position: relative;
+    width: rem(531px);
+    border-radius: rem(2px);
+    cursor: pointer;
+    transition: 400ms;
+  }
+
+  &-media::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: rem(673px);
+    height: rem(505px);
+    background-image: url("./images/our-team__support-media-bg--desktop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: translate(-11%, -20%);
+  }
+
+  &-media-poster {
+    position: relative;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: rem(531px);
+    height: rem(327px);
+    border-radius: rem(2px);
+    background-image: url("./images/our-team__support-media.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    transition: 400ms;
+    transform-origin: center center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0f237d;
+      opacity: .34;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &-media-play-button {
+    z-index: 5;
   }
 }
 

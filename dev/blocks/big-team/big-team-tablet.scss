@@ -25,6 +25,14 @@
     margin-right: auto;
     margin-left: auto;
     width: 41.8125rem;
+
+    .our-team__member-card {
+
+      &:nth-child(7n),
+      &:nth-child(8n) {
+        display: none;
+      }
+    }
   }
 
   .big-team__investors-container,
@@ -53,6 +61,14 @@
       right: auto;
       left: -2.8125rem;
     }
+  }
+
+  .big-team__founders-headline {
+    width: rem(389px);
+  }
+
+  .big-team__founders-subtitle {
+    width: rem(447px);
   }
 
   // our team success
@@ -163,12 +179,16 @@
 
     &-block {
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
       margin-bottom: rem(100px);
     }
 
     &-block:nth-of-type(even) {
       flex-direction: column;
+    }
+
+    &-block--content {
+      width: rem(570px);
     }
 
     &-block--content span {
@@ -214,11 +234,57 @@
       height: rem(46px);
     }
 
-    &-block--media {
+    &-block--media,
+    &-block--media img {
       margin-right: auto;
       margin-left: auto;
       width: rem(297px);
       height: rem(548px);
+    }
+  }
+
+  // Our Team support
+  .our-team__support {
+    padding-top: rem(20px);
+    padding-bottom: rem(162px);
+    max-width: rem(668px);
+
+    &-container {
+      flex-direction: column;
+    }
+
+    &-content h3 {
+      margin-right: auto;
+      margin-left: auto;
+      width: rem(480px);
+      font-size: rem(36px);
+      line-height: rem(46px);
+      text-align: center;
+    }
+
+    &-content p {
+      width: rem(570px);
+      font-size: rem(16px);
+      line-height: rem(26px);
+      text-align: center;
+    }
+
+    &-media {
+      margin-top: rem(82.5px);
+      width: rem(668px);
+      height: rem(375px);
+    }
+
+    &-media::before {
+      width: rem(760px);
+      height: rem(528px);
+      background-image: url(./images/our-team__support-media-bg--tablet.png);
+      transform: translate(-6%, -12%);
+    }
+
+    &-media-poster {
+      width: rem(668px);
+      height: rem(375px);
     }
   }
 }
