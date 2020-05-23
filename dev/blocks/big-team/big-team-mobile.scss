@@ -156,4 +156,51 @@
       right: rem(-7px);
     }
   }
+
+  // Our Team description
+  .our-team__description {
+    padding-top: rem(48px);
+    padding-bottom: rem(64px);
+
+    &-container {
+      width: rem(270px);
+    }
+
+    &-block--content span {
+      margin-bottom: rem(8px);
+      padding-top: rem(3.5px);
+      padding-bottom: rem(3.5px);
+      width: rem(129px);
+      font-size: rem(8px);
+      line-height: rem(14px);
+    }
+
+    &-block--content h3 {
+      margin-bottom: rem(10px);
+      width: rem(172px);
+      font-size: rem(22px);
+      line-height: rem(32px);
+    }
+
+    &-block--content p {
+      width: rem(270px);
+      font-size: rem(12px);
+      line-height: rem(22px);
+    }
+
+    &-block--content p:last-of-type {
+      margin-bottom: rem(32px);
+    }
+
+    &-block--content ul li {
+      margin-left: rem(10px);
+      width: rem(35px);
+      height: rem(35px);
+    }
+
+    &-block--media {
+      width: rem(254px);
+      height: rem(456px);
+    }
+  }
 }

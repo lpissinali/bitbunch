@@ -118,7 +118,6 @@
   }
 
   // Our Team Founders
-
   .our-team__founders {
     padding-top: rem(80px);
     padding-bottom: rem(95px);
@@ -150,6 +149,76 @@
     &-media:hover::after {
       right: rem(-20px);
       transform: scale(1.1);
+    }
+  }
+
+  // Our Team description
+  .our-team__description {
+    padding-top: rem(80px);
+    padding-bottom: rem(80px);
+
+    &-container {
+      width: rem(668px);
+    }
+
+    &-block {
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: rem(100px);
+    }
+
+    &-block:nth-of-type(even) {
+      flex-direction: column;
+    }
+
+    &-block--content span {
+      margin-right: auto;
+      margin-bottom: rem(10px);
+      margin-left: auto;
+      width: rem(193px);
+      font-size: rem(12px);
+      line-height: rem(31px);
+    }
+
+    &-block--content h3 {
+      margin-right: auto;
+      margin-bottom: rem(14px);
+      margin-left: auto;
+      width: rem(282px);
+      font-size: rem(36px);
+      line-height: rem(46px);
+    }
+
+    &-block--content p {
+      margin-right: auto;
+      margin-bottom: rem(24px);
+      margin-left: auto;
+      width: rem(570px);
+      font-size: rem(16px);
+      line-height: rem(26px);
+      text-align: center;
+    }
+
+    &-block--content p:last-of-type {
+      margin-bottom: rem(48px);
+    }
+
+    &-block--content ul {
+      justify-content: center;
+      margin-bottom: rem(48px);
+    }
+
+    &-block--content ul li {
+      margin-left: rem(13px);
+      width: rem(46px);
+      height: rem(46px);
+    }
+
+    &-block--media {
+      margin-right: auto;
+      margin-left: auto;
+      width: rem(297px);
+      height: rem(548px);
     }
   }
 }
