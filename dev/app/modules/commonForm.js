@@ -162,6 +162,8 @@ $(`
       $(this).removeClass(VALIDATION_ERROR_CLASS);
       closeTooltip(this);
     });
+    if (e.handleObj.type === 'show') $('.account-nav').css('z-index', 998);
+    if (e.handleObj.type === 'hide') $('.account-nav').css('z-index', 9998);
 });
 
 jQuery.extend(jQuery.validator.messages, {
