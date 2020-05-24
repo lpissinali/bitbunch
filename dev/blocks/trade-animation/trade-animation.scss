@@ -511,3 +511,9 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  #trade-exchange .selected-trade .success-section {
+    top: 0;
+  }
+}
