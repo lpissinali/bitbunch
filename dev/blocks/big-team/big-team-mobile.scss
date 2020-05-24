@@ -33,12 +33,24 @@
         display: block;
       }
     }
-  }
 
-  .big-team__investors-container,
-  .big-team__advisors-container {
-    margin-top: 2rem;
-    width: 100%;
+    .slick-dots {
+      padding-right: rem(48px);
+
+      li {
+        width: 12.5%;
+      }
+
+      button {
+        width: 100%;
+        background-color: rgba(#324ea3, .2);
+      }
+
+      .slick-active button {
+        background-color: #324ea3;
+        overflow: hidden;
+      }
+    }
   }
 
   .big-team__wrapper {
@@ -63,69 +75,72 @@
   .our-team__success {
     padding-top: rem(50px);
     padding-bottom: rem(75px);
-    width: calc(100% - 30px);
+    width: rem(272px);
 
-    &-content h3 {
-      margin-bottom: rem(5px);
-      width: rem(217px);
-      font-size: rem(22px);
-      line-height: rem(32px);
-    }
+    &-content {
 
-    &-content p {
-      width: rem(272px);
-      font-size: rem(12px);
-      line-height: rem(22px);
+      h3 {
+        margin-bottom: rem(5px);
+        width: rem(217px);
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+
+      p {
+        width: rem(272px);
+        font-size: rem(12px);
+        line-height: rem(22px);
+      }
     }
 
     &-media {
       margin-top: rem(45px);
-    }
 
-    &-media div {
-      background-size: cover;
-    }
+      div {
+        background-size: cover;
+      }
 
-    &-media .our-team__success-anim-order-1 {
-      left: rem(-30px);
-      width: rem(38px);
-      height: rem(38px);
-    }
+      .our-team__success-anim-1 {
+        left: rem(-30px);
+        width: rem(38px);
+        height: rem(38px);
+      }
 
-    &-media .our-team__success-anim-order-2 {
-      top: rem(-5px);
-      left: rem(-5px);
-      width: rem(31px);
-      height: rem(31px);
-    }
+      .our-team__success-anim-2 {
+        top: rem(-5px);
+        left: rem(-5px);
+        width: rem(31px);
+        height: rem(31px);
+      }
 
-    &-media .our-team__success-anim-order-3 {
-      top: rem(15px);
-      right: rem(-15px);
-      width: rem(26px);
-      height: rem(30px);
-      transform: scale(1.8);
-    }
+      .our-team__success-anim-3 {
+        top: rem(15px);
+        right: rem(-15px);
+        width: rem(26px);
+        height: rem(30px);
+        transform: scale(1.8);
+      }
 
-    &-media .our-team__success-anim-order-4 {
-      right: rem(-10px);
-      bottom: rem(-20px);
-      width: rem(32px);
-      height: rem(32px);
-      transform: scale(2);
-    }
+      .our-team__success-anim-4 {
+        right: rem(-10px);
+        bottom: rem(-20px);
+        width: rem(32px);
+        height: rem(32px);
+        transform: scale(2);
+      }
 
-    &-media .our-team__success-anim-order-5 {
-      right: rem(-20px);
-      bottom: rem(-30px);
-      width: rem(55px);
-      height: rem(55px);
-      transform: scale(1.2);
-    }
+      .our-team__success-anim-5 {
+        right: rem(-20px);
+        bottom: rem(-30px);
+        width: rem(55px);
+        height: rem(55px);
+        transform: scale(1.2);
+      }
 
-    &-media img {
-      width: rem(232px);
-      height: rem(134px);
+      img {
+        width: rem(232px);
+        height: rem(134px);
+      }
     }
   }
 
@@ -135,45 +150,51 @@
     padding-bottom: rem(55px);
     background-image: url(./images/our-team__founders-bg-mobile.jpg);
 
-    &-content h3 {
-      margin-bottom: rem(5px);
-      width: rem(188px);
-      font-size: rem(22px);
-      line-height: rem(32px);
-    }
+    &-content {
 
-    &-content p {
-      margin-bottom: rem(39px);
-      width: rem(250px);
-      font-size: rem(12px);
-      line-height: rem(22px);
+      h3 {
+        margin-bottom: rem(5px);
+        width: rem(188px);
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+
+      p {
+        margin-bottom: rem(39px);
+        width: rem(250px);
+        font-size: rem(12px);
+        line-height: rem(22px);
+      }
     }
 
     &-media {
       width: rem(261px);
       height: rem(148px);
-    }
 
-    &-media::before {
-      top: rem(-5px);
-      left: rem(-5px);
-      width: rem(45px);
-      height: rem(45px);
-    }
+      &::before {
+        top: rem(-5px);
+        left: rem(-5px);
+        width: rem(45px);
+        height: rem(45px);
+      }
 
-    &-media::after {
-      right: rem(-6px);
-      bottom: rem(-6px);
-      width: rem(68px);
-      height: rem(68px);
-    }
+      &::after {
+        right: rem(-6px);
+        bottom: rem(-6px);
+        width: rem(68px);
+        height: rem(68px);
+      }
 
-    &-media:hover::before {
-      left: rem(-7px);
-    }
+      &:hover {
 
-    &-media:hover::after {
-      right: rem(-7px);
+        &::before {
+          left: rem(-7px);
+        }
+
+        &::after {
+          right: rem(-7px);
+        }
+      }
     }
   }
 
@@ -188,44 +209,118 @@
 
     &-block--content {
       width: rem(270px);
+
+      span {
+        margin-bottom: rem(8px);
+        padding-top: rem(3.5px);
+        padding-bottom: rem(3.5px);
+        width: rem(129px);
+        font-size: rem(8px);
+        line-height: rem(14px);
+      }
+
+      h3 {
+        margin-bottom: rem(10px);
+        width: rem(172px);
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+
+      p {
+        width: rem(270px);
+        font-size: rem(12px);
+        line-height: rem(22px);
+
+        &:last-of-type {
+          margin-bottom: rem(32px);
+        }
+      }
+
+      li {
+        margin-left: rem(10px);
+        width: rem(35px);
+        height: rem(35px);
+
+        img {
+          transform: scale(.7);
+        }
+      }
     }
 
-    &-block--content span {
-      margin-bottom: rem(8px);
-      padding-top: rem(3.5px);
-      padding-bottom: rem(3.5px);
-      width: rem(129px);
-      font-size: rem(8px);
-      line-height: rem(14px);
+    &-block--media {
+      width: rem(254px);
+      height: rem(456px);
+
+      img {
+        width: rem(254px);
+        height: rem(456px);
+      }
+    }
+  }
+
+  // Our Team core-developers
+  .our-team__core-developers {
+    padding-top: rem(48px);
+    padding-bottom: rem(48px);
+    background-image: url(./images/our-team__core-developers--mobile.jpg);
+
+    &-container {
+      flex-direction: unset;
+      justify-content: unset;
+      align-items: unset;
+      display: block;
+      padding-left: rem(24px);
+      max-width: rem(272px);
+      max-width: 100%;
     }
 
-    &-block--content h3 {
-      margin-bottom: rem(10px);
-      width: rem(172px);
+    h3 {
+      margin-bottom: rem(5px);
+      width: rem(258px);
       font-size: rem(22px);
       line-height: rem(32px);
     }
 
-    &-block--content p {
-      width: rem(270px);
+    p {
+      margin-bottom: rem(38.5px);
+      width: rem(208px);
       font-size: rem(12px);
       line-height: rem(22px);
     }
 
-    &-block--content p:last-of-type {
-      margin-bottom: rem(32px);
+    &-media {
+      margin-bottom: rem(70.5px);
+      width: rem(261px);
+      height: rem(147px);
+
+      &::before {
+        top: rem(-5px);
+        left: rem(-5px);
+        width: rem(45px);
+        height: rem(45px);
+      }
+
+      &::after {
+        right: rem(-6px);
+        bottom: rem(-6px);
+        width: rem(68px);
+        height: rem(68px);
+      }
+
+      &:hover {
+
+        &::before {
+          left: rem(-7px);
+        }
+
+        &::after {
+          right: rem(-7px);
+        }
+      }
     }
 
-    &-block--content ul li {
-      margin-left: rem(10px);
-      width: rem(35px);
-      height: rem(35px);
-    }
-
-    &-block--media,
-    &-block--media img {
-      width: rem(254px);
-      height: rem(456px);
+    &-button {
+      margin-top: rem(32px);
     }
   }
 
@@ -236,35 +331,38 @@
     max-width: 100%;
     background: linear-gradient(122.01deg, #ffffff 8.84%, #f2f4fd 98.29%);
 
-    &-content h3 {
-      margin-bottom: rem(5px);
-      width: rem(245px);
-      font-size: rem(22px);
-      line-height: rem(32px);
-    }
+    &-content {
 
-    &-content p {
-      width: rem(270px);
-      font-size: rem(12px);
-      line-height: rem(22px);
+      h3 {
+        margin-bottom: rem(5px);
+        width: rem(245px);
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+
+      p {
+        width: rem(270px);
+        font-size: rem(12px);
+        line-height: rem(22px);
+      }
     }
 
     &-media {
       margin-top: rem(53px);
       width: rem(277px);
       height: rem(156px);
-    }
 
-    &-media::before {
-      width: rem(318px);
-      height: rem(245px);
-      background-image: url(./images/our-team__support-media-bg--mobile.png);
-      transform: translate(-7%, -16%);
-    }
+      &::before {
+        width: rem(318px);
+        height: rem(245px);
+        background-image: url(./images/our-team__support-media-bg--mobile.png);
+        transform: translate(-7%, -16%);
+      }
 
-    &-media-poster {
-      width: rem(277px);
-      height: rem(156px);
+      &-poster {
+        width: rem(277px);
+        height: rem(156px);
+      }
     }
   }
 }

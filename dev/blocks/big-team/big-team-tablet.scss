@@ -35,18 +35,6 @@
     }
   }
 
-  .big-team__investors-container,
-  .big-team__advisors-container {
-    margin-top: 3rem;
-    margin-right: auto;
-    margin-left: auto;
-    width: 41.8125rem;
-
-    .our-team__member-card {
-      margin-right: 1.625rem;
-    }
-  }
-
   .big-team__wrapper {
 
     .slick-prev,
@@ -102,25 +90,25 @@
       margin-top: rem(65px);
     }
 
-    &-media .our-team__success-anim-order-1 {
+    &-media .our-team__success-anim-1 {
       left: rem(-60px);
       width: rem(94px);
       height: rem(94px);
     }
 
-    &-media .our-team__success-anim-order-2 {
+    &-media .our-team__success-anim-2 {
       transform: scale(1.6);
     }
 
-    &-media .our-team__success-anim-order-3 {
+    &-media .our-team__success-anim-3 {
       transform: scale(1.6);
     }
 
-    &-media .our-team__success-anim-order-4 {
+    &-media .our-team__success-anim-4 {
       transform: scale(1.9);
     }
 
-    &-media .our-team__success-anim-order-5 {
+    &-media .our-team__success-anim-5 {
       right: rem(-47px);
       bottom: rem(-67px);
       width: rem(134px);
@@ -240,6 +228,82 @@
       margin-left: auto;
       width: rem(297px);
       height: rem(548px);
+    }
+  }
+
+  // Our Team core-developers
+  .our-team__core-developers {
+    padding-top: rem(80px);
+    padding-bottom: rem(80px);
+    background-image: url(./images/our-team__core-developers--tablet.jpg);
+
+    &-container {
+      flex-direction: unset;
+      justify-content: unset;
+      align-items: unset;
+      display: block;
+      max-width: rem(668px);
+    }
+
+    .our-team__member-card:nth-child(3n) {
+      margin-right: rem(30px);
+    }
+
+    .slick-dots {
+      justify-content: center;
+      align-items: center;
+      display: flex !important;
+      margin-top: .625rem;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 1.5rem;
+
+      li {
+        width: 25%;
+      }
+
+      button {
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+        height: rem(1px);
+        border: 0;
+        box-shadow: none;
+        background-color: #fff;
+        font-size: 0;
+        cursor: pointer;
+        opacity: 1;
+      }
+
+      .slick-active button {
+        width: 100%;
+        height: rem(4px);
+        background-color: #92a4d2;
+        opacity: 1;
+      }
+    }
+
+    h3 {
+      width: rem(423px);
+      font-size: rem(36px);
+      line-height: rem(46px);
+    }
+
+    p {
+      margin-bottom: rem(61px);
+      width: rem(504px);
+      font-size: rem(16px);
+      line-height: rem(26px);
+    }
+
+    &-media {
+      width: rem(641px);
+      height: rem(361px);
+    }
+
+    &-button {
+      margin-top: rem(50px);
     }
   }
 
