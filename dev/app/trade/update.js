@@ -366,11 +366,19 @@ export function updateShortDetails() {
 }
 
 export function updateTradeRect() {
+  const {width: tradeExchangeWidth} = container.getBoundingClientRect();
+  const {width: buyExchangesBoxWidth} = container.querySelector('.buyExchanges-box').getBoundingClientRect();
+  const {width: sellExchangesBoxWidth} = container.querySelector('.sellExchanges-box').getBoundingClientRect();
+  const maxWidth = Math.min(
+    SELECTED_CURRENCY_WIDTH,
+    (tradeExchangeWidth - buyExchangesBoxWidth - sellExchangesBoxWidth - 2 * (12 + 4))
+  );
+  
   if (state.stage.isVertical) {
     const { size } = state.columns.currencies;
-    const width = size + state.expandProgress * (SELECTED_CURRENCY_WIDTH - size);
+    const width = size + state.expandProgress * (maxWidth - size);
     const xFrom = (state.stage.width - size) * 0.5;
-    const xTo = (state.stage.width - SELECTED_CURRENCY_WIDTH) * 0.5;
+    const xTo = (state.stage.width - maxWidth) * 0.5;
     const x = xFrom + state.expandProgress * (xTo - xFrom);
     const height = size + state.showMoreProgress * (SELECTED_CURRENCY_HEIGHT - size);
     // const y = (state.stage.height - height) * 0.5;
@@ -395,11 +403,11 @@ export function updateTradeRect() {
     }
   } else {
     const { size } = state.columns.currencies;
-    const width = size + state.expandProgress * (SELECTED_CURRENCY_WIDTH - size);
+    const width = size + state.expandProgress * (maxWidth - size);
 
     const targetOffset = getTargetOffset(state.selection.currency, state.columns.currencies);
     const xFrom = targetOffset - size * 0.5;
-    const xTo = targetOffset - SELECTED_CURRENCY_WIDTH * 0.5;
+    const xTo = targetOffset - maxWidth * 0.5;
 
     const x = xFrom + state.expandProgress * (xTo - xFrom);
     const height = size + state.showMoreProgress * (HORIZONTAL_SELECTED_CURRENCY_HEIGHT - size);
