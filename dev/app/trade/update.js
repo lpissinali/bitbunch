@@ -174,7 +174,8 @@ export function updateLines() {
     return;
   }
   if (state.stage.isVertical) {
-    const expandDelta = (SELECTED_CURRENCY_WIDTH - state.columns.currencies.size) * 0.5;
+    const maxWidth = getMaxSelectedCurrentWidth();
+    const expandDelta = (maxWidth - state.columns.currencies.size) * 0.5;
     {
       const xFrom = VERTICAL_EXCHANGES_WIDTH + HORIZONTAL_OFFSET_MARKER * state.selectProgress;
       const xTo = state.stage.width * 0.5
@@ -365,14 +366,18 @@ export function updateShortDetails() {
   }
 }
 
-export function updateTradeRect() {
+export function getMaxSelectedCurrentWidth() {
   const {width: tradeExchangeWidth} = container.getBoundingClientRect();
   const {width: buyExchangesBoxWidth} = container.querySelector('.buyExchanges-box').getBoundingClientRect();
   const {width: sellExchangesBoxWidth} = container.querySelector('.sellExchanges-box').getBoundingClientRect();
-  const maxWidth = Math.min(
+  return Math.min(
     SELECTED_CURRENCY_WIDTH,
     (tradeExchangeWidth - buyExchangesBoxWidth - sellExchangesBoxWidth - 2 * (12 + 4))
   );
+}
+
+export function updateTradeRect() {
+  const maxWidth = getMaxSelectedCurrentWidth();
   
   if (state.stage.isVertical) {
     const { size } = state.columns.currencies;
