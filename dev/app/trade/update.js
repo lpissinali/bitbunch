@@ -377,9 +377,8 @@ export function getMaxSelectedCurrentWidth() {
 }
 
 export function updateTradeRect() {
-  const maxWidth = getMaxSelectedCurrentWidth();
-  
   if (state.stage.isVertical) {
+    const maxWidth = getMaxSelectedCurrentWidth();
     const { size } = state.columns.currencies;
     const width = size + state.expandProgress * (maxWidth - size);
     const xFrom = (state.stage.width - size) * 0.5;
@@ -408,11 +407,11 @@ export function updateTradeRect() {
     }
   } else {
     const { size } = state.columns.currencies;
-    const width = size + state.expandProgress * (maxWidth - size);
+    const width = size + state.expandProgress * (SELECTED_CURRENCY_WIDTH - size);
 
     const targetOffset = getTargetOffset(state.selection.currency, state.columns.currencies);
     const xFrom = targetOffset - size * 0.5;
-    const xTo = targetOffset - maxWidth * 0.5;
+    const xTo = targetOffset - SELECTED_CURRENCY_WIDTH * 0.5;
 
     const x = xFrom + state.expandProgress * (xTo - xFrom);
     const height = size + state.showMoreProgress * (HORIZONTAL_SELECTED_CURRENCY_HEIGHT - size);
