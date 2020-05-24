@@ -121,6 +121,13 @@ export const customSelectValidationSuccess = element => {
     .removeClass(VALIDATION_ERROR_CLASS);
 };
 
+$('select').each(function() {
+  if ($(this)[0].value !== '') {
+    $(this).val([]);
+  } 
+});
+
+
 $('select').on('changed.bs.select', (event, clickedIndex, isSelected, previousValue) => {
   if (event.currentTarget.value !== '') {
     $(event.currentTarget)
