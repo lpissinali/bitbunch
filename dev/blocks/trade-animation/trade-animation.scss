@@ -287,6 +287,14 @@
       padding: 0 10px 10px;
       top: 17px;
 
+      @media (max-width: 1000px) {
+        top: 13px;
+      }
+      
+      @media (max-width: 767.98px) {
+        top: 0;
+      }
+
       .success-info {
         background: #324ea3;
       }
@@ -515,11 +523,5 @@
         }
       }
     }
-  }
-}
-
-@media (max-width: 1000px) {
-  #trade-exchange .selected-trade .success-section {
-    top: 0;
   }
 }
