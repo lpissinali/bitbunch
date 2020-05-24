@@ -1939,7 +1939,6 @@
     },
 
     getSelectPosition: function () {
-      debugger
       var that = this,
           $window = $(window),
           pos = that.$newElement.offset(),
