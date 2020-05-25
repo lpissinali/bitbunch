@@ -1,13 +1,22 @@
 .cookies-bar {
   position: fixed;
   right: 0;
-  bottom: 0;
+  bottom: -6rem;
   left: 0;
   z-index: 10;
   display: none;
   width: 100%;
   height: 5.125rem;
   background-color: #353f63;
+  transition: transform 300ms ease-in-out;
+
+  &.block {
+    display: block;
+  }
+
+  &.up {
+    transform: translateY(-6rem);
+  }
 }
 
 .cookies-bar.active {
@@ -48,6 +57,11 @@
   font-family: $main-font-bold;
   font-size: .875rem;
   color: $white;
+  transition: background-color 300ms;
+
+  &:hover {
+    background-color: $orange;
+  }
 }
 
 .cookies__close-button {
@@ -65,7 +79,16 @@
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
 
   .cookies-bar {
+    bottom: -7rem;
     height: 6.3125rem;
+
+    &.block {
+      display: block;
+    }
+
+    &.up {
+      transform: translateY(-7rem);
+    }
   }
 
   .cookies__wrapper {
@@ -84,7 +107,16 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
   .cookies-bar {
+    bottom: -10rem;
     height: auto;
+
+    &.block {
+      display: block;
+    }
+
+    &.up {
+      transform: translateY(-10rem);
+    }
   }
 
   .cookies__wrapper {
