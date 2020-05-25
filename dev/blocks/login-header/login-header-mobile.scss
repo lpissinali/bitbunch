@@ -1,7 +1,9 @@
-@media screen and ($mobile1), ($mobile2), ($mobile3) {
+@media screen and ($mobile1),
+($mobile2),
+($mobile3) {
   .login-header {
     position: relative;
-    z-index: 1;
+    z-index: 9998;
   }
 
   .login-header__wrapper {

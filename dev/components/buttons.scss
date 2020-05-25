@@ -52,7 +52,6 @@
   display: flex;
   width: 6.25rem;
   height: 2.5rem;
-  border: 0;
   border: 2px solid $red;
   border-radius: 0.1875rem;
   background-color: $red;
@@ -72,8 +71,6 @@
     transform: scaleX(1.05);
   }
 }
-
-
 
 .button-blue {
   justify-content: center;
@@ -142,7 +139,7 @@
     border: 2px solid #fff3ef;
     background-color: #fff3ef;
     color: $orange;
-    transform: scaleX(1.05);
+    transform: scaleX(1.05) !important;
   }
 }
 
@@ -162,7 +159,7 @@
 .white-button-hover-blue {
 
   &:hover {
-    border: 2px solid $blue;
+    border: 2px solid $white;
     background-color: $blue;
     color: $white;
   }
@@ -267,27 +264,69 @@
 @media screen and ($tablet1),
 ($tablet2),
 ($tablet3) {
-  .button-orange.nohover {
-    background-color: $orange !important;
-    color: $white !important;
-    transform: scaleX(1) !important;
+  .button-hover-white {
+    &:hover {
+      background: $orange radial-gradient(circle, transparent 1%, $orange 1%) center/15000%;
+      background-color: $orange;
+      color: $white;
+      transform: none;
+    }
+
+    &:active {
+      background-color: $white;
+      background-size: 100%;
+      transition: background 0s;
+    }
   }
 
-  .button-yellow.nohover {
-    background-color: #ffa72e !important;
-    color: $white !important;
-    transform: scaleX(1) !important;
+  .button-hover-blue {
+    &:hover {
+      background: $orange radial-gradient(circle, transparent 1%, $orange 1%) center/15000%;
+      border: 2px solid $orange;
+      background-color: $orange;
+      color: #fff;
+      transform: none !important;
+    }
+
+    &:active {
+      border: none;
+      background-color: $white;
+      background-size: 100%;
+      transition: background 0s;
+    }
   }
 
-  .button-red.nohover {
-    background-color: $red !important;
-    color: $white !important;
-    transform: scaleX(1) !important;
+  .blue-button-hover-white {
+    &:hover {
+      background: $blue radial-gradient(circle, transparent 1%, $blue 1%) center/15000%;
+      border: 2px solid $blue;
+      background-color: $blue;
+      color: $white;
+      transform: none;
+    }
+
+    &:active {
+      background-color: $white;
+      border: none;
+      background-size: 100%;
+      transition: background 0s;
+    }
   }
 
-  .button-blue.nohover {
-    background-color: $blue !important;
-    color: $white !important;
+  .white-button-hover-blue {
+    &:hover {
+      background: $white radial-gradient(circle, transparent 1%, $white 1%) center/15000%;
+      border: 2px solid $white;
+      background-color: $white;
+      color: $blue;
+    }
+
+    &:active {
+      border: none;
+      background-color: $blue;
+      background-size: 100%;
+      transition: background 0s;
+    }
   }
 }
 

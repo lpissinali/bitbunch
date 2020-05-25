@@ -58,6 +58,10 @@ export function instantTradeAnimation() {
   const WAIT_TIME_FOR_CLOSE = 5000;
   const closeButton = document.querySelector('#close-instant-trade');
   return scrollIntoView()
+    .then(() => {
+      fadeOutExchangeBoxes();
+      changeExchangeIconsToWhiteVersion();
+    })
     .then(selectCurrency)
     .then(showInstantTrade)
     .then(showInstantTradeSellProgress)
@@ -65,7 +69,125 @@ export function instantTradeAnimation() {
     .then(() => {
       return listenForClose(closeButton, WAIT_TIME_FOR_CLOSE);
     })
-    .then(closeInstantTrade);
+    .then(closeInstantTrade)
+    .then(() => {
+      fadeInExchangeBoxes();
+      changeExchangeIconsToColoredVersion();
+    });
+}
+
+
+function fadeOutExchangeBoxes() {
+  const exchangeBoxes = getExchangeBoxes();
+  for (const exchangeBox of exchangeBoxes) {
+    exchangeBox.style.opacity = 0.5;
+  }
+}
+
+function fadeInExchangeBoxes() {
+  const exchangeBoxes = getExchangeBoxes();
+  for (const exchangeBox of exchangeBoxes) {
+    exchangeBox.style.opacity = 1;
+  }
+}
+
+function getExchangeBoxes() {
+  const container = document.getElementById("trade-display");
+  const buyExchangesBox = container.querySelector(".buyExchanges-box");
+  const sellExchangesBox = container.querySelector(".sellExchanges-box");
+  const exchangeBoxes = [...buyExchangesBox.querySelectorAll(".exchange-box")]
+    .concat(...sellExchangesBox.querySelectorAll(".exchange-box"));
+  return exchangeBoxes;
+}
+
+function getExchangeIconUrlRegExp() {
+  return /^\.\/images\/(.+?)(?:-white)?(?:@\dx)?\..+$/;
+}
+
+function replaceExchangeIcons(useWhite, getFill) {
+  const exchangeBoxes = getExchangeBoxes();
+  for (const exchangeBox of exchangeBoxes) {
+    replaceExchangeIcon(useWhite, getFill, exchangeBox)
+  }
+}
+
+function replaceExchangeIcon(useWhite, getFill, exchangeBox) {
+  const imageColored = exchangeBox.querySelector('.exchange-box-icon--colored');
+  const href = imageColored.getAttribute('xlink:href');
+  const hrefRegExp = getExchangeIconUrlRegExp();
+  const match = href.match(hrefRegExp);
+  if (match) {
+    const exchangeName = match[1];
+    const rectFill = getFill(exchangeName);
+    const imageWhite = exchangeBox.querySelector('.exchange-box-icon--white');
+    if (useWhite) {
+      imageColored.classList.add('exchange-box-icon--hidden');
+      imageWhite.classList.remove('exchange-box-icon--hidden');
+    } else {
+      imageColored.classList.remove('exchange-box-icon--hidden');
+      imageWhite.classList.add('exchange-box-icon--hidden');
+    }
+    const rect = exchangeBox.querySelector('rect');
+    rect.setAttribute('fill', rectFill);
+  }
+}
+
+const exchangeBackgrounds = new Map([
+  ['okex', '#0D74F5'],
+  ['dobi', '#F8B616'],
+  ['binance', '#F3BA2F'],
+  ['hitbtc', '#009DE2'],
+  ['lbank', '#0080CA'],
+  ['coinbene', '#0031D2'],
+  ['bibox', '#659AEA'],
+  ['bitforex', '#2660AD'],
+  ['cointiger', "url('#exchange-background-cointiger')"],
+  ['bithumb', '#F47320'],
+  ['digifinex', '#1141F3'],
+  ['bcex', "url('#exchange-background-bcex')"],
+  ['bitmart', '#55A49F'],
+  ['rightbtc', '#5199F5'],
+  ['simex', '#005CA8'],
+  ['coinbase', '#0F1821'],
+  ['huobi', '#1B2143'],
+  ['kraken', '#0DA8FF'],
+  ['bitfinex', '#97C554'],
+  ['bitstamp', '#149F49'],
+  ['upbit', '#093687'],
+  ['coineal', '#1F2F3F'],
+  ['zb', '#E6201A'],
+  ['idax', "url('#exchange-background-idax')"],
+  ['hotbit', '#1AB495'],
+  ['bitinka', '#EFA220'],
+  ['bw', '#E60012'],
+  ['chaoex', "url('#exchange-background-chaoex')"],
+  ['coinbasepro', '#0F1821'],
+  ['gdax', '#518DCA'],
+  ['dragonex', '#FDD36F']
+]);
+
+function changeExchangeIconsToColoredVersion() {
+  replaceExchangeIcons(false, getExchangeIconBackgroundForColoredVersion);
+}
+
+function getExchangeIconBackgroundForColoredVersion(exchangeName) {
+  return '#fff';
+}
+
+function changeExchangeIconsToWhiteVersion() {
+  replaceExchangeIcons(true, getExchangeIconBackgroundForWhiteVersion);
+}
+
+function getExchangeIconBackgroundForWhiteVersion(exchangeName) {
+  let rectFill;
+  if (exchangeBackgrounds.has(exchangeName)) {
+    rectFill = exchangeBackgrounds.get(exchangeName)
+  } else {
+    console.error('No background for exchange "' + exchangeName + '" defined.');
+    rectFill = '#fff';
+  }
+
+  return rectFill;
 }
 
 export function longTradeAnimation() {

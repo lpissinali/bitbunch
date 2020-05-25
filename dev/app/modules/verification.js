@@ -26,6 +26,7 @@ $('#verificationForm').validate({
     date: {
       required: true,
       ageEighteen: true,
+      tooOld: true,
     },
   },
   errorClass: VALIDATION_ERROR_CLASS,

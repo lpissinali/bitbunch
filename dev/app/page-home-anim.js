@@ -1,9 +1,13 @@
 /* eslint-disable no-inner-declarations */
+
 $(document).ready(() => {
   // hide preloader
   document.querySelector('.preloader').style.opacity = 0;
+
   setTimeout(() => {
-    document.querySelector('.preloader').style.display = 'none';
+    $('.preloader').css({
+      display: 'none',
+    });
   }, 400);
 
   const controller = new ScrollMagic.Controller();
@@ -11,7 +15,7 @@ $(document).ready(() => {
   function AnimationScene(section, tween) {
     const scene = new ScrollMagic.Scene({
       triggerElement: section,
-      triggerHook: 0.55,
+      triggerHook: 0.70,
     })
       .reverse(false)
       .setTween(tween)

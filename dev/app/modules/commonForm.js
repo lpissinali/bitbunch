@@ -121,7 +121,38 @@ export const customSelectValidationSuccess = element => {
     .removeClass(VALIDATION_ERROR_CLASS);
 };
 
+$('select').each(function() {
+  if ($(this)[0].value !== '') {
+    $(this).val([]);
+  } 
+});
+
+
 $('select').on('changed.bs.select', (event, clickedIndex, isSelected, previousValue) => {
+  if (event.currentTarget.value !== '') {
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.bootstrap-select-placeholder')
+      .addClass('has-content');
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.btn.dropdown-toggle')
+      .removeClass(VALIDATION_ERROR_CLASS)
+      .addClass(VALIDATION_SUCCESS_CLASS);
+  } else {
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.bootstrap-select-placeholder')
+      .removeClass('has-content');
+    $(event.currentTarget)
+      .parents('.form-group')
+      .find('.btn.dropdown-toggle')
+      .removeClass(VALIDATION_SUCCESS_CLASS);
+  }
+  closeTooltip(event.currentTarget);
+});
+
+$('select').on('change', (event) => {
   if (event.currentTarget.value !== '') {
     $(event.currentTarget)
       .parents('.form-group')
@@ -162,6 +193,8 @@ $(`
       $(this).removeClass(VALIDATION_ERROR_CLASS);
       closeTooltip(this);
     });
+    if (e.handleObj.type === 'show') $('.account-nav').css('z-index', 998);
+    if (e.handleObj.type === 'hide') $('.account-nav').css('z-index', 9998);
 });
 
 jQuery.extend(jQuery.validator.messages, {
@@ -172,17 +205,24 @@ jQuery.extend(jQuery.validator.messages, {
 
 initTooltip();
 
-$('body').bind('touchstart', function (e) {
-  if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
-    $(e.target).removeClass('nohover');
-  }
-});
 
-$('body').bind('touchend', function (e) {
-  if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
-    setTimeout(function(){
-      $(e.target).addClass('nohover');
-    }, 300);
+// document.body.addEventListener('touchend', function() {
+//   if (document.getElementById('verificationCountry'))
+//     document.getElementById('verificationCountry').blur(); 
+// });
+
+
+// $('body').bind('touchstart', function (e) {
+//   if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
+//     $(e.target).removeClass('nohover');
+//   }
+// });
+
+// $('body').bind('touchend', function (e) {
+//   if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A'){
+//     setTimeout(function(){
+//       $(e.target).addClass('nohover');
+//     }, 300);
     
-  }
-});
+//   }
+// });

@@ -98,6 +98,27 @@
   .exchange-box {
     fill: #ffffff;
     will-change: transform;
+    transition: opacity 400ms linear;
+
+    .exchange-box-icon {
+      opacity: 1;
+    }
+    
+    .exchange-box-icon--colored {
+      transition: opacity 400ms linear;
+    }
+
+    .exchange-box-icon--white {
+
+    }
+
+    .exchange-box-icon--hidden {
+      opacity: 0;
+    }
+    
+    rect {
+      transition: fill 400ms linear;
+    }
   }
 
   .currency-box {
@@ -124,7 +145,7 @@
     align-items: center;
     box-sizing: border-box;
     display: flex;
-    padding: 0px;
+    padding: 0;
     width: 54px;
     height: 54px;
     border-radius: 2px;
@@ -206,15 +227,16 @@
 
     .short-details {
       margin: 8px;
+      
       .icon-container {
-        position: absolute;
-        left: 10px;
+        margin-left: 10px;
+        margin-right: 18px;
         box-shadow: 0 4px 6px rgba(#5d5858, .2);
       }
 
       .info {
         height: 50px;
-        transform: translateX(58px);
+        overflow: hidden;
       }
 
       .title {
@@ -223,6 +245,10 @@
 
       .profit {
         color: #43425f;
+        
+        @media (min-width: 767.99px) and (max-width: 991.98px) {
+          font-size: 0.9375rem;
+        }
       }
 
       .value {
@@ -240,17 +266,17 @@
 
       &.vertical-expanded {
         flex-direction: column !important;
+        margin-right: 0;
         margin-bottom: 1.25rem;
         text-align: center;
 
         .icon-container {
-          position: static;
-          margin: 0 auto !important;
+          margin: -15px auto 0 !important;
           transform: none !important;
         }
 
         .info {
-          margin-top: 12px;
+          margin-top: 13px;
           transform: none !important;
         }
       }
@@ -259,7 +285,15 @@
     .success-section {
       position: absolute;
       padding: 0 10px 10px;
-      top: 0;
+      top: 17px;
+
+      @media (max-width: 1000px) {
+        top: 13px;
+      }
+      
+      @media (max-width: 767.98px) {
+        top: 0;
+      }
 
       .success-info {
         background: #324ea3;

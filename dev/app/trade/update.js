@@ -174,7 +174,8 @@ export function updateLines() {
     return;
   }
   if (state.stage.isVertical) {
-    const expandDelta = (SELECTED_CURRENCY_WIDTH - state.columns.currencies.size) * 0.5;
+    const maxWidth = getMaxSelectedCurrentWidth();
+    const expandDelta = (maxWidth - state.columns.currencies.size) * 0.5;
     {
       const xFrom = VERTICAL_EXCHANGES_WIDTH + HORIZONTAL_OFFSET_MARKER * state.selectProgress;
       const xTo = state.stage.width * 0.5
@@ -351,26 +352,35 @@ export function hideTradeRect() {
 
 export function updateShortDetails() {
   if (state.stage.isVertical) {
-    const xIcon = state.showMoreProgress * (shortTradeContainer.offsetWidth / 2) - 25;
-    const xInfo = (shortTradeContainer.offsetWidth - shortTradeDetails.offsetWidth) / 2;
+    const xIcon = state.showMoreProgress * ((shortTradeContainer.offsetWidth / 2) - 25);
     const yInfo = state.showMoreProgress * 60;
     anime.set(shortTradeIcon, {
       translateX: xIcon > 0 ? xIcon : 0,
     });
 
     anime.set(shortTradeDetails, {
-      translateX: xInfo,
       translateY: yInfo,
     });
   }
 }
 
+export function getMaxSelectedCurrentWidth() {
+  const {width: tradeExchangeWidth} = container.getBoundingClientRect();
+  const {width: buyExchangesBoxWidth} = container.querySelector('.buyExchanges-box').getBoundingClientRect();
+  const {width: sellExchangesBoxWidth} = container.querySelector('.sellExchanges-box').getBoundingClientRect();
+  return Math.min(
+    SELECTED_CURRENCY_WIDTH,
+    (tradeExchangeWidth - buyExchangesBoxWidth - sellExchangesBoxWidth - 2 * (12 + 4))
+  );
+}
+
 export function updateTradeRect() {
   if (state.stage.isVertical) {
+    const maxWidth = getMaxSelectedCurrentWidth();
     const { size } = state.columns.currencies;
-    const width = size + state.expandProgress * (SELECTED_CURRENCY_WIDTH - size);
+    const width = size + state.expandProgress * (maxWidth - size);
     const xFrom = (state.stage.width - size) * 0.5;
-    const xTo = (state.stage.width - SELECTED_CURRENCY_WIDTH) * 0.5;
+    const xTo = (state.stage.width - maxWidth) * 0.5;
     const x = xFrom + state.expandProgress * (xTo - xFrom);
     const height = size + state.showMoreProgress * (SELECTED_CURRENCY_HEIGHT - size);
     // const y = (state.stage.height - height) * 0.5;

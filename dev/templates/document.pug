@@ -1,0 +1,121 @@
+include ../common/pug/mixins
+
+block variables
+
+doctype html
+html(lang="en-US")
+    head
+        meta(charset="utf-8")
+        meta(name="robots" content="noindex")
+        meta(name="googlebot" content="noindex")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="keywords" content=meta1)
+        meta(name="description" content=meta2)
+        link(rel="icon" type="image/x-icon" href="./images/favicon.ico")
+        style(type="text/css").
+            .preloader {
+              position: fixed; 
+              z-index: 1000; 
+              top: 0; 
+              left: 0; 
+              right: 0;
+              bottom: 0;
+              width: 100vw;
+              height: 100vh;
+              background: linear-gradient(to right, #324ea3, #3d6dd0); 
+              transition: opacity 300ms; 
+              opacity: 1; 
+              display: flex; 
+              justify-content: center; 
+              align-items: center;
+            }
+            .lds-ellipsis {
+                display: inline-block;
+                position: relative;
+                width: 80px;
+                height: 80px;
+            }
+            .lds-ellipsis div {
+                position: absolute;
+                top: 33px;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: #fff;
+                animation-timing-function: cubic-bezier(0, 1, 1, 0);
+            }
+            .lds-ellipsis div:nth-child(1) {
+                left: 8px;
+                animation: lds-ellipsis1 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(2) {
+                left: 8px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(3) {
+                left: 32px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+            .lds-ellipsis div:nth-child(4) {
+                left: 56px;
+                animation: lds-ellipsis3 0.6s infinite;
+            }
+            @keyframes lds-ellipsis1 {
+                0% {
+                    transform: scale(0);
+                }
+                100% {
+                    transform: scale(1);
+                }
+                }
+                @keyframes lds-ellipsis3 {
+                0% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(0);
+                }
+            }
+                @keyframes lds-ellipsis2 {
+                0% {
+                    transform: translate(0, 0);
+                }
+                100% {
+                    transform: translate(24px, 0);
+                }
+            }
+        script(src="https://www.google.com/recaptcha/api.js" async defer)
+    body(class=pageClass)
+      include ../components/preloader/preloader
+      include ../components/cookies/cookies
+      block content
+      include ../blocks/main-footer/main-footer
+
+      //- include ../blocks/modal-areas/modal-areas
+
+      block scripts
+        script(src="js/jquery-3.3.1.min.js")
+        script(src="js/slick.min.js")
+
+        script(src="js/popper.min.js")
+        script(src="js/bootstrap.min.js")
+        //- script(src="js/bootstrap-datepicker.min.js")
+        //- script(src="js/bootstrap-select.min.js")
+        //- script(src="js/slick.min.js")
+        //- script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvXcFFGgHZOouXbIN4I7LPHW5MAW-oRzY")
+        //- script(src="js/jquery.mousewheel.min.js")
+        //- script(src="js/datatables.min.js")
+        script(src="js/jquery.validate.min.js")
+        script(src="js/jquery.inputmask.min.js")
+        script(src="js/tooltipster.bundle.min.js")
+
+        script(src="js/TweenMax.min.js")
+        script(src="js/ScrollMagic.min.js")
+        script(src="js/animation.gsap.min.js")
+        script(src="js/ion.rangeSlider.min.js")
+        
+        script(src="js/main.js")

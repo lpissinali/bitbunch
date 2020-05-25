@@ -39,4 +39,22 @@ var moment = require('moment'); // require
     },
     'You must be 18 years or older'
   );  
+  $.validator.addMethod(
+    'tooOld',
+    function(value, element) {
+      var datePart = value.split('.');
+      var tooOld = moment().subtract(100, "years");
+      var birthday = moment(datePart[2] + datePart[1] + datePart[0]);
+      if (!birthday.isValid()) {
+          return false;    
+      }
+      else if (!tooOld.isAfter(birthday)) {
+          return true;   
+      }
+      else {
+          return false;  
+      }
+    },
+    'You must be under 100 years old'
+  );  
 }(jQuery));

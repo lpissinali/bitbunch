@@ -1,5 +1,12 @@
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
 
+  .calculation {
+    background-image: url("./images/calculation__bg-desktop.svg");
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: 98.125rem auto;
+  }
+
   .calculation__wrapper {
     padding-top: 7.25rem;
     padding-bottom: 2.5rem;
