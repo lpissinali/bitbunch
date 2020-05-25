@@ -15,7 +15,7 @@ $(document).ready(() => {
   function AnimationScene(section, tween) {
     const scene = new ScrollMagic.Scene({
       triggerElement: section,
-      triggerHook: 0.55,
+      triggerHook: 0.70,
     })
       .reverse(false)
       .setTween(tween)
