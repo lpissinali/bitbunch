@@ -6,7 +6,7 @@
   .our-team-header__wrapper {
     padding-top: 3.125rem;
     padding-right: 3.125rem;
-    padding-bottom: 10rem;
+    padding-bottom: rem(67px);
     padding-left: 3.125rem;
     width: 100%;
   }
@@ -31,7 +31,7 @@
   }
 
   .our-team-header__headline {
-    width: 100%;
+    width: rem(540px);
   }
 
   .our-team-header__subtitle {
@@ -41,7 +41,7 @@
   }
 
   .our-team-header__were-hiring-button {
-    margin-top: rem(48px);
+    margin-top: rem(52px);
   }
 
   .our-team-header__video-block {
@@ -49,10 +49,14 @@
   }
 
   .our-team-header__video-bg {
-    width: 47rem;
-    height: 34.75rem;
-    background-image: url(images/our-team-header__video-bg-tablet.png);
-    transform: translate(-6%, -17%);
+
+    &::before {
+      content: "";
+      width: 47rem;
+      height: 34.75rem;
+      background-image: url(images/our-team-header__video-bg-tablet.png);
+      transform: translate(-6%, -17%);
+    }
   }
 
   .our-team-header__video-poster {

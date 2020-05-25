@@ -2,6 +2,23 @@
   position: relative;
   padding-top: rem(124px);
   background: linear-gradient(to right, #324ea3, #3d6dd0);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: rem(-40px);
+    right: rem(-158px);
+    display: block;
+    width: 35rem;
+    height: rem(650px);
+    background-image: url(images/our-team__footer-bg-desktop.svg);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: auto rem(650px);
+    opacity: .1;
+    pointer-events: none;
+  }
 }
 
 .our-team__footer-get-in-touch {
@@ -36,7 +53,7 @@
     display: flex;
     margin-right: auto;
     margin-left: auto;
-    padding: rem(35px) rem(46px) rem(40px) rem(42px);
+    padding: rem(42px) rem(46px) rem(41px) rem(42px);
     width: rem(1140px);
     background-color: #fff;
 
