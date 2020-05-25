@@ -58,10 +58,7 @@ export function instantTradeAnimation() {
   const WAIT_TIME_FOR_CLOSE = 5000;
   const closeButton = document.querySelector('#close-instant-trade');
   return scrollIntoView()
-    .then(() => {
-      fadeOutExchangeBoxes();
-      changeExchangeIconsToWhiteVersion();
-    })
+    .then(changeExchangeIconsToWhiteVersion)
     .then(selectCurrency)
     .then(showInstantTrade)
     .then(showInstantTradeSellProgress)
@@ -70,28 +67,10 @@ export function instantTradeAnimation() {
       return listenForClose(closeButton, WAIT_TIME_FOR_CLOSE);
     })
     .then(closeInstantTrade)
-    .then(() => {
-      fadeInExchangeBoxes();
-      changeExchangeIconsToColoredVersion();
-    });
+    .then(changeExchangeIconsToColoredVersion);
 }
 
-
-function fadeOutExchangeBoxes() {
-  const exchangeBoxes = getExchangeBoxes();
-  for (const exchangeBox of exchangeBoxes) {
-    exchangeBox.style.opacity = 0.5;
-  }
-}
-
-function fadeInExchangeBoxes() {
-  const exchangeBoxes = getExchangeBoxes();
-  for (const exchangeBox of exchangeBoxes) {
-    exchangeBox.style.opacity = 1;
-  }
-}
-
-function getExchangeBoxes() {
+function getExchangeBoxes () {
   const container = document.getElementById("trade-display");
   const buyExchangesBox = container.querySelector(".buyExchanges-box");
   const sellExchangesBox = container.querySelector(".sellExchanges-box");
@@ -100,7 +79,7 @@ function getExchangeBoxes() {
   return exchangeBoxes;
 }
 
-function getExchangeIconUrlRegExp() {
+function getExchangeIconUrlRegExp () {
   return /^\.\/images\/(.+?)(?:-white)?(?:@\dx)?\..+$/;
 }
 
