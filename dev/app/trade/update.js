@@ -31,6 +31,8 @@ const sellExchangesSelector = connectorsContainer.querySelector('.select-marker2
 
 const line1 = connectorsContainer.querySelector('.line1');
 const line2 = connectorsContainer.querySelector('.line2');
+const line1Gradient = connectorsContainer.querySelector('defs #exchange-connection-line1-fill');
+const line2Gradient = connectorsContainer.querySelector('defs #exchange-connection-line2-fill');
 
 const selectColumn1 = container.querySelector('.buyExchanges-box .select-column');
 const selectColumn2 = container.querySelector('.sellExchanges-box .select-column');
@@ -167,12 +169,23 @@ export function updateExchangeMarkers(newSelection) {
   }
 }
 
+function updateLineGradient(lineGradient, {x1, y1, x2, y2}) {
+  lineGradient.setAttribute('x1', x1);
+  lineGradient.setAttribute('y1', y1);
+  lineGradient.setAttribute('x2', x2);
+  lineGradient.setAttribute('y2', y2);
+}
+
 export function updateLines() {
   if (state.lineProgress === 0) {
     anime.set(line1, { x1: 0, x2: 0, y1: 0, y2: 0 });
     anime.set(line2, { x1: 0, x2: 0, y1: 0, y2: 0 });
     return;
   }
+  
+  const buyCurrency = state.selection.buyCurrency || state.selection.currency;
+  const sellCurrency = state.selection.sellCurrency || state.selection.currency;
+  
   if (state.stage.isVertical) {
     const maxWidth = getMaxSelectedCurrentWidth();
     const expandDelta = (maxWidth - state.columns.currencies.size) * 0.5;
@@ -183,9 +196,11 @@ export function updateLines() {
         - state.expandProgress * expandDelta;
       const targetX = xFrom + (xTo - xFrom) * state.lineProgress;
       const targetY1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
-      const targetY2 = getTargetOffset(state.selection.currency, state.columns.currencies);
+      const targetY2 = getTargetOffset(buyCurrency, state.columns.currencies);
       const y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
-      anime.set(line1, { x1: xFrom, x2: targetX, y1: targetY1, y2 });
+      const positions = { x1: xFrom, x2: targetX, y1: targetY1, y2 };
+      anime.set(line1, positions);
+      updateLineGradient(line1Gradient, positions)
     }
     {
       const xFrom = state.stage.width
@@ -196,9 +211,11 @@ export function updateLines() {
         + state.expandProgress * expandDelta;
       const targetX = xFrom + (xTo - xFrom) * state.lineProgress;
       const targetY1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
-      const targetY2 = getTargetOffset(state.selection.currency, state.columns.currencies);
+      const targetY2 = getTargetOffset(sellCurrency, state.columns.currencies);
       const y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
-      anime.set(line2, { x1: xFrom, x2: targetX, y1: targetY1, y2 });
+      const positions = { x1: xFrom, x2: targetX, y1: targetY1, y2 };
+      anime.set(line2, positions);
+      updateLineGradient(line2Gradient, positions)
     }
   } else {
     const expandDelta = (HORIZONTAL_SELECTED_CURRENCY_HEIGHT - state.columns.currencies.size) * 0.5;
@@ -209,9 +226,11 @@ export function updateLines() {
         - state.showMoreProgress * expandDelta;
       const targetY = yFrom + (yTo - yFrom) * state.lineProgress;
       const targetX1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
-      const targetX2 = getTargetOffset(state.selection.currency, state.columns.currencies);
+      const targetX2 = getTargetOffset(buyCurrency, state.columns.currencies);
       const x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
-      anime.set(line1, { x1: targetX1, x2, y1: yFrom, y2: targetY });
+      const positions = { x1: targetX1, x2, y1: yFrom, y2: targetY };
+      anime.set(line1, positions);
+      updateLineGradient(line1Gradient, positions)
     }
     {
       const yFrom = state.stage.height - HORIZONTAL_EXCHANGES_HEIGHT;
@@ -220,9 +239,11 @@ export function updateLines() {
         + state.showMoreProgress * expandDelta;
       const targetY = yFrom + (yTo - yFrom) * state.lineProgress;
       const targetX1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
-      const targetX2 = getTargetOffset(state.selection.currency, state.columns.currencies);
+      const targetX2 = getTargetOffset(sellCurrency, state.columns.currencies);
       const x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
-      anime.set(line2, { x1: targetX1, x2, y1: yFrom, y2: targetY });
+      const positions = { x1: targetX1, x2, y1: yFrom, y2: targetY };
+      anime.set(line2, positions);
+      updateLineGradient(line2Gradient, positions)
     }
   }
 }
