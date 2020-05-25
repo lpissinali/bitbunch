@@ -79,6 +79,17 @@
   width: 22rem;
 }
 
+.transaction__no-transactions {
+  text-align: center;
+  opacity: 0.5;
+  color: $grey-no-transaction;
+  font-family: $main-font-medium;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  padding-bottom: 1.1875rem;
+}
+
 @import "./transaction-tablet.scss";
 
 @import "./transaction-mobile.scss";
