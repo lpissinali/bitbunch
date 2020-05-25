@@ -51,6 +51,18 @@
         overflow: hidden;
       }
     }
+
+    #anim-founders-container-4,
+    #anim-founders-container-8,
+    #anim-founders-container-3,
+    #anim-founders-container-6 {
+      margin-right: rem(24px) !important;
+    }
+
+    #anim-founders-container-4,
+    #anim-founders-container-8 {
+      display: block !important;
+    }
   }
 
   .big-team__wrapper {

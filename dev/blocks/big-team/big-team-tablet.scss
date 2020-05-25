@@ -1,7 +1,5 @@
 @media screen and ($tablet1), ($tablet2), ($tablet3) {
 
-
-  
   .big-team__wrapper {
     padding-top: .3125rem;
     padding-bottom: 5rem;
@@ -59,6 +57,24 @@
 
   .big-team__founders-subtitle {
     width: rem(447px);
+  }
+
+  .big-team__founders-container {
+
+    #anim-founders-container-4,
+    #anim-founders-container-8 {
+      margin-right: rem(30px) !important;
+    }
+
+    #anim-founders-container-3,
+    #anim-founders-container-6 {
+      margin-right: 0 !important;
+    }
+
+    #anim-founders-container-4,
+    #anim-founders-container-8 {
+      display: none !important;
+    }
   }
 
   // our team success
@@ -245,10 +261,6 @@
       align-items: unset;
       display: block;
       max-width: rem(668px);
-    }
-
-    .our-team__member-card:nth-child(3n) {
-      margin-right: rem(30px);
     }
 
     .slick-dots {

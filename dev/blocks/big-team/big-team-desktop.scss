@@ -1,7 +1,7 @@
 .big-team {
   background-color: #fff;
   // background-color: #f8f9fe;
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .big-team__wrapper {
@@ -80,6 +80,15 @@
   .slick-prev:hover,
   .slick-next:hover {
     opacity: 1;
+  }
+}
+
+.big-team__founders-container {
+  overflow: hidden;
+
+  #anim-founders-container-4,
+  #anim-founders-container-8 {
+    margin-right: 0 !important;
   }
 }
 
