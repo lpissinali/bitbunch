@@ -150,51 +150,22 @@ $(document).ready(() => {
 
     if (document.querySelector('#anim-founders-container-1')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-1', 0.8, { scale: '.90', opacity: 0.3 });
-      AnimationScene('#anim-founders-container-1', tl_team_developers_1, 100);
+      tl_team_developers_1.from('#anim-founders-container-1', 0.7, { scale: '.85', opacity: 0 }, 1.3);
+      tl_team_developers_1.from('#anim-founders-container-2', 0.7, {  scale: '.85', opacity: 0 }, 1.6);
+      tl_team_developers_1.from('#anim-founders-container-3', 0.7, {  scale: '.85', opacity: 0 }, 1.9);
+      tl_team_developers_1.from('#anim-founders-container-4', 0.7, {  scale: '.85', opacity: 0 }, 2.1);
+      AnimationScene('#anim-founders-container-1', tl_team_developers_1, 500);
     }
 
     if (document.querySelector('#anim-founders-container-2')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-2', 0.8, { scale: '.90', opacity: 0.3 });
-      AnimationScene('#anim-founders-container-2', tl_team_developers_1, 500);
+      const tl_team_developers_2 = new TimelineMax();
+      tl_team_developers_2.from('#anim-founders-container-5', 0.7, { scale: '.85', opacity: 0 }, 1.3);
+      tl_team_developers_2.from('#anim-founders-container-6', 0.7, {  scale: '.85', opacity: 0 }, 1.6);
+      tl_team_developers_2.from('#anim-founders-container-7', 0.7, {  scale: '.85', opacity: 0 }, 1.9);
+      tl_team_developers_2.from('#anim-founders-container-8', 0.7, {  scale: '.85', opacity: 0 }, 2.1);
+      AnimationScene('#anim-founders-container-2', tl_team_developers_2, 1000);
     }
 
-    if (document.querySelector('#anim-founders-container-3')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-3', 0.8, { scale: '.90', opacity: 0.3 });
-      AnimationScene('#anim-founders-container-3', tl_team_developers_1, 1000);
-    }
-
-    if (document.querySelector('#anim-founders-container-4')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-4', 0.8, { scale: '.90', opacity: 0.3 });
-      AnimationScene('#anim-founders-container-4', tl_team_developers_1, 1500);
-    }
-
-    if (document.querySelector('#anim-founders-container-5')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-5', 0.8, { scale: '.90', opacity: 0.3 });
-      AnimationScene('#anim-founders-container-5', tl_team_developers_1, 150);
-    }
-
-    if (document.querySelector('#anim-founders-container-6')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-6', 0.8, { scale: '.90', opacity: 0.3 });
-      AnimationScene('#anim-founders-container-6', tl_team_developers_1, 200);
-    }
-
-    if (document.querySelector('#anim-founders-container-7')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-7', 0.8, { scale: '.90', opacity: 0.3 });
-      AnimationScene('#anim-founders-container-7', tl_team_developers_1, 250);
-    }
-
-    if (document.querySelector('#anim-founders-container-8')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-8', 0.8, { scale: '.90', opacity: 0.3 });
-      AnimationScene('#anim-founders-container-8', tl_team_developers_1, 300);
-    }
 
     // our team footer
     if (document.querySelector('#anim-footer-trigger')) {

@@ -2,6 +2,12 @@
 
   .our-team__footer {
     padding-top: rem(48px);
+
+    &::after {
+      width: rem(187px);
+      height: rem(800px);
+      background-size: auto rem(800px);
+    }
   }
 
   .our-team__footer-get-in-touch {

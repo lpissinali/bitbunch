@@ -121,7 +121,7 @@
 
   &-media {
     position: relative;
-    margin-right: 50px;
+    margin-right: rem(50px);
 
     &::before {
       content: "";
@@ -352,11 +352,11 @@
     background-color: #2e48a4;
 
     #anim-core-developers-1 {
-      margin-left: 25px;
+      margin-left: rem(25px);
     }
 
     &:hover {
-      box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+      box-shadow: 0 rem(4px) rem(14px) rgba(0, 0, 0, .3);
     }
 
     &:before {
@@ -502,6 +502,18 @@
   padding-top: rem(160px);
   padding-bottom: rem(175px);
   background-color: #fff;
+
+  #anim-description-trigger-4,
+  #anim-description-trigger-5 {
+
+    span {
+      display: none;
+    }
+
+    h3 {
+      margin-top: 36px;
+    }
+  }
 
   &-container {
     margin: 0 auto;

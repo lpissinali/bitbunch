@@ -7,7 +7,7 @@
   .our-team-header__wrapper {
     padding-top: 2.125rem;
     padding-right: 1.5rem;
-    padding-bottom: 2.25rem;
+    padding-bottom: rem(45px);
     padding-left: 1.5rem;
     width: 100%;
   }
@@ -16,13 +16,17 @@
     margin-top: rem(36px);
   }
 
+  .our-team-header__headline {
+    width: rem(273px);
+  }
+
   .our-team-header__subtitle {
-    margin-top: rem(12px);
+    margin-top: rem(14px);
     width: rem(260px);
   }
 
   .our-team-header__were-hiring-button {
-    margin-top: rem(32px);
+    margin-top: rem(26px);
   }
 
   .our-team-header__video-block {
@@ -30,10 +34,14 @@
   }
 
   .our-team-header__video-bg {
-    width: rem(318px);
-    height: rem(260px);
+
+    &::before {
+     
+    width: rem(320px);
+    height: rem(250px);
     background-image: url(images/our-team-header__video-bg-mobile.png);
-    transform: translate(-7%, -17%);
+    transform: translate(-7.5%, -15%);
+    }
   }
 
   .our-team-header__video-poster {
