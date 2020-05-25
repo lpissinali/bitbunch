@@ -182,6 +182,10 @@ export function updateLines() {
     anime.set(line2, { x1: 0, x2: 0, y1: 0, y2: 0 });
     return;
   }
+  
+  const buyCurrency = state.selection.buyCurrency || state.selection.currency;
+  const sellCurrency = state.selection.sellCurrency || state.selection.currency;
+  
   if (state.stage.isVertical) {
     const maxWidth = getMaxSelectedCurrentWidth();
     const expandDelta = (maxWidth - state.columns.currencies.size) * 0.5;
@@ -192,7 +196,7 @@ export function updateLines() {
         - state.expandProgress * expandDelta;
       const targetX = xFrom + (xTo - xFrom) * state.lineProgress;
       const targetY1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
-      const targetY2 = getTargetOffset(state.selection.currency, state.columns.currencies);
+      const targetY2 = getTargetOffset(buyCurrency, state.columns.currencies);
       const y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
       const positions = { x1: xFrom, x2: targetX, y1: targetY1, y2 };
       anime.set(line1, positions);
@@ -207,7 +211,7 @@ export function updateLines() {
         + state.expandProgress * expandDelta;
       const targetX = xFrom + (xTo - xFrom) * state.lineProgress;
       const targetY1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
-      const targetY2 = getTargetOffset(state.selection.currency, state.columns.currencies);
+      const targetY2 = getTargetOffset(sellCurrency, state.columns.currencies);
       const y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
       const positions = { x1: xFrom, x2: targetX, y1: targetY1, y2 };
       anime.set(line2, positions);
@@ -222,7 +226,7 @@ export function updateLines() {
         - state.showMoreProgress * expandDelta;
       const targetY = yFrom + (yTo - yFrom) * state.lineProgress;
       const targetX1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
-      const targetX2 = getTargetOffset(state.selection.currency, state.columns.currencies);
+      const targetX2 = getTargetOffset(buyCurrency, state.columns.currencies);
       const x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
       const positions = { x1: targetX1, x2, y1: yFrom, y2: targetY };
       anime.set(line1, positions);
@@ -235,7 +239,7 @@ export function updateLines() {
         + state.showMoreProgress * expandDelta;
       const targetY = yFrom + (yTo - yFrom) * state.lineProgress;
       const targetX1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
-      const targetX2 = getTargetOffset(state.selection.currency, state.columns.currencies);
+      const targetX2 = getTargetOffset(sellCurrency, state.columns.currencies);
       const x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
       const positions = { x1: targetX1, x2, y1: yFrom, y2: targetY };
       anime.set(line2, positions);
