@@ -31,10 +31,11 @@ $(document).ready(() => {
     // our-team success
     if (document.querySelector('#anim-success-trigger')) {
       const tl_team_success = new TimelineMax();
-      tl_team_success.from('#anim-success-1', 0.8, { x: '-40%', opacity: 0 });
-      tl_team_success.from('#anim-success-2', 0.8, { scale: '.8', opacity: 0 });
-      tl_team_success.from('#anim-success-6', 0.8, { scale: '.8', opacity: 0 });
-      tl_team_success.from('#anim-success-7', 0.8, { scale: '.8', opacity: 0 });
+      tl_team_success.from('#anim-success-1', 2.2, { x: '-100%', opacity: 0 });
+      tl_team_success.from('#anim-success-7, #anim-success-2, #anim-success-6', 0.8, {
+        scale: '.8',
+        opacity: 0,
+      });
       tl_team_success.from('#anim-success-3', 0.8, { scale: '.8', opacity: 0 });
       tl_team_success.from('#anim-success-4', 0.8, { scale: '.8', opacity: 0 });
       tl_team_success.from('#anim-success-5', 0.8, { scale: '.8', opacity: 0 });
@@ -44,7 +45,7 @@ $(document).ready(() => {
     // our-team founders
     if (document.querySelector('#anim-founders-trigger')) {
       const tl_team_success = new TimelineMax();
-      tl_team_success.from('#anim-founders-1', 0.8, { y: '-40%', opacity: 0 });
+      tl_team_success.from('#anim-founders-1', 1, { y: '-60%', opacity: 0 });
       tl_team_success.from('#anim-founders-2', 0.8, { scale: '.8', opacity: 0 });
       AnimationScene('#anim-founders-trigger', tl_team_success, 500);
     }
@@ -94,129 +95,106 @@ $(document).ready(() => {
     // our-team description
     if (document.querySelector('#anim-description-trigger-1')) {
       const tl_team_description = new TimelineMax();
-      tl_team_description.from(
-        '#anim-description-trigger-1 span, #anim-description-trigger-1 h3, #anim-description-trigger-1 p',
-        0.8,
-        { x: '-40%', opacity: 0 }
-      );
+      tl_team_description.from('#anim-description-trigger-content-1', 1, { x: '-60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-1 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-1 ul', 0.8, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-1 ul', 0.5, { y: '100%', opacity: 0 });
       AnimationScene('#anim-description-trigger-1', tl_team_description, 500);
     }
     if (document.querySelector('#anim-description-trigger-2')) {
       const tl_team_description = new TimelineMax();
-      tl_team_description.from(
-        '#anim-description-trigger-2 span, #anim-description-trigger-2 h3, #anim-description-trigger-2 p',
-        0.8,
-        { x: '40%', opacity: 0 }
-      );
+      tl_team_description.from('#anim-description-trigger-content-2', 1, { x: '60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-2 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-2 ul', 0.8, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-2 ul', 0.5, { y: '100%', opacity: 0 });
       AnimationScene('#anim-description-trigger-2', tl_team_description, 500);
     }
     if (document.querySelector('#anim-description-trigger-3')) {
       const tl_team_description = new TimelineMax();
-      tl_team_description.from(
-        '#anim-description-trigger-3 span, #anim-description-trigger-3 h3, #anim-description-trigger-3 p',
-        0.8,
-        { x: '-40%', opacity: 0 }
-      );
+      tl_team_description.from('#anim-description-trigger-content-3', 1, { x: '-60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-3 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-3 ul', 0.8, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-3 ul', 0.5, { y: '100%', opacity: 0 });
       AnimationScene('#anim-description-trigger-3', tl_team_description, 500);
     }
     if (document.querySelector('#anim-description-trigger-4')) {
       const tl_team_description = new TimelineMax();
-      tl_team_description.from(
-        '#anim-description-trigger-4 span, #anim-description-trigger-4 h3, #anim-description-trigger-4 p',
-        0.8,
-        { x: '-40%', opacity: 0 }
-      );
+      tl_team_description.from('#anim-description-trigger-content-4', 1, { x: '-60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-4 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-4 ul', 0.8, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-4 ul', 0.5, { y: '100%', opacity: 0 });
       AnimationScene('#anim-description-trigger-4', tl_team_description, 500);
     }
     if (document.querySelector('#anim-description-trigger-5')) {
       const tl_team_description = new TimelineMax();
-      tl_team_description.from(
-        '#anim-description-trigger-5 span, #anim-description-trigger-5 h3, #anim-description-trigger-5 p',
-        0.8,
-        { x: '40%', opacity: 0 }
-      );
+      tl_team_description.from('#anim-description-trigger-content-5', 1, { x: '60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-5 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-5 ul', 0.8, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-5 ul', 0.5, { y: '100%', opacity: 0 });
       AnimationScene('#anim-description-trigger-5', tl_team_description, 500);
     }
 
     // our-team support
     if (document.querySelector('#anim-support-trigger')) {
       const tl_team_support = new TimelineMax();
-      tl_team_support.from('#anim-support-1', 0.8, { x: '-40%', opacity: 0 });
+      tl_team_support.from('#anim-support-1', 1, { x: '-60%', opacity: 0 });
       tl_team_support.from('#anim-support-2', 0.8, { scale: '.8', opacity: 0 });
-      AnimationScene('#anim-support-trigger', tl_team_support, 250);
+      AnimationScene('#anim-support-trigger', tl_team_support, 300);
     }
 
     // big-team founders-container
     if (document.querySelector('#anim-founders-container--headline-trigger')) {
       const tl_big_team_headline = new TimelineMax();
-      tl_big_team_headline.from('#anim-founders-container-title', 0.7, { y: '-100%', opacity: 0 });
-      tl_big_team_headline.from('#anim-founders-container-subtitle', 0.7, {
-        y: '-100%',
+      tl_big_team_headline.from('#anim-founders-container-title', 1, { y: '-120%', opacity: 0 });
+      tl_big_team_headline.from('#anim-founders-container-subtitle', 1, {
+        y: '-120%',
         opacity: 0,
       });
       AnimationScene('#anim-founders-container--headline-trigger', tl_big_team_headline, 100);
     }
 
-
     if (document.querySelector('#anim-founders-container-1')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-1', 0.8, { y: '50%', opacity: 0 });
-      AnimationScene('#anim-founders-container-1', tl_team_developers_1, 150);
+      tl_team_developers_1.from('#anim-founders-container-1', 0.8, { scale: '.90', opacity: 0.3 });
+      AnimationScene('#anim-founders-container-1', tl_team_developers_1, 100);
     }
 
     if (document.querySelector('#anim-founders-container-2')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-2', 0.8, { y: '50%', opacity: 0 });
-      AnimationScene('#anim-founders-container-2', tl_team_developers_1, 200);
+      tl_team_developers_1.from('#anim-founders-container-2', 0.8, { scale: '.90', opacity: 0.3 });
+      AnimationScene('#anim-founders-container-2', tl_team_developers_1, 500);
     }
 
     if (document.querySelector('#anim-founders-container-3')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-3', 0.8, { y: '50%', opacity: 0 });
-      AnimationScene('#anim-founders-container-3', tl_team_developers_1, 250);
+      tl_team_developers_1.from('#anim-founders-container-3', 0.8, { scale: '.90', opacity: 0.3 });
+      AnimationScene('#anim-founders-container-3', tl_team_developers_1, 1000);
     }
 
     if (document.querySelector('#anim-founders-container-4')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-4', 0.8, { y: '50%', opacity: 0 });
-      AnimationScene('#anim-founders-container-4', tl_team_developers_1, 300);
+      tl_team_developers_1.from('#anim-founders-container-4', 0.8, { scale: '.90', opacity: 0.3 });
+      AnimationScene('#anim-founders-container-4', tl_team_developers_1, 1500);
     }
 
     if (document.querySelector('#anim-founders-container-5')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-5', 0.3, { y: '50%', opacity: 0 });
+      tl_team_developers_1.from('#anim-founders-container-5', 0.8, { scale: '.90', opacity: 0.3 });
       AnimationScene('#anim-founders-container-5', tl_team_developers_1, 150);
     }
 
     if (document.querySelector('#anim-founders-container-6')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-6', 0.3, { y: '50%', opacity: 0 });
+      tl_team_developers_1.from('#anim-founders-container-6', 0.8, { scale: '.90', opacity: 0.3 });
       AnimationScene('#anim-founders-container-6', tl_team_developers_1, 200);
     }
 
     if (document.querySelector('#anim-founders-container-7')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-7', 0.3, { y: '50%', opacity: 0 });
+      tl_team_developers_1.from('#anim-founders-container-7', 0.8, { scale: '.90', opacity: 0.3 });
       AnimationScene('#anim-founders-container-7', tl_team_developers_1, 250);
     }
 
     if (document.querySelector('#anim-founders-container-8')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-8', 0.3, { y: '50%', opacity: 0 });
+      tl_team_developers_1.from('#anim-founders-container-8', 0.8, { scale: '.90', opacity: 0.3 });
       AnimationScene('#anim-founders-container-8', tl_team_developers_1, 300);
     }
-
-
 
     // our team footer
     if (document.querySelector('#anim-footer-trigger')) {

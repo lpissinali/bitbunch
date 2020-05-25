@@ -30,6 +30,12 @@
   margin-right: auto;
   margin-left: auto;
   width: 71.3125rem;
+  overflow: visible;
+
+  #anim-founders-container-4,
+  #anim-founders-container-8 {
+    margin-right: 0;
+  }
 }
 
 .big-team__founders-headline {
@@ -82,16 +88,6 @@
     opacity: 1;
   }
 }
-
-.big-team__founders-container {
-  overflow: hidden;
-
-  #anim-founders-container-4,
-  #anim-founders-container-8 {
-    margin-right: 0 !important;
-  }
-}
-
 // Our Team Success
 .our-team__success {
   margin-right: auto;
@@ -285,11 +281,11 @@
     &::before {
       content: "";
       position: absolute;
-      top: rem(-13px);
-      left: rem(-13px);
+      top: rem(-22px);
+      left: rem(-22px);
       z-index: 1;
-      width: rem(109px);
-      height: rem(109px);
+      width: rem(186px);
+      height: rem(186px);
       border-radius: rem(6px);
       background-color: #a1addf;
       opacity: .8;
@@ -299,11 +295,11 @@
     &::after {
       content: "";
       position: absolute;
-      right: rem(-14px);
-      bottom: rem(-14px);
+      right: rem(-23px);
+      bottom: rem(-23px);
       z-index: 1;
-      width: rem(166px);
-      height: rem(167px);
+      width: rem(283px);
+      height: rem(285px);
       border-radius: rem(6px);
       background-color: #dae1f6;
       opacity: .8;
@@ -317,12 +313,14 @@
       }
 
       &::before {
-        left: rem(-20px);
+        top: rem(-12px);
+        left: rem(-12px);
         transform: scale(1.3);
       }
 
       &::after {
-        right: rem(-20px);
+        right: rem(-13px);
+        bottom: 0;
         transform: scale(1.3);
       }
     }
@@ -518,6 +516,7 @@
   }
 
   &-block--content {
+    margin-top: rem(43px);
     width: rem(445px);
   }
 
