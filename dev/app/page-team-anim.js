@@ -3,140 +3,181 @@ $(document).ready(() => {
   if (document.querySelector('.our-team-header')) {
     const controller = new ScrollMagic.Controller();
 
-    function AnimationScene(section, tween) {
+    function AnimationScene(section, tween, durationTime) {
       const scene = new ScrollMagic.Scene({
         triggerElement: section,
-        triggerHook: 0.70,
+        triggerHook: 0.55,
+        duration: durationTime,
       })
-        .reverse(false)
+        .reverse(true)
         .setTween(tween)
         .addTo(controller);
     }
 
-    if (window.matchMedia('(max-width: 570px)').matches) {
-      // our-team header
-      if (document.querySelector('.our-team-header')) {
-        const tl_our_team_header = new TimelineMax();
-        tl_our_team_header.from('.our-team-header__headline-block', 0.5, { y: '70%', opacity: 0 });
-        AnimationScene('.our-team-header', tl_our_team_header);
-      }
+    // our-team header
+    if (document.querySelector('.our-team-header')) {
+      const tl_team_header = new TimelineMax();
+      tl_team_header.from(
+        '.our-team-header__headline-block, .our-team-header__headline',
+        0.5,
+        { y: '40%', opacity: 0 },
+        0.4
+      );
+      tl_team_header.from('.our-team-header__video-poster', 0.5, { scale: '.8', opacity: 0 }, 0.4);
+      tl_team_header.from('.our-team-header__video-bg', 0.5, { scale: '.8', opacity: 0 }, 0.5);
+      AnimationScene('.our-team-header', tl_team_header);
+    }
 
-      // big-team header
-      if (document.querySelector('.big-team')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__founders-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__founders-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__founders-container', 0.5, { y: '20%', opacity: 0 }, 0.5);
-        AnimationScene('.big-team', tl_big_team);
-      }
+    // our-team success
+    if (document.querySelector('#anim-success-trigger')) {
+      const tl_team_success = new TimelineMax();
+      tl_team_success.from('#anim-success-1', 2.2, { x: '-100%', opacity: 0 });
+      tl_team_success.from('#anim-success-5, #anim-success-6', 0.8, {
+        scale: '.8',
+        opacity: 0,
+      });
+      tl_team_success.from('#anim-success-2', 0.8, { scale: '.8', opacity: 0 });
+      tl_team_success.from('#anim-success-3', 0.8, { scale: '.8', opacity: 0 });
+      tl_team_success.from('#anim-success-4', 0.8, { scale: '.8', opacity: 0 });
+      AnimationScene('#anim-success-trigger', tl_team_success, 500);
+    }
 
-      // investors
-      if (document.querySelector('.big-team__investors-headline')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__investors-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__investors-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__investors-container', 0.5, { y: '20%', opacity: 0 }, 0.5);
-        AnimationScene('.big-team__investors-headline', tl_big_team);
-      }
+    // our-team founders
+    if (document.querySelector('#anim-founders-trigger')) {
+      const tl_team_success = new TimelineMax();
+      tl_team_success.from('#anim-founders-1', 1, { y: '-60%', opacity: 0 });
+      tl_team_success.from('#anim-founders-2', 0.8, { scale: '.8', opacity: 0 });
+      AnimationScene('#anim-founders-trigger', tl_team_success, 500);
+    }
 
-      // big-team header
-      if (document.querySelector('.big-team__advisors-headline')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__advisors-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__advisors-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__advisors-container', 0.5, { y: '20%', opacity: 0 }, 0.5);
-        AnimationScene('.big-team__advisors-headline', tl_big_team);
-      }
-    } else if (window.matchMedia('(max-width: 1000px)').matches) {
-      console.log('animation - tablet');
+    // our-team developers
+    if (document.querySelector('#anim-core-developers-trigger')) {
+      const tl_team_developers = new TimelineMax();
+      tl_team_developers.from(
+        '#anim-core-developers-trigger h3, #anim-core-developers-trigger p',
+        0.8,
+        { y: '-40%', opacity: 0 }
+      );
+      tl_team_developers.from('#anim-core-developers-0', 0.8, { scale: '.8', opacity: 0 });
+      AnimationScene('#anim-core-developers-trigger', tl_team_developers, 500);
+    }
 
-      // our-team header
-      if (document.querySelector('.our-team-header')) {
-        const tl_our_team_header = new TimelineMax();
-        tl_our_team_header.from('.our-team-header__headline-block', 0.5, { y: '70%', opacity: 0 });
-        tl_our_team_header.from('.our-team-header__decor', 0.5, { y: '25%', opacity: 0 }, 0.2);
-        AnimationScene('.our-team-header', tl_our_team_header);
-      }
+    if (document.querySelector('#anim-core-developers-1')) {
+      const tl_team_developers_1 = new TimelineMax();
+      tl_team_developers_1.from('#anim-core-developers-1', 0.8, { y: '50%', opacity: 0 });
+      AnimationScene('#anim-core-developers-1', tl_team_developers_1, 150);
+    }
 
-      // big-team header
-      if (document.querySelector('.big-team')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__founders-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__founders-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__animation-order-1', 0.7, { scale: 0.8, opacity: 0 }, 1);
-        tl_big_team.from('.big-team__animation-order-2', 0.7, { scale: 0.8, opacity: 0 }, 1.15);
-        tl_big_team.from('.big-team__animation-order-3', 0.7, { scale: 0.8, opacity: 0 }, 1.3);
-        tl_big_team.from('.big-team__animation-order-4', 0.7, { scale: 0.8, opacity: 0 }, 1.45);
-        tl_big_team.from('.big-team__animation-order-5', 0.7, { scale: 0.8, opacity: 0 }, 1.6);
-        tl_big_team.from('.big-team__animation-order-6', 0.7, { scale: 0.8, opacity: 0 }, 1.75);
-        tl_big_team.from('.big-team__animation-order-7', 0.7, { scale: 0.8, opacity: 0 }, 1.9);
-        tl_big_team.from('.big-team__animation-order-8', 0.7, { scale: 0.8, opacity: 0 }, 2.05);
-        AnimationScene('.big-team', tl_big_team);
-      }
+    if (document.querySelector('#anim-core-developers-2')) {
+      const tl_team_developers_1 = new TimelineMax();
+      tl_team_developers_1.from('#anim-core-developers-2', 0.8, { y: '50%', opacity: 0 });
+      AnimationScene('#anim-core-developers-2', tl_team_developers_1, 200);
+    }
 
-      // investors
-      if (document.querySelector('.big-team__investors-headline')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__investors-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__investors-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__investors-container', 0.5, { y: '20%', opacity: 0 }, 0.5);
-        AnimationScene('.big-team__investors-headline', tl_big_team);
-      }
+    if (document.querySelector('#anim-core-developers-3')) {
+      const tl_team_developers_1 = new TimelineMax();
+      tl_team_developers_1.from('#anim-core-developers-3', 0.8, { y: '50%', opacity: 0 });
+      AnimationScene('#anim-core-developers-3', tl_team_developers_1, 250);
+    }
 
-      // big-team header
-      if (document.querySelector('.big-team__advisors-headline')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__advisors-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__advisors-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__advisors-container', 0.5, { y: '20%', opacity: 0 }, 0.5);
-        AnimationScene('.big-team__advisors-headline', tl_big_team);
-      }
+    if (document.querySelector('#anim-core-developers-4')) {
+      const tl_team_developers_1 = new TimelineMax();
+      tl_team_developers_1.from('#anim-core-developers-4', 0.8, { y: '50%', opacity: 0 });
+      AnimationScene('#anim-core-developers-4', tl_team_developers_1, 300);
+    }
 
-      // desktop animation
-    } else {
-      console.log('animation - desktop');
+    if (document.querySelector('#anim-core-developers-5')) {
+      const tl_team_developers_1 = new TimelineMax();
+      tl_team_developers_1.from('#anim-core-developers-5', 0.3, { y: '50%', opacity: 0 });
+      AnimationScene('#anim-core-developers-5', tl_team_developers_1, 0);
+    }
 
-      // our-team header
-      if (document.querySelector('.our-team-header')) {
-        const tl_our_team_header = new TimelineMax();
-        tl_our_team_header.from('.our-team-header__headline-block', 0.5, { y: '40%', opacity: 0 });
-        tl_our_team_header.from('.our-team-header__decor', 0.5, { y: '20%', opacity: 0 }, 0.2);
-        AnimationScene('.our-team-header', tl_our_team_header);
-      }
+    // our-team description
+    if (document.querySelector('#anim-description-trigger-1')) {
+      const tl_team_description = new TimelineMax();
+      tl_team_description.from('#anim-description-trigger-content-1', 1, { x: '-60%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-1 img', 1, { opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-1 ul', 0.5, { y: '100%', opacity: 0 });
+      AnimationScene('#anim-description-trigger-1', tl_team_description, 500);
+    }
+    if (document.querySelector('#anim-description-trigger-2')) {
+      const tl_team_description = new TimelineMax();
+      tl_team_description.from('#anim-description-trigger-content-2', 1, { x: '60%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-2 img', 1, { opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-2 ul', 0.5, { y: '100%', opacity: 0 });
+      AnimationScene('#anim-description-trigger-2', tl_team_description, 500);
+    }
+    if (document.querySelector('#anim-description-trigger-3')) {
+      const tl_team_description = new TimelineMax();
+      tl_team_description.from('#anim-description-trigger-content-3', 1, { x: '-60%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-3 img', 1, { opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-3 ul', 0.5, { y: '100%', opacity: 0 });
+      AnimationScene('#anim-description-trigger-3', tl_team_description, 500);
+    }
+    if (document.querySelector('#anim-description-trigger-4')) {
+      const tl_team_description = new TimelineMax();
+      tl_team_description.from('#anim-description-trigger-content-4', 1, { x: '-60%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-4 img', 1, { opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-4 ul', 0.5, { y: '100%', opacity: 0 });
+      AnimationScene('#anim-description-trigger-4', tl_team_description, 500);
+    }
+    if (document.querySelector('#anim-description-trigger-5')) {
+      const tl_team_description = new TimelineMax();
+      tl_team_description.from('#anim-description-trigger-content-5', 1, { x: '60%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-5 img', 1, { opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-5 ul', 0.5, { y: '100%', opacity: 0 });
+      AnimationScene('#anim-description-trigger-5', tl_team_description, 500);
+    }
 
-      // big-team header
-      if (document.querySelector('.big-team')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__founders-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__founders-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__animation-order-1', 0.7, { scale: 0.8, opacity: 0 }, 1);
-        tl_big_team.from('.big-team__animation-order-2', 0.7, { scale: 0.8, opacity: 0 }, 1.15);
-        tl_big_team.from('.big-team__animation-order-3', 0.7, { scale: 0.8, opacity: 0 }, 1.3);
-        tl_big_team.from('.big-team__animation-order-4', 0.7, { scale: 0.8, opacity: 0 }, 1.45);
-        tl_big_team.from('.big-team__animation-order-5', 0.7, { scale: 0.8, opacity: 0 }, 1.6);
-        tl_big_team.from('.big-team__animation-order-6', 0.7, { scale: 0.8, opacity: 0 }, 1.75);
-        tl_big_team.from('.big-team__animation-order-7', 0.7, { scale: 0.8, opacity: 0 }, 1.9);
-        tl_big_team.from('.big-team__animation-order-8', 0.7, { scale: 0.8, opacity: 0 }, 2.05);
-        AnimationScene('.big-team', tl_big_team);
-      }
+    // our-team support
+    if (document.querySelector('#anim-support-trigger')) {
+      const tl_team_support = new TimelineMax();
+      tl_team_support.from('#anim-support-1', 1, { x: '-60%', opacity: 0 });
+      tl_team_support.from('#anim-support-2', 0.8, { scale: '.8', opacity: 0 });
+      AnimationScene('#anim-support-trigger', tl_team_support, 300);
+    }
 
-      // investors
-      if (document.querySelector('.big-team__investors-headline')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__investors-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__investors-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__investors-container', 0.5, { y: '20%', opacity: 0 }, 0.5);
-        AnimationScene('.big-team__investors-headline', tl_big_team);
-      }
+    // big-team founders-container
+    if (document.querySelector('#anim-founders-container--headline-trigger')) {
+      const tl_big_team_headline = new TimelineMax();
+      tl_big_team_headline.from('#anim-founders-container-title', 1, { y: '-120%', opacity: 0 });
+      tl_big_team_headline.from('#anim-founders-container-subtitle', 1, {
+        y: '-120%',
+        opacity: 0,
+      });
+      AnimationScene('#anim-founders-container--headline-trigger', tl_big_team_headline, 100);
+    }
 
-      // big-team header
-      if (document.querySelector('.big-team__advisors-headline')) {
-        const tl_big_team = new TimelineMax();
-        tl_big_team.from('.big-team__advisors-headline', 0.5, { y: '100%', opacity: 0 });
-        tl_big_team.from('.big-team__advisors-subtitle', 0.5, { y: '100%', opacity: 0 }, 0.2);
-        tl_big_team.from('.big-team__advisors-container', 0.5, { y: '20%', opacity: 0 }, 0.5);
-        AnimationScene('.big-team__advisors-headline', tl_big_team);
-      }
+    if (document.querySelector('#anim-founders-container-1')) {
+      const tl_team_developers_1 = new TimelineMax();
+      tl_team_developers_1.from('#anim-founders-container-1', 0.7, { scale: '.85', opacity: 0 }, 1.3);
+      tl_team_developers_1.from('#anim-founders-container-2', 0.7, {  scale: '.85', opacity: 0 }, 1.6);
+      tl_team_developers_1.from('#anim-founders-container-3', 0.7, {  scale: '.85', opacity: 0 }, 1.9);
+      tl_team_developers_1.from('#anim-founders-container-4', 0.7, {  scale: '.85', opacity: 0 }, 2.1);
+      AnimationScene('#anim-founders-container-1', tl_team_developers_1, 500);
+    }
+
+    if (document.querySelector('#anim-founders-container-2')) {
+      const tl_team_developers_2 = new TimelineMax();
+      tl_team_developers_2.from('#anim-founders-container-5', 0.7, { scale: '.85', opacity: 0 }, 1.3);
+      tl_team_developers_2.from('#anim-founders-container-6', 0.7, {  scale: '.85', opacity: 0 }, 1.6);
+      tl_team_developers_2.from('#anim-founders-container-7', 0.7, {  scale: '.85', opacity: 0 }, 1.9);
+      tl_team_developers_2.from('#anim-founders-container-8', 0.7, {  scale: '.85', opacity: 0 }, 2.1);
+      AnimationScene('#anim-founders-container-2', tl_team_developers_2, 1000);
+    }
+
+
+    // our team footer
+    if (document.querySelector('#anim-footer-trigger')) {
+      const tl_team_footer = new TimelineMax();
+      tl_team_footer.from('#anim-footer-1', 0.5, { y: '-100%', opacity: 0 });
+      tl_team_footer.from('#anim-footer-2', 0.5, { y: '-100%', opacity: 0 }, 0.2);
+      tl_team_footer.from('#anim-footer-3', 0.7, { scale: 0.8, opacity: 0 }, 1);
+      tl_team_footer.from('#anim-footer-4', 0.7, { y: '100%', opacity: 0 }, 1.3);
+      tl_team_footer.from('#anim-footer-5', 0.7, { y: '100%', opacity: 0 }, 1.6);
+      tl_team_footer.from('#anim-footer-6', 0.7, { y: '100%', opacity: 0 }, 1.9);
+      tl_team_footer.from('#anim-footer-7', 0.7, { y: '100%', opacity: 0 }, 2.1);
+      AnimationScene('#anim-footer-trigger', tl_team_footer, 500);
     }
   }
 });

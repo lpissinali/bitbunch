@@ -1,0 +1,50 @@
+@media screen and ($tablet1), ($tablet2), ($tablet3) {
+
+  .our-team__footer {
+    padding-top: rem(48px);
+
+    &::after {
+      width: 12.6875rem;
+      height: 50rem;
+      right: 0;
+      background-size: auto 50rem;
+    }
+  }
+
+  .our-team__footer-get-in-touch {
+
+    h6 {
+      margin-bottom: rem(5px);
+      font-size: rem(16px);
+      line-height: rem(26px);
+    }
+
+    h3 {
+      margin-bottom: rem(48px);
+      font-size: rem(36px);
+      line-height: rem(50px);
+    }
+
+    .our-team__footer-blocks {
+      flex-wrap: wrap;
+      padding: rem(40px) rem(40px) rem(50px);
+      width: rem(668px);
+
+      .our-team__footer-block {
+        margin-left: rem(70px);
+        width: rem(259px);
+        height: rem(177px);
+
+        &:nth-of-type(3),
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          margin-bottom: rem(48px);
+        }
+      }
+    }
+  }
+}
