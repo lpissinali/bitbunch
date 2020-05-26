@@ -57,10 +57,12 @@
   font-family: $main-font-bold;
   font-size: .875rem;
   color: $white;
-  transition: background-color 300ms;
+  transition: 300ms;
+  transform-origin: center;
 
   &:hover {
     background-color: $orange;
+    transform: scaleX(1.1);
   }
 }
 
