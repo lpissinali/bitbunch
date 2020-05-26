@@ -1,10 +1,15 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
   .big-team__wrapper {
-    padding-top: .625rem;
+    padding-top: 0;
     padding-right: 0;
-    padding-bottom: 3rem;
-    padding-left: 1.5rem;
+    padding-bottom: 2.35rem;
+    padding-left: 0;
+
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
   }
 
   .big-team__headline {
@@ -22,20 +27,435 @@
   .big-team__founders-container {
     display: block;
     margin-top: 2rem;
+    margin-left: rem(24px);
     width: 100%;
+
+    .our-team__member-info {
+      padding-top: rem(16px);
+      padding-bottom: rem(22px);
+
+      .position {
+        margin-top: rem(4px);
+        font-size: rem(12px);
+        line-height: rem(16px);
+      }
+
+      .name {
+        font-size: rem(14px);
+        line-height: rem(18px);
+      }
+    }
+
+    .our-team__member-foto {
+      margin-top: rem(-10px);
+      width: rem(184px);
+      height: rem(165px);
+    }
+
+    .our-team__member-descr {
+      font-size: rem(10px);
+      line-height: rem(16px);
+    }
+
+    .our-team__member-card {
+      margin-bottom: rem(5px);
+
+      &:nth-child(7n),
+      &:nth-child(8n) {
+        display: block;
+      }
+    }
+
+    .slick-dots {
+      margin-top: rem(19px);
+      padding-right: rem(48px);
+
+      li {
+        width: 12.5%;
+      }
+
+      button {
+        width: 100%;
+        background-color: rgba(#324ea3, .2);
+      }
+
+      .slick-active button {
+        background-color: #324ea3;
+        overflow: hidden;
+      }
+    }
+
+    #anim-founders-container-4,
+    #anim-founders-container-8,
+    #anim-founders-container-3,
+    #anim-founders-container-6 {
+      margin-right: rem(24px) !important;
+    }
+
+    #anim-founders-container-4,
+    #anim-founders-container-8 {
+      display: block !important;
+    }
   }
 
-  .big-team__investors-container,
-  .big-team__advisors-container {
-    margin-top: 2rem;
-    width: 100%;
+  .big-team__founders-headline {
+    margin-top: rem(27px);
+    margin-bottom: 0;
+    width: rem(238px);
   }
 
-  .big-team__wrapper {
+  .big-team__founders-subtitle {
+    width: rem(235px);
+  }
 
-    .slick-prev,
-    .slick-next {
-      display: none !important;
+  // our team success
+  .our-team__success {
+    padding-top: rem(46px);
+    padding-bottom: rem(73px);
+    width: rem(272px);
+
+    &-content {
+
+      h3 {
+        margin-bottom: rem(5px);
+        width: rem(217px);
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+
+      p {
+        width: rem(272px);
+        font-size: rem(12px);
+        line-height: rem(22px);
+      }
+    }
+
+    &-media {
+      margin-top: rem(53px);
+      margin-left: rem(6px);
+
+      &::before {
+        top: rem(5px);
+        left: rem(-24px);
+        width: rem(38px);
+        height: rem(38px);
+      }
+
+      &::after {
+        right: rem(-17px);
+        bottom: rem(-21px);
+        width: rem(55px);
+        height: rem(55px);
+      }
+
+      div {
+        background-size: cover;
+      }
+
+      .our-team__success-anim-2 {
+        top: rem(-6px);
+        left: rem(-10px);
+        width: rem(31px);
+        height: rem(31px);
+        transform: scale(1.6);
+      }
+
+      .our-team__success-anim-3 {
+        top: rem(12px);
+        right: rem(-17px);
+        width: rem(26px);
+        height: rem(30px);
+        transform: scale(1.4);
+      }
+
+      .our-team__success-anim-4 {
+        right: rem(-9px);
+        bottom: rem(-11px);
+        width: rem(32px);
+        height: rem(32px);
+        transform: scale(1.8);
+      }
+
+      img {
+        width: rem(218px);
+        height: rem(132px);
+      }
+    }
+  }
+
+  // Our Team Founders
+  .our-team__founders {
+    padding-top: rem(50px);
+    padding-bottom: rem(55px);
+    background-image: url(./images/our-team__founders-bg-mobile.jpg);
+
+    &-content {
+
+      h3 {
+        margin-bottom: rem(5px);
+        width: rem(188px);
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+
+      p {
+        margin-bottom: rem(38px);
+        width: rem(250px);
+        font-size: rem(12px);
+        line-height: rem(22px);
+      }
+    }
+
+    &-media {
+      width: rem(261px);
+      height: rem(148px);
+
+      &::before {
+        top: rem(-5px);
+        left: rem(-6px);
+        width: rem(45px);
+        height: rem(45px);
+      }
+
+      &::after {
+        right: rem(-5px);
+        bottom: rem(-4px);
+        width: rem(68px);
+        height: rem(68px);
+      }
+
+      &:hover {
+
+        &::before {
+          top: rem(-9px);
+          left: rem(-10px);
+        }
+
+        &::after {
+          right: rem(-10px);
+          bottom: rem(-9px);
+        }
+      }
+    }
+  }
+
+  // Our Team description
+  .our-team__description {
+    padding-top: rem(48px);
+    padding-bottom: rem(71px);
+
+    &-container {
+      width: rem(270px);
+    }
+
+    &-block {
+      margin-bottom: rem(64px);
+
+      &:nth-of-type(even) {
+        margin-bottom: rem(53px);
+      }
+    }
+
+    #anim-description-trigger-5 {
+      margin-bottom: 0;
+    }
+
+    #anim-description-trigger-4 {
+      margin-top: rem(36px);
+      margin-bottom: rem(51px);
+    }
+
+    &-block--content {
+      width: rem(270px);
+
+      span {
+        margin-bottom: rem(8px);
+        padding-top: rem(3.5px);
+        padding-bottom: rem(3.5px);
+        width: rem(129px);
+        font-size: rem(8px);
+        line-height: rem(14px);
+      }
+
+      h3 {
+        margin-bottom: rem(10px);
+        width: rem(172px);
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+
+      p {
+        width: rem(270px);
+        font-size: rem(12px);
+        line-height: rem(22px);
+
+        &:last-of-type {
+          margin-bottom: rem(32px);
+        }
+      }
+
+      li {
+        margin-left: rem(10px);
+        width: rem(35px);
+        height: rem(35px);
+
+        img {
+          transform: scale(.7);
+        }
+      }
+    }
+
+    &-block--media {
+      width: rem(254px);
+      height: rem(456px);
+
+      img {
+        width: rem(254px);
+        height: rem(456px);
+      }
+    }
+  }
+
+  // Our Team core-developers
+  .our-team__core-developers {
+    padding-top: rem(48px);
+    padding-bottom: rem(48px);
+    background-image: url(./images/our-team__core-developers--mobile.jpg);
+
+    &-container {
+      flex-direction: unset;
+      justify-content: unset;
+      align-items: unset;
+      display: block;
+      padding-left: rem(24px);
+      max-width: rem(272px);
+      max-width: 100%;
+    }
+
+    .our-team__member-info {
+      padding-top: rem(16px);
+      padding-bottom: rem(22px);
+
+      .position {
+        margin-top: rem(4px);
+        font-size: rem(12px);
+        line-height: rem(16px);
+      }
+
+      .name {
+        font-size: rem(14px);
+        line-height: rem(18px);
+      }
+    }
+
+    .our-team__member-foto {
+      margin-top: rem(-10px);
+      width: rem(184px);
+      height: rem(165px);
+    }
+
+    .our-team__member-descr {
+      font-size: rem(10px);
+      line-height: rem(16px);
+    }
+
+    .slick-dots {
+      margin-top: rem(21px);
+    }
+
+    h3 {
+      margin-bottom: rem(5px);
+      width: rem(258px);
+      font-size: rem(22px);
+      line-height: rem(32px);
+    }
+
+    p {
+      margin-bottom: rem(38.5px);
+      width: rem(208px);
+      font-size: rem(12px);
+      line-height: rem(22px);
+    }
+
+    &-media {
+      margin-bottom: rem(70.5px);
+      width: rem(261px);
+      height: rem(147px);
+
+      &::before {
+        top: rem(-5px);
+        left: rem(-5px);
+        width: rem(45px);
+        height: rem(45px);
+      }
+
+      &::after {
+        right: rem(-6px);
+        bottom: rem(-6px);
+        width: rem(68px);
+        height: rem(68px);
+      }
+
+      &:hover {
+
+        &::before {
+          left: rem(-7px);
+        }
+
+        &::after {
+          right: rem(-7px);
+        }
+      }
+    }
+
+    &-button {
+      margin-top: rem(28px);
+      width: rem(137px);
+      height: rem(37px);
+      font-size: rem(12px);
+      line-height: rem(16px);
+    }
+  }
+
+  // Our Team support
+  .our-team__support {
+    padding-top: 0;
+    padding-bottom: rem(48px);
+    max-width: 100%;
+    background: linear-gradient(122.01deg, #ffffff 8.84%, #f2f4fd 98.29%);
+
+    &-content {
+
+      h3 {
+        margin-bottom: rem(5px);
+        width: rem(245px);
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+
+      p {
+        width: rem(270px);
+        font-size: rem(12px);
+        line-height: rem(22px);
+      }
+    }
+
+    &-media {
+      margin-top: rem(53px);
+      width: rem(277px);
+      height: rem(156px);
+
+      &::before {
+        width: rem(318px);
+        height: rem(245px);
+        background-image: url(./images/our-team__support-media-bg--mobile.png);
+        transform: translate(-7%, -16%);
+      }
+
+      &-poster {
+        width: rem(277px);
+        height: rem(156px);
+      }
     }
   }
 }

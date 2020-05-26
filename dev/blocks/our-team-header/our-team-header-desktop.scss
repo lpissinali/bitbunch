@@ -1,37 +1,109 @@
-.our-team-header {
-}
-
 .our-team-header__wrapper {
   margin-right: auto;
   margin-left: auto;
   padding-top: 2.5rem;
-  padding-bottom: 8.75rem;
-  width: 76.125rem;
+  padding-bottom: rem(123px);
+  width: rem(1140px);
 }
 
 .our-team-header__headline-block {
-  margin-top: 10rem;
+
+  .our-team-header__headline {
+    display: block;
+  }
+}
+
+.our-team-header__content {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+  margin-top: rem(106px);
+}
+
+.our-team-header__headline {
+  width: rem(479px);
 }
 
 .our-team-header__subtitle {
-  margin-top: .875rem;
-  max-width: 21rem;
+  margin-top: rem(6px);
+  max-width: rem(403px);
 }
 
 .our-team-header__were-hiring-button {
-  margin-top: 4.625rem;
+  margin-top: rem(70px);
 }
 
-.our-team-header__decor {
-  position: absolute;
-  top: 14.5rem;
-  right: 0;
-  width: 47.375rem;
-  height: 30.0625rem;
-  background-image: url("./images/our-team-header__decor-desktop.png");
-  background-position: 0 center;
+.our-team-header__video-block {
+  position: relative;
+  width: rem(531px);
+  border-radius: rem(2px);
+  transition: 400ms ease;
+
+  .our-team-header__headline {
+    display: none;
+  }
+
+  &:hover {
+
+    .our-team-header__video-poster {
+      transform: scale(1.03) !important;
+    }
+  }
+}
+
+.our-team-header__video-bg {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 46rem;
+    height: rem(490px);
+    background-image: url(images/our-team-header__video-bg-desktop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: translate(-17%, -18%);
+    transform-origin: center center;
+    transition: 400ms ease;
+  }
+}
+
+.our-team-header__video-poster {
+  position: relative;
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: rem(531px);
+  height: rem(327px);
+  border-radius: rem(2px);
+  background-image: url("./images/our-team-header__video-poster-desktop.jpg");
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: contain;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: 400ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f237d;
+    opacity: .34;
+  }
+}
+
+.our-team-header__video-play-button {
+  z-index: 6;
 }
 
 @import "./our-team-header-tablet.scss";
