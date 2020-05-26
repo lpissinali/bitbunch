@@ -19,8 +19,8 @@ export function formatNumber(input, maxExponent) {
     }
 }
 
-export function formatCurrency(value, currency) {
-    return formatNumber(value, 8);
+export function formatCurrency(value, digitsAfterDelimiter = 8) {
+    return formatNumber(value, digitsAfterDelimiter);
 }
 
 export function formatTime(time) {
