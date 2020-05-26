@@ -26,6 +26,8 @@ import {
 } from '../update';
 import { clipOffset, scrollColumn, listenForClose } from './helpers';
 import { SELECTED_EXCHANGE_WIDTH } from '../layout';
+import { IDLE_SCROLL_SPEED } from "./idle.js";
+import { SELECTED_CURRENCY_WIDTH } from "../layout.js";
 
 function centerItemOffset(index, object) {
   const offset = getTargetOffset(index, object);
@@ -141,6 +143,35 @@ export function scrollIntoView() {
   return timeline.finished;
 }
 
+export function setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(opacity) {
+  if (!state.stage.isVertical) {
+    setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIcon(opacity)
+  }
+}
+
+export function getCurrencyBoxes() {
+  return document.querySelectorAll(
+    '#trade-display .currencies-box .scrolling-area > .currency-box'
+  );
+}
+
+export function currencyIndexToCurrencyBoxIndex(currencyIndex) {
+  return currencyIndex + 7;
+}
+
+export function setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIcon(opacity) {
+  const currencyBoxes = getCurrencyBoxes();
+  const selectedCurrencyBoxIndex = currencyIndexToCurrencyBoxIndex(
+    state.selection.currency
+  );
+  if (selectedCurrencyBoxIndex >= 1) {
+    currencyBoxes[selectedCurrencyBoxIndex - 1].style.opacity = opacity;
+  }
+  if (selectedCurrencyBoxIndex < currencyBoxes.length - 1) {
+    currencyBoxes[selectedCurrencyBoxIndex + 1].style.opacity = opacity;
+  }
+}
+
 export function selectCurrency(ignorePause = false) {
   const LINE_DURATION = 500;
   const SELECT_DURATION = 800;
@@ -221,6 +252,9 @@ export function selectCurrency(ignorePause = false) {
           updateLines();
         }
       },
+      complete() {
+        setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(0);
+      }
     },
     timelineOffset
   );
@@ -363,7 +397,7 @@ export function showInstantTrade() {
           updateCurrenciesOpacity();
           updateShortDetails();
         }
-      },
+      }
     },
     0
   );
@@ -393,19 +427,31 @@ export function closeInstantTrade() {
     0
   );
 
+  let scrollDistance;
+  if (state.stage.isVertical) {
+    scrollDistance = state.stage.height * 0.5 + state.columns.currencies.size * 0.5;
+  } else {
+    scrollDistance = state.stage.width * 0.5 + SELECTED_CURRENCY_WIDTH * 0.5;
+  }
+  let scrollDuration = scrollDistance / IDLE_SCROLL_SPEED;
+
   timeline.add(
     {
-      duration: CLOSE_DURATION,
+      duration: scrollDuration,
       targets: state,
-      expandProgress: 0,
       selectProgress: 0,
       lineProgress: 0,
       easing: 'linear',
+      begin() {
+        state.isClosingInstantTrade = true;
+      },
       complete() {
+        state.expandProgress = 0;
         hideTradeRect();
         hideSelectRects();
         hideShowMore();
         hideSellProgress();
+        state.isClosingInstantTrade = false;
       },
       update(anim) {
         if (!anim.completed) {
@@ -415,6 +461,24 @@ export function closeInstantTrade() {
           updateSelectRects();
         }
       },
+    },
+    CLOSE_DURATION
+  );
+  
+  timeline.add(
+    {
+      ...scrollColumn(
+        state.columns.currencies,
+        -scrollDistance,
+        scrollDuration,
+        () => {
+          updateCurrencies();
+          updateTradeRect();
+        }
+      ),
+      complete() {
+        setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(1);
+      }
     },
     CLOSE_DURATION
   );
