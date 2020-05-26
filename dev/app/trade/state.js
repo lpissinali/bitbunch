@@ -55,4 +55,5 @@ export const state = {
     height: 0,
     isVertical: null,
   },
+  isClosingInstantTrade: false
 };

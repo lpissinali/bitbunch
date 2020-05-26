@@ -9,7 +9,7 @@ import {
 } from '../update';
 import { clipOffset, scrollColumn } from './helpers';
 
-const IDLE_SCROLL_SPEED = 1/6;// Pixels per ms
+export const IDLE_SCROLL_SPEED = 1/6;// Pixels per ms
 
 export function idleAnimation() {
     return scrollColumns()
