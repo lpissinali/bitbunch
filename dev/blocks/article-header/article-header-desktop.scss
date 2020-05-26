@@ -33,6 +33,14 @@
     font-family: $main-font-semi-bold;
     color: #091540;
   }
+
+  .user-panel__sign-in-button {
+    opacity: 1;
+
+    &:after {
+      background-color: #091540;
+    }
+  }
 }
 
 .article-header__button {
