@@ -8,14 +8,14 @@
   width: 100%;
   height: 5.125rem;
   background-color: #353f63;
-  transition: transform 300ms ease-in-out;
+  transition: bottom 300ms ease-in-out;
 
   &.block {
     display: block;
   }
 
   &.up {
-    transform: translateY(-6rem);
+    bottom: 0;
   }
 }
 
@@ -87,7 +87,7 @@
     }
 
     &.up {
-      transform: translateY(-7rem);
+      bottom: 0;
     }
   }
 
@@ -115,7 +115,7 @@
     }
 
     &.up {
-      transform: translateY(-10rem);
+      bottom: 0;
     }
   }
 
