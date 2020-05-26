@@ -494,6 +494,10 @@
     margin-top: rem(70px);
     margin-right: auto;
     margin-left: auto;
+
+    &:hover{
+      transform: scaleX(1.05) !important;
+    }
   }
 }
 
