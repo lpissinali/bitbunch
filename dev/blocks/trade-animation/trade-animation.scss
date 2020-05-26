@@ -66,12 +66,10 @@
   }
 
   .line1 {
-    stroke: #707070;
     stroke-width: 2;
   }
 
   .line2 {
-    stroke: #707070;
     stroke-width: 2;
   }
 
@@ -98,27 +96,6 @@
   .exchange-box {
     fill: #ffffff;
     will-change: transform;
-    transition: opacity 400ms linear;
-
-    .exchange-box-icon {
-      opacity: 1;
-    }
-    
-    .exchange-box-icon--colored {
-      transition: opacity 400ms linear;
-    }
-
-    .exchange-box-icon--white {
-
-    }
-
-    .exchange-box-icon--hidden {
-      opacity: 0;
-    }
-    
-    rect {
-      transition: fill 400ms linear;
-    }
   }
 
   .currency-box {

@@ -224,6 +224,7 @@
     line-height: rem(62px);
     text-align: center;
     color: #ffffff;
+    text-shadow: 0 .0625rem .1875rem rgba(27, 48, 110, .5);
   }
 
   &-content p {
@@ -380,6 +381,7 @@
     line-height: rem(62px);
     text-align: center;
     color: #ffffff;
+    text-shadow: 0 .0625rem .1875rem rgba(27, 48, 110, .5);
   }
 
   p {
@@ -495,7 +497,7 @@
     margin-right: auto;
     margin-left: auto;
 
-    &:hover{
+    &:hover {
       transform: scaleX(1.05) !important;
     }
   }
@@ -728,6 +730,12 @@
   &-media-play-button {
     z-index: 5;
   }
+}
+
+.big-team__more-button {
+  display: none;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @import "./big-team-tablet.scss";

@@ -123,16 +123,11 @@ function getFirstVisibleIndex(object) {
     return Math.floor(-object.offset / (object.size + object.gap));
 }
 
-function getRandomVisibleIndex(object, half, add) {
+function getRandomVisibleIndex(object, add) {
     const off = 1;
     let indexStart = getFirstVisibleIndex(object) + off;
     const height = state.stage.isVertical ? state.stage.height : state.stage.width;
     let indexEnd = indexStart + Math.floor(height / (object.size + object.gap))  - off;
-    if (half < 0) {
-        indexEnd = Math.ceil(indexStart + (indexEnd - indexStart) * 0.5);
-    } else if (half > 0) {
-        indexStart = Math.floor(indexStart + (indexEnd - indexStart) * 0.5);
-    }
     let index = indexStart + Math.floor(Math.random() * (indexEnd - indexStart)) + add;
     if (index < 0) {
         index = object.count + index % object.count;
@@ -142,18 +137,23 @@ function getRandomVisibleIndex(object, half, add) {
     return index;
 }
 
+/**
+ * Select two indexes of exchanges visible on screen and currencies on screen.
+ */
 function createRandomSelection() {
-    // Select two indexes of exchanges visible on screen
-    const index1 = getRandomVisibleIndex(state.columns.buyExchanges, -1, 0);
-    let index2 = index1;
-    while (index2 === index1) {
-        index2 = getRandomVisibleIndex(state.columns.sellExchanges, -1, 0);
-    }
-    const buyExchange = index1;
-    const sellExchange = index2;
-    const currency = getRandomVisibleIndex(state.columns.currencies, 1, 2);
+    const buyExchange = getRandomVisibleIndex(state.columns.buyExchanges, 0);
+    let sellExchange;
+    do {
+      sellExchange = getRandomVisibleIndex(state.columns.sellExchanges, 0);
+    } while (sellExchange === buyExchange);
+    const buyCurrency = getRandomVisibleIndex(state.columns.currencies, 2);
+    let sellCurrency;
+    do {
+      sellCurrency = getRandomVisibleIndex(state.columns.currencies, 2);
+    } while (sellCurrency === buyCurrency);
     return {
-        currency,
+        buyCurrency,
+        sellCurrency,
         buyExchange,
         sellExchange
     };

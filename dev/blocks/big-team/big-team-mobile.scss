@@ -3,7 +3,7 @@
   .big-team__wrapper {
     padding-top: 0;
     padding-right: 0;
-    padding-bottom: 2.35rem;
+    padding-bottom: 3.125rem;
     padding-left: 0;
 
     .slick-prev,
@@ -27,6 +27,7 @@
   .big-team__founders-container {
     display: block;
     margin-top: 2rem;
+    margin-bottom: rem(50px);
     margin-left: rem(24px);
     width: 100%;
 
@@ -457,5 +458,9 @@
         height: rem(156px);
       }
     }
+  }
+
+  .big-team__more-button {
+    display: flex;
   }
 }

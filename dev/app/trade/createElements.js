@@ -11,11 +11,10 @@ const sellExchangesBox = container.querySelector('.sellExchanges-box .scrolling-
 const exchangeBoxTemplate = container.querySelector('defs .exchange-box');
 const currencyBoxTemplate = container.querySelector('defs .currency-box');
 
-function createExchangeBox([imageUrlColored, imageUrlWhite]) {
+function createExchangeBox(imgLink) {
   const node = exchangeBoxTemplate.cloneNode(true);
-  const imgages = node.querySelectorAll('image');
-  imgages[0].setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imageUrlColored);
-  imgages[1].setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imageUrlWhite);
+  const img = node.querySelector('image');
+  img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgLink);
   return node;
 }
 
@@ -39,8 +38,8 @@ function createBoxes(target, creator, object, imageSource) {
     if (index < 0) {
       index = imageSource.length + index;
     }
-    const imageUrls = imageSource[index];
-    const element = creator(imageUrls);
+    const image = imageSource[index];
+    const element = creator(image);
     target.appendChild(element);
   }
 }
@@ -48,7 +47,7 @@ function createBoxes(target, creator, object, imageSource) {
 export function createElements() {
   const currencyIcons = currencies.map(getCurrencyIcon);
   createBoxes(currenciesBox, createCurrencyBox, state.columns.currencies, currencyIcons);
-  const exchangeIcons = exchanges.map(exchange => [getExchangeIcon(exchange), getExchangeIcon(exchange, true)]);
+  const exchangeIcons = exchanges.map(getExchangeIcon);
   createBoxes(buyExchangesBox, createExchangeBox, state.columns.buyExchanges, exchangeIcons);
   createBoxes(sellExchangesBox, createExchangeBox, state.columns.sellExchanges, exchangeIcons);
 }
