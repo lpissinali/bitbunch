@@ -30,6 +30,15 @@
       padding: rem(40px) rem(40px) rem(50px);
       width: rem(668px);
 
+      &::before {
+        top: rem(-10px);
+        right: rem(-178px);
+        width: rem(356px);
+        height: rem(600px);
+        opacity: .3;
+        transform: skewY(-58deg);
+      }
+
       .our-team__footer-block {
         margin-left: rem(70px);
         width: rem(259px);

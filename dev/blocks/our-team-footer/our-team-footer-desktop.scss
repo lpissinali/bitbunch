@@ -1,7 +1,7 @@
 .our-team__footer {
   position: relative;
   padding-top: rem(100px);
-  padding-bottom: 24px;
+  padding-bottom: rem(24px);
   background: linear-gradient(to right, #324ea3, #3d6dd0);
   overflow: hidden;
 
@@ -29,7 +29,7 @@
       width: 100%;
       height: 100%;
       background-image: url(images/main-footer__decor-desktop.svg);
-      background-position: calc(50% + 66.5rem) bottom;
+      background-position: calc(50% + 67rem) bottom;
       background-size: 100% 100%;
       opacity: 1;
     }
@@ -71,7 +71,23 @@
     padding: rem(42px) rem(46px) rem(41px) rem(42px);
     width: rem(1140px);
     background-color: #fff;
+    overflow: hidden;
     transition: 400ms;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: rem(185px);
+      height: 100%;
+      background-image: url(images/we-earn__descr-container-background.png);
+      background-position: left bottom;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      pointer-events: none;
+    }
 
     &:hover {
       transform: scale(1.05) !important;
