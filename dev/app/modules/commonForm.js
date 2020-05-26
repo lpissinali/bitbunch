@@ -176,6 +176,20 @@ $('select').on('change', (event) => {
   closeTooltip(event.currentTarget);
 });
 
+$('select').on('loaded.bs.select', (event, clickedIndex, isSelected, previousValue) => {
+  if (event.currentTarget.value !== '') {
+      $(event.currentTarget)
+        .parents('.form-group')
+        .find('.bootstrap-select-placeholder')
+        .addClass('has-content');
+    } else {
+      $(event.currentTarget)
+        .parents('.form-group')
+        .find('.bootstrap-select-placeholder')
+        .removeClass('has-content');
+  }
+});
+
 $('select').on('show.bs.select', (event, clickedIndex, isSelected, previousValue) => {
   closeTooltip(event.currentTarget);
 });
