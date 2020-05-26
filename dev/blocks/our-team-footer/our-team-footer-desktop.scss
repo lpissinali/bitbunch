@@ -8,7 +8,7 @@
     content: "";
     position: absolute;
     top: rem(-40px);
-    right: rem(-158px);
+    right: rem(-186px);
     display: block;
     width: 35rem;
     height: rem(650px);
@@ -56,6 +56,21 @@
     padding: rem(42px) rem(46px) rem(41px) rem(42px);
     width: rem(1140px);
     background-color: #fff;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 12.75rem;
+      height: 100%;
+      background-image: url("./images/we-earn__descr-container-background.png");
+      background-position: left bottom;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      pointer-events: none;
+    }
 
     .our-team__footer-block {
       flex-direction: column;

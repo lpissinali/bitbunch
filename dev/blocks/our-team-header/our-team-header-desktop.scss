@@ -48,6 +48,7 @@
 
     .our-team-header__video-poster {
       transform: scale(1.03) !important;
+      transition: 400ms ease;
     }
   }
 }
@@ -86,7 +87,6 @@
   background-size: contain;
   cursor: pointer;
   transform-origin: center center;
-  transition: 400ms ease;
 
   &::after {
     content: "";
