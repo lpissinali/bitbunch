@@ -78,14 +78,12 @@
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-  transform-origin: center center;
+  opacity: 0;
   transition: 400ms ease;
-
-
+  transform-origin: center center;
 
   &:hover {
-
-      transform: scale(1.03) !important;
+    transform: scale(1.03) !important;
   }
 
   &::after {

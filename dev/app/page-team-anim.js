@@ -3,11 +3,12 @@ $(document).ready(() => {
   if (document.querySelector('.our-team-header')) {
     const controller = new ScrollMagic.Controller();
 
-    function AnimationScene(section, tween, durationTime) {
+    function AnimationScene(section, tween, durationTime, offsetValue) {
       const scene = new ScrollMagic.Scene({
         triggerElement: section,
         triggerHook: 0.55,
         duration: durationTime,
+        offset: offsetValue,
       })
         .reverse(true)
         .setTween(tween)
@@ -24,7 +25,7 @@ $(document).ready(() => {
         0.4
       );
       tl_team_header.from('.our-team-header__video-poster', 0.5, { scale: '.8', opacity: 0 }, 0.4);
-      tl_team_header.from('.our-team-header__video-bg', 0.5, { scale: '.8', opacity: 0 }, 0.5);
+      tl_team_header.from('.our-team-header__video-bg', 0.5, { scale: '.8', opacity: 0 }, 0.6);
       AnimationScene('.our-team-header', tl_team_header);
     }
 
@@ -79,35 +80,17 @@ $(document).ready(() => {
     if (document.querySelector('.our-team__core-developers-container')) {
       const tl_team_developers_1 = new TimelineMax();
       tl_team_developers_1.from('#anim-core-developers-1', 0.7, { y: '15%', opacity: 0 }, 1.3);
-      tl_team_developers_1.from('#anim-core-developers-2', 0.7, { y: '15%', opacity: 0 }, 1.6);
-      tl_team_developers_1.from('#anim-core-developers-3', 0.7, { y: '15%', opacity: 0 }, 1.9);
-      tl_team_developers_1.from('#anim-core-developers-4', 0.7, { y: '15%', opacity: 0 }, 2.1);
+      tl_team_developers_1.from('#anim-core-developers-2', 0.7, { y: '15%', opacity: 0 }, 1.8);
+      tl_team_developers_1.from('#anim-core-developers-3', 0.7, { y: '15%', opacity: 0 }, 2.3);
+      tl_team_developers_1.from('#anim-core-developers-4', 0.7, { y: '15%', opacity: 0 }, 2.8);
 
       AnimationScene('.our-team__core-developers-container', tl_team_developers_1, '25%');
     }
 
-    // if (document.querySelector('#anim-core-developers-2')) {
-    //   const tl_team_developers_1 = new TimelineMax();
-    //   tl_team_developers_1.from('#anim-core-developers-2', 0.8, { y: '50%', opacity: 0 });
-    //   AnimationScene('#anim-core-developers-2', tl_team_developers_1, '50%');
-    // }
-
-    // if (document.querySelector('#anim-core-developers-3')) {
-    //   const tl_team_developers_1 = new TimelineMax();
-    //   tl_team_developers_1.from('#anim-core-developers-3', 0.8, { y: '50%', opacity: 0 });
-    //   AnimationScene('#anim-core-developers-3', tl_team_developers_1, '50%');
-    // }
-
-    // if (document.querySelector('#anim-core-developers-4')) {
-    //   const tl_team_developers_1 = new TimelineMax();
-    //   tl_team_developers_1.from('#anim-core-developers-4', 0.8, { y: '50%', opacity: 0 });
-    //   AnimationScene('#anim-core-developers-4', tl_team_developers_1, '50%');
-    // }
-
-    if (document.querySelector('.our-team__core-developers-container')) {
+    if (document.querySelector('#anim-core-developers-5')) {
       const tl_team_developers_2 = new TimelineMax();
-      tl_team_developers_2.from('#anim-core-developers-5', 0.7, { y: '50%', opacity: 0 }, 0.1);
-      AnimationScene('.our-team__core-developers-container', tl_team_developers_2, '90%');
+      tl_team_developers_2.from('#anim-core-developers-5', 0.5, { y: '100%', opacity: 0 });
+      AnimationScene('#anim-core-developers-5', tl_team_developers_2, '10%', '-250px');
     }
 
     // our-team description
@@ -115,35 +98,35 @@ $(document).ready(() => {
       const tl_team_description = new TimelineMax();
       tl_team_description.from('#anim-description-trigger-content-1', 1, { x: '-60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-1 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-1 ul', 0.5, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-1 ul', 1, { y: '120%', opacity: 0 });
       AnimationScene('#anim-description-trigger-1', tl_team_description, '50%');
     }
     if (document.querySelector('#anim-description-trigger-2')) {
       const tl_team_description = new TimelineMax();
       tl_team_description.from('#anim-description-trigger-content-2', 1, { x: '60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-2 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-2 ul', 0.5, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-2 ul', 1, { y: '120%', opacity: 0 });
       AnimationScene('#anim-description-trigger-2', tl_team_description, '50%');
     }
     if (document.querySelector('#anim-description-trigger-3')) {
       const tl_team_description = new TimelineMax();
       tl_team_description.from('#anim-description-trigger-content-3', 1, { x: '-60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-3 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-3 ul', 0.5, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-3 ul', 1, { y: '120%', opacity: 0 });
       AnimationScene('#anim-description-trigger-3', tl_team_description, '50%');
     }
     if (document.querySelector('#anim-description-trigger-4')) {
       const tl_team_description = new TimelineMax();
       tl_team_description.from('#anim-description-trigger-content-4', 1, { x: '-60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-4 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-4 ul', 0.5, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-4 ul', 1, { y: '120%', opacity: 0 });
       AnimationScene('#anim-description-trigger-4', tl_team_description, '50%');
     }
     if (document.querySelector('#anim-description-trigger-5')) {
       const tl_team_description = new TimelineMax();
       tl_team_description.from('#anim-description-trigger-content-5', 1, { x: '60%', opacity: 0 });
       tl_team_description.from('#anim-description-trigger-5 img', 1, { opacity: 0 });
-      tl_team_description.from('#anim-description-trigger-5 ul', 0.5, { y: '100%', opacity: 0 });
+      tl_team_description.from('#anim-description-trigger-5 ul', 1, { y: '120%', opacity: 0 });
       AnimationScene('#anim-description-trigger-5', tl_team_description, '50%');
     }
 
