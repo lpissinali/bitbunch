@@ -480,8 +480,8 @@ export function initShowMore() {
   const buyExchangeName = exchanges[trade.buyExchange];
   const sellExchangeName = exchanges[trade.sellExchange];
 
-  const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice, currencyCode);
-  const boughtInWalletCurrency = formatCurrency(trade.amount, walletCurrency);
+  const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice);
+  const boughtInWalletCurrency = formatCurrency(trade.amount);
 
   let time = formatTime(state.trade.current.startTime);
   time = `at <span style="white-space: nowrap;"> ${time}</span>`;
@@ -489,8 +489,7 @@ export function initShowMore() {
 
   const soldInTargetCurrency = boughtInTargetCurrency;
   const soldInWalletCurrency = formatCurrency(
-    boughtInTargetCurrency / trade.sellPrice,
-    walletCurrency
+    boughtInTargetCurrency / trade.sellPrice
   );
 
   time = formatTime(state.trade.current.endTime);

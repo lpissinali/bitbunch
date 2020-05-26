@@ -49,7 +49,7 @@ export function initTradeProcess(tradeState) {
     currencyNameNode.textContent = `${currencyName}(${currencyCode})`;
 
     const profitValueNode = activeTrade.querySelector('.profit-value');
-    profitValueNode.textContent = formatCurrency(trade.profit, walletCurrencyCode);
+    profitValueNode.textContent = formatCurrency(trade.profit);
     const profitCurrencyNode = activeTrade.querySelector('.profit-currency');
     profitCurrencyNode.textContent = trade.wallet.toUpperCase();
 
@@ -79,8 +79,8 @@ export function initBuyInfo(tradeState) {
     const activeTrade = tradeRenderers[trade.id].activeTrade;
 
     const buyInfoNode = activeTrade.querySelector('.buy-info');
-    const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice, currencyCode);
-    const boughtInWalletCurrency = formatCurrency(trade.amount, walletCurrencyCode);
+    const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice);
+    const boughtInWalletCurrency = formatCurrency(trade.amount);
     let boughtTime = formatTime(trade.startTime);
     boughtTime = `<span style="white-space: nowrap;">at <strong>${boughtTime}</strong></span>`;
     buyInfoNode.innerHTML = `Bought <strong>${boughtInTargetCurrency}</strong> ${currencyCode}
@@ -93,7 +93,7 @@ export function initBuyInfo(tradeState) {
     buyExchangeNameNode.textContent = buyExchangeName;
 
     const buyRateNode = activeTrade.querySelector('.buy-rate');
-    buyRateNode.textContent = `${formatCurrency(1/trade.buyPrice, walletCurrencyCode)} ${walletCurrencyCode}`;
+    buyRateNode.textContent = `${formatCurrency(1/trade.buyPrice)} ${walletCurrencyCode}`;
 }
 
 export function updateSellExchange(tradeState) {
@@ -121,14 +121,14 @@ export function initSellInfo(tradeState) {
 
     const sellRateNode = activeTradeNode.querySelector('.sell-rate');
     if (trade.status === 'completed') {
-        sellRateNode.textContent = `${formatCurrency(1/trade.sellPrice, walletCurrencyCode)} ${walletCurrencyCode}`;
+        sellRateNode.textContent = `${formatCurrency(1/trade.sellPrice)} ${walletCurrencyCode}`;
     } else {
         sellRateNode.textContent = '';
     }
 
     if (trade.status === 'completed') {
-        const soldInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice, currencyCode);
-        const soldInWalletCurrency = formatCurrency(trade.amount * trade.buyPrice / trade.sellPrice , walletCurrencyCode);
+        const soldInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice);
+        const soldInWalletCurrency = formatCurrency(trade.amount * trade.buyPrice / trade.sellPrice);
         let soldTime = formatTime(trade.endTime);
         soldTime = `<span style="white-space: nowrap;">at <strong>${soldTime}</strong></span>`;
         sellInfoNode.innerHTML = `Sold <strong>${soldInTargetCurrency}</strong> ${currencyCode}
