@@ -53,10 +53,9 @@
   margin-left: auto;
   width: 6.25rem;
   height: 2.625rem;
-  border: 1px solid $orange;
   border-radius: .125rem;
   box-shadow: 0 .125rem .25rem rgba(93, 88, 88, .1);
-  background-color: #353f63;
+  background-color: $orange;
   font-family: $main-font-bold;
   font-size: .875rem;
   color: $white;
@@ -64,7 +63,6 @@
   transform-origin: center;
 
   &:hover {
-    background-color: $orange;
     transform: scaleX(1.1);
   }
 }
