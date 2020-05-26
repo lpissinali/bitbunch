@@ -362,6 +362,16 @@
 
     .slick-dots {
       margin-top: rem(21px);
+      padding-right: 0;
+
+      li {
+        height: rem(1px);
+
+        &.slick-active {
+          height: rem(3px);
+          border-radius: rem(1.5px);
+        }
+      }
     }
 
     h3 {

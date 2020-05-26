@@ -29,17 +29,31 @@ $(document).ready(() => {
     }
 
     // our-team success
-    if (document.querySelector('#anim-success-trigger')) {
+
+    if (window.matchMedia('(max-width: 1920px)').matches) {
+      if (document.querySelector('#anim-success-trigger')) {
+        const tl_team_success = new TimelineMax();
+        tl_team_success.from('#anim-success-1', 2.2, { x: '-100%', opacity: 0 });
+        tl_team_success.from('#anim-success-5, #anim-success-6', 0.8, {
+          scale: '.8',
+          opacity: 0,
+        });
+        tl_team_success.from('#anim-success-2', 0.8, { scale: '.8', opacity: 0 });
+        tl_team_success.from('#anim-success-3', 0.8, { scale: '.8', opacity: 0 });
+        tl_team_success.from('#anim-success-4', 0.8, { scale: '.8', opacity: 0 });
+        AnimationScene('#anim-success-trigger', tl_team_success, 500);
+      }
+    } else {
       const tl_team_success = new TimelineMax();
-      tl_team_success.from('#anim-success-1', 2.2, { x: '-100%', opacity: 0 });
-      tl_team_success.from('#anim-success-5, #anim-success-6', 0.8, {
+      tl_team_success.from('#anim-success-1', 1.2, { x: '-100%', opacity: 0 });
+      tl_team_success.from('#anim-success-5, #anim-success-6', 0.5, {
         scale: '.8',
         opacity: 0,
       });
-      tl_team_success.from('#anim-success-2', 0.8, { scale: '.8', opacity: 0 });
-      tl_team_success.from('#anim-success-3', 0.8, { scale: '.8', opacity: 0 });
-      tl_team_success.from('#anim-success-4', 0.8, { scale: '.8', opacity: 0 });
-      AnimationScene('#anim-success-trigger', tl_team_success, 500);
+      tl_team_success.from('#anim-success-2', 0.5, { scale: '.8', opacity: 0 });
+      tl_team_success.from('#anim-success-3', 0.5, { scale: '.8', opacity: 0 });
+      tl_team_success.from('#anim-success-4', 0.5, { scale: '.8', opacity: 0 });
+      AnimationScene('.our-team-header', tl_team_success);
     }
 
     // our-team founders

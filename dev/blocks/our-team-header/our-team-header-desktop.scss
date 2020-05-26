@@ -43,14 +43,6 @@
   .our-team-header__headline {
     display: none;
   }
-
-  &:hover {
-
-    .our-team-header__video-poster {
-      transform: scale(1.03) !important;
-      transition: 400ms ease;
-    }
-  }
 }
 
 .our-team-header__video-bg {
@@ -87,6 +79,14 @@
   background-size: contain;
   cursor: pointer;
   transform-origin: center center;
+  transition: 400ms ease;
+
+
+
+  &:hover {
+
+      transform: scale(1.03) !important;
+  }
 
   &::after {
     content: "";
