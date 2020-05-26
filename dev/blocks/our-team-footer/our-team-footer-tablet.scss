@@ -4,9 +4,9 @@
     padding-top: rem(48px);
 
     &::after {
+      right: 0;
       width: 12.6875rem;
       height: 50rem;
-      right: 0;
       background-size: auto 50rem;
     }
   }
@@ -29,6 +29,13 @@
       flex-wrap: wrap;
       padding: rem(40px) rem(40px) rem(50px);
       width: rem(668px);
+
+      &:before {
+        right: 0;
+        left: auto;
+        width: 6.5rem;
+        background-image: url("./images/we-earn__descr-container-bg-tablet.png");
+      }
 
       .our-team__footer-block {
         margin-left: rem(70px);
