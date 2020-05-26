@@ -150,22 +150,61 @@ $(document).ready(() => {
 
     if (document.querySelector('#anim-founders-container-1')) {
       const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-founders-container-1', 0.7, { scale: '.85', opacity: 0 }, 1.3);
-      tl_team_developers_1.from('#anim-founders-container-2', 0.7, {  scale: '.85', opacity: 0 }, 1.6);
-      tl_team_developers_1.from('#anim-founders-container-3', 0.7, {  scale: '.85', opacity: 0 }, 1.9);
-      tl_team_developers_1.from('#anim-founders-container-4', 0.7, {  scale: '.85', opacity: 0 }, 2.1);
+      tl_team_developers_1.from(
+        '#anim-founders-container-1',
+        0.7,
+        { scale: '.85', opacity: 0 },
+        1.3
+      );
+      tl_team_developers_1.from(
+        '#anim-founders-container-2',
+        0.7,
+        { scale: '.85', opacity: 0 },
+        1.6
+      );
+      tl_team_developers_1.from(
+        '#anim-founders-container-3',
+        0.7,
+        { scale: '.85', opacity: 0 },
+        1.9
+      );
+      tl_team_developers_1.from(
+        '#anim-founders-container-4',
+        0.7,
+        { scale: '.85', opacity: 0 },
+        2.1
+      );
       AnimationScene('#anim-founders-container-1', tl_team_developers_1, 500);
     }
 
     if (document.querySelector('#anim-founders-container-2')) {
       const tl_team_developers_2 = new TimelineMax();
-      tl_team_developers_2.from('#anim-founders-container-5', 0.7, { scale: '.85', opacity: 0 }, 1.3);
-      tl_team_developers_2.from('#anim-founders-container-6', 0.7, {  scale: '.85', opacity: 0 }, 1.6);
-      tl_team_developers_2.from('#anim-founders-container-7', 0.7, {  scale: '.85', opacity: 0 }, 1.9);
-      tl_team_developers_2.from('#anim-founders-container-8', 0.7, {  scale: '.85', opacity: 0 }, 2.1);
+      tl_team_developers_2.from(
+        '#anim-founders-container-5',
+        0.7,
+        { scale: '.85', opacity: 0 },
+        1.3
+      );
+      tl_team_developers_2.from(
+        '#anim-founders-container-6',
+        0.7,
+        { scale: '.85', opacity: 0 },
+        1.6
+      );
+      tl_team_developers_2.from(
+        '#anim-founders-container-7',
+        0.7,
+        { scale: '.85', opacity: 0 },
+        1.9
+      );
+      tl_team_developers_2.from(
+        '#anim-founders-container-8',
+        0.7,
+        { scale: '.85', opacity: 0 },
+        2.1
+      );
       AnimationScene('#anim-founders-container-2', tl_team_developers_2, 1000);
     }
-
 
     // our team footer
     if (document.querySelector('#anim-footer-trigger')) {
