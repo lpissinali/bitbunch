@@ -5,9 +5,16 @@
 
     &::after {
       right: 0;
-      width: rem(180px);
+      width: rem(280px);
       height: 50rem;
       background-size: auto 50rem;
+    }
+
+    ~ .main-footer {
+
+      &:after {
+        width: rem(427px);
+      }
     }
   }
 
@@ -32,11 +39,10 @@
 
       &::before {
         top: rem(-10px);
-        right: rem(-178px);
+        right: rem(-221px);
         width: rem(356px);
         height: rem(600px);
         opacity: .3;
-        transform: skewY(-58deg);
       }
 
       .our-team__footer-block {

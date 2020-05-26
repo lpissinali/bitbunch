@@ -16,8 +16,8 @@
 
     ~ .main-footer {
 
-      &::after {
-        width: rem(210px) !important;
+      &:after {
+        width: rem(210px);
       }
     }
   }
@@ -43,11 +43,11 @@
       width: rem(272px);
 
       &::before {
-        right: rem(-95px);
-        width: rem(191px);
-        height: rem(730px);
-        background-image: url(./images/we-earn__descr-container-bg-mobile.svg);
-        transform: none;
+        top: 0;
+        right: rem(-205px);
+        width: rem(255px);
+        height: 100%;
+        transform: skew(-6.8deg);
       }
 
       .our-team__footer-block {

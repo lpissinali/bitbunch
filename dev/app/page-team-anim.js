@@ -41,7 +41,7 @@ $(document).ready(() => {
         tl_team_success.from('#anim-success-2', 0.8, { scale: '.8', opacity: 0 });
         tl_team_success.from('#anim-success-3', 0.8, { scale: '.8', opacity: 0 });
         tl_team_success.from('#anim-success-4', 0.8, { scale: '.8', opacity: 0 });
-        AnimationScene('#anim-success-trigger', tl_team_success, '50%');
+        AnimationScene('#anim-success-trigger', tl_team_success, '65%');
       }
     } else {
       const tl_team_success = new TimelineMax();
@@ -83,7 +83,7 @@ $(document).ready(() => {
       tl_team_developers_1.from('#anim-core-developers-3', 0.7, { y: '15%', opacity: 0 }, 1.9);
       tl_team_developers_1.from('#anim-core-developers-4', 0.7, { y: '15%', opacity: 0 }, 2.1);
 
-      AnimationScene('.our-team__core-developers-container', tl_team_developers_1, '50%');
+      AnimationScene('.our-team__core-developers-container', tl_team_developers_1, '25%');
     }
 
     // if (document.querySelector('#anim-core-developers-2')) {
@@ -104,10 +104,10 @@ $(document).ready(() => {
     //   AnimationScene('#anim-core-developers-4', tl_team_developers_1, '50%');
     // }
 
-    if (document.querySelector('#anim-core-developers-5')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-core-developers-5', 0.3, { y: '50%', opacity: 0 });
-      AnimationScene('#anim-core-developers-5', tl_team_developers_1, '10%');
+    if (document.querySelector('.our-team__core-developers-container')) {
+      const tl_team_developers_2 = new TimelineMax();
+      tl_team_developers_2.from('#anim-core-developers-5', 0.7, { y: '50%', opacity: 0 }, 0.1);
+      AnimationScene('.our-team__core-developers-container', tl_team_developers_2, '90%');
     }
 
     // our-team description
