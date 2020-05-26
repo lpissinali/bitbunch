@@ -495,7 +495,7 @@
     margin-right: auto;
     margin-left: auto;
 
-    &:hover{
+    &:hover {
       transform: scaleX(1.05) !important;
     }
   }
@@ -728,6 +728,12 @@
   &-media-play-button {
     z-index: 5;
   }
+}
+
+.big-team__more-button {
+  display: none;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @import "./big-team-tablet.scss";
