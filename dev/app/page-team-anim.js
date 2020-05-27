@@ -217,7 +217,7 @@ $(document).ready(() => {
       tl_team_footer.from('#anim-footer-5', 0.7, { y: '100%', opacity: 0 }, 1.6);
       tl_team_footer.from('#anim-footer-6', 0.7, { y: '100%', opacity: 0 }, 1.9);
       tl_team_footer.from('#anim-footer-7', 0.7, { y: '100%', opacity: 0 }, 2.1);
-      AnimationScene('#anim-footer-trigger', tl_team_footer, '50%');
+      AnimationScene('#anim-footer-trigger', tl_team_footer, '35%');
     }
   }
 });
