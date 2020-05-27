@@ -84,7 +84,7 @@ $(document).ready(() => {
       tl_team_developers_1.from('#anim-core-developers-3', 0.7, { y: '15%', opacity: 0 }, 2.3);
       tl_team_developers_1.from('#anim-core-developers-4', 0.7, { y: '15%', opacity: 0 }, 2.8);
 
-      AnimationScene('.our-team__core-developers-container', tl_team_developers_1, '25%');
+      AnimationScene('.our-team__core-developers-container', tl_team_developers_1, '20%');
     }
 
     if (document.querySelector('#anim-core-developers-5')) {
