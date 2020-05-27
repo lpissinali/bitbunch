@@ -18,14 +18,12 @@ $(document).ready(() => {
     // our-team header
     if (document.querySelector('.our-team-header')) {
       const tl_team_header = new TimelineMax();
-      tl_team_header.from(
-        '.our-team-header__headline-block, .our-team-header__headline',
-        0.5,
-        { y: '40%', opacity: 0 },
-        0.4
-      );
-      tl_team_header.from('.our-team-header__video-poster', 0.5, { scale: '.8', opacity: 0 }, 0.4);
-      tl_team_header.from('.our-team-header__video-bg', 0.5, { scale: '.8', opacity: 0 }, 0.6);
+      tl_team_header.from('.our-team-header__headline-block, .our-team-header__headline', 0.6, {
+        y: '40%',
+        opacity: 0,
+      });
+      tl_team_header.from('.our-team-header__video-poster', 0.3, { scale: '.8', opacity: 0 });
+      tl_team_header.from('.our-team-header__video-bg', 0.6, { scale: '.95', opacity: 0 });
       AnimationScene('.our-team-header', tl_team_header);
     }
 
