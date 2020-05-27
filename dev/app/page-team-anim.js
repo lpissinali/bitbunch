@@ -25,6 +25,9 @@ $(document).ready(() => {
       tl_team_header.from('.our-team-header__video-poster', 0.3, { scale: '.8', opacity: 0 });
       tl_team_header.from('.our-team-header__video-bg', 0.6, { scale: '.95', opacity: 0 });
       AnimationScene('.our-team-header', tl_team_header);
+      setTimeout(() => {
+        $('.our-team-header__video-poster').addClass('if-hover');
+      }, 1000);
     }
 
     // our-team success

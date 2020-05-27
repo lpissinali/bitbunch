@@ -54,7 +54,7 @@
     z-index: 1;
     width: 46rem;
     height: rem(490px);
-    background-image: url(images/our-team-header__video-bg-desktop.svg);
+    background-image: url("./images/our-team-header__video-bg-desktop.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -78,9 +78,11 @@
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-  opacity: 0;
-  transition: 400ms ease;
   transform-origin: center center;
+
+  &.if-hover {
+    transition: 400ms ease;
+  }
 
   &:hover {
     transform: scale(1.03) !important;
