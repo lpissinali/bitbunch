@@ -175,7 +175,7 @@ $(document).ready(() => {
         { scale: '.85', opacity: 0 },
         2.1
       );
-      AnimationScene('#anim-founders-container-1', tl_team_developers_1, '50%');
+      AnimationScene('#anim-founders-container-1', tl_team_developers_1, '25%');
     }
 
     if (document.querySelector('#anim-founders-container-2')) {
@@ -204,7 +204,7 @@ $(document).ready(() => {
         { scale: '.85', opacity: 0 },
         2.1
       );
-      AnimationScene('#anim-founders-container-2', tl_team_developers_2, '100%');
+      AnimationScene('#anim-founders-container-2', tl_team_developers_2, '80%');
     }
 
     // our team footer
