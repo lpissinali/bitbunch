@@ -15,7 +15,7 @@ function hideCookiesBar() {
 }
 
 if (document.querySelector('.cookies-bar')) {
-  if (!sessionStorage.getItem('cookiesBar')) {
+  if (!localStorage.getItem('cookiesBar')) {
     let cookieBarEnabled = true;
     $(window).scroll(() => {
       if ($(window).scrollTop() > 100 && cookieBarEnabled === true) {
@@ -26,7 +26,7 @@ if (document.querySelector('.cookies-bar')) {
     $('.cookies-bar__close-button').click(() => {
       hideCookiesBar();
       cookieBarEnabled = false;
-      sessionStorage.setItem('cookiesBar', 'closed');
+      localStorage.setItem('cookiesBar', 'closed');
     });
   }
 }

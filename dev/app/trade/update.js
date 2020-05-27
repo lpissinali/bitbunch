@@ -1,23 +1,17 @@
-import anime from 'animejs';
-import { state } from './state';
+import anime from "animejs";
+import { state } from "./state";
 import {
-  VERTICAL_EXCHANGES_WIDTH,
   HORIZONTAL_EXCHANGES_HEIGHT,
+  HORIZONTAL_SELECTED_CURRENCY_HEIGHT,
   SELECT_COLUMN_WIDTH,
-  SELECTED_EXCHANGE_WIDTH,
-  SELECTED_CURRENCY_WIDTH,
   SELECTED_CURRENCY_HEIGHT,
   SELECTED_CURRENCY_HEIGHT_SUCCESS,
-  HORIZONTAL_SELECTED_CURRENCY_HEIGHT,
-} from './layout';
-import {
-  exchanges,
-  currencies,
-  currencyCodeToName,
-  getCurrencyIcon,
-  getExchangeIcon,
-} from './model';
-import { formatCurrency, formatTime } from './utils';
+  SELECTED_CURRENCY_WIDTH,
+  SELECTED_EXCHANGE_WIDTH,
+  VERTICAL_EXCHANGES_WIDTH
+} from "./layout";
+import { currencies, currencyCodeToName, exchanges, getCurrencyIcon, getExchangeIcon } from "./model";
+import { formatCurrency, formatTime } from "./utils";
 
 const container = document.getElementById('trade-display');
 const currenciesScroll = container.querySelector('.currencies-box .scrolling-area');
@@ -170,10 +164,18 @@ export function updateExchangeMarkers(newSelection) {
 }
 
 function updateLineGradient(lineGradient, {x1, y1, x2, y2}) {
-  lineGradient.setAttribute('x1', x1);
-  lineGradient.setAttribute('y1', y1);
-  lineGradient.setAttribute('x2', x2);
-  lineGradient.setAttribute('y2', y2);
+  if (typeof x1 === 'number') {
+    lineGradient.setAttribute('x1', x1);
+  }
+  if (typeof y1 === 'number') {
+    lineGradient.setAttribute('y1', y1);
+  }
+  if (typeof x2 === 'number') {
+    lineGradient.setAttribute('x2', x2);
+  }
+  if (typeof y2 === 'number') {
+    lineGradient.setAttribute('y2', y2);
+  }
 }
 
 export function updateLines() {
@@ -195,10 +197,13 @@ export function updateLines() {
         - state.columns.currencies.size * 0.5
         - state.expandProgress * expandDelta;
       const targetX = xFrom + (xTo - xFrom) * state.lineProgress;
-      const targetY1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
-      const targetY2 = getTargetOffset(buyCurrency, state.columns.currencies);
-      const y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
-      const positions = { x1: xFrom, x2: targetX, y1: targetY1, y2 };
+      const positions = { x1: xFrom, x2: targetX };
+      if (!state.isClosingInstantTrade) {
+        const targetY1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
+        positions.y1 = targetY1;
+        const targetY2 = getTargetOffset(buyCurrency, state.columns.currencies);
+        positions.y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
+      }
       anime.set(line1, positions);
       updateLineGradient(line1Gradient, positions)
     }
@@ -210,10 +215,13 @@ export function updateLines() {
         + state.columns.currencies.size * 0.5
         + state.expandProgress * expandDelta;
       const targetX = xFrom + (xTo - xFrom) * state.lineProgress;
-      const targetY1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
-      const targetY2 = getTargetOffset(sellCurrency, state.columns.currencies);
-      const y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
-      const positions = { x1: xFrom, x2: targetX, y1: targetY1, y2 };
+      const positions = { x1: xFrom, x2: targetX };
+      if (!state.isClosingInstantTrade) {
+        const targetY1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
+        positions.y1 = targetY1;
+        const targetY2 = getTargetOffset(sellCurrency, state.columns.currencies);
+        positions.y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
+      }
       anime.set(line2, positions);
       updateLineGradient(line2Gradient, positions)
     }
@@ -225,10 +233,13 @@ export function updateLines() {
         - state.columns.currencies.size * 0.5
         - state.showMoreProgress * expandDelta;
       const targetY = yFrom + (yTo - yFrom) * state.lineProgress;
-      const targetX1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
-      const targetX2 = getTargetOffset(buyCurrency, state.columns.currencies);
-      const x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
-      const positions = { x1: targetX1, x2, y1: yFrom, y2: targetY };
+      const positions = { y1: yFrom, y2: targetY };
+      if (!state.isClosingInstantTrade) {
+        const targetX1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
+        positions.x1 = targetX1;
+        const targetX2 = getTargetOffset(buyCurrency, state.columns.currencies);
+        positions.x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
+      }
       anime.set(line1, positions);
       updateLineGradient(line1Gradient, positions)
     }
@@ -238,10 +249,13 @@ export function updateLines() {
         + state.columns.currencies.size * 0.5
         + state.showMoreProgress * expandDelta;
       const targetY = yFrom + (yTo - yFrom) * state.lineProgress;
-      const targetX1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
-      const targetX2 = getTargetOffset(sellCurrency, state.columns.currencies);
-      const x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
-      const positions = { x1: targetX1, x2, y1: yFrom, y2: targetY };
+      const positions = { y1: yFrom, y2: targetY };
+      if (!state.isClosingInstantTrade) {
+        const targetX1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
+        positions.x1 = targetX1;
+        const targetX2 = getTargetOffset(sellCurrency, state.columns.currencies);
+        positions.x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
+      }
       anime.set(line2, positions);
       updateLineGradient(line2Gradient, positions)
     }
@@ -466,8 +480,8 @@ export function initShowMore() {
   const buyExchangeName = exchanges[trade.buyExchange];
   const sellExchangeName = exchanges[trade.sellExchange];
 
-  const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice, currencyCode);
-  const boughtInWalletCurrency = formatCurrency(trade.amount, walletCurrency);
+  const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice);
+  const boughtInWalletCurrency = formatCurrency(trade.amount, 7);
 
   let time = formatTime(state.trade.current.startTime);
   time = `at <span style="white-space: nowrap;"> ${time}</span>`;
@@ -476,7 +490,7 @@ export function initShowMore() {
   const soldInTargetCurrency = boughtInTargetCurrency;
   const soldInWalletCurrency = formatCurrency(
     boughtInTargetCurrency / trade.sellPrice,
-    walletCurrency
+    7
   );
 
   time = formatTime(state.trade.current.endTime);

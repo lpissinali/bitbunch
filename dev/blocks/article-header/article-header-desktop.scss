@@ -32,6 +32,11 @@
   .user-panel__sign-in-button {
     font-family: $main-font-semi-bold;
     color: #091540;
+    opacity: 1;
+
+    &:after {
+      background-color: #091540;
+    }
   }
 }
 
