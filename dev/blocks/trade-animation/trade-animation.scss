@@ -239,6 +239,7 @@
       .instant-trade {
         letter-spacing: .39px;
         color: #091540;
+        font-size: 17px;
       }
 
       &.vertical-expanded {
@@ -292,7 +293,7 @@
       .value {
         font-family: $main-font-bold;
         font-size: 42px;
-        color: #FA8F68;
+        color: #FA8F68!important;
       }
       
       .btns {
