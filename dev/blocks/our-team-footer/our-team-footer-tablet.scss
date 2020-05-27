@@ -5,9 +5,16 @@
 
     &::after {
       right: 0;
-      width: 12.6875rem;
+      width: rem(280px);
       height: 50rem;
       background-size: auto 50rem;
+    }
+
+    ~ .main-footer {
+
+      &:after {
+        width: rem(427px);
+      }
     }
   }
 
@@ -30,11 +37,12 @@
       padding: rem(40px) rem(40px) rem(50px);
       width: rem(668px);
 
-      &:before {
-        right: 0;
-        left: auto;
-        width: 6.5rem;
-        background-image: url("./images/we-earn__descr-container-bg-tablet.png");
+      &::before {
+        top: rem(-10px);
+        right: rem(-221px);
+        width: rem(356px);
+        height: rem(600px);
+        opacity: .3;
       }
 
       .our-team__footer-block {

@@ -6,11 +6,19 @@
       top: -2.5rem;
 
       right: 0;
-      width: rem(150px);
+      z-index: 1;
+      width: rem(135px);
       height: rem(1000px);
       background-image: url(images/our-team__footer-bg-mobile.svg);
       background-position: right;
       background-size: 100% 100%;
+    }
+
+    ~ .main-footer {
+
+      &:after {
+        width: rem(210px);
+      }
     }
   }
 
@@ -29,13 +37,17 @@
     }
 
     .our-team__footer-blocks {
+      z-index: 5 !important;
       flex-wrap: wrap;
       padding: rem(19px) rem(30px) rem(32px);
       width: rem(272px);
 
-      &:before {
-        width: 2.5rem;
-        background-image: url("./images/we-earn__descr-container-bg-mobile.png");
+      &::before {
+        top: 0;
+        right: rem(-205px);
+        width: rem(255px);
+        height: 100%;
+        transform: skew(-6.8deg);
       }
 
       .our-team__footer-block {

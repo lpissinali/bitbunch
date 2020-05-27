@@ -22,10 +22,10 @@
     justify-content: center;
     margin-top: 1.125rem;
     margin-right: auto;
+
+    margin-bottom: rem(80px);
     margin-left: auto;
     width: 41.8125rem;
-    
-    margin-bottom: rem(80px);
 
     .our-team__member-card {
 
@@ -69,8 +69,8 @@
   }
 
   .big-team__founders-headline {
-    width: rem(389px);
     margin-top: rem(9px);
+    width: rem(389px);
   }
 
   .big-team__founders-subtitle {
@@ -210,19 +210,17 @@
     padding-top: rem(80px);
     padding-bottom: rem(80px);
 
-    
+    #anim-description-trigger-4,
+    #anim-description-trigger-5 {
 
-  #anim-description-trigger-4,
-  #anim-description-trigger-5 {
+      span {
+        display: none;
+      }
 
-    span {
-      display: none;
+      h3 {
+        margin-top: 0;
+      }
     }
-
-    h3{
-      margin-top: 0;
-    }
-  }
 
     &-container {
       width: rem(668px);
@@ -346,6 +344,13 @@
 
       li {
         width: 25%;
+        height: rem(2px);
+        opacity: .2;
+
+        &.slick-active {
+          border-radius: rem(2.5px);
+          opacity: 1;
+        }
       }
 
       button {
