@@ -12,6 +12,7 @@ import {
 } from "./layout";
 import { currencies, currencyCodeToName, exchanges, getCurrencyIcon, getExchangeIcon } from "./model";
 import { formatCurrency, formatTime } from "./utils";
+import { IDLE_SCROLL_SPEED } from "./animations/idle.js";
 
 const container = document.getElementById('trade-display');
 const currenciesScroll = container.querySelector('.currencies-box .scrolling-area');
@@ -160,6 +161,56 @@ export function updateExchangeMarkers(newSelection) {
     anime.set(sellExchangesSelector.children[0], {
       opacity: 1,
     });
+  }
+}
+
+export function scrollBuyExchangeMarkerToCenter() {
+  return scrollExchangeMarkerToCenter(buyExchangesSelector);
+}
+
+export function scrollSellExchangeMarkerToCenter() {
+  return scrollExchangeMarkerToCenter(sellExchangesSelector);
+}
+
+export function scrollExchangeMarkerToCenter(exchangeMarker) {
+  if (state.stage.isVertical) {
+    return scrollExchangeMarkerToCenterVertically(exchangeMarker);
+  } else {
+    return scrollExchangeMarkerToCenterHorizontally(exchangeMarker);
+  }
+}
+
+export function scrollExchangeMarkerToCenterVertically(exchangeMarker) {
+  const initialOffsetY = parseFloat(anime.get(exchangeMarker, 'translateY'));
+  const stageCenterY = state.stage.height / 2;
+  const duration = Math.abs(stageCenterY - initialOffsetY) / IDLE_SCROLL_SPEED;
+  const scrollDirection = initialOffsetY <= stageCenterY ? 1 : -1;
+
+  return {
+    duration,
+    easing: 'linear',
+    update (animation) {
+      anime.set(exchangeMarker, {
+        translateY: initialOffsetY + animation.currentTime * scrollDirection * IDLE_SCROLL_SPEED,
+      });
+    }
+  }
+}
+
+export function scrollExchangeMarkerToCenterHorizontally(exchangeMarker) {
+  const initialOffsetX = parseFloat(anime.get(exchangeMarker, 'translateX'));
+  const stageCenterX = state.stage.width / 2;
+  const duration = Math.abs(stageCenterX - initialOffsetX) / IDLE_SCROLL_SPEED;
+  const scrollDirection = initialOffsetX <= stageCenterX ? 1 : -1;
+
+  return {
+    duration,
+    easing: 'linear',
+    update (animation) {
+      anime.set(exchangeMarker, {
+        translateX: initialOffsetX + animation.currentTime * scrollDirection * IDLE_SCROLL_SPEED,
+      });
+    }
   }
 }
 
