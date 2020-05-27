@@ -76,13 +76,13 @@ $(document).ready(() => {
     }
 
     if (document.querySelector('.our-team__core-developers-container')) {
-      const tl_team_developers_1 = new TimelineMax();
-      tl_team_developers_1.from('#anim-core-developers-1', 2, { y: '15%', opacity: 0 }, 1.3);
-      tl_team_developers_1.from('#anim-core-developers-2', 2, { y: '15%', opacity: 0 }, 1.3);
-      tl_team_developers_1.from('#anim-core-developers-3', 2, { y: '15%', opacity: 0 }, 1.3);
-      tl_team_developers_1.from('#anim-core-developers-4', 2, { y: '15%', opacity: 0 }, 1.3);
+      const tl_team_developers_11 = new TimelineMax();
+      tl_team_developers_11.from('#anim-core-developers-1', 0.3, { y: '15%', opacity: 0 });
+      tl_team_developers_11.from('#anim-core-developers-2', 0.6, { y: '15%', opacity: 0 });
+      tl_team_developers_11.from('#anim-core-developers-3', 0.9, { y: '15%', opacity: 0 });
+      tl_team_developers_11.from('#anim-core-developers-4', 1.2, { y: '15%', opacity: 0 });
 
-      AnimationScene('.our-team__core-developers-container', tl_team_developers_1, '20%');
+      AnimationScene('.our-team__core-developers-container', tl_team_developers_11, '20%');
     }
 
     if (document.querySelector('#anim-core-developers-5')) {
