@@ -516,6 +516,7 @@ export function updateInstantTradeSuccess() {
 
     anime.set(tradeSuccessSection, {
       translateY: offset * (1 - state.successProgress),
+      opacity: state.successProgress
     });
 
     if (state.successProgress === 1) {
@@ -528,6 +529,7 @@ export function updateInstantTradeSuccess() {
 
     anime.set(tradeSuccessSection, {
       translateY: offset * (1 - state.successProgress),
+      opacity: state.successProgress
     });
 
     if (state.successProgress === 1) {
