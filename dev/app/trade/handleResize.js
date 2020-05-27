@@ -16,6 +16,7 @@ import {
   updateSelectRects,
   updateTradeRect,
 } from './update';
+import { clipOffset } from "./animations/helpers.js";
 
 const mainContainer = document.getElementById('trade-exchange');
 const container = document.getElementById('trade-display');
@@ -42,6 +43,7 @@ const activeTradesContainer = document.querySelector('.active-trades-container')
 
 function positionColumn(target, object, columnWidth) {
   let offset = -object.max;
+  object.offset = clipOffset(object.offset, object);
   if (state.stage.isVertical) {
     anime.set(target, {
       translateX: 0,

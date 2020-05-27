@@ -8,7 +8,7 @@ export function clipOffset(offset, object) {
 }
 
 export function scrollColumn(object, delta, duration, updateHandler, name) {
-    let initialOffset = object.offset;
+    let initialOffset;
     return {
         duration: duration,
         easing: 'linear',
