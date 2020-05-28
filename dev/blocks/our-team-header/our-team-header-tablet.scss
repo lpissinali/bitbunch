@@ -34,7 +34,6 @@
   .our-team-header__subtitle {
     margin-top: rem(24.5px);
     width: rem(462px);
-    font-weight: 600;
   }
 
   .our-team-header__were-hiring-button {
@@ -51,7 +50,7 @@
       content: "";
       width: 47rem;
       height: 34.75rem;
-      background-image: url(images/our-team-header__video-bg-tablet.svg);
+      background-image: url("./images/our-team-header__video-bg-tablet.svg");
       transform: translate(-6.5%, -16%);
     }
   }
