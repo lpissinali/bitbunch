@@ -28,6 +28,7 @@ import { clipOffset, scrollColumn, listenForClose } from './helpers';
 import { SELECTED_EXCHANGE_WIDTH } from '../layout';
 import { IDLE_SCROLL_SPEED } from "./idle.js";
 import { SELECTED_CURRENCY_WIDTH } from "../layout.js";
+import { scrollBuyExchangeMarkerToCenter, scrollSellExchangeMarkerToCenter } from "../update.js";
 
 function centerItemOffset(index, object) {
   const offset = getTargetOffset(index, object);
@@ -88,34 +89,57 @@ export function scrollIntoView() {
     currentTrade.currency,
     state.columns.currencies
   );
+  const currencySeekDuration = Math.abs(currencyInitialOffset) / IDLE_SCROLL_SPEED;
   timeline.add(
-    scrollColumn(state.columns.currencies, currencyInitialOffset, SEEK_DURATION, updateCurrencies),
+    scrollColumn(
+      state.columns.currencies,
+      currencyInitialOffset,
+      currencySeekDuration,
+      updateCurrencies
+    ),
     0
   );
 
   // Scroll exchanges column so buyExchange is centered
+  const buyExchangeScrollOffset = centerItemOffset(currentTrade.buyExchange, state.columns.buyExchanges);
+  const buyExchangeSeekDuration = Math.abs(buyExchangeScrollOffset) / IDLE_SCROLL_SPEED;
   timeline.add(
     scrollColumn(
       state.columns.buyExchanges,
-      centerItemOffset(currentTrade.buyExchange, state.columns.buyExchanges),
-      SEEK_DURATION,
+      buyExchangeScrollOffset,
+      buyExchangeSeekDuration,
       updateBuyExchanges
     ),
     0
   );
 
   // Scroll exchange column so sellExchange is centered
+  const sellExchangeScrollOffset = centerItemOffset(currentTrade.sellExchange, state.columns.sellExchanges);
+  const sellExchangeSeekDuration = Math.abs(sellExchangeScrollOffset) / IDLE_SCROLL_SPEED;
   timeline.add(
     scrollColumn(
       state.columns.sellExchanges,
-      centerItemOffset(currentTrade.sellExchange, state.columns.sellExchanges),
-      SEEK_DURATION,
+      sellExchangeScrollOffset,
+      sellExchangeSeekDuration,
       updateSellExchanges
     ),
     0
   );
+  
+  const scrollBuyExchangeMarkerAnimation = scrollBuyExchangeMarkerToCenter();
+  timeline.add(scrollBuyExchangeMarkerAnimation, 0);
+
+  const scrollSellExchangeMarkerAnimation = scrollSellExchangeMarkerToCenter();
+  timeline.add(scrollSellExchangeMarkerAnimation, 0);
 
   // Scroll exchange markers to the new trade positions
+  const seekDuration = Math.max(
+    currencySeekDuration,
+    buyExchangeSeekDuration,
+    sellExchangeSeekDuration,
+    scrollBuyExchangeMarkerAnimation.duration,
+    scrollSellExchangeMarkerAnimation.duration
+  );
   const newSelection = {
     currency: currentTrade.currency,
     buyExchange: currentTrade.buyExchange,
@@ -124,15 +148,10 @@ export function scrollIntoView() {
   state.seekProgress = 0;
   timeline.add(
     {
-      duration: SEEK_DURATION,
+      duration: seekDuration,
       easing: 'linear',
       targets: state,
       seekProgress: 1,
-      update(anim) {
-        if (!anim.completed) {
-          updateExchangeMarkers(newSelection);
-        }
-      },
       complete() {
         state.selection = newSelection;
       },
