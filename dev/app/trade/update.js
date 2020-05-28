@@ -12,6 +12,8 @@ import {
 } from "./layout";
 import { currencies, currencyCodeToName, exchanges, getCurrencyIcon, getExchangeIcon } from "./model";
 import { formatCurrency, formatTime } from "./utils";
+import { IDLE_SCROLL_SPEED } from "./animations/idle.js";
+import { fitToBoundaries } from "./utils.js";
 
 const container = document.getElementById('trade-display');
 const currenciesScroll = container.querySelector('.currencies-box .scrolling-area');
@@ -22,6 +24,7 @@ const connectorsContainer = document.getElementById('connectors-display');
 
 const buyExchangesSelector = connectorsContainer.querySelector('.select-marker1');
 const sellExchangesSelector = connectorsContainer.querySelector('.select-marker2');
+const {width: markerWidth} = buyExchangesSelector.getBoundingClientRect();
 
 const line1 = connectorsContainer.querySelector('.line1');
 const line2 = connectorsContainer.querySelector('.line2');
@@ -116,27 +119,31 @@ export function getTargetOffset(index, object) {
 const HORIZONTAL_OFFSET_MARKER = 14;
 
 export function updateExchangeMarkers(newSelection) {
-  let off1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
-  let off2 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
+  let buyExchangeOffset = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
+  let sellExchangeOffset = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
   if (newSelection) {
-    off1
+    buyExchangeOffset
       += state.seekProgress
-      * (getTargetOffset(newSelection.buyExchange, state.columns.buyExchanges) - off1);
-    off2
+      * (getTargetOffset(newSelection.buyExchange, state.columns.buyExchanges) - buyExchangeOffset);
+    sellExchangeOffset
       += state.seekProgress
-      * (getTargetOffset(newSelection.sellExchange, state.columns.sellExchanges) - off2);
+      * (getTargetOffset(newSelection.sellExchange, state.columns.sellExchanges) - sellExchangeOffset);
   }
+  const spaceToEdge = 0.5 * markerWidth + 10;
   if (state.stage.isVertical) {
+    buyExchangeOffset = fitToBoundaries(buyExchangeOffset, spaceToEdge, state.stage.height - spaceToEdge);
+    sellExchangeOffset = fitToBoundaries(sellExchangeOffset, spaceToEdge, state.stage.height - spaceToEdge);
+    
     anime.set(buyExchangesSelector, {
       translateX: VERTICAL_EXCHANGES_WIDTH + HORIZONTAL_OFFSET_MARKER * state.selectProgress,
-      translateY: off1,
+      translateY: buyExchangeOffset,
     });
     anime.set(sellExchangesSelector, {
       translateX:
         state.stage.width
         - VERTICAL_EXCHANGES_WIDTH
         - HORIZONTAL_OFFSET_MARKER * state.selectProgress,
-      translateY: off2,
+      translateY: sellExchangeOffset,
     });
     const borderOpacity = 1 - state.selectProgress;
     anime.set(buyExchangesSelector.children[0], {
@@ -146,12 +153,15 @@ export function updateExchangeMarkers(newSelection) {
       opacity: borderOpacity,
     });
   } else {
+    buyExchangeOffset = fitToBoundaries(buyExchangeOffset, spaceToEdge, state.stage.width - spaceToEdge);
+    sellExchangeOffset = fitToBoundaries(sellExchangeOffset, spaceToEdge, state.stage.width - spaceToEdge);
+    
     anime.set(buyExchangesSelector, {
-      translateX: off1,
+      translateX: buyExchangeOffset,
       translateY: HORIZONTAL_EXCHANGES_HEIGHT,
     });
     anime.set(sellExchangesSelector, {
-      translateX: off2,
+      translateX: sellExchangeOffset,
       translateY: state.stage.height - HORIZONTAL_EXCHANGES_HEIGHT,
     });
     anime.set(buyExchangesSelector.children[0], {

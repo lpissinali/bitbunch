@@ -33,3 +33,12 @@ export function formatDuration(duration) {
     seconds = seconds - minutes * 60;
     return `${minutes < 10 ? '0': ''}${minutes}:${seconds < 10 ? '0':''}${seconds}`;
 }
+
+export function fitToBoundaries(value, min, max) {
+  if (value < min) {
+    value = min;
+  } else if (value > max) {
+    value = max;
+  }
+  return value;
+}

@@ -146,10 +146,10 @@ function createRandomSelection() {
     do {
       sellExchange = getRandomVisibleIndex(state.columns.sellExchanges, 0);
     } while (sellExchange === buyExchange);
-    const buyCurrency = getRandomVisibleIndex(state.columns.currencies, 2);
+    const buyCurrency = getRandomVisibleIndex(state.columns.currencies, 3);
     let sellCurrency;
     do {
-      sellCurrency = getRandomVisibleIndex(state.columns.currencies, 2);
+      sellCurrency = getRandomVisibleIndex(state.columns.currencies, 3);
     } while (sellCurrency === buyCurrency);
     return {
         buyCurrency,
