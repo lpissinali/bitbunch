@@ -16,8 +16,12 @@ $('#contactForm').validate({
     closeTooltip(element);
   },
   rules: {
+    name: {
+      checkName: true,
+    },
     email: {
       required: true,
+      checkEmail: true,
     },
     password: {
       required: true,

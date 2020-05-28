@@ -135,6 +135,7 @@
     color: #091540;
     visibility: hidden;
     will-change: transform, width;
+    overflow: hidden;
 
     .text {
       margin-right: 12px;
@@ -499,7 +500,7 @@
         }
 
         h5 {
-          font-size: 12px;
+          font-size: 13px;
           letter-spacing: .26px;
         }
 

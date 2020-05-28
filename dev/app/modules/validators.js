@@ -6,7 +6,7 @@ var moment = require('moment'); // require
       const re = /^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g;
       return this.optional(element) || re.test(String(value).toLowerCase());
     },
-    'incorrect email'
+    'Please use a valid email address'
   );
   $.validator.addMethod(
     'passwordStrength',
@@ -21,6 +21,14 @@ var moment = require('moment'); // require
     },
     'Please use at least 8 digits, <br> a number and a symbol'
   );
+  $.validator.addMethod(
+    'checkName',
+    function(value, element) {
+      const re = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}$/g;
+      return this.optional(element) || re.test(String(value).toLowerCase());
+    },
+    'Please enter a valid name'
+  );  
   $.validator.addMethod(
     'ageEighteen',
     function(value, element) {
