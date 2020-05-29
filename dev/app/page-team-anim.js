@@ -146,7 +146,7 @@ $(document).ready(() => {
         });
         tl_team_description.from('#anim-description-trigger-4 ul', 1, { y: '120%', opacity: 0 });
         tl_team_description.from('#anim-description-trigger-4 img', 2, { opacity: 0 });
-        AnimationScene('#anim-description-trigger-4', tl_team_description, '50%');
+        AnimationScene2('#anim-description-trigger-4', tl_team_description, '50%');
       }
       if (document.querySelector('#anim-description-trigger-5')) {
         const tl_team_description = new TimelineMax();
