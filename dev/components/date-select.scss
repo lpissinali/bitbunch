@@ -18,6 +18,7 @@
     overflow: hidden;
     width: 20.75rem;
     height: 0;
+    opacity: 0;
     margin-top: 0.375rem;
     background: $white;
     box-shadow: 0.125rem 0.125rem 1.5rem rgba(80, 87, 94, 0.1);
@@ -42,7 +43,8 @@
     box-shadow: 0.125rem 0.25rem 0.375rem rgba(80, 87, 94, 0.05);
     border-radius: 0.1875rem;
     border: 0.0625rem solid rgba(50, 78, 163, 0.2);
-    + .form-group__placeholder{
+
+    +.form-group__placeholder {
       top: 0.5rem;
     }
   }
@@ -93,7 +95,8 @@
       cursor: pointer;
       transition: 300ms;
       transform-origin: center center;
-      &:hover{
+
+      &:hover {
         border: 2px solid $blue;
         background-color: $white;
         color: $blue;
@@ -179,7 +182,8 @@
       line-height: 1rem;
     }
 
-    .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+    .datepicker--cell-day.-other-month-,
+    .datepicker--cell-year.-other-decade- {
       opacity: 0.2;
       color: $black-light;
     }
@@ -188,7 +192,8 @@
       background: rgba(50, 78, 163, 0.5);
     }
 
-    .datepicker--cell.-selected-, .datepicker--cell.-selected-.-current- {
+    .datepicker--cell.-selected-,
+    .datepicker--cell.-selected-.-current- {
       background: $blue;
     }
 
@@ -207,15 +212,19 @@
   }
 }
 
-@media screen and ($tablet1), ($tablet2), ($tablet3) {
-}
+@media screen and ($tablet1),
+($tablet2),
+($tablet3) {}
 
-@media screen and ($mobile1), ($mobile2), ($mobile3) {
+@media screen and ($mobile1),
+($mobile2),
+($mobile3) {
   .date-select__overflow {
     right: -1.5rem;
     width: 20rem;
   }
-  .date-select .date-select__footer .button-cansel{
+
+  .date-select .date-select__footer .button-cansel {
     justify-content: center;
     align-items: center;
     display: flex;
@@ -232,7 +241,8 @@
     cursor: pointer;
     transition: background-color 300ms;
   }
-  .date-select .date-select__footer .button-apply{
+
+  .date-select .date-select__footer .button-apply {
     width: 7.8125rem;
     height: 2.5rem;
     font-size: 0.75rem;
