@@ -1,6 +1,5 @@
 // cookies bar
 function showCookiesBar() {
-  console.log('1111111111111111111111');
   $('.cookies-bar').addClass('block');
   setTimeout(() => {
     $('.cookies-bar').addClass('up');
