@@ -14,7 +14,19 @@ $(document).ready(() => {
         .setTween(tween)
         .addTo(controller);
     }
-
+    
+    function AnimationScene2(section, tween, durationTime, offsetValue) {
+      const scene = new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 0.7,
+        duration: durationTime,
+        offset: offsetValue,
+      })
+        .reverse(true)
+        .setTween(tween)
+        .addTo(controller);
+    }
+    
     // our-team header
     if (document.querySelector('.our-team-header')) {
       const tl_team_header = new TimelineMax();
