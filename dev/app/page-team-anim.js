@@ -148,7 +148,7 @@ $(document).ready(() => {
       const tl_team_support = new TimelineMax();
       tl_team_support.from('#anim-support-1', 1, { x: '-60%', opacity: 0 });
       tl_team_support.from('#anim-support-2', 0.8, { scale: '.8', opacity: 0 });
-      AnimationScene('#anim-support-trigger', tl_team_support, '50%');
+      AnimationScene2('#anim-support-trigger', tl_team_support, '50%');
     }
 
     // big-team founders-container
