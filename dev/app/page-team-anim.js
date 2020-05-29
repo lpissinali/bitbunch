@@ -10,7 +10,7 @@ $(document).ready(() => {
         duration: durationTime,
         offset: offsetValue,
       })
-        .reverse(true)
+        .reverse(false)
         .setTween(tween)
         .addTo(controller);
     }
