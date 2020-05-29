@@ -14,19 +14,19 @@ $(document).ready(() => {
         .setTween(tween)
         .addTo(controller);
     }
-    
+
     function AnimationScene2(section, tween, durationTime, offsetValue) {
       const scene = new ScrollMagic.Scene({
         triggerElement: section,
-        triggerHook: 0.7,
+        triggerHook: 0.65,
         duration: durationTime,
         offset: offsetValue,
       })
-        .reverse(true)
+        .reverse(false)
         .setTween(tween)
         .addTo(controller);
     }
-    
+
     // our-team header
     if (document.querySelector('.our-team-header')) {
       const tl_team_header = new TimelineMax();
@@ -177,7 +177,7 @@ $(document).ready(() => {
         });
         tl_team_description.from('#anim-description-trigger-2 img', 2, { opacity: 0 }, '-=0.1');
         tl_team_description.from('#anim-description-trigger-2 ul', 2, { y: '120%', opacity: 0 });
-        AnimationScene('#anim-description-trigger-2', tl_team_description, '50%');
+        AnimationScene2('#anim-description-trigger-2', tl_team_description, '50%');
       }
       if (document.querySelector('#anim-description-trigger-3')) {
         const tl_team_description = new TimelineMax();
@@ -207,7 +207,7 @@ $(document).ready(() => {
         });
         tl_team_description.from('#anim-description-trigger-5 img', 2, { opacity: 0 }, '-=0.1');
         tl_team_description.from('#anim-description-trigger-5 ul', 2, { y: '120%', opacity: 0 });
-        AnimationScene('#anim-description-trigger-5', tl_team_description, '50%');
+        AnimationScene2('#anim-description-trigger-5', tl_team_description, '50%');
       }
     }
 
