@@ -101,7 +101,6 @@
 
 .accordion {
   margin-top: 1.5rem;
-  border-bottom: 0;
   border-radius: 0 0 .1875rem .1875rem;
   box-shadow: .125rem .25rem .375rem rgba(0, 0, 0, .05);
   transition: box-shadow 300ms;
@@ -141,18 +140,15 @@
 }
 
 .accordion__dropdown {
-  border-radius: 0 0 .1875rem .1875rem;
   background-color: #f8f9fe;
   overflow: hidden;
+  border: 1px solid rgba(205, 207, 213, .8);
+  border-top: 0;
+  border-radius: 0 0 .1875rem .1875rem;
 }
 
 .accordion__dropdown-wrapper {
   padding: 1rem 1.5rem 1.1875rem;
-  border: 1px solid rgba(205, 207, 213, .8);
-  border-top: 0;
-  border-radius: 0 0 .1875rem .1875rem;
-  border-left-width: .5px;
-  border-right-width: .5px;
 
   p {
     display: block;

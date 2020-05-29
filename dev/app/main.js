@@ -687,14 +687,17 @@ if (document.querySelector('.trading-statistics__header-time')) {
   let dateSelectHeight = 0;
   function dateSelectOpen() {
     dateSelectHeight = $('.date-select__container').outerHeight();
-    TweenLite.to($('.date-select__overflow'), 0.5, {
+    TweenLite.to($('.date-select__overflow'), 0, {
       height: dateSelectHeight,
+    });
+    TweenLite.to($('.date-select__overflow'), 0.5, {
+      opacity: 1,
       onComplete: dateSelectOverflow,
     });
   }
   function dateSelectClose() {
     $('.date-select__overflow').removeClass('opened');
-    TweenLite.to($('.date-select__overflow'), 0.5, { height: 0 });
+    TweenLite.to($('.date-select__overflow'), 0.5, { opacity: 0 });
   }
   function dateSelectOverflow() {
     $('.date-select__overflow').addClass('opened');
