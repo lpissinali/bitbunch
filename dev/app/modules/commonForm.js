@@ -99,14 +99,12 @@ export const initBootstrapSelect = () => {
         liveSearch: true,
         title: ' ',
       });
+      if ($(this)[0].value !== '') {
+        $(this).val([]);
+        $(this).change();
+      }       
     });
   }
-  $('select').each(function() {
-    if ($(this)[0].value !== '') {
-      $(this).val([]);
-      $(this).change();
-    } 
-  });
 };
 
 export const customSelectValidationError = element => {
