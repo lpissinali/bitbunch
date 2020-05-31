@@ -17,6 +17,8 @@ $('#changeEmailForm').validate({
   rules: {
     password: {
       required: true,
+      minlength: 8,
+      maxlength: 40,
     },
   },
   errorClass: VALIDATION_ERROR_CLASS,

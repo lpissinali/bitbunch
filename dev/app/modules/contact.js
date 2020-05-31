@@ -17,6 +17,7 @@ $('#contactForm').validate({
   },
   rules: {
     name: {
+      required: true,
       checkName: true,
     },
     email: {
@@ -25,6 +26,8 @@ $('#contactForm').validate({
     },
     password: {
       required: true,
+      minlength: 8,
+      maxlength: 40,
     },
   },
   errorClass: VALIDATION_ERROR_CLASS,

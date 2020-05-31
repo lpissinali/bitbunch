@@ -14,8 +14,15 @@ $('#loginForm').validate({
     closeTooltip(element);
   },
   rules: {
+    email: {
+      required: true,
+      checkEmail: true,
+    },
     password: {
       required: true,
+      minlength: 8,
+      maxlength: 40,
+      // passwordStrength: true,
     },
   },
   messages: {

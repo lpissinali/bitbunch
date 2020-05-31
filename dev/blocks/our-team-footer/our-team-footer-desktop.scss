@@ -82,22 +82,22 @@
     overflow: hidden;
     transition: 400ms;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: rem(-57px);
-      display: block;
-      width: 11.5625rem;
-      width: rem(200px);
-      height: 100%;
-      box-shadow: 0px rem(2px) rem(4px) rgba(93, 88, 88, .1);
-      background: linear-gradient(147.27deg,
-          rgba(199, 204, 228, .6) 16.16%,
-          rgba(242, 244, 253, .6) 98.28%);
-      opacity: .5;
-      transform: skew(-15.5deg);
-    }
+    //&::before {
+    //  content: "";
+    //  position: absolute;
+    //  top: 0;
+    //  right: rem(-57px);
+    //  display: block;
+    //  width: 11.5625rem;
+    //  width: rem(200px);
+    //  height: 100%;
+    //  box-shadow: 0px rem(2px) rem(4px) rgba(93, 88, 88, .1);
+    //  background: linear-gradient(147.27deg,
+    //      rgba(199, 204, 228, .6) 16.16%,
+    //      rgba(242, 244, 253, .6) 98.28%);
+    //  opacity: .5;
+    //  transform: skew(-15.5deg);
+    //}
 
     &:hover {
       transform: scale(1.05) !important;

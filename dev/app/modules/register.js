@@ -19,6 +19,7 @@ $('#registerForm').validate({
     },
     email: {
       required: true,
+      checkEmail: true,
     },
     password: {
       required: true,

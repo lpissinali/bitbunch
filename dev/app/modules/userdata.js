@@ -9,7 +9,7 @@ import {
 } from './commonForm';
 
 $('#userdataForm').validate({
-  onfocusout: false,
+  // onfocusout: false,
   errorPlacement(error, element) {
     if ($(error).text() === '') return;
     if ($(element)[0].tagName === 'SELECT') {
@@ -26,9 +26,11 @@ $('#userdataForm').validate({
   rules: {
     firstname: {
       required: true,
+      checkName: true,
     },
     lastname: {
       required: true,
+      checkName: true,
     },
     country: {
       required: true,

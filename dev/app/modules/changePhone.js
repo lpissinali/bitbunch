@@ -17,6 +17,8 @@ $('#changePhoneForm').validate({
   rules: {
     password: {
       require: true,
+      minlength: 8,
+      maxlength: 40,
     },
   },
   errorClass: VALIDATION_ERROR_CLASS,

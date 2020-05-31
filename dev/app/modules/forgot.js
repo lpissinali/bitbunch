@@ -16,9 +16,12 @@ $('#forgotForm').validate({
   rules: {
     email: {
       required: true,
+      checkEmail: true,
     },
     password: {
       required: true,
+      minlength: 8,
+      maxlength: 40,
     },
   },
   errorClass: VALIDATION_ERROR_CLASS,
