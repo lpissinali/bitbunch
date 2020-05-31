@@ -43,7 +43,6 @@ $(document).ready(() => {
     }
 
     // our-team success
-
     if (window.matchMedia('(max-width: 1920px)').matches) {
       if (document.querySelector('#anim-success-trigger')) {
         const tl_team_success = new TimelineMax();
@@ -55,7 +54,7 @@ $(document).ready(() => {
         tl_team_success.from('#anim-success-2', 0.8, { scale: '.8', opacity: 0 });
         tl_team_success.from('#anim-success-3', 0.8, { scale: '.8', opacity: 0 });
         tl_team_success.from('#anim-success-4', 0.8, { scale: '.8', opacity: 0 });
-        AnimationScene('#anim-success-trigger', tl_team_success, '45%');
+        AnimationScene('#anim-success-trigger', tl_team_success);
       }
     } else {
       const tl_team_success = new TimelineMax();
@@ -75,7 +74,7 @@ $(document).ready(() => {
       const tl_team_success = new TimelineMax();
       tl_team_success.from('#anim-founders-1', 1, { y: '-60%', opacity: 0 });
       tl_team_success.from('#anim-founders-2', 0.8, { scale: '.8', opacity: 0 });
-      AnimationScene('#anim-founders-trigger', tl_team_success, '50%');
+      AnimationScene('#anim-founders-trigger', tl_team_success);
     }
 
     // our-team developers
@@ -298,7 +297,7 @@ $(document).ready(() => {
       tl_team_footer.from('#anim-footer-5', 0.7, { y: '100%', opacity: 0 }, 1.6);
       tl_team_footer.from('#anim-footer-6', 0.7, { y: '100%', opacity: 0 }, 1.9);
       tl_team_footer.from('#anim-footer-7', 0.7, { y: '100%', opacity: 0 }, 2.1);
-      AnimationScene('#anim-footer-trigger', tl_team_footer, '35%');
+      AnimationScene('#anim-footer-trigger', tl_team_footer);
     }
   }
 });

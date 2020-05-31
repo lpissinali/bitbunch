@@ -24,7 +24,7 @@ var moment = require('moment'); // require
   $.validator.addMethod(
     'checkName',
     function(value, element) {
-      const re = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}$/g;
+      const re = /^[^0-9]{2,}$/g;
       return this.optional(element) || re.test(String(value).toLowerCase());
     },
     'Please enter a valid name'
