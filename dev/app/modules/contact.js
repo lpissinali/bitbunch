@@ -7,7 +7,7 @@ import {
 } from './commonForm';
 
 $('#contactForm').validate({
-  onfocusout: false,
+  // onfocusout: false,
   errorPlacement(error, element) {
     if ($(error).text() === '') return;
     showTooltip(element, $(error).text());

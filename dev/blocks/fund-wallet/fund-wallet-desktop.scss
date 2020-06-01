@@ -1,4 +1,4 @@
-.fund-wallet{
+.fund-wallet {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -6,7 +6,8 @@
   background: none;
   box-shadow: none;
 }
-.fund-wallet__bg{
+
+.fund-wallet__bg {
   position: absolute;
   left: 0;
   right: 0;
@@ -17,7 +18,8 @@
   background-position: right bottom;
   z-index: 0;
 }
-.fund-wallet__block-left{
+
+.fund-wallet__block-left {
   position: relative;
   width: 38.625rem;
   padding: 1.8125rem 1.5rem 2rem;
@@ -25,7 +27,8 @@
   border-radius: 0.125rem;
   background-color: $white;
 }
-.fund-wallet__block-right{
+
+.fund-wallet__block-right {
   width: 18.125rem;
   margin-left: 2rem;
   padding-bottom: 2rem;
@@ -34,11 +37,35 @@
   border-radius: 0.125rem;
   background-color: $white;
 }
-.fund-wallet__headline{
+
+.fund-wallet__headline {
   position: relative;
   line-height: 2rem;
 }
-.fund-wallet__info{
+
+.fund-wallet__timer {
+  float: right;
+  background: $blue;
+  font-size: 1rem;
+  width: 69px;
+  font-family: $main-font-regular;
+  height: 28px;
+  line-height: 26px;
+  color: #fff;
+  border-radius: 4px;
+  margin-right: 1rem;
+  text-align: center;
+  img {
+    width: 13px;
+    height: 13px;
+    margin-top: -2px;
+  }
+  span {
+    margin-left: 3px;
+  }
+}
+
+.fund-wallet__info {
   position: relative;
   margin-top: 0.9375rem;
   font-family: $main-font-bold;
@@ -46,7 +73,8 @@
   letter-spacing: 0.0213rem;
   line-height: 1.3125rem;
 }
-.fund-wallet__content{
+
+.fund-wallet__content {
   position: relative;
   max-width: 31.25rem;
   margin-top: 1.875rem;
@@ -55,12 +83,14 @@
   color: #091540;
   line-height: 1.5625rem;
 }
-.fund-wallet__number{
+
+.fund-wallet__number {
   position: relative;
   display: flex;
   align-items: center;
   margin-top: 1.875rem;
-  input{
+
+  input {
     width: 25.875rem;
     height: 3.125rem;
     padding: 1rem;
@@ -78,7 +108,8 @@
     -webkit-user-select: none;
     user-select: none;
   }
-  button{
+
+  button {
     justify-content: center;
     align-items: center;
     display: flex;
@@ -86,32 +117,34 @@
     height: 3.125rem;
     margin-left: -0.625rem;
     border: 0;
-    border-radius: 0 .1875rem .1875rem 0;
-    background-color: #fa8f68;
-    font-family: "SarabunSemiBold", arial, sans-serif;
-    font-size: 1.125rem;
-    letter-spacing: 0.0269rem;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #ffffff;
-    cursor: pointer;
-    transition: background-color 300ms;
+    
+    @media screen and (min-width:1440px) {
+      &:hover {
+        background: $orange;
+        transform: none!important;
+        border: none;
+        color: $white;
+      }
+    }
   }
 }
 
-.fund-wallet-qr{
-  &__headline{
+.fund-wallet-qr {
+  &__headline {
     text-align: center;
   }
-  &__code{
+
+  &__code {
     width: 10.25rem;
     margin: 2rem auto 0;
-    img{
+
+    img {
       display: block;
       width: 100%;
     }
   }
-  &__content{
+
+  &__content {
     display: none;
   }
 }

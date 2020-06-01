@@ -122,7 +122,7 @@ $(document).ready(() => {
         });
         tl_team_description.from('#anim-description-trigger-3 ul', 0.5, { y: '120%', opacity: 0 });
         tl_team_description.from('#anim-description-trigger-3 img', 0.5, { opacity: 0 });
-        AnimationScene('#anim-description-trigger-3', tl_team_description);
+        AnimationScene2('#anim-description-trigger-3', tl_team_description);
       }
       if (document.querySelector('#anim-description-trigger-4')) {
         const tl_team_description = new TimelineMax();
@@ -173,7 +173,7 @@ $(document).ready(() => {
         });
         tl_team_description.from('#anim-description-trigger-3 img', 0.5, { opacity: 0 }, '-=0.1');
         tl_team_description.from('#anim-description-trigger-3 ul', 0.5, { y: '120%', opacity: 0 });
-        AnimationScene('#anim-description-trigger-3', tl_team_description);
+        AnimationScene2('#anim-description-trigger-3', tl_team_description);
       }
       if (document.querySelector('#anim-description-trigger-4')) {
         const tl_team_description = new TimelineMax();
@@ -213,7 +213,7 @@ $(document).ready(() => {
         y: '-120%',
         opacity: 0,
       });
-      AnimationScene('#anim-founders-container--headline-trigger', tl_big_team_headline);
+      AnimationScene2('#anim-founders-container--headline-trigger', tl_big_team_headline);
     }
 
     if (document.querySelector('#anim-founders-container-1')) {
@@ -266,7 +266,7 @@ $(document).ready(() => {
         { scale: '.85', opacity: 0 },
         3.3
       );
-      AnimationScene('#anim-founders-container-1', tl_team_developers_1);
+      AnimationScene2('#anim-founders-container-1', tl_team_developers_1);
     }
 
 

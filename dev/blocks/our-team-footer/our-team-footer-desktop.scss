@@ -1,49 +1,3 @@
-.our-team__footer {
-  position: relative;
-  padding-top: rem(100px);
-  padding-bottom: rem(24px);
-  background: linear-gradient(to right, #324ea3, #3d6dd0);
-  overflow: hidden;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: rem(-40px);
-    right: rem(-160px);
-    display: block;
-    width: rem(526px);
-    height: rem(650px);
-    background-image: url(images/our-team__footer-bg-desktop.svg);
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    background-size: auto rem(650px);
-    opacity: 0.1;
-    pointer-events: none;
-  }
-
-  @media (min-width: 1441px) {
-
-    &::after {
-      top: 0;
-      right: 0;
-      width: rem(493px);
-      width: 100%;
-      height: 100%;
-      background-image: url(images/main-footer__decor-desktop.svg);
-      background-position: calc(50% + 67rem) bottom;
-      background-size: 100% 100%;
-      opacity: 1;
-    }
-
-    ~.main-footer {
-
-      &:after {
-        background-position: calc(50% + 65.8rem) bottom;
-      }
-    }
-  }
-}
-
 .our-team__footer-get-in-touch {
   flex-direction: column;
   display: flex;
@@ -82,23 +36,6 @@
     overflow: hidden;
     transition: 400ms;
 
-    //&::before {
-    //  content: "";
-    //  position: absolute;
-    //  top: 0;
-    //  right: rem(-57px);
-    //  display: block;
-    //  width: 11.5625rem;
-    //  width: rem(200px);
-    //  height: 100%;
-    //  box-shadow: 0px rem(2px) rem(4px) rgba(93, 88, 88, .1);
-    //  background: linear-gradient(147.27deg,
-    //      rgba(199, 204, 228, .6) 16.16%,
-    //      rgba(242, 244, 253, .6) 98.28%);
-    //  opacity: .5;
-    //  transform: skew(-15.5deg);
-    //}
-
     &:hover {
       transform: scale(1.05) !important;
     }
@@ -135,28 +72,6 @@
         line-height: rem(26px);
         color: #616884;
         opacity: .8;
-      }
-    }
-
-    @media (max-width: 1441px) {
-
-      &::before {
-        right: rem(-48px);
-        transform: skew(-16.9deg);
-      }
-    }
-
-    @media (max-width: 1337px) {
-
-      &::before {
-        right: rem(-57px);
-      }
-    }
-
-    @media (max-width: 1168px) {
-
-      &::before {
-        right: -35px;
       }
     }
   }

@@ -1,27 +1,5 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
-  .our-team__footer {
-
-    &::after {
-      top: -2.5rem;
-
-      right: 0;
-      z-index: 1;
-      width: rem(135px);
-      height: rem(1000px);
-      background-image: url(images/our-team__footer-bg-mobile.svg);
-      background-position: right;
-      background-size: 100% 100%;
-    }
-
-    ~ .main-footer {
-
-      &:after {
-        width: rem(210px);
-      }
-    }
-  }
-
   .our-team__footer-get-in-touch {
 
     h6 {
@@ -41,14 +19,6 @@
       flex-wrap: wrap;
       padding: rem(19px) rem(30px) rem(32px);
       width: rem(272px);
-
-      //&::before {
-      //  top: 0;
-      //  right: rem(-205px);
-      //  width: rem(255px);
-      //  height: 100%;
-      //  transform: skew(-6.8deg);
-      //}
 
       .our-team__footer-block {
         margin-bottom: rem(32px);
