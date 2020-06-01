@@ -51,6 +51,27 @@
   resize: none;
 }
 
+.form-group__textarea {
+  &:after {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: $white;
+    height: 25px;
+    width: 96%;
+  }
+
+  .form-group__placeholder {
+    opacity: 1;
+    z-index: 2;
+    span {
+      opacity: .4;
+    }
+
+  }
+}
+
 .address__submit-button {
   margin-top: 1rem;
   width: 100%;

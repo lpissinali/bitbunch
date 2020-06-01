@@ -12,16 +12,14 @@
   padding-top: 1.5rem;
   padding-bottom: .1rem;
   height: 3.125rem;
-  border: none;
-  border-radius: 0;
   box-shadow: none;
   background-color: transparent;
   font-family: $main-font-medium;
   font-size: .875rem;
   color: $dark-grey;
+  border: 1px solid rgba(50, 78, 163, 0.2);
 
   &:hover {
-    border: none;
     background-color: transparent;
     outline: none;
   }
@@ -30,10 +28,15 @@
     background-color: transparent;
   }
 
-  &:focus {
-    border: none;
+  &:focus { 
     background-color: transparent;
     outline: none !important;
+  }
+}
+
+.show {
+  .btn.dropdown-toggle.btn-light {
+    border-bottom: solid 1px #fff;
   }
 }
 
@@ -95,13 +98,18 @@
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
-  border: none;
-  border-radius: 0rem;
+  border: 1px solid rgba(50, 78, 163, 0.2);
+  border-top: none;
+  border-radius: 0 0 3px 3px;
   box-shadow: none;
   background-color: $white;
   font-family: $main-font-medium;
   font-size: .875rem;
   color: $dark-grey;
+  width: 100%;
+  .form-control {
+    border: none!important;
+  }
 }
 
 .bs-searchbox {
@@ -163,13 +171,4 @@
 
 .btn.dropdown-toggle.validation-error {
   border: .0625rem solid $red;
-}
-
-@media screen and ($mobile1),
-($mobile2),
-($mobile3) {
-
-  .dropdown-menu.show {
-    width: 100% !important;
-  }
 }

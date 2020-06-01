@@ -723,6 +723,11 @@ if (document.querySelector('.trading-statistics__header-time')) {
   });
 }
 
+//disable bootstrap dropdown to open up 
+Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
+Popper.Defaults.modifiers.computeStyle.enabled = false;
+
+
 // Chart
 if (document.querySelector('.chart__canvas')) {
   const chart = document.getElementById('chart').getContext('2d');
