@@ -8,6 +8,11 @@
   }
   .horiz__scroller {
     overflow-x: scroll !important;
+    scrollbar-width: none; /* Firefox 64 */
+    -ms-overflow-style: none; /* Internet Explorer 11 */
+    &::-webkit-scrollbar { /** WebKit */
+      display: none;
+    }
   }
   .horiz__track {
     opacity: 1;
