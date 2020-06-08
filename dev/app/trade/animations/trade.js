@@ -79,7 +79,7 @@ export function longTradeAnimation() {
 
 export function scrollIntoView() {
   const timeline = new anime.timeline();
-  const SEEK_DURATION = 900;
+  const SEEK_DURATION = 700;
 
   // Scroll to current trade
   const currentTrade = state.trade.current;
@@ -89,7 +89,7 @@ export function scrollIntoView() {
     currentTrade.currency,
     state.columns.currencies
   );
-  const currencySeekDuration = Math.abs(currencyInitialOffset) / IDLE_SCROLL_SPEED;
+  const currencySeekDuration = SEEK_DURATION;
   timeline.add(
     scrollColumn(
       state.columns.currencies,
@@ -102,7 +102,7 @@ export function scrollIntoView() {
 
   // Scroll exchanges column so buyExchange is centered
   const buyExchangeScrollOffset = centerItemOffset(currentTrade.buyExchange, state.columns.buyExchanges);
-  const buyExchangeSeekDuration = Math.abs(buyExchangeScrollOffset) / IDLE_SCROLL_SPEED;
+  const buyExchangeSeekDuration = SEEK_DURATION;
   timeline.add(
     scrollColumn(
       state.columns.buyExchanges,
@@ -115,7 +115,7 @@ export function scrollIntoView() {
 
   // Scroll exchange column so sellExchange is centered
   const sellExchangeScrollOffset = centerItemOffset(currentTrade.sellExchange, state.columns.sellExchanges);
-  const sellExchangeSeekDuration = Math.abs(sellExchangeScrollOffset) / IDLE_SCROLL_SPEED;
+  const sellExchangeSeekDuration = SEEK_DURATION;
   timeline.add(
     scrollColumn(
       state.columns.sellExchanges,
@@ -313,9 +313,9 @@ export function selectCurrency(ignorePause = false) {
 
 export function showInstantTradeSellProgress(ignorePause = false) {
   const timeline = new anime.timeline();
-  const SHOW_INFO_DURATION = 800;
-  const SHOW_SELL_PROGRESS_DURATION = 800;
-  const PAUSE_BUY_SELL_INFO = 2500;
+  const SHOW_INFO_DURATION = 500;
+  const SHOW_SELL_PROGRESS_DURATION = 500;
+  const PAUSE_BUY_SELL_INFO = 1200;
   let timelineOffset = 0;
 
   state.showInfoProgress = 0;
@@ -365,8 +365,8 @@ export function showInstantTradeSellProgress(ignorePause = false) {
 }
 
 export function showInstantTradeSuccess() {
-  const HIDE_INFO_DURATION = 800;
-  const SHOW_SUCCESS_DURATION = 800;
+  const HIDE_INFO_DURATION = 500;
+  const SHOW_SUCCESS_DURATION = 500;
 
   const timeline = new anime.timeline();
   timeline.add({
@@ -397,7 +397,7 @@ export function showInstantTradeSuccess() {
 }
 
 export function showInstantTrade() {
-  const SHOW_MORE_DURATION = 800;
+  const SHOW_MORE_DURATION = 500;
 
   const timeline = new anime.timeline();
   timeline.add(
