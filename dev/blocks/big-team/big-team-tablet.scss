@@ -69,8 +69,7 @@
   }
 
   .big-team__founders-headline {
-    margin-top: rem(9px);
-    width: rem(389px);
+    margin-top: 8rem;
   }
 
   .big-team__founders-subtitle {
@@ -433,7 +432,7 @@
   // Our Team support
   .our-team__support {
     padding-top: rem(20px);
-    padding-bottom: rem(162px);
+    padding-bottom: 0;
     max-width: rem(668px);
 
     &-container {

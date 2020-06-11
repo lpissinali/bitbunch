@@ -17,20 +17,23 @@
   font-family: $main-font-medium;
   font-size: .875rem;
   color: $dark-grey;
-  border: 1px solid rgba(50, 78, 163, 0.2);
+  border: solid 1px #fff;
 
   &:hover {
     background-color: transparent;
     outline: none;
+    border: solid 1px #fff;
   }
 
   &:active {
     background-color: transparent;
+    border: solid 1px #fff;
   }
 
   &:focus { 
     background-color: transparent;
     outline: none !important;
+    border: solid 1px #fff; 
   }
 }
 
@@ -50,9 +53,7 @@
   margin-top: -.725rem;
   width: .75rem;
   height: .75rem;
-  border-top: 0;
-  border-right: 0 solid transparent;
-  border-bottom: 0 solid;
+  border: solid 1px #fff;
   border-left: 0 solid transparent;
   background-image: url("./images/select-arrow.svg");
   background-position: 0 0;
@@ -68,10 +69,7 @@
   margin-left: .255em;
   width: .75rem;
   height: .75rem;
-  border-top: 0;
-  border-right: 0 solid transparent;
-  border-bottom: 0 solid;
-  border-left: 0 solid transparent;
+  border: solid 1px #fff;
   background-image: url("./images/select-arrow.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -98,8 +96,7 @@
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
-  border: 1px solid rgba(50, 78, 163, 0.2);
-  border-top: none;
+  border: solid 1px #fff;
   border-radius: 0 0 3px 3px;
   box-shadow: none;
   background-color: $white;
@@ -147,6 +144,10 @@
   .text {
     width: 100%;
   }
+}
+
+.bootstrap-select .dropdown-menu.inner {
+  border: none!important;
 }
 
 .btn.dropdown-toggle.validation-success.btn-light:hover {

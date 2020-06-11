@@ -38,7 +38,7 @@
     padding-top: 0;
   }
 
-  .faq__ticket-button, .help-center-header__support-button {
+  .faq__ticket-button {
     width: 100%;
   }
 
@@ -95,12 +95,14 @@
   }
 
   .accordion__headline {
-    padding-top: .75rem;
-    padding-right: .75rem;
-    padding-bottom: .75rem;
-    padding-left: .75rem;
+    padding: 12px;
     font-size: .875rem;
     line-height: 1.0625rem;
+    &:after {
+      width: 16px;
+      height: 16px;
+      background-size: 100%;
+    }
   }
 
   .accordion__arrow {

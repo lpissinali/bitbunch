@@ -697,7 +697,7 @@ if (document.querySelector('.trading-statistics__header-time')) {
   }
   function dateSelectClose() {
     $('.date-select__overflow').removeClass('opened');
-    TweenLite.to($('.date-select__overflow'), 0.5, { opacity: 0 });
+    TweenLite.to($('.date-select__overflow'), 0.5, { opacity: 0, height: 0 });
   }
   function dateSelectOverflow() {
     $('.date-select__overflow').addClass('opened');

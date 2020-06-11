@@ -1,10 +1,7 @@
 @media screen and ($mobile1), ($mobile2), ($mobile3) {
 
   .big-team__wrapper {
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 3.125rem;
-    padding-left: 0;
+    padding: 0;
 
     .slick-prev,
     .slick-next {
@@ -329,7 +326,6 @@
       align-items: unset;
       display: block;
       padding-left: rem(24px);
-      max-width: rem(272px);
       max-width: 100%;
     }
 
@@ -420,7 +416,7 @@
     }
 
     &-button {
-      margin-top: rem(28px);
+      margin-top: 4rem;
       width: rem(137px);
       height: rem(37px);
       font-size: rem(12px);
@@ -434,7 +430,7 @@
     padding-bottom: rem(48px);
     max-width: 100%;
     background: linear-gradient(122.01deg, #ffffff 8.84%, #f2f4fd 98.29%);
-
+    
     &-content {
 
       h3 {

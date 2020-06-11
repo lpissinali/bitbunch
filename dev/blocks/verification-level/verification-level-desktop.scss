@@ -179,6 +179,7 @@
     box-shadow: none !important;
     font-family: $main-font-light;
     color: #495057;
+    border: 1px solid rgba(50, 78, 163, 0.2);
   }
 
   //.bootstrap-select .dropdown-menu:not(.inner) {
@@ -193,6 +194,11 @@
   //    border-top: none;
   //  }
   //}
+  
+  .dropdown-menu.show {
+    border: 1px solid rgba(50, 78, 163, 0.2);
+    border-top: none;
+  }
 
   .bs-searchbox .form-control {
     box-shadow: none;
