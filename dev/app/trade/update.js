@@ -54,42 +54,6 @@ const verticalInfoSection = tradeRect.querySelector('.vertical-details');
 const particles1 = document.querySelector('.particles .particles1');
 const particles2 = document.querySelector('.particles .particles2');
 
-export const experiment = () => {
-  const SEARCH_DURATION = 1500;
-  const animation = currenciesScroll.animate([
-    // keyframes
-    { transform: 'translateY(0px)' }, 
-    { transform: `translateY(-${1500/6}px)`}
-  ], { 
-    // timing options
-    duration: SEARCH_DURATION,
-    iterations: Infinity,
-  });
-
-  const animation1 = buyExchangesScroll.animate([
-    // keyframes
-    { transform: 'translateY(0px)' }, 
-    { transform: `translateY(${1500/6}px)`}
-  ], { 
-    // timing options
-    duration: SEARCH_DURATION,
-    iterations: Infinity,
-  });
-
-
-  const animation2 = sellExchangesScroll.animate([
-    // keyframes
-    { transform: 'translateY(0px)' }, 
-    { transform: `translateY(${1500/6}px)`}
-  ], { 
-    // timing options
-    duration: SEARCH_DURATION,
-    iterations: Infinity,
-  });
-
-  return animation.finished;
-};
-
 export function updateBuyExchanges() {
   if (state.stage.isVertical) {
     anime.set(buyExchangesScroll, {
