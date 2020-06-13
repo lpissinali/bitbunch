@@ -212,12 +212,11 @@ setTimeout(() => {
   animLoop();
 }, 100);
 
-
+/*
 setTimeout(() => {
   createFakeTrade();
 }, 5000);
 
-/*
 setTimeout(() => {
   createFakeTrade();
 }, 15000);

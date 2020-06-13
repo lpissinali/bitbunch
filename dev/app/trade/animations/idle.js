@@ -5,15 +5,17 @@ import {
     updateSellExchanges,
     updateCurrencies,
     updateExchangeMarkers,
-    updateLines
+    updateLines,
+    experiment
 } from '../update';
 import { clipOffset, scrollColumn } from './helpers';
 
 export const IDLE_SCROLL_SPEED = 1/6;// Pixels per ms
 
 export function idleAnimation() {
+  //return experiment();
     return scrollColumns()
-        .then(selectRandomTrade);
+        //.then(selectRandomTrade);
 }
 
 function scrollColumns() {

@@ -16,6 +16,7 @@
 
   .trade-display {
     position: absolute;
+    pointer-events: none;
   }
 
   .particles {
@@ -96,11 +97,14 @@
   .exchange-box {
     fill: #ffffff;
     will-change: transform;
+    pointer-events: none;
+
   }
 
   .currency-box {
     fill: #efc7c2;
     will-change: transform;
+    pointer-events: none;
 
     .icon-box {
       fill: #ffffff;
