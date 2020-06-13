@@ -425,8 +425,10 @@ export function showInstantTrade() {
 }
 
 export function closeInstantTrade() {
+  const COLLAPSE_DURATION = 500;
   const CLOSE_DURATION = 1000;
   const timeline = new anime.timeline();
+
   timeline.add(
     {
       duration: CLOSE_DURATION,
@@ -453,6 +455,27 @@ export function closeInstantTrade() {
     scrollDistance = state.stage.width * 0.5 + SELECTED_CURRENCY_WIDTH * 0.5;
   }
   let scrollDuration = scrollDistance / IDLE_SCROLL_SPEED;
+
+  // Collapse currency
+  timeline.add(
+    {
+      duration: COLLAPSE_DURATION,
+      targets: state,
+      expandProgress: 0,
+      easing: 'linear',
+      update(anim) {
+        if (!anim.completed) {
+          updateTradeRect();
+          updateLines();
+        }
+      },
+      complete() {
+        setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(0);
+        hideTradeRect();
+      },
+    },
+    CLOSE_DURATION
+  );
 
   timeline.add(
     {
@@ -481,7 +504,7 @@ export function closeInstantTrade() {
         }
       },
     },
-    CLOSE_DURATION
+    CLOSE_DURATION + COLLAPSE_DURATION
   );
   
   timeline.add(
@@ -499,7 +522,7 @@ export function closeInstantTrade() {
         setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(1);
       }
     },
-    CLOSE_DURATION
+    CLOSE_DURATION + COLLAPSE_DURATION
   );
 
   return timeline.finished;
