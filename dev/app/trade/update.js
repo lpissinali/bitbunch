@@ -339,9 +339,11 @@ export function updateSelectColumns() {
 
 export function initSelectRects() {
   anime.set(selectRect1, {
+    opacity: 0,
     visibility: 'visible',
   });
   anime.set(selectRect2, {
+    opacity: 0,
     visibility: 'visible',
   });
   {
@@ -368,6 +370,12 @@ export function hideSelectRects() {
   });
   anime.set(selectRect2, {
     visibility: 'hidden',
+  });
+}
+
+export function updateSelectRectsOpacity() {
+  anime.set([selectRect1, selectRect2], {
+    opacity: state.showSelectRectsProgress,
   });
 }
 
@@ -424,6 +432,7 @@ export function updateSelectRects() {
 export function initTradeRect() {
   anime.set(tradeRect, {
     visibility: 'visible',
+    opacity: 0,
   });
   const imageNode = tradeRect.querySelector('.icon-container img');
   const nameNode = shortTradeDetails.querySelector('.title .name');
@@ -467,6 +476,12 @@ export function getMaxSelectedCurrentWidth() {
     SELECTED_CURRENCY_WIDTH,
     (tradeExchangeWidth - buyExchangesBoxWidth - sellExchangesBoxWidth - 2 * (12 + 4))
   );
+}
+
+export function updateCurrencyRectOpacity() {
+  anime.set(tradeRect, {
+    opacity: state.showCurrencyRectProgress,
+  });
 }
 
 export function updateTradeRect() {
@@ -576,7 +591,7 @@ export function updateInstantTradeSuccess() {
 
     anime.set(tradeSuccessSection, {
       translateY: offset * (1 - state.successProgress),
-      opacity: state.successProgress
+      opacity: state.successProgress,
     });
 
     if (state.successProgress === 1) {
@@ -589,7 +604,7 @@ export function updateInstantTradeSuccess() {
 
     anime.set(tradeSuccessSection, {
       translateY: offset * (1 - state.successProgress),
-      opacity: state.successProgress
+      opacity: state.successProgress,
     });
 
     if (state.successProgress === 1) {
@@ -630,7 +645,7 @@ export function hideShowMore() {
 }
 
 export function hideSellProgress() {
-  sellInfoProgress.style.transform = ""
+  sellInfoProgress.style.transform = "";
 }
 
 export function updateParticles() {

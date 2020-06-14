@@ -23,6 +23,8 @@ import {
   updateInstantTradeInfoProgress,
   updateInstantTradeSellProgress,
   hideSellProgress,
+  updateSelectRectsOpacity,
+  updateCurrencyRectOpacity,
 } from '../update';
 import { clipOffset, scrollColumn, listenForClose } from './helpers';
 import { SELECTED_EXCHANGE_WIDTH } from '../layout';
@@ -193,6 +195,7 @@ export function setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIcon(opacity)
 
 export function selectCurrency(ignorePause = false) {
   const LINE_DURATION = 500;
+  const SHOW_SELECT_RECTS_DURATION = 400;
   const SELECT_DURATION = 800;
   const MOVE_CURRENCY_DURATION = 500;
   const EXPAND_DURATION = 800;
@@ -221,6 +224,27 @@ export function selectCurrency(ignorePause = false) {
   );
   timelineOffset += LINE_DURATION;
 
+  timeline.add(
+    {
+      duration: SHOW_SELECT_RECTS_DURATION,
+      targets: state,
+      easing: 'linear',
+      showSelectRectsProgress: 1,
+      begin: () => {
+        initSelectRects();
+        updateSelectRects();
+      },
+      update(anim) {
+        if (!anim.completed) {
+          updateSelectRectsOpacity();
+        }
+      },
+    },
+    timelineOffset
+  );
+
+  timelineOffset += SHOW_SELECT_RECTS_DURATION * 0.5;
+
   // Expand exchanges
   timeline.add(
     {
@@ -228,7 +252,6 @@ export function selectCurrency(ignorePause = false) {
       targets: state,
       selectProgress: 1,
       easing: 'linear',
-      begin: initSelectRects,
       update(anim) {
         if (!anim.completed) {
           updateSelectColumns();
@@ -257,6 +280,27 @@ export function selectCurrency(ignorePause = false) {
   );
   timelineOffset += MOVE_CURRENCY_DURATION;
 
+  timeline.add(
+    {
+      duration: SHOW_SELECT_RECTS_DURATION,
+      targets: state,
+      easing: 'linear',
+      showCurrencyRectProgress: 1,
+      begin: () => {
+        initTradeRect();
+        updateTradeRect();
+      },
+      update(anim) {
+        if (!anim.completed) {
+          updateCurrencyRectOpacity();
+        }
+      },
+    },
+    timelineOffset
+  );
+
+  timelineOffset += SHOW_SELECT_RECTS_DURATION * 0.5;
+
   // Expand currency
   timeline.add(
     {
@@ -264,7 +308,6 @@ export function selectCurrency(ignorePause = false) {
       targets: state,
       expandProgress: 1,
       easing: 'linear',
-      begin: initTradeRect,
       update(anim) {
         if (!anim.completed) {
           updateTradeRect();
@@ -273,7 +316,7 @@ export function selectCurrency(ignorePause = false) {
       },
       complete() {
         setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(0);
-      }
+      },
     },
     timelineOffset
   );
@@ -426,8 +469,13 @@ export function showInstantTrade() {
 
 export function closeInstantTrade() {
   const COLLAPSE_DURATION = 500;
-  const CLOSE_DURATION = 1000;
+  const CLOSE_DURATION = 700;
+  const SHOW_SELECT_RECTS_DURATION = 400;
+  const DESELECT_DURATION = 500;
+
   const timeline = new anime.timeline();
+
+  let timelineOffset = 0;
 
   timeline.add(
     {
@@ -439,22 +487,17 @@ export function closeInstantTrade() {
       update(anim) {
         if (!anim.completed) {
           updateInstantTradeSuccess();
-          updateTradeRect();
           updateCurrenciesOpacity();
+          updateSelectRects();
           updateShortDetails();
+          updateTradeRect();
         }
       },
     },
-    0
+    timelineOffset
   );
 
-  let scrollDistance;
-  if (state.stage.isVertical) {
-    scrollDistance = state.stage.height * 0.5 + state.columns.currencies.size * 0.5;
-  } else {
-    scrollDistance = state.stage.width * 0.5 + SELECTED_CURRENCY_WIDTH * 0.5;
-  }
-  let scrollDuration = scrollDistance / IDLE_SCROLL_SPEED;
+  timelineOffset += CLOSE_DURATION;
 
   // Collapse currency
   timeline.add(
@@ -462,6 +505,7 @@ export function closeInstantTrade() {
       duration: COLLAPSE_DURATION,
       targets: state,
       expandProgress: 0,
+      lineProgress: 0,
       easing: 'linear',
       update(anim) {
         if (!anim.completed) {
@@ -471,15 +515,37 @@ export function closeInstantTrade() {
       },
       complete() {
         setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(0);
-        hideTradeRect();
       },
     },
-    CLOSE_DURATION
+    timelineOffset
   );
+
+  timelineOffset += COLLAPSE_DURATION;
 
   timeline.add(
     {
-      duration: scrollDuration,
+      duration: SHOW_SELECT_RECTS_DURATION,
+      targets: state,
+      easing: 'linear',
+      showCurrencyRectProgress: 0,
+      update(anim) {
+        if (!anim.completed) {
+          updateCurrencyRectOpacity();
+        }
+      },
+      complete: () => {
+        hideTradeRect();
+        setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(1);
+      },
+    },
+    timelineOffset
+  );
+
+  timelineOffset += SHOW_SELECT_RECTS_DURATION * 0.5;
+
+  timeline.add(
+    {
+      duration: DESELECT_DURATION,
       targets: state,
       selectProgress: 0,
       lineProgress: 0,
@@ -490,7 +556,6 @@ export function closeInstantTrade() {
       complete() {
         state.expandProgress = 0;
         hideTradeRect();
-        hideSelectRects();
         hideShowMore();
         hideSellProgress();
         state.isClosingInstantTrade = false;
@@ -504,9 +569,37 @@ export function closeInstantTrade() {
         }
       },
     },
-    CLOSE_DURATION + COLLAPSE_DURATION
+    timelineOffset
   );
-  
+
+  timelineOffset += DESELECT_DURATION;
+
+  timeline.add(
+    {
+      duration: SHOW_SELECT_RECTS_DURATION,
+      targets: state,
+      easing: 'linear',
+      showSelectRectsProgress: 0,
+      update(anim) {
+        if (!anim.completed) {
+          updateSelectRectsOpacity();
+        }
+      },
+      complete: () => {
+        hideSelectRects();
+      },
+    },
+    timelineOffset - SHOW_SELECT_RECTS_DURATION * 0.5
+  );
+
+  let scrollDistance;
+  if (state.stage.isVertical) {
+    scrollDistance = state.stage.height * 0.5 + state.columns.currencies.size * 0.5;
+  } else {
+    scrollDistance = state.stage.width * 0.5 + SELECTED_CURRENCY_WIDTH * 0.5;
+  }
+  const scrollDuration = scrollDistance;
+
   timeline.add(
     {
       ...scrollColumn(
@@ -517,12 +610,9 @@ export function closeInstantTrade() {
           updateCurrencies();
           updateTradeRect();
         }
-      ),
-      complete() {
-        setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(1);
-      }
+      )
     },
-    CLOSE_DURATION + COLLAPSE_DURATION
+    timelineOffset
   );
 
   return timeline.finished;

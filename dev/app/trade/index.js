@@ -215,7 +215,7 @@ setTimeout(() => {
 
 setTimeout(() => {
   createFakeTrade();
-}, 5000);
+}, 1000);
 
 setTimeout(() => {
   createFakeTrade();

@@ -41,6 +41,8 @@ export const state = {
   animLoopPaused: false,
   lineProgress: 0,
   seekProgress: 0,
+  showSelectRectsProgress: 0,
+  showCurrencyRectProgress: 0,
   selectProgress: 0,
   expandProgress: 0,
   showMoreProgress: 0,

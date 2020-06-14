@@ -42,9 +42,9 @@ function scrollColumns() {
 
 function selectRandomTrade() {
     const SEEK_DURATION = 500;
-    const DRAW_LINES_DURATION = 500;
-    const PAUSE_DURATION = 400;
-    const HIDE_LINES_DURATION = 500;
+    const DRAW_LINES_DURATION = 400;
+    const PAUSE_DURATION = 600;
+    const HIDE_LINES_DURATION = 400;
     const TOTAL_DURATION = SEEK_DURATION + DRAW_LINES_DURATION + PAUSE_DURATION + HIDE_LINES_DURATION;
     const timeline = new anime.timeline();
 
