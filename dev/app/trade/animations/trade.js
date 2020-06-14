@@ -573,7 +573,7 @@ export function closeInstantTrade() {
   } else {
     scrollDistance = state.stage.width * 0.5 + SELECTED_CURRENCY_WIDTH * 0.5;
   }
-  const scrollDuration = scrollDistance;
+  const scrollDuration = scrollDistance / IDLE_SCROLL_SPEED;
 
   timeline.add(
     {
@@ -584,7 +584,7 @@ export function closeInstantTrade() {
         () => {
           updateCurrencies();
           updateTradeRect();
-        }
+        },
       )
     },
     timelineOffset

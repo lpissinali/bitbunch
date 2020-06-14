@@ -56,6 +56,7 @@ export const state = {
     width: 0,
     height: 0,
     isVertical: null,
+    isTablet: null
   },
   isClosingInstantTrade: false
 };

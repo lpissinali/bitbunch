@@ -159,6 +159,16 @@
     will-change: transform, width;
     overflow: hidden;
 
+    &.tablet {
+      height: 44px;
+      font-size: 14px;
+
+      img {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
     .text {
       margin-right: 12px;
       margin-left: 12px;
@@ -170,24 +180,11 @@
       height: 54px;
     }
 
-    .icon-container {
-      flex-shrink: 0;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      width: 54px;
-      height: 54px;
-    }
 
     &.horizontal {
       height: 44px;
       font-size: 16px;
-
-      .icon-container {
-        width: 44px;
-        height: 44px;
-      }
-
+  
       img {
         width: 44px;
         height: 44px;
@@ -211,6 +208,7 @@
     font-family: $main-font-regular;
     font-size: 18px;
     visibility: hidden;
+    opacity: 0;
     white-space: nowrap;
 
     .short-details {
@@ -252,7 +250,7 @@
       .instant-trade {
         letter-spacing: .39px;
         color: #091540;
-        font-size: 17px;
+        font-size: 15px;
       }
 
       &.vertical-expanded {

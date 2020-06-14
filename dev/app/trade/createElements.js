@@ -1,7 +1,7 @@
 import anime from 'animejs';
 import { currencies, exchanges, getExchangeIcon, getCurrencyIcon } from './model';
 import { state } from './state';
-import { BREAK_POINT, VERTICAL_HEIGHT } from './layout';
+import { MOBILE_BREAK_POINT, VERTICAL_HEIGHT } from './layout';
 
 const container = document.getElementById('trade-display');
 
@@ -27,7 +27,7 @@ function createCurrencyBox(imgLink) {
 
 function createBoxes(target, creator, object, imageSource) {
   const size = object.size + object.gap;
-  const MAX_SPACE = Math.max(BREAK_POINT, VERTICAL_HEIGHT);
+  const MAX_SPACE = Math.max(MOBILE_BREAK_POINT, VERTICAL_HEIGHT);
   const offCount = Math.ceil(MAX_SPACE / size);
   const count = Math.max(imageSource.length, offCount);
   object.min = -imageSource.length * size + offCount * size;

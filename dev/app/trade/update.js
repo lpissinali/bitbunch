@@ -8,7 +8,9 @@ import {
   SELECTED_CURRENCY_HEIGHT_SUCCESS,
   SELECTED_CURRENCY_WIDTH,
   SELECTED_EXCHANGE_WIDTH,
-  VERTICAL_EXCHANGES_WIDTH
+  TABLET_SELECTED_EXCHANGE_WIDTH,
+  VERTICAL_EXCHANGES_WIDTH,
+  TABLET_EXCHANGES_WIDTH
 } from "./layout";
 import { currencies, currencyCodeToName, exchanges, getCurrencyIcon, getExchangeIcon } from "./model";
 import { formatCurrency, formatTime } from "./utils";
@@ -149,14 +151,15 @@ export function updateExchangeMarkers(newSelection) {
     buyExchangeOffset = fitToBoundaries(buyExchangeOffset, spaceToEdge, state.stage.height - spaceToEdge);
     sellExchangeOffset = fitToBoundaries(sellExchangeOffset, spaceToEdge, state.stage.height - spaceToEdge);
     
+    const exchangesWidth = state.stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
     anime.set(buyExchangesSelector, {
-      translateX: VERTICAL_EXCHANGES_WIDTH + HORIZONTAL_OFFSET_MARKER * state.selectProgress,
+      translateX: exchangesWidth + HORIZONTAL_OFFSET_MARKER * state.selectProgress,
       translateY: buyExchangeOffset,
     });
     anime.set(sellExchangesSelector, {
       translateX:
         state.stage.width
-        - VERTICAL_EXCHANGES_WIDTH
+        - exchangesWidth
         - HORIZONTAL_OFFSET_MARKER * state.selectProgress,
       translateY: sellExchangeOffset,
     });
@@ -264,10 +267,12 @@ export function updateLines() {
   const sellCurrency = state.selection.sellCurrency || state.selection.currency;
   
   if (state.stage.isVertical) {
+    const exchangesWidth = state.stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
+
     const maxWidth = getMaxSelectedCurrentWidth();
     const expandDelta = (maxWidth - state.columns.currencies.size) * 0.5;
     {
-      const xFrom = VERTICAL_EXCHANGES_WIDTH + HORIZONTAL_OFFSET_MARKER * state.selectProgress;
+      const xFrom = exchangesWidth + HORIZONTAL_OFFSET_MARKER * state.selectProgress;
       const xTo = state.stage.width * 0.5
         - state.columns.currencies.size * 0.5
         - state.expandProgress * expandDelta;
@@ -284,7 +289,7 @@ export function updateLines() {
     }
     {
       const xFrom = state.stage.width
-        - VERTICAL_EXCHANGES_WIDTH
+        - exchangesWidth
         - HORIZONTAL_OFFSET_MARKER * state.selectProgress;
       const xTo = state.stage.width * 0.5
         + state.columns.currencies.size * 0.5
@@ -339,14 +344,15 @@ export function updateLines() {
 
 export function updateSelectColumns() {
   if (state.stage.isVertical) {
+    const exchangesWidth = state.stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
     {
-      const xFrom = VERTICAL_EXCHANGES_WIDTH - SELECT_COLUMN_WIDTH;
-      const x = xFrom + state.selectProgress * SELECT_COLUMN_WIDTH;
+      const xFrom = exchangesWidth - SELECT_COLUMN_WIDTH;
+      const x = xFrom + state.selectProgress * SELECT_COLUMN_WIDTH - 1;
       anime.set(selectColumn1, { translateX: x });
     }
     {
       const xFrom = 0;
-      const x = xFrom - state.selectProgress * SELECT_COLUMN_WIDTH;
+      const x = xFrom - state.selectProgress * SELECT_COLUMN_WIDTH + 1;
       anime.set(selectColumn2, { translateX: x });
     }
   }
@@ -396,12 +402,14 @@ export function updateSelectRectsOpacity() {
 
 export function updateSelectRects() {
   if (state.stage.isVertical) {
-    const size = 54;
+    const size = state.stage.isTablet ? 44 : 54;
     const y = (state.stage.height - size) * 0.5;
-    const width = size + state.selectProgress * (SELECTED_EXCHANGE_WIDTH - size);
+    const exchangesWidth = state.stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
+    const selectedExchangeWidth = state.stage.isTablet ?  TABLET_SELECTED_EXCHANGE_WIDTH : SELECTED_EXCHANGE_WIDTH;
+    const width = size + state.selectProgress * (selectedExchangeWidth - size);
     {
-      const xFrom = (VERTICAL_EXCHANGES_WIDTH - size) * 0.5;
-      const xTo = (VERTICAL_EXCHANGES_WIDTH + SELECT_COLUMN_WIDTH - SELECTED_EXCHANGE_WIDTH) * 0.5;
+      const xFrom = (exchangesWidth - size) * 0.5;
+      const xTo = (exchangesWidth + SELECT_COLUMN_WIDTH - selectedExchangeWidth) * 0.5;
       const x = xFrom + state.selectProgress * (xTo - xFrom);
       anime.set(selectRect1, {
         translateX: x,
@@ -410,10 +418,10 @@ export function updateSelectRects() {
       });
     }
     {
-      const xFrom = state.stage.width - (VERTICAL_EXCHANGES_WIDTH + size) * 0.5;
+      const xFrom = state.stage.width - (exchangesWidth + size) * 0.5;
       const xTo = state.stage.width
-        - (VERTICAL_EXCHANGES_WIDTH + SELECT_COLUMN_WIDTH - SELECTED_EXCHANGE_WIDTH) * 0.5
-        - SELECTED_EXCHANGE_WIDTH;
+        - (exchangesWidth + SELECT_COLUMN_WIDTH - selectedExchangeWidth) * 0.5
+        - selectedExchangeWidth;
       const x = xFrom + state.selectProgress * (xTo - xFrom);
       anime.set(selectRect2, {
         translateX: x,
