@@ -54,6 +54,9 @@ const verticalInfoSection = tradeRect.querySelector('.vertical-details');
 const particles1 = document.querySelector('.particles .particles1');
 const particles2 = document.querySelector('.particles .particles2');
 
+const overlay1 = document.querySelector('.overlay-1');
+const overlay2 = document.querySelector('.overlay-2');
+
 export function updateBuyExchanges() {
   if (state.stage.isVertical) {
     anime.set(buyExchangesScroll, {
@@ -90,6 +93,18 @@ export function updateCurrencies() {
   }
 }
 
+export function updateOverlays() {
+  if (state.stage.isVertical) {
+    anime.set([overlay1, overlay2], {
+      opacity: 0,
+    });
+  } else {
+    anime.set([overlay1, overlay2], {
+      opacity: state.selectProgress,
+    });
+  }
+}
+
 export function updateCurrenciesOpacity() {
   if (state.stage.isVertical) {
     anime.set(currenciesScroll, {
@@ -97,7 +112,7 @@ export function updateCurrenciesOpacity() {
     });
   } else {
     anime.set(currenciesScroll, {
-      opacity: 1 - state.showMoreProgress,
+      opacity: 1 - state.expandProgress,
     });
   }
 }
@@ -407,8 +422,9 @@ export function updateSelectRects() {
       });
     }
   } else {
+    const MAX_WIDTH = 130;
     const size = 44;
-    const width = size + state.selectProgress * (200 - size);
+    const width = size + state.selectProgress * (MAX_WIDTH - size);
     const x = (state.stage.width - width) * 0.5;
     {
       const y = (HORIZONTAL_EXCHANGES_HEIGHT - size) * 0.5;

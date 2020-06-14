@@ -25,6 +25,7 @@ import {
   hideSellProgress,
   updateSelectRectsOpacity,
   updateCurrencyRectOpacity,
+  updateOverlays,
 } from '../update';
 import { clipOffset, scrollColumn, listenForClose } from './helpers';
 import { SELECTED_EXCHANGE_WIDTH } from '../layout';
@@ -164,33 +165,10 @@ export function scrollIntoView() {
   return timeline.finished;
 }
 
-export function setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(opacity) {
-  if (!state.stage.isVertical) {
-    setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIcon(opacity)
-  }
-}
-
 export function getCurrencyBoxes() {
   return document.querySelectorAll(
     '#trade-display .currencies-box .scrolling-area > .currency-box'
   );
-}
-
-export function currencyIndexToCurrencyBoxIndex(currencyIndex) {
-  return currencyIndex + 7;
-}
-
-export function setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIcon(opacity) {
-  const currencyBoxes = getCurrencyBoxes();
-  const selectedCurrencyBoxIndex = currencyIndexToCurrencyBoxIndex(
-    state.selection.currency
-  );
-  if (selectedCurrencyBoxIndex >= 1) {
-    currencyBoxes[selectedCurrencyBoxIndex - 1].style.opacity = opacity;
-  }
-  if (selectedCurrencyBoxIndex < currencyBoxes.length - 1) {
-    currencyBoxes[selectedCurrencyBoxIndex + 1].style.opacity = opacity;
-  }
 }
 
 export function selectCurrency(ignorePause = false) {
@@ -258,6 +236,7 @@ export function selectCurrency(ignorePause = false) {
           updateExchangeMarkers();
           updateLines();
           updateSelectRects();
+          updateOverlays();
         }
       },
     },
@@ -312,11 +291,9 @@ export function selectCurrency(ignorePause = false) {
         if (!anim.completed) {
           updateTradeRect();
           updateLines();
+          updateCurrenciesOpacity();
         }
-      },
-      complete() {
-        setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(0);
-      },
+      }
     },
     timelineOffset
   );
@@ -459,7 +436,7 @@ export function showInstantTrade() {
           updateCurrenciesOpacity();
           updateShortDetails();
         }
-      }
+      },
     },
     0
   );
@@ -511,11 +488,9 @@ export function closeInstantTrade() {
         if (!anim.completed) {
           updateTradeRect();
           updateLines();
+          updateCurrenciesOpacity();
         }
-      },
-      complete() {
-        setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(0);
-      },
+      }
     },
     timelineOffset
   );
@@ -535,7 +510,6 @@ export function closeInstantTrade() {
       },
       complete: () => {
         hideTradeRect();
-        setOpacityOfAdjacentCurrencyIconsOfSelectedCurrencyIconOnHorizontal(1);
       },
     },
     timelineOffset
@@ -566,6 +540,7 @@ export function closeInstantTrade() {
           updateSelectColumns();
           updateLines();
           updateSelectRects();
+          updateOverlays();
         }
       },
     },
@@ -655,6 +630,7 @@ function closeLongTrade() {
           updateSelectRects();
           updateTradeRect();
           updateLines();
+          updateOverlays();
         }
       },
     },

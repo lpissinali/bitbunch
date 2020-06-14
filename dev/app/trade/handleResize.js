@@ -15,6 +15,7 @@ import {
   updateSelectColumns,
   updateSelectRects,
   updateTradeRect,
+  updateOverlays,
 } from './update';
 import { clipOffset } from "./animations/helpers.js";
 
@@ -193,6 +194,7 @@ export function handleResize() {
     state.stage.isVertical = isVertical;
     updateDirection();
     updateExchangeMarkers();
+    updateOverlays();
   }
   updateOnResize();
 }
