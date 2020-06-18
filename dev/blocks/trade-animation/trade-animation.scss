@@ -16,6 +16,25 @@
 
   .trade-display {
     position: absolute;
+    pointer-events: none;
+  }
+
+
+  .overlay-1, .overlay-2 {
+    width: 240px;
+    height: 54px;
+    background: #d6dced;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+  .overlay-1 {
+    top: 24px;
+  }
+
+  .overlay-2 {
+    bottom: 24px;
   }
 
   .particles {
@@ -96,11 +115,14 @@
   .exchange-box {
     fill: #ffffff;
     will-change: transform;
+    pointer-events: none;
+
   }
 
   .currency-box {
     fill: #efc7c2;
     will-change: transform;
+    pointer-events: none;
 
     .icon-box {
       fill: #ffffff;
@@ -137,6 +159,16 @@
     will-change: transform, width;
     overflow: hidden;
 
+    &.tablet {
+      height: 44px;
+      font-size: 14px;
+
+      img {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
     .text {
       margin-right: 12px;
       margin-left: 12px;
@@ -144,49 +176,24 @@
     }
 
     img {
-      width: 28px;
-      height: 28px;
-    }
-
-    .icon-container {
-      flex-shrink: 0;
-      justify-content: center;
-      align-items: center;
-      display: flex;
       width: 54px;
       height: 54px;
     }
 
+
     &.horizontal {
       height: 44px;
       font-size: 16px;
-
-      .icon-container {
+  
+      img {
         width: 44px;
         height: 44px;
       }
-
-      img {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-
-  .select-rect1 {
-    .icon-container {
-      border-radius: 2px 0 0 2px;
-      background-image: linear-gradient(180deg, #0095fa 0%, #005cf4 100%);
     }
   }
 
   .select-rect2 {
     justify-content: flex-end;
-
-    .icon-container {
-      border-radius: 0 2px 2px 0;
-      background-image: linear-gradient(180deg, #1ed3ff 0%, #0da8ff 100%);
-    }
   }
 
   .selected-trade {
@@ -201,20 +208,23 @@
     font-family: $main-font-regular;
     font-size: 18px;
     visibility: hidden;
+    opacity: 0;
     white-space: nowrap;
 
     .short-details {
-      margin: 8px;
+      margin: 6px 8px;
       
       .icon-container {
-        margin-left: 10px;
-        margin-right: 18px;
-        box-shadow: 0 4px 6px rgba(#5d5858, .2);
+        margin-left: 6px;
+        margin-right: 6px;
       }
 
       .info {
-        height: 50px;
+        height: 54px;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       .title {
@@ -240,13 +250,13 @@
       .instant-trade {
         letter-spacing: .39px;
         color: #091540;
-        font-size: 17px;
+        font-size: 15px;
       }
 
       &.vertical-expanded {
         flex-direction: column !important;
         margin-right: 0;
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.7rem;
         text-align: center;
 
         .icon-container {
@@ -264,15 +274,7 @@
     .success-section {
       position: absolute;
       padding: 0 10px 10px;
-      top: 17px;
-
-      @media (max-width: 1000px) {
-        top: 13px;
-      }
-      
-      @media (max-width: 767.98px) {
-        top: 0;
-      }
+      top: 0px;
 
       .success-info {
         background: #324ea3;
@@ -336,14 +338,14 @@
       height: 88px;
       border-radius: 2px;
       background: #324ea3;
-      font-family: $main-font-extra-light;
+      font-family: $main-font-light;
       font-size: 16px;
       letter-spacing: .25px;
       line-height: 1.5;
       white-space: normal;
 
-      b {
-        font-family: $main-font-semi-bold;
+      strong {
+        font-family: $main-font-bold;
       }
     }
 
@@ -383,18 +385,9 @@
     }
 
     .icon-container {
-      flex-shrink: 0;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      width: 50px;
-      height: 50px;
-      border-radius: 2px;
-      background: #1f42ff;
-
       img {
-        width: 28px;
-        height: 28px;
+        width: 54px;
+        height: 54px;
       }
     }
 

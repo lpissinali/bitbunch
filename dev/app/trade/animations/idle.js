@@ -5,15 +5,16 @@ import {
     updateSellExchanges,
     updateCurrencies,
     updateExchangeMarkers,
-    updateLines
+    updateLines,
+    experiment
 } from '../update';
 import { clipOffset, scrollColumn } from './helpers';
 
 export const IDLE_SCROLL_SPEED = 1/6;// Pixels per ms
 
-export function idleAnimation() {
+export function idleAnimation() {  
     return scrollColumns()
-        .then(selectRandomTrade);
+      .then(selectRandomTrade);
 }
 
 function scrollColumns() {
@@ -40,10 +41,10 @@ function scrollColumns() {
 }
 
 function selectRandomTrade() {
-    const SEEK_DURATION = 800;
-    const DRAW_LINES_DURATION = 800;
-    const PAUSE_DURATION = 500;
-    const HIDE_LINES_DURATION = 800;
+    const SEEK_DURATION = 500;
+    const DRAW_LINES_DURATION = 400;
+    const PAUSE_DURATION = 600;
+    const HIDE_LINES_DURATION = 400;
     const TOTAL_DURATION = SEEK_DURATION + DRAW_LINES_DURATION + PAUSE_DURATION + HIDE_LINES_DURATION;
     const timeline = new anime.timeline();
 

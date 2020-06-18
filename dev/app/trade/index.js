@@ -210,11 +210,12 @@ handleResize();
 
 setTimeout(() => {
   animLoop();
-}, 3000);
+}, 100);
+
 
 setTimeout(() => {
   createFakeTrade();
-}, 5000);
+}, 1000);
 
 setTimeout(() => {
   createFakeTrade();

@@ -7,7 +7,9 @@ import {
   HORIZONTAL_HEIGHT,
   HORIZONTAL_CURRENCY_WIDTH,
   HORIZONTAL_EXCHANGES_HEIGHT,
-  BREAK_POINT,
+  MOBILE_BREAK_POINT,
+  TABLET_BREAK_POINT,
+  TABLET_EXCHANGES_WIDTH,
 } from './layout';
 import {
   updateExchangeMarkers,
@@ -15,6 +17,7 @@ import {
   updateSelectColumns,
   updateSelectRects,
   updateTradeRect,
+  updateOverlays,
 } from './update';
 import { clipOffset } from "./animations/helpers.js";
 
@@ -94,17 +97,18 @@ function updateDirection() {
     height: stage.height,
   });
   if (stage.isVertical) {
+    const exchangesWidth = stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
     anime.set(buyExchangesBackground, {
-      width: VERTICAL_EXCHANGES_WIDTH,
+      width: exchangesWidth,
       height: stage.height,
     });
     anime.set(sellExchangesBackground, {
-      width: VERTICAL_EXCHANGES_WIDTH,
+      width: exchangesWidth,
       height: stage.height,
     });
     positionColumn(currenciesScroll, state.columns.currencies, 0);
-    positionColumn(buyExchangesScroll, state.columns.buyExchanges, VERTICAL_EXCHANGES_WIDTH);
-    positionColumn(sellExchangesScroll, state.columns.sellExchanges, VERTICAL_EXCHANGES_WIDTH);
+    positionColumn(buyExchangesScroll, state.columns.buyExchanges, exchangesWidth);
+    positionColumn(sellExchangesScroll, state.columns.sellExchanges, exchangesWidth);
     updateCurrencyConnectors();
 
     const columnRect = selectColumn1.getBBox();
@@ -119,6 +123,9 @@ function updateDirection() {
 
     selectRect1.classList.toggle('horizontal', false);
     selectRect2.classList.toggle('horizontal', false);
+
+    selectRect1.classList.toggle('tablet', stage.isTablet);
+    selectRect2.classList.toggle('tablet', stage.isTablet);
 
     tradeRect.classList.toggle('horizontal', false);
     mainContainer.classList.toggle('horizontal', false);
@@ -158,8 +165,9 @@ function updateOnResize() {
       translateX: stage.width * 0.5,
       translateY: 0,
     });
+    const exchangesWidth = stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
     anime.set(sellExchangesBox, {
-      translateX: stage.width - VERTICAL_EXCHANGES_WIDTH,
+      translateX: stage.width - exchangesWidth,
       translateY: 0,
     });
   } else {
@@ -183,16 +191,25 @@ function updateOnResize() {
 
 export function handleResize() {
   state.stage.width = mainContainer.clientWidth;
-  const isVertical = state.stage.width >= BREAK_POINT;
+  const isVertical = state.stage.width >= MOBILE_BREAK_POINT;
+  const isTablet = isVertical && state.stage.width < TABLET_BREAK_POINT;
   if (isVertical) {
     state.stage.height = VERTICAL_HEIGHT;
   } else {
     state.stage.height = HORIZONTAL_HEIGHT;
   }
+  let layoutChanged = false;
+  if (state.stage.isTablet !== isTablet ) {
+    state.stage.isTablet = isTablet;
+    layoutChanged = true;
+  }
   if (state.stage.isVertical !== isVertical) {
     state.stage.isVertical = isVertical;
+    layoutChanged = true;
+    updateOverlays();
+  }
+  if (layoutChanged) {
     updateDirection();
-    updateExchangeMarkers();
   }
   updateOnResize();
 }
