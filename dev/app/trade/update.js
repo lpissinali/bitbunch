@@ -1,5 +1,5 @@
-import anime from "animejs";
-import { state } from "./state";
+import anime from 'animejs';
+import { state } from './state';
 import {
   HORIZONTAL_EXCHANGES_HEIGHT,
   HORIZONTAL_SELECTED_CURRENCY_HEIGHT,
@@ -10,12 +10,18 @@ import {
   SELECTED_EXCHANGE_WIDTH,
   TABLET_SELECTED_EXCHANGE_WIDTH,
   VERTICAL_EXCHANGES_WIDTH,
-  TABLET_EXCHANGES_WIDTH
-} from "./layout";
-import { currencies, currencyCodeToName, exchanges, getCurrencyIcon, getExchangeIcon } from "./model";
-import { formatCurrency, formatTime } from "./utils";
-import { IDLE_SCROLL_SPEED } from "./animations/idle.js";
-import { fitToBoundaries } from "./utils.js";
+  TABLET_EXCHANGES_WIDTH,
+} from './layout';
+import {
+  currencies,
+  currencyCodeToName,
+  exchanges,
+  getCurrencyIcon,
+  getExchangeIcon,
+} from './model';
+import { formatCurrency, formatTime, fitToBoundaries } from './utils';
+import { IDLE_SCROLL_SPEED } from './animations/idle.js';
+
 
 const container = document.getElementById('trade-display');
 const currenciesScroll = container.querySelector('.currencies-box .scrolling-area');
@@ -26,7 +32,7 @@ const connectorsContainer = document.getElementById('connectors-display');
 
 const buyExchangesSelector = connectorsContainer.querySelector('.select-marker1');
 const sellExchangesSelector = connectorsContainer.querySelector('.select-marker2');
-const {width: markerWidth} = buyExchangesSelector.getBoundingClientRect();
+const { width: markerWidth } = buyExchangesSelector.getBoundingClientRect();
 
 const line1 = connectorsContainer.querySelector('.line1');
 const line2 = connectorsContainer.querySelector('.line2');
@@ -50,8 +56,6 @@ const buyInfoSectionContent = buyInfoSection.querySelector('.content');
 const sellInfoSection = tradeRect.querySelector('.sell-info');
 const sellInfoProgress = sellInfoSection.querySelector('.sell-progress');
 const sellInfoSectionContent = sellInfoSection.querySelector('.content');
-
-const verticalInfoSection = tradeRect.querySelector('.vertical-details');
 
 const particles1 = document.querySelector('.particles .particles1');
 const particles2 = document.querySelector('.particles .particles2');
@@ -137,20 +141,32 @@ const HORIZONTAL_OFFSET_MARKER = 14;
 
 export function updateExchangeMarkers(newSelection) {
   let buyExchangeOffset = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
-  let sellExchangeOffset = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
+  let sellExchangeOffset = getTargetOffset(
+    state.selection.sellExchange,
+    state.columns.sellExchanges
+  );
   if (newSelection) {
     buyExchangeOffset
       += state.seekProgress
       * (getTargetOffset(newSelection.buyExchange, state.columns.buyExchanges) - buyExchangeOffset);
     sellExchangeOffset
       += state.seekProgress
-      * (getTargetOffset(newSelection.sellExchange, state.columns.sellExchanges) - sellExchangeOffset);
+      * (getTargetOffset(newSelection.sellExchange, state.columns.sellExchanges)
+        - sellExchangeOffset);
   }
   const spaceToEdge = 0.5 * markerWidth + 10;
   if (state.stage.isVertical) {
-    buyExchangeOffset = fitToBoundaries(buyExchangeOffset, spaceToEdge, state.stage.height - spaceToEdge);
-    sellExchangeOffset = fitToBoundaries(sellExchangeOffset, spaceToEdge, state.stage.height - spaceToEdge);
-    
+    buyExchangeOffset = fitToBoundaries(
+      buyExchangeOffset,
+      spaceToEdge,
+      state.stage.height - spaceToEdge
+    );
+    sellExchangeOffset = fitToBoundaries(
+      sellExchangeOffset,
+      spaceToEdge,
+      state.stage.height - spaceToEdge
+    );
+
     const exchangesWidth = state.stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
     anime.set(buyExchangesSelector, {
       translateX: exchangesWidth + HORIZONTAL_OFFSET_MARKER * state.selectProgress,
@@ -158,9 +174,7 @@ export function updateExchangeMarkers(newSelection) {
     });
     anime.set(sellExchangesSelector, {
       translateX:
-        state.stage.width
-        - exchangesWidth
-        - HORIZONTAL_OFFSET_MARKER * state.selectProgress,
+        state.stage.width - exchangesWidth - HORIZONTAL_OFFSET_MARKER * state.selectProgress,
       translateY: sellExchangeOffset,
     });
     const borderOpacity = 1 - state.selectProgress;
@@ -171,9 +185,17 @@ export function updateExchangeMarkers(newSelection) {
       opacity: borderOpacity,
     });
   } else {
-    buyExchangeOffset = fitToBoundaries(buyExchangeOffset, spaceToEdge, state.stage.width - spaceToEdge);
-    sellExchangeOffset = fitToBoundaries(sellExchangeOffset, spaceToEdge, state.stage.width - spaceToEdge);
-    
+    buyExchangeOffset = fitToBoundaries(
+      buyExchangeOffset,
+      spaceToEdge,
+      state.stage.width - spaceToEdge
+    );
+    sellExchangeOffset = fitToBoundaries(
+      sellExchangeOffset,
+      spaceToEdge,
+      state.stage.width - spaceToEdge
+    );
+
     anime.set(buyExchangesSelector, {
       translateX: buyExchangeOffset,
       translateY: HORIZONTAL_EXCHANGES_HEIGHT,
@@ -202,9 +224,8 @@ export function scrollSellExchangeMarkerToCenter() {
 export function scrollExchangeMarkerToCenter(exchangeMarker) {
   if (state.stage.isVertical) {
     return scrollExchangeMarkerToCenterVertically(exchangeMarker);
-  } else {
-    return scrollExchangeMarkerToCenterHorizontally(exchangeMarker);
   }
+  return scrollExchangeMarkerToCenterHorizontally(exchangeMarker);
 }
 
 export function scrollExchangeMarkerToCenterVertically(exchangeMarker) {
@@ -216,12 +237,12 @@ export function scrollExchangeMarkerToCenterVertically(exchangeMarker) {
   return {
     duration,
     easing: 'linear',
-    update (animation) {
+    update(animation) {
       anime.set(exchangeMarker, {
         translateY: initialOffsetY + animation.currentTime * scrollDirection * IDLE_SCROLL_SPEED,
       });
-    }
-  }
+    },
+  };
 }
 
 export function scrollExchangeMarkerToCenterHorizontally(exchangeMarker) {
@@ -233,15 +254,15 @@ export function scrollExchangeMarkerToCenterHorizontally(exchangeMarker) {
   return {
     duration,
     easing: 'linear',
-    update (animation) {
+    update(animation) {
       anime.set(exchangeMarker, {
         translateX: initialOffsetX + animation.currentTime * scrollDirection * IDLE_SCROLL_SPEED,
       });
-    }
-  }
+    },
+  };
 }
 
-function updateLineGradient(lineGradient, {x1, y1, x2, y2}) {
+function updateLineGradient(lineGradient, { x1, y1, x2, y2 }) {
   if (typeof x1 === 'number') {
     lineGradient.setAttribute('x1', x1);
   }
@@ -256,16 +277,34 @@ function updateLineGradient(lineGradient, {x1, y1, x2, y2}) {
   }
 }
 
+export function getMaxSelectedCurrentWidth() {
+  const { width: tradeExchangeWidth } = container.getBoundingClientRect();
+  const { width: buyExchangesBoxWidth } = container
+    .querySelector('.buyExchanges-box')
+    .getBoundingClientRect();
+  const { width: sellExchangesBoxWidth } = container
+    .querySelector('.sellExchanges-box')
+    .getBoundingClientRect();
+  return Math.min(
+    SELECTED_CURRENCY_WIDTH,
+    tradeExchangeWidth - buyExchangesBoxWidth - sellExchangesBoxWidth - 2 * (12 + 4)
+  );
+}
+
 export function updateLines() {
   if (state.lineProgress === 0) {
     anime.set(line1, { x1: 0, x2: 0, y1: 0, y2: 0 });
     anime.set(line2, { x1: 0, x2: 0, y1: 0, y2: 0 });
     return;
   }
-  
-  const buyCurrency = state.selection.buyCurrency || state.selection.currency;
-  const sellCurrency = state.selection.sellCurrency || state.selection.currency;
-  
+
+  const buyCurrency = state.selection.buyCurrency === undefined
+    ? state.selection.currency
+    : state.selection.buyCurrency;
+  const sellCurrency = state.selection.sellCurrency === undefined
+    ? state.selection.currency
+    : state.selection.sellCurrency;
+
   if (state.stage.isVertical) {
     const exchangesWidth = state.stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
 
@@ -285,12 +324,10 @@ export function updateLines() {
         positions.y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
       }
       anime.set(line1, positions);
-      updateLineGradient(line1Gradient, positions)
+      updateLineGradient(line1Gradient, positions);
     }
     {
-      const xFrom = state.stage.width
-        - exchangesWidth
-        - HORIZONTAL_OFFSET_MARKER * state.selectProgress;
+      const xFrom = state.stage.width - exchangesWidth - HORIZONTAL_OFFSET_MARKER * state.selectProgress;
       const xTo = state.stage.width * 0.5
         + state.columns.currencies.size * 0.5
         + state.expandProgress * expandDelta;
@@ -303,7 +340,7 @@ export function updateLines() {
         positions.y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
       }
       anime.set(line2, positions);
-      updateLineGradient(line2Gradient, positions)
+      updateLineGradient(line2Gradient, positions);
     }
   } else {
     const expandDelta = (HORIZONTAL_SELECTED_CURRENCY_HEIGHT - state.columns.currencies.size) * 0.5;
@@ -321,7 +358,7 @@ export function updateLines() {
         positions.x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
       }
       anime.set(line1, positions);
-      updateLineGradient(line1Gradient, positions)
+      updateLineGradient(line1Gradient, positions);
     }
     {
       const yFrom = state.stage.height - HORIZONTAL_EXCHANGES_HEIGHT;
@@ -337,7 +374,7 @@ export function updateLines() {
         positions.x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
       }
       anime.set(line2, positions);
-      updateLineGradient(line2Gradient, positions)
+      updateLineGradient(line2Gradient, positions);
     }
   }
 }
@@ -405,7 +442,9 @@ export function updateSelectRects() {
     const size = state.stage.isTablet ? 44 : 54;
     const y = (state.stage.height - size) * 0.5;
     const exchangesWidth = state.stage.isTablet ? TABLET_EXCHANGES_WIDTH : VERTICAL_EXCHANGES_WIDTH;
-    const selectedExchangeWidth = state.stage.isTablet ?  TABLET_SELECTED_EXCHANGE_WIDTH : SELECTED_EXCHANGE_WIDTH;
+    const selectedExchangeWidth = state.stage.isTablet
+      ? TABLET_SELECTED_EXCHANGE_WIDTH
+      : SELECTED_EXCHANGE_WIDTH;
     const width = size + state.selectProgress * (selectedExchangeWidth - size);
     {
       const xFrom = (exchangesWidth - size) * 0.5;
@@ -480,7 +519,7 @@ export function hideTradeRect() {
 
 export function updateShortDetails() {
   if (state.stage.isVertical) {
-    const xIcon = state.showMoreProgress * ((shortTradeContainer.offsetWidth / 2) - 25);
+    const xIcon = state.showMoreProgress * (shortTradeContainer.offsetWidth / 2 - 25);
     const yInfo = state.showMoreProgress * 60;
     anime.set(shortTradeIcon, {
       translateX: xIcon > 0 ? xIcon : 0,
@@ -490,16 +529,6 @@ export function updateShortDetails() {
       translateY: yInfo,
     });
   }
-}
-
-export function getMaxSelectedCurrentWidth() {
-  const {width: tradeExchangeWidth} = container.getBoundingClientRect();
-  const {width: buyExchangesBoxWidth} = container.querySelector('.buyExchanges-box').getBoundingClientRect();
-  const {width: sellExchangesBoxWidth} = container.querySelector('.sellExchanges-box').getBoundingClientRect();
-  return Math.min(
-    SELECTED_CURRENCY_WIDTH,
-    (tradeExchangeWidth - buyExchangesBoxWidth - sellExchangesBoxWidth - 2 * (12 + 4))
-  );
 }
 
 export function updateCurrencyRectOpacity() {
@@ -562,9 +591,6 @@ export function updateTradeRect() {
 
 export function initShowMore() {
   const profitNode = shortTradeDetails.querySelector('.profit');
-  const instantNode = shortTradeDetails.querySelector('.instant-trade');
-  profitNode.classList.toggle('d-none', true);
-  instantNode.classList.toggle('d-none', false);
 
   const valueNode = tradeSuccessSection.querySelector('.value');
   const currencyNode = tradeSuccessSection.querySelector('.currency');
@@ -587,10 +613,7 @@ export function initShowMore() {
   buyInfoSectionContent.innerHTML = `Buy <strong>${currencyCode}</strong> at <strong>${boughtInWalletCurrency} ${walletCurrency}</strong><br> on ${buyExchangeName} <strong>${time}</strong>`;
 
   const soldInTargetCurrency = boughtInTargetCurrency;
-  const soldInWalletCurrency = formatCurrency(
-    boughtInTargetCurrency / trade.sellPrice,
-    7
-  );
+  const soldInWalletCurrency = formatCurrency(boughtInTargetCurrency / trade.sellPrice, 7);
 
   time = formatTime(state.trade.current.endTime);
   time = `at <span style="white-space: nowrap;">${time}</span>`;
@@ -662,14 +685,11 @@ export function updateInstantTradeSellProgress() {
 }
 
 export function hideShowMore() {
-  const profitNode = shortTradeDetails.querySelector('.profit');
-  const instantNode = shortTradeDetails.querySelector('.instant-trade');
-  profitNode.classList.toggle('d-none', false);
-  instantNode.classList.toggle('d-none', true);
+
 }
 
 export function hideSellProgress() {
-  sellInfoProgress.style.transform = "";
+  sellInfoProgress.style.transform = '';
 }
 
 export function updateParticles() {

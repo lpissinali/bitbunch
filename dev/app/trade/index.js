@@ -65,9 +65,9 @@ function createFakeTrade() {
 
   const newTrade = {
     id: startTime,
-    buyExchange: 2,
-    sellExchange: 26,
-    currency: 3,
+    buyExchange: Math.floor(Math.random() * exchanges.length),
+    sellExchange: Math.floor(Math.random() * exchanges.length),
+    currency: Math.floor(Math.random() * currencies.length),
     wallet: state.wallet,
     profit: 0.07,
     amount: 1,
@@ -212,13 +212,12 @@ setTimeout(() => {
   animLoop();
 }, 100);
 
-
 setTimeout(() => {
   createFakeTrade();
 }, 1000);
 
-setTimeout(() => {
+setInterval(() => {
   createFakeTrade();
-}, 15000);
+}, 30000);
 
 window.addEventListener('resize', handleResize);

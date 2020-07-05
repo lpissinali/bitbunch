@@ -173,12 +173,12 @@ export function getCurrencyBoxes() {
 
 export function selectCurrency(ignorePause = false) {
   const LINE_DURATION = 500;
-  const SHOW_SELECT_RECTS_DURATION = 400;
-  const SELECT_DURATION = 800;
-  const MOVE_CURRENCY_DURATION = 500;
-  const EXPAND_DURATION = 800;
+  const SHOW_SELECT_RECTS_DURATION = 300;
+  const SELECT_DURATION = 400;
+  const MOVE_CURRENCY_DURATION = 400;
+  const EXPAND_DURATION = 400;
   const EXPAND_PAUSE_DURATION = 1000;
-  const PARTICLES_DURATION = 1000;
+  const PARTICLES_DURATION = 700;
 
   const currentTrade = state.trade.current;
 
@@ -221,7 +221,7 @@ export function selectCurrency(ignorePause = false) {
     timelineOffset
   );
 
-  timelineOffset += SHOW_SELECT_RECTS_DURATION * 0.5;
+  timelineOffset += SHOW_SELECT_RECTS_DURATION * 0.8;
 
   // Expand exchanges
   timeline.add(
@@ -335,7 +335,7 @@ export function showInstantTradeSellProgress(ignorePause = false) {
   const timeline = new anime.timeline();
   const SHOW_INFO_DURATION = 500;
   const SHOW_SELL_PROGRESS_DURATION = 500;
-  const PAUSE_BUY_SELL_INFO = 1200;
+  const PAUSE_BUY_SELL_INFO = 1200 + 5000;
   let timelineOffset = 0;
 
   state.showInfoProgress = 0;
@@ -445,10 +445,10 @@ export function showInstantTrade() {
 }
 
 export function closeInstantTrade() {
-  const COLLAPSE_DURATION = 500;
-  const CLOSE_DURATION = 700;
+  const COLLAPSE_DURATION = 400;
+  const CLOSE_DURATION = 500;
   const SHOW_SELECT_RECTS_DURATION = 400;
-  const DESELECT_DURATION = 500;
+  const DESELECT_DURATION = 400;
 
   const timeline = new anime.timeline();
 
@@ -567,6 +567,7 @@ export function closeInstantTrade() {
     timelineOffset - SHOW_SELECT_RECTS_DURATION * 0.5
   );
 
+  /*
   let scrollDistance;
   if (state.stage.isVertical) {
     scrollDistance = state.stage.height * 0.5 + state.columns.currencies.size * 0.5;
@@ -589,6 +590,7 @@ export function closeInstantTrade() {
     },
     timelineOffset
   );
+  */
 
   return timeline.finished;
 }
