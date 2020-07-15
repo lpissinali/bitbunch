@@ -212,12 +212,15 @@ setTimeout(() => {
   animLoop();
 }, 100);
 
+
 setTimeout(() => {
   createFakeTrade();
 }, 1000);
 
+
 setInterval(() => {
   createFakeTrade();
 }, 30000);
+
 
 window.addEventListener('resize', handleResize);

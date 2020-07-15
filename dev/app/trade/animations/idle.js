@@ -17,8 +17,8 @@ export function idleAnimation() {
 }
 
 function scrollColumns() {
-  const SEARCH_DURATION = 1500;
-  const RANDOM_SEEK_DURATION = 500;
+  const SEARCH_DURATION = 1900;
+  const RANDOM_SEEK_DURATION = 700;
   const IDLE_SEEK_DURATION = (SEARCH_DURATION - 2 * RANDOM_SEEK_DURATION) / 3;
 
   const timeline = new anime.timeline();
@@ -53,7 +53,7 @@ function scrollColumns() {
   const getRandomExchanges = () => {
     let buyExchange = getRandomVisibleIndex(state.columns.buyExchanges, 0, IDLE_SCROLL_SPEED * RANDOM_SEEK_DURATION);
     do {
-      buyExchange = getRandomVisibleIndex(state.columns.sellExchanges, 0, IDLE_SCROLL_SPEED * RANDOM_SEEK_DURATION);
+      buyExchange = getRandomVisibleIndex(state.columns.buyExchanges, 0, IDLE_SCROLL_SPEED * RANDOM_SEEK_DURATION);
     } while (buyExchange === state.selection.buyExchange);
     let sellExchange;
     do {
@@ -274,7 +274,8 @@ function getRandomVisibleIndex(object, add, offsetDelta) {
   const indexStart = getFirstVisibleIndex(object, offsetDelta) + off;
   const height = state.stage.isVertical ? state.stage.height : state.stage.width;
   const indexEnd = indexStart + Math.floor(height / (object.size + object.gap)) - off;
-  let index = indexStart + Math.floor(Math.random() * (indexEnd - indexStart)) + add;
+  const random = Math.random();
+  let index = indexStart + Math.floor(random * (indexEnd - indexStart)) + add;
   if (index < 0) {
     index = object.count + (index % object.count);
   } else if (index >= object.count) {

@@ -33,6 +33,7 @@ const connectorsContainer = document.getElementById('connectors-display');
 const buyExchangesSelector = connectorsContainer.querySelector('.select-marker1');
 const sellExchangesSelector = connectorsContainer.querySelector('.select-marker2');
 const { width: markerWidth } = buyExchangesSelector.getBoundingClientRect();
+const spaceToEdge = 0.5 * markerWidth + 10;
 
 const line1 = connectorsContainer.querySelector('.line1');
 const line2 = connectorsContainer.querySelector('.line2');
@@ -62,6 +63,8 @@ const particles2 = document.querySelector('.particles .particles2');
 
 const overlay1 = document.querySelector('.overlay-1');
 const overlay2 = document.querySelector('.overlay-2');
+
+const clearImage = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 export function updateBuyExchanges() {
   if (state.stage.isVertical) {
@@ -154,7 +157,6 @@ export function updateExchangeMarkers(newSelection) {
       * (getTargetOffset(newSelection.sellExchange, state.columns.sellExchanges)
         - sellExchangeOffset);
   }
-  const spaceToEdge = 0.5 * markerWidth + 10;
   if (state.stage.isVertical) {
     buyExchangeOffset = fitToBoundaries(
       buyExchangeOffset,
@@ -310,6 +312,7 @@ export function updateLines() {
 
     const maxWidth = getMaxSelectedCurrentWidth();
     const expandDelta = (maxWidth - state.columns.currencies.size) * 0.5;
+
     {
       const xFrom = exchangesWidth + HORIZONTAL_OFFSET_MARKER * state.selectProgress;
       const xTo = state.stage.width * 0.5
@@ -320,8 +323,11 @@ export function updateLines() {
       if (!state.isClosingInstantTrade) {
         const targetY1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
         positions.y1 = targetY1;
+        positions.y1 = fitToBoundaries(positions.y1, spaceToEdge, state.stage.height - spaceToEdge);
+
         const targetY2 = getTargetOffset(buyCurrency, state.columns.currencies);
         positions.y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
+        positions.y2 = fitToBoundaries(positions.y2, spaceToEdge, state.stage.height - spaceToEdge)
       }
       anime.set(line1, positions);
       updateLineGradient(line1Gradient, positions);
@@ -336,8 +342,11 @@ export function updateLines() {
       if (!state.isClosingInstantTrade) {
         const targetY1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
         positions.y1 = targetY1;
+        positions.y1 = fitToBoundaries(positions.y1, spaceToEdge, state.stage.height - spaceToEdge);
+
         const targetY2 = getTargetOffset(sellCurrency, state.columns.currencies);
         positions.y2 = targetY1 + (targetY2 - targetY1) * state.lineProgress;
+        positions.y2 = fitToBoundaries(positions.y2, spaceToEdge, state.stage.height - spaceToEdge);
       }
       anime.set(line2, positions);
       updateLineGradient(line2Gradient, positions);
@@ -354,8 +363,11 @@ export function updateLines() {
       if (!state.isClosingInstantTrade) {
         const targetX1 = getTargetOffset(state.selection.buyExchange, state.columns.buyExchanges);
         positions.x1 = targetX1;
+        positions.x1 = fitToBoundaries(positions.x1, spaceToEdge, state.stage.width - spaceToEdge);
+
         const targetX2 = getTargetOffset(buyCurrency, state.columns.currencies);
         positions.x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
+        positions.x2 = fitToBoundaries(positions.x2, spaceToEdge, state.stage.width - spaceToEdge);
       }
       anime.set(line1, positions);
       updateLineGradient(line1Gradient, positions);
@@ -370,8 +382,11 @@ export function updateLines() {
       if (!state.isClosingInstantTrade) {
         const targetX1 = getTargetOffset(state.selection.sellExchange, state.columns.sellExchanges);
         positions.x1 = targetX1;
+        positions.x1 = fitToBoundaries(positions.x1, spaceToEdge, state.stage.width - spaceToEdge);
+
         const targetX2 = getTargetOffset(sellCurrency, state.columns.currencies);
         positions.x2 = targetX1 + (targetX2 - targetX1) * state.lineProgress;
+        positions.x2 = fitToBoundaries(positions.x2, spaceToEdge, state.stage.width - spaceToEdge);
       }
       anime.set(line2, positions);
       updateLineGradient(line2Gradient, positions);
@@ -409,6 +424,7 @@ export function initSelectRects() {
     const textNode = selectRect1.querySelector('.text');
 
     const exchangeText = exchanges[state.selection.buyExchange];
+    imageNode.setAttribute('src', clearImage);
     imageNode.setAttribute('src', getExchangeIcon(exchangeText, true));
     textNode.textContent = exchangeText;
   }
@@ -417,6 +433,7 @@ export function initSelectRects() {
     const textNode = selectRect2.querySelector('.text');
 
     const exchangeText = exchanges[state.selection.sellExchange];
+    imageNode.setAttribute('src', clearImage);
     imageNode.setAttribute('src', getExchangeIcon(exchangeText, true));
     textNode.textContent = exchangeText;
   }
@@ -504,6 +521,8 @@ export function initTradeRect() {
   const currencyNode = shortTradeDetails.querySelector('.profit .currency');
 
   const currencyCode = currencies[state.selection.currency];
+
+  imageNode.setAttribute('src', clearImage);
   imageNode.setAttribute('src', getCurrencyIcon(currencyCode, true));
   codeNode.textContent = currencyCode;
   nameNode.textContent = currencyCodeToName[currencyCode];
@@ -680,7 +699,7 @@ export function updateInstantTradeSellProgress() {
 
   anime.set(sellInfoProgress, {
     translateX: progress,
-    scale: '1.2, 1',
+    scale: '1, 1',
   });
 }
 

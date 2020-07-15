@@ -177,7 +177,7 @@ export function selectCurrency(ignorePause = false) {
   const SELECT_DURATION = 400;
   const MOVE_CURRENCY_DURATION = 400;
   const EXPAND_DURATION = 400;
-  const EXPAND_PAUSE_DURATION = 1000;
+  const EXPAND_PAUSE_DURATION = 600;
   const PARTICLES_DURATION = 700;
 
   const currentTrade = state.trade.current;
@@ -221,7 +221,7 @@ export function selectCurrency(ignorePause = false) {
     timelineOffset
   );
 
-  timelineOffset += SHOW_SELECT_RECTS_DURATION * 0.8;
+  timelineOffset += SHOW_SELECT_RECTS_DURATION;
 
   // Expand exchanges
   timeline.add(
@@ -278,7 +278,7 @@ export function selectCurrency(ignorePause = false) {
     timelineOffset
   );
 
-  timelineOffset += SHOW_SELECT_RECTS_DURATION * 0.5;
+  timelineOffset += SHOW_SELECT_RECTS_DURATION;
 
   // Expand currency
   timeline.add(
@@ -331,11 +331,11 @@ export function selectCurrency(ignorePause = false) {
   return timeline.finished;
 }
 
-export function showInstantTradeSellProgress(ignorePause = false) {
+export function showInstantTradeSellProgress() {
   const timeline = new anime.timeline();
   const SHOW_INFO_DURATION = 500;
-  const SHOW_SELL_PROGRESS_DURATION = 500;
-  const PAUSE_BUY_SELL_INFO = 1200 + 5000;
+  const SHOW_SELL_PROGRESS_DURATION = 3000;
+
   let timelineOffset = 0;
 
   state.showInfoProgress = 0;
@@ -356,14 +356,14 @@ export function showInstantTradeSellProgress(ignorePause = false) {
     timelineOffset
   );
 
-  timelineOffset += SHOW_INFO_DURATION + 200;
+  timelineOffset += SHOW_INFO_DURATION;
 
   timeline.add(
     {
       duration: SHOW_SELL_PROGRESS_DURATION,
-      easing: 'easeOutExpo',
+      easing: 'linear',
       targets: state,
-      showSellProgress: 1,
+      showSellProgress: [0, 1],
       update(anim) {
         if (!anim.completed) {
           updateInstantTradeSellProgress();
@@ -372,14 +372,6 @@ export function showInstantTradeSellProgress(ignorePause = false) {
     },
     timelineOffset
   );
-
-  if (!ignorePause) {
-    timeline.add({
-      duration: PAUSE_BUY_SELL_INFO,
-      easing: 'linear',
-      targets: state,
-    });
-  }
 
   return timeline.finished;
 }
@@ -447,7 +439,7 @@ export function showInstantTrade() {
 export function closeInstantTrade() {
   const COLLAPSE_DURATION = 400;
   const CLOSE_DURATION = 500;
-  const SHOW_SELECT_RECTS_DURATION = 400;
+  const SHOW_SELECT_RECTS_DURATION = 300;
   const DESELECT_DURATION = 400;
 
   const timeline = new anime.timeline();
@@ -515,8 +507,6 @@ export function closeInstantTrade() {
     timelineOffset
   );
 
-  timelineOffset += SHOW_SELECT_RECTS_DURATION * 0.5;
-
   timeline.add(
     {
       duration: DESELECT_DURATION,
@@ -564,7 +554,7 @@ export function closeInstantTrade() {
         hideSelectRects();
       },
     },
-    timelineOffset - SHOW_SELECT_RECTS_DURATION * 0.5
+    timelineOffset
   );
 
   /*
