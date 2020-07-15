@@ -64,8 +64,6 @@ const particles2 = document.querySelector('.particles .particles2');
 const overlay1 = document.querySelector('.overlay-1');
 const overlay2 = document.querySelector('.overlay-2');
 
-const clearImage = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-
 export function updateBuyExchanges() {
   if (state.stage.isVertical) {
     anime.set(buyExchangesScroll, {
@@ -424,8 +422,11 @@ export function initSelectRects() {
     const textNode = selectRect1.querySelector('.text');
 
     const exchangeText = exchanges[state.selection.buyExchange];
-    imageNode.setAttribute('src', clearImage);
-    imageNode.setAttribute('src', getExchangeIcon(exchangeText, true));
+
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', getExchangeIcon(exchangeText, true))
+    selectRect1.replaceChild(newImage, imageNode);
+
     textNode.textContent = exchangeText;
   }
   {
@@ -433,8 +434,11 @@ export function initSelectRects() {
     const textNode = selectRect2.querySelector('.text');
 
     const exchangeText = exchanges[state.selection.sellExchange];
-    imageNode.setAttribute('src', clearImage);
-    imageNode.setAttribute('src', getExchangeIcon(exchangeText, true));
+
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', getExchangeIcon(exchangeText, true))
+    selectRect2.replaceChild(newImage, imageNode);
+
     textNode.textContent = exchangeText;
   }
 }
@@ -522,8 +526,10 @@ export function initTradeRect() {
 
   const currencyCode = currencies[state.selection.currency];
 
-  imageNode.setAttribute('src', clearImage);
-  imageNode.setAttribute('src', getCurrencyIcon(currencyCode, true));
+  const newImage = document.createElement('img');
+  newImage.setAttribute('src', getCurrencyIcon(currencyCode, true))
+  imageNode.parentNode.replaceChild(newImage, imageNode);
+
   codeNode.textContent = currencyCode;
   nameNode.textContent = currencyCodeToName[currencyCode];
   currencyNode.textContent = state.percentage;
