@@ -50,7 +50,7 @@ export const state = {
   showSellProgress: 0,
   successProgress: 0,
   particlesProgress: 0,
-  wallet: 'btc',
+  wallet: 'USDT',
   percentage: '%',
   stage: {
     width: 0,

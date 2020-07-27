@@ -63,6 +63,7 @@ function createFakeTrade() {
   const startTime = new Date().getTime();
   const endTime = startTime + 60 * 1000;
 
+  /*
   const newTrade = {
     id: startTime,
     buyExchange: Math.floor(Math.random() * exchanges.length),
@@ -73,6 +74,23 @@ function createFakeTrade() {
     amount: 1,
     buyPrice: 0.0062,
     sellPrice: 0.0063,
+    startTime,
+    endTime,
+    status: 'completed',
+  };
+  */
+
+ const newTrade = {
+    id: startTime,
+    buyExchange: exchanges.indexOf('Huobi'),
+    sellExchange: exchanges.indexOf('Binance'),
+    currency: currencies.indexOf('BTC'),
+    wallet: state.wallet,
+    profit: 0.58,
+    spread: 47.78,
+    amount: 10000,
+    buyPrice: 8963.41,
+    sellPrice: 9011.19,
     startTime,
     endTime,
     status: 'completed',
@@ -172,7 +190,7 @@ function animLoop() {
     const trade = state.trade.trades.shift();
     state.trade.current = trade;
     if (trade.isInstant) {
-      instantTradeAnimation().then(animLoop);
+      instantTradeAnimation().then(idleAnimation).then(animLoop);
     } else {
       // Select random sell exchange just to show initial animation
       if (trade.sellExchange === -1) {
@@ -212,15 +230,13 @@ setTimeout(() => {
   animLoop();
 }, 100);
 
-
-setTimeout(() => {
+setInterval(() => {
   createFakeTrade();
 }, 1000);
 
-
 setInterval(() => {
   createFakeTrade();
-}, 30000);
+}, 60000);
 
 
 window.addEventListener('resize', handleResize);

@@ -532,8 +532,8 @@ export function initTradeRect() {
 
   codeNode.textContent = currencyCode;
   nameNode.textContent = currencyCodeToName[currencyCode];
-  currencyNode.textContent = state.percentage;
-  valueNode.textContent = formatCurrency(state.trade.current.profit);
+  currencyNode.textContent = state.wallet.toUpperCase();
+  valueNode.textContent = formatCurrency(state.trade.current.spread);
 }
 
 export function hideTradeRect() {
@@ -630,15 +630,15 @@ export function initShowMore() {
   const buyExchangeName = exchanges[trade.buyExchange];
   const sellExchangeName = exchanges[trade.sellExchange];
 
-  const boughtInTargetCurrency = formatCurrency(trade.amount * trade.buyPrice);
-  const boughtInWalletCurrency = formatCurrency(trade.amount, 7);
+  const boughtInTargetCurrency = trade.buyPrice; //formatCurrency(trade.amount * trade.buyPrice);
+  const boughtInWalletCurrency = trade.buyPrice; //formatCurrency(trade.amount, 7);
 
   let time = formatTime(state.trade.current.startTime);
   time = `at <span style="white-space: nowrap;"> ${time}</span>`;
   buyInfoSectionContent.innerHTML = `Buy <strong>${currencyCode}</strong> at <strong>${boughtInWalletCurrency} ${walletCurrency}</strong><br> on ${buyExchangeName} <strong>${time}</strong>`;
 
   const soldInTargetCurrency = boughtInTargetCurrency;
-  const soldInWalletCurrency = formatCurrency(boughtInTargetCurrency / trade.sellPrice, 7);
+  const soldInWalletCurrency = trade.sellPrice; // formatCurrency(boughtInTargetCurrency / trade.sellPrice, 7);
 
   time = formatTime(state.trade.current.endTime);
   time = `at <span style="white-space: nowrap;">${time}</span>`;
