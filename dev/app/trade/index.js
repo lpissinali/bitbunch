@@ -230,7 +230,7 @@ setTimeout(() => {
   animLoop();
 }, 100);
 
-setInterval(() => {
+setTimeout(() => {
   createFakeTrade();
 }, 1000);
 
